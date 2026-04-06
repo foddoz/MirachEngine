@@ -1,0 +1,357 @@
+\doxysection{Physics\+::Backend\+::Rigid\+Body\+Backend Class Reference}
+\hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend}{}\label{class_physics_1_1_backend_1_1_rigid_body_backend}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+
+
+{\ttfamily \#include $<$physics\+\_\+backend.\+hpp$>$}
+
+
+
+Inheritance diagram for Physics\+::Backend\+::Rigid\+Body\+Backend\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_physics_1_1_backend_1_1_rigid_body_backend__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Physics\+::Backend\+::Rigid\+Body\+Backend\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_physics_1_1_backend_1_1_rigid_body_backend__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a5ead1f45c8d1e6c75a5d9472a0c5ddc7}{Rigid\+Body\+Backend}} (rp3d\+::\+Rigid\+Body \texorpdfstring{$\ast$}{*}body)
+\item 
+\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8af1428033499d10594e89702300a8fe}{\texorpdfstring{$\sim$}{\string~}\+Rigid\+Body\+Backend}} () override
+\item 
+void \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a27ce17f6748dc8fa7d62c2c9a1eec391}{Set\+Position}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&pos) override
+\item 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_ae32d3387c183a48908672772b3aaa5fb}{Get\+Position}} () const override
+\item 
+\mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a79a01e2da9968cdf3df414b55970dc2a}{Get\+Orientation}} () const override
+\item 
+rp3d\+::\+Rigid\+Body \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_aeb04a4057f4a3bc8469b952b5b88345c}{Get\+Internal}} () const
+\item 
+void \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a0ea6acc282b9c7f16f0550228e70d235}{Apply\+Force\+At\+Center}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&force) override
+\item 
+void \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a10927d5c6d418670552acc9110e19b7f}{Apply\+Impulse\+At\+Center}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&impulse) override
+\item 
+void \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a50242f58fec8c30e9cce47b4513e966e}{Set\+Linear\+Velocity}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&vel) override
+\item 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_aafaffe2ddc7aaa500eeb6425aacfc38d}{Get\+Linear\+Velocity}} () const override
+\item 
+void \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a495903d446a0965b316328e3ffe3a161}{Set\+Angular\+Velocity}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&vel) override
+\item 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_ac15ad345a33805a67cbc8a58aa82483b}{Get\+Angular\+Velocity}} () const override
+\item 
+bool \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a3254456fdc2e1bb6245bf3de975562b0}{Is\+Dynamic}} () const override
+\item 
+void \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_adaad3043157f9270a14457a9c2510bb6}{Set\+Mass}} (float mass) const override
+\item 
+float \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a1bcf12aa810ec2a1f69906a49cc6cad5}{Get\+Mass}} () const override
+\item 
+\mbox{\hyperlink{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2}{Body\+Type}} \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a78a1df1a57ba31508d086960898884f1}{Get\+Type}} () const override
+\item 
+void \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a1d33e18aef597895318cf8f1c9eb8ac3}{Set\+Angular\+Lock\+Axis}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&lock) override
+\item 
+void \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_ad117faeaa68a7ba390fcac9fd84f6ee8}{Set\+Angular\+Damping}} (float damping) override
+\item 
+void \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a1a191e9aa452d8fbda6434b005315a2e}{Invalidate}} () override
+\item 
+void \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a89367c3397c4f0eb5ca88766e06cf4cb}{Enable\+Gravity}} (bool enabled) override
+\item 
+bool \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_ad2e3470233fb0aed11eecb75db8bed33}{Is\+Gravity\+Enabled}} () const override
+\item 
+bool \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_abc398533a504d9a22536066a11c374e9}{Is\+Valid}} () const override
+\item 
+void \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_aa2e649000fc4aeefd7be71e6ff30c087}{Register\+Collider}} (rp3d\+::\+Collider \texorpdfstring{$\ast$}{*}c)
+\item 
+bool \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_afbc857b600d59e65095cbeaae3b8a795}{Owns\+Collider}} (rp3d\+::\+Collider \texorpdfstring{$\ast$}{*}c) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_physics_1_1_rigid_body_a9212c4fe44a06e631f857ccfa8e98500}{\texorpdfstring{$\sim$}{\string~}\+Rigid\+Body}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rp3d\+::\+Rigid\+Body \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\+\_\+body}}
+\item 
+bool \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a58d43395fd5cb6449e76ca2f2118b06b}{m\+\_\+valid}} = true
+\item 
+std\+::vector$<$ rp3d\+::\+Collider \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a7d5c49d645bed62f6c075846fc8845d0}{m\+\_\+live\+Colliders}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_a5ead1f45c8d1e6c75a5d9472a0c5ddc7}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!RigidBodyBackend@{RigidBodyBackend}}
+\index{RigidBodyBackend@{RigidBodyBackend}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{RigidBodyBackend()}{RigidBodyBackend()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_a5ead1f45c8d1e6c75a5d9472a0c5ddc7} 
+Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::\+Rigid\+Body\+Backend (\begin{DoxyParamCaption}\item[{rp3d\+::\+Rigid\+Body \texorpdfstring{$\ast$}{*}}]{body}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_a8af1428033499d10594e89702300a8fe}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!````~RigidBodyBackend@{\texorpdfstring{$\sim$}{\string~}RigidBodyBackend}}
+\index{````~RigidBodyBackend@{\texorpdfstring{$\sim$}{\string~}RigidBodyBackend}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}RigidBodyBackend()}{\string~RigidBodyBackend()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_a8af1428033499d10594e89702300a8fe} 
+Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::\texorpdfstring{$\sim$}{\string~}\+Rigid\+Body\+Backend (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_a0ea6acc282b9c7f16f0550228e70d235}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!ApplyForceAtCenter@{ApplyForceAtCenter}}
+\index{ApplyForceAtCenter@{ApplyForceAtCenter}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{ApplyForceAtCenter()}{ApplyForceAtCenter()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_a0ea6acc282b9c7f16f0550228e70d235} 
+void Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::\+Apply\+Force\+At\+Center (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{force}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_rigid_body_a214081eeac9a81be404acea1601d40f0}{Physics\+::\+Rigid\+Body}}.
+
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_a10927d5c6d418670552acc9110e19b7f}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!ApplyImpulseAtCenter@{ApplyImpulseAtCenter}}
+\index{ApplyImpulseAtCenter@{ApplyImpulseAtCenter}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{ApplyImpulseAtCenter()}{ApplyImpulseAtCenter()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_a10927d5c6d418670552acc9110e19b7f} 
+void Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::\+Apply\+Impulse\+At\+Center (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{impulse}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_rigid_body_a33c9a1ebcd090d195239f48c290e37e0}{Physics\+::\+Rigid\+Body}}.
+
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_a89367c3397c4f0eb5ca88766e06cf4cb}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!EnableGravity@{EnableGravity}}
+\index{EnableGravity@{EnableGravity}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{EnableGravity()}{EnableGravity()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_a89367c3397c4f0eb5ca88766e06cf4cb} 
+void Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::\+Enable\+Gravity (\begin{DoxyParamCaption}\item[{bool}]{enabled}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_rigid_body_a528678560a077f88e2d0822322be794f}{Physics\+::\+Rigid\+Body}}.
+
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_ac15ad345a33805a67cbc8a58aa82483b}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!GetAngularVelocity@{GetAngularVelocity}}
+\index{GetAngularVelocity@{GetAngularVelocity}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{GetAngularVelocity()}{GetAngularVelocity()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_ac15ad345a33805a67cbc8a58aa82483b} 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::\+Get\+Angular\+Velocity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_rigid_body_a7eba2259f9a89ba9bed2a6ad97d1a5af}{Physics\+::\+Rigid\+Body}}.
+
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_aeb04a4057f4a3bc8469b952b5b88345c}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!GetInternal@{GetInternal}}
+\index{GetInternal@{GetInternal}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{GetInternal()}{GetInternal()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_aeb04a4057f4a3bc8469b952b5b88345c} 
+rp3d\+::\+Rigid\+Body \texorpdfstring{$\ast$}{*} Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::\+Get\+Internal (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_1_1_backend_1_1_rigid_body_backend_aeb04a4057f4a3bc8469b952b5b88345c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_aafaffe2ddc7aaa500eeb6425aacfc38d}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!GetLinearVelocity@{GetLinearVelocity}}
+\index{GetLinearVelocity@{GetLinearVelocity}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{GetLinearVelocity()}{GetLinearVelocity()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_aafaffe2ddc7aaa500eeb6425aacfc38d} 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::\+Get\+Linear\+Velocity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_rigid_body_a179331f1de86a187c23ef7761a652dce}{Physics\+::\+Rigid\+Body}}.
+
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_a1bcf12aa810ec2a1f69906a49cc6cad5}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!GetMass@{GetMass}}
+\index{GetMass@{GetMass}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{GetMass()}{GetMass()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_a1bcf12aa810ec2a1f69906a49cc6cad5} 
+float Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::\+Get\+Mass (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_rigid_body_a634629a8385fcf7e03071dfad2b8317b}{Physics\+::\+Rigid\+Body}}.
+
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_a79a01e2da9968cdf3df414b55970dc2a}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!GetOrientation@{GetOrientation}}
+\index{GetOrientation@{GetOrientation}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{GetOrientation()}{GetOrientation()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_a79a01e2da9968cdf3df414b55970dc2a} 
+\mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::\+Get\+Orientation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_rigid_body_a63a0d221f9765592b84361c942b8f6cf}{Physics\+::\+Rigid\+Body}}.
+
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_ae32d3387c183a48908672772b3aaa5fb}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_ae32d3387c183a48908672772b3aaa5fb} 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::\+Get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_rigid_body_a0eaa4df0931990dc645c312209cae1ac}{Physics\+::\+Rigid\+Body}}.
+
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_a78a1df1a57ba31508d086960898884f1}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!GetType@{GetType}}
+\index{GetType@{GetType}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{GetType()}{GetType()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_a78a1df1a57ba31508d086960898884f1} 
+\mbox{\hyperlink{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2}{Body\+Type}} Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::\+Get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_rigid_body_aeb916b1d271e5ed48985441bb019ab82}{Physics\+::\+Rigid\+Body}}.
+
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_a1a191e9aa452d8fbda6434b005315a2e}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!Invalidate@{Invalidate}}
+\index{Invalidate@{Invalidate}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{Invalidate()}{Invalidate()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_a1a191e9aa452d8fbda6434b005315a2e} 
+void Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::\+Invalidate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_rigid_body_a9a4746734cec2fbd44f466a66a7a1dd5}{Physics\+::\+Rigid\+Body}}.
+
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_a3254456fdc2e1bb6245bf3de975562b0}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!IsDynamic@{IsDynamic}}
+\index{IsDynamic@{IsDynamic}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{IsDynamic()}{IsDynamic()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_a3254456fdc2e1bb6245bf3de975562b0} 
+bool Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::\+Is\+Dynamic (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_rigid_body_aacddecc8c08a26897d9240b8d50b056a}{Physics\+::\+Rigid\+Body}}.
+
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_ad2e3470233fb0aed11eecb75db8bed33}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!IsGravityEnabled@{IsGravityEnabled}}
+\index{IsGravityEnabled@{IsGravityEnabled}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{IsGravityEnabled()}{IsGravityEnabled()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_ad2e3470233fb0aed11eecb75db8bed33} 
+bool Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::\+Is\+Gravity\+Enabled (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_rigid_body_a16753e4c6a4c21fad952a86dd7d45d39}{Physics\+::\+Rigid\+Body}}.
+
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_abc398533a504d9a22536066a11c374e9}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!IsValid@{IsValid}}
+\index{IsValid@{IsValid}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{IsValid()}{IsValid()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_abc398533a504d9a22536066a11c374e9} 
+bool Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::\+Is\+Valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_rigid_body_a2f0412b7a0f009b8e6182b0e913e1606}{Physics\+::\+Rigid\+Body}}.
+
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_afbc857b600d59e65095cbeaae3b8a795}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!OwnsCollider@{OwnsCollider}}
+\index{OwnsCollider@{OwnsCollider}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{OwnsCollider()}{OwnsCollider()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_afbc857b600d59e65095cbeaae3b8a795} 
+bool Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::\+Owns\+Collider (\begin{DoxyParamCaption}\item[{rp3d\+::\+Collider \texorpdfstring{$\ast$}{*}}]{c}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_aa2e649000fc4aeefd7be71e6ff30c087}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!RegisterCollider@{RegisterCollider}}
+\index{RegisterCollider@{RegisterCollider}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{RegisterCollider()}{RegisterCollider()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_aa2e649000fc4aeefd7be71e6ff30c087} 
+void Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::\+Register\+Collider (\begin{DoxyParamCaption}\item[{rp3d\+::\+Collider \texorpdfstring{$\ast$}{*}}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_ad117faeaa68a7ba390fcac9fd84f6ee8}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!SetAngularDamping@{SetAngularDamping}}
+\index{SetAngularDamping@{SetAngularDamping}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{SetAngularDamping()}{SetAngularDamping()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_ad117faeaa68a7ba390fcac9fd84f6ee8} 
+void Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::\+Set\+Angular\+Damping (\begin{DoxyParamCaption}\item[{float}]{damping}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_rigid_body_ae523fb2722794ed2e5466b3f022d778b}{Physics\+::\+Rigid\+Body}}.
+
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_a1d33e18aef597895318cf8f1c9eb8ac3}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!SetAngularLockAxis@{SetAngularLockAxis}}
+\index{SetAngularLockAxis@{SetAngularLockAxis}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{SetAngularLockAxis()}{SetAngularLockAxis()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_a1d33e18aef597895318cf8f1c9eb8ac3} 
+void Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::\+Set\+Angular\+Lock\+Axis (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{lock}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_rigid_body_abf8f5f785bd470586c7398b3d759d04d}{Physics\+::\+Rigid\+Body}}.
+
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_a495903d446a0965b316328e3ffe3a161}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!SetAngularVelocity@{SetAngularVelocity}}
+\index{SetAngularVelocity@{SetAngularVelocity}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{SetAngularVelocity()}{SetAngularVelocity()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_a495903d446a0965b316328e3ffe3a161} 
+void Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::\+Set\+Angular\+Velocity (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{vel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_rigid_body_a1d1780c8c7219bb4fe4910cf1333db04}{Physics\+::\+Rigid\+Body}}.
+
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_a50242f58fec8c30e9cce47b4513e966e}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!SetLinearVelocity@{SetLinearVelocity}}
+\index{SetLinearVelocity@{SetLinearVelocity}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{SetLinearVelocity()}{SetLinearVelocity()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_a50242f58fec8c30e9cce47b4513e966e} 
+void Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::\+Set\+Linear\+Velocity (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{vel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_rigid_body_a73039baddb28a06bde28a2682cc37436}{Physics\+::\+Rigid\+Body}}.
+
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_adaad3043157f9270a14457a9c2510bb6}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!SetMass@{SetMass}}
+\index{SetMass@{SetMass}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{SetMass()}{SetMass()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_adaad3043157f9270a14457a9c2510bb6} 
+void Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::\+Set\+Mass (\begin{DoxyParamCaption}\item[{float}]{mass}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_rigid_body_a9787414017781d2227edefdbb73091cb}{Physics\+::\+Rigid\+Body}}.
+
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_a27ce17f6748dc8fa7d62c2c9a1eec391}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_a27ce17f6748dc8fa7d62c2c9a1eec391} 
+void Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_rigid_body_a58bdc27fb0f7c887def20cd071346e59}{Physics\+::\+Rigid\+Body}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!m\_body@{m\_body}}
+\index{m\_body@{m\_body}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{m\_body}{m\_body}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f} 
+rp3d\+::\+Rigid\+Body\texorpdfstring{$\ast$}{*} Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::m\+\_\+body\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_a7d5c49d645bed62f6c075846fc8845d0}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!m\_liveColliders@{m\_liveColliders}}
+\index{m\_liveColliders@{m\_liveColliders}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{m\_liveColliders}{m\_liveColliders}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_a7d5c49d645bed62f6c075846fc8845d0} 
+std\+::vector$<$rp3d\+::\+Collider\texorpdfstring{$\ast$}{*}$>$ Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::m\+\_\+live\+Colliders\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_physics_1_1_backend_1_1_rigid_body_backend_a58d43395fd5cb6449e76ca2f2118b06b}\index{Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}!m\_valid@{m\_valid}}
+\index{m\_valid@{m\_valid}!Physics::Backend::RigidBodyBackend@{Physics::Backend::RigidBodyBackend}}
+\doxysubsubsection{\texorpdfstring{m\_valid}{m\_valid}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_rigid_body_backend_a58d43395fd5cb6449e76ca2f2118b06b} 
+bool Physics\+::\+Backend\+::\+Rigid\+Body\+Backend\+::m\+\_\+valid = true\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Physics/\mbox{\hyperlink{physics__backend_8hpp}{physics\+\_\+backend.\+hpp}}\end{DoxyCompactItemize}

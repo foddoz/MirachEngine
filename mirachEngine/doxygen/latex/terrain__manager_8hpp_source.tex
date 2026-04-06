@@ -1,0 +1,69 @@
+\doxysection{terrain\+\_\+manager.\+hpp}
+\hypertarget{terrain__manager_8hpp_source}{}\label{terrain__manager_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Terrain/terrain\_manager.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Terrain/terrain\_manager.hpp}}
+\mbox{\hyperlink{terrain__manager_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TERRAIN\_MANAGER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TERRAIN\_MANAGER\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{terrain__chunk_8hpp}{../Graphics/Meshes/terrain\_chunk.hpp}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{entity__manager_8hpp}{../ECS/entity\_manager.hpp}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{transform_8hpp}{../Transform/transform.hpp}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mesh__renderer_8hpp}{../Graphics/Rendering/mesh\_renderer.hpp}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{physics__system_8hpp}{../Physics/physics\_system.hpp}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_terrain_manager}{TerrainManager}}\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_manager_a898a6abcd4022dbb828932037cff7b4d}{Initialize}}(\textcolor{keyword}{const}\ std::vector<float>\&\ heightmap,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ terrainSize,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ chunkSize,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ minHeight,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ maxHeight,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ textureScale,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\&\ textureFiles);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_manager_ad680729dc5af97de82ddae13496b363e}{GenerateAllChunks}}();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_manager_a07c00a33754db3a50d50e83b0976de84}{UploadChunksToGPU}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_manager_a019ebedd94cb1fbe0a7b412478b1d41c}{RegisterChunksToECS}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ entityManager,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_system}{PhysicsSystem}}\&\ physicsSystem,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ terrainShader);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_manager_a939078fc7a682a62d98232a5820d0c43}{RegisterToECS}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ entityManager,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_system}{PhysicsSystem}}\&\ physicsSystem,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ terrainShader,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_mesh_terrain}{MeshTerrain}}\&\ terrain);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::unique\_ptr<TerrainChunk>>\&\ \mbox{\hyperlink{class_terrain_manager_a8688ce9f386697c69b4ced193daac828}{GetChunks}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<float>*\ \mbox{\hyperlink{class_terrain_manager_a657910d3ab0b32da4b6b1a140afafc42}{m\_globalHeightmap}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_terrain_manager_acb63b3dba199ddfcdc732d8d9778283a}{m\_terrainSize}}\ =\ 0;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_terrain_manager_a55ddb56e5f83a341e93d7784ee107f3d}{m\_chunkSize}}\ =\ 0;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_terrain_manager_a11c5c07f0ee455e964ae59f99f74abe2}{m\_minHeight}}\ =\ 0.0f;}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_terrain_manager_a35a46ed43fce6388a03acb6b5c7167e8}{m\_maxHeight}}\ =\ 0.0f;}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_terrain_manager_a597c0bb228763409d375cc6b4263b98e}{m\_textureScale}}\ =\ 1.0f;}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00109\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{class_terrain_manager_afe26899f79b11e5972f0cf4b398295ac}{m\_textureFileNames}};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00112\ \ \ \ \ std::vector<std::unique\_ptr<TerrainChunk>>\ \mbox{\hyperlink{class_terrain_manager_a9abfa47b56bba26063a085f14a13204b}{m\_chunks}};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00115\ \ \ \ \ std::vector<Texture*>\ \mbox{\hyperlink{class_terrain_manager_aa5dcc54d98df7baa64e6d3115cc537c4}{m\_sharedTextures}};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00118\ \ \ \ \ std::mutex\ \mbox{\hyperlink{class_terrain_manager_a53fceaa53f3bc13292dffb0ca73338e5}{m\_chunkMutex}};}
+\DoxyCodeLine{00119\ \};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TERRAIN\_MANAGER\_HPP}}
+
+\end{DoxyCode}

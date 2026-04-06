@@ -1,0 +1,649 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-RelWithDebInfo-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "mirachEngine",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4,
+						6
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-mirachEngine-RelWithDebInfo-d3d73f315722b4ee5527.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "mirachEngine",
+					"targetIndexes" : 
+					[
+						33,
+						34,
+						35,
+						36
+					]
+				},
+				{
+					"build" : "_deps/sol2-build",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.sol2-build-RelWithDebInfo-29ec96d08e5fa43b0022.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27
+					]
+				},
+				{
+					"build" : "_deps/sdl-build",
+					"jsonFile" : "directory-_deps.sdl-build-RelWithDebInfo-de842c15a5724428a797.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 3,
+					"source" : "mirachEngine/dependencies/download/sdl/3777ee09ad2a7e06e722eaf2a74e2df755d81cad/sdl",
+					"targetIndexes" : 
+					[
+						28,
+						29,
+						30
+					]
+				},
+				{
+					"build" : "_deps/glm-build",
+					"childIndexes" : 
+					[
+						5
+					],
+					"jsonFile" : "directory-_deps.glm-build-RelWithDebInfo-f002059c8ffad97f78e2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 4,
+					"source" : "out/build/x64-Release/_deps/glm-src"
+				},
+				{
+					"build" : "_deps/glm-build/glm",
+					"jsonFile" : "directory-_deps.glm-build.glm-RelWithDebInfo-c5c8467ffdf627a2395a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 4,
+					"projectIndex" : 4,
+					"source" : "out/build/x64-Release/_deps/glm-src/glm"
+				},
+				{
+					"build" : "_deps/assimp-build",
+					"childIndexes" : 
+					[
+						7,
+						8,
+						9
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.assimp-build-RelWithDebInfo-3164e75477ab0f36db13.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 5,
+					"source" : "out/build/x64-Release/_deps/assimp-src",
+					"targetIndexes" : 
+					[
+						31,
+						37
+					]
+				},
+				{
+					"build" : "_deps/assimp-build/contrib/zlib",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.assimp-build.contrib.zlib-RelWithDebInfo-9738096b674dea9eabc2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10.0"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 6,
+					"source" : "out/build/x64-Release/_deps/assimp-src/contrib/zlib",
+					"targetIndexes" : 
+					[
+						39
+					]
+				},
+				{
+					"build" : "_deps/assimp-build/code",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.assimp-build.code-RelWithDebInfo-83d3431ae7f06e3e22bc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 5,
+					"source" : "out/build/x64-Release/_deps/assimp-src/code",
+					"targetIndexes" : 
+					[
+						32
+					]
+				},
+				{
+					"build" : "_deps/assimp-build/test",
+					"childIndexes" : 
+					[
+						10
+					],
+					"jsonFile" : "directory-_deps.assimp-build.test-RelWithDebInfo-1fc9dc6a03e86b81cddb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 5,
+					"source" : "out/build/x64-Release/_deps/assimp-src/test",
+					"targetIndexes" : 
+					[
+						38
+					]
+				},
+				{
+					"build" : "_deps/assimp-build/test/headercheck",
+					"jsonFile" : "directory-_deps.assimp-build.test.headercheck-RelWithDebInfo-2fb0a9e64887ee4eb01f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 9,
+					"projectIndex" : 5,
+					"source" : "out/build/x64-Release/_deps/assimp-src/test/headercheck"
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ICT397_Project"
+				},
+				{
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4,
+						5
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "mirach",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						33,
+						34,
+						35,
+						36
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "sol2",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "SDL3",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						28,
+						29,
+						30
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4,
+						5
+					],
+					"name" : "glm",
+					"parentIndex" : 1
+				},
+				{
+					"childIndexes" : 
+					[
+						6
+					],
+					"directoryIndexes" : 
+					[
+						6,
+						8,
+						9,
+						10
+					],
+					"name" : "Assimp",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						31,
+						32,
+						37,
+						38
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						7
+					],
+					"name" : "zlib",
+					"parentIndex" : 5,
+					"targetIndexes" : 
+					[
+						39
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "Continuous::@9c379972b23dfa81a253",
+					"jsonFile" : "target-Continuous-RelWithDebInfo-10079b25eb582a0c8b1c.json",
+					"name" : "Continuous",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ContinuousBuild::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ContinuousBuild-RelWithDebInfo-3486a023364c52118e44.json",
+					"name" : "ContinuousBuild",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ContinuousConfigure::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ContinuousConfigure-RelWithDebInfo-06432a31c8413d7da514.json",
+					"name" : "ContinuousConfigure",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ContinuousCoverage::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ContinuousCoverage-RelWithDebInfo-5a3a7f288d6b5ba22760.json",
+					"name" : "ContinuousCoverage",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ContinuousMemCheck::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ContinuousMemCheck-RelWithDebInfo-0ec30ba31625000ceb5a.json",
+					"name" : "ContinuousMemCheck",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ContinuousStart::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ContinuousStart-RelWithDebInfo-46519c5c8520ac527917.json",
+					"name" : "ContinuousStart",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ContinuousSubmit::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ContinuousSubmit-RelWithDebInfo-951e01ba8bcbaf6a24cd.json",
+					"name" : "ContinuousSubmit",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ContinuousTest::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ContinuousTest-RelWithDebInfo-9c3ae11bb82e6040b792.json",
+					"name" : "ContinuousTest",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ContinuousUpdate::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ContinuousUpdate-RelWithDebInfo-874e03de1adc5ca10257.json",
+					"name" : "ContinuousUpdate",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Experimental::@9c379972b23dfa81a253",
+					"jsonFile" : "target-Experimental-RelWithDebInfo-d6e0aab1fb5b7f59c69e.json",
+					"name" : "Experimental",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ExperimentalBuild::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ExperimentalBuild-RelWithDebInfo-cfe9d9a338ee4d12826b.json",
+					"name" : "ExperimentalBuild",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ExperimentalConfigure::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ExperimentalConfigure-RelWithDebInfo-2d437f032a828e5a6d6b.json",
+					"name" : "ExperimentalConfigure",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ExperimentalCoverage::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ExperimentalCoverage-RelWithDebInfo-b903fd3e23994c9a53fb.json",
+					"name" : "ExperimentalCoverage",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ExperimentalMemCheck::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ExperimentalMemCheck-RelWithDebInfo-34a70c23cec93de78dd7.json",
+					"name" : "ExperimentalMemCheck",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ExperimentalStart::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ExperimentalStart-RelWithDebInfo-cbbad311419d24def142.json",
+					"name" : "ExperimentalStart",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ExperimentalSubmit::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ExperimentalSubmit-RelWithDebInfo-0511f3634ee0955dc764.json",
+					"name" : "ExperimentalSubmit",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ExperimentalTest::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ExperimentalTest-RelWithDebInfo-c78df65f4199382fcf36.json",
+					"name" : "ExperimentalTest",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ExperimentalUpdate::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ExperimentalUpdate-RelWithDebInfo-34c83dff25e4770e7307.json",
+					"name" : "ExperimentalUpdate",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Nightly::@9c379972b23dfa81a253",
+					"jsonFile" : "target-Nightly-RelWithDebInfo-f1e9ddd2ceb53f8a4fbf.json",
+					"name" : "Nightly",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "NightlyBuild::@9c379972b23dfa81a253",
+					"jsonFile" : "target-NightlyBuild-RelWithDebInfo-756730d10df98538743c.json",
+					"name" : "NightlyBuild",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "NightlyConfigure::@9c379972b23dfa81a253",
+					"jsonFile" : "target-NightlyConfigure-RelWithDebInfo-79b9c6769422873c9b2d.json",
+					"name" : "NightlyConfigure",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "NightlyCoverage::@9c379972b23dfa81a253",
+					"jsonFile" : "target-NightlyCoverage-RelWithDebInfo-a786b6350ec1f4338f0d.json",
+					"name" : "NightlyCoverage",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "NightlyMemCheck::@9c379972b23dfa81a253",
+					"jsonFile" : "target-NightlyMemCheck-RelWithDebInfo-c2fc1f6062c65f9d2f85.json",
+					"name" : "NightlyMemCheck",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "NightlyMemoryCheck::@9c379972b23dfa81a253",
+					"jsonFile" : "target-NightlyMemoryCheck-RelWithDebInfo-83a2bddb2b187638198a.json",
+					"name" : "NightlyMemoryCheck",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "NightlyStart::@9c379972b23dfa81a253",
+					"jsonFile" : "target-NightlyStart-RelWithDebInfo-efeaaa91f177496b3360.json",
+					"name" : "NightlyStart",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "NightlySubmit::@9c379972b23dfa81a253",
+					"jsonFile" : "target-NightlySubmit-RelWithDebInfo-9e869f81236b6811e486.json",
+					"name" : "NightlySubmit",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "NightlyTest::@9c379972b23dfa81a253",
+					"jsonFile" : "target-NightlyTest-RelWithDebInfo-450c0b98b175313d3bf9.json",
+					"name" : "NightlyTest",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "NightlyUpdate::@9c379972b23dfa81a253",
+					"jsonFile" : "target-NightlyUpdate-RelWithDebInfo-175d389f67355e86b148.json",
+					"name" : "NightlyUpdate",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "SDL3-static::@fc7b397d5a055aba6d5e",
+					"jsonFile" : "target-SDL3-static-RelWithDebInfo-730e8b4fe63707f254d2.json",
+					"name" : "SDL3-static",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "SDL3_test::@fc7b397d5a055aba6d5e",
+					"jsonFile" : "target-SDL3_test-RelWithDebInfo-8149964f57ef598822ca.json",
+					"name" : "SDL3_test",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "SDL_uclibc::@fc7b397d5a055aba6d5e",
+					"jsonFile" : "target-SDL_uclibc-RelWithDebInfo-81b6a2fa9760bb731f4e.json",
+					"name" : "SDL_uclibc",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "UpdateAssimpLibsDebugSymbolsAndDLLs::@ca610b3f87d797c23346",
+					"jsonFile" : "target-UpdateAssimpLibsDebugSymbolsAndDLLs-RelWithDebInfo-3c538141686d3663919e.json",
+					"name" : "UpdateAssimpLibsDebugSymbolsAndDLLs",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "assimp::@b1ea6f5c2178ebc90389",
+					"jsonFile" : "target-assimp-RelWithDebInfo-171a354ab5e67e788fe5.json",
+					"name" : "assimp",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "glad::@05bd52cf8d1c99c2443e",
+					"jsonFile" : "target-glad-RelWithDebInfo-a545a2e3bb0d08ce57c6.json",
+					"name" : "glad",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "lua::@05bd52cf8d1c99c2443e",
+					"jsonFile" : "target-lua-RelWithDebInfo-33d660fac71154372df7.json",
+					"name" : "lua",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "mirach::@05bd52cf8d1c99c2443e",
+					"jsonFile" : "target-mirach-RelWithDebInfo-bcc0b6248862caaee442.json",
+					"name" : "mirach",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "mirach_game::@05bd52cf8d1c99c2443e",
+					"jsonFile" : "target-mirach_game-RelWithDebInfo-45cdff92e2188baa9ee3.json",
+					"name" : "mirach_game",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "uninstall::@ca610b3f87d797c23346",
+					"jsonFile" : "target-uninstall-RelWithDebInfo-abe9a01626660e9305a0.json",
+					"name" : "uninstall",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "unit::@793d8fb20316ba2f33fd",
+					"jsonFile" : "target-unit-RelWithDebInfo-6cad45a5985c3d8bd3ce.json",
+					"name" : "unit",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "zlibstatic::@7fd99959cf8fe87d223a",
+					"jsonFile" : "target-zlibstatic-RelWithDebInfo-10f746998c46fb52bdc5.json",
+					"name" : "zlibstatic",
+					"projectIndex" : 6
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/out/build/x64-Release",
+		"source" : "C:/Users/Liam/Documents/ICT397/Project/ICT397-Project"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}

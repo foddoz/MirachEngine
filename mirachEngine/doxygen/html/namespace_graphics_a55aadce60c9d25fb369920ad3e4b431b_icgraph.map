@@ -1,0 +1,30 @@
+<map id="Graphics::UnbindVertexArray" name="Graphics::UnbindVertexArray">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1000,157,1190,184"/>
+<area shape="rect" id="Node000002" href="$class_mesh_terrain.html#a7cd9ecf88516b6716cb76b804e8bd61b" title=" " alt="" coords="763,5,930,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1071,147,1019,95,986,69,951,46,923,35,925,30,953,42,990,64,1023,91,1074,143"/>
+<area shape="rect" id="Node000004" href="$class_mesh_m_d2.html#a296a12dbea02874b8a4ea7e450f63e3f" title="Fills OpenGL buffers with mesh data (called from UploadToGPU)." alt="" coords="756,56,937,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1058,151,1008,123,951,97,915,86,917,81,953,92,1011,119,1060,146"/>
+<area shape="rect" id="Node000006" href="$class_mesh_sky_dome.html#ab4c16fb980037e0ede6a41f8a08ba816" title="Generates VAO, VBO, and IBO and uploads vertex/index data to the GPU." alt="" coords="741,107,952,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1010,156,915,137,916,131,1012,151"/>
+<area shape="rect" id="Node000008" href="$render__system_8cpp.html#a079030225b1b31b63cc28799a7923ff0" title="Renders a skybox or skydome mesh as a background element." alt="" coords="793,157,900,184"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="984,173,901,173,901,168,984,168"/>
+<area shape="rect" id="Node000009" href="$render__system_8cpp.html#a8cce4f902aee95fff82f762a4fcd10be" title="Core ECS&#45;based rendering system." alt="" coords="537,183,645,209"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="1015,190,952,199,868,204,784,205,645,202,646,196,784,200,868,198,952,193,1015,185"/>
+<area shape="rect" id="Node000013" href="$class_mesh_file.html#a4941fd25cb0aa2b390a2ced9c80bfe00" title="Uploads vertex/index data and textures to GPU buffers." alt="" coords="763,259,930,285"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="1057,194,953,242,899,261,898,256,951,238,1054,189"/>
+<area shape="rect" id="Node000014" href="$class_mesh_terrain.html#a7f27655ea001536d577eefcaff6421e6" title="Uploads generated mesh data and textures to the GPU." alt="" coords="754,309,938,336"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="1074,198,1023,250,990,277,953,300,925,311,923,306,951,295,986,273,1019,246,1071,194"/>
+<area shape="rect" id="Node000003" href="$class_mesh_terrain.html#a02d8c1492362365710a818b9a4674774" title="Converts the terrain to a renderable mesh component." alt="" coords="507,5,675,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="748,21,675,21,675,16,748,16"/>
+<area shape="rect" id="Node000005" href="$class_mesh_m_d2.html#a1f00d6728c70d5f12aa2cfc49411abc2" title="Uploads the current mesh data to the GPU." alt="" coords="504,56,678,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="740,72,678,72,678,67,740,67"/>
+<area shape="rect" id="Node000007" href="$class_mesh_sky_dome.html#a9189a41803ef3ba5e0058ba2263dea44" title="Uploads geometry and texture data from CPU to GPU." alt="" coords="489,107,693,133"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="725,123,693,123,693,117,725,117"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="777,180,646,193,645,188,777,175"/>
+<area shape="rect" id="Node000010" href="$class_terrain_scene.html#a55eb34067d9346aa7d9c3295a9e2dfb0" title="Executes the main loop: input, update, physics, animation, and rendering." alt="" coords="280,183,441,209"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="521,199,442,199,442,193,521,193"/>
+<area shape="rect" id="Node000011" href="$class_terrain_scene.html#ae8ec4e098386a74714255aed184761eb" title="Runs the full scene lifecycle in the correct execution order." alt="" coords="103,183,232,209"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="264,199,232,199,232,193,264,193"/>
+<area shape="rect" id="Node000012" href="$mirach_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point of the engine. Initializes subsystems, loads models, sets up ECS,..." alt="" coords="5,183,55,209"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="87,199,55,199,55,193,87,193"/>
+</map>

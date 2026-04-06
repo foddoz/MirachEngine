@@ -1,0 +1,21 @@
+<map id="MeshFile::UploadToGPU" name="MeshFile::UploadToGPU">
+<area shape="rect" id="Node000001" title="Uploads vertex/index data and textures to GPU buffers." alt="" coords="5,107,172,133"/>
+<area shape="rect" id="Node000002" href="$namespace_graphics.html#a6f4d24e455fdef40dfe6b467f9b3d6d4" title=" " alt="" coords="227,5,402,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,104,157,73,219,42,238,34,239,39,221,46,160,78,111,108"/>
+<area shape="rect" id="Node000003" href="$namespace_graphics.html#a8109b501f710603a722a06a5c02ac5b8" title=" " alt="" coords="245,56,384,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="151,103,237,84,238,89,152,109"/>
+<area shape="rect" id="Node000004" href="$namespace_graphics.html#ae7b4fc0d405f3edef698219b304c4e97" title=" " alt="" coords="228,107,402,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="172,117,213,117,213,123,172,123"/>
+<area shape="rect" id="Node000005" href="$class_mesh_file.html#a6b05f6a342db7e1c2e324ce779988c29" title="Creates OpenGL buffers and uploads mesh data to the GPU." alt="" coords="228,157,402,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="152,131,238,151,237,156,151,137"/>
+<area shape="rect" id="Node000010" href="$namespace_graphics.html#a55aadce60c9d25fb369920ad3e4b431b" title=" " alt="" coords="220,208,410,235"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="111,132,160,162,221,194,239,201,238,206,219,198,157,167,108,136"/>
+<area shape="rect" id="Node000006" href="$namespace_graphics.html#a4765b419f51cd4a0d45b84dd4f7d7f17" title=" " alt="" coords="482,81,623,108"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="375,154,409,143,433,130,457,118,477,110,479,115,459,122,435,135,411,148,377,159"/>
+<area shape="rect" id="Node000007" href="$namespace_graphics.html#a6a2b8b04edd45dc9bbf6b70af7c5b16d" title=" " alt="" coords="481,132,624,159"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="402,159,466,152,466,157,403,164"/>
+<area shape="rect" id="Node000008" href="$namespace_graphics.html#aa184d03626711a8afe423b4a50442c12" title=" " alt="" coords="458,183,647,209"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="403,177,443,182,442,187,402,183"/>
+<area shape="rect" id="Node000009" href="$namespace_graphics.html#a9334eb7750459b3f968a9bf13eb7f6b4" title=" " alt="" coords="468,233,637,276"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="377,182,411,194,435,206,459,219,473,225,471,230,457,224,433,211,409,198,375,187"/>
+</map>

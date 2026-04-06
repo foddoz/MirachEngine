@@ -1,0 +1,70 @@
+.TH "HealthBarRenderer" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HealthBarRenderer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <healthBar\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBInit\fP ()"
+.br
+.ti -1c
+.RI "void \fBRender\fP (float current, float max)"
+.br
+.ti -1c
+.RI "void \fBShutdown\fP ()"
+.br
+.ti -1c
+.RI "void \fBRenderBackground\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBCreateShader\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "GLuint \fBVAO\fP"
+.br
+.ti -1c
+.RI "GLuint \fBVBO\fP"
+.br
+.ti -1c
+.RI "GLuint \fBshaderProgram\fP"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "void HealthBarRenderer::CreateShader ()\fR [private]\fP"
+
+.SS "void HealthBarRenderer::Init ()"
+
+.SS "void HealthBarRenderer::Render (float current, float max)"
+
+.SS "void HealthBarRenderer::RenderBackground ()"
+
+.SS "void HealthBarRenderer::Shutdown ()"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "GLuint HealthBarRenderer::shaderProgram\fR [private]\fP"
+
+.SS "GLuint HealthBarRenderer::VAO\fR [private]\fP"
+
+.SS "GLuint HealthBarRenderer::VBO\fR [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

@@ -1,0 +1,21 @@
+<map id="Physics::World::RegisterCollisionCallback" name="Physics::World::RegisterCollisionCallback">
+<area shape="rect" id="Node000001" title="Registers a global collision callback for contact events." alt="" coords="1178,39,1345,81"/>
+<area shape="rect" id="Node000002" href="$class_player_script.html#a6340ea8b57a324cdf80747afbadffbef" title="Applies an internal impulse to a specific object." alt="" coords="948,5,1128,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1163,48,1128,43,1129,38,1163,43"/>
+<area shape="rect" id="Node000008" href="$class_i_enemy_state_logic.html#aa2c870d75eaf6bf1bb9dec538b0f57fb" title="Registers a collision callback to apply damage to the player." alt="" coords="945,72,1130,115"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1163,77,1131,82,1130,77,1162,72"/>
+<area shape="rect" id="Node000003" href="$class_player_script.html#a1f56c64cd8cee085e6d64910b6a9acf7" title="Attempts to launch a held object forward with force." alt="" coords="714,13,894,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="932,29,895,29,895,24,932,24"/>
+<area shape="rect" id="Node000004" href="$class_player_script.html#acf49a0688d3e9aac48601f9aebcf9207" title="Applies movement, jumping, and object interaction logic after the physics update." alt="" coords="489,5,664,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="699,29,664,29,664,24,699,24"/>
+<area shape="rect" id="Node000005" href="$class_terrain_scene.html#a55eb34067d9346aa7d9c3295a9e2dfb0" title="Executes the main loop: input, update, physics, animation, and rendering." alt="" coords="280,13,441,40"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="474,29,442,29,442,24,474,24"/>
+<area shape="rect" id="Node000006" href="$class_terrain_scene.html#ae8ec4e098386a74714255aed184761eb" title="Runs the full scene lifecycle in the correct execution order." alt="" coords="103,13,232,40"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="264,29,232,29,232,24,264,24"/>
+<area shape="rect" id="Node000007" href="$mirach_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point of the engine. Initializes subsystems, loads models, sets up ECS,..." alt="" coords="5,13,55,40"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+<area shape="rect" id="Node000009" href="$classenemy_state.html#a1c1bf6785b0e98fe2a2931f37756a4d6" title="Animation index reference." alt="" coords="713,72,896,99"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="929,92,896,91,896,86,929,87"/>
+<area shape="rect" id="Node000010" href="$classhover_enemy_state.html#a7c5d71325dc0ee5ab4e1273a56cf76e2" title="Called when entering the attack state." alt="" coords="712,123,897,165"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="930,119,898,126,897,121,929,114"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="enemyState::onDeathEnter" name="enemyState::onDeathEnter">
+<area shape="rect" id="Node000001" title="Called when entering the Death state. Triggers death animation." alt="" coords="5,5,185,32"/>
+<area shape="rect" id="Node000002" href="$class_enemy.html#a15a7cf1b50848f5fe57062e376f83e61" title="Sets the current animation by name." alt="" coords="233,5,381,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,16,217,16,217,21,185,21"/>
+</map>

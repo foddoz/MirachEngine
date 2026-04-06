@@ -1,0 +1,378 @@
+.TH "C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/Graphics/graphics.hpp" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/Graphics/graphics.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <glad/gl\&.h>\fP
+.br
+\fR#include '\&.\&./Math/math\&.hpp'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBColor\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBGraphics\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBPOSITION_LOCATION\fP   0"
+.br
+.ti -1c
+.RI "#define \fBTEX_COORD_LOCATION\fP   1"
+.br
+.ti -1c
+.RI "#define \fBNORMAL_LOCATION\fP   2"
+.br
+.ti -1c
+.RI "#define \fBCOLOR_TEXTURE_UNIT\fP   GL_TEXTURE0"
+.br
+.ti -1c
+.RI "#define \fBCOLOR_TEXTURE_UNIT_INDEX_0\fP   0"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum class \fBCapability\fP : unsigned int { \fBCullFace\fP = 0x0B44, \fBDepthTest\fP = 0x0B71, \fBBlend\fP = 0x0BE2 }"
+.br
+.ti -1c
+.RI "enum class \fBCullFaceMode\fP : unsigned int { \fBFront\fP = 0x0404, \fBBack\fP = 0x0405, \fBFrontAndBack\fP = 0x0408 }"
+.br
+.ti -1c
+.RI "enum class \fBFrontFaceOrder\fP : unsigned int { \fBCW\fP = 0x0900, \fBCCW\fP = 0x0901 }"
+.br
+.ti -1c
+.RI "enum class \fBDrawMode\fP : unsigned int { \fBTriangles\fP = 0x0004, \fBLines\fP = 0x0001 }"
+.br
+.ti -1c
+.RI "enum class \fBDataType\fP : unsigned int { \fBUnsignedByte\fP = 0x1401, \fBUnsignedShort\fP = 0x1403, \fBUnsignedInt\fP = 0x1405, \fBFloat\fP = 0x1406 }"
+.br
+.ti -1c
+.RI "enum class \fBBufferTarget\fP : unsigned int { \fBArrayBuffer\fP = 0x8892, \fBElementArrayBuffer\fP = 0x8893 }"
+.br
+.ti -1c
+.RI "enum class \fBBufferUsage\fP : unsigned int { \fBStaticDraw\fP = 0x88E4, \fBDynamicDraw\fP = 0x88E8 }"
+.br
+.ti -1c
+.RI "enum class \fBBufferBit\fP : unsigned int { \fBColor\fP = 0x00004000, \fBDepth\fP = 0x00000100, \fBStencil\fP = 0x00000400 }"
+.br
+.ti -1c
+.RI "enum class \fBShaderType\fP : unsigned int { \fBVertex\fP = 0x8B31, \fBFragment\fP = 0x8B30 }"
+.br
+.ti -1c
+.RI "enum class \fBTextureTarget\fP : unsigned int { \fBTexture2D\fP = 0x0DE1, \fBCubeMap\fP = 0x8513 }"
+.br
+.ti -1c
+.RI "enum class \fBTextureFormat\fP : unsigned int { \fBRed\fP = 0x1903, \fBRGB\fP = 0x1907, \fBRGBA\fP = 0x1908 }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "unsigned int \fBoperator|\fP (\fBBufferBit\fP a, \fBBufferBit\fP b)"
+.br
+.ti -1c
+.RI "void \fBGraphics::ClearColor\fP (float r, float g, float b, float a)"
+.br
+.ti -1c
+.RI "void \fBGraphics::Viewport\fP (int x, int y, float width, float height)"
+.br
+.ti -1c
+.RI "void \fBGraphics::Clear\fP (unsigned int mask)"
+.br
+.ti -1c
+.RI "void \fBGraphics::Enable\fP (\fBCapability\fP cap)"
+.br
+.ti -1c
+.RI "void \fBGraphics::Disable\fP (\fBCapability\fP cap)"
+.br
+.ti -1c
+.RI "void \fBGraphics::SetCullFace\fP (\fBCullFaceMode\fP mode)"
+.br
+.ti -1c
+.RI "void \fBGraphics::SetFrontFace\fP (\fBFrontFaceOrder\fP order)"
+.br
+.ti -1c
+.RI "void \fBGraphics::SetDepthWrite\fP (bool enable)"
+.br
+.ti -1c
+.RI "void \fBGraphics::UseProgram\fP (unsigned int program)"
+.br
+.ti -1c
+.RI "int \fBGraphics::GetUniformLocation\fP (unsigned int programID, const std::string &name)"
+.br
+.ti -1c
+.RI "void \fBGraphics::SetUniformMat4\fP (int location, const float *matrixPtr)"
+.br
+.ti -1c
+.RI "void \fBGraphics::SetUniform1f\fP (int location, float value)"
+.br
+.ti -1c
+.RI "void \fBGraphics::SetUniform1i\fP (int location, int value)"
+.br
+.ti -1c
+.RI "void \fBGraphics::SetUniform3f\fP (int location, float x, float y, float z)"
+.br
+.ti -1c
+.RI "void \fBGraphics::GenVertexArray\fP (unsigned int &vao)"
+.br
+.ti -1c
+.RI "void \fBGraphics::GenBuffer\fP (unsigned int &buffer)"
+.br
+.ti -1c
+.RI "void \fBGraphics::BufferSubData\fP (\fBBufferTarget\fP target, size_t offset, size_t size, const void *data)"
+.br
+.ti -1c
+.RI "void \fBGraphics::BindVertexArray\fP (unsigned int vao)"
+.br
+.ti -1c
+.RI "void \fBGraphics::BindBuffer\fP (\fBBufferTarget\fP target, unsigned int buffer)"
+.br
+.ti -1c
+.RI "void \fBGraphics::UnbindVertexArray\fP ()"
+.br
+.ti -1c
+.RI "void \fBGraphics::UnbindBuffer\fP (\fBBufferTarget\fP target)"
+.br
+.ti -1c
+.RI "void \fBGraphics::BufferData\fP (\fBBufferTarget\fP target, size_t size, const void *data, \fBBufferUsage\fP usage)"
+.br
+.ti -1c
+.RI "void \fBGraphics::EnableVertexAttrib\fP (unsigned int location)"
+.br
+.ti -1c
+.RI "void \fBGraphics::SetVertexAttribPointer\fP (unsigned int location, int componentCount, \fBDataType\fP type, bool normalized, size_t stride, const void *offset)"
+.br
+.ti -1c
+.RI "void \fBGraphics::DeleteBuffer\fP (unsigned int &bufferID)"
+.br
+.ti -1c
+.RI "void \fBGraphics::DeleteVertexArray\fP (unsigned int &vaoID)"
+.br
+.ti -1c
+.RI "void \fBGraphics::GenTexture\fP (unsigned int &id)"
+.br
+.ti -1c
+.RI "void \fBGraphics::BindTexture\fP (\fBTextureTarget\fP target, unsigned int textureID)"
+.br
+.ti -1c
+.RI "void \fBGraphics::ActiveTextureUnit\fP (unsigned int unit)"
+.br
+.ti -1c
+.RI "void \fBGraphics::TexImage2D\fP (\fBTextureTarget\fP target, int width, int height, \fBTextureFormat\fP format, const void *data)"
+.br
+.ti -1c
+.RI "void \fBGraphics::GenerateMipmaps\fP (\fBTextureTarget\fP target)"
+.br
+.ti -1c
+.RI "void \fBGraphics::DeleteTexture\fP (unsigned int &id)"
+.br
+.ti -1c
+.RI "void \fBGraphics::DrawElements\fP (\fBDrawMode\fP mode, int count, \fBDataType\fP type, const void *indices)"
+.br
+.ti -1c
+.RI "void \fBGraphics::DrawElementsBaseVertex\fP (\fBDrawMode\fP mode, int count, \fBDataType\fP type, const void *indices, int baseVertex)"
+.br
+.ti -1c
+.RI "unsigned int \fBGraphics::GetCurrentVertexArray\fP ()"
+.br
+.ti -1c
+.RI "void \fBGraphics::UnbindProgram\fP ()"
+.br
+.ti -1c
+.RI "void \fBGraphics::DrawArrays\fP (\fBDrawMode\fP mode, int first, int count)"
+.br
+.ti -1c
+.RI "unsigned int \fBGraphics::GetError\fP ()"
+.br
+.ti -1c
+.RI "bool \fBGraphics::CheckGraphicsError\fP ()"
+.br
+.ti -1c
+.RI "unsigned int \fBGraphics::CreateShader\fP (\fBShaderType\fP type)"
+.br
+.ti -1c
+.RI "void \fBGraphics::SetShaderSource\fP (unsigned int shaderID, const std::string &source)"
+.br
+.ti -1c
+.RI "void \fBGraphics::CompileShader\fP (unsigned int shaderID)"
+.br
+.ti -1c
+.RI "bool \fBGraphics::GetShaderCompileStatus\fP (unsigned int shaderID, std::string *outLog=nullptr)"
+.br
+.ti -1c
+.RI "unsigned int \fBGraphics::CreateProgram\fP ()"
+.br
+.ti -1c
+.RI "void \fBGraphics::AttachShader\fP (unsigned int programID, unsigned int shaderID)"
+.br
+.ti -1c
+.RI "void \fBGraphics::LinkProgram\fP (unsigned int programID)"
+.br
+.ti -1c
+.RI "bool \fBGraphics::GetProgramLinkStatus\fP (unsigned int programID, std::string *outLog=nullptr)"
+.br
+.ti -1c
+.RI "unsigned int \fBGraphics::CreateEmptyBuffer\fP (size_t size)"
+.br
+.ti -1c
+.RI "void \fBGraphics::OverridePositionVBO\fP (unsigned int vbo, int location=\fBPOSITION_LOCATION\fP)"
+.br
+.ti -1c
+.RI "int \fBGraphics::GetActiveUniformCount\fP (unsigned int programID)"
+.br
+.ti -1c
+.RI "void \fBGraphics::DeleteShader\fP (unsigned int shaderID)"
+.br
+.ti -1c
+.RI "void \fBGraphics::DeleteProgram\fP (unsigned int &programID)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define COLOR_TEXTURE_UNIT   GL_TEXTURE0"
+
+.SS "#define COLOR_TEXTURE_UNIT_INDEX_0   0"
+
+.SS "#define NORMAL_LOCATION   2"
+
+.SS "#define POSITION_LOCATION   0"
+
+.SS "#define TEX_COORD_LOCATION   1"
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum class \fBBufferBit\fP : unsigned int\fR [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIColor \fP
+.TP
+\f(BIDepth \fP
+.TP
+\f(BIStencil \fP
+.SS "enum class \fBBufferTarget\fP : unsigned int\fR [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIArrayBuffer \fP
+.TP
+\f(BIElementArrayBuffer \fP
+.SS "enum class \fBBufferUsage\fP : unsigned int\fR [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIStaticDraw \fP
+.TP
+\f(BIDynamicDraw \fP
+.SS "enum class \fBCapability\fP : unsigned int\fR [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BICullFace \fP
+.TP
+\f(BIDepthTest \fP
+.TP
+\f(BIBlend \fP
+.SS "enum class \fBCullFaceMode\fP : unsigned int\fR [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIFront \fP
+.TP
+\f(BIBack \fP
+.TP
+\f(BIFrontAndBack \fP
+.SS "enum class \fBDataType\fP : unsigned int\fR [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIUnsignedByte \fP
+.TP
+\f(BIUnsignedShort \fP
+.TP
+\f(BIUnsignedInt \fP
+.TP
+\f(BIFloat \fP
+.SS "enum class \fBDrawMode\fP : unsigned int\fR [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BITriangles \fP
+.TP
+\f(BILines \fP
+.SS "enum class \fBFrontFaceOrder\fP : unsigned int\fR [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BICW \fP
+.TP
+\f(BICCW \fP
+.SS "enum class \fBShaderType\fP : unsigned int\fR [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIVertex \fP
+.TP
+\f(BIFragment \fP
+.SS "enum class \fBTextureFormat\fP : unsigned int\fR [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIRed \fP
+.TP
+\f(BIRGB \fP
+.TP
+\f(BIRGBA \fP
+.SS "enum class \fBTextureTarget\fP : unsigned int\fR [strong]\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BITexture2D \fP
+.TP
+\f(BICubeMap \fP
+.SH "Function Documentation"
+.PP 
+.SS "unsigned int operator| (\fBBufferBit\fP a, \fBBufferBit\fP b)\fR [inline]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

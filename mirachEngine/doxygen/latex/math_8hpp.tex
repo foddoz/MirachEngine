@@ -1,0 +1,570 @@
+\doxysection{C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Math/math.hpp File Reference}
+\hypertarget{math_8hpp}{}\label{math_8hpp}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Math/math.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Math/math.hpp}}
+
+
+Provides math utilities, vector/matrix types, transformation functions, and \doxylink{struct_a_a_b_b}{AABB} logic using GLM.  
+
+
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$glm/glm.\+hpp$>$}\newline
+{\ttfamily \#include $<$glm/gtc/matrix\+\_\+transform.\+hpp$>$}\newline
+{\ttfamily \#include $<$glm/gtc/quaternion.\+hpp$>$}\newline
+{\ttfamily \#include $<$glm/gtx/quaternion.\+hpp$>$}\newline
+{\ttfamily \#include $<$glm/gtc/type\+\_\+ptr.\+hpp$>$}\newline
+{\ttfamily \#include $<$glm/gtx/norm.\+hpp$>$}\newline
+{\ttfamily \#include $<$glm/common.\+hpp$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+Include dependency graph for math.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{math_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{math_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_a_a_b_b}{AABB}}
+\begin{DoxyCompactList}\small\item\em Represents an axis-\/aligned bounding box. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{math_8hpp_acfd9107b583da9f618732213cb319ced}{Vector2f}} = glm\+::vec2
+\item 
+using \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} = glm\+::vec3
+\item 
+using \mbox{\hyperlink{math_8hpp_adba234791e87b8e2d638fbf2b55a0db1}{Vector4f}} = glm\+::vec4
+\item 
+using \mbox{\hyperlink{math_8hpp_ac3d92e68c50f23b9faababb6d39789ca}{Matrix3f}} = glm\+::mat3
+\item 
+using \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} = glm\+::mat4
+\item 
+using \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} = glm\+::quat
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} \mbox{\hyperlink{math_8hpp_ab547e31f984090bdf628c013a91555d6}{Perspective}} (float fov\+Radians, float aspect\+Ratio, float near\+Plane, float far\+Plane)
+\begin{DoxyCompactList}\small\item\em Creates a perspective projection matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} \mbox{\hyperlink{math_8hpp_a4c4521724debb415e676587b9b4e8bff}{Look\+At}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&eye, const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&center, const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&up)
+\begin{DoxyCompactList}\small\item\em Creates a view matrix looking from \textquotesingle{}eye\textquotesingle{} to \textquotesingle{}center\textquotesingle{} with \textquotesingle{}up\textquotesingle{} direction. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{math_8hpp_a61311699c1533817e1272e777558b611}{Clamp}} (float value, float min\+Val, float max\+Val)
+\begin{DoxyCompactList}\small\item\em Clamps a float between min\+Val and max\+Val. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{math_8hpp_a11c0426b3a7e98489b250e45d0240c5f}{Normalize}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&v)
+\begin{DoxyCompactList}\small\item\em Normalizes a 3D vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{math_8hpp_a670c0a5216c9f579310c5202fba83257}{Cross}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&a, const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&b)
+\begin{DoxyCompactList}\small\item\em Cross product of two 3D vectors. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{math_8hpp_a8fa473d59250f3fc775ebfc0d2ea46bc}{Dot}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&a, const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&b)
+\begin{DoxyCompactList}\small\item\em Dot product of two 3D vectors. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{math_8hpp_a387a686169e8f84d5abcedaefd2c8d5d}{To\+Radians}} (float degrees)
+\begin{DoxyCompactList}\small\item\em Converts degrees to radians. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{math_8hpp_ab87aca5834250c82c9b27580c73a9a4f}{To\+Degrees}} (float radians)
+\begin{DoxyCompactList}\small\item\em Converts radians to degrees. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{math_8hpp_a449ecbbd825f26c183caeac2bda40c41}{Length}} (const \mbox{\hyperlink{math_8hpp_acfd9107b583da9f618732213cb319ced}{Vector2f}} \&v)
+\begin{DoxyCompactList}\small\item\em Returns the length of a 2D vector. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{math_8hpp_a98c7a0ce83240908bb9bb9d863d430ba}{Length}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&v)
+\begin{DoxyCompactList}\small\item\em Returns the length of a 3D vector. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{math_8hpp_ae9a800183d23ede6fecf4e87622fe8fd}{Length}} (const \mbox{\hyperlink{math_8hpp_adba234791e87b8e2d638fbf2b55a0db1}{Vector4f}} \&v)
+\begin{DoxyCompactList}\small\item\em Returns the length of a 4D vector. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{math_8hpp_a8bb7bcef2140eebba024f7af0a70f8e8}{Distance}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&a, const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&b)
+\begin{DoxyCompactList}\small\item\em Returns the Euclidean distance between two 3D vectors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} \mbox{\hyperlink{math_8hpp_a39dc5b7e681383b3d34f06efa84483f0}{Identity}} ()
+\begin{DoxyCompactList}\small\item\em Returns the identity matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} \mbox{\hyperlink{math_8hpp_a978278a474c16b86c65813cec08b513a}{Translate}} (const \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} \&matrix, const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&v)
+\begin{DoxyCompactList}\small\item\em Applies translation to a matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} \mbox{\hyperlink{math_8hpp_a57197be1224ca571c566c73c33081081}{Scale}} (const \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} \&matrix, const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&v)
+\begin{DoxyCompactList}\small\item\em Applies scale to a matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} \mbox{\hyperlink{math_8hpp_a09a0220210ed9b62eb95681f100c2ac6}{Rotate}} (const \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} \&matrix, float angle\+Rad, const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&axis)
+\begin{DoxyCompactList}\small\item\em Applies rotation to a matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{math_8hpp_a84fbaaf06d1d751da00c0c3fc66688f8}{Transform\+Vector}} (const \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} \&m, const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&v)
+\begin{DoxyCompactList}\small\item\em Transforms a 3D vector using a matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{math_8hpp_a337db27912549e1897fa038fe0f43f13}{Quaternion\+To\+Euler\+Degrees}} (const \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} \&q)
+\begin{DoxyCompactList}\small\item\em Converts a quaternion to Euler angles (in degrees) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} \mbox{\hyperlink{math_8hpp_a01d6afce125900f6e5b446d5094ea823}{Euler\+Degrees\+To\+Quaternion}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&degrees)
+\begin{DoxyCompactList}\small\item\em Converts Euler angles (in degrees) to a quaternion. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} \mbox{\hyperlink{math_8hpp_a033bf3b7b6022db8c7998332966de092}{Make\+Quaternion}} (float w, float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Creates a quaternion from scalar-\/first values (w, x, y, z) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} \mbox{\hyperlink{math_8hpp_a1213c92d8be7146176f8be90d8903ece}{To\+Mat4}} (const \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} \&q)
+\begin{DoxyCompactList}\small\item\em Converts a quaternion to a 4x4 matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} \mbox{\hyperlink{math_8hpp_aadbed4f9118de876df4f042144e13570}{Inverse}} (const \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} \&q)
+\begin{DoxyCompactList}\small\item\em Returns the inverse of a quaternion. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} \mbox{\hyperlink{math_8hpp_a623b3c298df219489b0e9b9ffefd87b9}{Normalize}} (const \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} \&q)
+\begin{DoxyCompactList}\small\item\em Returns the normalized version of a quaternion. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{math_8hpp_a2682da5e8a67f74aed0fc41b0b79866d}{Lerp}} (float a, float b, float t)
+\begin{DoxyCompactList}\small\item\em Performs linear interpolation between two scalar values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{math_8hpp_a9d0975951e5c2362277fbb84de0145c5}{Lerp}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&a, const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&b, float t)
+\begin{DoxyCompactList}\small\item\em Performs linear interpolation between two vectors. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{math_8hpp_adc2b6b56ffbcf04308b93ff801e26efd}{Lerp\+Angle}} (float a, float b, float t)
+\begin{DoxyCompactList}\small\item\em Interpolates between angles and wraps around 360 degrees. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr float \mbox{\hyperlink{math_8hpp_ac01434fcf858bd4b50b62784079ad3c0}{PI}} = 3.\+14159265358979323846f
+\begin{DoxyCompactList}\small\item\em Pi constant in float precision. \end{DoxyCompactList}\item 
+constexpr float \mbox{\hyperlink{math_8hpp_a5eb5e4f8bb50fa7ded6dfa963a2159df}{TWO\+\_\+\+PI}} = \mbox{\hyperlink{math_8hpp_ac01434fcf858bd4b50b62784079ad3c0}{PI}} \texorpdfstring{$\ast$}{*} 2.\+0f
+\begin{DoxyCompactList}\small\item\em 2\texorpdfstring{$\ast$}{*}\+Pi constant in float precision \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides math utilities, vector/matrix types, transformation functions, and \doxylink{struct_a_a_b_b}{AABB} logic using GLM. 
+
+
+
+\label{doc-typedef-members}
+\Hypertarget{math_8hpp_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{math_8hpp_ac3d92e68c50f23b9faababb6d39789ca}\index{math.hpp@{math.hpp}!Matrix3f@{Matrix3f}}
+\index{Matrix3f@{Matrix3f}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{Matrix3f}{Matrix3f}}
+{\footnotesize\ttfamily \label{math_8hpp_ac3d92e68c50f23b9faababb6d39789ca} 
+using \mbox{\hyperlink{math_8hpp_ac3d92e68c50f23b9faababb6d39789ca}{Matrix3f}} = glm\+::mat3}
+
+\Hypertarget{math_8hpp_aaf75f1df8cd01073878d25135e985f06}\index{math.hpp@{math.hpp}!Matrix4f@{Matrix4f}}
+\index{Matrix4f@{Matrix4f}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{Matrix4f}{Matrix4f}}
+{\footnotesize\ttfamily \label{math_8hpp_aaf75f1df8cd01073878d25135e985f06} 
+using \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} = glm\+::mat4}
+
+\Hypertarget{math_8hpp_a31b5f0316283c827738f8221f34a506a}\index{math.hpp@{math.hpp}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{Quaternion}{Quaternion}}
+{\footnotesize\ttfamily \label{math_8hpp_a31b5f0316283c827738f8221f34a506a} 
+using \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} = glm\+::quat}
+
+\Hypertarget{math_8hpp_acfd9107b583da9f618732213cb319ced}\index{math.hpp@{math.hpp}!Vector2f@{Vector2f}}
+\index{Vector2f@{Vector2f}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{Vector2f}{Vector2f}}
+{\footnotesize\ttfamily \label{math_8hpp_acfd9107b583da9f618732213cb319ced} 
+using \mbox{\hyperlink{math_8hpp_acfd9107b583da9f618732213cb319ced}{Vector2f}} = glm\+::vec2}
+
+\Hypertarget{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}\index{math.hpp@{math.hpp}!Vector3f@{Vector3f}}
+\index{Vector3f@{Vector3f}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{Vector3f}{Vector3f}}
+{\footnotesize\ttfamily \label{math_8hpp_a886bc4f464967d76d2041a2b811d6d01} 
+using \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} = glm\+::vec3}
+
+\Hypertarget{math_8hpp_adba234791e87b8e2d638fbf2b55a0db1}\index{math.hpp@{math.hpp}!Vector4f@{Vector4f}}
+\index{Vector4f@{Vector4f}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{Vector4f}{Vector4f}}
+{\footnotesize\ttfamily \label{math_8hpp_adba234791e87b8e2d638fbf2b55a0db1} 
+using \mbox{\hyperlink{math_8hpp_adba234791e87b8e2d638fbf2b55a0db1}{Vector4f}} = glm\+::vec4}
+
+
+
+\label{doc-func-members}
+\Hypertarget{math_8hpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{math_8hpp_a61311699c1533817e1272e777558b611}\index{math.hpp@{math.hpp}!Clamp@{Clamp}}
+\index{Clamp@{Clamp}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{Clamp()}{Clamp()}}
+{\footnotesize\ttfamily \label{math_8hpp_a61311699c1533817e1272e777558b611} 
+float Clamp (\begin{DoxyParamCaption}\item[{float}]{value}{, }\item[{float}]{min\+Val}{, }\item[{float}]{max\+Val}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Clamps a float between min\+Val and max\+Val. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{math_8hpp_a61311699c1533817e1272e777558b611_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{math_8hpp_a670c0a5216c9f579310c5202fba83257}\index{math.hpp@{math.hpp}!Cross@{Cross}}
+\index{Cross@{Cross}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{Cross()}{Cross()}}
+{\footnotesize\ttfamily \label{math_8hpp_a670c0a5216c9f579310c5202fba83257} 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Cross (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{a}{, }\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Cross product of two 3D vectors. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{math_8hpp_a670c0a5216c9f579310c5202fba83257_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{math_8hpp_a8bb7bcef2140eebba024f7af0a70f8e8}\index{math.hpp@{math.hpp}!Distance@{Distance}}
+\index{Distance@{Distance}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{Distance()}{Distance()}}
+{\footnotesize\ttfamily \label{math_8hpp_a8bb7bcef2140eebba024f7af0a70f8e8} 
+float Distance (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{a}{, }\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the Euclidean distance between two 3D vectors. 
+
+\Hypertarget{math_8hpp_a8fa473d59250f3fc775ebfc0d2ea46bc}\index{math.hpp@{math.hpp}!Dot@{Dot}}
+\index{Dot@{Dot}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{Dot()}{Dot()}}
+{\footnotesize\ttfamily \label{math_8hpp_a8fa473d59250f3fc775ebfc0d2ea46bc} 
+float Dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{a}{, }\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Dot product of two 3D vectors. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{math_8hpp_a8fa473d59250f3fc775ebfc0d2ea46bc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{math_8hpp_a01d6afce125900f6e5b446d5094ea823}\index{math.hpp@{math.hpp}!EulerDegreesToQuaternion@{EulerDegreesToQuaternion}}
+\index{EulerDegreesToQuaternion@{EulerDegreesToQuaternion}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{EulerDegreesToQuaternion()}{EulerDegreesToQuaternion()}}
+{\footnotesize\ttfamily \label{math_8hpp_a01d6afce125900f6e5b446d5094ea823} 
+\mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} Euler\+Degrees\+To\+Quaternion (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{degrees}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Converts Euler angles (in degrees) to a quaternion. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{math_8hpp_a01d6afce125900f6e5b446d5094ea823_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{math_8hpp_a39dc5b7e681383b3d34f06efa84483f0}\index{math.hpp@{math.hpp}!Identity@{Identity}}
+\index{Identity@{Identity}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{Identity()}{Identity()}}
+{\footnotesize\ttfamily \label{math_8hpp_a39dc5b7e681383b3d34f06efa84483f0} 
+\mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} Identity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the identity matrix. 
+
+\Hypertarget{math_8hpp_aadbed4f9118de876df4f042144e13570}\index{math.hpp@{math.hpp}!Inverse@{Inverse}}
+\index{Inverse@{Inverse}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{Inverse()}{Inverse()}}
+{\footnotesize\ttfamily \label{math_8hpp_aadbed4f9118de876df4f042144e13570} 
+\mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} Inverse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} \&}]{q}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the inverse of a quaternion. 
+
+\Hypertarget{math_8hpp_a449ecbbd825f26c183caeac2bda40c41}\index{math.hpp@{math.hpp}!Length@{Length}}
+\index{Length@{Length}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{Length()}{Length()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{math_8hpp_a449ecbbd825f26c183caeac2bda40c41} 
+float Length (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_acfd9107b583da9f618732213cb319ced}{Vector2f}} \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the length of a 2D vector. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{math_8hpp_a449ecbbd825f26c183caeac2bda40c41_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{math_8hpp_a98c7a0ce83240908bb9bb9d863d430ba}\index{math.hpp@{math.hpp}!Length@{Length}}
+\index{Length@{Length}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{Length()}{Length()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{math_8hpp_a98c7a0ce83240908bb9bb9d863d430ba} 
+float Length (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the length of a 3D vector. 
+
+\Hypertarget{math_8hpp_ae9a800183d23ede6fecf4e87622fe8fd}\index{math.hpp@{math.hpp}!Length@{Length}}
+\index{Length@{Length}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{Length()}{Length()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{math_8hpp_ae9a800183d23ede6fecf4e87622fe8fd} 
+float Length (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_adba234791e87b8e2d638fbf2b55a0db1}{Vector4f}} \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the length of a 4D vector. 
+
+\Hypertarget{math_8hpp_a9d0975951e5c2362277fbb84de0145c5}\index{math.hpp@{math.hpp}!Lerp@{Lerp}}
+\index{Lerp@{Lerp}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{Lerp()}{Lerp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{math_8hpp_a9d0975951e5c2362277fbb84de0145c5} 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Lerp (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{a}{, }\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{b}{, }\item[{float}]{t}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Performs linear interpolation between two vectors. 
+
+\Hypertarget{math_8hpp_a2682da5e8a67f74aed0fc41b0b79866d}\index{math.hpp@{math.hpp}!Lerp@{Lerp}}
+\index{Lerp@{Lerp}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{Lerp()}{Lerp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{math_8hpp_a2682da5e8a67f74aed0fc41b0b79866d} 
+float Lerp (\begin{DoxyParamCaption}\item[{float}]{a}{, }\item[{float}]{b}{, }\item[{float}]{t}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Performs linear interpolation between two scalar values. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{math_8hpp_a2682da5e8a67f74aed0fc41b0b79866d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{math_8hpp_adc2b6b56ffbcf04308b93ff801e26efd}\index{math.hpp@{math.hpp}!LerpAngle@{LerpAngle}}
+\index{LerpAngle@{LerpAngle}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{LerpAngle()}{LerpAngle()}}
+{\footnotesize\ttfamily \label{math_8hpp_adc2b6b56ffbcf04308b93ff801e26efd} 
+float Lerp\+Angle (\begin{DoxyParamCaption}\item[{float}]{a}{, }\item[{float}]{b}{, }\item[{float}]{t}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Interpolates between angles and wraps around 360 degrees. 
+
+\Hypertarget{math_8hpp_a4c4521724debb415e676587b9b4e8bff}\index{math.hpp@{math.hpp}!LookAt@{LookAt}}
+\index{LookAt@{LookAt}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{LookAt()}{LookAt()}}
+{\footnotesize\ttfamily \label{math_8hpp_a4c4521724debb415e676587b9b4e8bff} 
+\mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} Look\+At (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{eye}{, }\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{center}{, }\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{up}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a view matrix looking from \textquotesingle{}eye\textquotesingle{} to \textquotesingle{}center\textquotesingle{} with \textquotesingle{}up\textquotesingle{} direction. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{math_8hpp_a4c4521724debb415e676587b9b4e8bff_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{math_8hpp_a033bf3b7b6022db8c7998332966de092}\index{math.hpp@{math.hpp}!MakeQuaternion@{MakeQuaternion}}
+\index{MakeQuaternion@{MakeQuaternion}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{MakeQuaternion()}{MakeQuaternion()}}
+{\footnotesize\ttfamily \label{math_8hpp_a033bf3b7b6022db8c7998332966de092} 
+\mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} Make\+Quaternion (\begin{DoxyParamCaption}\item[{float}]{w}{, }\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{float}]{z}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a quaternion from scalar-\/first values (w, x, y, z) 
+
+\Hypertarget{math_8hpp_a623b3c298df219489b0e9b9ffefd87b9}\index{math.hpp@{math.hpp}!Normalize@{Normalize}}
+\index{Normalize@{Normalize}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{Normalize()}{Normalize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{math_8hpp_a623b3c298df219489b0e9b9ffefd87b9} 
+\mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} Normalize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} \&}]{q}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the normalized version of a quaternion. 
+
+\Hypertarget{math_8hpp_a11c0426b3a7e98489b250e45d0240c5f}\index{math.hpp@{math.hpp}!Normalize@{Normalize}}
+\index{Normalize@{Normalize}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{Normalize()}{Normalize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{math_8hpp_a11c0426b3a7e98489b250e45d0240c5f} 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Normalize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Normalizes a 3D vector. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{math_8hpp_a11c0426b3a7e98489b250e45d0240c5f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{math_8hpp_ab547e31f984090bdf628c013a91555d6}\index{math.hpp@{math.hpp}!Perspective@{Perspective}}
+\index{Perspective@{Perspective}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{Perspective()}{Perspective()}}
+{\footnotesize\ttfamily \label{math_8hpp_ab547e31f984090bdf628c013a91555d6} 
+\mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} Perspective (\begin{DoxyParamCaption}\item[{float}]{fov\+Radians}{, }\item[{float}]{aspect\+Ratio}{, }\item[{float}]{near\+Plane}{, }\item[{float}]{far\+Plane}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a perspective projection matrix. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{math_8hpp_ab547e31f984090bdf628c013a91555d6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{math_8hpp_a337db27912549e1897fa038fe0f43f13}\index{math.hpp@{math.hpp}!QuaternionToEulerDegrees@{QuaternionToEulerDegrees}}
+\index{QuaternionToEulerDegrees@{QuaternionToEulerDegrees}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{QuaternionToEulerDegrees()}{QuaternionToEulerDegrees()}}
+{\footnotesize\ttfamily \label{math_8hpp_a337db27912549e1897fa038fe0f43f13} 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Quaternion\+To\+Euler\+Degrees (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} \&}]{q}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Converts a quaternion to Euler angles (in degrees) 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{math_8hpp_a337db27912549e1897fa038fe0f43f13_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{math_8hpp_a09a0220210ed9b62eb95681f100c2ac6}\index{math.hpp@{math.hpp}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{Rotate()}{Rotate()}}
+{\footnotesize\ttfamily \label{math_8hpp_a09a0220210ed9b62eb95681f100c2ac6} 
+\mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} Rotate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} \&}]{matrix}{, }\item[{float}]{angle\+Rad}{, }\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{axis}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Applies rotation to a matrix. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{math_8hpp_a09a0220210ed9b62eb95681f100c2ac6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{math_8hpp_a57197be1224ca571c566c73c33081081}\index{math.hpp@{math.hpp}!Scale@{Scale}}
+\index{Scale@{Scale}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{Scale()}{Scale()}}
+{\footnotesize\ttfamily \label{math_8hpp_a57197be1224ca571c566c73c33081081} 
+\mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} Scale (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} \&}]{matrix}{, }\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Applies scale to a matrix. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{math_8hpp_a57197be1224ca571c566c73c33081081_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{math_8hpp_ab87aca5834250c82c9b27580c73a9a4f}\index{math.hpp@{math.hpp}!ToDegrees@{ToDegrees}}
+\index{ToDegrees@{ToDegrees}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{ToDegrees()}{ToDegrees()}}
+{\footnotesize\ttfamily \label{math_8hpp_ab87aca5834250c82c9b27580c73a9a4f} 
+float To\+Degrees (\begin{DoxyParamCaption}\item[{float}]{radians}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Converts radians to degrees. 
+
+\Hypertarget{math_8hpp_a1213c92d8be7146176f8be90d8903ece}\index{math.hpp@{math.hpp}!ToMat4@{ToMat4}}
+\index{ToMat4@{ToMat4}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{ToMat4()}{ToMat4()}}
+{\footnotesize\ttfamily \label{math_8hpp_a1213c92d8be7146176f8be90d8903ece} 
+\mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} To\+Mat4 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} \&}]{q}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Converts a quaternion to a 4x4 matrix. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{math_8hpp_a1213c92d8be7146176f8be90d8903ece_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{math_8hpp_a387a686169e8f84d5abcedaefd2c8d5d}\index{math.hpp@{math.hpp}!ToRadians@{ToRadians}}
+\index{ToRadians@{ToRadians}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{ToRadians()}{ToRadians()}}
+{\footnotesize\ttfamily \label{math_8hpp_a387a686169e8f84d5abcedaefd2c8d5d} 
+float To\+Radians (\begin{DoxyParamCaption}\item[{float}]{degrees}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Converts degrees to radians. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{math_8hpp_a387a686169e8f84d5abcedaefd2c8d5d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{math_8hpp_a84fbaaf06d1d751da00c0c3fc66688f8}\index{math.hpp@{math.hpp}!TransformVector@{TransformVector}}
+\index{TransformVector@{TransformVector}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{TransformVector()}{TransformVector()}}
+{\footnotesize\ttfamily \label{math_8hpp_a84fbaaf06d1d751da00c0c3fc66688f8} 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Transform\+Vector (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} \&}]{m}{, }\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Transforms a 3D vector using a matrix. 
+
+\Hypertarget{math_8hpp_a978278a474c16b86c65813cec08b513a}\index{math.hpp@{math.hpp}!Translate@{Translate}}
+\index{Translate@{Translate}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{Translate()}{Translate()}}
+{\footnotesize\ttfamily \label{math_8hpp_a978278a474c16b86c65813cec08b513a} 
+\mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} Translate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} \&}]{matrix}{, }\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Applies translation to a matrix. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{math_8hpp_a978278a474c16b86c65813cec08b513a_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-var-members}
+\Hypertarget{math_8hpp_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{math_8hpp_ac01434fcf858bd4b50b62784079ad3c0}\index{math.hpp@{math.hpp}!PI@{PI}}
+\index{PI@{PI}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{PI}{PI}}
+{\footnotesize\ttfamily \label{math_8hpp_ac01434fcf858bd4b50b62784079ad3c0} 
+float PI = 3.\+14159265358979323846f\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Pi constant in float precision. 
+
+\Hypertarget{math_8hpp_a5eb5e4f8bb50fa7ded6dfa963a2159df}\index{math.hpp@{math.hpp}!TWO\_PI@{TWO\_PI}}
+\index{TWO\_PI@{TWO\_PI}!math.hpp@{math.hpp}}
+\doxysubsubsection{\texorpdfstring{TWO\_PI}{TWO\_PI}}
+{\footnotesize\ttfamily \label{math_8hpp_a5eb5e4f8bb50fa7ded6dfa963a2159df} 
+float TWO\+\_\+\+PI = \mbox{\hyperlink{math_8hpp_ac01434fcf858bd4b50b62784079ad3c0}{PI}} \texorpdfstring{$\ast$}{*} 2.\+0f\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+2\texorpdfstring{$\ast$}{*}\+Pi constant in float precision 
+

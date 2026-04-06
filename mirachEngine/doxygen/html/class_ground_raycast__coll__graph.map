@@ -1,0 +1,7 @@
+<map id="GroundRaycast" name="GroundRaycast">
+<area shape="rect" id="Node000001" title="Custom raycast callback for detecting ground collisions." alt="" coords="131,360,232,451"/>
+<area shape="rect" id="Node000002" href="$class_physics_1_1_raycast_callback.html" title="Callback interface for raycasting results." alt="" coords="5,101,171,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,204,168,359,163,361,107,206"/>
+<area shape="rect" id="Node000003" href="$class_physics_1_1_rigid_body.html" title="Abstract interface for a physics rigid body." alt="" coords="195,5,358,288"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="227,289,206,345,201,343,222,287"/>
+</map>

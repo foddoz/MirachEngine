@@ -1,0 +1,120 @@
+\doxysection{Chase\texorpdfstring{$<$}{<} Entity \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_chase}{}\label{class_chase}\index{Chase$<$ Entity $>$@{Chase$<$ Entity $>$}}
+
+
+Represents the \doxylink{class_chase}{Chase} state. Calls on\+Chase\+Enter, on\+Chase\+Execute, and on\+Chase\+Exit on the entity.  
+
+
+
+
+{\ttfamily \#include $<$Common\+States.\+h$>$}
+
+
+
+Inheritance diagram for Chase\texorpdfstring{$<$}{<} Entity \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{class_chase__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Chase\texorpdfstring{$<$}{<} Entity \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{class_chase__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_chase_af5a8abec683e3eefd04ab77d82cdcd81}{Enter}} (\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}e) override
+\begin{DoxyCompactList}\small\item\em Called when the state is entered. This method is used to perform any initialization or setup for the state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chase_af0625f4f65b52cb882cfa369683ae0e7}{Execute}} (\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}e) override
+\begin{DoxyCompactList}\small\item\em Called every frame to update the state. This method should implement the main behavior of the state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_chase_a9ade8d345432d64b26621c87ba2ce2a7}{Exit}} (\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}e) override
+\begin{DoxyCompactList}\small\item\em Called when the state is exited. This method should handle cleanup or transition logic before leaving the state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_state}{State$<$ Entity $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_state_aed40c4606cc22c76bf5ecc771dea4bf8}{\texorpdfstring{$\sim$}{\string~}\+State}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure proper cleanup of derived states. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$\newline
+class Chase$<$ Entity $>$}
+Represents the \doxylink{class_chase}{Chase} state. Calls on\+Chase\+Enter, on\+Chase\+Execute, and on\+Chase\+Exit on the entity. 
+
+\label{doc-func-members}
+\Hypertarget{class_chase_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_chase_af5a8abec683e3eefd04ab77d82cdcd81}\index{Chase$<$ Entity $>$@{Chase$<$ Entity $>$}!Enter@{Enter}}
+\index{Enter@{Enter}!Chase$<$ Entity $>$@{Chase$<$ Entity $>$}}
+\doxysubsubsection{\texorpdfstring{Enter()}{Enter()}}
+{\footnotesize\ttfamily \label{class_chase_af5a8abec683e3eefd04ab77d82cdcd81} 
+template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ \\
+void \mbox{\hyperlink{class_chase}{Chase}}$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} $>$\+::\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}}]{owner}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called when the state is entered. This method is used to perform any initialization or setup for the state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner} & Pointer to the owner entity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_a38506784066afae0f710965cb50d9df9}{State$<$ Entity $>$}}.
+
+\Hypertarget{class_chase_af0625f4f65b52cb882cfa369683ae0e7}\index{Chase$<$ Entity $>$@{Chase$<$ Entity $>$}!Execute@{Execute}}
+\index{Execute@{Execute}!Chase$<$ Entity $>$@{Chase$<$ Entity $>$}}
+\doxysubsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily \label{class_chase_af0625f4f65b52cb882cfa369683ae0e7} 
+template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ \\
+void \mbox{\hyperlink{class_chase}{Chase}}$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} $>$\+::\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}}]{owner}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called every frame to update the state. This method should implement the main behavior of the state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner} & Pointer to the owner entity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_a4298e08f3fc32436c7cf56705d0fa977}{State$<$ Entity $>$}}.
+
+\Hypertarget{class_chase_a9ade8d345432d64b26621c87ba2ce2a7}\index{Chase$<$ Entity $>$@{Chase$<$ Entity $>$}!Exit@{Exit}}
+\index{Exit@{Exit}!Chase$<$ Entity $>$@{Chase$<$ Entity $>$}}
+\doxysubsubsection{\texorpdfstring{Exit()}{Exit()}}
+{\footnotesize\ttfamily \label{class_chase_a9ade8d345432d64b26621c87ba2ce2a7} 
+template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ \\
+void \mbox{\hyperlink{class_chase}{Chase}}$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} $>$\+::\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}}]{owner}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called when the state is exited. This method should handle cleanup or transition logic before leaving the state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner} & Pointer to the owner entity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_a72bd0ca2e59147791bfe67618a1d9fc5}{State$<$ Entity $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+FSM/\mbox{\hyperlink{_common_states_8h}{Common\+States.\+h}}\end{DoxyCompactItemize}

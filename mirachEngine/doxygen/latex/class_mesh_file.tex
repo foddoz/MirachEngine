@@ -1,0 +1,538 @@
+\doxysection{Mesh\+File Class Reference}
+\hypertarget{class_mesh_file}{}\label{class_mesh_file}\index{MeshFile@{MeshFile}}
+
+
+Represents a static 3D mesh loaded from file (e.\+g. OBJ, FBX, etc.) using Assimp.  
+
+
+
+
+{\ttfamily \#include $<$mesh\+File.\+hpp$>$}
+
+
+
+Inheritance diagram for Mesh\+File\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_mesh_file__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Mesh\+File\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_mesh_file__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mesh_file_add7cec2a09fdc4954c6b64c2ff9a9df6}{Mesh\+File}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an empty \doxylink{class_mesh_file}{Mesh\+File} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_file_a0d87d190f8cc0f0a4d6ec9743a575a45}{Generate\+CPUData}} (const std\+::string \&file\+Name)
+\begin{DoxyCompactList}\small\item\em Loads mesh geometry and material data from a model file into CPU memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_file_a4941fd25cb0aa2b390a2ced9c80bfe00}{Upload\+To\+GPU}} () override
+\begin{DoxyCompactList}\small\item\em Uploads vertex/index data and textures to GPU buffers. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_mesh_renderer}{Mesh\+Renderer}} \mbox{\hyperlink{class_mesh_file_ad3f8ebf3d6f60b79fc49af792c0ec974}{To\+Renderer}} () override
+\begin{DoxyCompactList}\small\item\em Converts internal mesh structure to a renderable ECS-\/compatible object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_file_af877f6113f80d10762f95f8f76bd1547}{Delete}} () override
+\begin{DoxyCompactList}\small\item\em Frees GPU resources including VAO, VBOs, and texture memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_mesh3_d}{Mesh3D}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mesh3_d_a8cdefca0bf7171afd91f2a1a88e05a7e}{Mesh3D}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor initializes Open\+GL buffer handles and transforms. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mesh3_d_a18dc545efcaa749ea7649b9bcaa91ce1}{Mesh3D}} (const \mbox{\hyperlink{class_mesh3_d}{Mesh3D}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor for \doxylink{class_mesh3_d}{Mesh3D}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh3_d_a478bda9c8ff4adb50c56c26ef50af8d2}{Set\+Pipeline}} (unsigned int pipeline)
+\begin{DoxyCompactList}\small\item\em Assigns a graphics pipeline (shader program) to this mesh. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_ad2952df09ac54e7d5fafbcf87ae7c487}{get\+Pipeline}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the currently assigned graphics pipeline. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9}{BUFFER\+\_\+\+TYPE}} \{ \newline
+\mbox{\hyperlink{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9ad5bde67132a37b57bdd7202fb0ef2a38}{INDEX\+\_\+\+BUFFER}} = 0
+, \mbox{\hyperlink{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9ac3f0a1b3371c8b7ee509c515a3cacba8}{POS\+\_\+\+VB}} = 1
+, \mbox{\hyperlink{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9abd19c7e53e090bd4476f58ba37f8cddc}{TEXCOORD\+\_\+\+VB}} = 2
+, \mbox{\hyperlink{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9a0c921787fbed91a75688b0ebbfe90820}{NORMAL\+\_\+\+VB}} = 3
+, \newline
+\mbox{\hyperlink{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9a5e72dd26419e82c54dc016cef59db232}{WVP\+\_\+\+MAT\+\_\+\+VB}} = 4
+, \mbox{\hyperlink{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9a41777f015dd01cc6d630f17a1c2b2245}{WORLD\+\_\+\+MAT\+\_\+\+VB}} = 5
+, \mbox{\hyperlink{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9a4897572d4a9a14d25d2c5ef26ed04114}{NUM\+\_\+\+BUFFERS}} = 6
+ \}
+\begin{DoxyCompactList}\small\item\em Enum for identifying Open\+GL buffer types used for this mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_mesh_file_a34a9c9b5caefc8b8154c33bedce57e24}{Count\+Vertices\+And\+Indices}} (const \mbox{\hyperlink{model__loading_8hpp_afab23fa78d458b04129130eccd3b69c3}{Model\+Scene}} \texorpdfstring{$\ast$}{*}p\+Scene, unsigned int \&num\+Vertices, unsigned int \&num\+Indices)
+\begin{DoxyCompactList}\small\item\em Calculates total vertices and indices needed from an Assimp scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_file_adff03e83312e39ac980b2ceccc803d5b}{Reserve\+Space}} (unsigned int num\+Vertices, unsigned int num\+Indices)
+\begin{DoxyCompactList}\small\item\em Allocates space in vectors based on counted vertices and indices. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_file_a894016a67e27f49c2fba14bc38bf5b05}{Init\+All\+Meshes}} (const \mbox{\hyperlink{model__loading_8hpp_afab23fa78d458b04129130eccd3b69c3}{Model\+Scene}} \texorpdfstring{$\ast$}{*}p\+Scene)
+\begin{DoxyCompactList}\small\item\em Initializes all submeshes in the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_file_a96e77a5e4b9f016f4f2cb6600d720a59}{Init\+Single\+Mesh}} (const \mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{Model\+Mesh}} \texorpdfstring{$\ast$}{*}pai\+Mesh)
+\begin{DoxyCompactList}\small\item\em Processes a single mesh and extracts geometry data. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_mesh_file_aff6a54a14d61b5ac912b8c47f6847506}{Init\+Materials}} (const \mbox{\hyperlink{model__loading_8hpp_afab23fa78d458b04129130eccd3b69c3}{Model\+Scene}} \texorpdfstring{$\ast$}{*}p\+Scene, const std\+::string \&file\+Name)
+\begin{DoxyCompactList}\small\item\em Loads diffuse textures from materials. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_file_a6b05f6a342db7e1c2e324ce779988c29}{Populate\+Buffers}} () override
+\begin{DoxyCompactList}\small\item\em Creates Open\+GL buffers and uploads mesh data to the GPU. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_mesh_entry}{Mesh\+Entry}} $>$ \mbox{\hyperlink{class_mesh_file_a2ddbd2fa1418a8d1037dfa091a8fa3c7}{m\+\_\+\+Meshes}}
+\begin{DoxyCompactList}\small\item\em Submeshes split by material or node. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} $>$ \mbox{\hyperlink{class_mesh_file_a402924735c5af973ddaa4cc248a18492}{m\+\_\+\+Positions}}
+\begin{DoxyCompactList}\small\item\em Vertex positions. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} $>$ \mbox{\hyperlink{class_mesh_file_add7cf34b3daa0de3da1e4424f3a5ec50}{m\+\_\+\+Normals}}
+\begin{DoxyCompactList}\small\item\em Vertex normals. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{math_8hpp_acfd9107b583da9f618732213cb319ced}{Vector2f}} $>$ \mbox{\hyperlink{class_mesh_file_a2c8a2ef80ae3184b2c09910900b54f1f}{m\+\_\+\+Tex\+Coords}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_texture}{Texture} coordinates. \end{DoxyCompactList}\item 
+std\+::vector$<$ unsigned int $>$ \mbox{\hyperlink{class_mesh_file_adb61c38ad2e0204291b080c86c89be0f}{m\+\_\+\+Indices}}
+\begin{DoxyCompactList}\small\item\em Vertex indices. \end{DoxyCompactList}\item 
+GLuint \mbox{\hyperlink{class_mesh_file_afea39cf99d733bbf415bccab4d8f138a}{m\+\_\+\+Buffers}} \mbox{[}\mbox{\hyperlink{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9a4897572d4a9a14d25d2c5ef26ed04114}{NUM\+\_\+\+BUFFERS}}\mbox{]} = \{ 0 \}
+\begin{DoxyCompactList}\small\item\em Open\+GL buffer handles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_mesh3_d}{Mesh3D}}}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a9bb74668772fa08c0099f3aa0d242215}{m\+\_\+\+VAO}}
+\begin{DoxyCompactList}\small\item\em Open\+GL Vertex Array Object handle. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a064dc03404641d9b41dcc58f3244b5ea}{m\+\_\+\+Index\+Count}}
+\begin{DoxyCompactList}\small\item\em Number of indices used for drawing (gl\+Draw\+Elements or gl\+Draw\+Arrays). \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a0a78f966ef1aaf868c32523200ffd7b5}{m\+\_\+\+VBO}}
+\begin{DoxyCompactList}\small\item\em Vertex Buffer Object handle. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a79760be3f47e0cd2738e5932e2ce6a70}{m\+\_\+\+IBO}}
+\begin{DoxyCompactList}\small\item\em Index Buffer Object handle. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_texture}{Texture}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_mesh3_d_a878c07f3eab3dcc47195e3bc0b74fa30}{m\+\_\+\+Textures}}
+\begin{DoxyCompactList}\small\item\em Collection of textures associated with this mesh. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a6232eb241c460e30d607b59862d0e8f1}{m\+\_\+\+Pipeline}}
+\begin{DoxyCompactList}\small\item\em Open\+GL shader program ID assigned to this mesh. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_a_a_b_b}{AABB}} \mbox{\hyperlink{class_mesh3_d_aeaaf348709784591a9608a9e779e3cd3}{m\+\_\+\+AABB}}
+\begin{DoxyCompactList}\small\item\em Axis-\/aligned bounding box in local (object) space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a static 3D mesh loaded from file (e.\+g. OBJ, FBX, etc.) using Assimp. 
+
+Handles loading vertex and material data from external model files, converting them into Open\+GL-\/compatible buffers, and exposing rendering interfaces. 
+
+\label{doc-enum-members}
+\Hypertarget{class_mesh_file_doc-enum-members}
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9}\index{MeshFile@{MeshFile}!BUFFER\_TYPE@{BUFFER\_TYPE}}
+\index{BUFFER\_TYPE@{BUFFER\_TYPE}!MeshFile@{MeshFile}}
+\doxysubsubsection{\texorpdfstring{BUFFER\_TYPE}{BUFFER\_TYPE}}
+{\footnotesize\ttfamily \label{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9} 
+enum \mbox{\hyperlink{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9}{Mesh\+File\+::\+BUFFER\+\_\+\+TYPE}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Enum for identifying Open\+GL buffer types used for this mesh. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INDEX\_BUFFER@{INDEX\_BUFFER}!MeshFile@{MeshFile}}\index{MeshFile@{MeshFile}!INDEX\_BUFFER@{INDEX\_BUFFER}}}\Hypertarget{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9ad5bde67132a37b57bdd7202fb0ef2a38}\label{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9ad5bde67132a37b57bdd7202fb0ef2a38} 
+INDEX\+\_\+\+BUFFER&Element index buffer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POS\_VB@{POS\_VB}!MeshFile@{MeshFile}}\index{MeshFile@{MeshFile}!POS\_VB@{POS\_VB}}}\Hypertarget{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9ac3f0a1b3371c8b7ee509c515a3cacba8}\label{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9ac3f0a1b3371c8b7ee509c515a3cacba8} 
+POS\+\_\+\+VB&Vertex position buffer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEXCOORD\_VB@{TEXCOORD\_VB}!MeshFile@{MeshFile}}\index{MeshFile@{MeshFile}!TEXCOORD\_VB@{TEXCOORD\_VB}}}\Hypertarget{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9abd19c7e53e090bd4476f58ba37f8cddc}\label{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9abd19c7e53e090bd4476f58ba37f8cddc} 
+TEXCOORD\+\_\+\+VB&\doxylink{class_texture}{Texture} coordinate buffer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NORMAL\_VB@{NORMAL\_VB}!MeshFile@{MeshFile}}\index{MeshFile@{MeshFile}!NORMAL\_VB@{NORMAL\_VB}}}\Hypertarget{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9a0c921787fbed91a75688b0ebbfe90820}\label{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9a0c921787fbed91a75688b0ebbfe90820} 
+NORMAL\+\_\+\+VB&Vertex normal buffer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WVP\_MAT\_VB@{WVP\_MAT\_VB}!MeshFile@{MeshFile}}\index{MeshFile@{MeshFile}!WVP\_MAT\_VB@{WVP\_MAT\_VB}}}\Hypertarget{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9a5e72dd26419e82c54dc016cef59db232}\label{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9a5e72dd26419e82c54dc016cef59db232} 
+WVP\+\_\+\+MAT\+\_\+\+VB&World-\/view-\/projection matrix buffer (optional) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WORLD\_MAT\_VB@{WORLD\_MAT\_VB}!MeshFile@{MeshFile}}\index{MeshFile@{MeshFile}!WORLD\_MAT\_VB@{WORLD\_MAT\_VB}}}\Hypertarget{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9a41777f015dd01cc6d630f17a1c2b2245}\label{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9a41777f015dd01cc6d630f17a1c2b2245} 
+WORLD\+\_\+\+MAT\+\_\+\+VB&World matrix buffer (optional) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NUM\_BUFFERS@{NUM\_BUFFERS}!MeshFile@{MeshFile}}\index{MeshFile@{MeshFile}!NUM\_BUFFERS@{NUM\_BUFFERS}}}\Hypertarget{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9a4897572d4a9a14d25d2c5ef26ed04114}\label{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9a4897572d4a9a14d25d2c5ef26ed04114} 
+NUM\+\_\+\+BUFFERS&Total number of buffer types. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-constructors}
+\Hypertarget{class_mesh_file_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_mesh_file_add7cec2a09fdc4954c6b64c2ff9a9df6}\index{MeshFile@{MeshFile}!MeshFile@{MeshFile}}
+\index{MeshFile@{MeshFile}!MeshFile@{MeshFile}}
+\doxysubsubsection{\texorpdfstring{MeshFile()}{MeshFile()}}
+{\footnotesize\ttfamily \label{class_mesh_file_add7cec2a09fdc4954c6b64c2ff9a9df6} 
+Mesh\+File\+::\+Mesh\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructs an empty \doxylink{class_mesh_file}{Mesh\+File} object. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{class_mesh_file_add7cec2a09fdc4954c6b64c2ff9a9df6_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{class_mesh_file_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mesh_file_a34a9c9b5caefc8b8154c33bedce57e24}\index{MeshFile@{MeshFile}!CountVerticesAndIndices@{CountVerticesAndIndices}}
+\index{CountVerticesAndIndices@{CountVerticesAndIndices}!MeshFile@{MeshFile}}
+\doxysubsubsection{\texorpdfstring{CountVerticesAndIndices()}{CountVerticesAndIndices()}}
+{\footnotesize\ttfamily \label{class_mesh_file_a34a9c9b5caefc8b8154c33bedce57e24} 
+void Mesh\+File\+::\+Count\+Vertices\+And\+Indices (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{model__loading_8hpp_afab23fa78d458b04129130eccd3b69c3}{Model\+Scene}} \texorpdfstring{$\ast$}{*}}]{p\+Scene}{, }\item[{unsigned int \&}]{num\+Vertices}{, }\item[{unsigned int \&}]{num\+Indices}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calculates total vertices and indices needed from an Assimp scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Scene} & Pointer to Assimp\textquotesingle{}s scene object. \\
+\hline
+{\em num\+Vertices} & Output\+: total vertex count. \\
+\hline
+{\em num\+Indices} & Output\+: total index count. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_mesh_file_a34a9c9b5caefc8b8154c33bedce57e24_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_file_a34a9c9b5caefc8b8154c33bedce57e24_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_file_af877f6113f80d10762f95f8f76bd1547}\index{MeshFile@{MeshFile}!Delete@{Delete}}
+\index{Delete@{Delete}!MeshFile@{MeshFile}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily \label{class_mesh_file_af877f6113f80d10762f95f8f76bd1547} 
+void Mesh\+File\+::\+Delete (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Frees GPU resources including VAO, VBOs, and texture memory. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_mesh3_d_a08ad190035c6d8e8362f009a09e6bc17}{Mesh3D}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{class_mesh_file_af877f6113f80d10762f95f8f76bd1547_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_file_a0d87d190f8cc0f0a4d6ec9743a575a45}\index{MeshFile@{MeshFile}!GenerateCPUData@{GenerateCPUData}}
+\index{GenerateCPUData@{GenerateCPUData}!MeshFile@{MeshFile}}
+\doxysubsubsection{\texorpdfstring{GenerateCPUData()}{GenerateCPUData()}}
+{\footnotesize\ttfamily \label{class_mesh_file_a0d87d190f8cc0f0a4d6ec9743a575a45} 
+void Mesh\+File\+::\+Generate\+CPUData (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Loads mesh geometry and material data from a model file into CPU memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Path to the mesh file (e.\+g. OBJ, FBX). \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_file_a0d87d190f8cc0f0a4d6ec9743a575a45_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_file_a894016a67e27f49c2fba14bc38bf5b05}\index{MeshFile@{MeshFile}!InitAllMeshes@{InitAllMeshes}}
+\index{InitAllMeshes@{InitAllMeshes}!MeshFile@{MeshFile}}
+\doxysubsubsection{\texorpdfstring{InitAllMeshes()}{InitAllMeshes()}}
+{\footnotesize\ttfamily \label{class_mesh_file_a894016a67e27f49c2fba14bc38bf5b05} 
+void Mesh\+File\+::\+Init\+All\+Meshes (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{model__loading_8hpp_afab23fa78d458b04129130eccd3b69c3}{Model\+Scene}} \texorpdfstring{$\ast$}{*}}]{p\+Scene}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes all submeshes in the scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Scene} & Pointer to the parsed scene from Assimp. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_file_a894016a67e27f49c2fba14bc38bf5b05_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_file_a894016a67e27f49c2fba14bc38bf5b05_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_file_aff6a54a14d61b5ac912b8c47f6847506}\index{MeshFile@{MeshFile}!InitMaterials@{InitMaterials}}
+\index{InitMaterials@{InitMaterials}!MeshFile@{MeshFile}}
+\doxysubsubsection{\texorpdfstring{InitMaterials()}{InitMaterials()}}
+{\footnotesize\ttfamily \label{class_mesh_file_aff6a54a14d61b5ac912b8c47f6847506} 
+bool Mesh\+File\+::\+Init\+Materials (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{model__loading_8hpp_afab23fa78d458b04129130eccd3b69c3}{Model\+Scene}} \texorpdfstring{$\ast$}{*}}]{p\+Scene}{, }\item[{const std\+::string \&}]{file\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loads diffuse textures from materials. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Scene} & Pointer to the Assimp scene. \\
+\hline
+{\em file\+Name} & Path to the original mesh file for resolving texture directory. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if material loading was successful. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_file_aff6a54a14d61b5ac912b8c47f6847506_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_file_aff6a54a14d61b5ac912b8c47f6847506_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_file_a96e77a5e4b9f016f4f2cb6600d720a59}\index{MeshFile@{MeshFile}!InitSingleMesh@{InitSingleMesh}}
+\index{InitSingleMesh@{InitSingleMesh}!MeshFile@{MeshFile}}
+\doxysubsubsection{\texorpdfstring{InitSingleMesh()}{InitSingleMesh()}}
+{\footnotesize\ttfamily \label{class_mesh_file_a96e77a5e4b9f016f4f2cb6600d720a59} 
+void Mesh\+File\+::\+Init\+Single\+Mesh (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{Model\+Mesh}} \texorpdfstring{$\ast$}{*}}]{pai\+Mesh}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Processes a single mesh and extracts geometry data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pai\+Mesh} & Pointer to the mesh from Assimp. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{class_mesh_file_a96e77a5e4b9f016f4f2cb6600d720a59_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_file_a96e77a5e4b9f016f4f2cb6600d720a59_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_file_a6b05f6a342db7e1c2e324ce779988c29}\index{MeshFile@{MeshFile}!PopulateBuffers@{PopulateBuffers}}
+\index{PopulateBuffers@{PopulateBuffers}!MeshFile@{MeshFile}}
+\doxysubsubsection{\texorpdfstring{PopulateBuffers()}{PopulateBuffers()}}
+{\footnotesize\ttfamily \label{class_mesh_file_a6b05f6a342db7e1c2e324ce779988c29} 
+void Mesh\+File\+::\+Populate\+Buffers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Creates Open\+GL buffers and uploads mesh data to the GPU. 
+
+
+
+Implements \mbox{\hyperlink{class_mesh3_d_a91aa0f790bb9f1acc3d270033d11e6ef}{Mesh3D}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_file_a6b05f6a342db7e1c2e324ce779988c29_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_file_a6b05f6a342db7e1c2e324ce779988c29_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_file_adff03e83312e39ac980b2ceccc803d5b}\index{MeshFile@{MeshFile}!ReserveSpace@{ReserveSpace}}
+\index{ReserveSpace@{ReserveSpace}!MeshFile@{MeshFile}}
+\doxysubsubsection{\texorpdfstring{ReserveSpace()}{ReserveSpace()}}
+{\footnotesize\ttfamily \label{class_mesh_file_adff03e83312e39ac980b2ceccc803d5b} 
+void Mesh\+File\+::\+Reserve\+Space (\begin{DoxyParamCaption}\item[{unsigned int}]{num\+Vertices}{, }\item[{unsigned int}]{num\+Indices}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Allocates space in vectors based on counted vertices and indices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Vertices} & Number of vertices to reserve. \\
+\hline
+{\em num\+Indices} & Number of indices to reserve. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_file_adff03e83312e39ac980b2ceccc803d5b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_file_ad3f8ebf3d6f60b79fc49af792c0ec974}\index{MeshFile@{MeshFile}!ToRenderer@{ToRenderer}}
+\index{ToRenderer@{ToRenderer}!MeshFile@{MeshFile}}
+\doxysubsubsection{\texorpdfstring{ToRenderer()}{ToRenderer()}}
+{\footnotesize\ttfamily \label{class_mesh_file_ad3f8ebf3d6f60b79fc49af792c0ec974} 
+\mbox{\hyperlink{struct_mesh_renderer}{Mesh\+Renderer}} Mesh\+File\+::\+To\+Renderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Converts internal mesh structure to a renderable ECS-\/compatible object. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_mesh_renderer}{Mesh\+Renderer} data with GPU handles and metadata. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_mesh3_d_a0bfe53bc0b4d0e2a9804ffa119f7aec9}{Mesh3D}}.
+
+\Hypertarget{class_mesh_file_a4941fd25cb0aa2b390a2ced9c80bfe00}\index{MeshFile@{MeshFile}!UploadToGPU@{UploadToGPU}}
+\index{UploadToGPU@{UploadToGPU}!MeshFile@{MeshFile}}
+\doxysubsubsection{\texorpdfstring{UploadToGPU()}{UploadToGPU()}}
+{\footnotesize\ttfamily \label{class_mesh_file_a4941fd25cb0aa2b390a2ced9c80bfe00} 
+void Mesh\+File\+::\+Upload\+To\+GPU (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Uploads vertex/index data and textures to GPU buffers. 
+
+
+
+Implements \mbox{\hyperlink{class_mesh3_d_aef879f5ea3d9dce661e23ed2cb5f2c9e}{Mesh3D}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_file_a4941fd25cb0aa2b390a2ced9c80bfe00_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_mesh_file_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_mesh_file_afea39cf99d733bbf415bccab4d8f138a}\index{MeshFile@{MeshFile}!m\_Buffers@{m\_Buffers}}
+\index{m\_Buffers@{m\_Buffers}!MeshFile@{MeshFile}}
+\doxysubsubsection{\texorpdfstring{m\_Buffers}{m\_Buffers}}
+{\footnotesize\ttfamily \label{class_mesh_file_afea39cf99d733bbf415bccab4d8f138a} 
+GLuint Mesh\+File\+::m\+\_\+\+Buffers\mbox{[}\mbox{\hyperlink{class_mesh_file_a09ef02424917d8b27bc6ad09f8a99fb9a4897572d4a9a14d25d2c5ef26ed04114}{NUM\+\_\+\+BUFFERS}}\mbox{]} = \{ 0 \}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Open\+GL buffer handles. 
+
+\Hypertarget{class_mesh_file_adb61c38ad2e0204291b080c86c89be0f}\index{MeshFile@{MeshFile}!m\_Indices@{m\_Indices}}
+\index{m\_Indices@{m\_Indices}!MeshFile@{MeshFile}}
+\doxysubsubsection{\texorpdfstring{m\_Indices}{m\_Indices}}
+{\footnotesize\ttfamily \label{class_mesh_file_adb61c38ad2e0204291b080c86c89be0f} 
+std\+::vector$<$unsigned int$>$ Mesh\+File\+::m\+\_\+\+Indices\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vertex indices. 
+
+\Hypertarget{class_mesh_file_a2ddbd2fa1418a8d1037dfa091a8fa3c7}\index{MeshFile@{MeshFile}!m\_Meshes@{m\_Meshes}}
+\index{m\_Meshes@{m\_Meshes}!MeshFile@{MeshFile}}
+\doxysubsubsection{\texorpdfstring{m\_Meshes}{m\_Meshes}}
+{\footnotesize\ttfamily \label{class_mesh_file_a2ddbd2fa1418a8d1037dfa091a8fa3c7} 
+std\+::vector$<$\mbox{\hyperlink{struct_mesh_entry}{Mesh\+Entry}}$>$ Mesh\+File\+::m\+\_\+\+Meshes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Submeshes split by material or node. 
+
+\Hypertarget{class_mesh_file_add7cf34b3daa0de3da1e4424f3a5ec50}\index{MeshFile@{MeshFile}!m\_Normals@{m\_Normals}}
+\index{m\_Normals@{m\_Normals}!MeshFile@{MeshFile}}
+\doxysubsubsection{\texorpdfstring{m\_Normals}{m\_Normals}}
+{\footnotesize\ttfamily \label{class_mesh_file_add7cf34b3daa0de3da1e4424f3a5ec50} 
+std\+::vector$<$\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}$>$ Mesh\+File\+::m\+\_\+\+Normals\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vertex normals. 
+
+\Hypertarget{class_mesh_file_a402924735c5af973ddaa4cc248a18492}\index{MeshFile@{MeshFile}!m\_Positions@{m\_Positions}}
+\index{m\_Positions@{m\_Positions}!MeshFile@{MeshFile}}
+\doxysubsubsection{\texorpdfstring{m\_Positions}{m\_Positions}}
+{\footnotesize\ttfamily \label{class_mesh_file_a402924735c5af973ddaa4cc248a18492} 
+std\+::vector$<$\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}$>$ Mesh\+File\+::m\+\_\+\+Positions\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vertex positions. 
+
+\Hypertarget{class_mesh_file_a2c8a2ef80ae3184b2c09910900b54f1f}\index{MeshFile@{MeshFile}!m\_TexCoords@{m\_TexCoords}}
+\index{m\_TexCoords@{m\_TexCoords}!MeshFile@{MeshFile}}
+\doxysubsubsection{\texorpdfstring{m\_TexCoords}{m\_TexCoords}}
+{\footnotesize\ttfamily \label{class_mesh_file_a2c8a2ef80ae3184b2c09910900b54f1f} 
+std\+::vector$<$\mbox{\hyperlink{math_8hpp_acfd9107b583da9f618732213cb319ced}{Vector2f}}$>$ Mesh\+File\+::m\+\_\+\+Tex\+Coords\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{class_texture}{Texture} coordinates. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Meshes/\mbox{\hyperlink{mesh_file_8hpp}{mesh\+File.\+hpp}}\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Meshes/\mbox{\hyperlink{mesh_file_8cpp}{mesh\+File.\+cpp}}\end{DoxyCompactItemize}

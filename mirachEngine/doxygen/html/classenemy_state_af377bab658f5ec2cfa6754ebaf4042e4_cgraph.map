@@ -1,0 +1,36 @@
+<map id="enemyState::onAttackExecute" name="enemyState::onAttackExecute">
+<area shape="rect" id="Node000001" title="Called every frame while attacking. Plays attack animation, checks player distance for flee/chase swi..." alt="" coords="5,304,205,331"/>
+<area shape="rect" id="Node000002" href="$class_physics_1_1_rigid_body.html#a33c9a1ebcd090d195239f48c290e37e0" title=" " alt="" coords="275,5,435,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,303,123,257,152,191,194,120,221,87,251,58,260,51,263,56,254,62,225,90,199,123,157,193,128,259,113,305"/>
+<area shape="rect" id="Node000003" href="$class_state_machine.html#a3f71e3da813131021e5a6299a731e138" title="Changes the current state to a new one." alt="" coords="262,72,448,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="109,303,128,264,158,211,199,156,224,130,251,108,259,103,262,108,254,113,227,134,203,159,162,214,132,266,114,305"/>
+<area shape="rect" id="Node000004" href="$class_entity_manager.html#a00080c3855e9aab3796bb94f6b48ac9b" title="Retrieves a reference to the component of type T for an entity." alt="" coords="523,275,724,301"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="205,309,508,292,508,297,205,314"/>
+<area shape="rect" id="Node000007" href="$class_enemy.html#a6a53cb0274226ee5528ab2d0290960f4" title=" " alt="" coords="297,173,413,200"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="120,301,175,256,212,231,252,210,281,199,283,204,254,214,215,236,178,261,123,306"/>
+<area shape="rect" id="Node000008" href="$class_enemy.html#a6823df17129aabfc6a5fe8cf58aac9bd" title=" " alt="" coords="274,224,436,251"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="148,301,252,267,294,253,296,258,253,272,149,306"/>
+<area shape="rect" id="Node000009" href="$class_entity_manager.html#af086011ae902ac5704362571a8217975" title="Checks if an entity has a component of type T." alt="" coords="253,123,457,149"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="113,302,165,233,205,193,251,159,262,153,265,158,254,164,209,197,169,237,117,305"/>
+<area shape="rect" id="Node000011" href="$class_singleton.html#a4c569e7ab86e5654a3f094ee50e75d7c" title=" " alt="" coords="269,325,440,368"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="160,329,254,341,253,346,160,334"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="205,318,254,323,253,329,205,323"/>
+<area shape="rect" id="Node000012" href="$class_enemy.html#afed1f34385bbc4d7dc77c4861c56ca8c" title="Checks if the enemy&#39;s health is below a threshold." alt="" coords="283,392,426,419"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="136,329,190,353,254,377,278,385,276,390,252,383,188,358,134,334"/>
+<area shape="rect" id="Node000013" href="$class_enemy.html#a23955b57eed292653412616a12fb38a8" title="Checks whether the player is within a given range." alt="" coords="271,443,438,469"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="122,329,177,378,214,405,254,428,269,435,267,440,251,433,211,409,173,382,118,333"/>
+<area shape="rect" id="Node000015" href="$math_8hpp.html#a11c0426b3a7e98489b250e45d0240c5f" title="Normalizes a 3D vector." alt="" coords="315,493,395,520"/>
+<area shape="poly" id="edge17_Node000001_Node000015" title=" " alt="" coords="117,330,137,361,168,402,208,444,254,479,276,490,300,497,299,502,274,495,251,484,204,448,164,405,133,364,112,333"/>
+<area shape="rect" id="Node000016" href="$class_enemy.html#a15a7cf1b50848f5fe57062e376f83e61" title="Sets the current animation by name." alt="" coords="281,544,429,571"/>
+<area shape="poly" id="edge18_Node000001_Node000016" title=" " alt="" coords="114,330,132,370,161,424,202,481,227,507,254,530,268,538,265,542,251,534,223,511,198,485,157,427,127,372,109,332"/>
+<area shape="rect" id="Node000005" href="$class_component_manager.html#a81536e74843307f9b9e27993cca3e72b" title="Retrieves a reference to the component of an entity." alt="" coords="790,275,1025,301"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="725,285,775,285,775,291,725,291"/>
+<area shape="rect" id="Node000006" href="$class_entity_manager.html#aa02cffa1d2435ea5d0eadee749c2a965" title="Gets the component manager for a type (const)." alt="" coords="815,199,1000,225"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="676,271,840,227,841,232,677,277"/>
+<area shape="poly" id="edge9_Node000009_Node000006" title=" " alt="" coords="435,147,505,159,800,197,799,202,505,164,434,153"/>
+<area shape="rect" id="Node000010" href="$class_component_manager.html#a8a8d1ef9e132029f47f452d64f0c3f7a" title="Checks if an entity has a component of this type." alt="" coords="505,123,742,149"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="458,133,490,133,490,139,458,139"/>
+<area shape="poly" id="edge16_Node000013_Node000004" title=" " alt="" coords="428,440,456,428,499,402,538,370,599,311,603,315,542,374,502,406,458,433,430,445"/>
+<area shape="rect" id="Node000014" href="$class_enemy.html#a94f30d348b6d2840fd71675472ba38dd" title="Default constructor." alt="" coords="568,443,679,469"/>
+<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="439,453,552,453,552,459,439,459"/>
+</map>

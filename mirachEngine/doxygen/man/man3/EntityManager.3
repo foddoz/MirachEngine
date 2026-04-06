@@ -1,0 +1,357 @@
+.TH "EntityManager" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+EntityManager \- Manages entity creation, destruction, and component access in the ECS system\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <entity_manager\&.hpp>\fP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBComponentManagerWrapper\fP"
+.br
+.RI "Concrete wrapper for a strongly typed component manager\&. "
+.ti -1c
+.RI "struct \fBIComponentManagerBase\fP"
+.br
+.RI "Abstract base class for all component manager wrappers\&. "
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEntityManager\fP ()"
+.br
+.RI "Constructs a new \fBEntityManager\fP instance with ID counter initialized\&. "
+.ti -1c
+.RI "\fBEntity\fP \fBCreateEntity\fP ()"
+.br
+.RI "Creates a new unique entity\&. "
+.ti -1c
+.RI "void \fBDestroyEntity\fP (\fBEntity\fP e)"
+.br
+.RI "Destroys an entity and removes all its associated components\&. "
+.ti -1c
+.RI "const std::vector< \fBEntity\fP > & \fBGetAllEntities\fP () const"
+.br
+.RI "Returns a list of all currently active entities\&. "
+.ti -1c
+.RI "template<typename T> void \fBAddComponent\fP (\fBEntity\fP e, const T &component)"
+.br
+.RI "Adds a component of type T to the given entity\&. "
+.ti -1c
+.RI "template<typename T> void \fBRemoveComponent\fP (\fBEntity\fP e)"
+.br
+.RI "Removes a component of type T from the given entity\&. "
+.ti -1c
+.RI "template<typename T> bool \fBHasComponent\fP (\fBEntity\fP e) const"
+.br
+.RI "Checks if an entity has a component of type T\&. "
+.ti -1c
+.RI "template<typename T> T & \fBGetComponent\fP (\fBEntity\fP e)"
+.br
+.RI "Retrieves a reference to the component of type T for an entity\&. "
+.ti -1c
+.RI "template<typename T> bool \fBHasComponentType\fP () const"
+.br
+.RI "Checks if any components of type T are registered in the system\&. "
+.ti -1c
+.RI "template<typename T> std::unordered_map< \fBEntity\fP, T > & \fBGetAllComponents\fP ()"
+.br
+.RI "Returns a reference to the map of all components of type T\&. "
+.ti -1c
+.RI "template<typename T> const std::unordered_map< \fBEntity\fP, T > & \fBGetAllComponents\fP () const"
+.br
+.RI "Returns a const reference to the map of all components of type T\&. "
+.ti -1c
+.RI "void \fBPrintRegisteredComponents\fP () const"
+.br
+.RI "Prints all registered component types and their internal pointers\&. Useful for debugging component registration\&. "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T> \fBComponentManager\fP< T > & \fBGetOrCreateManager\fP ()"
+.br
+.RI "Returns the manager for the given component type, creating it if needed\&. "
+.ti -1c
+.RI "template<typename T> const \fBComponentManager\fP< T > & \fBGetManager\fP () const"
+.br
+.RI "Gets the component manager for a type (const)\&. "
+.ti -1c
+.RI "template<typename T> \fBComponentManager\fP< T > & \fBGetManager\fP ()"
+.br
+.RI "Gets the component manager for a type (non-const)\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBEntity\fP \fBm_NextEntityID\fP"
+.br
+.RI "Next available entity ID\&. "
+.ti -1c
+.RI "std::vector< \fBEntity\fP > \fBm_Entities\fP"
+.br
+.RI "List of all active entity IDs\&. "
+.ti -1c
+.RI "std::unordered_map< std::type_index, std::unique_ptr< \fBIComponentManagerBase\fP > > \fBm_ComponentManagers\fP"
+.br
+.RI "Map of component types to their managers\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Manages entity creation, destruction, and component access in the ECS system\&. 
+
+This class handles creation of unique entity IDs, storage of active entities, and dynamic registration and access of typed component managers\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "EntityManager::EntityManager ()\fR [inline]\fP"
+
+.PP
+Constructs a new \fBEntityManager\fP instance with ID counter initialized\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename T> void EntityManager::AddComponent (\fBEntity\fP e, const T & component)\fR [inline]\fP"
+
+.PP
+Adds a component of type T to the given entity\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The component type\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP The entity to attach the component to\&. 
+.br
+\fIcomponent\fP The component instance to copy\&. 
+.RE
+.PP
+
+.SS "\fBEntity\fP EntityManager::CreateEntity ()\fR [inline]\fP"
+
+.PP
+Creates a new unique entity\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The created entity ID\&. 
+.RE
+.PP
+
+.SS "void EntityManager::DestroyEntity (\fBEntity\fP e)\fR [inline]\fP"
+
+.PP
+Destroys an entity and removes all its associated components\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP The entity to destroy\&. 
+.RE
+.PP
+
+.SS "template<typename T> std::unordered_map< \fBEntity\fP, T > & EntityManager::GetAllComponents ()\fR [inline]\fP"
+
+.PP
+Returns a reference to the map of all components of type T\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The component type\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Mutable reference to the entity-component map\&. 
+.RE
+.PP
+
+.SS "template<typename T> const std::unordered_map< \fBEntity\fP, T > & EntityManager::GetAllComponents () const\fR [inline]\fP"
+
+.PP
+Returns a const reference to the map of all components of type T\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The component type\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Const reference to the entity-component map\&. 
+.RE
+.PP
+
+.SS "const std::vector< \fBEntity\fP > & EntityManager::GetAllEntities () const\fR [inline]\fP"
+
+.PP
+Returns a list of all currently active entities\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Vector of active entity IDs\&. 
+.RE
+.PP
+
+.SS "template<typename T> T & EntityManager::GetComponent (\fBEntity\fP e)\fR [inline]\fP"
+
+.PP
+Retrieves a reference to the component of type T for an entity\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The component type\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP The entity owning the component\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Reference to the component\&. 
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIstd::runtime_error\fP if the component does not exist\&. 
+.RE
+.PP
+
+.SS "template<typename T> \fBComponentManager\fP< T > & EntityManager::GetManager ()\fR [inline]\fP, \fR [private]\fP"
+
+.PP
+Gets the component manager for a type (non-const)\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP Component type\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Reference to the component manager\&. 
+.RE
+.PP
+
+.SS "template<typename T> const \fBComponentManager\fP< T > & EntityManager::GetManager () const\fR [inline]\fP, \fR [private]\fP"
+
+.PP
+Gets the component manager for a type (const)\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP Component type\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Const reference to the component manager\&. 
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIstd::runtime_error\fP if the manager doesn't exist\&. 
+.RE
+.PP
+
+.SS "template<typename T> \fBComponentManager\fP< T > & EntityManager::GetOrCreateManager ()\fR [inline]\fP, \fR [private]\fP"
+
+.PP
+Returns the manager for the given component type, creating it if needed\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP Component type\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Reference to the component manager\&. 
+.RE
+.PP
+
+.SS "template<typename T> bool EntityManager::HasComponent (\fBEntity\fP e) const\fR [inline]\fP"
+
+.PP
+Checks if an entity has a component of type T\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The component type\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP The entity to check\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the entity has the component, false otherwise\&. 
+.RE
+.PP
+
+.SS "template<typename T> bool EntityManager::HasComponentType () const\fR [inline]\fP"
+
+.PP
+Checks if any components of type T are registered in the system\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The component type\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the component type exists, false otherwise\&. 
+.RE
+.PP
+
+.SS "void EntityManager::PrintRegisteredComponents () const\fR [inline]\fP"
+
+.PP
+Prints all registered component types and their internal pointers\&. Useful for debugging component registration\&. 
+.SS "template<typename T> void EntityManager::RemoveComponent (\fBEntity\fP e)\fR [inline]\fP"
+
+.PP
+Removes a component of type T from the given entity\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The component type\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP The entity to remove the component from\&. 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::unordered_map<std::type_index, std::unique_ptr<\fBIComponentManagerBase\fP> > EntityManager::m_ComponentManagers\fR [private]\fP"
+
+.PP
+Map of component types to their managers\&. 
+.SS "std::vector<\fBEntity\fP> EntityManager::m_Entities\fR [private]\fP"
+
+.PP
+List of all active entity IDs\&. 
+.SS "\fBEntity\fP EntityManager::m_NextEntityID\fR [private]\fP"
+
+.PP
+Next available entity ID\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

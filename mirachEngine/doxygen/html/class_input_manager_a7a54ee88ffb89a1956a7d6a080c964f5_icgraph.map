@@ -1,0 +1,11 @@
+<map id="InputManager::WasMouseButtonJustPressed" name="InputManager::WasMouseButtonJustPressed">
+<area shape="rect" id="Node000001" title="Checks if a mouse button was just pressed this frame." alt="" coords="713,5,924,48"/>
+<area shape="rect" id="Node000002" href="$class_player_script.html#a477310df8b50b588b853e7d174e12f13" title="Captures input states and updates internal flags." alt="" coords="489,13,665,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="697,29,665,29,665,24,697,24"/>
+<area shape="rect" id="Node000003" href="$class_terrain_scene.html#a55eb34067d9346aa7d9c3295a9e2dfb0" title="Executes the main loop: input, update, physics, animation, and rendering." alt="" coords="280,13,441,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="474,29,442,29,442,24,474,24"/>
+<area shape="rect" id="Node000004" href="$class_terrain_scene.html#ae8ec4e098386a74714255aed184761eb" title="Runs the full scene lifecycle in the correct execution order." alt="" coords="103,13,232,40"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="264,29,232,29,232,24,264,24"/>
+<area shape="rect" id="Node000005" href="$mirach_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point of the engine. Initializes subsystems, loads models, sets up ECS,..." alt="" coords="5,13,55,40"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>

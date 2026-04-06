@@ -1,0 +1,15 @@
+<map id="TerrainChunk::GenerateCPUData" name="TerrainChunk::GenerateCPUData">
+<area shape="rect" id="Node000001" title="Generates mesh data for this chunk from a global heightmap source." alt="" coords="5,81,222,108"/>
+<area shape="rect" id="Node000002" href="$class_mesh_terrain.html#a6bce579145dde6b4cde1c5bd622aa797" title="Generates vertices, normals, and triangle indices from heightmap." alt="" coords="270,81,476,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="222,92,254,92,254,97,222,97"/>
+<area shape="rect" id="Node000003" href="$class_mesh_terrain.html#ac04c41367589da2a17ffa10ee6490ebf" title="Computes per&#45;vertex normals by averaging surrounding triangles." alt="" coords="524,31,700,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="439,78,530,58,532,64,440,83"/>
+<area shape="rect" id="Node000006" href="$class_mesh_terrain.html#af107e4f6795dde2123aa006638d0b779" title="Fills index buffer with triangle strip indices." alt="" coords="532,81,692,108"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="477,92,516,92,516,97,477,97"/>
+<area shape="rect" id="Node000007" href="$class_mesh_terrain.html#a6103508d3697247eba65cbda2b9d1782" title="Initializes vertex positions and texture coordinates." alt="" coords="530,132,695,159"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="440,106,532,126,530,131,439,111"/>
+<area shape="rect" id="Node000004" href="$math_8hpp.html#a670c0a5216c9f579310c5202fba83257" title="Cross product of two 3D vectors." alt="" coords="760,5,817,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="700,29,744,22,745,28,701,34"/>
+<area shape="rect" id="Node000005" href="$math_8hpp.html#a11c0426b3a7e98489b250e45d0240c5f" title="Normalizes a 3D vector." alt="" coords="748,56,829,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="701,54,733,59,733,64,700,59"/>
+</map>

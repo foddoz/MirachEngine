@@ -1,0 +1,11 @@
+<map id="PlayerScript::Jump" name="PlayerScript::Jump">
+<area shape="rect" id="Node000001" title="Applies vertical force for a normal jump if grounded." alt="" coords="5,43,138,69"/>
+<area shape="rect" id="Node000002" href="$class_physics_1_1_rigid_body.html#a214081eeac9a81be404acea1601d40f0" title=" " alt="" coords="213,5,360,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,44,197,36,198,41,139,50"/>
+<area shape="rect" id="Node000003" href="$class_entity_manager.html#a00080c3855e9aab3796bb94f6b48ac9b" title="Retrieves a reference to the component of type T for an entity." alt="" coords="186,72,387,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="139,62,171,67,170,72,138,68"/>
+<area shape="rect" id="Node000004" href="$class_component_manager.html#a81536e74843307f9b9e27993cca3e72b" title="Retrieves a reference to the component of an entity." alt="" coords="435,47,669,73"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="387,73,419,70,420,75,388,78"/>
+<area shape="rect" id="Node000005" href="$class_entity_manager.html#aa02cffa1d2435ea5d0eadee749c2a965" title="Gets the component manager for a type (const)." alt="" coords="460,97,644,124"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="388,92,445,98,444,103,387,98"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="PlayerScript::DropObject" name="PlayerScript::DropObject">
+<area shape="rect" id="Node000001" title="Drops the currently held object." alt="" coords="5,89,172,116"/>
+<area shape="rect" id="Node000002" href="$class_entity_manager.html#a00080c3855e9aab3796bb94f6b48ac9b" title="Retrieves a reference to the component of type T for an entity." alt="" coords="220,31,421,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,86,219,67,249,59,250,64,220,72,145,91"/>
+<area shape="rect" id="Node000005" href="$class_physics_1_1_rigid_body.html#abf8f5f785bd470586c7398b3d759d04d" title=" " alt="" coords="247,81,394,124"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="172,100,231,100,231,105,172,105"/>
+<area shape="rect" id="Node000006" href="$class_physics_1_1_collider.html#abf9488feabedf4d5d7cee829f9b5967a" title="Sets the bitmask controlling what this collider can collide with." alt="" coords="256,148,384,191"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="139,114,242,144,241,149,137,119"/>
+<area shape="rect" id="Node000003" href="$class_component_manager.html#a81536e74843307f9b9e27993cca3e72b" title="Retrieves a reference to the component of an entity." alt="" coords="469,5,703,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="421,32,453,29,454,34,422,37"/>
+<area shape="rect" id="Node000004" href="$class_entity_manager.html#aa02cffa1d2435ea5d0eadee749c2a965" title="Gets the component manager for a type (const)." alt="" coords="494,56,678,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="422,51,479,56,478,62,421,56"/>
+</map>

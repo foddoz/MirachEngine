@@ -1,0 +1,298 @@
+.TH "Camera" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Camera \- A 3D camera that handles projection, view matrix generation, frustum culling, and orientation logic\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <camera\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCamera\fP ()"
+.br
+.RI "Constructs a camera with default orientation and projection parameters\&. "
+.ti -1c
+.RI "void \fBSetProjectionMatrix\fP (float fov, float aspect, float near, float far)"
+.br
+.RI "Sets the perspective projection matrix using a field of view, aspect ratio, and near/far planes\&. "
+.ti -1c
+.RI "\fBMatrix4f\fP \fBGetViewMatrix\fP (const \fBVector3f\fP &position) const"
+.br
+.RI "Calculates and retrieves the current view matrix based on a given position\&. "
+.ti -1c
+.RI "\fBMatrix4f\fP \fBGetProjectionMatrix\fP () const"
+.br
+.RI "Retrieves the current projection matrix\&. "
+.ti -1c
+.RI "void \fBLook\fP (float deltaX, float deltaY, float lookSpeed)"
+.br
+.RI "Applies mouse input to rotate the camera using yaw and pitch\&. "
+.ti -1c
+.RI "bool \fBIsBoxInFrustum\fP (const \fBVector3f\fP &min, const \fBVector3f\fP &max) const"
+.br
+.RI "Tests whether a given axis-aligned bounding box (\fBAABB\fP) is inside the camera's view frustum\&. "
+.ti -1c
+.RI "void \fBEnable\fP (bool enabled)"
+.br
+.RI "Enables or disables the camera\&. "
+.ti -1c
+.RI "bool \fBIsEnabled\fP () const"
+.br
+.RI "Checks if the camera is currently enabled\&. "
+.ti -1c
+.RI "void \fBUpdateFrustumPlanes\fP (const \fBVector3f\fP &position)"
+.br
+.RI "Updates the six frustum planes based on the camera's view-projection matrix and position\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBGetFrontVector\fP () const"
+.br
+.RI "Retrieves the camera's forward (front) direction vector\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBGetRightVector\fP () const"
+.br
+.RI "Retrieves the camera's right direction vector\&. "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBUpdateVectors\fP ()"
+.br
+.RI "Updates the camera's direction vectors (front, right, up) based on its current yaw and pitch\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBMatrix4f\fP \fBmProjectionMatrix\fP"
+.br
+.RI "Perspective projection matrix\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBmFrontVector\fP"
+.br
+.RI "Normalized forward direction vector\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBmRightVector\fP"
+.br
+.RI "Normalized right direction vector\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBmUpVector\fP"
+.br
+.RI "Normalized up direction vector\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBmWorldUp\fP"
+.br
+.RI "World-space up vector, usually (0,1,0)\&. "
+.ti -1c
+.RI "float \fBmYaw\fP"
+.br
+.RI "Horizontal angle in degrees (yaw rotation)\&. "
+.ti -1c
+.RI "float \fBmPitch\fP"
+.br
+.RI "Vertical angle in degrees (pitch rotation)\&. "
+.ti -1c
+.RI "\fBVector4f\fP \fBmFrustumPlanes\fP [6]"
+.br
+.RI "View frustum planes: left, right, bottom, top, near, far\&. "
+.ti -1c
+.RI "bool \fBmEnabled\fP"
+.br
+.RI "Whether the camera is currently active or not\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A 3D camera that handles projection, view matrix generation, frustum culling, and orientation logic\&. 
+
+Used in the Mirach engine to compute view and projection matrices, manage orientation using pitch and yaw, and determine whether objects are visible within the view frustum\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Camera::Camera ()"
+
+.PP
+Constructs a camera with default orientation and projection parameters\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void Camera::Enable (bool enabled)"
+
+.PP
+Enables or disables the camera\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIenabled\fP True to enable the camera, false to disable\&. 
+.RE
+.PP
+
+.SS "\fBVector3f\fP Camera::GetFrontVector () const"
+
+.PP
+Retrieves the camera's forward (front) direction vector\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Normalized front vector (\fBVector3f\fP)\&. 
+.RE
+.PP
+
+.SS "\fBMatrix4f\fP Camera::GetProjectionMatrix () const"
+
+.PP
+Retrieves the current projection matrix\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Projection matrix (\fBMatrix4f\fP)\&. 
+.RE
+.PP
+
+.SS "\fBVector3f\fP Camera::GetRightVector () const"
+
+.PP
+Retrieves the camera's right direction vector\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Normalized right vector (\fBVector3f\fP)\&. 
+.RE
+.PP
+
+.SS "\fBMatrix4f\fP Camera::GetViewMatrix (const \fBVector3f\fP & position) const"
+
+.PP
+Calculates and retrieves the current view matrix based on a given position\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposition\fP The world-space position of the camera\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+View matrix (\fBMatrix4f\fP)\&. 
+.RE
+.PP
+
+.SS "bool Camera::IsBoxInFrustum (const \fBVector3f\fP & min, const \fBVector3f\fP & max) const"
+
+.PP
+Tests whether a given axis-aligned bounding box (\fBAABB\fP) is inside the camera's view frustum\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImin\fP Minimum corner of the \fBAABB\fP (\fBVector3f\fP)\&. 
+.br
+\fImax\fP Maximum corner of the \fBAABB\fP (\fBVector3f\fP)\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the box is at least partially inside the frustum; false otherwise\&. 
+.RE
+.PP
+
+.SS "bool Camera::IsEnabled () const"
+
+.PP
+Checks if the camera is currently enabled\&. 
+.PP
+\fBReturns\fP
+.RS 4
+True if enabled, false otherwise\&. 
+.RE
+.PP
+
+.SS "void Camera::Look (float deltaX, float deltaY, float lookSpeed)"
+
+.PP
+Applies mouse input to rotate the camera using yaw and pitch\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdeltaX\fP Change in mouse X position\&. 
+.br
+\fIdeltaY\fP Change in mouse Y position\&. 
+.br
+\fIlookSpeed\fP Sensitivity multiplier for look speed\&. 
+.RE
+.PP
+
+.SS "void Camera::SetProjectionMatrix (float fov, float aspect, float near, float far)"
+
+.PP
+Sets the perspective projection matrix using a field of view, aspect ratio, and near/far planes\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfov\fP Field of view in radians\&. 
+.br
+\fIaspect\fP Aspect ratio (width divided by height)\&. 
+.br
+\fInear\fP Near clipping plane distance\&. 
+.br
+\fIfar\fP Far clipping plane distance\&. 
+.RE
+.PP
+
+.SS "void Camera::UpdateFrustumPlanes (const \fBVector3f\fP & position)"
+
+.PP
+Updates the six frustum planes based on the camera's view-projection matrix and position\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposition\fP The world-space position of the camera\&. 
+.RE
+.PP
+
+.SS "void Camera::UpdateVectors ()\fR [private]\fP"
+
+.PP
+Updates the camera's direction vectors (front, right, up) based on its current yaw and pitch\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "bool Camera::mEnabled\fR [private]\fP"
+
+.PP
+Whether the camera is currently active or not\&. 
+.SS "\fBVector3f\fP Camera::mFrontVector\fR [private]\fP"
+
+.PP
+Normalized forward direction vector\&. 
+.SS "\fBVector4f\fP Camera::mFrustumPlanes[6]\fR [private]\fP"
+
+.PP
+View frustum planes: left, right, bottom, top, near, far\&. 
+.SS "float Camera::mPitch\fR [private]\fP"
+
+.PP
+Vertical angle in degrees (pitch rotation)\&. 
+.SS "\fBMatrix4f\fP Camera::mProjectionMatrix\fR [private]\fP"
+
+.PP
+Perspective projection matrix\&. 
+.SS "\fBVector3f\fP Camera::mRightVector\fR [private]\fP"
+
+.PP
+Normalized right direction vector\&. 
+.SS "\fBVector3f\fP Camera::mUpVector\fR [private]\fP"
+
+.PP
+Normalized up direction vector\&. 
+.SS "\fBVector3f\fP Camera::mWorldUp\fR [private]\fP"
+
+.PP
+World-space up vector, usually (0,1,0)\&. 
+.SS "float Camera::mYaw\fR [private]\fP"
+
+.PP
+Horizontal angle in degrees (yaw rotation)\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

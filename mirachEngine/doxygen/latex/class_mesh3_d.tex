@@ -1,0 +1,322 @@
+\doxysection{Mesh3D Class Reference}
+\hypertarget{class_mesh3_d}{}\label{class_mesh3_d}\index{Mesh3D@{Mesh3D}}
+
+
+Abstract base class for rendering and managing 3D mesh data.  
+
+
+
+
+{\ttfamily \#include $<$mesh3d.\+hpp$>$}
+
+
+
+Inheritance diagram for Mesh3D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_mesh3_d__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Mesh3D\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{class_mesh3_d__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mesh3_d_a8cdefca0bf7171afd91f2a1a88e05a7e}{Mesh3D}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor initializes Open\+GL buffer handles and transforms. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mesh3_d_a18dc545efcaa749ea7649b9bcaa91ce1}{Mesh3D}} (const \mbox{\hyperlink{class_mesh3_d}{Mesh3D}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor for \doxylink{class_mesh3_d}{Mesh3D}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_mesh3_d_aef879f5ea3d9dce661e23ed2cb5f2c9e}{Upload\+To\+GPU}} ()=0
+\begin{DoxyCompactList}\small\item\em Uploads the mesh data to the GPU. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{struct_mesh_renderer}{Mesh\+Renderer}} \mbox{\hyperlink{class_mesh3_d_a0bfe53bc0b4d0e2a9804ffa119f7aec9}{To\+Renderer}} ()=0
+\begin{DoxyCompactList}\small\item\em Converts the mesh into a {\ttfamily \doxylink{struct_mesh_renderer}{Mesh\+Renderer}} component used by the ECS. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh3_d_a478bda9c8ff4adb50c56c26ef50af8d2}{Set\+Pipeline}} (unsigned int pipeline)
+\begin{DoxyCompactList}\small\item\em Assigns a graphics pipeline (shader program) to this mesh. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_mesh3_d_a08ad190035c6d8e8362f009a09e6bc17}{Delete}} ()
+\begin{DoxyCompactList}\small\item\em Releases GPU buffers and associated textures. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_ad2952df09ac54e7d5fafbcf87ae7c487}{get\+Pipeline}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the currently assigned graphics pipeline. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_mesh3_d_a91aa0f790bb9f1acc3d270033d11e6ef}{Populate\+Buffers}} ()=0
+\begin{DoxyCompactList}\small\item\em Populates Open\+GL buffers for vertex/index/texture data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a9bb74668772fa08c0099f3aa0d242215}{m\+\_\+\+VAO}}
+\begin{DoxyCompactList}\small\item\em Open\+GL Vertex Array Object handle. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a064dc03404641d9b41dcc58f3244b5ea}{m\+\_\+\+Index\+Count}}
+\begin{DoxyCompactList}\small\item\em Number of indices used for drawing (gl\+Draw\+Elements or gl\+Draw\+Arrays). \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a0a78f966ef1aaf868c32523200ffd7b5}{m\+\_\+\+VBO}}
+\begin{DoxyCompactList}\small\item\em Vertex Buffer Object handle. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a79760be3f47e0cd2738e5932e2ce6a70}{m\+\_\+\+IBO}}
+\begin{DoxyCompactList}\small\item\em Index Buffer Object handle. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_texture}{Texture}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_mesh3_d_a878c07f3eab3dcc47195e3bc0b74fa30}{m\+\_\+\+Textures}}
+\begin{DoxyCompactList}\small\item\em Collection of textures associated with this mesh. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a6232eb241c460e30d607b59862d0e8f1}{m\+\_\+\+Pipeline}}
+\begin{DoxyCompactList}\small\item\em Open\+GL shader program ID assigned to this mesh. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_a_a_b_b}{AABB}} \mbox{\hyperlink{class_mesh3_d_aeaaf348709784591a9608a9e779e3cd3}{m\+\_\+\+AABB}}
+\begin{DoxyCompactList}\small\item\em Axis-\/aligned bounding box in local (object) space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for rendering and managing 3D mesh data. 
+
+{\ttfamily \doxylink{class_mesh3_d}{Mesh3D}} defines a common interface for all 3D meshes in the engine. It encapsulates Open\+GL vertex/index buffers, bounding volume, shader pipeline, and associated texture data. Derived classes must implement data upload and rendering conversion. 
+
+\label{doc-constructors}
+\Hypertarget{class_mesh3_d_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_mesh3_d_a8cdefca0bf7171afd91f2a1a88e05a7e}\index{Mesh3D@{Mesh3D}!Mesh3D@{Mesh3D}}
+\index{Mesh3D@{Mesh3D}!Mesh3D@{Mesh3D}}
+\doxysubsubsection{\texorpdfstring{Mesh3D()}{Mesh3D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_mesh3_d_a8cdefca0bf7171afd91f2a1a88e05a7e} 
+Mesh3\+D\+::\+Mesh3D (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor initializes Open\+GL buffer handles and transforms. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh3_d_a8cdefca0bf7171afd91f2a1a88e05a7e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh3_d_a18dc545efcaa749ea7649b9bcaa91ce1}\index{Mesh3D@{Mesh3D}!Mesh3D@{Mesh3D}}
+\index{Mesh3D@{Mesh3D}!Mesh3D@{Mesh3D}}
+\doxysubsubsection{\texorpdfstring{Mesh3D()}{Mesh3D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_mesh3_d_a18dc545efcaa749ea7649b9bcaa91ce1} 
+Mesh3\+D\+::\+Mesh3D (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_mesh3_d}{Mesh3D}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor for \doxylink{class_mesh3_d}{Mesh3D}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The mesh to copy from. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{class_mesh3_d_a18dc545efcaa749ea7649b9bcaa91ce1_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{class_mesh3_d_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mesh3_d_a08ad190035c6d8e8362f009a09e6bc17}\index{Mesh3D@{Mesh3D}!Delete@{Delete}}
+\index{Delete@{Delete}!Mesh3D@{Mesh3D}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily \label{class_mesh3_d_a08ad190035c6d8e8362f009a09e6bc17} 
+void Mesh3\+D\+::\+Delete (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Releases GPU buffers and associated textures. 
+
+Deletes Open\+GL buffer resources and releases associated textures.
+
+Can be overridden to add additional resource cleanup logic.
+
+Deletes VBO, IBO, VAO, and any \doxylink{class_texture}{Texture} objects created on the heap. 
+
+Reimplemented in \mbox{\hyperlink{class_mesh_file_af877f6113f80d10762f95f8f76bd1547}{Mesh\+File}}, \mbox{\hyperlink{class_mesh_sky_dome_a994bf8d23f591e159a7aee8b1c3fb69b}{Mesh\+Sky\+Dome}}, and \mbox{\hyperlink{class_mesh_terrain_abab5aa07a8ce7336f6f07541105f586d}{Mesh\+Terrain}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{class_mesh3_d_a08ad190035c6d8e8362f009a09e6bc17_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{class_mesh3_d_a08ad190035c6d8e8362f009a09e6bc17_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh3_d_ad2952df09ac54e7d5fafbcf87ae7c487}\index{Mesh3D@{Mesh3D}!getPipeline@{getPipeline}}
+\index{getPipeline@{getPipeline}!Mesh3D@{Mesh3D}}
+\doxysubsubsection{\texorpdfstring{getPipeline()}{getPipeline()}}
+{\footnotesize\ttfamily \label{class_mesh3_d_ad2952df09ac54e7d5fafbcf87ae7c487} 
+unsigned int Mesh3\+D\+::get\+Pipeline (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the currently assigned graphics pipeline. 
+
+Retrieves the assigned shader pipeline (Open\+GL program ID).
+
+\begin{DoxyReturn}{Returns}
+Open\+GL shader program ID.
+
+The current pipeline ID. 
+\end{DoxyReturn}
+\Hypertarget{class_mesh3_d_a91aa0f790bb9f1acc3d270033d11e6ef}\index{Mesh3D@{Mesh3D}!PopulateBuffers@{PopulateBuffers}}
+\index{PopulateBuffers@{PopulateBuffers}!Mesh3D@{Mesh3D}}
+\doxysubsubsection{\texorpdfstring{PopulateBuffers()}{PopulateBuffers()}}
+{\footnotesize\ttfamily \label{class_mesh3_d_a91aa0f790bb9f1acc3d270033d11e6ef} 
+virtual void Mesh3\+D\+::\+Populate\+Buffers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Populates Open\+GL buffers for vertex/index/texture data. 
+
+This must be implemented by subclasses based on the structure of the mesh data. 
+
+Implemented in \mbox{\hyperlink{class_mesh_file_a6b05f6a342db7e1c2e324ce779988c29}{Mesh\+File}}, \mbox{\hyperlink{class_mesh_m_d2_a296a12dbea02874b8a4ea7e450f63e3f}{Mesh\+MD2}}, \mbox{\hyperlink{class_mesh_sky_dome_ab4c16fb980037e0ede6a41f8a08ba816}{Mesh\+Sky\+Dome}}, and \mbox{\hyperlink{class_mesh_terrain_a9991fb5a1a6635d5b5116c553caf1007}{Mesh\+Terrain}}.
+
+\Hypertarget{class_mesh3_d_a478bda9c8ff4adb50c56c26ef50af8d2}\index{Mesh3D@{Mesh3D}!SetPipeline@{SetPipeline}}
+\index{SetPipeline@{SetPipeline}!Mesh3D@{Mesh3D}}
+\doxysubsubsection{\texorpdfstring{SetPipeline()}{SetPipeline()}}
+{\footnotesize\ttfamily \label{class_mesh3_d_a478bda9c8ff4adb50c56c26ef50af8d2} 
+void Mesh3\+D\+::\+Set\+Pipeline (\begin{DoxyParamCaption}\item[{unsigned int}]{pipeline}{}\end{DoxyParamCaption})}
+
+
+
+Assigns a graphics pipeline (shader program) to this mesh. 
+
+Sets the graphics pipeline (Open\+GL shader program).
+
+
+\begin{DoxyParams}{Parameters}
+{\em pipeline} & Open\+GL shader program ID to bind when rendering.\\
+\hline
+{\em pipeline} & Open\+GL program ID to assign. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mesh3_d_a0bfe53bc0b4d0e2a9804ffa119f7aec9}\index{Mesh3D@{Mesh3D}!ToRenderer@{ToRenderer}}
+\index{ToRenderer@{ToRenderer}!Mesh3D@{Mesh3D}}
+\doxysubsubsection{\texorpdfstring{ToRenderer()}{ToRenderer()}}
+{\footnotesize\ttfamily \label{class_mesh3_d_a0bfe53bc0b4d0e2a9804ffa119f7aec9} 
+virtual \mbox{\hyperlink{struct_mesh_renderer}{Mesh\+Renderer}} Mesh3\+D\+::\+To\+Renderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Converts the mesh into a {\ttfamily \doxylink{struct_mesh_renderer}{Mesh\+Renderer}} component used by the ECS. 
+
+\begin{DoxyReturn}{Returns}
+A fully initialized {\ttfamily \doxylink{struct_mesh_renderer}{Mesh\+Renderer}} instance containing rendering info. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_mesh_file_ad3f8ebf3d6f60b79fc49af792c0ec974}{Mesh\+File}}, \mbox{\hyperlink{class_mesh_m_d2_ad3324ff6fbee53ae91c7044b6cb1f143}{Mesh\+MD2}}, \mbox{\hyperlink{class_mesh_sky_dome_a515776765d9a26d5f57d3a915817f604}{Mesh\+Sky\+Dome}}, and \mbox{\hyperlink{class_mesh_terrain_a02d8c1492362365710a818b9a4674774}{Mesh\+Terrain}}.
+
+\Hypertarget{class_mesh3_d_aef879f5ea3d9dce661e23ed2cb5f2c9e}\index{Mesh3D@{Mesh3D}!UploadToGPU@{UploadToGPU}}
+\index{UploadToGPU@{UploadToGPU}!Mesh3D@{Mesh3D}}
+\doxysubsubsection{\texorpdfstring{UploadToGPU()}{UploadToGPU()}}
+{\footnotesize\ttfamily \label{class_mesh3_d_aef879f5ea3d9dce661e23ed2cb5f2c9e} 
+virtual void Mesh3\+D\+::\+Upload\+To\+GPU (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Uploads the mesh data to the GPU. 
+
+This function must be overridden by subclasses to populate Open\+GL buffers with vertex/index/\+UV data. 
+
+Implemented in \mbox{\hyperlink{class_mesh_file_a4941fd25cb0aa2b390a2ced9c80bfe00}{Mesh\+File}}, \mbox{\hyperlink{class_mesh_m_d2_a1f00d6728c70d5f12aa2cfc49411abc2}{Mesh\+MD2}}, \mbox{\hyperlink{class_mesh_sky_dome_a9189a41803ef3ba5e0058ba2263dea44}{Mesh\+Sky\+Dome}}, \mbox{\hyperlink{class_mesh_terrain_a7f27655ea001536d577eefcaff6421e6}{Mesh\+Terrain}}, and \mbox{\hyperlink{class_terrain_chunk_aa82cd547ca7e8dc428c80cd6a71257a3}{Terrain\+Chunk}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_mesh3_d_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_mesh3_d_aeaaf348709784591a9608a9e779e3cd3}\index{Mesh3D@{Mesh3D}!m\_AABB@{m\_AABB}}
+\index{m\_AABB@{m\_AABB}!Mesh3D@{Mesh3D}}
+\doxysubsubsection{\texorpdfstring{m\_AABB}{m\_AABB}}
+{\footnotesize\ttfamily \label{class_mesh3_d_aeaaf348709784591a9608a9e779e3cd3} 
+\mbox{\hyperlink{struct_a_a_b_b}{AABB}} Mesh3\+D\+::m\+\_\+\+AABB\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Axis-\/aligned bounding box in local (object) space. 
+
+\Hypertarget{class_mesh3_d_a79760be3f47e0cd2738e5932e2ce6a70}\index{Mesh3D@{Mesh3D}!m\_IBO@{m\_IBO}}
+\index{m\_IBO@{m\_IBO}!Mesh3D@{Mesh3D}}
+\doxysubsubsection{\texorpdfstring{m\_IBO}{m\_IBO}}
+{\footnotesize\ttfamily \label{class_mesh3_d_a79760be3f47e0cd2738e5932e2ce6a70} 
+unsigned int Mesh3\+D\+::m\+\_\+\+IBO\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Index Buffer Object handle. 
+
+\Hypertarget{class_mesh3_d_a064dc03404641d9b41dcc58f3244b5ea}\index{Mesh3D@{Mesh3D}!m\_IndexCount@{m\_IndexCount}}
+\index{m\_IndexCount@{m\_IndexCount}!Mesh3D@{Mesh3D}}
+\doxysubsubsection{\texorpdfstring{m\_IndexCount}{m\_IndexCount}}
+{\footnotesize\ttfamily \label{class_mesh3_d_a064dc03404641d9b41dcc58f3244b5ea} 
+unsigned int Mesh3\+D\+::m\+\_\+\+Index\+Count\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of indices used for drawing (gl\+Draw\+Elements or gl\+Draw\+Arrays). 
+
+\Hypertarget{class_mesh3_d_a6232eb241c460e30d607b59862d0e8f1}\index{Mesh3D@{Mesh3D}!m\_Pipeline@{m\_Pipeline}}
+\index{m\_Pipeline@{m\_Pipeline}!Mesh3D@{Mesh3D}}
+\doxysubsubsection{\texorpdfstring{m\_Pipeline}{m\_Pipeline}}
+{\footnotesize\ttfamily \label{class_mesh3_d_a6232eb241c460e30d607b59862d0e8f1} 
+unsigned int Mesh3\+D\+::m\+\_\+\+Pipeline\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Open\+GL shader program ID assigned to this mesh. 
+
+\Hypertarget{class_mesh3_d_a878c07f3eab3dcc47195e3bc0b74fa30}\index{Mesh3D@{Mesh3D}!m\_Textures@{m\_Textures}}
+\index{m\_Textures@{m\_Textures}!Mesh3D@{Mesh3D}}
+\doxysubsubsection{\texorpdfstring{m\_Textures}{m\_Textures}}
+{\footnotesize\ttfamily \label{class_mesh3_d_a878c07f3eab3dcc47195e3bc0b74fa30} 
+std\+::vector$<$\mbox{\hyperlink{class_texture}{Texture}}\texorpdfstring{$\ast$}{*}$>$ Mesh3\+D\+::m\+\_\+\+Textures\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Collection of textures associated with this mesh. 
+
+\Hypertarget{class_mesh3_d_a9bb74668772fa08c0099f3aa0d242215}\index{Mesh3D@{Mesh3D}!m\_VAO@{m\_VAO}}
+\index{m\_VAO@{m\_VAO}!Mesh3D@{Mesh3D}}
+\doxysubsubsection{\texorpdfstring{m\_VAO}{m\_VAO}}
+{\footnotesize\ttfamily \label{class_mesh3_d_a9bb74668772fa08c0099f3aa0d242215} 
+unsigned int Mesh3\+D\+::m\+\_\+\+VAO\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Open\+GL Vertex Array Object handle. 
+
+\Hypertarget{class_mesh3_d_a0a78f966ef1aaf868c32523200ffd7b5}\index{Mesh3D@{Mesh3D}!m\_VBO@{m\_VBO}}
+\index{m\_VBO@{m\_VBO}!Mesh3D@{Mesh3D}}
+\doxysubsubsection{\texorpdfstring{m\_VBO}{m\_VBO}}
+{\footnotesize\ttfamily \label{class_mesh3_d_a0a78f966ef1aaf868c32523200ffd7b5} 
+unsigned int Mesh3\+D\+::m\+\_\+\+VBO\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Vertex Buffer Object handle. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Meshes/\mbox{\hyperlink{mesh3d_8hpp}{mesh3d.\+hpp}}\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Meshes/\mbox{\hyperlink{mesh3d_8cpp}{mesh3d.\+cpp}}\end{DoxyCompactItemize}

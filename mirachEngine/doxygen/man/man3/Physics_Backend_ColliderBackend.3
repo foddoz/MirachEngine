@@ -1,0 +1,127 @@
+.TH "Physics::Backend::ColliderBackend" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Physics::Backend::ColliderBackend
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <physics_backend\&.hpp>\fP
+.PP
+Inherits \fBPhysics::Collider\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBColliderBackend\fP (rp3d::Collider *c)"
+.br
+.ti -1c
+.RI "\fB~ColliderBackend\fP () override"
+.br
+.ti -1c
+.RI "void \fBSetCategoryBits\fP (uint16_t categoryBits) override"
+.br
+.RI "Sets the category bitmask of this collider\&. "
+.ti -1c
+.RI "void \fBSetCollisionMask\fP (uint16_t categoryBits) override"
+.br
+.RI "Sets the bitmask controlling what this collider can collide with\&. "
+.ti -1c
+.RI "uint16_t \fBGetCategoryBits\fP () const override"
+.br
+.RI "Gets the category bitmask of this collider\&. "
+.ti -1c
+.RI "void \fBSetFriction\fP (float coefficient) override"
+.br
+.RI "Sets the friction coefficient of this collider\&. "
+.ti -1c
+.RI "void \fBSetBounciness\fP (float bounciness) override"
+.br
+.RI "Sets the bounciness/restitution of this collider\&. "
+.ti -1c
+.RI "bool \fBIsValid\fP () const override"
+.br
+.RI "Checks if the collider is still valid\&. "
+.ti -1c
+.RI "void \fBInvalidate\fP () override"
+.br
+.RI "Marks this collider as invalid\&. "
+.ti -1c
+.RI "rp3d::Collider * \fBGetInternal\fP () const"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBPhysics::Collider\fP
+.in +1c
+.ti -1c
+.RI "virtual \fB~Collider\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "rp3d::Collider * \fBcollider\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Physics::Backend::ColliderBackend::ColliderBackend (rp3d::Collider * c)\fR [inline]\fP, \fR [explicit]\fP"
+
+.SS "Physics::Backend::ColliderBackend::~ColliderBackend ()\fR [inline]\fP, \fR [override]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "uint16_t Physics::Backend::ColliderBackend::GetCategoryBits () const\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Gets the category bitmask of this collider\&. 
+.PP
+Implements \fBPhysics::Collider\fP\&.
+.SS "rp3d::Collider * Physics::Backend::ColliderBackend::GetInternal () const\fR [inline]\fP"
+
+.SS "void Physics::Backend::ColliderBackend::Invalidate ()\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Marks this collider as invalid\&. 
+.PP
+Implements \fBPhysics::Collider\fP\&.
+.SS "bool Physics::Backend::ColliderBackend::IsValid () const\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Checks if the collider is still valid\&. 
+.PP
+Implements \fBPhysics::Collider\fP\&.
+.SS "void Physics::Backend::ColliderBackend::SetBounciness (float bounciness)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Sets the bounciness/restitution of this collider\&. 
+.PP
+Implements \fBPhysics::Collider\fP\&.
+.SS "void Physics::Backend::ColliderBackend::SetCategoryBits (uint16_t categoryBits)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Sets the category bitmask of this collider\&. 
+.PP
+Implements \fBPhysics::Collider\fP\&.
+.SS "void Physics::Backend::ColliderBackend::SetCollisionMask (uint16_t maskBits)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Sets the bitmask controlling what this collider can collide with\&. 
+.PP
+Implements \fBPhysics::Collider\fP\&.
+.SS "void Physics::Backend::ColliderBackend::SetFriction (float coefficient)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Sets the friction coefficient of this collider\&. 
+.PP
+Implements \fBPhysics::Collider\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "rp3d::Collider* Physics::Backend::ColliderBackend::collider\fR [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

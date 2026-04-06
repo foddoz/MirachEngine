@@ -1,0 +1,13 @@
+<map id="PlayerScript::UpdateHeldObject" name="PlayerScript::UpdateHeldObject">
+<area shape="rect" id="Node000001" title="Continuously updates the held object&#39;s position and physics state." alt="" coords="5,81,175,124"/>
+<area shape="rect" id="Node000002" href="$class_entity_manager.html#a00080c3855e9aab3796bb94f6b48ac9b" title="Retrieves a reference to the component of type T for an entity." alt="" coords="223,31,424,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,79,252,59,253,64,176,84"/>
+<area shape="rect" id="Node000005" href="$class_physics_1_1_rigid_body.html#a0eaa4df0931990dc645c312209cae1ac" title=" " alt="" coords="255,81,392,124"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="175,100,240,100,240,105,175,105"/>
+<area shape="rect" id="Node000006" href="$class_physics_1_1_rigid_body.html#a73039baddb28a06bde28a2682cc37436" title=" " alt="" coords="255,148,392,191"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="168,122,241,143,240,148,166,127"/>
+<area shape="rect" id="Node000003" href="$class_component_manager.html#a81536e74843307f9b9e27993cca3e72b" title="Retrieves a reference to the component of an entity." alt="" coords="472,5,706,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="424,32,456,29,457,34,425,37"/>
+<area shape="rect" id="Node000004" href="$class_entity_manager.html#aa02cffa1d2435ea5d0eadee749c2a965" title="Gets the component manager for a type (const)." alt="" coords="497,56,681,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="425,51,482,56,481,62,424,56"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="Texture::UploadToGPU" name="Texture::UploadToGPU">
+<area shape="rect" id="Node000001" title="Uploads the loaded image data to GPU and creates an OpenGL texture." alt="" coords="5,81,162,108"/>
+<area shape="rect" id="Node000002" href="$namespace_graphics.html#ab069888f717a4adcb9f69b5f34b53503" title=" " alt="" coords="228,5,378,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,78,209,41,232,34,233,39,211,47,117,83"/>
+<area shape="rect" id="Node000003" href="$namespace_graphics.html#a653a8ff98cd652ab4f74b1dec756326e" title=" " alt="" coords="210,56,397,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="162,83,194,79,194,85,162,88"/>
+<area shape="rect" id="Node000004" href="$namespace_graphics.html#a45ac40011db84b9f6dc2904e31f0de9b" title=" " alt="" coords="229,107,378,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="162,101,214,107,214,112,162,106"/>
+<area shape="rect" id="Node000005" href="$namespace_graphics.html#a6d20cab00d508c1926caab0e70ccbf77" title=" " alt="" coords="226,157,381,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="117,106,211,143,233,150,232,155,209,148,115,111"/>
+</map>

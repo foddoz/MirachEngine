@@ -1,0 +1,98 @@
+.TH "State< T >" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+State< T > \- Abstract base class representing a state in a finite state machine (FSM)\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <state\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~State\fP ()"
+.br
+.RI "Virtual destructor to ensure proper cleanup of derived states\&. "
+.ti -1c
+.RI "virtual void \fBEnter\fP (T *owner)=0"
+.br
+.RI "Called when the state is entered\&. This method is used to perform any initialization or setup for the state\&. "
+.ti -1c
+.RI "virtual void \fBExecute\fP (T *owner)=0"
+.br
+.RI "Called every frame to update the state\&. This method should implement the main behavior of the state\&. "
+.ti -1c
+.RI "virtual void \fBExit\fP (T *owner)=0"
+.br
+.RI "Called when the state is exited\&. This method should handle cleanup or transition logic before leaving the state\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename T>
+.br
+class State< T >"Abstract base class representing a state in a finite state machine (FSM)\&. 
+
+This class defines the interface for states that can be used within a \fBStateMachine\fP\&. Each state should override the Enter, Execute, and Exit methods to define its behavior\&.
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type of the owner entity using this state\&. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<typename T> virtual \fBState\fP< T >::~\fBState\fP ()\fR [inline]\fP, \fR [virtual]\fP"
+
+.PP
+Virtual destructor to ensure proper cleanup of derived states\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename T> virtual void \fBState\fP< T >::Enter (T * owner)\fR [pure virtual]\fP"
+
+.PP
+Called when the state is entered\&. This method is used to perform any initialization or setup for the state\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIowner\fP Pointer to the owner entity\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBAttack< Entity >\fP, \fBChase< Entity >\fP, \fBDeath< Entity >\fP, \fBFlee< Entity >\fP, \fBPain< Entity >\fP, and \fBPatrol< Entity >\fP\&.
+.SS "template<typename T> virtual void \fBState\fP< T >::Execute (T * owner)\fR [pure virtual]\fP"
+
+.PP
+Called every frame to update the state\&. This method should implement the main behavior of the state\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIowner\fP Pointer to the owner entity\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBAttack< Entity >\fP, \fBChase< Entity >\fP, \fBDeath< Entity >\fP, \fBFlee< Entity >\fP, \fBPain< Entity >\fP, and \fBPatrol< Entity >\fP\&.
+.SS "template<typename T> virtual void \fBState\fP< T >::Exit (T * owner)\fR [pure virtual]\fP"
+
+.PP
+Called when the state is exited\&. This method should handle cleanup or transition logic before leaving the state\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIowner\fP Pointer to the owner entity\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBAttack< Entity >\fP, \fBChase< Entity >\fP, \fBDeath< Entity >\fP, \fBFlee< Entity >\fP, \fBPain< Entity >\fP, and \fBPatrol< Entity >\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

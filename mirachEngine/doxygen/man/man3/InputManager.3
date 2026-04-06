@@ -1,0 +1,250 @@
+.TH "InputManager" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+InputManager \- Manages input actions, key states, and mouse interactions at a high level\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <input_manager\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBUpdate\fP ()"
+.br
+.RI "Polls and updates internal input state for the current frame\&. "
+.ti -1c
+.RI "bool \fBIsKeyDown\fP (\fBKeyCode\fP key) const"
+.br
+.RI "Checks if a specific key is currently held down\&. "
+.ti -1c
+.RI "bool \fBIsActionPressed\fP (\fBInputAction\fP action) const"
+.br
+.RI "Checks if an action's mapped key is currently held down\&. "
+.ti -1c
+.RI "bool \fBWasActionJustPressed\fP (\fBInputAction\fP action) const"
+.br
+.RI "Checks if an action's mapped key was just pressed this frame\&. "
+.ti -1c
+.RI "bool \fBIsMouseButtonDown\fP (\fBMouseButton\fP button) const"
+.br
+.RI "Checks if a mouse button is currently held down\&. "
+.ti -1c
+.RI "bool \fBWasMouseButtonJustPressed\fP (\fBMouseButton\fP button) const"
+.br
+.RI "Checks if a mouse button was just pressed this frame\&. "
+.ti -1c
+.RI "float \fBGetMouseDeltaX\fP () const"
+.br
+.RI "Gets the horizontal mouse movement delta from this frame\&. "
+.ti -1c
+.RI "float \fBGetMouseDeltaY\fP () const"
+.br
+.RI "Gets the vertical mouse movement delta from this frame\&. "
+.ti -1c
+.RI "void \fBMapAction\fP (\fBInputAction\fP action, \fBKeyCode\fP key)"
+.br
+.RI "Maps a high-level \fBInputAction\fP to a specific \fBKeyCode\fP\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "const uint8_t * \fBmKeyStates\fP = nullptr"
+.br
+.RI "Pointer to current frame's key state array\&. "
+.ti -1c
+.RI "std::vector< uint8_t > \fBmPrevKeyStates\fP"
+.br
+.RI "Copy of previous frame's key states\&. "
+.ti -1c
+.RI "uint32_t \fBmMouseButtonState\fP = 0"
+.br
+.RI "Mouse buttons currently held\&. "
+.ti -1c
+.RI "uint32_t \fBmPrevMouseButtonState\fP = 0"
+.br
+.RI "Mouse buttons from previous frame\&. "
+.ti -1c
+.RI "float \fBmMouseDeltaX\fP = 0\&.0f"
+.br
+.RI "X-axis mouse delta this frame\&. "
+.ti -1c
+.RI "float \fBmMouseDeltaY\fP = 0\&.0f"
+.br
+.RI "Y-axis mouse delta this frame\&. "
+.ti -1c
+.RI "std::unordered_map< \fBInputAction\fP, \fBKeyCode\fP > \fBmActionBindings\fP"
+.br
+.RI "Maps actions to key codes\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Manages input actions, key states, and mouse interactions at a high level\&. 
+
+The \fBInputManager\fP maps abstract InputActions to physical key codes and tracks key/mouse states across frames to support features like "just pressed" detection\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "float InputManager::GetMouseDeltaX () const\fR [inline]\fP"
+
+.PP
+Gets the horizontal mouse movement delta from this frame\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The X delta\&. 
+.RE
+.PP
+
+.SS "float InputManager::GetMouseDeltaY () const\fR [inline]\fP"
+
+.PP
+Gets the vertical mouse movement delta from this frame\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The Y delta\&. 
+.RE
+.PP
+
+.SS "bool InputManager::IsActionPressed (\fBInputAction\fP action) const"
+
+.PP
+Checks if an action's mapped key is currently held down\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIaction\fP The abstract input action\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the action's key is pressed\&. 
+.RE
+.PP
+
+.SS "bool InputManager::IsKeyDown (\fBKeyCode\fP key) const"
+
+.PP
+Checks if a specific key is currently held down\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP The key code to query\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the key is down\&. 
+.RE
+.PP
+
+.SS "bool InputManager::IsMouseButtonDown (\fBMouseButton\fP button) const"
+
+.PP
+Checks if a mouse button is currently held down\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIbutton\fP The mouse button to query\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the button is down\&. 
+.RE
+.PP
+
+.SS "void InputManager::MapAction (\fBInputAction\fP action, \fBKeyCode\fP key)"
+
+.PP
+Maps a high-level \fBInputAction\fP to a specific \fBKeyCode\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIaction\fP The logical action\&. 
+.br
+\fIkey\fP The key that triggers it\&. 
+.RE
+.PP
+
+.SS "bool InputManager::Update ()"
+
+.PP
+Polls and updates internal input state for the current frame\&. 
+.PP
+\fBReturns\fP
+.RS 4
+True if a quit event was detected, false otherwise\&. 
+.RE
+.PP
+
+.SS "bool InputManager::WasActionJustPressed (\fBInputAction\fP action) const"
+
+.PP
+Checks if an action's mapped key was just pressed this frame\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIaction\fP The abstract input action\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the action was just triggered\&. 
+.RE
+.PP
+
+.SS "bool InputManager::WasMouseButtonJustPressed (\fBMouseButton\fP button) const"
+
+.PP
+Checks if a mouse button was just pressed this frame\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIbutton\fP The mouse button to query\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the button was just pressed\&. 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::unordered_map<\fBInputAction\fP, \fBKeyCode\fP> InputManager::mActionBindings\fR [private]\fP"
+
+.PP
+Maps actions to key codes\&. 
+.SS "const uint8_t* InputManager::mKeyStates = nullptr\fR [private]\fP"
+
+.PP
+Pointer to current frame's key state array\&. 
+.SS "uint32_t InputManager::mMouseButtonState = 0\fR [private]\fP"
+
+.PP
+Mouse buttons currently held\&. 
+.SS "float InputManager::mMouseDeltaX = 0\&.0f\fR [private]\fP"
+
+.PP
+X-axis mouse delta this frame\&. 
+.SS "float InputManager::mMouseDeltaY = 0\&.0f\fR [private]\fP"
+
+.PP
+Y-axis mouse delta this frame\&. 
+.SS "std::vector<uint8_t> InputManager::mPrevKeyStates\fR [private]\fP"
+
+.PP
+Copy of previous frame's key states\&. 
+.SS "uint32_t InputManager::mPrevMouseButtonState = 0\fR [private]\fP"
+
+.PP
+Mouse buttons from previous frame\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

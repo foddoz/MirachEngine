@@ -1,0 +1,15 @@
+<map id="Physics::RigidBody::GetLinearVelocity" name="Physics::RigidBody::GetLinearVelocity">
+<area shape="rect" id="Node000001" title=" " alt="" coords="933,35,1069,77"/>
+<area shape="rect" id="Node000002" href="$class_player_script.html#a6ca2961c6dc85d943a5e9450c011570e" title="Performs a double jump if eligible." alt="" coords="712,13,885,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="917,47,885,42,886,37,918,41"/>
+<area shape="rect" id="Node000007" href="$class_damage_contact_callback.html#a429e4591d8ea4e3ad26d6e626352cc50" title="Called by the physics system when a contact begins. Applies damage if the thrown object hits a valid ..." alt="" coords="715,64,882,107"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="918,71,883,76,882,71,917,65"/>
+<area shape="rect" id="Node000003" href="$class_player_script.html#acf49a0688d3e9aac48601f9aebcf9207" title="Applies movement, jumping, and object interaction logic after the physics update." alt="" coords="489,5,664,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="696,29,664,29,664,24,696,24"/>
+<area shape="rect" id="Node000004" href="$class_terrain_scene.html#a55eb34067d9346aa7d9c3295a9e2dfb0" title="Executes the main loop: input, update, physics, animation, and rendering." alt="" coords="280,13,441,40"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="474,29,442,29,442,24,474,24"/>
+<area shape="rect" id="Node000005" href="$class_terrain_scene.html#ae8ec4e098386a74714255aed184761eb" title="Runs the full scene lifecycle in the correct execution order." alt="" coords="103,13,232,40"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="264,29,232,29,232,24,264,24"/>
+<area shape="rect" id="Node000006" href="$mirach_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point of the engine. Initializes subsystems, loads models, sets up ECS,..." alt="" coords="5,13,55,40"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>

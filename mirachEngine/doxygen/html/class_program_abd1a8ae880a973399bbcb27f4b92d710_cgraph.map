@@ -1,0 +1,9 @@
+<map id="Program::InitialiseWindow" name="Program::InitialiseWindow">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,179,83"/>
+<area shape="rect" id="Node000002" href="$namespace_window.html#ac9bcff5409b21a92d947a03697816be8" title="Creates a new window with the specified title and dimensions." alt="" coords="276,5,391,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,53,260,31,261,36,160,58"/>
+<area shape="rect" id="Node000003" href="$namespace_window.html#a5187ba066cf3c391bc03ed296e48d8be" title="Creates a graphics context (e.g., OpenGL) for the given window." alt="" coords="227,56,440,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="179,67,211,67,211,72,179,72"/>
+<area shape="rect" id="Node000004" href="$namespace_window.html#a38d3d02bafef36fc6d57d029d7ab7d96" title="Makes the specified graphics context current for the given window." alt="" coords="235,107,432,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="160,81,252,100,251,106,159,86"/>
+</map>

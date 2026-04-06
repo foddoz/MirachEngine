@@ -1,0 +1,9 @@
+<map id="Window::Destroy" name="Window::Destroy">
+<area shape="rect" id="Node000001" title="Destroys a previously created window." alt="" coords="433,31,555,57"/>
+<area shape="rect" id="Node000002" href="$class_program.html#aec028b584ab9fa1859cea93ce94a58d6" title="Releases OpenGL and SDL resources." alt="" coords="245,5,362,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="418,37,361,29,362,24,418,31"/>
+<area shape="rect" id="Node000003" href="$class_program.html#a6e8e19b06ed7b9472c0e63ee7e44dd42" title=" " alt="" coords="222,56,385,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="418,57,386,61,385,56,417,51"/>
+<area shape="rect" id="Node000004" href="$class_program.html#a5316d10dacea062401d90777972fa15e" title=" " alt="" coords="5,56,174,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="206,72,174,72,174,67,206,67"/>
+</map>

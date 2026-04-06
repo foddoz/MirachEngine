@@ -1,0 +1,221 @@
+\doxysection{Scene Class Reference}
+\hypertarget{class_scene}{}\label{class_scene}\index{Scene@{Scene}}
+
+
+Abstract base class for defining and managing a game scene lifecycle.  
+
+
+
+
+{\ttfamily \#include $<$scene.\+hpp$>$}
+
+
+
+Inheritance diagram for Scene\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_scene__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Scene\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{class_scene__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_scene_a93ccc41b0a2f6c24e467d5d9de76ec0d}{Scene}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_scene_af6e09d91ebd10ae9cc7c12c39d06386c}{\texorpdfstring{$\sim$}{\string~}\+Scene}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper cleanup in derived classes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_scene_a2fc617174b43911fd10b6bccd034cc2e}{Run}} ()=0
+\begin{DoxyCompactList}\small\item\em Runs the full scene lifecycle in a fixed execution order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_scene_a2212e9dad7d2c2a19e080b4fb8fee38a}{Generate\+CPUData}} ()=0
+\begin{DoxyCompactList}\small\item\em Performs CPU-\/side data generation such as procedural meshes, textures, etc. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_scene_a270552b151bf55dc03bc72148ae7cb83}{Initialise\+Engine}} ()=0
+\begin{DoxyCompactList}\small\item\em Initializes core engine components (e.\+g., renderer, physics, input). \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_scene_a9c083e0e83f96ecc48f606cbb7c74775}{Upload\+Assets\+To\+GPU}} ()=0
+\begin{DoxyCompactList}\small\item\em Uploads assets like meshes and textures to the GPU. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_scene_a98d4943be4c20f86f7054348ac1a99c5}{Assign\+Pipelines}} ()=0
+\begin{DoxyCompactList}\small\item\em Assigns graphics pipelines or shader programs to mesh renderers. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_scene_a00811db8407b7686b1d29354c28dfe2b}{Setup\+ECS}} ()=0
+\begin{DoxyCompactList}\small\item\em Sets up the ECS by creating entities and attaching components. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_scene_a20c2873f319cd242a4ea8dc9c06d71d0}{Main\+Loop}} ()=0
+\begin{DoxyCompactList}\small\item\em Executes the main game loop (input, update, render). \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_scene_adec6b11b05cab3d9402ce086d197bf7e}{Clean\+Up}} ()=0
+\begin{DoxyCompactList}\small\item\em Releases all resources and cleans up the scene. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_scene_ad0f996411fb7deaf4bf04ac92ef1cb70}{Shutdown}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for defining and managing a game scene lifecycle. 
+
+This class enforces a fixed execution order for initializing, running, and cleaning up a scene, and must be subclassed to provide specific behavior. 
+
+\label{doc-constructors}
+\Hypertarget{class_scene_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_scene_a93ccc41b0a2f6c24e467d5d9de76ec0d}\index{Scene@{Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Scene()}{Scene()}}
+{\footnotesize\ttfamily \label{class_scene_a93ccc41b0a2f6c24e467d5d9de76ec0d} 
+Scene\+::\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+\Hypertarget{class_scene_af6e09d91ebd10ae9cc7c12c39d06386c}\index{Scene@{Scene}!````~Scene@{\texorpdfstring{$\sim$}{\string~}Scene}}
+\index{````~Scene@{\texorpdfstring{$\sim$}{\string~}Scene}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Scene()}{\string~Scene()}}
+{\footnotesize\ttfamily \label{class_scene_af6e09d91ebd10ae9cc7c12c39d06386c} 
+virtual Scene\+::\texorpdfstring{$\sim$}{\string~}\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor for proper cleanup in derived classes. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_scene_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_scene_a98d4943be4c20f86f7054348ac1a99c5}\index{Scene@{Scene}!AssignPipelines@{AssignPipelines}}
+\index{AssignPipelines@{AssignPipelines}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{AssignPipelines()}{AssignPipelines()}}
+{\footnotesize\ttfamily \label{class_scene_a98d4943be4c20f86f7054348ac1a99c5} 
+virtual void Scene\+::\+Assign\+Pipelines (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Assigns graphics pipelines or shader programs to mesh renderers. 
+
+
+
+Implemented in \mbox{\hyperlink{class_terrain_scene_a45224be4da2febede6089ac28959370f}{Terrain\+Scene}}.
+
+\Hypertarget{class_scene_adec6b11b05cab3d9402ce086d197bf7e}\index{Scene@{Scene}!CleanUp@{CleanUp}}
+\index{CleanUp@{CleanUp}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{CleanUp()}{CleanUp()}}
+{\footnotesize\ttfamily \label{class_scene_adec6b11b05cab3d9402ce086d197bf7e} 
+virtual void Scene\+::\+Clean\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Releases all resources and cleans up the scene. 
+
+
+
+Implemented in \mbox{\hyperlink{class_terrain_scene_adc928cc4364060ba8eba00bddb0b060d}{Terrain\+Scene}}.
+
+\Hypertarget{class_scene_a2212e9dad7d2c2a19e080b4fb8fee38a}\index{Scene@{Scene}!GenerateCPUData@{GenerateCPUData}}
+\index{GenerateCPUData@{GenerateCPUData}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{GenerateCPUData()}{GenerateCPUData()}}
+{\footnotesize\ttfamily \label{class_scene_a2212e9dad7d2c2a19e080b4fb8fee38a} 
+virtual void Scene\+::\+Generate\+CPUData (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Performs CPU-\/side data generation such as procedural meshes, textures, etc. 
+
+
+
+Implemented in \mbox{\hyperlink{class_terrain_scene_ab94e589934cc94139e61468dcb50c1ff}{Terrain\+Scene}}.
+
+\Hypertarget{class_scene_a270552b151bf55dc03bc72148ae7cb83}\index{Scene@{Scene}!InitialiseEngine@{InitialiseEngine}}
+\index{InitialiseEngine@{InitialiseEngine}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{InitialiseEngine()}{InitialiseEngine()}}
+{\footnotesize\ttfamily \label{class_scene_a270552b151bf55dc03bc72148ae7cb83} 
+virtual void Scene\+::\+Initialise\+Engine (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Initializes core engine components (e.\+g., renderer, physics, input). 
+
+
+
+Implemented in \mbox{\hyperlink{class_terrain_scene_a4173a77b3430eca8a78e28b5d305c20e}{Terrain\+Scene}}.
+
+\Hypertarget{class_scene_a20c2873f319cd242a4ea8dc9c06d71d0}\index{Scene@{Scene}!MainLoop@{MainLoop}}
+\index{MainLoop@{MainLoop}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{MainLoop()}{MainLoop()}}
+{\footnotesize\ttfamily \label{class_scene_a20c2873f319cd242a4ea8dc9c06d71d0} 
+virtual void Scene\+::\+Main\+Loop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Executes the main game loop (input, update, render). 
+
+
+
+Implemented in \mbox{\hyperlink{class_terrain_scene_a55eb34067d9346aa7d9c3295a9e2dfb0}{Terrain\+Scene}}.
+
+\Hypertarget{class_scene_a2fc617174b43911fd10b6bccd034cc2e}\index{Scene@{Scene}!Run@{Run}}
+\index{Run@{Run}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_scene_a2fc617174b43911fd10b6bccd034cc2e} 
+virtual void Scene\+::\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Runs the full scene lifecycle in a fixed execution order. 
+
+Calls the following methods in sequence\+: Generate\+CPUData -\/\texorpdfstring{$>$}{>} Initialise\+Engine -\/\texorpdfstring{$>$}{>} Upload\+Assets\+To\+GPU -\/\texorpdfstring{$>$}{>} Assign\+Pipelines -\/\texorpdfstring{$>$}{>} Setup\+ECS -\/\texorpdfstring{$>$}{>} Main\+Loop -\/\texorpdfstring{$>$}{>} Clean\+Up 
+
+Implemented in \mbox{\hyperlink{class_terrain_scene_ae8ec4e098386a74714255aed184761eb}{Terrain\+Scene}}.
+
+\Hypertarget{class_scene_a00811db8407b7686b1d29354c28dfe2b}\index{Scene@{Scene}!SetupECS@{SetupECS}}
+\index{SetupECS@{SetupECS}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{SetupECS()}{SetupECS()}}
+{\footnotesize\ttfamily \label{class_scene_a00811db8407b7686b1d29354c28dfe2b} 
+virtual void Scene\+::\+Setup\+ECS (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Sets up the ECS by creating entities and attaching components. 
+
+
+
+Implemented in \mbox{\hyperlink{class_terrain_scene_a64ff8229749692f3000ab0387dae7165}{Terrain\+Scene}}.
+
+\Hypertarget{class_scene_ad0f996411fb7deaf4bf04ac92ef1cb70}\index{Scene@{Scene}!Shutdown@{Shutdown}}
+\index{Shutdown@{Shutdown}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Shutdown()}{Shutdown()}}
+{\footnotesize\ttfamily \label{class_scene_ad0f996411fb7deaf4bf04ac92ef1cb70} 
+virtual void Scene\+::\+Shutdown (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_terrain_scene_ae52ebdbe85fceff22dca73e4ec68886d}{Terrain\+Scene}}.
+
+\Hypertarget{class_scene_a9c083e0e83f96ecc48f606cbb7c74775}\index{Scene@{Scene}!UploadAssetsToGPU@{UploadAssetsToGPU}}
+\index{UploadAssetsToGPU@{UploadAssetsToGPU}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{UploadAssetsToGPU()}{UploadAssetsToGPU()}}
+{\footnotesize\ttfamily \label{class_scene_a9c083e0e83f96ecc48f606cbb7c74775} 
+virtual void Scene\+::\+Upload\+Assets\+To\+GPU (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Uploads assets like meshes and textures to the GPU. 
+
+
+
+Implemented in \mbox{\hyperlink{class_terrain_scene_ab4176b80c645288ef38f3478464a973c}{Terrain\+Scene}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Program/\mbox{\hyperlink{scene_8hpp}{scene.\+hpp}}\end{DoxyCompactItemize}

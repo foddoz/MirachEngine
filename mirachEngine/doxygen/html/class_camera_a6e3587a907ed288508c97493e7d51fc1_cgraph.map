@@ -1,0 +1,5 @@
+<map id="Camera::GetViewMatrix" name="Camera::GetViewMatrix">
+<area shape="rect" id="Node000001" title="Calculates and retrieves the current view matrix based on a given position." alt="" coords="5,5,167,32"/>
+<area shape="rect" id="Node000002" href="$math_8hpp.html#a4c4521724debb415e676587b9b4e8bff" title="Creates a view matrix looking from &#39;eye&#39; to &#39;center&#39; with &#39;up&#39; direction." alt="" coords="215,5,277,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,16,199,16,199,21,167,21"/>
+</map>

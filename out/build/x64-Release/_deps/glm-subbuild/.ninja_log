@@ -1,0 +1,21 @@
+# ninja log v6
+4	97	7860978415193573	glm-populate-prefix/src/glm-populate-stamp/glm-populate-mkdir	b616a86625c42dd1
+4	97	7860978415193573	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/out/build/x64-Release/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-mkdir	b616a86625c42dd1
+99	18396	7860978598178795	glm-populate-prefix/src/glm-populate-stamp/glm-populate-download	cfa1cfae26105
+99	18396	7860978598178795	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/out/build/x64-Release/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-download	cfa1cfae26105
+18399	18575	7860978598278524	glm-populate-prefix/src/glm-populate-stamp/glm-populate-update	67a30adf174cb7b2
+18399	18575	7860978598278524	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/out/build/x64-Release/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-update	67a30adf174cb7b2
+18575	18659	7860978600813661	glm-populate-prefix/src/glm-populate-stamp/glm-populate-patch	a7ad3c9ad7575e54
+18575	18659	7860978600813661	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/out/build/x64-Release/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-patch	a7ad3c9ad7575e54
+18660	18744	7860978601660753	glm-populate-prefix/src/glm-populate-stamp/glm-populate-configure	9b3d508d4492b6ef
+18660	18744	7860978601660753	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/out/build/x64-Release/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-configure	9b3d508d4492b6ef
+18744	18829	7860978602505259	glm-populate-prefix/src/glm-populate-stamp/glm-populate-build	d0eda81cd77426f4
+18744	18829	7860978602505259	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/out/build/x64-Release/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-build	d0eda81cd77426f4
+18829	18914	7860978603358312	glm-populate-prefix/src/glm-populate-stamp/glm-populate-install	58c119407481670f
+18829	18914	7860978603358312	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/out/build/x64-Release/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-install	58c119407481670f
+18914	19003	7860978604234976	glm-populate-prefix/src/glm-populate-stamp/glm-populate-test	2f46f1cdb748cd19
+18914	19003	7860978604234976	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/out/build/x64-Release/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-test	2f46f1cdb748cd19
+19003	19121	7860978605425518	CMakeFiles/glm-populate-complete	259a6143249f05ce
+19003	19121	7860978605425518	glm-populate-prefix/src/glm-populate-stamp/glm-populate-done	259a6143249f05ce
+19003	19121	7860978605425518	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/out/build/x64-Release/_deps/glm-subbuild/CMakeFiles/glm-populate-complete	259a6143249f05ce
+19003	19121	7860978605425518	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/out/build/x64-Release/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-done	259a6143249f05ce

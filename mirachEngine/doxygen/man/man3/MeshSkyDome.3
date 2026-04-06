@@ -1,0 +1,226 @@
+.TH "MeshSkyDome" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MeshSkyDome \- A hemispherical skydome mesh used to render sky backgrounds\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <meshSkyDome\&.hpp>\fP
+.PP
+Inherits \fBMesh3D\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBVertex\fP"
+.br
+.RI "Represents a single skydome vertex with 3D position and 2D texture coordinates\&. "
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMeshSkyDome\fP ()"
+.br
+.RI "Constructs a \fBMeshSkyDome\fP with default initialization\&. "
+.ti -1c
+.RI "void \fBGenerateCPUData\fP (int numRings, int numSectors, float radius, const std::string &textureFile)"
+.br
+.RI "Generates the dome's vertex and index data based on spherical subdivision\&. "
+.ti -1c
+.RI "void \fBUploadToGPU\fP () override"
+.br
+.RI "Uploads geometry and texture data from CPU to GPU\&. "
+.ti -1c
+.RI "\fBMeshRenderer\fP \fBToRenderer\fP () override"
+.br
+.RI "Converts internal mesh representation to a renderable ECS component\&. "
+.ti -1c
+.RI "void \fBDelete\fP () override"
+.br
+.RI "Deletes GPU resources including VAO, VBO, and bound textures\&. "
+.in -1c
+
+Public Member Functions inherited from \fBMesh3D\fP
+.in +1c
+.ti -1c
+.RI "\fBMesh3D\fP ()"
+.br
+.RI "Default constructor initializes OpenGL buffer handles and transforms\&. "
+.ti -1c
+.RI "\fBMesh3D\fP (const \fBMesh3D\fP &other)"
+.br
+.RI "Copy constructor for \fBMesh3D\fP\&. "
+.ti -1c
+.RI "void \fBSetPipeline\fP (unsigned int pipeline)"
+.br
+.RI "Assigns a graphics pipeline (shader program) to this mesh\&. "
+.ti -1c
+.RI "unsigned int \fBgetPipeline\fP () const"
+.br
+.RI "Retrieves the currently assigned graphics pipeline\&. "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBPopulateBuffers\fP () override"
+.br
+.RI "Generates VAO, VBO, and IBO and uploads vertex/index data to the GPU\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBm_numRings\fP"
+.br
+.RI "Number of vertical ring slices (latitude)\&. "
+.ti -1c
+.RI "int \fBm_numSectors\fP"
+.br
+.RI "Number of horizontal sector slices (longitude)\&. "
+.ti -1c
+.RI "float \fBm_radius\fP"
+.br
+.RI "Radius of the skydome\&. "
+.ti -1c
+.RI "std::vector< \fBVertex\fP > \fBm_CPU_VertexData\fP"
+.br
+.RI "\fBVertex\fP buffer stored on CPU\&. "
+.ti -1c
+.RI "std::vector< unsigned int > \fBm_CPU_IndexData\fP"
+.br
+.RI "Index buffer stored on CPU\&. "
+.ti -1c
+.RI "std::string \fBm_TextureFileName\fP"
+.br
+.RI "Path to the texture image used for the skydome\&. "
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Attributes inherited from \fBMesh3D\fP
+.in +1c
+.ti -1c
+.RI "unsigned int \fBm_VAO\fP"
+.br
+.RI "OpenGL Vertex Array Object handle\&. "
+.ti -1c
+.RI "unsigned int \fBm_IndexCount\fP"
+.br
+.RI "Number of indices used for drawing (glDrawElements or glDrawArrays)\&. "
+.ti -1c
+.RI "unsigned int \fBm_VBO\fP"
+.br
+.RI "Vertex Buffer Object handle\&. "
+.ti -1c
+.RI "unsigned int \fBm_IBO\fP"
+.br
+.RI "Index Buffer Object handle\&. "
+.ti -1c
+.RI "std::vector< \fBTexture\fP * > \fBm_Textures\fP"
+.br
+.RI "Collection of textures associated with this mesh\&. "
+.ti -1c
+.RI "unsigned int \fBm_Pipeline\fP"
+.br
+.RI "OpenGL shader program ID assigned to this mesh\&. "
+.ti -1c
+.RI "\fBAABB\fP \fBm_AABB\fP"
+.br
+.RI "Axis-aligned bounding box in local (object) space\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A hemispherical skydome mesh used to render sky backgrounds\&. 
+
+This class generates a dome-shaped mesh with configurable resolution and radius, uploads it to GPU, and prepares it for ECS rendering\&. It supports texture mapping for sky visuals (e\&.g\&., clouds or gradients)\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MeshSkyDome::MeshSkyDome ()"
+
+.PP
+Constructs a \fBMeshSkyDome\fP with default initialization\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void MeshSkyDome::Delete ()\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Deletes GPU resources including VAO, VBO, and bound textures\&. 
+.PP
+Reimplemented from \fBMesh3D\fP\&.
+.SS "void MeshSkyDome::GenerateCPUData (int numRings, int numSectors, float radius, const std::string & textureFile)"
+
+.PP
+Generates the dome's vertex and index data based on spherical subdivision\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fInumRings\fP Number of latitude subdivisions (rings)\&. 
+.br
+\fInumSectors\fP Number of longitude subdivisions (sectors)\&. 
+.br
+\fIradius\fP Radius of the hemisphere\&. 
+.br
+\fItextureFile\fP File path to the dome's sky texture\&. 
+.RE
+.PP
+
+.SS "void MeshSkyDome::PopulateBuffers ()\fR [override]\fP, \fR [private]\fP, \fR [virtual]\fP"
+
+.PP
+Generates VAO, VBO, and IBO and uploads vertex/index data to the GPU\&. 
+.PP
+Implements \fBMesh3D\fP\&.
+.SS "\fBMeshRenderer\fP MeshSkyDome::ToRenderer ()\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Converts internal mesh representation to a renderable ECS component\&. 
+.PP
+\fBReturns\fP
+.RS 4
+\fBMeshRenderer\fP struct containing GPU handles and metadata\&. 
+.RE
+.PP
+
+.PP
+Implements \fBMesh3D\fP\&.
+.SS "void MeshSkyDome::UploadToGPU ()\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Uploads geometry and texture data from CPU to GPU\&. 
+.PP
+Implements \fBMesh3D\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<unsigned int> MeshSkyDome::m_CPU_IndexData\fR [private]\fP"
+
+.PP
+Index buffer stored on CPU\&. 
+.SS "std::vector<\fBVertex\fP> MeshSkyDome::m_CPU_VertexData\fR [private]\fP"
+
+.PP
+\fBVertex\fP buffer stored on CPU\&. 
+.SS "int MeshSkyDome::m_numRings\fR [private]\fP"
+
+.PP
+Number of vertical ring slices (latitude)\&. 
+.SS "int MeshSkyDome::m_numSectors\fR [private]\fP"
+
+.PP
+Number of horizontal sector slices (longitude)\&. 
+.SS "float MeshSkyDome::m_radius\fR [private]\fP"
+
+.PP
+Radius of the skydome\&. 
+.SS "std::string MeshSkyDome::m_TextureFileName\fR [private]\fP"
+
+.PP
+Path to the texture image used for the skydome\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

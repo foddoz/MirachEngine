@@ -1,0 +1,104 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"/download/reactphysics3d/ff4072d3c72e1ee92428ade193a89f67d65269da/reactphysics3d/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 312,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 321,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 338,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 349,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"_deps/reactphysics3d-build/libreactphysics3dd.a"
+			],
+			"targetId" : "reactphysics3d::@5d9dcba1aa2a61aefaaa",
+			"targetIndex" : 35,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "include",
+			"paths" : 
+			[
+				{
+					"from" : "/download/reactphysics3d/ff4072d3c72e1ee92428ade193a89f67d65269da/reactphysics3d/include",
+					"to" : "."
+				}
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/ReactPhysics3D",
+			"exportName" : "reactphysics3d-targets",
+			"exportTargets" : 
+			[
+				{
+					"id" : "reactphysics3d::@5d9dcba1aa2a61aefaaa",
+					"index" : 35
+				}
+			],
+			"paths" : 
+			[
+				"_deps/reactphysics3d-build/CMakeFiles/Export/169343ac99728a0b59f4954842cb6dc9/ReactPhysics3DConfig.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/ReactPhysics3D",
+			"paths" : 
+			[
+				"cmake-build-debug/_deps/reactphysics3d-build/ReactPhysics3DConfigVersion.cmake"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "_deps/reactphysics3d-build",
+		"source" : "/download/reactphysics3d/ff4072d3c72e1ee92428ade193a89f67d65269da/reactphysics3d"
+	}
+}

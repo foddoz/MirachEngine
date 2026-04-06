@@ -1,0 +1,15 @@
+<map id="Transform::SetRotation" name="Transform::SetRotation">
+<area shape="rect" id="Node000001" title="Sets the object&#39;s rotation in Euler degrees." alt="" coords="5,56,163,83"/>
+<area shape="rect" id="Node000002" href="$math_8hpp.html#a01d6afce125900f6e5b446d5094ea823" title="Converts Euler angles (in degrees) to a quaternion." alt="" coords="223,5,400,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,53,233,33,234,39,148,58"/>
+<area shape="rect" id="Node000003" href="$class_transform.html#a0bd1bcdbc6da88be8ad16e6a90aa2c55" title="Wraps a rotation angle to the range [0, 360)." alt="" coords="225,56,398,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="163,67,209,67,209,72,163,72"/>
+<area shape="rect" id="Node000004" href="$class_transform.html#a766790cd6c7043b6d28fe75d36a7bcc6" title="Recalculates the cached model matrix based on current position, rotation, and scale." alt="" coords="211,107,412,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="148,81,234,100,233,105,147,86"/>
+<area shape="rect" id="Node000005" href="$math_8hpp.html#a57197be1224ca571c566c73c33081081" title="Applies scale to a matrix." alt="" coords="470,56,525,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="368,103,411,92,455,79,456,85,413,97,370,109"/>
+<area shape="rect" id="Node000006" href="$math_8hpp.html#a1213c92d8be7146176f8be90d8903ece" title="Converts a quaternion to a 4x4 matrix." alt="" coords="466,107,530,133"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="413,117,450,117,450,123,413,123"/>
+<area shape="rect" id="Node000007" href="$math_8hpp.html#a978278a474c16b86c65813cec08b513a" title="Applies translation to a matrix." alt="" coords="460,157,535,184"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="364,131,446,154,444,159,363,137"/>
+</map>

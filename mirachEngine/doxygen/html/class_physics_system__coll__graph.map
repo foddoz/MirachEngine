@@ -1,0 +1,5 @@
+<map id="PhysicsSystem" name="PhysicsSystem">
+<area shape="rect" id="Node000001" title="Manages physics simulation, including rigid body updates and collider handling, in the ECS framework." alt="" coords="8,488,198,792"/>
+<area shape="rect" id="Node000002" href="$class_entity_manager.html" title="Manages entity creation, destruction, and component access in the ECS system." alt="" coords="5,5,201,416"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,416,106,471,101,471,101,416"/>
+</map>

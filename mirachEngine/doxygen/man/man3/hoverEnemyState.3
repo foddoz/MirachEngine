@@ -1,0 +1,200 @@
+.TH "hoverEnemyState" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+hoverEnemyState
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <hoverEnemyState\&.hpp>\fP
+.PP
+Inherits \fBIEnemyStateLogic\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBonAttackEnter\fP (\fBEnemy\fP *e) override"
+.br
+.RI "Called when entering the attack state\&. "
+.ti -1c
+.RI "void \fBonAttackExecute\fP (\fBEnemy\fP *e) override"
+.br
+.RI "Called every frame while in the attack state\&. "
+.ti -1c
+.RI "void \fBonAttackExit\fP (\fBEnemy\fP *e) override"
+.br
+.RI "Called when exiting the attack state\&. "
+.ti -1c
+.RI "void \fBonFleeEnter\fP (\fBEnemy\fP *e) override"
+.br
+.ti -1c
+.RI "void \fBonFleeExecute\fP (\fBEnemy\fP *e) override"
+.br
+.ti -1c
+.RI "void \fBonFleeExit\fP (\fBEnemy\fP *e) override"
+.br
+.ti -1c
+.RI "void \fBonPatrolEnter\fP (\fBEnemy\fP *e) override"
+.br
+.ti -1c
+.RI "void \fBonPatrolExecute\fP (\fBEnemy\fP *e) override"
+.br
+.ti -1c
+.RI "void \fBonPatrolExit\fP (\fBEnemy\fP *e) override"
+.br
+.ti -1c
+.RI "void \fBonChaseEnter\fP (\fBEnemy\fP *e) override"
+.br
+.ti -1c
+.RI "void \fBonChaseExecute\fP (\fBEnemy\fP *e) override"
+.br
+.ti -1c
+.RI "void \fBonChaseExit\fP (\fBEnemy\fP *e) override"
+.br
+.ti -1c
+.RI "void \fBonDeathEnter\fP (\fBEnemy\fP *e) override"
+.br
+.ti -1c
+.RI "void \fBonDeathExecute\fP (\fBEnemy\fP *e) override"
+.br
+.ti -1c
+.RI "void \fBonDeathExit\fP (\fBEnemy\fP *e) override"
+.br
+.ti -1c
+.RI "void \fBonPainEnter\fP (\fBEnemy\fP *e) override"
+.br
+.ti -1c
+.RI "void \fBonPainExecute\fP (\fBEnemy\fP *e) override"
+.br
+.ti -1c
+.RI "void \fBonPainExit\fP (\fBEnemy\fP *e) override"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBIEnemyStateLogic\fP
+.in +1c
+.ti -1c
+.RI "virtual \fB~IEnemyStateLogic\fP ()=default"
+.br
+.RI "Virtual destructor to allow proper cleanup of derived classes\&. "
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Member Functions inherited from \fBIEnemyStateLogic\fP
+.in +1c
+.ti -1c
+.RI "void \fBRegisterAttackCallback\fP (\fBEnemy\fP *e)"
+.br
+.RI "Registers a collision callback to apply damage to the player\&. "
+.ti -1c
+.RI "void \fBCleanupAttackCallback\fP (\fBEnemy\fP *e)"
+.br
+.RI "Clears the previously registered attack callback\&. "
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "void hoverEnemyState::onAttackEnter (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called when entering the attack state\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP Pointer to the \fBEnemy\fP entity\&. 
+.RE
+.PP
+
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void hoverEnemyState::onAttackExecute (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called every frame while in the attack state\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP Pointer to the \fBEnemy\fP entity\&. 
+.RE
+.PP
+
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void hoverEnemyState::onAttackExit (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called when exiting the attack state\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP Pointer to the \fBEnemy\fP entity\&. 
+.RE
+.PP
+
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void hoverEnemyState::onChaseEnter (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void hoverEnemyState::onChaseExecute (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void hoverEnemyState::onChaseExit (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void hoverEnemyState::onDeathEnter (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void hoverEnemyState::onDeathExecute (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void hoverEnemyState::onDeathExit (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void hoverEnemyState::onFleeEnter (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void hoverEnemyState::onFleeExecute (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void hoverEnemyState::onFleeExit (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void hoverEnemyState::onPainEnter (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void hoverEnemyState::onPainExecute (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void hoverEnemyState::onPainExit (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void hoverEnemyState::onPatrolEnter (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void hoverEnemyState::onPatrolExecute (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void hoverEnemyState::onPatrolExit (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

@@ -1,0 +1,60 @@
+.TH "Physics" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Physics
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBBackend\fP"
+.br
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBCollider\fP"
+.br
+.RI "Abstract interface for physics colliders\&. "
+.ti -1c
+.RI "class \fBCollisionCallback\fP"
+.br
+.RI "Callback interface for collision detection events\&. "
+.ti -1c
+.RI "class \fBRay\fP"
+.br
+.RI "Represents a ray used for raycasting\&. "
+.ti -1c
+.RI "class \fBRaycastCallback\fP"
+.br
+.RI "Callback interface for raycasting results\&. "
+.ti -1c
+.RI "class \fBRigidBody\fP"
+.br
+.RI "Abstract interface for a physics rigid body\&. "
+.ti -1c
+.RI "class \fBWorld\fP"
+.br
+.RI "Abstract interface for a physics simulation world\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "std::unique_ptr< \fBWorld\fP > \fBCreatePhysicsWorld\fP ()"
+.br
+.RI "Creates and returns a new physics world instance\&. "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "std::unique_ptr< \fBWorld\fP > Physics::CreatePhysicsWorld ()"
+
+.PP
+Creates and returns a new physics world instance\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

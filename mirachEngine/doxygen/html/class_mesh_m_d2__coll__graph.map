@@ -1,0 +1,9 @@
+<map id="MeshMD2" name="MeshMD2">
+<area shape="rect" id="Node000001" title="A 3D animated mesh class for rendering MD2 models with frame interpolation." alt="" coords="61,629,217,1104"/>
+<area shape="rect" id="Node000002" href="$class_mesh3_d.html" title="Abstract base class for rendering and managing 3D mesh data." alt="" coords="5,232,129,557"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,571,106,629,101,630,92,572"/>
+<area shape="rect" id="Node000003" href="$struct_a_a_b_b.html" title="Represents an axis&#45;aligned bounding box." alt="" coords="22,5,113,160"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="70,160,70,215,65,215,65,160"/>
+<area shape="rect" id="Node000004" href="$class_texture.html" title="Handles image loading, GPU uploading, binding, and cleanup of texture resources." alt="" coords="154,232,272,557"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="190,557,181,613,176,612,185,556"/>
+</map>

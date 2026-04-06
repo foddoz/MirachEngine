@@ -1,0 +1,52 @@
+.TH "C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/Graphics/Texturing/image.hpp" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/Graphics/Texturing/image.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <string>\fP
+.br
+\fR#include <vector>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBImageData\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBLoadImage\fP (const std::string &filename, \fBImageData\fP &outImage)"
+.br
+.RI "Loads an image file using stb_image and populates the given \fBImageData\fP structure\&. "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "bool LoadImage (const std::string & filename, \fBImageData\fP & outImage)"
+
+.PP
+Loads an image file using stb_image and populates the given \fBImageData\fP structure\&. This function reads an image from disk using stb_image, flips it vertically for OpenGL compatibility, and fills the output \fBImageData\fP struct with pixel data, width, height, and bytes-per-pixel\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIfilename\fP The file path to the image to be loaded\&. 
+.br
+\fIoutImage\fP Reference to an \fBImageData\fP struct where loaded image info will be stored\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the image loads successfully; false otherwise\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

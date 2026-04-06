@@ -1,0 +1,75 @@
+\doxysection{Animation\+System Class Reference}
+\hypertarget{class_animation_system}{}\label{class_animation_system}\index{AnimationSystem@{AnimationSystem}}
+
+
+System responsible for updating MD2 animations for all entities with \doxylink{struct_m_d2_animator}{MD2\+Animator} components.  
+
+
+
+
+{\ttfamily \#include $<$animation\+\_\+system.\+hpp$>$}
+
+
+
+Collaboration diagram for Animation\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{class_animation_system__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_animation_system_ad7b370061581bbc898f0c6a35250c2a3}{Update}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&em, float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Updates all \doxylink{struct_m_d2_animator}{MD2\+Animator} components in the ECS based on elapsed time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+System responsible for updating MD2 animations for all entities with \doxylink{struct_m_d2_animator}{MD2\+Animator} components. 
+
+Performs time-\/based animation updates, interpolates vertex positions, and uploads results to entity-\/specific vertex buffers for rendering. 
+
+\label{doc-func-members}
+\Hypertarget{class_animation_system_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_animation_system_ad7b370061581bbc898f0c6a35250c2a3}\index{AnimationSystem@{AnimationSystem}!Update@{Update}}
+\index{Update@{Update}!AnimationSystem@{AnimationSystem}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_animation_system_ad7b370061581bbc898f0c6a35250c2a3} 
+void Animation\+System\+::\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{em}{, }\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Updates all \doxylink{struct_m_d2_animator}{MD2\+Animator} components in the ECS based on elapsed time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em em} & Reference to the \doxylink{class_entity_manager}{Entity\+Manager}. \\
+\hline
+{\em delta\+Time} & \doxylink{namespace_time}{Time} elapsed since the last frame (in seconds). \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_animation_system_ad7b370061581bbc898f0c6a35250c2a3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_animation_system_ad7b370061581bbc898f0c6a35250c2a3_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Animation/\mbox{\hyperlink{animation__system_8hpp}{animation\+\_\+system.\+hpp}}\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Animation/\mbox{\hyperlink{animation__system_8cpp}{animation\+\_\+system.\+cpp}}\end{DoxyCompactItemize}

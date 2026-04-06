@@ -1,0 +1,85 @@
+.TH "C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/Physics/physics.hpp" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/Physics/physics.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fR#include '\&.\&./Math/math\&.hpp'\fP
+.br
+\fR#include <memory>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBPhysics::Collider\fP"
+.br
+.RI "Abstract interface for physics colliders\&. "
+.ti -1c
+.RI "class \fBPhysics::RigidBody\fP"
+.br
+.RI "Abstract interface for a physics rigid body\&. "
+.ti -1c
+.RI "class \fBPhysics::Ray\fP"
+.br
+.RI "Represents a ray used for raycasting\&. "
+.ti -1c
+.RI "class \fBPhysics::RaycastCallback\fP"
+.br
+.RI "Callback interface for raycasting results\&. "
+.ti -1c
+.RI "class \fBPhysics::CollisionCallback\fP"
+.br
+.RI "Callback interface for collision detection events\&. "
+.ti -1c
+.RI "class \fBPhysics::World\fP"
+.br
+.RI "Abstract interface for a physics simulation world\&. "
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBPhysics\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum class \fBBodyType\fP { \fBSTATIC\fP, \fBDYNAMIC\fP, \fBKINEMATIC\fP }"
+.br
+.RI "Represents the type of physics body\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "std::unique_ptr< \fBWorld\fP > \fBPhysics::CreatePhysicsWorld\fP ()"
+.br
+.RI "Creates and returns a new physics world instance\&. "
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum class \fBBodyType\fP\fR [strong]\fP"
+
+.PP
+Represents the type of physics body\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BISTATIC \fP
+Non-moving, used for environment or obstacles\&. 
+.TP
+\f(BIDYNAMIC \fP
+Affected by forces and gravity\&. 
+.TP
+\f(BIKINEMATIC \fP
+Controlled by the user, not affected by forces\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

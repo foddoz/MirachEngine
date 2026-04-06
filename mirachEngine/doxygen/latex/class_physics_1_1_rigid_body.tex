@@ -1,0 +1,392 @@
+\doxysection{Physics\+::Rigid\+Body Class Reference}
+\hypertarget{class_physics_1_1_rigid_body}{}\label{class_physics_1_1_rigid_body}\index{Physics::RigidBody@{Physics::RigidBody}}
+
+
+Abstract interface for a physics rigid body.  
+
+
+
+
+{\ttfamily \#include $<$physics.\+hpp$>$}
+
+
+
+Inheritance diagram for Physics\+::Rigid\+Body\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_physics_1_1_rigid_body__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Physics\+::Rigid\+Body\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{class_physics_1_1_rigid_body__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_physics_1_1_rigid_body_a9212c4fe44a06e631f857ccfa8e98500}{\texorpdfstring{$\sim$}{\string~}\+Rigid\+Body}} ()
+\item 
+virtual void \mbox{\hyperlink{class_physics_1_1_rigid_body_a58bdc27fb0f7c887def20cd071346e59}{Set\+Position}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&pos)=0
+\item 
+virtual \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{class_physics_1_1_rigid_body_a0eaa4df0931990dc645c312209cae1ac}{Get\+Position}} () const =0
+\item 
+virtual \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} \mbox{\hyperlink{class_physics_1_1_rigid_body_a63a0d221f9765592b84361c942b8f6cf}{Get\+Orientation}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_physics_1_1_rigid_body_a214081eeac9a81be404acea1601d40f0}{Apply\+Force\+At\+Center}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&force)=0
+\item 
+virtual void \mbox{\hyperlink{class_physics_1_1_rigid_body_a33c9a1ebcd090d195239f48c290e37e0}{Apply\+Impulse\+At\+Center}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&impulse)=0
+\item 
+virtual void \mbox{\hyperlink{class_physics_1_1_rigid_body_a73039baddb28a06bde28a2682cc37436}{Set\+Linear\+Velocity}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&vel)=0
+\item 
+virtual \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{class_physics_1_1_rigid_body_a179331f1de86a187c23ef7761a652dce}{Get\+Linear\+Velocity}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_physics_1_1_rigid_body_a1d1780c8c7219bb4fe4910cf1333db04}{Set\+Angular\+Velocity}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&vel)=0
+\item 
+virtual \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{class_physics_1_1_rigid_body_a7eba2259f9a89ba9bed2a6ad97d1a5af}{Get\+Angular\+Velocity}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_physics_1_1_rigid_body_a528678560a077f88e2d0822322be794f}{Enable\+Gravity}} (bool enabled)=0
+\item 
+virtual bool \mbox{\hyperlink{class_physics_1_1_rigid_body_a16753e4c6a4c21fad952a86dd7d45d39}{Is\+Gravity\+Enabled}} () const =0
+\item 
+virtual bool \mbox{\hyperlink{class_physics_1_1_rigid_body_aacddecc8c08a26897d9240b8d50b056a}{Is\+Dynamic}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_physics_1_1_rigid_body_a9787414017781d2227edefdbb73091cb}{Set\+Mass}} (float mass) const =0
+\item 
+virtual float \mbox{\hyperlink{class_physics_1_1_rigid_body_a634629a8385fcf7e03071dfad2b8317b}{Get\+Mass}} () const =0
+\item 
+virtual \mbox{\hyperlink{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2}{Body\+Type}} \mbox{\hyperlink{class_physics_1_1_rigid_body_aeb916b1d271e5ed48985441bb019ab82}{Get\+Type}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_physics_1_1_rigid_body_abf8f5f785bd470586c7398b3d759d04d}{Set\+Angular\+Lock\+Axis}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&lock)=0
+\item 
+virtual void \mbox{\hyperlink{class_physics_1_1_rigid_body_ae523fb2722794ed2e5466b3f022d778b}{Set\+Angular\+Damping}} (float damping)=0
+\item 
+virtual bool \mbox{\hyperlink{class_physics_1_1_rigid_body_a2f0412b7a0f009b8e6182b0e913e1606}{Is\+Valid}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_physics_1_1_rigid_body_a9a4746734cec2fbd44f466a66a7a1dd5}{Invalidate}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract interface for a physics rigid body. 
+
+\label{doc-constructors}
+\Hypertarget{class_physics_1_1_rigid_body_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_physics_1_1_rigid_body_a9212c4fe44a06e631f857ccfa8e98500}\index{Physics::RigidBody@{Physics::RigidBody}!````~RigidBody@{\texorpdfstring{$\sim$}{\string~}RigidBody}}
+\index{````~RigidBody@{\texorpdfstring{$\sim$}{\string~}RigidBody}!Physics::RigidBody@{Physics::RigidBody}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}RigidBody()}{\string~RigidBody()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_rigid_body_a9212c4fe44a06e631f857ccfa8e98500} 
+virtual Physics\+::\+Rigid\+Body\+::\texorpdfstring{$\sim$}{\string~}\+Rigid\+Body (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_physics_1_1_rigid_body_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_physics_1_1_rigid_body_a214081eeac9a81be404acea1601d40f0}\index{Physics::RigidBody@{Physics::RigidBody}!ApplyForceAtCenter@{ApplyForceAtCenter}}
+\index{ApplyForceAtCenter@{ApplyForceAtCenter}!Physics::RigidBody@{Physics::RigidBody}}
+\doxysubsubsection{\texorpdfstring{ApplyForceAtCenter()}{ApplyForceAtCenter()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_rigid_body_a214081eeac9a81be404acea1601d40f0} 
+virtual void Physics\+::\+Rigid\+Body\+::\+Apply\+Force\+At\+Center (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{force}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a0ea6acc282b9c7f16f0550228e70d235}{Physics\+::\+Backend\+::\+Rigid\+Body\+Backend}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_1_1_rigid_body_a214081eeac9a81be404acea1601d40f0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_1_1_rigid_body_a33c9a1ebcd090d195239f48c290e37e0}\index{Physics::RigidBody@{Physics::RigidBody}!ApplyImpulseAtCenter@{ApplyImpulseAtCenter}}
+\index{ApplyImpulseAtCenter@{ApplyImpulseAtCenter}!Physics::RigidBody@{Physics::RigidBody}}
+\doxysubsubsection{\texorpdfstring{ApplyImpulseAtCenter()}{ApplyImpulseAtCenter()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_rigid_body_a33c9a1ebcd090d195239f48c290e37e0} 
+virtual void Physics\+::\+Rigid\+Body\+::\+Apply\+Impulse\+At\+Center (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{impulse}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a10927d5c6d418670552acc9110e19b7f}{Physics\+::\+Backend\+::\+Rigid\+Body\+Backend}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_1_1_rigid_body_a33c9a1ebcd090d195239f48c290e37e0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_1_1_rigid_body_a528678560a077f88e2d0822322be794f}\index{Physics::RigidBody@{Physics::RigidBody}!EnableGravity@{EnableGravity}}
+\index{EnableGravity@{EnableGravity}!Physics::RigidBody@{Physics::RigidBody}}
+\doxysubsubsection{\texorpdfstring{EnableGravity()}{EnableGravity()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_rigid_body_a528678560a077f88e2d0822322be794f} 
+virtual void Physics\+::\+Rigid\+Body\+::\+Enable\+Gravity (\begin{DoxyParamCaption}\item[{bool}]{enabled}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a89367c3397c4f0eb5ca88766e06cf4cb}{Physics\+::\+Backend\+::\+Rigid\+Body\+Backend}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_1_1_rigid_body_a528678560a077f88e2d0822322be794f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_1_1_rigid_body_a7eba2259f9a89ba9bed2a6ad97d1a5af}\index{Physics::RigidBody@{Physics::RigidBody}!GetAngularVelocity@{GetAngularVelocity}}
+\index{GetAngularVelocity@{GetAngularVelocity}!Physics::RigidBody@{Physics::RigidBody}}
+\doxysubsubsection{\texorpdfstring{GetAngularVelocity()}{GetAngularVelocity()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_rigid_body_a7eba2259f9a89ba9bed2a6ad97d1a5af} 
+virtual \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Physics\+::\+Rigid\+Body\+::\+Get\+Angular\+Velocity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_ac15ad345a33805a67cbc8a58aa82483b}{Physics\+::\+Backend\+::\+Rigid\+Body\+Backend}}.
+
+\Hypertarget{class_physics_1_1_rigid_body_a179331f1de86a187c23ef7761a652dce}\index{Physics::RigidBody@{Physics::RigidBody}!GetLinearVelocity@{GetLinearVelocity}}
+\index{GetLinearVelocity@{GetLinearVelocity}!Physics::RigidBody@{Physics::RigidBody}}
+\doxysubsubsection{\texorpdfstring{GetLinearVelocity()}{GetLinearVelocity()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_rigid_body_a179331f1de86a187c23ef7761a652dce} 
+virtual \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Physics\+::\+Rigid\+Body\+::\+Get\+Linear\+Velocity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_aafaffe2ddc7aaa500eeb6425aacfc38d}{Physics\+::\+Backend\+::\+Rigid\+Body\+Backend}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_1_1_rigid_body_a179331f1de86a187c23ef7761a652dce_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_1_1_rigid_body_a634629a8385fcf7e03071dfad2b8317b}\index{Physics::RigidBody@{Physics::RigidBody}!GetMass@{GetMass}}
+\index{GetMass@{GetMass}!Physics::RigidBody@{Physics::RigidBody}}
+\doxysubsubsection{\texorpdfstring{GetMass()}{GetMass()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_rigid_body_a634629a8385fcf7e03071dfad2b8317b} 
+virtual float Physics\+::\+Rigid\+Body\+::\+Get\+Mass (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a1bcf12aa810ec2a1f69906a49cc6cad5}{Physics\+::\+Backend\+::\+Rigid\+Body\+Backend}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_1_1_rigid_body_a634629a8385fcf7e03071dfad2b8317b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_1_1_rigid_body_a63a0d221f9765592b84361c942b8f6cf}\index{Physics::RigidBody@{Physics::RigidBody}!GetOrientation@{GetOrientation}}
+\index{GetOrientation@{GetOrientation}!Physics::RigidBody@{Physics::RigidBody}}
+\doxysubsubsection{\texorpdfstring{GetOrientation()}{GetOrientation()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_rigid_body_a63a0d221f9765592b84361c942b8f6cf} 
+virtual \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} Physics\+::\+Rigid\+Body\+::\+Get\+Orientation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a79a01e2da9968cdf3df414b55970dc2a}{Physics\+::\+Backend\+::\+Rigid\+Body\+Backend}}.
+
+\Hypertarget{class_physics_1_1_rigid_body_a0eaa4df0931990dc645c312209cae1ac}\index{Physics::RigidBody@{Physics::RigidBody}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!Physics::RigidBody@{Physics::RigidBody}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_rigid_body_a0eaa4df0931990dc645c312209cae1ac} 
+virtual \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Physics\+::\+Rigid\+Body\+::\+Get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_ae32d3387c183a48908672772b3aaa5fb}{Physics\+::\+Backend\+::\+Rigid\+Body\+Backend}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_1_1_rigid_body_a0eaa4df0931990dc645c312209cae1ac_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_1_1_rigid_body_aeb916b1d271e5ed48985441bb019ab82}\index{Physics::RigidBody@{Physics::RigidBody}!GetType@{GetType}}
+\index{GetType@{GetType}!Physics::RigidBody@{Physics::RigidBody}}
+\doxysubsubsection{\texorpdfstring{GetType()}{GetType()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_rigid_body_aeb916b1d271e5ed48985441bb019ab82} 
+virtual \mbox{\hyperlink{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2}{Body\+Type}} Physics\+::\+Rigid\+Body\+::\+Get\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a78a1df1a57ba31508d086960898884f1}{Physics\+::\+Backend\+::\+Rigid\+Body\+Backend}}.
+
+\Hypertarget{class_physics_1_1_rigid_body_a9a4746734cec2fbd44f466a66a7a1dd5}\index{Physics::RigidBody@{Physics::RigidBody}!Invalidate@{Invalidate}}
+\index{Invalidate@{Invalidate}!Physics::RigidBody@{Physics::RigidBody}}
+\doxysubsubsection{\texorpdfstring{Invalidate()}{Invalidate()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_rigid_body_a9a4746734cec2fbd44f466a66a7a1dd5} 
+virtual void Physics\+::\+Rigid\+Body\+::\+Invalidate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a1a191e9aa452d8fbda6434b005315a2e}{Physics\+::\+Backend\+::\+Rigid\+Body\+Backend}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_1_1_rigid_body_a9a4746734cec2fbd44f466a66a7a1dd5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_1_1_rigid_body_aacddecc8c08a26897d9240b8d50b056a}\index{Physics::RigidBody@{Physics::RigidBody}!IsDynamic@{IsDynamic}}
+\index{IsDynamic@{IsDynamic}!Physics::RigidBody@{Physics::RigidBody}}
+\doxysubsubsection{\texorpdfstring{IsDynamic()}{IsDynamic()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_rigid_body_aacddecc8c08a26897d9240b8d50b056a} 
+virtual bool Physics\+::\+Rigid\+Body\+::\+Is\+Dynamic (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a3254456fdc2e1bb6245bf3de975562b0}{Physics\+::\+Backend\+::\+Rigid\+Body\+Backend}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_1_1_rigid_body_aacddecc8c08a26897d9240b8d50b056a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_1_1_rigid_body_a16753e4c6a4c21fad952a86dd7d45d39}\index{Physics::RigidBody@{Physics::RigidBody}!IsGravityEnabled@{IsGravityEnabled}}
+\index{IsGravityEnabled@{IsGravityEnabled}!Physics::RigidBody@{Physics::RigidBody}}
+\doxysubsubsection{\texorpdfstring{IsGravityEnabled()}{IsGravityEnabled()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_rigid_body_a16753e4c6a4c21fad952a86dd7d45d39} 
+virtual bool Physics\+::\+Rigid\+Body\+::\+Is\+Gravity\+Enabled (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_ad2e3470233fb0aed11eecb75db8bed33}{Physics\+::\+Backend\+::\+Rigid\+Body\+Backend}}.
+
+\Hypertarget{class_physics_1_1_rigid_body_a2f0412b7a0f009b8e6182b0e913e1606}\index{Physics::RigidBody@{Physics::RigidBody}!IsValid@{IsValid}}
+\index{IsValid@{IsValid}!Physics::RigidBody@{Physics::RigidBody}}
+\doxysubsubsection{\texorpdfstring{IsValid()}{IsValid()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_rigid_body_a2f0412b7a0f009b8e6182b0e913e1606} 
+virtual bool Physics\+::\+Rigid\+Body\+::\+Is\+Valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_abc398533a504d9a22536066a11c374e9}{Physics\+::\+Backend\+::\+Rigid\+Body\+Backend}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{class_physics_1_1_rigid_body_a2f0412b7a0f009b8e6182b0e913e1606_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_1_1_rigid_body_ae523fb2722794ed2e5466b3f022d778b}\index{Physics::RigidBody@{Physics::RigidBody}!SetAngularDamping@{SetAngularDamping}}
+\index{SetAngularDamping@{SetAngularDamping}!Physics::RigidBody@{Physics::RigidBody}}
+\doxysubsubsection{\texorpdfstring{SetAngularDamping()}{SetAngularDamping()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_rigid_body_ae523fb2722794ed2e5466b3f022d778b} 
+virtual void Physics\+::\+Rigid\+Body\+::\+Set\+Angular\+Damping (\begin{DoxyParamCaption}\item[{float}]{damping}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_ad117faeaa68a7ba390fcac9fd84f6ee8}{Physics\+::\+Backend\+::\+Rigid\+Body\+Backend}}.
+
+\Hypertarget{class_physics_1_1_rigid_body_abf8f5f785bd470586c7398b3d759d04d}\index{Physics::RigidBody@{Physics::RigidBody}!SetAngularLockAxis@{SetAngularLockAxis}}
+\index{SetAngularLockAxis@{SetAngularLockAxis}!Physics::RigidBody@{Physics::RigidBody}}
+\doxysubsubsection{\texorpdfstring{SetAngularLockAxis()}{SetAngularLockAxis()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_rigid_body_abf8f5f785bd470586c7398b3d759d04d} 
+virtual void Physics\+::\+Rigid\+Body\+::\+Set\+Angular\+Lock\+Axis (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{lock}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a1d33e18aef597895318cf8f1c9eb8ac3}{Physics\+::\+Backend\+::\+Rigid\+Body\+Backend}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_1_1_rigid_body_abf8f5f785bd470586c7398b3d759d04d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_1_1_rigid_body_a1d1780c8c7219bb4fe4910cf1333db04}\index{Physics::RigidBody@{Physics::RigidBody}!SetAngularVelocity@{SetAngularVelocity}}
+\index{SetAngularVelocity@{SetAngularVelocity}!Physics::RigidBody@{Physics::RigidBody}}
+\doxysubsubsection{\texorpdfstring{SetAngularVelocity()}{SetAngularVelocity()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_rigid_body_a1d1780c8c7219bb4fe4910cf1333db04} 
+virtual void Physics\+::\+Rigid\+Body\+::\+Set\+Angular\+Velocity (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{vel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a495903d446a0965b316328e3ffe3a161}{Physics\+::\+Backend\+::\+Rigid\+Body\+Backend}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_physics_1_1_rigid_body_a1d1780c8c7219bb4fe4910cf1333db04_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_1_1_rigid_body_a73039baddb28a06bde28a2682cc37436}\index{Physics::RigidBody@{Physics::RigidBody}!SetLinearVelocity@{SetLinearVelocity}}
+\index{SetLinearVelocity@{SetLinearVelocity}!Physics::RigidBody@{Physics::RigidBody}}
+\doxysubsubsection{\texorpdfstring{SetLinearVelocity()}{SetLinearVelocity()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_rigid_body_a73039baddb28a06bde28a2682cc37436} 
+virtual void Physics\+::\+Rigid\+Body\+::\+Set\+Linear\+Velocity (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{vel}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a50242f58fec8c30e9cce47b4513e966e}{Physics\+::\+Backend\+::\+Rigid\+Body\+Backend}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_1_1_rigid_body_a73039baddb28a06bde28a2682cc37436_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_1_1_rigid_body_a9787414017781d2227edefdbb73091cb}\index{Physics::RigidBody@{Physics::RigidBody}!SetMass@{SetMass}}
+\index{SetMass@{SetMass}!Physics::RigidBody@{Physics::RigidBody}}
+\doxysubsubsection{\texorpdfstring{SetMass()}{SetMass()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_rigid_body_a9787414017781d2227edefdbb73091cb} 
+virtual void Physics\+::\+Rigid\+Body\+::\+Set\+Mass (\begin{DoxyParamCaption}\item[{float}]{mass}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_adaad3043157f9270a14457a9c2510bb6}{Physics\+::\+Backend\+::\+Rigid\+Body\+Backend}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_1_1_rigid_body_a9787414017781d2227edefdbb73091cb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_1_1_rigid_body_a58bdc27fb0f7c887def20cd071346e59}\index{Physics::RigidBody@{Physics::RigidBody}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!Physics::RigidBody@{Physics::RigidBody}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_rigid_body_a58bdc27fb0f7c887def20cd071346e59} 
+virtual void Physics\+::\+Rigid\+Body\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a27ce17f6748dc8fa7d62c2c9a1eec391}{Physics\+::\+Backend\+::\+Rigid\+Body\+Backend}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Physics/\mbox{\hyperlink{physics_8hpp}{physics.\+hpp}}\end{DoxyCompactItemize}

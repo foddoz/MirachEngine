@@ -1,0 +1,7 @@
+<map id="Texture::LoadFromFile" name="Texture::LoadFromFile">
+<area shape="rect" id="Node000001" title="Loads image data from a file into CPU memory." alt="" coords="264,31,415,57"/>
+<area shape="rect" id="Node000002" href="$class_mesh_terrain.html#a8b774b6e68bb4e4e72e0690daeb5bf7f" title="Generates the heightmap and vertex data for terrain mesh." alt="" coords="5,5,216,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="248,37,216,33,217,28,249,31"/>
+<area shape="rect" id="Node000003" href="$class_terrain_manager.html#a898a6abcd4022dbb828932037cff7b4d" title="Initializes terrain system settings and global parameters." alt="" coords="27,56,194,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="249,57,195,63,194,57,248,51"/>
+</map>

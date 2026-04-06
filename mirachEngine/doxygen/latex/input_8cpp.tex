@@ -1,0 +1,28 @@
+\doxysection{C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Events/input.cpp File Reference}
+\hypertarget{input_8cpp}{}\label{input_8cpp}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Events/input.cpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Events/input.cpp}}
+{\ttfamily \#include "{}input.\+hpp"{}}\newline
+{\ttfamily \#include $<$SDL3/\+SDL.\+h$>$}\newline
+Include dependency graph for input.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{input_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_input_backend}{Input\+Backend}}
+\begin{DoxyCompactList}\small\item\em Backend namespace for platform-\/specific input functionality (SDL abstraction). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespace_input_backend_a621be98711ee4ca6433d2bdbceb3cf38}{Input\+Backend\+::\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the input backend. Must be called before polling events. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespace_input_backend_a0b2497db762ea8dfeb096986cac3037e}{Input\+Backend\+::\+Poll\+Event}} (\mbox{\hyperlink{struct_input_event}{Input\+Event}} \&out\+Event)
+\begin{DoxyCompactList}\small\item\em Polls a single input event and fills the output event structure. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{input_8hpp_a238b2f0546e69e7547255ec984309fcc}{Key\+State\+Array}} \mbox{\hyperlink{namespace_input_backend_a81af72d8c295d72d026a04bfaf1d8f15}{Input\+Backend\+::\+Get\+Keyboard\+State}} (int \texorpdfstring{$\ast$}{*}num\+Keys)
+\begin{DoxyCompactList}\small\item\em Returns the current state of all keyboard keys. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{namespace_input_backend_a41b48803a8095adecb22dd7c852ef45c}{Input\+Backend\+::\+Get\+Mouse\+Buttons}} ()
+\begin{DoxyCompactList}\small\item\em Returns the current state of all mouse buttons. \end{DoxyCompactList}\end{DoxyCompactItemize}

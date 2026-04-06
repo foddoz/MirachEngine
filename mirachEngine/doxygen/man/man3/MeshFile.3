@@ -1,0 +1,338 @@
+.TH "MeshFile" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MeshFile \- Represents a static 3D mesh loaded from file (e\&.g\&. OBJ, FBX, etc\&.) using Assimp\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <meshFile\&.hpp>\fP
+.PP
+Inherits \fBMesh3D\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMeshFile\fP ()"
+.br
+.RI "Constructs an empty \fBMeshFile\fP object\&. "
+.ti -1c
+.RI "void \fBGenerateCPUData\fP (const std::string &fileName)"
+.br
+.RI "Loads mesh geometry and material data from a model file into CPU memory\&. "
+.ti -1c
+.RI "void \fBUploadToGPU\fP () override"
+.br
+.RI "Uploads vertex/index data and textures to GPU buffers\&. "
+.ti -1c
+.RI "\fBMeshRenderer\fP \fBToRenderer\fP () override"
+.br
+.RI "Converts internal mesh structure to a renderable ECS-compatible object\&. "
+.ti -1c
+.RI "void \fBDelete\fP () override"
+.br
+.RI "Frees GPU resources including VAO, VBOs, and texture memory\&. "
+.in -1c
+
+Public Member Functions inherited from \fBMesh3D\fP
+.in +1c
+.ti -1c
+.RI "\fBMesh3D\fP ()"
+.br
+.RI "Default constructor initializes OpenGL buffer handles and transforms\&. "
+.ti -1c
+.RI "\fBMesh3D\fP (const \fBMesh3D\fP &other)"
+.br
+.RI "Copy constructor for \fBMesh3D\fP\&. "
+.ti -1c
+.RI "void \fBSetPipeline\fP (unsigned int pipeline)"
+.br
+.RI "Assigns a graphics pipeline (shader program) to this mesh\&. "
+.ti -1c
+.RI "unsigned int \fBgetPipeline\fP () const"
+.br
+.RI "Retrieves the currently assigned graphics pipeline\&. "
+.in -1c
+.SS "Private Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBBUFFER_TYPE\fP { \fBINDEX_BUFFER\fP = 0, \fBPOS_VB\fP = 1, \fBTEXCOORD_VB\fP = 2, \fBNORMAL_VB\fP = 3, \fBWVP_MAT_VB\fP = 4, \fBWORLD_MAT_VB\fP = 5, \fBNUM_BUFFERS\fP = 6 }"
+.br
+.RI "Enum for identifying OpenGL buffer types used for this mesh\&. "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBCountVerticesAndIndices\fP (const \fBModelScene\fP *pScene, unsigned int &numVertices, unsigned int &numIndices)"
+.br
+.RI "Calculates total vertices and indices needed from an Assimp scene\&. "
+.ti -1c
+.RI "void \fBReserveSpace\fP (unsigned int numVertices, unsigned int numIndices)"
+.br
+.RI "Allocates space in vectors based on counted vertices and indices\&. "
+.ti -1c
+.RI "void \fBInitAllMeshes\fP (const \fBModelScene\fP *pScene)"
+.br
+.RI "Initializes all submeshes in the scene\&. "
+.ti -1c
+.RI "void \fBInitSingleMesh\fP (const \fBModelMesh\fP *paiMesh)"
+.br
+.RI "Processes a single mesh and extracts geometry data\&. "
+.ti -1c
+.RI "bool \fBInitMaterials\fP (const \fBModelScene\fP *pScene, const std::string &fileName)"
+.br
+.RI "Loads diffuse textures from materials\&. "
+.ti -1c
+.RI "void \fBPopulateBuffers\fP () override"
+.br
+.RI "Creates OpenGL buffers and uploads mesh data to the GPU\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBMeshEntry\fP > \fBm_Meshes\fP"
+.br
+.RI "Submeshes split by material or node\&. "
+.ti -1c
+.RI "std::vector< \fBVector3f\fP > \fBm_Positions\fP"
+.br
+.RI "Vertex positions\&. "
+.ti -1c
+.RI "std::vector< \fBVector3f\fP > \fBm_Normals\fP"
+.br
+.RI "Vertex normals\&. "
+.ti -1c
+.RI "std::vector< \fBVector2f\fP > \fBm_TexCoords\fP"
+.br
+.RI "\fBTexture\fP coordinates\&. "
+.ti -1c
+.RI "std::vector< unsigned int > \fBm_Indices\fP"
+.br
+.RI "Vertex indices\&. "
+.ti -1c
+.RI "GLuint \fBm_Buffers\fP [\fBNUM_BUFFERS\fP] = { 0 }"
+.br
+.RI "OpenGL buffer handles\&. "
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Attributes inherited from \fBMesh3D\fP
+.in +1c
+.ti -1c
+.RI "unsigned int \fBm_VAO\fP"
+.br
+.RI "OpenGL Vertex Array Object handle\&. "
+.ti -1c
+.RI "unsigned int \fBm_IndexCount\fP"
+.br
+.RI "Number of indices used for drawing (glDrawElements or glDrawArrays)\&. "
+.ti -1c
+.RI "unsigned int \fBm_VBO\fP"
+.br
+.RI "Vertex Buffer Object handle\&. "
+.ti -1c
+.RI "unsigned int \fBm_IBO\fP"
+.br
+.RI "Index Buffer Object handle\&. "
+.ti -1c
+.RI "std::vector< \fBTexture\fP * > \fBm_Textures\fP"
+.br
+.RI "Collection of textures associated with this mesh\&. "
+.ti -1c
+.RI "unsigned int \fBm_Pipeline\fP"
+.br
+.RI "OpenGL shader program ID assigned to this mesh\&. "
+.ti -1c
+.RI "\fBAABB\fP \fBm_AABB\fP"
+.br
+.RI "Axis-aligned bounding box in local (object) space\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a static 3D mesh loaded from file (e\&.g\&. OBJ, FBX, etc\&.) using Assimp\&. 
+
+Handles loading vertex and material data from external model files, converting them into OpenGL-compatible buffers, and exposing rendering interfaces\&. 
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBMeshFile::BUFFER_TYPE\fP\fR [private]\fP"
+
+.PP
+Enum for identifying OpenGL buffer types used for this mesh\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIINDEX_BUFFER \fP
+Element index buffer\&. 
+.TP
+\f(BIPOS_VB \fP
+Vertex position buffer\&. 
+.TP
+\f(BITEXCOORD_VB \fP
+\fBTexture\fP coordinate buffer\&. 
+.TP
+\f(BINORMAL_VB \fP
+Vertex normal buffer\&. 
+.TP
+\f(BIWVP_MAT_VB \fP
+World-view-projection matrix buffer (optional) 
+.TP
+\f(BIWORLD_MAT_VB \fP
+World matrix buffer (optional) 
+.TP
+\f(BINUM_BUFFERS \fP
+Total number of buffer types\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MeshFile::MeshFile ()"
+
+.PP
+Constructs an empty \fBMeshFile\fP object\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void MeshFile::CountVerticesAndIndices (const \fBModelScene\fP * pScene, unsigned int & numVertices, unsigned int & numIndices)\fR [private]\fP"
+
+.PP
+Calculates total vertices and indices needed from an Assimp scene\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpScene\fP Pointer to Assimp's scene object\&. 
+.br
+\fInumVertices\fP Output: total vertex count\&. 
+.br
+\fInumIndices\fP Output: total index count\&. 
+.RE
+.PP
+
+.SS "void MeshFile::Delete ()\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Frees GPU resources including VAO, VBOs, and texture memory\&. 
+.PP
+Reimplemented from \fBMesh3D\fP\&.
+.SS "void MeshFile::GenerateCPUData (const std::string & fileName)"
+
+.PP
+Loads mesh geometry and material data from a model file into CPU memory\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfileName\fP Path to the mesh file (e\&.g\&. OBJ, FBX)\&. 
+.RE
+.PP
+
+.SS "void MeshFile::InitAllMeshes (const \fBModelScene\fP * pScene)\fR [private]\fP"
+
+.PP
+Initializes all submeshes in the scene\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpScene\fP Pointer to the parsed scene from Assimp\&. 
+.RE
+.PP
+
+.SS "bool MeshFile::InitMaterials (const \fBModelScene\fP * pScene, const std::string & fileName)\fR [private]\fP"
+
+.PP
+Loads diffuse textures from materials\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpScene\fP Pointer to the Assimp scene\&. 
+.br
+\fIfileName\fP Path to the original mesh file for resolving texture directory\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if material loading was successful\&. 
+.RE
+.PP
+
+.SS "void MeshFile::InitSingleMesh (const \fBModelMesh\fP * paiMesh)\fR [private]\fP"
+
+.PP
+Processes a single mesh and extracts geometry data\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpaiMesh\fP Pointer to the mesh from Assimp\&. 
+.RE
+.PP
+
+.SS "void MeshFile::PopulateBuffers ()\fR [override]\fP, \fR [private]\fP, \fR [virtual]\fP"
+
+.PP
+Creates OpenGL buffers and uploads mesh data to the GPU\&. 
+.PP
+Implements \fBMesh3D\fP\&.
+.SS "void MeshFile::ReserveSpace (unsigned int numVertices, unsigned int numIndices)\fR [private]\fP"
+
+.PP
+Allocates space in vectors based on counted vertices and indices\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fInumVertices\fP Number of vertices to reserve\&. 
+.br
+\fInumIndices\fP Number of indices to reserve\&. 
+.RE
+.PP
+
+.SS "\fBMeshRenderer\fP MeshFile::ToRenderer ()\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Converts internal mesh structure to a renderable ECS-compatible object\&. 
+.PP
+\fBReturns\fP
+.RS 4
+\fBMeshRenderer\fP data with GPU handles and metadata\&. 
+.RE
+.PP
+
+.PP
+Implements \fBMesh3D\fP\&.
+.SS "void MeshFile::UploadToGPU ()\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Uploads vertex/index data and textures to GPU buffers\&. 
+.PP
+Implements \fBMesh3D\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "GLuint MeshFile::m_Buffers[\fBNUM_BUFFERS\fP] = { 0 }\fR [private]\fP"
+
+.PP
+OpenGL buffer handles\&. 
+.SS "std::vector<unsigned int> MeshFile::m_Indices\fR [private]\fP"
+
+.PP
+Vertex indices\&. 
+.SS "std::vector<\fBMeshEntry\fP> MeshFile::m_Meshes\fR [private]\fP"
+
+.PP
+Submeshes split by material or node\&. 
+.SS "std::vector<\fBVector3f\fP> MeshFile::m_Normals\fR [private]\fP"
+
+.PP
+Vertex normals\&. 
+.SS "std::vector<\fBVector3f\fP> MeshFile::m_Positions\fR [private]\fP"
+
+.PP
+Vertex positions\&. 
+.SS "std::vector<\fBVector2f\fP> MeshFile::m_TexCoords\fR [private]\fP"
+
+.PP
+\fBTexture\fP coordinates\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

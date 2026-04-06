@@ -1,0 +1,201 @@
+\doxysection{Physics\+::Backend\+::Collider\+Backend Class Reference}
+\hypertarget{class_physics_1_1_backend_1_1_collider_backend}{}\label{class_physics_1_1_backend_1_1_collider_backend}\index{Physics::Backend::ColliderBackend@{Physics::Backend::ColliderBackend}}
+
+
+{\ttfamily \#include $<$physics\+\_\+backend.\+hpp$>$}
+
+
+
+Inheritance diagram for Physics\+::Backend\+::Collider\+Backend\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{class_physics_1_1_backend_1_1_collider_backend__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Physics\+::Backend\+::Collider\+Backend\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{class_physics_1_1_backend_1_1_collider_backend__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_a83167ac0785f44f27fa08b5f307fd8e8}{Collider\+Backend}} (rp3d\+::\+Collider \texorpdfstring{$\ast$}{*}c)
+\item 
+\mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_ab0971475b8b193dbd2cb7555b87acc08}{\texorpdfstring{$\sim$}{\string~}\+Collider\+Backend}} () override
+\item 
+void \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_ad82c74c8d2e508e407f14d6c65df38cb}{Set\+Category\+Bits}} (uint16\+\_\+t category\+Bits) override
+\begin{DoxyCompactList}\small\item\em Sets the category bitmask of this collider. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_ae1788c9ef859f9e6d674b6b4609bb859}{Set\+Collision\+Mask}} (uint16\+\_\+t category\+Bits) override
+\begin{DoxyCompactList}\small\item\em Sets the bitmask controlling what this collider can collide with. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_a2fbfb16e6e94efcebffa04f99e8b9b98}{Get\+Category\+Bits}} () const override
+\begin{DoxyCompactList}\small\item\em Gets the category bitmask of this collider. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_a71389efd6fdf2658b95f954acdcdb765}{Set\+Friction}} (float coefficient) override
+\begin{DoxyCompactList}\small\item\em Sets the friction coefficient of this collider. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_a97992a722457de6d27599c6af0d845dd}{Set\+Bounciness}} (float bounciness) override
+\begin{DoxyCompactList}\small\item\em Sets the bounciness/restitution of this collider. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_a0dae91e507d492195523438f6115c5a7}{Is\+Valid}} () const override
+\begin{DoxyCompactList}\small\item\em Checks if the collider is still valid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_a4dc1e01522f6555637e95c19216ac7c1}{Invalidate}} () override
+\begin{DoxyCompactList}\small\item\em Marks this collider as invalid. \end{DoxyCompactList}\item 
+rp3d\+::\+Collider \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_a0614b75b78f745cb7611545f156ed5ac}{Get\+Internal}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_physics_1_1_collider}{Physics\+::\+Collider}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_physics_1_1_collider_af48afb653da87eebc7c13fff4483d2dc}{\texorpdfstring{$\sim$}{\string~}\+Collider}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rp3d\+::\+Collider \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_acec06704e749782cf4596265213abbd9}{collider}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_physics_1_1_backend_1_1_collider_backend_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_physics_1_1_backend_1_1_collider_backend_a83167ac0785f44f27fa08b5f307fd8e8}\index{Physics::Backend::ColliderBackend@{Physics::Backend::ColliderBackend}!ColliderBackend@{ColliderBackend}}
+\index{ColliderBackend@{ColliderBackend}!Physics::Backend::ColliderBackend@{Physics::Backend::ColliderBackend}}
+\doxysubsubsection{\texorpdfstring{ColliderBackend()}{ColliderBackend()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_collider_backend_a83167ac0785f44f27fa08b5f307fd8e8} 
+Physics\+::\+Backend\+::\+Collider\+Backend\+::\+Collider\+Backend (\begin{DoxyParamCaption}\item[{rp3d\+::\+Collider \texorpdfstring{$\ast$}{*}}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\Hypertarget{class_physics_1_1_backend_1_1_collider_backend_ab0971475b8b193dbd2cb7555b87acc08}\index{Physics::Backend::ColliderBackend@{Physics::Backend::ColliderBackend}!````~ColliderBackend@{\texorpdfstring{$\sim$}{\string~}ColliderBackend}}
+\index{````~ColliderBackend@{\texorpdfstring{$\sim$}{\string~}ColliderBackend}!Physics::Backend::ColliderBackend@{Physics::Backend::ColliderBackend}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ColliderBackend()}{\string~ColliderBackend()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_collider_backend_ab0971475b8b193dbd2cb7555b87acc08} 
+Physics\+::\+Backend\+::\+Collider\+Backend\+::\texorpdfstring{$\sim$}{\string~}\+Collider\+Backend (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_physics_1_1_backend_1_1_collider_backend_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_physics_1_1_backend_1_1_collider_backend_a2fbfb16e6e94efcebffa04f99e8b9b98}\index{Physics::Backend::ColliderBackend@{Physics::Backend::ColliderBackend}!GetCategoryBits@{GetCategoryBits}}
+\index{GetCategoryBits@{GetCategoryBits}!Physics::Backend::ColliderBackend@{Physics::Backend::ColliderBackend}}
+\doxysubsubsection{\texorpdfstring{GetCategoryBits()}{GetCategoryBits()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_collider_backend_a2fbfb16e6e94efcebffa04f99e8b9b98} 
+uint16\+\_\+t Physics\+::\+Backend\+::\+Collider\+Backend\+::\+Get\+Category\+Bits (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Gets the category bitmask of this collider. 
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_collider_a4eaa32c3f995443bdc14db75a465b596}{Physics\+::\+Collider}}.
+
+\Hypertarget{class_physics_1_1_backend_1_1_collider_backend_a0614b75b78f745cb7611545f156ed5ac}\index{Physics::Backend::ColliderBackend@{Physics::Backend::ColliderBackend}!GetInternal@{GetInternal}}
+\index{GetInternal@{GetInternal}!Physics::Backend::ColliderBackend@{Physics::Backend::ColliderBackend}}
+\doxysubsubsection{\texorpdfstring{GetInternal()}{GetInternal()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_collider_backend_a0614b75b78f745cb7611545f156ed5ac} 
+rp3d\+::\+Collider \texorpdfstring{$\ast$}{*} Physics\+::\+Backend\+::\+Collider\+Backend\+::\+Get\+Internal (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_physics_1_1_backend_1_1_collider_backend_a4dc1e01522f6555637e95c19216ac7c1}\index{Physics::Backend::ColliderBackend@{Physics::Backend::ColliderBackend}!Invalidate@{Invalidate}}
+\index{Invalidate@{Invalidate}!Physics::Backend::ColliderBackend@{Physics::Backend::ColliderBackend}}
+\doxysubsubsection{\texorpdfstring{Invalidate()}{Invalidate()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_collider_backend_a4dc1e01522f6555637e95c19216ac7c1} 
+void Physics\+::\+Backend\+::\+Collider\+Backend\+::\+Invalidate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Marks this collider as invalid. 
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_collider_a033fc633ec7538c738aee85c62e2d446}{Physics\+::\+Collider}}.
+
+\Hypertarget{class_physics_1_1_backend_1_1_collider_backend_a0dae91e507d492195523438f6115c5a7}\index{Physics::Backend::ColliderBackend@{Physics::Backend::ColliderBackend}!IsValid@{IsValid}}
+\index{IsValid@{IsValid}!Physics::Backend::ColliderBackend@{Physics::Backend::ColliderBackend}}
+\doxysubsubsection{\texorpdfstring{IsValid()}{IsValid()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_collider_backend_a0dae91e507d492195523438f6115c5a7} 
+bool Physics\+::\+Backend\+::\+Collider\+Backend\+::\+Is\+Valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the collider is still valid. 
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_collider_ae43c89664a74f22360e711d6b80d0e6c}{Physics\+::\+Collider}}.
+
+\Hypertarget{class_physics_1_1_backend_1_1_collider_backend_a97992a722457de6d27599c6af0d845dd}\index{Physics::Backend::ColliderBackend@{Physics::Backend::ColliderBackend}!SetBounciness@{SetBounciness}}
+\index{SetBounciness@{SetBounciness}!Physics::Backend::ColliderBackend@{Physics::Backend::ColliderBackend}}
+\doxysubsubsection{\texorpdfstring{SetBounciness()}{SetBounciness()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_collider_backend_a97992a722457de6d27599c6af0d845dd} 
+void Physics\+::\+Backend\+::\+Collider\+Backend\+::\+Set\+Bounciness (\begin{DoxyParamCaption}\item[{float}]{bounciness}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the bounciness/restitution of this collider. 
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_collider_aea554c208d28072d7d161913a04a6747}{Physics\+::\+Collider}}.
+
+\Hypertarget{class_physics_1_1_backend_1_1_collider_backend_ad82c74c8d2e508e407f14d6c65df38cb}\index{Physics::Backend::ColliderBackend@{Physics::Backend::ColliderBackend}!SetCategoryBits@{SetCategoryBits}}
+\index{SetCategoryBits@{SetCategoryBits}!Physics::Backend::ColliderBackend@{Physics::Backend::ColliderBackend}}
+\doxysubsubsection{\texorpdfstring{SetCategoryBits()}{SetCategoryBits()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_collider_backend_ad82c74c8d2e508e407f14d6c65df38cb} 
+void Physics\+::\+Backend\+::\+Collider\+Backend\+::\+Set\+Category\+Bits (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{category\+Bits}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the category bitmask of this collider. 
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_collider_af86781953bc85e24c413e0bd41351250}{Physics\+::\+Collider}}.
+
+\Hypertarget{class_physics_1_1_backend_1_1_collider_backend_ae1788c9ef859f9e6d674b6b4609bb859}\index{Physics::Backend::ColliderBackend@{Physics::Backend::ColliderBackend}!SetCollisionMask@{SetCollisionMask}}
+\index{SetCollisionMask@{SetCollisionMask}!Physics::Backend::ColliderBackend@{Physics::Backend::ColliderBackend}}
+\doxysubsubsection{\texorpdfstring{SetCollisionMask()}{SetCollisionMask()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_collider_backend_ae1788c9ef859f9e6d674b6b4609bb859} 
+void Physics\+::\+Backend\+::\+Collider\+Backend\+::\+Set\+Collision\+Mask (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{mask\+Bits}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the bitmask controlling what this collider can collide with. 
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_collider_abf9488feabedf4d5d7cee829f9b5967a}{Physics\+::\+Collider}}.
+
+\Hypertarget{class_physics_1_1_backend_1_1_collider_backend_a71389efd6fdf2658b95f954acdcdb765}\index{Physics::Backend::ColliderBackend@{Physics::Backend::ColliderBackend}!SetFriction@{SetFriction}}
+\index{SetFriction@{SetFriction}!Physics::Backend::ColliderBackend@{Physics::Backend::ColliderBackend}}
+\doxysubsubsection{\texorpdfstring{SetFriction()}{SetFriction()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_collider_backend_a71389efd6fdf2658b95f954acdcdb765} 
+void Physics\+::\+Backend\+::\+Collider\+Backend\+::\+Set\+Friction (\begin{DoxyParamCaption}\item[{float}]{coefficient}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the friction coefficient of this collider. 
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_collider_ab65ca25f72973ebc9d99b066daecf505}{Physics\+::\+Collider}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_physics_1_1_backend_1_1_collider_backend_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_physics_1_1_backend_1_1_collider_backend_acec06704e749782cf4596265213abbd9}\index{Physics::Backend::ColliderBackend@{Physics::Backend::ColliderBackend}!collider@{collider}}
+\index{collider@{collider}!Physics::Backend::ColliderBackend@{Physics::Backend::ColliderBackend}}
+\doxysubsubsection{\texorpdfstring{collider}{collider}}
+{\footnotesize\ttfamily \label{class_physics_1_1_backend_1_1_collider_backend_acec06704e749782cf4596265213abbd9} 
+rp3d\+::\+Collider\texorpdfstring{$\ast$}{*} Physics\+::\+Backend\+::\+Collider\+Backend\+::collider\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Physics/\mbox{\hyperlink{physics__backend_8hpp}{physics\+\_\+backend.\+hpp}}\end{DoxyCompactItemize}

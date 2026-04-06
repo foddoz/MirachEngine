@@ -1,0 +1,212 @@
+\doxysection{Physics\+::Collider Class Reference}
+\hypertarget{class_physics_1_1_collider}{}\label{class_physics_1_1_collider}\index{Physics::Collider@{Physics::Collider}}
+
+
+Abstract interface for physics colliders.  
+
+
+
+
+{\ttfamily \#include $<$physics.\+hpp$>$}
+
+
+
+Inheritance diagram for Physics\+::Collider\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{class_physics_1_1_collider__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Physics\+::Collider\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{class_physics_1_1_collider__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_physics_1_1_collider_af48afb653da87eebc7c13fff4483d2dc}{\texorpdfstring{$\sim$}{\string~}\+Collider}} ()
+\item 
+virtual void \mbox{\hyperlink{class_physics_1_1_collider_abf9488feabedf4d5d7cee829f9b5967a}{Set\+Collision\+Mask}} (uint16\+\_\+t mask\+Bits)=0
+\begin{DoxyCompactList}\small\item\em Sets the bitmask controlling what this collider can collide with. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_physics_1_1_collider_ab65ca25f72973ebc9d99b066daecf505}{Set\+Friction}} (float coefficient)=0
+\begin{DoxyCompactList}\small\item\em Sets the friction coefficient of this collider. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_physics_1_1_collider_aea554c208d28072d7d161913a04a6747}{Set\+Bounciness}} (float bounciness)=0
+\begin{DoxyCompactList}\small\item\em Sets the bounciness/restitution of this collider. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_physics_1_1_collider_af86781953bc85e24c413e0bd41351250}{Set\+Category\+Bits}} (uint16\+\_\+t category\+Bits)=0
+\begin{DoxyCompactList}\small\item\em Sets the category bitmask of this collider. \end{DoxyCompactList}\item 
+virtual uint16\+\_\+t \mbox{\hyperlink{class_physics_1_1_collider_a4eaa32c3f995443bdc14db75a465b596}{Get\+Category\+Bits}} () const =0
+\begin{DoxyCompactList}\small\item\em Gets the category bitmask of this collider. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_physics_1_1_collider_ae43c89664a74f22360e711d6b80d0e6c}{Is\+Valid}} () const =0
+\begin{DoxyCompactList}\small\item\em Checks if the collider is still valid. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_physics_1_1_collider_a033fc633ec7538c738aee85c62e2d446}{Invalidate}} ()=0
+\begin{DoxyCompactList}\small\item\em Marks this collider as invalid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract interface for physics colliders. 
+
+\label{doc-constructors}
+\Hypertarget{class_physics_1_1_collider_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_physics_1_1_collider_af48afb653da87eebc7c13fff4483d2dc}\index{Physics::Collider@{Physics::Collider}!````~Collider@{\texorpdfstring{$\sim$}{\string~}Collider}}
+\index{````~Collider@{\texorpdfstring{$\sim$}{\string~}Collider}!Physics::Collider@{Physics::Collider}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Collider()}{\string~Collider()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_collider_af48afb653da87eebc7c13fff4483d2dc} 
+virtual Physics\+::\+Collider\+::\texorpdfstring{$\sim$}{\string~}\+Collider (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_physics_1_1_collider_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_physics_1_1_collider_a4eaa32c3f995443bdc14db75a465b596}\index{Physics::Collider@{Physics::Collider}!GetCategoryBits@{GetCategoryBits}}
+\index{GetCategoryBits@{GetCategoryBits}!Physics::Collider@{Physics::Collider}}
+\doxysubsubsection{\texorpdfstring{GetCategoryBits()}{GetCategoryBits()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_collider_a4eaa32c3f995443bdc14db75a465b596} 
+virtual uint16\+\_\+t Physics\+::\+Collider\+::\+Get\+Category\+Bits (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the category bitmask of this collider. 
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_a2fbfb16e6e94efcebffa04f99e8b9b98}{Physics\+::\+Backend\+::\+Collider\+Backend}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_1_1_collider_a4eaa32c3f995443bdc14db75a465b596_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_1_1_collider_a033fc633ec7538c738aee85c62e2d446}\index{Physics::Collider@{Physics::Collider}!Invalidate@{Invalidate}}
+\index{Invalidate@{Invalidate}!Physics::Collider@{Physics::Collider}}
+\doxysubsubsection{\texorpdfstring{Invalidate()}{Invalidate()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_collider_a033fc633ec7538c738aee85c62e2d446} 
+virtual void Physics\+::\+Collider\+::\+Invalidate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Marks this collider as invalid. 
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_a4dc1e01522f6555637e95c19216ac7c1}{Physics\+::\+Backend\+::\+Collider\+Backend}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_1_1_collider_a033fc633ec7538c738aee85c62e2d446_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_1_1_collider_ae43c89664a74f22360e711d6b80d0e6c}\index{Physics::Collider@{Physics::Collider}!IsValid@{IsValid}}
+\index{IsValid@{IsValid}!Physics::Collider@{Physics::Collider}}
+\doxysubsubsection{\texorpdfstring{IsValid()}{IsValid()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_collider_ae43c89664a74f22360e711d6b80d0e6c} 
+virtual bool Physics\+::\+Collider\+::\+Is\+Valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Checks if the collider is still valid. 
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_a0dae91e507d492195523438f6115c5a7}{Physics\+::\+Backend\+::\+Collider\+Backend}}.
+
+\Hypertarget{class_physics_1_1_collider_aea554c208d28072d7d161913a04a6747}\index{Physics::Collider@{Physics::Collider}!SetBounciness@{SetBounciness}}
+\index{SetBounciness@{SetBounciness}!Physics::Collider@{Physics::Collider}}
+\doxysubsubsection{\texorpdfstring{SetBounciness()}{SetBounciness()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_collider_aea554c208d28072d7d161913a04a6747} 
+virtual void Physics\+::\+Collider\+::\+Set\+Bounciness (\begin{DoxyParamCaption}\item[{float}]{bounciness}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets the bounciness/restitution of this collider. 
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_a97992a722457de6d27599c6af0d845dd}{Physics\+::\+Backend\+::\+Collider\+Backend}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{class_physics_1_1_collider_aea554c208d28072d7d161913a04a6747_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_1_1_collider_af86781953bc85e24c413e0bd41351250}\index{Physics::Collider@{Physics::Collider}!SetCategoryBits@{SetCategoryBits}}
+\index{SetCategoryBits@{SetCategoryBits}!Physics::Collider@{Physics::Collider}}
+\doxysubsubsection{\texorpdfstring{SetCategoryBits()}{SetCategoryBits()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_collider_af86781953bc85e24c413e0bd41351250} 
+virtual void Physics\+::\+Collider\+::\+Set\+Category\+Bits (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{category\+Bits}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets the category bitmask of this collider. 
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_ad82c74c8d2e508e407f14d6c65df38cb}{Physics\+::\+Backend\+::\+Collider\+Backend}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_1_1_collider_af86781953bc85e24c413e0bd41351250_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_1_1_collider_abf9488feabedf4d5d7cee829f9b5967a}\index{Physics::Collider@{Physics::Collider}!SetCollisionMask@{SetCollisionMask}}
+\index{SetCollisionMask@{SetCollisionMask}!Physics::Collider@{Physics::Collider}}
+\doxysubsubsection{\texorpdfstring{SetCollisionMask()}{SetCollisionMask()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_collider_abf9488feabedf4d5d7cee829f9b5967a} 
+virtual void Physics\+::\+Collider\+::\+Set\+Collision\+Mask (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{mask\+Bits}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets the bitmask controlling what this collider can collide with. 
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_ae1788c9ef859f9e6d674b6b4609bb859}{Physics\+::\+Backend\+::\+Collider\+Backend}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_1_1_collider_abf9488feabedf4d5d7cee829f9b5967a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_1_1_collider_ab65ca25f72973ebc9d99b066daecf505}\index{Physics::Collider@{Physics::Collider}!SetFriction@{SetFriction}}
+\index{SetFriction@{SetFriction}!Physics::Collider@{Physics::Collider}}
+\doxysubsubsection{\texorpdfstring{SetFriction()}{SetFriction()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_collider_ab65ca25f72973ebc9d99b066daecf505} 
+virtual void Physics\+::\+Collider\+::\+Set\+Friction (\begin{DoxyParamCaption}\item[{float}]{coefficient}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets the friction coefficient of this collider. 
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_a71389efd6fdf2658b95f954acdcdb765}{Physics\+::\+Backend\+::\+Collider\+Backend}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Physics/\mbox{\hyperlink{physics_8hpp}{physics.\+hpp}}\end{DoxyCompactItemize}

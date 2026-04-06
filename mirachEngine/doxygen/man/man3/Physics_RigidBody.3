@@ -1,0 +1,166 @@
+.TH "Physics::RigidBody" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Physics::RigidBody \- Abstract interface for a physics rigid body\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <physics\&.hpp>\fP
+.PP
+Inherited by \fBPhysics::Backend::RigidBodyBackend\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~RigidBody\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBSetPosition\fP (const \fBVector3f\fP &pos)=0"
+.br
+.ti -1c
+.RI "virtual \fBVector3f\fP \fBGetPosition\fP () const =0"
+.br
+.ti -1c
+.RI "virtual \fBQuaternion\fP \fBGetOrientation\fP () const =0"
+.br
+.ti -1c
+.RI "virtual void \fBApplyForceAtCenter\fP (const \fBVector3f\fP &force)=0"
+.br
+.ti -1c
+.RI "virtual void \fBApplyImpulseAtCenter\fP (const \fBVector3f\fP &impulse)=0"
+.br
+.ti -1c
+.RI "virtual void \fBSetLinearVelocity\fP (const \fBVector3f\fP &vel)=0"
+.br
+.ti -1c
+.RI "virtual \fBVector3f\fP \fBGetLinearVelocity\fP () const =0"
+.br
+.ti -1c
+.RI "virtual void \fBSetAngularVelocity\fP (const \fBVector3f\fP &vel)=0"
+.br
+.ti -1c
+.RI "virtual \fBVector3f\fP \fBGetAngularVelocity\fP () const =0"
+.br
+.ti -1c
+.RI "virtual void \fBEnableGravity\fP (bool enabled)=0"
+.br
+.ti -1c
+.RI "virtual bool \fBIsGravityEnabled\fP () const =0"
+.br
+.ti -1c
+.RI "virtual bool \fBIsDynamic\fP () const =0"
+.br
+.ti -1c
+.RI "virtual void \fBSetMass\fP (float mass) const =0"
+.br
+.ti -1c
+.RI "virtual float \fBGetMass\fP () const =0"
+.br
+.ti -1c
+.RI "virtual \fBBodyType\fP \fBGetType\fP () const =0"
+.br
+.ti -1c
+.RI "virtual void \fBSetAngularLockAxis\fP (const \fBVector3f\fP &lock)=0"
+.br
+.ti -1c
+.RI "virtual void \fBSetAngularDamping\fP (float damping)=0"
+.br
+.ti -1c
+.RI "virtual bool \fBIsValid\fP () const =0"
+.br
+.ti -1c
+.RI "virtual void \fBInvalidate\fP ()=0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Abstract interface for a physics rigid body\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual Physics::RigidBody::~RigidBody ()\fR [inline]\fP, \fR [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void Physics::RigidBody::ApplyForceAtCenter (const \fBVector3f\fP & force)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::RigidBodyBackend\fP\&.
+.SS "virtual void Physics::RigidBody::ApplyImpulseAtCenter (const \fBVector3f\fP & impulse)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::RigidBodyBackend\fP\&.
+.SS "virtual void Physics::RigidBody::EnableGravity (bool enabled)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::RigidBodyBackend\fP\&.
+.SS "virtual \fBVector3f\fP Physics::RigidBody::GetAngularVelocity () const\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::RigidBodyBackend\fP\&.
+.SS "virtual \fBVector3f\fP Physics::RigidBody::GetLinearVelocity () const\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::RigidBodyBackend\fP\&.
+.SS "virtual float Physics::RigidBody::GetMass () const\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::RigidBodyBackend\fP\&.
+.SS "virtual \fBQuaternion\fP Physics::RigidBody::GetOrientation () const\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::RigidBodyBackend\fP\&.
+.SS "virtual \fBVector3f\fP Physics::RigidBody::GetPosition () const\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::RigidBodyBackend\fP\&.
+.SS "virtual \fBBodyType\fP Physics::RigidBody::GetType () const\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::RigidBodyBackend\fP\&.
+.SS "virtual void Physics::RigidBody::Invalidate ()\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::RigidBodyBackend\fP\&.
+.SS "virtual bool Physics::RigidBody::IsDynamic () const\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::RigidBodyBackend\fP\&.
+.SS "virtual bool Physics::RigidBody::IsGravityEnabled () const\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::RigidBodyBackend\fP\&.
+.SS "virtual bool Physics::RigidBody::IsValid () const\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::RigidBodyBackend\fP\&.
+.SS "virtual void Physics::RigidBody::SetAngularDamping (float damping)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::RigidBodyBackend\fP\&.
+.SS "virtual void Physics::RigidBody::SetAngularLockAxis (const \fBVector3f\fP & lock)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::RigidBodyBackend\fP\&.
+.SS "virtual void Physics::RigidBody::SetAngularVelocity (const \fBVector3f\fP & vel)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::RigidBodyBackend\fP\&.
+.SS "virtual void Physics::RigidBody::SetLinearVelocity (const \fBVector3f\fP & vel)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::RigidBodyBackend\fP\&.
+.SS "virtual void Physics::RigidBody::SetMass (float mass) const\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::RigidBodyBackend\fP\&.
+.SS "virtual void Physics::RigidBody::SetPosition (const \fBVector3f\fP & pos)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::RigidBodyBackend\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

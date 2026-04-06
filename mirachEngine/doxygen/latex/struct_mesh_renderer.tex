@@ -1,0 +1,135 @@
+\doxysection{Mesh\+Renderer Struct Reference}
+\hypertarget{struct_mesh_renderer}{}\label{struct_mesh_renderer}\index{MeshRenderer@{MeshRenderer}}
+
+
+Holds all GPU and rendering information needed for rendering a mesh.  
+
+
+
+
+{\ttfamily \#include $<$mesh\+\_\+renderer.\+hpp$>$}
+
+
+
+Collaboration diagram for Mesh\+Renderer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{struct_mesh_renderer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_mesh_l_o_d}{Mesh\+LOD}} $>$ \mbox{\hyperlink{struct_mesh_renderer_a1781b128790c9e9a5be6aa5248a9c17b}{LODs}}
+\begin{DoxyCompactList}\small\item\em Mesh data for each level of detail. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{struct_mesh_renderer_ac699aa456f908feef8bfacaa03b0916a}{Pipeline}} = 0
+\begin{DoxyCompactList}\small\item\em Open\+GL shader program or graphics pipeline ID. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_texture}{Texture}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{struct_mesh_renderer_ade7ad76d84340c91b432a541935ef96c}{Textures}}
+\begin{DoxyCompactList}\small\item\em Pointers to texture objects used by this mesh. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{struct_mesh_renderer_a958781cb834e9059cf946309a4e8ba8f}{Texture\+Uniform\+Names}}
+\begin{DoxyCompactList}\small\item\em Uniform names for each texture in the shader. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_mesh_renderer_aa618b9976c4982d2caf6cc0d67b67ac1}{Min\+Height}} = 0.\+0f
+\begin{DoxyCompactList}\small\item\em Minimum height value (used for terrain height-\/based blending). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_mesh_renderer_a80d2400633681f26e741fca6e024a51b}{Max\+Height}} = 0.\+0f
+\begin{DoxyCompactList}\small\item\em Maximum height value. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_mesh_entry}{Mesh\+Entry}} $>$ \mbox{\hyperlink{struct_mesh_renderer_a5ed1763e413b97fe611bb9391d921b8f}{Sub\+Meshes}}
+\begin{DoxyCompactList}\small\item\em Submesh support for complex multi-\/material models. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_mesh_renderer_a90dfbd510eb271a459b7a1c2698c937f}{current\+LOD}} = 0
+\begin{DoxyCompactList}\small\item\em Currently active LOD index for rendering. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Holds all GPU and rendering information needed for rendering a mesh. 
+
+This struct is created by Mesh3\+D-\/derived classes and used by the Render\+System to issue draw calls with the appropriate LOD, shader pipeline, and textures. 
+
+\label{doc-variable-members}
+\Hypertarget{struct_mesh_renderer_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_mesh_renderer_a90dfbd510eb271a459b7a1c2698c937f}\index{MeshRenderer@{MeshRenderer}!currentLOD@{currentLOD}}
+\index{currentLOD@{currentLOD}!MeshRenderer@{MeshRenderer}}
+\doxysubsubsection{\texorpdfstring{currentLOD}{currentLOD}}
+{\footnotesize\ttfamily \label{struct_mesh_renderer_a90dfbd510eb271a459b7a1c2698c937f} 
+int Mesh\+Renderer\+::current\+LOD = 0}
+
+
+
+Currently active LOD index for rendering. 
+
+\Hypertarget{struct_mesh_renderer_a1781b128790c9e9a5be6aa5248a9c17b}\index{MeshRenderer@{MeshRenderer}!LODs@{LODs}}
+\index{LODs@{LODs}!MeshRenderer@{MeshRenderer}}
+\doxysubsubsection{\texorpdfstring{LODs}{LODs}}
+{\footnotesize\ttfamily \label{struct_mesh_renderer_a1781b128790c9e9a5be6aa5248a9c17b} 
+std\+::vector$<$\mbox{\hyperlink{struct_mesh_l_o_d}{Mesh\+LOD}}$>$ Mesh\+Renderer\+::\+LODs}
+
+
+
+Mesh data for each level of detail. 
+
+\Hypertarget{struct_mesh_renderer_a80d2400633681f26e741fca6e024a51b}\index{MeshRenderer@{MeshRenderer}!MaxHeight@{MaxHeight}}
+\index{MaxHeight@{MaxHeight}!MeshRenderer@{MeshRenderer}}
+\doxysubsubsection{\texorpdfstring{MaxHeight}{MaxHeight}}
+{\footnotesize\ttfamily \label{struct_mesh_renderer_a80d2400633681f26e741fca6e024a51b} 
+float Mesh\+Renderer\+::\+Max\+Height = 0.\+0f}
+
+
+
+Maximum height value. 
+
+\Hypertarget{struct_mesh_renderer_aa618b9976c4982d2caf6cc0d67b67ac1}\index{MeshRenderer@{MeshRenderer}!MinHeight@{MinHeight}}
+\index{MinHeight@{MinHeight}!MeshRenderer@{MeshRenderer}}
+\doxysubsubsection{\texorpdfstring{MinHeight}{MinHeight}}
+{\footnotesize\ttfamily \label{struct_mesh_renderer_aa618b9976c4982d2caf6cc0d67b67ac1} 
+float Mesh\+Renderer\+::\+Min\+Height = 0.\+0f}
+
+
+
+Minimum height value (used for terrain height-\/based blending). 
+
+\Hypertarget{struct_mesh_renderer_ac699aa456f908feef8bfacaa03b0916a}\index{MeshRenderer@{MeshRenderer}!Pipeline@{Pipeline}}
+\index{Pipeline@{Pipeline}!MeshRenderer@{MeshRenderer}}
+\doxysubsubsection{\texorpdfstring{Pipeline}{Pipeline}}
+{\footnotesize\ttfamily \label{struct_mesh_renderer_ac699aa456f908feef8bfacaa03b0916a} 
+unsigned int Mesh\+Renderer\+::\+Pipeline = 0}
+
+
+
+Open\+GL shader program or graphics pipeline ID. 
+
+\Hypertarget{struct_mesh_renderer_a5ed1763e413b97fe611bb9391d921b8f}\index{MeshRenderer@{MeshRenderer}!SubMeshes@{SubMeshes}}
+\index{SubMeshes@{SubMeshes}!MeshRenderer@{MeshRenderer}}
+\doxysubsubsection{\texorpdfstring{SubMeshes}{SubMeshes}}
+{\footnotesize\ttfamily \label{struct_mesh_renderer_a5ed1763e413b97fe611bb9391d921b8f} 
+std\+::vector$<$\mbox{\hyperlink{struct_mesh_entry}{Mesh\+Entry}}$>$ Mesh\+Renderer\+::\+Sub\+Meshes}
+
+
+
+Submesh support for complex multi-\/material models. 
+
+\Hypertarget{struct_mesh_renderer_ade7ad76d84340c91b432a541935ef96c}\index{MeshRenderer@{MeshRenderer}!Textures@{Textures}}
+\index{Textures@{Textures}!MeshRenderer@{MeshRenderer}}
+\doxysubsubsection{\texorpdfstring{Textures}{Textures}}
+{\footnotesize\ttfamily \label{struct_mesh_renderer_ade7ad76d84340c91b432a541935ef96c} 
+std\+::vector$<$\mbox{\hyperlink{class_texture}{Texture}}\texorpdfstring{$\ast$}{*}$>$ Mesh\+Renderer\+::\+Textures}
+
+
+
+Pointers to texture objects used by this mesh. 
+
+\Hypertarget{struct_mesh_renderer_a958781cb834e9059cf946309a4e8ba8f}\index{MeshRenderer@{MeshRenderer}!TextureUniformNames@{TextureUniformNames}}
+\index{TextureUniformNames@{TextureUniformNames}!MeshRenderer@{MeshRenderer}}
+\doxysubsubsection{\texorpdfstring{TextureUniformNames}{TextureUniformNames}}
+{\footnotesize\ttfamily \label{struct_mesh_renderer_a958781cb834e9059cf946309a4e8ba8f} 
+std\+::vector$<$std\+::string$>$ Mesh\+Renderer\+::\+Texture\+Uniform\+Names}
+
+
+
+Uniform names for each texture in the shader. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Rendering/\mbox{\hyperlink{mesh__renderer_8hpp}{mesh\+\_\+renderer.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,212 @@
+\doxysection{Component\+Manager\texorpdfstring{$<$}{<} Component\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_component_manager}{}\label{class_component_manager}\index{ComponentManager$<$ ComponentType $>$@{ComponentManager$<$ ComponentType $>$}}
+
+
+Generic ECS Component Manager that maps entities to component data.  
+
+
+
+
+{\ttfamily \#include $<$component\+\_\+manager.\+hpp$>$}
+
+
+
+Collaboration diagram for Component\+Manager\texorpdfstring{$<$}{<} Component\+Type \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{class_component_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_component_manager_af278794db44296d707492fef01b15e96}{Add\+Component}} (\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} e, const Component\+Type \&component)
+\begin{DoxyCompactList}\small\item\em Adds a component to the specified entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_component_manager_a2501a3794e300d71b6279e76d311846c}{Remove\+Component}} (\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} e)
+\begin{DoxyCompactList}\small\item\em Removes the component associated with an entity. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_component_manager_a8a8d1ef9e132029f47f452d64f0c3f7a}{Has\+Component}} (\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} e) const
+\begin{DoxyCompactList}\small\item\em Checks if an entity has a component of this type. \end{DoxyCompactList}\item 
+Component\+Type \& \mbox{\hyperlink{class_component_manager_a81536e74843307f9b9e27993cca3e72b}{Get\+Component}} (\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} e)
+\begin{DoxyCompactList}\small\item\em Retrieves a reference to the component of an entity. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}, Component\+Type $>$ \& \mbox{\hyperlink{class_component_manager_a41507f22f5d9cf4158ead40fdc4b25d0}{Get\+All}} ()
+\item 
+const std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}, Component\+Type $>$ \& \mbox{\hyperlink{class_component_manager_a89193058f54d2746f028d2a12c035070}{Get\+All}} () const
+\begin{DoxyCompactList}\small\item\em Returns all stored components for iteration or access. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}, Component\+Type $>$ \mbox{\hyperlink{class_component_manager_aededd31118eefc2d258f1ac77691e253}{m\+\_\+\+Components}}
+\begin{DoxyCompactList}\small\item\em Map of \doxylink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity} -\/\texorpdfstring{$>$}{>} Component. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Component\+Type$>$\newline
+class Component\+Manager$<$ Component\+Type $>$}
+Generic ECS Component Manager that maps entities to component data. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Component\+Type} & The type of component managed (e.\+g., \doxylink{class_transform}{Transform}, \doxylink{struct_mesh_renderer}{Mesh\+Renderer}). \\
+\hline
+\end{DoxyTemplParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_component_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_component_manager_af278794db44296d707492fef01b15e96}\index{ComponentManager$<$ ComponentType $>$@{ComponentManager$<$ ComponentType $>$}!AddComponent@{AddComponent}}
+\index{AddComponent@{AddComponent}!ComponentManager$<$ ComponentType $>$@{ComponentManager$<$ ComponentType $>$}}
+\doxysubsubsection{\texorpdfstring{AddComponent()}{AddComponent()}}
+{\footnotesize\ttfamily \label{class_component_manager_af278794db44296d707492fef01b15e96} 
+template$<$typename Component\+Type$>$ \\
+void \mbox{\hyperlink{class_component_manager}{Component\+Manager}}$<$ Component\+Type $>$\+::\+Add\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}}]{e}{, }\item[{const Component\+Type \&}]{component}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a component to the specified entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The entity to assign the component to. \\
+\hline
+{\em component} & The component data to store. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_component_manager_af278794db44296d707492fef01b15e96_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_component_manager_a41507f22f5d9cf4158ead40fdc4b25d0}\index{ComponentManager$<$ ComponentType $>$@{ComponentManager$<$ ComponentType $>$}!GetAll@{GetAll}}
+\index{GetAll@{GetAll}!ComponentManager$<$ ComponentType $>$@{ComponentManager$<$ ComponentType $>$}}
+\doxysubsubsection{\texorpdfstring{GetAll()}{GetAll()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_component_manager_a41507f22f5d9cf4158ead40fdc4b25d0} 
+template$<$typename Component\+Type$>$ \\
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}, Component\+Type $>$ \& \mbox{\hyperlink{class_component_manager}{Component\+Manager}}$<$ Component\+Type $>$\+::\+Get\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_component_manager_a41507f22f5d9cf4158ead40fdc4b25d0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_component_manager_a89193058f54d2746f028d2a12c035070}\index{ComponentManager$<$ ComponentType $>$@{ComponentManager$<$ ComponentType $>$}!GetAll@{GetAll}}
+\index{GetAll@{GetAll}!ComponentManager$<$ ComponentType $>$@{ComponentManager$<$ ComponentType $>$}}
+\doxysubsubsection{\texorpdfstring{GetAll()}{GetAll()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_component_manager_a89193058f54d2746f028d2a12c035070} 
+template$<$typename Component\+Type$>$ \\
+const std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}, Component\+Type $>$ \& \mbox{\hyperlink{class_component_manager}{Component\+Manager}}$<$ Component\+Type $>$\+::\+Get\+All (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns all stored components for iteration or access. 
+
+\begin{DoxyReturn}{Returns}
+Const reference to the internal unordered map. 
+\end{DoxyReturn}
+\Hypertarget{class_component_manager_a81536e74843307f9b9e27993cca3e72b}\index{ComponentManager$<$ ComponentType $>$@{ComponentManager$<$ ComponentType $>$}!GetComponent@{GetComponent}}
+\index{GetComponent@{GetComponent}!ComponentManager$<$ ComponentType $>$@{ComponentManager$<$ ComponentType $>$}}
+\doxysubsubsection{\texorpdfstring{GetComponent()}{GetComponent()}}
+{\footnotesize\ttfamily \label{class_component_manager_a81536e74843307f9b9e27993cca3e72b} 
+template$<$typename Component\+Type$>$ \\
+Component\+Type \& \mbox{\hyperlink{class_component_manager}{Component\+Manager}}$<$ Component\+Type $>$\+::\+Get\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves a reference to the component of an entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The entity whose component to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the component. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_component_manager_a81536e74843307f9b9e27993cca3e72b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_component_manager_a8a8d1ef9e132029f47f452d64f0c3f7a}\index{ComponentManager$<$ ComponentType $>$@{ComponentManager$<$ ComponentType $>$}!HasComponent@{HasComponent}}
+\index{HasComponent@{HasComponent}!ComponentManager$<$ ComponentType $>$@{ComponentManager$<$ ComponentType $>$}}
+\doxysubsubsection{\texorpdfstring{HasComponent()}{HasComponent()}}
+{\footnotesize\ttfamily \label{class_component_manager_a8a8d1ef9e132029f47f452d64f0c3f7a} 
+template$<$typename Component\+Type$>$ \\
+bool \mbox{\hyperlink{class_component_manager}{Component\+Manager}}$<$ Component\+Type $>$\+::\+Has\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}}]{e}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if an entity has a component of this type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The entity to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the component exists, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_component_manager_a8a8d1ef9e132029f47f452d64f0c3f7a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_component_manager_a2501a3794e300d71b6279e76d311846c}\index{ComponentManager$<$ ComponentType $>$@{ComponentManager$<$ ComponentType $>$}!RemoveComponent@{RemoveComponent}}
+\index{RemoveComponent@{RemoveComponent}!ComponentManager$<$ ComponentType $>$@{ComponentManager$<$ ComponentType $>$}}
+\doxysubsubsection{\texorpdfstring{RemoveComponent()}{RemoveComponent()}}
+{\footnotesize\ttfamily \label{class_component_manager_a2501a3794e300d71b6279e76d311846c} 
+template$<$typename Component\+Type$>$ \\
+void \mbox{\hyperlink{class_component_manager}{Component\+Manager}}$<$ Component\+Type $>$\+::\+Remove\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes the component associated with an entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The entity whose component should be removed. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_component_manager_a2501a3794e300d71b6279e76d311846c_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_component_manager_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_component_manager_aededd31118eefc2d258f1ac77691e253}\index{ComponentManager$<$ ComponentType $>$@{ComponentManager$<$ ComponentType $>$}!m\_Components@{m\_Components}}
+\index{m\_Components@{m\_Components}!ComponentManager$<$ ComponentType $>$@{ComponentManager$<$ ComponentType $>$}}
+\doxysubsubsection{\texorpdfstring{m\_Components}{m\_Components}}
+{\footnotesize\ttfamily \label{class_component_manager_aededd31118eefc2d258f1ac77691e253} 
+template$<$typename Component\+Type$>$ \\
+std\+::unordered\+\_\+map$<$\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}, Component\+Type$>$ \mbox{\hyperlink{class_component_manager}{Component\+Manager}}$<$ Component\+Type $>$\+::m\+\_\+\+Components\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Map of \doxylink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity} -\/\texorpdfstring{$>$}{>} Component. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+ECS/\mbox{\hyperlink{component__manager_8hpp}{component\+\_\+manager.\+hpp}}\end{DoxyCompactItemize}

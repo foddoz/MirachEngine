@@ -1,0 +1,74 @@
+.TH "AABB" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AABB \- Represents an axis-aligned bounding box\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <math\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAABB\fP ()"
+.br
+.RI "Constructs an invalid \fBAABB\fP by resetting its values\&. "
+.ti -1c
+.RI "void \fBReset\fP ()"
+.br
+.RI "Resets the \fBAABB\fP to an empty state\&. "
+.ti -1c
+.RI "void \fBExpand\fP (const \fBVector3f\fP &point)"
+.br
+.RI "Expands the \fBAABB\fP to include the specified point\&. "
+.ti -1c
+.RI "\fBAABB\fP \fBTransform\fP (const \fBMatrix4f\fP &modelMatrix) const"
+.br
+.RI "Transforms this \fBAABB\fP by a transformation matrix and returns the result\&. "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBVector3f\fP \fBmin\fP"
+.br
+.ti -1c
+.RI "\fBVector3f\fP \fBmax\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents an axis-aligned bounding box\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AABB::AABB ()\fR [inline]\fP"
+
+.PP
+Constructs an invalid \fBAABB\fP by resetting its values\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void AABB::Expand (const \fBVector3f\fP & point)\fR [inline]\fP"
+
+.PP
+Expands the \fBAABB\fP to include the specified point\&. 
+.SS "void AABB::Reset ()\fR [inline]\fP"
+
+.PP
+Resets the \fBAABB\fP to an empty state\&. 
+.SS "\fBAABB\fP AABB::Transform (const \fBMatrix4f\fP & modelMatrix) const\fR [inline]\fP"
+
+.PP
+Transforms this \fBAABB\fP by a transformation matrix and returns the result\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBVector3f\fP AABB::max"
+
+.SS "\fBVector3f\fP AABB::min"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

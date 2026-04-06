@@ -1,0 +1,55 @@
+\doxysection{camera.\+hpp}
+\hypertarget{camera_8hpp_source}{}\label{camera_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Camera/camera.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Camera/camera.hpp}}
+\mbox{\hyperlink{camera_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CAMERA\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CAMERA\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{math_8hpp}{../Math/math.hpp}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_camera_a01f94c3543f56ede7af49dc778f19331}{Camera}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_camera_a01f94c3543f56ede7af49dc778f19331}{Camera}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_a8953636ad3b9bfec7cb1d3cf2917d445}{SetProjectionMatrix}}(\textcolor{keywordtype}{float}\ fov,\ \textcolor{keywordtype}{float}\ aspect,\ \textcolor{keywordtype}{float}\ near,\ \textcolor{keywordtype}{float}\ far);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}}\ \mbox{\hyperlink{class_camera_a6e3587a907ed288508c97493e7d51fc1}{GetViewMatrix}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ position)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}}\ \mbox{\hyperlink{class_camera_acfb250cdca698879b5de804524960005}{GetProjectionMatrix}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_a08e827a4ea64e448beabaa52881c58ab}{Look}}(\textcolor{keywordtype}{float}\ deltaX,\ \textcolor{keywordtype}{float}\ deltaY,\ \textcolor{keywordtype}{float}\ lookSpeed);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_camera_a3683dabb5bf414d8af9036316655f52a}{IsBoxInFrustum}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ min,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ max)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_a5f991880cabaeeb3c8bf350e4c96499f}{Enable}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_camera_aa209d0832d633c0dd840b3308e1c0ad8}{IsEnabled}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_a2e48639cd946e567fc0756361c855ac6}{UpdateFrustumPlanes}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ position);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{class_camera_a8b6bb70c82fe92444295d4f3fcb07f22}{GetFrontVector}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{class_camera_a0ad7fef0153402b50f70bd9327afdbd6}{GetRightVector}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_ae94de322124a68e32113235eeec78008}{UpdateVectors}}();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}}\ \mbox{\hyperlink{class_camera_aae9049c70d00836edb7fe33068bee3a7}{mProjectionMatrix}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{class_camera_a3a748cf0bba2c7334717490424719d42}{mFrontVector}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{class_camera_a39d3f969ef0e89b2e3bb0c5529ecba17}{mRightVector}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{class_camera_aae9ed4d86aa7c1703cf6726280f393f5}{mUpVector}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{class_camera_a029cb37c93e3ebb2e3de80405c8a9f7c}{mWorldUp}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_camera_a1787f828365ee9927f781e7fb358e600}{mYaw}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_camera_a0d0729ca735aa3ca3c88c7d37ede6c9b}{mPitch}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{math_8hpp_adba234791e87b8e2d638fbf2b55a0db1}{Vector4f}}\ \mbox{\hyperlink{class_camera_ad499e163fc7409d7ac056a08890bf533}{mFrustumPlanes}}[6];\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_camera_a4df90bc49242742dda978a769c04e832}{mEnabled}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00108\ \};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

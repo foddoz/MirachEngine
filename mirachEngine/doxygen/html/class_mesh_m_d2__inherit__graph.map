@@ -1,0 +1,5 @@
+<map id="MeshMD2" name="MeshMD2">
+<area shape="rect" id="Node000001" title="A 3D animated mesh class for rendering MD2 models with frame interpolation." alt="" coords="5,400,161,896"/>
+<area shape="rect" id="Node000002" href="$class_mesh3_d.html" title="Abstract base class for rendering and managing 3D mesh data." alt="" coords="21,5,145,352"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,367,86,400,81,400,81,367"/>
+</map>

@@ -1,0 +1,86 @@
+\doxysection{Physics\+::Raycast\+Callback Class Reference}
+\hypertarget{class_physics_1_1_raycast_callback}{}\label{class_physics_1_1_raycast_callback}\index{Physics::RaycastCallback@{Physics::RaycastCallback}}
+
+
+Callback interface for raycasting results.  
+
+
+
+
+{\ttfamily \#include $<$physics.\+hpp$>$}
+
+
+
+Inheritance diagram for Physics\+::Raycast\+Callback\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{class_physics_1_1_raycast_callback__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Physics\+::Raycast\+Callback\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{class_physics_1_1_raycast_callback__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_physics_1_1_raycast_callback_aed7741525eec3eca39849ec753da81fd}{\texorpdfstring{$\sim$}{\string~}\+Raycast\+Callback}} ()=default
+\item 
+virtual bool \mbox{\hyperlink{class_physics_1_1_raycast_callback_adae88ab43696f6b9d957ec981f93a6e5}{Report\+Hit}} (\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}body, float hit\+Fraction)=0
+\begin{DoxyCompactList}\small\item\em Called when the ray hits a rigid body. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Callback interface for raycasting results. 
+
+\label{doc-constructors}
+\Hypertarget{class_physics_1_1_raycast_callback_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_physics_1_1_raycast_callback_aed7741525eec3eca39849ec753da81fd}\index{Physics::RaycastCallback@{Physics::RaycastCallback}!````~RaycastCallback@{\texorpdfstring{$\sim$}{\string~}RaycastCallback}}
+\index{````~RaycastCallback@{\texorpdfstring{$\sim$}{\string~}RaycastCallback}!Physics::RaycastCallback@{Physics::RaycastCallback}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}RaycastCallback()}{\string~RaycastCallback()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_raycast_callback_aed7741525eec3eca39849ec753da81fd} 
+virtual Physics\+::\+Raycast\+Callback\+::\texorpdfstring{$\sim$}{\string~}\+Raycast\+Callback (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_physics_1_1_raycast_callback_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_physics_1_1_raycast_callback_adae88ab43696f6b9d957ec981f93a6e5}\index{Physics::RaycastCallback@{Physics::RaycastCallback}!ReportHit@{ReportHit}}
+\index{ReportHit@{ReportHit}!Physics::RaycastCallback@{Physics::RaycastCallback}}
+\doxysubsubsection{\texorpdfstring{ReportHit()}{ReportHit()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_raycast_callback_adae88ab43696f6b9d957ec981f93a6e5} 
+virtual bool Physics\+::\+Raycast\+Callback\+::\+Report\+Hit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{body}{, }\item[{float}]{hit\+Fraction}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Called when the ray hits a rigid body. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em body} & The body hit. \\
+\hline
+{\em hit\+Fraction} & Fraction along the ray (0.\+0 -\/ 1.\+0). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True to continue raycast, false to stop. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_force_raycast_abef8f6fe5bf0c72b14481d2791787f71}{Force\+Raycast}}, and \mbox{\hyperlink{class_ground_raycast_aee50e7c963511063222ec516f4fa9cb4}{Ground\+Raycast}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Physics/\mbox{\hyperlink{physics_8hpp}{physics.\+hpp}}\end{DoxyCompactItemize}

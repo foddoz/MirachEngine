@@ -1,0 +1,5 @@
+<map id="EnemyAttackCallback" name="EnemyAttackCallback">
+<area shape="rect" id="Node000001" title=" " alt="" coords="8,165,170,341"/>
+<area shape="rect" id="Node000002" href="$class_physics_1_1_collision_callback.html" title="Callback interface for collision detection events." alt="" coords="5,5,172,117"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,132,91,166,86,166,86,132"/>
+</map>

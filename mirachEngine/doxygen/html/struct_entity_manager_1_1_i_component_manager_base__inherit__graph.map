@@ -1,0 +1,5 @@
+<map id="EntityManager::IComponentManagerBase" name="EntityManager::IComponentManagerBase">
+<area shape="rect" id="Node000001" title="Abstract base class for all component manager wrappers." alt="" coords="5,5,196,112"/>
+<area shape="rect" id="Node000002" href="$struct_entity_manager_1_1_component_manager_wrapper.html" title="Concrete wrapper for a strongly typed component manager." alt="" coords="16,160,186,245"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,127,104,160,98,160,98,127"/>
+</map>

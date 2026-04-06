@@ -1,0 +1,7 @@
+<map id="MeshTerrain::CalcNormals" name="MeshTerrain::CalcNormals">
+<area shape="rect" id="Node000001" title="Computes per&#45;vertex normals by averaging surrounding triangles." alt="" coords="5,31,182,57"/>
+<area shape="rect" id="Node000002" href="$math_8hpp.html#a670c0a5216c9f579310c5202fba83257" title="Cross product of two 3D vectors." alt="" coords="242,5,298,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,29,226,22,226,28,183,34"/>
+<area shape="rect" id="Node000003" href="$math_8hpp.html#a11c0426b3a7e98489b250e45d0240c5f" title="Normalizes a 3D vector." alt="" coords="230,56,310,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="183,54,215,59,214,64,182,59"/>
+</map>

@@ -1,0 +1,99 @@
+\doxysection{terrain\+\_\+scene.\+hpp}
+\hypertarget{terrain__scene_8hpp_source}{}\label{terrain__scene_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Program/terrain\_scene.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Program/terrain\_scene.hpp}}
+\mbox{\hyperlink{terrain__scene_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{scene_8hpp}{scene.hpp}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{program_8hpp}{program.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{entity__manager_8hpp}{../ECS/entity\_manager.hpp}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{physics__system_8hpp}{../Physics/physics\_system.hpp}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mesh_file_8hpp}{../Graphics/Meshes/meshFile.hpp}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mesh_terrain_8hpp}{../Graphics/Meshes/meshTerrain.hpp}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mesh_sky_dome_8hpp}{../Graphics/Meshes/meshSkyDome.hpp}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_m_d2_8hpp}{../Graphics/Animation/MD2.hpp}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{animation__system_8hpp}{../Graphics/Animation/animation\_system.hpp}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{health_bar_8h}{../Graphics/Rendering/healthBar.h}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{terrain__manager_8hpp}{../Terrain/terrain\_manager.hpp}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{camera_8hpp}{../Camera/camera.hpp}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}lua\_wrapper.h"{}}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{player__script_8hpp}{../Scripts/player\_script.hpp}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{health_8hpp}{../Scripts/health.hpp}}"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{render__system_8hpp}{../Graphics/Rendering/render\_system.hpp}}"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{enemy_8h}{../FSM/enemy.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_enemy_system_8h}{../FSM/EnemySystem.h}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{enemy_state_8hpp}{../FSM/enemyState.hpp}}"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{hover_enemy_state_8hpp}{../FSM/hoverEnemyState.hpp}}"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_terrain_scene_aa5be809403a9112c3f5ba306be19f9e1}{TerrainScene}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_scene_a93ccc41b0a2f6c24e467d5d9de76ec0d}{Scene}}\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_terrain_scene_aa5be809403a9112c3f5ba306be19f9e1}{TerrainScene}}();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_scene_ae8ec4e098386a74714255aed184761eb}{Run}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_scene_ab94e589934cc94139e61468dcb50c1ff}{GenerateCPUData}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_scene_a4173a77b3430eca8a78e28b5d305c20e}{InitialiseEngine}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_scene_ab4176b80c645288ef38f3478464a973c}{UploadAssetsToGPU}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_scene_a45224be4da2febede6089ac28959370f}{AssignPipelines}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_scene_a64ff8229749692f3000ab0387dae7165}{SetupECS}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_scene_a55eb34067d9346aa7d9c3295a9e2dfb0}{MainLoop}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_scene_adc928cc4364060ba8eba00bddb0b060d}{CleanUp}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_scene_ae52ebdbe85fceff22dca73e4ec68886d}{Shutdown}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{class_program}{Program}}\ \mbox{\hyperlink{class_terrain_scene_a63c358698dec499b2ab8654f1d28e67e}{mApp}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{class_entity_manager}{EntityManager}}\ \mbox{\hyperlink{class_terrain_scene_a4ba7eed53b4a4baaf24017449adf6167}{mEntityManager}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{class_physics_system}{PhysicsSystem}}\ \mbox{\hyperlink{class_terrain_scene_aea212f73b9913f56e38b770475bb6b96}{mPhysicsSystem}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ std::vector<MeshFile>\ \mbox{\hyperlink{class_terrain_scene_a87ebc3c817fc7e4f964998d26f1c8823}{mMeshFiles}};\ \ \ \ \ }
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{class_mesh_m_d2}{MeshMD2}}\ \mbox{\hyperlink{class_terrain_scene_a8bd2239f220451013f4784ad358da867}{npc}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{class_mesh_m_d2}{MeshMD2}}\ \mbox{\hyperlink{class_terrain_scene_ac6f3de4453ff4bc968ce94487c81f9ba}{firefly}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{class_mesh_terrain}{MeshTerrain}}\ \mbox{\hyperlink{class_terrain_scene_a33b8c947cfc5eb1367f0ad513b4bf1ca}{mTerrain}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{class_mesh_sky_dome}{MeshSkyDome}}\ \mbox{\hyperlink{class_terrain_scene_ab28ee3622073533aa6bb99d13aa1759d}{mSky}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{class_terrain_manager}{TerrainManager}}\ \mbox{\hyperlink{class_terrain_scene_a89ae362a7f03e85ef10a50ef6de2af26}{mTerrainManager}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ \mbox{\hyperlink{class_terrain_scene_a13ecbd6c4776d25950f8e459c5ea2be4}{mPlayer}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{comment}{//EnemySystem\ mEnemySystem;\ \ \ \ \ \ \ \ \ \ \ ///<\ [Optional]\ FSM-\/driven\ enemy\ system}}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{classenemy_state}{enemyState}}\ \mbox{\hyperlink{class_terrain_scene_a1be8155e42aa7dde8d8b41834951dd59}{enemyAI}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{classhover_enemy_state}{hoverEnemyState}}\ \mbox{\hyperlink{class_terrain_scene_a755a8e82f53c160327cd5dc1faceb2d6}{hoverEnemyAI}};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{class_health_bar_renderer}{HealthBarRenderer}}\ \mbox{\hyperlink{class_terrain_scene_a5f44cec9045b702c05d908496e969760}{mHealthBar}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_scene_a4a674dfbfc3c28c50feb383c70630f6c}{RenderHBUI}}();}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_scene_aa6538750bf2e1c3dd02481c541b5e0f9}{SetupSkyDomeEntity}}();}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_scene_a6291d6d85bd763167900c0929c50e152}{SetupPlayer}}();}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_scene_a861ee882caf0f23c2a3f15dab4f4ea2a}{RegisterTerrainToECS}}();}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_scene_a2605641f2858b4c1ad9033e27a39f0c5}{SpawnRobots}}();}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_scene_a279bc61858303d2909e922df19c82e24}{SpawnSacks}}();}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_scene_ad4ab0bdbe406894b80805499c856c89b}{SpawnTrees}}();}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_scene_ae061572dd4fc80786d66d8e57f666067}{SpawnCrates}}();}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_scene_a92cf2eb19b5a090ec4666367d5a4c898}{SpawnFireFlies}}();}
+\DoxyCodeLine{00151\ \};}
+
+\end{DoxyCode}

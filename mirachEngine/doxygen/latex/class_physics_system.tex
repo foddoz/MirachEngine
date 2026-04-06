@@ -1,0 +1,312 @@
+\doxysection{Physics\+System Class Reference}
+\hypertarget{class_physics_system}{}\label{class_physics_system}\index{PhysicsSystem@{PhysicsSystem}}
+
+
+Manages physics simulation, including rigid body updates and collider handling, in the ECS framework.  
+
+
+
+
+{\ttfamily \#include $<$physics\+\_\+system.\+hpp$>$}
+
+
+
+Collaboration diagram for Physics\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_physics_system__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_physics_system_a6b1823f73c30209565f1cf3ad4b51c8a}{Physics\+System}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*}manager)
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{class_physics_system}{Physics\+System} with a pointer to the \doxylink{class_entity_manager}{Entity\+Manager} and initializes the physics world. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_physics_system_aa8f86078f650b71a35f461d5223896c7}{Reset}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*}new\+Manager)
+\item 
+void \mbox{\hyperlink{class_physics_system_a1cb8f9db231aa5c3cbd6f75d0a8656ea}{Destroy\+Entity}} (\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} e)
+\begin{DoxyCompactList}\small\item\em Destroys and cleans up physics-\/related components (rigid bodies and colliders) of a given entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_physics_system_acf29655efb04806ef9c18f9eda7f48d9}{Update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Updates the physics world and synchronizes entity transforms with their rigid bodies. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_physics_1_1_world}{Physics\+::\+World}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_physics_system_adc1b56a65144927424e6353ced3c7003}{Get\+World}} () const
+\begin{DoxyCompactList}\small\item\em Gets the underlying physics world. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_physics_system_a0765d7b3da85a2cd1e9a9d5f8f533000}{Get\+Entity\+Manager\+Ptr}} () const
+\begin{DoxyCompactList}\small\item\em Gets the associated \doxylink{class_entity_manager}{Entity\+Manager} pointer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Terrain\+Type$>$ }\\\mbox{\hyperlink{class_physics_1_1_collider}{Physics\+::\+Collider}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_physics_system_a3b8f5a2bf225a3e35fe9c684c3d5e1c3}{Add\+Concave\+Terrain\+Collider}} (\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*}body, const Terrain\+Type \&terrain)
+\begin{DoxyCompactList}\small\item\em Adds a concave terrain collider to a rigid body using indexed triangle mesh data. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Terrain\+Type$>$ }\\\mbox{\hyperlink{class_physics_1_1_collider}{Physics\+::\+Collider}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_physics_system_a21b34ff242d0aac8664d21ccd02889cd}{Add\+Height\+Field\+Collider}} (\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*}body, const Terrain\+Type \&terrain)
+\begin{DoxyCompactList}\small\item\em Adds a heightfield collider to a rigid body using terrain heightmap data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr uint16\+\_\+t \mbox{\hyperlink{class_physics_system_a46647281121c9966951090ceb2e9d168}{PLAYER\+\_\+\+CATEGORY}} = 0x0001
+\begin{DoxyCompactList}\small\item\em Bitmask category for player collision filtering. \end{DoxyCompactList}\item 
+static constexpr uint16\+\_\+t \mbox{\hyperlink{class_physics_system_a96f70dfc8d158f56f6c655c185c33426}{OBJECT\+\_\+\+CATEGORY}} = 0x0002
+\begin{DoxyCompactList}\small\item\em Bitmask category for interactable object collision filtering. \end{DoxyCompactList}\item 
+static constexpr uint16\+\_\+t \mbox{\hyperlink{class_physics_system_a0a41f114e90a05757f09d78fb9ddcc29}{TERRAIN\+\_\+\+CATEGORY}} = 0x0004
+\begin{DoxyCompactList}\small\item\em Bitmask category for terrain collision filtering. \end{DoxyCompactList}\item 
+static constexpr uint16\+\_\+t \mbox{\hyperlink{class_physics_system_a7fa974b477f4d37ac9bd42165edf339a}{ROBOT\+\_\+\+CATEGORY}} = 0x0010
+\begin{DoxyCompactList}\small\item\em Bitmask category for robot/\+AI collision filtering. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_physics_system_a0aae8929f070078a77d962908ee0e0ea}{entity\+Manager}}
+\begin{DoxyCompactList}\small\item\em Pointer to the ECS \doxylink{class_entity_manager}{Entity\+Manager}. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_physics_1_1_world}{Physics\+::\+World}} $>$ \mbox{\hyperlink{class_physics_system_a484888adf66a1b33d3a1eadd5613f341}{m\+World}}
+\begin{DoxyCompactList}\small\item\em Unique pointer to the physics world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages physics simulation, including rigid body updates and collider handling, in the ECS framework. 
+
+\label{doc-constructors}
+\Hypertarget{class_physics_system_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_physics_system_a6b1823f73c30209565f1cf3ad4b51c8a}\index{PhysicsSystem@{PhysicsSystem}!PhysicsSystem@{PhysicsSystem}}
+\index{PhysicsSystem@{PhysicsSystem}!PhysicsSystem@{PhysicsSystem}}
+\doxysubsubsection{\texorpdfstring{PhysicsSystem()}{PhysicsSystem()}}
+{\footnotesize\ttfamily \label{class_physics_system_a6b1823f73c30209565f1cf3ad4b51c8a} 
+Physics\+System\+::\+Physics\+System (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*}}]{manager}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs the \doxylink{class_physics_system}{Physics\+System} with a pointer to the \doxylink{class_entity_manager}{Entity\+Manager} and initializes the physics world. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em manager} & Pointer to the ECS \doxylink{class_entity_manager}{Entity\+Manager} used to access entity components. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_physics_system_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_physics_system_a3b8f5a2bf225a3e35fe9c684c3d5e1c3}\index{PhysicsSystem@{PhysicsSystem}!AddConcaveTerrainCollider@{AddConcaveTerrainCollider}}
+\index{AddConcaveTerrainCollider@{AddConcaveTerrainCollider}!PhysicsSystem@{PhysicsSystem}}
+\doxysubsubsection{\texorpdfstring{AddConcaveTerrainCollider()}{AddConcaveTerrainCollider()}}
+{\footnotesize\ttfamily \label{class_physics_system_a3b8f5a2bf225a3e35fe9c684c3d5e1c3} 
+template$<$typename Terrain\+Type$>$ \\
+\mbox{\hyperlink{class_physics_1_1_collider}{Physics\+::\+Collider}} \texorpdfstring{$\ast$}{*} Physics\+System\+::\+Add\+Concave\+Terrain\+Collider (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{body}{, }\item[{const Terrain\+Type \&}]{terrain}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a concave terrain collider to a rigid body using indexed triangle mesh data. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Terrain\+Type} & The terrain class type, must implement Get\+Vertex\+Data() and Get\+Index\+Data(). \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em body} & The rigid body to attach the collider to. \\
+\hline
+{\em terrain} & The terrain object containing vertex and index data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the created \doxylink{class_physics_1_1_collider}{Physics\+::\+Collider}. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_system_a3b8f5a2bf225a3e35fe9c684c3d5e1c3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_system_a21b34ff242d0aac8664d21ccd02889cd}\index{PhysicsSystem@{PhysicsSystem}!AddHeightFieldCollider@{AddHeightFieldCollider}}
+\index{AddHeightFieldCollider@{AddHeightFieldCollider}!PhysicsSystem@{PhysicsSystem}}
+\doxysubsubsection{\texorpdfstring{AddHeightFieldCollider()}{AddHeightFieldCollider()}}
+{\footnotesize\ttfamily \label{class_physics_system_a21b34ff242d0aac8664d21ccd02889cd} 
+template$<$typename Terrain\+Type$>$ \\
+\mbox{\hyperlink{class_physics_1_1_collider}{Physics\+::\+Collider}} \texorpdfstring{$\ast$}{*} Physics\+System\+::\+Add\+Height\+Field\+Collider (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{body}{, }\item[{const Terrain\+Type \&}]{terrain}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a heightfield collider to a rigid body using terrain heightmap data. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Terrain\+Type} & The terrain class type, must implement Get\+Height\+Map(), Get\+Width(), Get\+Depth(), Get\+World\+Width(), Get\+World\+Depth(). \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em body} & The rigid body to attach the collider to. \\
+\hline
+{\em terrain} & The terrain object containing heightmap and dimension data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the created \doxylink{class_physics_1_1_collider}{Physics\+::\+Collider}. 
+\end{DoxyReturn}
+\Hypertarget{class_physics_system_a1cb8f9db231aa5c3cbd6f75d0a8656ea}\index{PhysicsSystem@{PhysicsSystem}!DestroyEntity@{DestroyEntity}}
+\index{DestroyEntity@{DestroyEntity}!PhysicsSystem@{PhysicsSystem}}
+\doxysubsubsection{\texorpdfstring{DestroyEntity()}{DestroyEntity()}}
+{\footnotesize\ttfamily \label{class_physics_system_a1cb8f9db231aa5c3cbd6f75d0a8656ea} 
+void Physics\+System\+::\+Destroy\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroys and cleans up physics-\/related components (rigid bodies and colliders) of a given entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The entity whose physics components should be destroyed. \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Also invalidates all associated colliders
+
+\texorpdfstring{$<$}{<} Prevent use-\/after-\/freeHere is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_system_a1cb8f9db231aa5c3cbd6f75d0a8656ea_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_system_a0765d7b3da85a2cd1e9a9d5f8f533000}\index{PhysicsSystem@{PhysicsSystem}!GetEntityManagerPtr@{GetEntityManagerPtr}}
+\index{GetEntityManagerPtr@{GetEntityManagerPtr}!PhysicsSystem@{PhysicsSystem}}
+\doxysubsubsection{\texorpdfstring{GetEntityManagerPtr()}{GetEntityManagerPtr()}}
+{\footnotesize\ttfamily \label{class_physics_system_a0765d7b3da85a2cd1e9a9d5f8f533000} 
+\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*} Physics\+System\+::\+Get\+Entity\+Manager\+Ptr (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the associated \doxylink{class_entity_manager}{Entity\+Manager} pointer. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the ECS \doxylink{class_entity_manager}{Entity\+Manager}. 
+\end{DoxyReturn}
+\Hypertarget{class_physics_system_adc1b56a65144927424e6353ced3c7003}\index{PhysicsSystem@{PhysicsSystem}!GetWorld@{GetWorld}}
+\index{GetWorld@{GetWorld}!PhysicsSystem@{PhysicsSystem}}
+\doxysubsubsection{\texorpdfstring{GetWorld()}{GetWorld()}}
+{\footnotesize\ttfamily \label{class_physics_system_adc1b56a65144927424e6353ced3c7003} 
+\mbox{\hyperlink{class_physics_1_1_world}{Physics\+::\+World}} \texorpdfstring{$\ast$}{*} Physics\+System\+::\+Get\+World (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the underlying physics world. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the \doxylink{class_physics_1_1_world}{Physics\+::\+World} object. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_system_adc1b56a65144927424e6353ced3c7003_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_system_aa8f86078f650b71a35f461d5223896c7}\index{PhysicsSystem@{PhysicsSystem}!Reset@{Reset}}
+\index{Reset@{Reset}!PhysicsSystem@{PhysicsSystem}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily \label{class_physics_system_aa8f86078f650b71a35f461d5223896c7} 
+void Physics\+System\+::\+Reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*}}]{new\+Manager}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_system_aa8f86078f650b71a35f461d5223896c7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_system_acf29655efb04806ef9c18f9eda7f48d9}\index{PhysicsSystem@{PhysicsSystem}!Update@{Update}}
+\index{Update@{Update}!PhysicsSystem@{PhysicsSystem}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_physics_system_acf29655efb04806ef9c18f9eda7f48d9} 
+void Physics\+System\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the physics world and synchronizes entity transforms with their rigid bodies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & \doxylink{namespace_time}{Time} step in seconds since the last update. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_system_acf29655efb04806ef9c18f9eda7f48d9_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_physics_system_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_physics_system_a0aae8929f070078a77d962908ee0e0ea}\index{PhysicsSystem@{PhysicsSystem}!entityManager@{entityManager}}
+\index{entityManager@{entityManager}!PhysicsSystem@{PhysicsSystem}}
+\doxysubsubsection{\texorpdfstring{entityManager}{entityManager}}
+{\footnotesize\ttfamily \label{class_physics_system_a0aae8929f070078a77d962908ee0e0ea} 
+\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}}\texorpdfstring{$\ast$}{*} Physics\+System\+::entity\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the ECS \doxylink{class_entity_manager}{Entity\+Manager}. 
+
+\Hypertarget{class_physics_system_a484888adf66a1b33d3a1eadd5613f341}\index{PhysicsSystem@{PhysicsSystem}!mWorld@{mWorld}}
+\index{mWorld@{mWorld}!PhysicsSystem@{PhysicsSystem}}
+\doxysubsubsection{\texorpdfstring{mWorld}{mWorld}}
+{\footnotesize\ttfamily \label{class_physics_system_a484888adf66a1b33d3a1eadd5613f341} 
+std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_physics_1_1_world}{Physics\+::\+World}}$>$ Physics\+System\+::m\+World\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Unique pointer to the physics world. 
+
+\Hypertarget{class_physics_system_a96f70dfc8d158f56f6c655c185c33426}\index{PhysicsSystem@{PhysicsSystem}!OBJECT\_CATEGORY@{OBJECT\_CATEGORY}}
+\index{OBJECT\_CATEGORY@{OBJECT\_CATEGORY}!PhysicsSystem@{PhysicsSystem}}
+\doxysubsubsection{\texorpdfstring{OBJECT\_CATEGORY}{OBJECT\_CATEGORY}}
+{\footnotesize\ttfamily \label{class_physics_system_a96f70dfc8d158f56f6c655c185c33426} 
+uint16\+\_\+t Physics\+System\+::\+OBJECT\+\_\+\+CATEGORY = 0x0002\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Bitmask category for interactable object collision filtering. 
+
+\Hypertarget{class_physics_system_a46647281121c9966951090ceb2e9d168}\index{PhysicsSystem@{PhysicsSystem}!PLAYER\_CATEGORY@{PLAYER\_CATEGORY}}
+\index{PLAYER\_CATEGORY@{PLAYER\_CATEGORY}!PhysicsSystem@{PhysicsSystem}}
+\doxysubsubsection{\texorpdfstring{PLAYER\_CATEGORY}{PLAYER\_CATEGORY}}
+{\footnotesize\ttfamily \label{class_physics_system_a46647281121c9966951090ceb2e9d168} 
+uint16\+\_\+t Physics\+System\+::\+PLAYER\+\_\+\+CATEGORY = 0x0001\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Bitmask category for player collision filtering. 
+
+\Hypertarget{class_physics_system_a7fa974b477f4d37ac9bd42165edf339a}\index{PhysicsSystem@{PhysicsSystem}!ROBOT\_CATEGORY@{ROBOT\_CATEGORY}}
+\index{ROBOT\_CATEGORY@{ROBOT\_CATEGORY}!PhysicsSystem@{PhysicsSystem}}
+\doxysubsubsection{\texorpdfstring{ROBOT\_CATEGORY}{ROBOT\_CATEGORY}}
+{\footnotesize\ttfamily \label{class_physics_system_a7fa974b477f4d37ac9bd42165edf339a} 
+uint16\+\_\+t Physics\+System\+::\+ROBOT\+\_\+\+CATEGORY = 0x0010\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Bitmask category for robot/\+AI collision filtering. 
+
+\Hypertarget{class_physics_system_a0a41f114e90a05757f09d78fb9ddcc29}\index{PhysicsSystem@{PhysicsSystem}!TERRAIN\_CATEGORY@{TERRAIN\_CATEGORY}}
+\index{TERRAIN\_CATEGORY@{TERRAIN\_CATEGORY}!PhysicsSystem@{PhysicsSystem}}
+\doxysubsubsection{\texorpdfstring{TERRAIN\_CATEGORY}{TERRAIN\_CATEGORY}}
+{\footnotesize\ttfamily \label{class_physics_system_a0a41f114e90a05757f09d78fb9ddcc29} 
+uint16\+\_\+t Physics\+System\+::\+TERRAIN\+\_\+\+CATEGORY = 0x0004\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Bitmask category for terrain collision filtering. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Physics/\mbox{\hyperlink{physics__system_8hpp}{physics\+\_\+system.\+hpp}}\end{DoxyCompactItemize}

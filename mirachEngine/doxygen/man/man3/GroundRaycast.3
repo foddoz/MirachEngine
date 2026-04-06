@@ -1,0 +1,89 @@
+.TH "GroundRaycast" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GroundRaycast \- Custom raycast callback for detecting ground collisions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <raycast_callback\&.hpp>\fP
+.PP
+Inherits \fBPhysics::RaycastCallback\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBReportHit\fP (\fBPhysics::RigidBody\fP *body, float hitFraction) override"
+.br
+.RI "Callback function invoked when the ray hits a body\&. "
+.in -1c
+
+Public Member Functions inherited from \fBPhysics::RaycastCallback\fP
+.in +1c
+.ti -1c
+.RI "virtual \fB~RaycastCallback\fP ()=default"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBPhysics::RigidBody\fP * \fBself\fP = nullptr"
+.br
+.RI "The rigid body performing the raycast (to be ignored) "
+.ti -1c
+.RI "float \fBmaxFraction\fP = 1\&.0f"
+.br
+.RI "Maximum hit fraction to consider a collision valid\&. "
+.ti -1c
+.RI "bool \fBhit\fP = false"
+.br
+.RI "Whether a valid ground hit occurred\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Custom raycast callback for detecting ground collisions\&. 
+
+Ignores the calling rigidbody and stops the ray if it hits a valid surface within maxFraction\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "bool GroundRaycast::ReportHit (\fBPhysics::RigidBody\fP * body, float hitFraction)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Callback function invoked when the ray hits a body\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIbody\fP The body hit by the ray\&. 
+.br
+\fIhitFraction\fP The fraction of the ray length at which the hit occurred\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+False to stop the ray, true to continue checking\&. 
+.RE
+.PP
+
+.PP
+Implements \fBPhysics::RaycastCallback\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool GroundRaycast::hit = false"
+
+.PP
+Whether a valid ground hit occurred\&. 
+.SS "float GroundRaycast::maxFraction = 1\&.0f"
+
+.PP
+Maximum hit fraction to consider a collision valid\&. 
+.SS "\fBPhysics::RigidBody\fP* GroundRaycast::self = nullptr"
+
+.PP
+The rigid body performing the raycast (to be ignored) 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

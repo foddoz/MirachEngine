@@ -1,0 +1,9 @@
+<map id="LoadImage" name="LoadImage">
+<area shape="rect" id="Node000001" title="Loads an image file using stb_image and populates the given ImageData structure." alt="" coords="5,56,91,83"/>
+<area shape="rect" id="Node000002" href="$stb__image_8h.html#ad3e11bb44412a7ba348acfbad09caacb" title=" " alt="" coords="157,5,270,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,54,152,35,154,40,92,59"/>
+<area shape="rect" id="Node000003" href="$stb__image_8h.html#ad3fc296ba0778df0a8094e20da82deab" title=" " alt="" coords="177,56,250,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="91,67,162,67,162,72,91,72"/>
+<area shape="rect" id="Node000004" href="$stb__image_8h.html#ab89c177fc52f1bb2dc1c05e48129a0a4" title=" " alt="" coords="139,107,289,149"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="89,81,138,99,137,104,87,86"/>
+</map>

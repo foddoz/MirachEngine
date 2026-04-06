@@ -1,0 +1,5 @@
+<map id="Camera::IsBoxInFrustum" name="Camera::IsBoxInFrustum">
+<area shape="rect" id="Node000001" title="Tests whether a given axis&#45;aligned bounding box (AABB) is inside the camera&#39;s view frustum." alt="" coords="5,5,174,32"/>
+<area shape="rect" id="Node000002" href="$math_8hpp.html#a8fa473d59250f3fc775ebfc0d2ea46bc" title="Dot product of two 3D vectors." alt="" coords="222,5,264,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,16,206,16,206,21,174,21"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Program::Delete" name="Program::Delete">
+<area shape="rect" id="Node000001" title="Releases OpenGL and SDL resources." alt="" coords="5,31,122,57"/>
+<area shape="rect" id="Node000002" href="$namespace_graphics.html#afdbcfb53bbe1ebcc083b61c257d500e9" title=" " alt="" coords="170,5,338,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,34,154,29,155,35,123,39"/>
+<area shape="rect" id="Node000003" href="$namespace_window.html#ad9697b4c1ab7bfd9b385f461f275303b" title="Destroys a previously created window." alt="" coords="193,56,315,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="123,49,178,57,177,62,122,54"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="Camera::UpdateVectors" name="Camera::UpdateVectors">
+<area shape="rect" id="Node000001" title="Updates the camera&#39;s direction vectors (front, right, up) based on its current yaw and pitch." alt="" coords="882,31,1043,57"/>
+<area shape="rect" id="Node000002" href="$class_camera.html#a01f94c3543f56ede7af49dc778f19331" title="Constructs a camera with default orientation and projection parameters." alt="" coords="713,5,834,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="866,34,834,29,835,24,867,29"/>
+<area shape="rect" id="Node000003" href="$class_camera.html#a08e827a4ea64e448beabaa52881c58ab" title="Applies mouse input to rotate the camera using yaw and pitch." alt="" coords="722,56,825,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="867,59,826,65,825,60,866,54"/>
+<area shape="rect" id="Node000004" href="$class_player_script.html#a477310df8b50b588b853e7d174e12f13" title="Captures input states and updates internal flags." alt="" coords="489,56,665,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="706,72,665,72,665,67,706,67"/>
+<area shape="rect" id="Node000005" href="$class_terrain_scene.html#a55eb34067d9346aa7d9c3295a9e2dfb0" title="Executes the main loop: input, update, physics, animation, and rendering." alt="" coords="280,56,441,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="474,72,442,72,442,67,474,67"/>
+<area shape="rect" id="Node000006" href="$class_terrain_scene.html#ae8ec4e098386a74714255aed184761eb" title="Runs the full scene lifecycle in the correct execution order." alt="" coords="103,56,232,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="264,72,232,72,232,67,264,67"/>
+<area shape="rect" id="Node000007" href="$mirach_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point of the engine. Initializes subsystems, loads models, sets up ECS,..." alt="" coords="5,56,55,83"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="87,72,55,72,55,67,87,67"/>
+</map>

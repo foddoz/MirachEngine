@@ -1,0 +1,9 @@
+<map id="PlayerScript::LaunchObjectInternal" name="PlayerScript::LaunchObjectInternal">
+<area shape="rect" id="Node000001" title="Applies an internal impulse to a specific object." alt="" coords="5,64,186,107"/>
+<area shape="rect" id="Node000002" href="$class_physics_1_1_rigid_body.html#a214081eeac9a81be404acea1601d40f0" title=" " alt="" coords="248,5,395,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,61,232,47,233,52,181,66"/>
+<area shape="rect" id="Node000003" href="$class_physics_system.html#adc1b56a65144927424e6353ced3c7003" title="Gets the underlying physics world." alt="" coords="234,72,409,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,83,218,83,218,88,186,88"/>
+<area shape="rect" id="Node000004" href="$class_physics_1_1_world.html#adabe37ea49694f6e307d40b90c5e7211" title="Registers a global collision callback for contact events." alt="" coords="238,123,404,165"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="181,105,224,116,222,121,179,110"/>
+</map>

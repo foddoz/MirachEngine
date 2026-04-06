@@ -1,0 +1,300 @@
+.TH "C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/stb_image/stb_image.h" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/stb_image/stb_image.h
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <stdio\&.h>\fP
+.br
+\fR#include <stdlib\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBstbi_io_callbacks\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSTBI_VERSION\fP   1"
+.br
+.ti -1c
+.RI "#define \fBSTBIDEF\fP   extern"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef unsigned char \fBstbi_uc\fP"
+.br
+.ti -1c
+.RI "typedef unsigned short \fBstbi_us\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum { \fBSTBI_default\fP = 0, \fBSTBI_grey\fP = 1, \fBSTBI_grey_alpha\fP = 2, \fBSTBI_rgb\fP = 3, \fBSTBI_rgb_alpha\fP = 4 }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSTBIDEF\fP \fBstbi_uc\fP * \fBstbi_load_from_memory\fP (\fBstbi_uc\fP const *buffer, int len, int *x, int *y, int *channels_in_file, int desired_channels)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP \fBstbi_uc\fP * \fBstbi_load_from_callbacks\fP (\fBstbi_io_callbacks\fP const *clbk, void *user, int *x, int *y, int *channels_in_file, int desired_channels)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP \fBstbi_uc\fP * \fBstbi_load\fP (char const *filename, int *x, int *y, int *channels_in_file, int desired_channels)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP \fBstbi_uc\fP * \fBstbi_load_from_file\fP (FILE *f, int *x, int *y, int *channels_in_file, int desired_channels)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP \fBstbi_uc\fP * \fBstbi_load_gif_from_memory\fP (\fBstbi_uc\fP const *buffer, int len, int **delays, int *x, int *y, int *z, int *comp, int req_comp)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP \fBstbi_us\fP * \fBstbi_load_16_from_memory\fP (\fBstbi_uc\fP const *buffer, int len, int *x, int *y, int *channels_in_file, int desired_channels)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP \fBstbi_us\fP * \fBstbi_load_16_from_callbacks\fP (\fBstbi_io_callbacks\fP const *clbk, void *user, int *x, int *y, int *channels_in_file, int desired_channels)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP \fBstbi_us\fP * \fBstbi_load_16\fP (char const *filename, int *x, int *y, int *channels_in_file, int desired_channels)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP \fBstbi_us\fP * \fBstbi_load_from_file_16\fP (FILE *f, int *x, int *y, int *channels_in_file, int desired_channels)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP float * \fBstbi_loadf_from_memory\fP (\fBstbi_uc\fP const *buffer, int len, int *x, int *y, int *channels_in_file, int desired_channels)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP float * \fBstbi_loadf_from_callbacks\fP (\fBstbi_io_callbacks\fP const *clbk, void *user, int *x, int *y, int *channels_in_file, int desired_channels)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP float * \fBstbi_loadf\fP (char const *filename, int *x, int *y, int *channels_in_file, int desired_channels)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP float * \fBstbi_loadf_from_file\fP (FILE *f, int *x, int *y, int *channels_in_file, int desired_channels)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP void \fBstbi_hdr_to_ldr_gamma\fP (float gamma)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP void \fBstbi_hdr_to_ldr_scale\fP (float scale)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP void \fBstbi_ldr_to_hdr_gamma\fP (float gamma)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP void \fBstbi_ldr_to_hdr_scale\fP (float scale)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP int \fBstbi_is_hdr_from_callbacks\fP (\fBstbi_io_callbacks\fP const *clbk, void *user)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP int \fBstbi_is_hdr_from_memory\fP (\fBstbi_uc\fP const *buffer, int len)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP int \fBstbi_is_hdr\fP (char const *filename)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP int \fBstbi_is_hdr_from_file\fP (FILE *f)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP const char * \fBstbi_failure_reason\fP (void)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP void \fBstbi_image_free\fP (void *retval_from_stbi_load)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP int \fBstbi_info_from_memory\fP (\fBstbi_uc\fP const *buffer, int len, int *x, int *y, int *comp)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP int \fBstbi_info_from_callbacks\fP (\fBstbi_io_callbacks\fP const *clbk, void *user, int *x, int *y, int *comp)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP int \fBstbi_is_16_bit_from_memory\fP (\fBstbi_uc\fP const *buffer, int len)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP int \fBstbi_is_16_bit_from_callbacks\fP (\fBstbi_io_callbacks\fP const *clbk, void *user)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP int \fBstbi_info\fP (char const *filename, int *x, int *y, int *comp)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP int \fBstbi_info_from_file\fP (FILE *f, int *x, int *y, int *comp)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP int \fBstbi_is_16_bit\fP (char const *filename)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP int \fBstbi_is_16_bit_from_file\fP (FILE *f)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP void \fBstbi_set_unpremultiply_on_load\fP (int flag_true_if_should_unpremultiply)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP void \fBstbi_convert_iphone_png_to_rgb\fP (int flag_true_if_should_convert)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP void \fBstbi_set_flip_vertically_on_load\fP (int flag_true_if_should_flip)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP void \fBstbi_set_unpremultiply_on_load_thread\fP (int flag_true_if_should_unpremultiply)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP void \fBstbi_convert_iphone_png_to_rgb_thread\fP (int flag_true_if_should_convert)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP void \fBstbi_set_flip_vertically_on_load_thread\fP (int flag_true_if_should_flip)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP char * \fBstbi_zlib_decode_malloc_guesssize\fP (const char *buffer, int len, int initial_size, int *outlen)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP char * \fBstbi_zlib_decode_malloc_guesssize_headerflag\fP (const char *buffer, int len, int initial_size, int *outlen, int parse_header)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP char * \fBstbi_zlib_decode_malloc\fP (const char *buffer, int len, int *outlen)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP int \fBstbi_zlib_decode_buffer\fP (char *obuffer, int olen, const char *ibuffer, int ilen)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP char * \fBstbi_zlib_decode_noheader_malloc\fP (const char *buffer, int len, int *outlen)"
+.br
+.ti -1c
+.RI "\fBSTBIDEF\fP int \fBstbi_zlib_decode_noheader_buffer\fP (char *obuffer, int olen, const char *ibuffer, int ilen)"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define STBI_VERSION   1"
+
+.SS "#define STBIDEF   extern"
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef unsigned char \fBstbi_uc\fP"
+
+.SS "typedef unsigned short \fBstbi_us\fP"
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "anonymous enum"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BISTBI_default \fP
+.TP
+\f(BISTBI_grey \fP
+.TP
+\f(BISTBI_grey_alpha \fP
+.TP
+\f(BISTBI_rgb \fP
+.TP
+\f(BISTBI_rgb_alpha \fP
+.SH "Function Documentation"
+.PP 
+.SS "\fBSTBIDEF\fP void stbi_convert_iphone_png_to_rgb (int flag_true_if_should_convert)"
+
+.SS "\fBSTBIDEF\fP void stbi_convert_iphone_png_to_rgb_thread (int flag_true_if_should_convert)"
+
+.SS "\fBSTBIDEF\fP const char * stbi_failure_reason (void )"
+
+.SS "\fBSTBIDEF\fP void stbi_hdr_to_ldr_gamma (float gamma)"
+
+.SS "\fBSTBIDEF\fP void stbi_hdr_to_ldr_scale (float scale)"
+
+.SS "\fBSTBIDEF\fP void stbi_image_free (void * retval_from_stbi_load)"
+
+.SS "\fBSTBIDEF\fP int stbi_info (char const * filename, int * x, int * y, int * comp)"
+
+.SS "\fBSTBIDEF\fP int stbi_info_from_callbacks (\fBstbi_io_callbacks\fP const * clbk, void * user, int * x, int * y, int * comp)"
+
+.SS "\fBSTBIDEF\fP int stbi_info_from_file (FILE * f, int * x, int * y, int * comp)"
+
+.SS "\fBSTBIDEF\fP int stbi_info_from_memory (\fBstbi_uc\fP const * buffer, int len, int * x, int * y, int * comp)"
+
+.SS "\fBSTBIDEF\fP int stbi_is_16_bit (char const * filename)"
+
+.SS "\fBSTBIDEF\fP int stbi_is_16_bit_from_callbacks (\fBstbi_io_callbacks\fP const * clbk, void * user)"
+
+.SS "\fBSTBIDEF\fP int stbi_is_16_bit_from_file (FILE * f)"
+
+.SS "\fBSTBIDEF\fP int stbi_is_16_bit_from_memory (\fBstbi_uc\fP const * buffer, int len)"
+
+.SS "\fBSTBIDEF\fP int stbi_is_hdr (char const * filename)"
+
+.SS "\fBSTBIDEF\fP int stbi_is_hdr_from_callbacks (\fBstbi_io_callbacks\fP const * clbk, void * user)"
+
+.SS "\fBSTBIDEF\fP int stbi_is_hdr_from_file (FILE * f)"
+
+.SS "\fBSTBIDEF\fP int stbi_is_hdr_from_memory (\fBstbi_uc\fP const * buffer, int len)"
+
+.SS "\fBSTBIDEF\fP void stbi_ldr_to_hdr_gamma (float gamma)"
+
+.SS "\fBSTBIDEF\fP void stbi_ldr_to_hdr_scale (float scale)"
+
+.SS "\fBSTBIDEF\fP \fBstbi_uc\fP * stbi_load (char const * filename, int * x, int * y, int * channels_in_file, int desired_channels)"
+
+.SS "\fBSTBIDEF\fP \fBstbi_us\fP * stbi_load_16 (char const * filename, int * x, int * y, int * channels_in_file, int desired_channels)"
+
+.SS "\fBSTBIDEF\fP \fBstbi_us\fP * stbi_load_16_from_callbacks (\fBstbi_io_callbacks\fP const * clbk, void * user, int * x, int * y, int * channels_in_file, int desired_channels)"
+
+.SS "\fBSTBIDEF\fP \fBstbi_us\fP * stbi_load_16_from_memory (\fBstbi_uc\fP const * buffer, int len, int * x, int * y, int * channels_in_file, int desired_channels)"
+
+.SS "\fBSTBIDEF\fP \fBstbi_uc\fP * stbi_load_from_callbacks (\fBstbi_io_callbacks\fP const * clbk, void * user, int * x, int * y, int * channels_in_file, int desired_channels)"
+
+.SS "\fBSTBIDEF\fP \fBstbi_uc\fP * stbi_load_from_file (FILE * f, int * x, int * y, int * channels_in_file, int desired_channels)"
+
+.SS "\fBSTBIDEF\fP \fBstbi_us\fP * stbi_load_from_file_16 (FILE * f, int * x, int * y, int * channels_in_file, int desired_channels)"
+
+.SS "\fBSTBIDEF\fP \fBstbi_uc\fP * stbi_load_from_memory (\fBstbi_uc\fP const * buffer, int len, int * x, int * y, int * channels_in_file, int desired_channels)"
+
+.SS "\fBSTBIDEF\fP \fBstbi_uc\fP * stbi_load_gif_from_memory (\fBstbi_uc\fP const * buffer, int len, int ** delays, int * x, int * y, int * z, int * comp, int req_comp)"
+
+.SS "\fBSTBIDEF\fP float * stbi_loadf (char const * filename, int * x, int * y, int * channels_in_file, int desired_channels)"
+
+.SS "\fBSTBIDEF\fP float * stbi_loadf_from_callbacks (\fBstbi_io_callbacks\fP const * clbk, void * user, int * x, int * y, int * channels_in_file, int desired_channels)"
+
+.SS "\fBSTBIDEF\fP float * stbi_loadf_from_file (FILE * f, int * x, int * y, int * channels_in_file, int desired_channels)"
+
+.SS "\fBSTBIDEF\fP float * stbi_loadf_from_memory (\fBstbi_uc\fP const * buffer, int len, int * x, int * y, int * channels_in_file, int desired_channels)"
+
+.SS "\fBSTBIDEF\fP void stbi_set_flip_vertically_on_load (int flag_true_if_should_flip)"
+
+.SS "\fBSTBIDEF\fP void stbi_set_flip_vertically_on_load_thread (int flag_true_if_should_flip)"
+
+.SS "\fBSTBIDEF\fP void stbi_set_unpremultiply_on_load (int flag_true_if_should_unpremultiply)"
+
+.SS "\fBSTBIDEF\fP void stbi_set_unpremultiply_on_load_thread (int flag_true_if_should_unpremultiply)"
+
+.SS "\fBSTBIDEF\fP int stbi_zlib_decode_buffer (char * obuffer, int olen, const char * ibuffer, int ilen)"
+
+.SS "\fBSTBIDEF\fP char * stbi_zlib_decode_malloc (const char * buffer, int len, int * outlen)"
+
+.SS "\fBSTBIDEF\fP char * stbi_zlib_decode_malloc_guesssize (const char * buffer, int len, int initial_size, int * outlen)"
+
+.SS "\fBSTBIDEF\fP char * stbi_zlib_decode_malloc_guesssize_headerflag (const char * buffer, int len, int initial_size, int * outlen, int parse_header)"
+
+.SS "\fBSTBIDEF\fP int stbi_zlib_decode_noheader_buffer (char * obuffer, int olen, const char * ibuffer, int ilen)"
+
+.SS "\fBSTBIDEF\fP char * stbi_zlib_decode_noheader_malloc (const char * buffer, int len, int * outlen)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

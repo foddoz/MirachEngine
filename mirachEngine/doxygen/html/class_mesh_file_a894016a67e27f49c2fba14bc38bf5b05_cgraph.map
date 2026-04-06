@@ -1,0 +1,17 @@
+<map id="MeshFile::InitAllMeshes" name="MeshFile::InitAllMeshes">
+<area shape="rect" id="Node000001" title="Initializes all submeshes in the scene." alt="" coords="5,132,167,159"/>
+<area shape="rect" id="Node000002" href="$class_mesh_file.html#a96e77a5e4b9f016f4f2cb6600d720a59" title="Processes a single mesh and extracts geometry data." alt="" coords="215,132,383,159"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,143,199,143,199,148,167,148"/>
+<area shape="rect" id="Node000003" href="$model__loading_8hpp.html#a64c7b852a2ea92a8176a242cb5f0bccd" title=" " alt="" coords="463,5,534,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="313,130,363,87,430,42,447,33,450,38,432,46,366,92,317,134"/>
+<area shape="rect" id="Node000004" href="$model__loading_8hpp.html#af56e441818cfe8218ef50bf8e0d0b2c5" title=" " alt="" coords="446,56,552,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="335,129,430,92,446,86,448,91,432,97,337,134"/>
+<area shape="rect" id="Node000005" href="$model__loading_8hpp.html#a2dc443d287bf0b4109d88852e4cdf341" title=" " alt="" coords="440,107,557,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="383,132,424,127,425,132,384,137"/>
+<area shape="rect" id="Node000006" href="$model__loading_8hpp.html#a093f1748f206180e50c6e14afcd9463a" title=" " alt="" coords="438,157,559,184"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="384,153,423,158,423,164,383,159"/>
+<area shape="rect" id="Node000007" href="$model__loading_8hpp.html#af5a2e645c39d715a225b4a1fbd1acf28" title=" " alt="" coords="436,208,562,235"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="337,157,432,194,448,200,446,205,430,198,335,162"/>
+<area shape="rect" id="Node000008" href="$model__loading_8hpp.html#a2ef363b31766132e1aad0fa3495ddab0" title=" " alt="" coords="431,259,566,285"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="317,157,366,199,432,244,442,250,440,254,430,249,363,203,313,161"/>
+</map>

@@ -1,0 +1,150 @@
+\doxysection{entity\+\_\+manager.\+hpp}
+\hypertarget{entity__manager_8hpp_source}{}\label{entity__manager_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/ECS/entity\_manager.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/ECS/entity\_manager.hpp}}
+\mbox{\hyperlink{entity__manager_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ENTITY\_MANAGER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ENTITY\_MANAGER\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <typeindex>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ecs__types_8hpp}{ecs\_types.hpp}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{component__manager_8hpp}{component\_manager.hpp}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_entity_manager_a7555637657d090171be6ceee8451de0a}{EntityManager}}\ \{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_entity_manager_a7555637657d090171be6ceee8451de0a}{EntityManager}}()\ :\ \mbox{\hyperlink{class_entity_manager_ac275f4b7fea72be8c31d367efedd90c7}{m\_NextEntityID}}(1)\ \{\}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ \mbox{\hyperlink{class_entity_manager_ab991c19abfa8d1a3f5ca279f53ad2e38}{CreateEntity}}()\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ e\ =\ \mbox{\hyperlink{class_entity_manager_ac275f4b7fea72be8c31d367efedd90c7}{m\_NextEntityID}}++;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_entity_manager_a6f510a087fc5085efac12c0288a2e52f}{m\_Entities}}.push\_back(e);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ e;}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_entity_manager_a9947fdd09be8b19112c539d556cdcfff}{DestroyEntity}}(\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ e)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Remove\ entity\ from\ the\ entity\ list}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_entity_manager_a6f510a087fc5085efac12c0288a2e52f}{m\_Entities}}.erase(std::remove(\mbox{\hyperlink{class_entity_manager_a6f510a087fc5085efac12c0288a2e52f}{m\_Entities}}.begin(),\ \mbox{\hyperlink{class_entity_manager_a6f510a087fc5085efac12c0288a2e52f}{m\_Entities}}.end(),\ e),\ \mbox{\hyperlink{class_entity_manager_a6f510a087fc5085efac12c0288a2e52f}{m\_Entities}}.end());}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Loop\ through\ all\ component\ managers\ and\ remove\ this\ entity's\ components}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ [\_,\ base]\ :\ \mbox{\hyperlink{class_entity_manager_a16e4f1fc01dbbc389629d07d275316d7}{m\_ComponentManagers}})\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ base-\/>RemoveComponent(e);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Optional:\ mark\ entity\ as\ invalid\ in\ caller\ context\ (note:\ has\ no\ effect\ here)}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ e\ =\ \mbox{\hyperlink{ecs__types_8hpp_a273573770bdd417288da575784ee0aa3}{INVALID\_ENTITY}};}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Entity>\&\ \mbox{\hyperlink{class_entity_manager_ad6b2504873ebd0ed8fdaba1dc855a988}{GetAllEntities}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_entity_manager_a6f510a087fc5085efac12c0288a2e52f}{m\_Entities}};}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//\ =====================\ Component\ Management\ API\ =====================\ //}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_entity_manager_a649c96273c078e788cecbdfaa0aee1ef}{AddComponent}}(\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ e,\ \textcolor{keyword}{const}\ T\&\ component)\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_entity_manager_a9792efcb1c6904999ab34b3a65a7c69d}{GetOrCreateManager<T>}}().\mbox{\hyperlink{class_component_manager_af278794db44296d707492fef01b15e96}{AddComponent}}(e,\ component);}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_entity_manager_a5c8b70a4b72748d8f72b697bd28f98fa}{RemoveComponent}}(\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ e)\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_entity_manager_a9792efcb1c6904999ab34b3a65a7c69d}{GetOrCreateManager<T>}}().\mbox{\hyperlink{class_component_manager_a2501a3794e300d71b6279e76d311846c}{RemoveComponent}}(e);}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_entity_manager_af086011ae902ac5704362571a8217975}{HasComponent}}(\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ e)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_entity_manager_aa02cffa1d2435ea5d0eadee749c2a965}{GetManager<T>}}().\mbox{\hyperlink{class_component_manager_a8a8d1ef9e132029f47f452d64f0c3f7a}{HasComponent}}(e);}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00107\ \ \ \ \ T\&\ \mbox{\hyperlink{class_entity_manager_a00080c3855e9aab3796bb94f6b48ac9b}{GetComponent}}(\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ e)\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_entity_manager_aa02cffa1d2435ea5d0eadee749c2a965}{GetManager<T>}}().\mbox{\hyperlink{class_component_manager_a81536e74843307f9b9e27993cca3e72b}{GetComponent}}(e);}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_entity_manager_a779fbb902f08d652f6aadee007b3b3e2}{HasComponentType}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_entity_manager_a16e4f1fc01dbbc389629d07d275316d7}{m\_ComponentManagers}}.find(std::type\_index(\textcolor{keyword}{typeid}(T)))\ !=\ \mbox{\hyperlink{class_entity_manager_a16e4f1fc01dbbc389629d07d275316d7}{m\_ComponentManagers}}.end();}
+\DoxyCodeLine{00119\ \ \ \ \ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00127\ \ \ \ \ std::unordered\_map<Entity,\ T>\&\ \mbox{\hyperlink{class_entity_manager_a1b3d1289d7f8bba2539e828e807a183c}{GetAllComponents}}()\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_entity_manager_a9792efcb1c6904999ab34b3a65a7c69d}{GetOrCreateManager<T>}}().\mbox{\hyperlink{class_component_manager_a41507f22f5d9cf4158ead40fdc4b25d0}{GetAll}}();}
+\DoxyCodeLine{00129\ \ \ \ \ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{const}\ std::unordered\_map<Entity,\ T>\&\ \mbox{\hyperlink{class_entity_manager_a4baa6e8ef06a8ebbf18a1b1669768bb9}{GetAllComponents}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ std::type\_index\ ti(\textcolor{keyword}{typeid}(T));}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{class_entity_manager_a16e4f1fc01dbbc389629d07d275316d7}{m\_ComponentManagers}}.find(ti);}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ ==\ \mbox{\hyperlink{class_entity_manager_a16e4f1fc01dbbc389629d07d275316d7}{m\_ComponentManagers}}.end())\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ std::unordered\_map<Entity,\ T>\ empty;}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ empty;}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const\ }\mbox{\hyperlink{struct_entity_manager_1_1_component_manager_wrapper}{ComponentManagerWrapper<T>}}*\textcolor{keyword}{>}(it-\/>second.get())-\/>\mbox{\hyperlink{struct_entity_manager_1_1_component_manager_wrapper_a5a0473fecea04fe1692fd3a3aed8b355}{manager}}.\mbox{\hyperlink{class_component_manager_a41507f22f5d9cf4158ead40fdc4b25d0}{GetAll}}();}
+\DoxyCodeLine{00145\ \ \ \ \ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_entity_manager_a1e0533eb42cebf7a0bdda06a566ad3ff}{PrintRegisteredComponents}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}==\ Registered\ Component\ Types\ =="{}}\ <<\ std::endl;}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [ti,\ ptr]\ :\ \mbox{\hyperlink{class_entity_manager_a16e4f1fc01dbbc389629d07d275316d7}{m\_ComponentManagers}})\ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ ti.name()\ <<\ \textcolor{stringliteral}{"{}\ at\ "{}}\ <<\ ptr.get()\ <<\ std::endl;}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00156\ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00159\ \ \ \ \ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ \mbox{\hyperlink{class_entity_manager_ac275f4b7fea72be8c31d367efedd90c7}{m\_NextEntityID}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00160\ \ \ \ \ std::vector<Entity>\ \mbox{\hyperlink{class_entity_manager_a6f510a087fc5085efac12c0288a2e52f}{m\_Entities}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{comment}{//\ =====================\ Component\ Manager\ Infrastructure\ =====================\ //}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_entity_manager_1_1_i_component_manager_base}{IComponentManagerBase}}\ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_entity_manager_1_1_i_component_manager_base_a3c864b21b38d2b6a57ba986ce8496b87}{\string~IComponentManagerBase}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_entity_manager_1_1_i_component_manager_base_ac4888936719654156cbcd02ed0841ae6}{RemoveComponent}}(\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}})\ =\ 0;}
+\DoxyCodeLine{00170\ \ \ \ \ \};}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_entity_manager_1_1_component_manager_wrapper}{ComponentManagerWrapper}}\ :\ \mbox{\hyperlink{struct_entity_manager_1_1_i_component_manager_base}{IComponentManagerBase}}\ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_component_manager}{ComponentManager<T>}}\ \mbox{\hyperlink{struct_entity_manager_1_1_component_manager_wrapper_a5a0473fecea04fe1692fd3a3aed8b355}{manager}};}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_entity_manager_1_1_component_manager_wrapper_aabe87c621c2e52bbcd9bb6ecbbed9c09}{RemoveComponent}}(\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ e)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_entity_manager_1_1_component_manager_wrapper_a5a0473fecea04fe1692fd3a3aed8b355}{manager}}.RemoveComponent(e);}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00183\ \ \ \ \ \};}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ std::unordered\_map<std::type\_index,\ std::unique\_ptr<IComponentManagerBase>>\ \mbox{\hyperlink{class_entity_manager_a16e4f1fc01dbbc389629d07d275316d7}{m\_ComponentManagers}};\ }
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{comment}{//\ =====================\ Internal\ Accessors\ =====================\ //}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00195\ \ \ \ \ \mbox{\hyperlink{class_component_manager}{ComponentManager<T>}}\&\ \mbox{\hyperlink{class_entity_manager_a9792efcb1c6904999ab34b3a65a7c69d}{GetOrCreateManager}}()\ \{}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ std::type\_index\ ti\ =\ std::type\_index(\textcolor{keyword}{typeid}(T));}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_entity_manager_a16e4f1fc01dbbc389629d07d275316d7}{m\_ComponentManagers}}.find(ti)\ ==\ \mbox{\hyperlink{class_entity_manager_a16e4f1fc01dbbc389629d07d275316d7}{m\_ComponentManagers}}.end())\ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_entity_manager_a16e4f1fc01dbbc389629d07d275316d7}{m\_ComponentManagers}}[ti]\ =\ std::make\_unique<ComponentManagerWrapper<T>>();}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{struct_entity_manager_1_1_component_manager_wrapper}{ComponentManagerWrapper<T>}}*\textcolor{keyword}{>}(\mbox{\hyperlink{class_entity_manager_a16e4f1fc01dbbc389629d07d275316d7}{m\_ComponentManagers}}[ti].get())-\/>\mbox{\hyperlink{struct_entity_manager_1_1_component_manager_wrapper_a5a0473fecea04fe1692fd3a3aed8b355}{manager}};}
+\DoxyCodeLine{00201\ \ \ \ \ \}}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_component_manager}{ComponentManager<T>}}\&\ \mbox{\hyperlink{class_entity_manager_aa02cffa1d2435ea5d0eadee749c2a965}{GetManager}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ std::type\_index\ ti\ =\ std::type\_index(\textcolor{keyword}{typeid}(T));}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ \mbox{\hyperlink{class_entity_manager_a16e4f1fc01dbbc389629d07d275316d7}{m\_ComponentManagers}}.find(ti);}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ ==\ \mbox{\hyperlink{class_entity_manager_a16e4f1fc01dbbc389629d07d275316d7}{m\_ComponentManagers}}.end())\ \{}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Component\ type\ not\ registered."{}});}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{struct_entity_manager_1_1_component_manager_wrapper}{ComponentManagerWrapper<T>}}*\textcolor{keyword}{>}(it-\/>second.get())-\/>\mbox{\hyperlink{struct_entity_manager_1_1_component_manager_wrapper_a5a0473fecea04fe1692fd3a3aed8b355}{manager}};}
+\DoxyCodeLine{00217\ \ \ \ \ \}}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00225\ \ \ \ \ \mbox{\hyperlink{class_component_manager}{ComponentManager<T>}}\&\ \mbox{\hyperlink{class_entity_manager_a2ffcf74e0a72cc3d24d741474a8e7f28}{GetManager}}()\ \{}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{const\_cast<}\mbox{\hyperlink{class_component_manager}{ComponentManager<T>}}\&\textcolor{keyword}{>}(}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keyword}{const\ }\mbox{\hyperlink{class_entity_manager_a7555637657d090171be6ceee8451de0a}{EntityManager}}*\textcolor{keyword}{>}(\textcolor{keyword}{this})-\/>GetManager<T>()}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00229\ \ \ \ \ \}}
+\DoxyCodeLine{00230\ \};}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,21 @@
+<map id="LookAt" name="LookAt">
+<area shape="rect" id="Node000001" title="Creates a view matrix looking from &#39;eye&#39; to &#39;center&#39; with &#39;up&#39; direction." alt="" coords="1175,56,1238,83"/>
+<area shape="rect" id="Node000002" href="$class_camera.html#a6e3587a907ed288508c97493e7d51fc1" title="Calculates and retrieves the current view matrix based on a given position." alt="" coords="966,56,1127,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1160,72,1128,72,1128,67,1160,67"/>
+<area shape="rect" id="Node000003" href="$render__system_8cpp.html#a079030225b1b31b63cc28799a7923ff0" title="Renders a skybox or skydome mesh as a background element." alt="" coords="762,5,869,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="967,55,869,33,870,28,968,49"/>
+<area shape="rect" id="Node000004" href="$render__system_8cpp.html#a8cce4f902aee95fff82f762a4fcd10be" title="Core ECS&#45;based rendering system." alt="" coords="523,56,631,83"/>
+<area shape="poly" id="edge7_Node000002_Node000004" title=" " alt="" coords="951,72,632,72,632,67,951,67"/>
+<area shape="rect" id="Node000008" href="$class_camera.html#a2e48639cd946e567fc0756361c855ac6" title="Updates the six frustum planes based on the camera&#39;s view&#45;projection matrix and position." alt="" coords="713,107,918,133"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="968,89,880,109,879,103,967,84"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="747,36,632,61,631,55,746,31"/>
+<area shape="rect" id="Node000005" href="$class_terrain_scene.html#a55eb34067d9346aa7d9c3295a9e2dfb0" title="Executes the main loop: input, update, physics, animation, and rendering." alt="" coords="280,81,441,108"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="508,80,442,88,441,83,507,75"/>
+<area shape="rect" id="Node000006" href="$class_terrain_scene.html#ae8ec4e098386a74714255aed184761eb" title="Runs the full scene lifecycle in the correct execution order." alt="" coords="103,81,232,108"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="264,97,232,97,232,92,264,92"/>
+<area shape="rect" id="Node000007" href="$mirach_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point of the engine. Initializes subsystems, loads models, sets up ECS,..." alt="" coords="5,81,55,108"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="87,97,55,97,55,92,87,92"/>
+<area shape="rect" id="Node000009" href="$class_player_script.html#a477310df8b50b588b853e7d174e12f13" title="Captures input states and updates internal flags." alt="" coords="489,107,665,133"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="697,123,665,123,665,117,697,117"/>
+<area shape="poly" id="edge10_Node000009_Node000005" title=" " alt="" coords="473,111,442,107,442,101,474,105"/>
+</map>

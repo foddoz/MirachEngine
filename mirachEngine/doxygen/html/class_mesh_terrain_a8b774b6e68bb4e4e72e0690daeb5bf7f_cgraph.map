@@ -1,0 +1,43 @@
+<map id="MeshTerrain::GenerateCPUData" name="MeshTerrain::GenerateCPUData">
+<area shape="rect" id="Node000001" title="Generates the heightmap and vertex data for terrain mesh." alt="" coords="5,255,216,281"/>
+<area shape="rect" id="Node000002" href="$class_mesh_terrain.html#a8f4dd324238753e462a2e9c9ca260c40" title="Internal fault formation algorithm with smoothing filter." alt="" coords="283,116,451,159"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,252,308,164,311,169,140,256"/>
+<area shape="rect" id="Node000011" href="$class_mesh_terrain.html#a6bce579145dde6b4cde1c5bd622aa797" title="Generates vertices, normals, and triangle indices from heightmap." alt="" coords="264,255,470,281"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="216,265,248,265,248,271,216,271"/>
+<area shape="rect" id="Node000017" href="$class_texture.html#a9b5013aca3b13b0f6bc6419a9f124010" title="Loads image data from a file into CPU memory." alt="" coords="291,331,442,357"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="159,279,305,323,303,328,158,284"/>
+<area shape="rect" id="Node000003" href="$class_mesh_terrain.html#a766c22ce021c46dcd0fa93726717e13c" title="Applies FIR filter in 4 directions for terrain smoothing." alt="" coords="537,35,721,61"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="414,113,517,72,547,63,549,68,519,77,416,118"/>
+<area shape="rect" id="Node000008" href="$class_mesh_terrain.html#a3b250d6762ed4984c36561fb8b986088" title="Generates two random points for a fault line." alt="" coords="523,87,735,129"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="451,125,507,119,508,124,452,131"/>
+<area shape="rect" id="Node000010" href="$class_mesh_terrain.html#a0ccd49d3d667b512eed2f4a65ed67e64" title=" " alt="" coords="518,153,740,180"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="452,144,503,150,502,155,451,149"/>
+<area shape="rect" id="Node000004" href="$class_mesh_terrain.html#ad1253af0199061cbd5f288e34b4deec5" title="Applies FIR filtering on a single height value." alt="" coords="788,23,976,65"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="722,44,772,43,773,48,722,49"/>
+<area shape="rect" id="Node000005" href="$class_mesh_terrain.html#a82c9aa1166f4c0cf04b6ca44314714b9" title="Gets the height at the given integer terrain grid coordinates." alt="" coords="1024,5,1183,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="976,31,1008,27,1009,32,976,36"/>
+<area shape="rect" id="Node000007" href="$class_mesh_terrain.html#a8c27c53059bd5313ee5300d266abbb72" title=" " alt="" coords="1024,56,1182,83"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="976,52,1009,56,1008,61,976,57"/>
+<area shape="rect" id="Node000006" href="$math_8hpp.html#a61311699c1533817e1272e777558b611" title="Clamps a float between minVal and maxVal." alt="" coords="1231,5,1290,32"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1183,16,1215,16,1215,21,1183,21"/>
+<area shape="rect" id="Node000009" href="$struct_mesh_terrain_1_1_terrain_point.html#acf4de239a7354ad5d3989b77ecddae05" title=" " alt="" coords="797,89,967,132"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="736,106,781,107,781,112,736,112"/>
+<area shape="rect" id="Node000012" href="$class_mesh_terrain.html#ac04c41367589da2a17ffa10ee6490ebf" title="Computes per&#45;vertex normals by averaging surrounding triangles." alt="" coords="541,204,717,231"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="439,251,541,232,542,237,440,257"/>
+<area shape="rect" id="Node000015" href="$class_mesh_terrain.html#af107e4f6795dde2123aa006638d0b779" title="Fills index buffer with triangle strip indices." alt="" coords="549,255,709,281"/>
+<area shape="poly" id="edge14_Node000011_Node000015" title=" " alt="" coords="470,265,533,265,533,271,470,271"/>
+<area shape="rect" id="Node000016" href="$class_mesh_terrain.html#a6103508d3697247eba65cbda2b9d1782" title="Initializes vertex positions and texture coordinates." alt="" coords="546,305,712,332"/>
+<area shape="poly" id="edge15_Node000011_Node000016" title=" " alt="" coords="440,279,542,299,541,304,439,285"/>
+<area shape="rect" id="Node000013" href="$math_8hpp.html#a670c0a5216c9f579310c5202fba83257" title="Cross product of two 3D vectors." alt="" coords="854,180,910,207"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="718,206,838,195,839,200,718,212"/>
+<area shape="rect" id="Node000014" href="$math_8hpp.html#a11c0426b3a7e98489b250e45d0240c5f" title="Normalizes a 3D vector." alt="" coords="842,231,922,257"/>
+<area shape="poly" id="edge13_Node000012_Node000014" title=" " alt="" coords="718,224,826,236,826,241,718,229"/>
+<area shape="rect" id="Node000018" href="$image_8cpp.html#a1d6bfb89d8b124b070bab503c43bd581" title="Loads an image file using stb_image and populates the given ImageData structure." alt="" coords="586,356,672,383"/>
+<area shape="poly" id="edge17_Node000017_Node000018" title=" " alt="" coords="443,349,571,361,571,366,443,354"/>
+<area shape="rect" id="Node000019" href="$stb__image_8h.html#ad3e11bb44412a7ba348acfbad09caacb" title=" " alt="" coords="825,305,939,332"/>
+<area shape="poly" id="edge18_Node000018_Node000019" title=" " alt="" coords="672,358,810,330,811,336,673,363"/>
+<area shape="rect" id="Node000020" href="$stb__image_8h.html#ad3fc296ba0778df0a8094e20da82deab" title=" " alt="" coords="845,356,919,383"/>
+<area shape="poly" id="edge19_Node000018_Node000020" title=" " alt="" coords="672,367,830,367,830,372,672,372"/>
+<area shape="rect" id="Node000021" href="$stb__image_8h.html#ab89c177fc52f1bb2dc1c05e48129a0a4" title=" " alt="" coords="807,407,957,449"/>
+<area shape="poly" id="edge20_Node000018_Node000021" title=" " alt="" coords="673,377,792,405,791,410,672,382"/>
+</map>

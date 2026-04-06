@@ -1,0 +1,75 @@
+\doxysection{State\+Machine.\+h}
+\hypertarget{_state_machine_8h_source}{}\label{_state_machine_8h_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/FSM/StateMachine.h@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/FSM/StateMachine.h}}
+\mbox{\hyperlink{_state_machine_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ STATEMACHINE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ STATEMACHINE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{state_8h}{state.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ EntityType>}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_state_machine_af00e446c735c481288418c25be5083cc}{StateMachine}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ EntityType*\ \mbox{\hyperlink{class_state_machine_aebfdb0f7899174f3e63db15da8d6c12d}{owner}};\ \ }
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_state}{State<EntityType>}}*\ \mbox{\hyperlink{class_state_machine_a49cfecb4fa0b4be6253f06283610d0a3}{currentState}}\ =\ \textcolor{keyword}{nullptr};\ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_state}{State<EntityType>}}*\ \mbox{\hyperlink{class_state_machine_afe63b33e3d15d8ea419f36b1f2f568f1}{previousState}}\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_state}{State<EntityType>}}*\ \mbox{\hyperlink{class_state_machine_a49bd03ea30d557df572c319f27968beb}{globalState}}\ =\ \textcolor{keyword}{nullptr};\ \ \ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_state_machine_af00e446c735c481288418c25be5083cc}{StateMachine}}(EntityType*\ \mbox{\hyperlink{class_state_machine_aebfdb0f7899174f3e63db15da8d6c12d}{owner}})\ :\ \mbox{\hyperlink{class_state_machine_aebfdb0f7899174f3e63db15da8d6c12d}{owner}}(\mbox{\hyperlink{class_state_machine_aebfdb0f7899174f3e63db15da8d6c12d}{owner}})\ \{\}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_state_machine_af62624b4a5f1163092d1b9b1071329c1}{Update}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_state_machine_a49bd03ea30d557df572c319f27968beb}{globalState}})\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_state_machine_a49bd03ea30d557df572c319f27968beb}{globalState}}-\/>Execute(\mbox{\hyperlink{class_state_machine_aebfdb0f7899174f3e63db15da8d6c12d}{owner}});}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_state_machine_a49cfecb4fa0b4be6253f06283610d0a3}{currentState}})\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_state_machine_a49cfecb4fa0b4be6253f06283610d0a3}{currentState}}-\/>Execute(\mbox{\hyperlink{class_state_machine_aebfdb0f7899174f3e63db15da8d6c12d}{owner}});}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_state_machine_a3f71e3da813131021e5a6299a731e138}{ChangeState}}(\mbox{\hyperlink{class_state}{State<EntityType>}}*\ newState)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!newState)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_state_machine_afe63b33e3d15d8ea419f36b1f2f568f1}{previousState}}\ =\ \mbox{\hyperlink{class_state_machine_a49cfecb4fa0b4be6253f06283610d0a3}{currentState}};}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_state_machine_a49cfecb4fa0b4be6253f06283610d0a3}{currentState}})\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_state_machine_a49cfecb4fa0b4be6253f06283610d0a3}{currentState}}-\/>Exit(\mbox{\hyperlink{class_state_machine_aebfdb0f7899174f3e63db15da8d6c12d}{owner}});}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_state_machine_a49cfecb4fa0b4be6253f06283610d0a3}{currentState}}\ =\ newState;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_state_machine_a49cfecb4fa0b4be6253f06283610d0a3}{currentState}}-\/>Enter(\mbox{\hyperlink{class_state_machine_aebfdb0f7899174f3e63db15da8d6c12d}{owner}});}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_state_machine_aa1493df14f685e79c7f358c1ab473096}{RevertToPreviousState}}()\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_state_machine_a3f71e3da813131021e5a6299a731e138}{ChangeState}}(\mbox{\hyperlink{class_state_machine_afe63b33e3d15d8ea419f36b1f2f568f1}{previousState}});}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_state_machine_a3c92fbcca4ac80d4bb5fe5efa26014fe}{setCurrentState}}(\mbox{\hyperlink{class_state}{State<EntityType>}}*\ s)\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_state_machine_a49cfecb4fa0b4be6253f06283610d0a3}{currentState}}\ =\ s;}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_state_machine_afd04374f0ec509816224b71804b3b982}{setGlobalState}}(\mbox{\hyperlink{class_state}{State<EntityType>}}*\ s)\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_state_machine_a49bd03ea30d557df572c319f27968beb}{globalState}}\ =\ s;}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_state_machine_aab9f7c77b78afcf5685d0f11c61c4f86}{setPreviousState}}(\mbox{\hyperlink{class_state}{State<EntityType>}}*\ s)\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_state_machine_afe63b33e3d15d8ea419f36b1f2f568f1}{previousState}}\ =\ s;}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{class_state}{State<EntityType>}}*\ \mbox{\hyperlink{class_state_machine_a1d0625163ac9504b673eb56c34841f32}{getCurrentState}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_state_machine_a49cfecb4fa0b4be6253f06283610d0a3}{currentState}};}
+\DoxyCodeLine{00108\ \ \ \ \ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{class_state}{State<EntityType>}}*\ \mbox{\hyperlink{class_state_machine_ae48771bc3d13be0f84e99cd8cdc325c4}{getPreviousState}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_state_machine_afe63b33e3d15d8ea419f36b1f2f568f1}{previousState}};}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{class_state}{State<EntityType>}}*\ \mbox{\hyperlink{class_state_machine_abc0cb601035e291498b137c7cd6a9bd8}{getGlobalState}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_state_machine_a49bd03ea30d557df572c319f27968beb}{globalState}};}
+\DoxyCodeLine{00126\ \ \ \ \ \}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_state_machine_a2af4a1bf934509eb578eb951606354a9}{isInState}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_state}{State<EntityType>}}\&\ st)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{typeid}(*currentState)\ ==\ \textcolor{keyword}{typeid}(st);}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+\DoxyCodeLine{00139\ \};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ STATEMACHINE\_H}}
+
+\end{DoxyCode}

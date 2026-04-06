@@ -1,0 +1,79 @@
+.TH "C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/Graphics/Rendering/healthBar.cpp" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/Graphics/Rendering/healthBar.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'healthBar\&.h'\fP
+.br
+\fR#include <glad/gl\&.h>\fP
+.br
+\fR#include <iostream>\fP
+.br
+\fR#include <fstream>\fP
+.br
+\fR#include <sstream>\fP
+.br
+\fR#include <algorithm>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "static std::string \fBLoadTextFile\fP (const std::string &path)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBhealthBarVS\fP"
+.br
+.ti -1c
+.RI "const char * \fBhealthBarFS\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "std::string LoadTextFile (const std::string & path)\fR [static]\fP"
+
+.SH "Variable Documentation"
+.PP 
+.SS "const char* healthBarFS"
+\fBInitial value:\fP
+.nf
+= R"glsl(
+#version 330 core
+out vec4 FragColor;
+uniform vec3 uColor;
+void main()
+{
+    FragColor = vec4(uColor, 1\&.0);
+}
+)glsl"
+.PP
+.fi
+
+.SS "const char* healthBarVS"
+\fBInitial value:\fP
+.nf
+= R"glsl(
+#version 330 core
+layout (location = 0) in vec2 aPos;
+uniform float uWidth;
+void main()
+{
+    vec2 pos = aPos;
+    pos\&.x = \-0\&.5 + (pos\&.x + 0\&.5) * uWidth;      
+    gl_Position = vec4(pos, 0\&.0, 1\&.0);
+}
+)glsl"
+.PP
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

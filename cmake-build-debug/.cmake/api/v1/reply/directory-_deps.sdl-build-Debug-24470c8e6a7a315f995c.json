@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "_deps/sdl-build",
+		"source" : "/download/sdl/c36bd7f276274a93380f372abcd6d4cccdd20c88/sdl"
+	}
+}

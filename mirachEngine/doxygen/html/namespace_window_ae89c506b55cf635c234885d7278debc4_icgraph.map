@@ -1,0 +1,5 @@
+<map id="Window::LockMouse" name="Window::LockMouse">
+<area shape="rect" id="Node000001" title="Locks or unlocks the mouse cursor to the window center." alt="" coords="199,5,342,32"/>
+<area shape="rect" id="Node000002" href="$class_program.html#ac3d2e61a3e1b46f0f1acb4d1793f5ede" title="Locks or unlocks the mouse cursor within the window." alt="" coords="5,5,151,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,21,151,21,151,16,183,16"/>
+</map>

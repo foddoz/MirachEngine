@@ -1,0 +1,13 @@
+<map id="Mesh3D" name="Mesh3D">
+<area shape="rect" id="Node000001" title="Abstract base class for rendering and managing 3D mesh data." alt="" coords="312,5,436,352"/>
+<area shape="rect" id="Node000002" href="$class_mesh_file.html" title="Represents a static 3D mesh loaded from file (e.g. OBJ, FBX, etc.) using Assimp." alt="" coords="5,571,184,960"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="304,256,249,324,200,401,164,485,136,572,131,570,159,483,195,399,244,321,300,252"/>
+<area shape="rect" id="Node000003" href="$class_mesh_m_d2.html" title="A 3D animated mesh class for rendering MD2 models with frame interpolation." alt="" coords="209,517,365,1013"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="348,367,326,518,321,517,343,366"/>
+<area shape="rect" id="Node000004" href="$class_mesh_sky_dome.html" title="A hemispherical skydome mesh used to render sky backgrounds." alt="" coords="389,624,532,907"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="404,366,442,624,437,625,399,367"/>
+<area shape="rect" id="Node000005" href="$class_mesh_terrain.html" title="Terrain mesh class using heightmap generation." alt="" coords="556,400,737,1131"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="447,256,500,323,547,399,559,424,554,427,542,401,496,326,443,259"/>
+<area shape="rect" id="Node000006" href="$class_terrain_chunk.html" title="Represents a sub&#45;section of a larger terrain for LOD or streaming." alt="" coords="575,1179,718,1355"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="650,1145,650,1179,644,1179,644,1145"/>
+</map>

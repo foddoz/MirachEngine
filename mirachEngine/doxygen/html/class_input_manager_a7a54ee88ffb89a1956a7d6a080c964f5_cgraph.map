@@ -1,0 +1,5 @@
+<map id="InputManager::WasMouseButtonJustPressed" name="InputManager::WasMouseButtonJustPressed">
+<area shape="rect" id="Node000001" title="Checks if a mouse button was just pressed this frame." alt="" coords="5,5,217,48"/>
+<area shape="rect" id="Node000002" href="$input_8hpp.html#ab1730206d833ef6f9ffd30a129b65caa" title="Utility to compute the SDL mouse button bitmask for a given button." alt="" coords="265,13,395,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="217,24,249,24,249,29,217,29"/>
+</map>

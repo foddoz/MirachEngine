@@ -1,0 +1,5 @@
+<map id="IEnemyStateLogic::CleanupAttackCallback" name="IEnemyStateLogic::CleanupAttackCallback">
+<area shape="rect" id="Node000001" title="Clears the previously registered attack callback." alt="" coords="5,5,190,48"/>
+<area shape="rect" id="Node000002" href="$class_enemy.html#a9d091969b26bf7254de76f6c2f3d7715" title=" " alt="" coords="238,13,428,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,24,222,24,222,29,190,29"/>
+</map>

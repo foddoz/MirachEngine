@@ -1,0 +1,122 @@
+\doxysection{Death\texorpdfstring{$<$}{<} Entity \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_death}{}\label{class_death}\index{Death$<$ Entity $>$@{Death$<$ Entity $>$}}
+
+
+Represents the \doxylink{class_death}{Death} state.  
+
+
+
+
+{\ttfamily \#include $<$Common\+States.\+h$>$}
+
+
+
+Inheritance diagram for Death\texorpdfstring{$<$}{<} Entity \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{class_death__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Death\texorpdfstring{$<$}{<} Entity \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{class_death__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_death_a88ed7632bccfa22e0add6ed32440c005}{Enter}} (\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}e) override
+\begin{DoxyCompactList}\small\item\em Called when the state is entered. This method is used to perform any initialization or setup for the state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_death_a37cfeaccac69be39d009f59d9aab793d}{Execute}} (\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}e) override
+\begin{DoxyCompactList}\small\item\em Called every frame to update the state. This method should implement the main behavior of the state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_death_a0e0b790203b3e682d0b87ec43c6d00a2}{Exit}} (\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}e) override
+\begin{DoxyCompactList}\small\item\em Called when the state is exited. This method should handle cleanup or transition logic before leaving the state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_state}{State$<$ Entity $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_state_aed40c4606cc22c76bf5ecc771dea4bf8}{\texorpdfstring{$\sim$}{\string~}\+State}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure proper cleanup of derived states. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$\newline
+class Death$<$ Entity $>$}
+Represents the \doxylink{class_death}{Death} state. 
+
+Calls on\+Death\+Enter, on\+Death\+Execute, and on\+Death\+Exit on the entity. 
+
+\label{doc-func-members}
+\Hypertarget{class_death_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_death_a88ed7632bccfa22e0add6ed32440c005}\index{Death$<$ Entity $>$@{Death$<$ Entity $>$}!Enter@{Enter}}
+\index{Enter@{Enter}!Death$<$ Entity $>$@{Death$<$ Entity $>$}}
+\doxysubsubsection{\texorpdfstring{Enter()}{Enter()}}
+{\footnotesize\ttfamily \label{class_death_a88ed7632bccfa22e0add6ed32440c005} 
+template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ \\
+void \mbox{\hyperlink{class_death}{Death}}$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} $>$\+::\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}}]{owner}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called when the state is entered. This method is used to perform any initialization or setup for the state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner} & Pointer to the owner entity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_a38506784066afae0f710965cb50d9df9}{State$<$ Entity $>$}}.
+
+\Hypertarget{class_death_a37cfeaccac69be39d009f59d9aab793d}\index{Death$<$ Entity $>$@{Death$<$ Entity $>$}!Execute@{Execute}}
+\index{Execute@{Execute}!Death$<$ Entity $>$@{Death$<$ Entity $>$}}
+\doxysubsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily \label{class_death_a37cfeaccac69be39d009f59d9aab793d} 
+template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ \\
+void \mbox{\hyperlink{class_death}{Death}}$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} $>$\+::\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}}]{owner}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called every frame to update the state. This method should implement the main behavior of the state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner} & Pointer to the owner entity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_a4298e08f3fc32436c7cf56705d0fa977}{State$<$ Entity $>$}}.
+
+\Hypertarget{class_death_a0e0b790203b3e682d0b87ec43c6d00a2}\index{Death$<$ Entity $>$@{Death$<$ Entity $>$}!Exit@{Exit}}
+\index{Exit@{Exit}!Death$<$ Entity $>$@{Death$<$ Entity $>$}}
+\doxysubsubsection{\texorpdfstring{Exit()}{Exit()}}
+{\footnotesize\ttfamily \label{class_death_a0e0b790203b3e682d0b87ec43c6d00a2} 
+template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ \\
+void \mbox{\hyperlink{class_death}{Death}}$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} $>$\+::\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}}]{owner}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called when the state is exited. This method should handle cleanup or transition logic before leaving the state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner} & Pointer to the owner entity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_a72bd0ca2e59147791bfe67618a1d9fc5}{State$<$ Entity $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+FSM/\mbox{\hyperlink{_common_states_8h}{Common\+States.\+h}}\end{DoxyCompactItemize}

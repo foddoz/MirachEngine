@@ -1,0 +1,5 @@
+<map id="Program::InitialiseGraphics" name="Program::InitialiseGraphics">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,184,32"/>
+<area shape="rect" id="Node000002" href="$namespace_window.html#a2cae9e06fe965916ea997400acc84aeb" title="Initializes platform&#45;specific graphics loaders (e.g., GLAD)." alt="" coords="232,5,378,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,16,217,16,217,21,184,21"/>
+</map>

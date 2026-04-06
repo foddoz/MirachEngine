@@ -1,0 +1,16 @@
+<map id="PlayerScript::GetValidRigidBody" name="PlayerScript::GetValidRigidBody">
+<area shape="rect" id="Node000001" title="Gets a valid rigid body pointer from an entity." alt="" coords="940,31,1149,57"/>
+<area shape="rect" id="Node000002" href="$class_player_script.html#a1f56c64cd8cee085e6d64910b6a9acf7" title="Attempts to launch a held object forward with force." alt="" coords="712,5,892,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="924,34,892,31,893,25,925,29"/>
+<area shape="rect" id="Node000007" href="$class_player_script.html#ae7fe7c941bd066b9b28bd3cff60d0117" title="Performs object pickup logic using raycasting." alt="" coords="713,56,891,83"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="925,59,892,63,891,57,924,54"/>
+<area shape="rect" id="Node000003" href="$class_player_script.html#acf49a0688d3e9aac48601f9aebcf9207" title="Applies movement, jumping, and object interaction logic after the physics update." alt="" coords="489,23,664,65"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="696,33,665,37,664,32,696,28"/>
+<area shape="rect" id="Node000004" href="$class_terrain_scene.html#a55eb34067d9346aa7d9c3295a9e2dfb0" title="Executes the main loop: input, update, physics, animation, and rendering." alt="" coords="280,31,441,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="474,47,442,47,442,41,474,41"/>
+<area shape="rect" id="Node000005" href="$class_terrain_scene.html#ae8ec4e098386a74714255aed184761eb" title="Runs the full scene lifecycle in the correct execution order." alt="" coords="103,31,232,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="264,47,232,47,232,41,264,41"/>
+<area shape="rect" id="Node000006" href="$mirach_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point of the engine. Initializes subsystems, loads models, sets up ECS,..." alt="" coords="5,31,55,57"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="87,47,55,47,55,41,87,41"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="697,60,664,56,664,51,698,55"/>
+</map>

@@ -1,0 +1,108 @@
+\doxysection{Force\+Raycast Class Reference}
+\hypertarget{class_force_raycast}{}\label{class_force_raycast}\index{ForceRaycast@{ForceRaycast}}
+
+
+Custom raycast callback to find the first dynamic body hit by a ray.  
+
+
+
+
+{\ttfamily \#include $<$raycast\+\_\+callback.\+hpp$>$}
+
+
+
+Inheritance diagram for Force\+Raycast\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{class_force_raycast__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Force\+Raycast\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{class_force_raycast__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_force_raycast_abef8f6fe5bf0c72b14481d2791787f71}{Report\+Hit}} (\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*}body, float hit\+Fraction) override
+\begin{DoxyCompactList}\small\item\em Callback function invoked when the ray hits a body. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_physics_1_1_raycast_callback}{Physics\+::\+Raycast\+Callback}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_physics_1_1_raycast_callback_aed7741525eec3eca39849ec753da81fd}{\texorpdfstring{$\sim$}{\string~}\+Raycast\+Callback}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_force_raycast_adc2afc5e2ef29175aee52806cfde9a84}{hit\+Body}} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to the first dynamic body hit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Custom raycast callback to find the first dynamic body hit by a ray. 
+
+Used for interaction systems (e.\+g., picking up objects). 
+
+\label{doc-func-members}
+\Hypertarget{class_force_raycast_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_force_raycast_abef8f6fe5bf0c72b14481d2791787f71}\index{ForceRaycast@{ForceRaycast}!ReportHit@{ReportHit}}
+\index{ReportHit@{ReportHit}!ForceRaycast@{ForceRaycast}}
+\doxysubsubsection{\texorpdfstring{ReportHit()}{ReportHit()}}
+{\footnotesize\ttfamily \label{class_force_raycast_abef8f6fe5bf0c72b14481d2791787f71} 
+bool Force\+Raycast\+::\+Report\+Hit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{body}{, }\item[{float}]{hit\+Fraction}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Callback function invoked when the ray hits a body. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em body} & The body hit by the ray. \\
+\hline
+{\em hit\+Fraction} & The fraction of the ray length at which the hit occurred. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False to stop on the first dynamic hit, true to keep going otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_raycast_callback_adae88ab43696f6b9d957ec981f93a6e5}{Physics\+::\+Raycast\+Callback}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{class_force_raycast_abef8f6fe5bf0c72b14481d2791787f71_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_force_raycast_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_force_raycast_adc2afc5e2ef29175aee52806cfde9a84}\index{ForceRaycast@{ForceRaycast}!hitBody@{hitBody}}
+\index{hitBody@{hitBody}!ForceRaycast@{ForceRaycast}}
+\doxysubsubsection{\texorpdfstring{hitBody}{hitBody}}
+{\footnotesize\ttfamily \label{class_force_raycast_adc2afc5e2ef29175aee52806cfde9a84} 
+\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}}\texorpdfstring{$\ast$}{*} Force\+Raycast\+::hit\+Body = nullptr}
+
+
+
+Pointer to the first dynamic body hit. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Physics/\mbox{\hyperlink{raycast__callback_8hpp}{raycast\+\_\+callback.\+hpp}}\end{DoxyCompactItemize}

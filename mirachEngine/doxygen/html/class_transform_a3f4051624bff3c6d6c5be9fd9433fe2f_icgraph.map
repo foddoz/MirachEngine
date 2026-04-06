@@ -1,0 +1,17 @@
+<map id="Transform::SetScale" name="Transform::SetScale">
+<area shape="rect" id="Node000001" title="Sets the object&#39;s local scale." alt="" coords="739,56,880,83"/>
+<area shape="rect" id="Node000002" href="$class_terrain_scene.html#a92cf2eb19b5a090ec4666367d5a4c898" title="Spawns firefly models, likely with animation or light effects." alt="" coords="495,5,691,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="734,54,652,35,654,30,735,49"/>
+<area shape="rect" id="Node000006" href="$class_terrain_scene.html#a2605641f2858b4c1ad9033e27a39f0c5" title="Spawns robotic enemy NPCs with AI behavior." alt="" coords="499,56,687,83"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="723,72,687,72,687,67,723,67"/>
+<area shape="rect" id="Node000007" href="$class_terrain_scene.html#ad4ab0bdbe406894b80805499c856c89b" title="Spawns static or decorative tree models in the scene." alt="" coords="504,107,682,133"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="735,89,654,109,652,103,734,84"/>
+<area shape="rect" id="Node000003" href="$class_terrain_scene.html#a64ff8229749692f3000ab0387dae7165" title="Creates and registers entities and components in the ECS." alt="" coords="280,56,447,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="515,39,428,58,427,53,514,33"/>
+<area shape="rect" id="Node000004" href="$class_terrain_scene.html#ae8ec4e098386a74714255aed184761eb" title="Runs the full scene lifecycle in the correct execution order." alt="" coords="103,56,232,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="264,72,232,72,232,67,264,67"/>
+<area shape="rect" id="Node000005" href="$mirach_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point of the engine. Initializes subsystems, loads models, sets up ECS,..." alt="" coords="5,56,55,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="87,72,55,72,55,67,87,67"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="484,72,448,72,448,67,484,67"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="514,105,427,86,428,81,515,100"/>
+</map>

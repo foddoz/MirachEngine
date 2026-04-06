@@ -1,0 +1,39 @@
+<map id="TerrainScene" name="TerrainScene">
+<area shape="rect" id="Node000001" title="A complete game scene that initializes, runs, and manages an interactive terrain environment with ECS..." alt="" coords="938,1539,1100,2013"/>
+<area shape="rect" id="Node000002" href="$class_scene.html" title="Abstract base class for defining and managing a game scene lifecycle." alt="" coords="5,939,162,1221"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="96,1235,107,1289,123,1344,146,1396,177,1444,215,1487,257,1527,303,1563,352,1595,456,1649,565,1691,672,1722,774,1744,864,1758,938,1767,937,1772,863,1764,773,1749,671,1727,563,1696,454,1654,349,1599,300,1567,254,1531,211,1491,172,1447,141,1399,118,1346,102,1291,91,1236"/>
+<area shape="rect" id="Node000003" href="$class_program.html" title="Manages core SDL and OpenGL initialization, shader program creation, window rendering,..." alt="" coords="186,800,355,1360"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="273,1359,283,1401,297,1441,316,1478,340,1513,369,1545,400,1575,471,1626,548,1667,628,1700,709,1725,787,1744,921,1765,920,1770,786,1749,708,1730,627,1705,546,1672,468,1630,397,1579,365,1549,336,1516,312,1481,293,1443,278,1402,268,1361"/>
+<area shape="rect" id="Node000004" href="$struct_window_handle.html" title=" " alt="" coords="221,403,320,472"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="273,472,273,783,268,783,268,472"/>
+<area shape="rect" id="Node000005" href="$class_entity_manager.html" title="Manages entity creation, destruction, and component access in the ECS system." alt="" coords="391,232,587,643"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="431,643,418,715,398,877,379,1088,376,1195,380,1295,393,1380,404,1415,418,1444,465,1509,523,1565,588,1613,658,1653,729,1687,799,1714,922,1751,920,1757,797,1719,727,1692,656,1658,585,1617,519,1569,461,1512,413,1447,399,1417,388,1381,375,1295,371,1195,374,1088,392,877,413,714,426,642"/>
+<area shape="rect" id="Node000006" href="$class_physics_system.html" title="Manages physics simulation, including rigid body updates and collider handling, in the ECS framework." alt="" coords="534,928,724,1232"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="536,642,595,911,590,912,531,643"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="661,1231,692,1338,713,1393,738,1444,780,1512,828,1576,879,1635,928,1686,924,1690,875,1638,824,1579,776,1515,733,1447,708,1395,687,1340,655,1232"/>
+<area shape="rect" id="Node000007" href="$class_mesh_m_d2.html" title="A 3D animated mesh class for rendering MD2 models with frame interpolation." alt="" coords="748,843,904,1317"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="885,1316,918,1445,941,1522,936,1523,913,1446,879,1318"/>
+<area shape="rect" id="Node000008" href="$class_mesh3_d.html" title="Abstract base class for rendering and managing 3D mesh data." alt="" coords="956,275,1080,600"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="954,611,918,715,883,844,878,842,913,714,949,609"/>
+<area shape="rect" id="Node000011" href="$class_mesh_terrain.html" title="Terrain mesh class using heightmap generation." alt="" coords="928,715,1109,1445"/>
+<area shape="poly" id="edge12_Node000011_Node000008" title=" " alt="" coords="1021,615,1021,715,1016,715,1016,615"/>
+<area shape="rect" id="Node000012" href="$class_mesh_sky_dome.html" title="A hemispherical skydome mesh used to render sky backgrounds." alt="" coords="1134,939,1277,1221"/>
+<area shape="poly" id="edge14_Node000012_Node000008" title=" " alt="" coords="1088,608,1124,714,1155,828,1180,938,1175,939,1149,829,1119,715,1083,609"/>
+<area shape="rect" id="Node000009" href="$struct_a_a_b_b.html" title="Represents an axis&#45;aligned bounding box." alt="" coords="973,5,1064,160"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="1021,160,1021,258,1016,258,1016,160"/>
+<area shape="rect" id="Node000010" href="$class_texture.html" title="Handles image loading, GPU uploading, binding, and cleanup of texture resources." alt="" coords="768,275,886,600"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="829,600,829,826,824,826,824,600"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="1021,1445,1021,1522,1016,1522,1016,1445"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="1178,1222,1124,1446,1102,1523,1097,1521,1119,1445,1173,1220"/>
+<area shape="rect" id="Node000013" href="$class_terrain_manager.html" title="Handles generation, GPU upload, and ECS/physics registration of terrain chunks." alt="" coords="1301,896,1469,1264"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="1356,1265,1329,1357,1292,1447,1253,1513,1207,1576,1160,1635,1113,1686,1109,1682,1156,1631,1203,1573,1248,1510,1287,1444,1324,1355,1351,1263"/>
+<area shape="rect" id="Node000014" href="$classenemy_state.html" title=" " alt="" coords="1494,939,1626,1221"/>
+<area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="1555,1221,1546,1277,1532,1336,1511,1393,1483,1447,1447,1497,1404,1544,1356,1586,1307,1625,1206,1689,1116,1736,1114,1731,1204,1684,1304,1620,1353,1582,1400,1540,1442,1494,1479,1444,1506,1391,1527,1334,1541,1276,1550,1221"/>
+<area shape="rect" id="Node000015" href="$class_i_enemy_state_logic.html" title="Interface class defining all enemy state transition logic." alt="" coords="1554,275,1724,600"/>
+<area shape="poly" id="edge17_Node000014_Node000015" title=" " alt="" coords="1620,615,1580,939,1574,938,1614,614"/>
+<area shape="rect" id="Node000016" href="$classhover_enemy_state.html" title=" " alt="" coords="1650,939,1782,1221"/>
+<area shape="poly" id="edge19_Node000016_Node000015" title=" " alt="" coords="1662,614,1702,938,1696,939,1657,615"/>
+<area shape="poly" id="edge18_Node000001_Node000016" title=" " alt="" coords="1714,1222,1705,1278,1691,1337,1670,1394,1641,1447,1588,1511,1526,1567,1457,1615,1385,1656,1311,1690,1240,1718,1117,1756,1115,1751,1239,1713,1309,1685,1382,1651,1454,1611,1523,1563,1584,1507,1636,1444,1665,1392,1686,1335,1700,1277,1708,1221"/>
+<area shape="rect" id="Node000017" href="$class_health_bar_renderer.html" title=" " alt="" coords="1806,981,1949,1179"/>
+<area shape="poly" id="edge20_Node000001_Node000017" title=" " alt="" coords="1873,1179,1865,1242,1850,1311,1828,1381,1797,1447,1781,1471,1765,1488,1721,1517,1644,1561,1563,1601,1397,1668,1242,1719,1117,1754,1115,1749,1241,1714,1395,1663,1560,1596,1641,1556,1718,1512,1761,1484,1777,1468,1792,1444,1823,1379,1845,1309,1859,1241,1868,1178"/>
+</map>

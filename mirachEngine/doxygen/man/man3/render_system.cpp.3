@@ -1,0 +1,74 @@
+.TH "C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/Graphics/Rendering/render_system.cpp" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/Graphics/Rendering/render_system.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'render_system\&.hpp'\fP
+.br
+\fR#include '\&.\&./\&.\&./Transform/transform\&.hpp'\fP
+.br
+\fR#include '\&.\&./\&.\&./ECS/component_manager\&.hpp'\fP
+.br
+\fR#include '\&.\&./\&.\&./ECS/entity_manager\&.hpp'\fP
+.br
+\fR#include '\&.\&./\&.\&./Camera/camera\&.hpp'\fP
+.br
+\fR#include '\&.\&./Animation/animation_system\&.hpp'\fP
+.br
+\fR#include <iostream>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBRenderSkybox\fP (const \fBProgram\fP &gApp, const \fBCamera\fP &cam, const \fBTransform\fP &transform, const \fBMeshRenderer\fP &renderer)"
+.br
+.RI "Renders a skybox or skydome mesh as a background element\&. "
+.ti -1c
+.RI "void \fBRenderSystem\fP (const \fBProgram\fP &gApp, const \fBEntity\fP &camEntity, \fBEntityManager\fP &entityManager)"
+.br
+.RI "Core ECS-based rendering system\&. "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void RenderSkybox (const \fBProgram\fP & gApp, const \fBCamera\fP & cam, const \fBTransform\fP & transform, const \fBMeshRenderer\fP & renderer)"
+
+.PP
+Renders a skybox or skydome mesh as a background element\&. This should be called before rendering opaque geometry\&. It disables depth writing to ensure it is always behind other objects\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIgApp\fP Reference to the main \fBProgram\fP instance for shader control\&. 
+.br
+\fIcam\fP Reference to the \fBCamera\fP used for view-projection matrix\&. 
+.br
+\fItransform\fP \fBTransform\fP of the skybox/skydome entity\&. 
+.br
+\fIrenderer\fP \fBMeshRenderer\fP containing the mesh and texture data\&. 
+.RE
+.PP
+
+.SS "void RenderSystem (const \fBProgram\fP & gApp, const \fBEntity\fP & camEntity, \fBEntityManager\fP & entityManager)"
+
+.PP
+Core ECS-based rendering system\&. Iterates over all entities that contain a \fBMeshRenderer\fP and \fBTransform\fP component, and renders each using its assigned shader pipeline and transform\&. Applies frustum culling using the provided camera, binds the appropriate vertex arrays and textures, and issues draw calls\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIgApp\fP Reference to the main \fBProgram\fP instance holding global GPU state\&. 
+.br
+\fIcamEntity\fP The entity containing the active camera component\&. 
+.br
+\fIentityManager\fP Reference to the ECS \fBEntityManager\fP for accessing components\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

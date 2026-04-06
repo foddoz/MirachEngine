@@ -1,0 +1,211 @@
+.TH "TerrainManager" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TerrainManager \- Handles generation, GPU upload, and ECS/physics registration of terrain chunks\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <terrain_manager\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBInitialize\fP (const std::vector< float > &heightmap, int terrainSize, int chunkSize, float minHeight, float maxHeight, float textureScale, const std::vector< std::string > &textureFiles)"
+.br
+.RI "Initializes terrain system settings and global parameters\&. "
+.ti -1c
+.RI "void \fBGenerateAllChunks\fP ()"
+.br
+.RI "Generates all terrain chunks from the global heightmap\&. "
+.ti -1c
+.RI "void \fBUploadChunksToGPU\fP ()"
+.br
+.RI "Uploads all generated chunks to the GPU (VAOs, VBOs, textures)\&. "
+.ti -1c
+.RI "void \fBRegisterChunksToECS\fP (\fBEntityManager\fP &entityManager, \fBPhysicsSystem\fP &physicsSystem, unsigned int terrainShader)"
+.br
+.RI "Registers all chunks as ECS entities with rendering and physics components\&. "
+.ti -1c
+.RI "void \fBRegisterToECS\fP (\fBEntityManager\fP &entityManager, \fBPhysicsSystem\fP &physicsSystem, unsigned int terrainShader, \fBMeshTerrain\fP &terrain)"
+.br
+.RI "Registers a single monolithic terrain mesh into the ECS\&. "
+.ti -1c
+.RI "const std::vector< std::unique_ptr< \fBTerrainChunk\fP > > & \fBGetChunks\fP () const"
+.br
+.RI "Returns all terrain chunks managed by this class\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "const std::vector< float > * \fBm_globalHeightmap\fP = nullptr"
+.br
+.RI "Pointer to the global terrain heightmap (not owned)\&. "
+.ti -1c
+.RI "int \fBm_terrainSize\fP = 0"
+.br
+.RI "Size of the full terrain grid (number of vertices along one axis)\&. "
+.ti -1c
+.RI "int \fBm_chunkSize\fP = 0"
+.br
+.RI "Size of each terrain chunk\&. "
+.ti -1c
+.RI "float \fBm_minHeight\fP = 0\&.0f"
+.br
+.RI "Minimum terrain elevation\&. "
+.ti -1c
+.RI "float \fBm_maxHeight\fP = 0\&.0f"
+.br
+.RI "Maximum terrain elevation\&. "
+.ti -1c
+.RI "float \fBm_textureScale\fP = 1\&.0f"
+.br
+.RI "Scale factor for texture UV tiling\&. "
+.ti -1c
+.RI "std::vector< std::string > \fBm_textureFileNames\fP"
+.br
+.RI "Filenames of the textures used for terrain blending\&. "
+.ti -1c
+.RI "std::vector< std::unique_ptr< \fBTerrainChunk\fP > > \fBm_chunks\fP"
+.br
+.RI "List of all generated terrain chunks\&. "
+.ti -1c
+.RI "std::vector< \fBTexture\fP * > \fBm_sharedTextures\fP"
+.br
+.RI "Shared texture pointers used by all terrain chunks\&. "
+.ti -1c
+.RI "std::mutex \fBm_chunkMutex\fP"
+.br
+.RI "Mutex for thread-safe chunk generation (if multithreaded)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Handles generation, GPU upload, and ECS/physics registration of terrain chunks\&. 
+
+This class is responsible for dividing a large heightmap into chunks, generating mesh data for each chunk, uploading it to the GPU, and registering each chunk with the ECS and physics systems for rendering and collision\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void TerrainManager::GenerateAllChunks ()"
+
+.PP
+Generates all terrain chunks from the global heightmap\&. Must be called after \fBInitialize()\fP\&. 
+.SS "const std::vector< std::unique_ptr< \fBTerrainChunk\fP > > & TerrainManager::GetChunks () const"
+
+.PP
+Returns all terrain chunks managed by this class\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Const reference to a vector of unique pointers to \fBTerrainChunk\fP\&. 
+.RE
+.PP
+
+.SS "void TerrainManager::Initialize (const std::vector< float > & heightmap, int terrainSize, int chunkSize, float minHeight, float maxHeight, float textureScale, const std::vector< std::string > & textureFiles)"
+
+.PP
+Initializes terrain system settings and global parameters\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIheightmap\fP Reference to the full terrain heightmap (row-major)\&. 
+.br
+\fIterrainSize\fP Size (width/height) of the full terrain grid\&. 
+.br
+\fIchunkSize\fP Size of each terrain chunk (square)\&. 
+.br
+\fIminHeight\fP Minimum possible height value\&. 
+.br
+\fImaxHeight\fP Maximum possible height value\&. 
+.br
+\fItextureScale\fP \fBTexture\fP tiling scale factor\&. 
+.br
+\fItextureFiles\fP List of texture file paths for terrain layers\&. 
+.RE
+.PP
+
+.SS "void TerrainManager::RegisterChunksToECS (\fBEntityManager\fP & entityManager, \fBPhysicsSystem\fP & physicsSystem, unsigned int terrainShader)"
+
+.PP
+Registers all chunks as ECS entities with rendering and physics components\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIentityManager\fP Reference to the ECS \fBEntityManager\fP\&. 
+.br
+\fIphysicsSystem\fP Reference to the \fBPhysicsSystem\fP\&. 
+.br
+\fIterrainShader\fP Shader program ID used for terrain rendering\&. 
+.RE
+.PP
+
+.SS "void TerrainManager::RegisterToECS (\fBEntityManager\fP & entityManager, \fBPhysicsSystem\fP & physicsSystem, unsigned int terrainShader, \fBMeshTerrain\fP & terrain)"
+
+.PP
+Registers a single monolithic terrain mesh into the ECS\&. Used when not chunking terrain\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIentityManager\fP Reference to the ECS \fBEntityManager\fP\&. 
+.br
+\fIphysicsSystem\fP Reference to the \fBPhysicsSystem\fP\&. 
+.br
+\fIterrainShader\fP Shader program ID used for rendering\&. 
+.br
+\fIterrain\fP Reference to the \fBMeshTerrain\fP object\&. 
+.RE
+.PP
+
+.SS "void TerrainManager::UploadChunksToGPU ()"
+
+.PP
+Uploads all generated chunks to the GPU (VAOs, VBOs, textures)\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "std::mutex TerrainManager::m_chunkMutex\fR [private]\fP"
+
+.PP
+Mutex for thread-safe chunk generation (if multithreaded)\&. 
+.SS "std::vector<std::unique_ptr<\fBTerrainChunk\fP> > TerrainManager::m_chunks\fR [private]\fP"
+
+.PP
+List of all generated terrain chunks\&. 
+.SS "int TerrainManager::m_chunkSize = 0\fR [private]\fP"
+
+.PP
+Size of each terrain chunk\&. 
+.SS "const std::vector<float>* TerrainManager::m_globalHeightmap = nullptr\fR [private]\fP"
+
+.PP
+Pointer to the global terrain heightmap (not owned)\&. 
+.SS "float TerrainManager::m_maxHeight = 0\&.0f\fR [private]\fP"
+
+.PP
+Maximum terrain elevation\&. 
+.SS "float TerrainManager::m_minHeight = 0\&.0f\fR [private]\fP"
+
+.PP
+Minimum terrain elevation\&. 
+.SS "std::vector<\fBTexture\fP*> TerrainManager::m_sharedTextures\fR [private]\fP"
+
+.PP
+Shared texture pointers used by all terrain chunks\&. 
+.SS "int TerrainManager::m_terrainSize = 0\fR [private]\fP"
+
+.PP
+Size of the full terrain grid (number of vertices along one axis)\&. 
+.SS "std::vector<std::string> TerrainManager::m_textureFileNames\fR [private]\fP"
+
+.PP
+Filenames of the textures used for terrain blending\&. 
+.SS "float TerrainManager::m_textureScale = 1\&.0f\fR [private]\fP"
+
+.PP
+Scale factor for texture UV tiling\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

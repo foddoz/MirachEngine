@@ -1,0 +1,842 @@
+\doxysection{Graphics Namespace Reference}
+\hypertarget{namespace_graphics}{}\label{namespace_graphics}\index{Graphics@{Graphics}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespace_graphics_a721c1c46b99ec4b0c263476217c844b2}{Clear\+Color}} (float r, float g, float b, float a)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a9bf304ec4ddf472a34dbd10d358805f5}{Viewport}} (int x, int y, float width, float height)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a9824ab679a791100d350127b6453e77d}{Clear}} (unsigned int mask)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a8e819d608213a011059060a2b0170e18}{Enable}} (\mbox{\hyperlink{graphics_8hpp_a11f9d69e8ac4334703e81ebfaa6a851d}{Capability}} cap)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a18deab5d59141f8edb32da67363b941f}{Disable}} (\mbox{\hyperlink{graphics_8hpp_a11f9d69e8ac4334703e81ebfaa6a851d}{Capability}} cap)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a1179041af4fce74143f19dd3f49f08af}{Set\+Cull\+Face}} (\mbox{\hyperlink{graphics_8hpp_a72f2198666e6f614143e503b8bb91961}{Cull\+Face\+Mode}} mode)
+\item 
+void \mbox{\hyperlink{namespace_graphics_aa6894ba5520c821114697787cf244724}{Set\+Front\+Face}} (\mbox{\hyperlink{graphics_8hpp_a126ce8ce37f5f1098a355c0446c8ceef}{Front\+Face\+Order}} order)
+\item 
+void \mbox{\hyperlink{namespace_graphics_afaa64189fcf768986b859f4da49a49f0}{Set\+Depth\+Write}} (bool enable)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a4158ffcbcd5183969266c9b9f412d19d}{Use\+Program}} (unsigned int program)
+\item 
+int \mbox{\hyperlink{namespace_graphics_a4975cdbaad38122f9120b8ea8b95cb18}{Get\+Uniform\+Location}} (unsigned int program\+ID, const std\+::string \&name)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a53ebeba7d0f7b777d50393490a557660}{Set\+Uniform\+Mat4}} (int location, const float \texorpdfstring{$\ast$}{*}matrix\+Ptr)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a9abc126621caa7f5dd8b4ba0ba9fd101}{Set\+Uniform1f}} (int location, float value)
+\item 
+void \mbox{\hyperlink{namespace_graphics_aa497253f01c048b2d15b339dc0f9f049}{Set\+Uniform1i}} (int location, int value)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a49bea1070bca7375a5e6132179214a3a}{Set\+Uniform3f}} (int location, float x, float y, float z)
+\item 
+void \mbox{\hyperlink{namespace_graphics_ae7b4fc0d405f3edef698219b304c4e97}{Gen\+Vertex\+Array}} (unsigned int \&vao)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a8109b501f710603a722a06a5c02ac5b8}{Gen\+Buffer}} (unsigned int \&buffer)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a076f7be95f278edc4620ff133340f982}{Buffer\+Sub\+Data}} (\mbox{\hyperlink{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13}{Buffer\+Target}} target, size\+\_\+t offset, size\+\_\+t size, const void \texorpdfstring{$\ast$}{*}data)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a6f4d24e455fdef40dfe6b467f9b3d6d4}{Bind\+Vertex\+Array}} (unsigned int vao)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a4765b419f51cd4a0d45b84dd4f7d7f17}{Bind\+Buffer}} (\mbox{\hyperlink{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13}{Buffer\+Target}} target, unsigned int buffer)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a55aadce60c9d25fb369920ad3e4b431b}{Unbind\+Vertex\+Array}} ()
+\item 
+void \mbox{\hyperlink{namespace_graphics_a07852e62edecc3dc602915d6aec0e1ce}{Unbind\+Buffer}} (\mbox{\hyperlink{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13}{Buffer\+Target}} target)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a6a2b8b04edd45dc9bbf6b70af7c5b16d}{Buffer\+Data}} (\mbox{\hyperlink{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13}{Buffer\+Target}} target, size\+\_\+t size, const void \texorpdfstring{$\ast$}{*}data, \mbox{\hyperlink{graphics_8hpp_ad3970b398ce82012811a2c0d15cabd76}{Buffer\+Usage}} usage)
+\item 
+void \mbox{\hyperlink{namespace_graphics_aa184d03626711a8afe423b4a50442c12}{Enable\+Vertex\+Attrib}} (unsigned int location)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a9334eb7750459b3f968a9bf13eb7f6b4}{Set\+Vertex\+Attrib\+Pointer}} (unsigned int location, int component\+Count, \mbox{\hyperlink{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290}{Data\+Type}} type, bool normalized, size\+\_\+t stride, const void \texorpdfstring{$\ast$}{*}offset)
+\item 
+void \mbox{\hyperlink{namespace_graphics_acf86e8b7f165acf4efdebe4a894bd1e2}{Delete\+Buffer}} (unsigned int \&buffer\+ID)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a18d8e124bb0c6f61e760fb756031f7d3}{Delete\+Vertex\+Array}} (unsigned int \&vao\+ID)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a45ac40011db84b9f6dc2904e31f0de9b}{Gen\+Texture}} (unsigned int \&id)
+\item 
+void \mbox{\hyperlink{namespace_graphics_ab069888f717a4adcb9f69b5f34b53503}{Bind\+Texture}} (\mbox{\hyperlink{graphics_8hpp_aaec52e992383ff804b871ff27e476126}{Texture\+Target}} target, unsigned int texture\+ID)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a62113f1c6225e86fd238faf3aa6463a0}{Active\+Texture\+Unit}} (unsigned int unit)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a6d20cab00d508c1926caab0e70ccbf77}{Tex\+Image2D}} (\mbox{\hyperlink{graphics_8hpp_aaec52e992383ff804b871ff27e476126}{Texture\+Target}} target, int width, int height, \mbox{\hyperlink{graphics_8hpp_a29891c193a3cdc6982963d2bda283739}{Texture\+Format}} format, const void \texorpdfstring{$\ast$}{*}data)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a653a8ff98cd652ab4f74b1dec756326e}{Generate\+Mipmaps}} (\mbox{\hyperlink{graphics_8hpp_aaec52e992383ff804b871ff27e476126}{Texture\+Target}} target)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a20f428e07745e02fa639b32596b4a8eb}{Delete\+Texture}} (unsigned int \&id)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a089e01615af5ecb79cd1c1cecb62fb67}{Draw\+Elements}} (\mbox{\hyperlink{graphics_8hpp_a01a6315ff4ebc392a41cfa03464ca0c6}{Draw\+Mode}} mode, int count, \mbox{\hyperlink{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290}{Data\+Type}} type, const void \texorpdfstring{$\ast$}{*}indices)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a833d3fce31a5b5813e613ced1ff9d747}{Draw\+Elements\+Base\+Vertex}} (\mbox{\hyperlink{graphics_8hpp_a01a6315ff4ebc392a41cfa03464ca0c6}{Draw\+Mode}} mode, int count, \mbox{\hyperlink{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290}{Data\+Type}} type, const void \texorpdfstring{$\ast$}{*}indices, int base\+Vertex)
+\item 
+unsigned int \mbox{\hyperlink{namespace_graphics_a6168c5c7c5a145aecd7681162f456977}{Get\+Current\+Vertex\+Array}} ()
+\item 
+void \mbox{\hyperlink{namespace_graphics_a4fe2c80449bf103828d5ca29a02e8414}{Unbind\+Program}} ()
+\item 
+void \mbox{\hyperlink{namespace_graphics_abcfa613cdd2ca02fc8cd2004c5a9fbae}{Draw\+Arrays}} (\mbox{\hyperlink{graphics_8hpp_a01a6315ff4ebc392a41cfa03464ca0c6}{Draw\+Mode}} mode, int first, int count)
+\item 
+unsigned int \mbox{\hyperlink{namespace_graphics_a7c0a572c86359594da5745bf8341f33b}{Get\+Error}} ()
+\item 
+bool \mbox{\hyperlink{namespace_graphics_abf5e5a480a0b920d263c67a4a3dd823e}{Check\+Graphics\+Error}} ()
+\item 
+unsigned int \mbox{\hyperlink{namespace_graphics_a58e663589156806b8e589f9f3c4d4143}{Create\+Shader}} (\mbox{\hyperlink{graphics_8hpp_a588b3d3b1da518a1c08138ad96cc3813}{Shader\+Type}} type)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a2620bf73e9ab268102fafb95162e9b72}{Set\+Shader\+Source}} (unsigned int shader\+ID, const std\+::string \&source)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a74bbc934f6143cb110b1dfd082a3b89b}{Compile\+Shader}} (unsigned int shader\+ID)
+\item 
+bool \mbox{\hyperlink{namespace_graphics_a20e3108902da8b64c25d7eb9070d1a60}{Get\+Shader\+Compile\+Status}} (unsigned int shader\+ID, std\+::string \texorpdfstring{$\ast$}{*}out\+Log=nullptr)
+\item 
+unsigned int \mbox{\hyperlink{namespace_graphics_a58630573a0b89573bc72f8ceda3db1b5}{Create\+Program}} ()
+\item 
+void \mbox{\hyperlink{namespace_graphics_a5ce52d8241816959525ea3e275ab13ad}{Attach\+Shader}} (unsigned int program\+ID, unsigned int shader\+ID)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a10a331aea50deff88f9719240a05d43f}{Link\+Program}} (unsigned int program\+ID)
+\item 
+bool \mbox{\hyperlink{namespace_graphics_a8ea6bfb283e0fb7318eb1a5f6c956745}{Get\+Program\+Link\+Status}} (unsigned int program\+ID, std\+::string \texorpdfstring{$\ast$}{*}out\+Log=nullptr)
+\item 
+unsigned int \mbox{\hyperlink{namespace_graphics_ab51204431218d844bc65a6e3a6dbf902}{Create\+Empty\+Buffer}} (size\+\_\+t size)
+\item 
+void \mbox{\hyperlink{namespace_graphics_ae0fe98919e3082c31e62dfcc7e76f31e}{Override\+Position\+VBO}} (unsigned int vbo, int location=\mbox{\hyperlink{graphics_8hpp_a07e3b4345595467370ea6f1f6e235b25}{POSITION\+\_\+\+LOCATION}})
+\item 
+int \mbox{\hyperlink{namespace_graphics_a115a81fec1bcc4c543465c17488a4db4}{Get\+Active\+Uniform\+Count}} (unsigned int program\+ID)
+\item 
+void \mbox{\hyperlink{namespace_graphics_ae68001fd676252881fa82cc39d85cd10}{Delete\+Shader}} (unsigned int shader\+ID)
+\item 
+void \mbox{\hyperlink{namespace_graphics_afdbcfb53bbe1ebcc083b61c257d500e9}{Delete\+Program}} (unsigned int \&program\+ID)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{namespace_graphics_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{namespace_graphics_a62113f1c6225e86fd238faf3aa6463a0}\index{Graphics@{Graphics}!ActiveTextureUnit@{ActiveTextureUnit}}
+\index{ActiveTextureUnit@{ActiveTextureUnit}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{ActiveTextureUnit()}{ActiveTextureUnit()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a62113f1c6225e86fd238faf3aa6463a0} 
+void Graphics\+::\+Active\+Texture\+Unit (\begin{DoxyParamCaption}\item[{unsigned int}]{unit}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a62113f1c6225e86fd238faf3aa6463a0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a5ce52d8241816959525ea3e275ab13ad}\index{Graphics@{Graphics}!AttachShader@{AttachShader}}
+\index{AttachShader@{AttachShader}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{AttachShader()}{AttachShader()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a5ce52d8241816959525ea3e275ab13ad} 
+void Graphics\+::\+Attach\+Shader (\begin{DoxyParamCaption}\item[{unsigned int}]{program\+ID}{, }\item[{unsigned int}]{shader\+ID}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a5ce52d8241816959525ea3e275ab13ad_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a4765b419f51cd4a0d45b84dd4f7d7f17}\index{Graphics@{Graphics}!BindBuffer@{BindBuffer}}
+\index{BindBuffer@{BindBuffer}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{BindBuffer()}{BindBuffer()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a4765b419f51cd4a0d45b84dd4f7d7f17} 
+void Graphics\+::\+Bind\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13}{Buffer\+Target}}}]{target}{, }\item[{unsigned int}]{buffer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a4765b419f51cd4a0d45b84dd4f7d7f17_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_ab069888f717a4adcb9f69b5f34b53503}\index{Graphics@{Graphics}!BindTexture@{BindTexture}}
+\index{BindTexture@{BindTexture}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{BindTexture()}{BindTexture()}}
+{\footnotesize\ttfamily \label{namespace_graphics_ab069888f717a4adcb9f69b5f34b53503} 
+void Graphics\+::\+Bind\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graphics_8hpp_aaec52e992383ff804b871ff27e476126}{Texture\+Target}}}]{target}{, }\item[{unsigned int}]{texture\+ID}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_ab069888f717a4adcb9f69b5f34b53503_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a6f4d24e455fdef40dfe6b467f9b3d6d4}\index{Graphics@{Graphics}!BindVertexArray@{BindVertexArray}}
+\index{BindVertexArray@{BindVertexArray}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{BindVertexArray()}{BindVertexArray()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a6f4d24e455fdef40dfe6b467f9b3d6d4} 
+void Graphics\+::\+Bind\+Vertex\+Array (\begin{DoxyParamCaption}\item[{unsigned int}]{vao}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a6f4d24e455fdef40dfe6b467f9b3d6d4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a6a2b8b04edd45dc9bbf6b70af7c5b16d}\index{Graphics@{Graphics}!BufferData@{BufferData}}
+\index{BufferData@{BufferData}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{BufferData()}{BufferData()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a6a2b8b04edd45dc9bbf6b70af7c5b16d} 
+void Graphics\+::\+Buffer\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13}{Buffer\+Target}}}]{target}{, }\item[{size\+\_\+t}]{size}{, }\item[{const void \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{\mbox{\hyperlink{graphics_8hpp_ad3970b398ce82012811a2c0d15cabd76}{Buffer\+Usage}}}]{usage}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a6a2b8b04edd45dc9bbf6b70af7c5b16d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a076f7be95f278edc4620ff133340f982}\index{Graphics@{Graphics}!BufferSubData@{BufferSubData}}
+\index{BufferSubData@{BufferSubData}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{BufferSubData()}{BufferSubData()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a076f7be95f278edc4620ff133340f982} 
+void Graphics\+::\+Buffer\+Sub\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13}{Buffer\+Target}}}]{target}{, }\item[{size\+\_\+t}]{offset}{, }\item[{size\+\_\+t}]{size}{, }\item[{const void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a076f7be95f278edc4620ff133340f982_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_abf5e5a480a0b920d263c67a4a3dd823e}\index{Graphics@{Graphics}!CheckGraphicsError@{CheckGraphicsError}}
+\index{CheckGraphicsError@{CheckGraphicsError}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{CheckGraphicsError()}{CheckGraphicsError()}}
+{\footnotesize\ttfamily \label{namespace_graphics_abf5e5a480a0b920d263c67a4a3dd823e} 
+bool Graphics\+::\+Check\+Graphics\+Error (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_abf5e5a480a0b920d263c67a4a3dd823e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a9824ab679a791100d350127b6453e77d}\index{Graphics@{Graphics}!Clear@{Clear}}
+\index{Clear@{Clear}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a9824ab679a791100d350127b6453e77d} 
+void Graphics\+::\+Clear (\begin{DoxyParamCaption}\item[{unsigned int}]{mask}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a9824ab679a791100d350127b6453e77d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a721c1c46b99ec4b0c263476217c844b2}\index{Graphics@{Graphics}!ClearColor@{ClearColor}}
+\index{ClearColor@{ClearColor}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{ClearColor()}{ClearColor()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a721c1c46b99ec4b0c263476217c844b2} 
+void Graphics\+::\+Clear\+Color (\begin{DoxyParamCaption}\item[{float}]{r}{, }\item[{float}]{g}{, }\item[{float}]{b}{, }\item[{float}]{a}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a721c1c46b99ec4b0c263476217c844b2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a74bbc934f6143cb110b1dfd082a3b89b}\index{Graphics@{Graphics}!CompileShader@{CompileShader}}
+\index{CompileShader@{CompileShader}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{CompileShader()}{CompileShader()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a74bbc934f6143cb110b1dfd082a3b89b} 
+void Graphics\+::\+Compile\+Shader (\begin{DoxyParamCaption}\item[{unsigned int}]{shader\+ID}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a74bbc934f6143cb110b1dfd082a3b89b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_ab51204431218d844bc65a6e3a6dbf902}\index{Graphics@{Graphics}!CreateEmptyBuffer@{CreateEmptyBuffer}}
+\index{CreateEmptyBuffer@{CreateEmptyBuffer}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{CreateEmptyBuffer()}{CreateEmptyBuffer()}}
+{\footnotesize\ttfamily \label{namespace_graphics_ab51204431218d844bc65a6e3a6dbf902} 
+unsigned int Graphics\+::\+Create\+Empty\+Buffer (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_ab51204431218d844bc65a6e3a6dbf902_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a58630573a0b89573bc72f8ceda3db1b5}\index{Graphics@{Graphics}!CreateProgram@{CreateProgram}}
+\index{CreateProgram@{CreateProgram}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{CreateProgram()}{CreateProgram()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a58630573a0b89573bc72f8ceda3db1b5} 
+unsigned int Graphics\+::\+Create\+Program (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a58630573a0b89573bc72f8ceda3db1b5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a58e663589156806b8e589f9f3c4d4143}\index{Graphics@{Graphics}!CreateShader@{CreateShader}}
+\index{CreateShader@{CreateShader}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{CreateShader()}{CreateShader()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a58e663589156806b8e589f9f3c4d4143} 
+unsigned int Graphics\+::\+Create\+Shader (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graphics_8hpp_a588b3d3b1da518a1c08138ad96cc3813}{Shader\+Type}}}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a58e663589156806b8e589f9f3c4d4143_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_acf86e8b7f165acf4efdebe4a894bd1e2}\index{Graphics@{Graphics}!DeleteBuffer@{DeleteBuffer}}
+\index{DeleteBuffer@{DeleteBuffer}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{DeleteBuffer()}{DeleteBuffer()}}
+{\footnotesize\ttfamily \label{namespace_graphics_acf86e8b7f165acf4efdebe4a894bd1e2} 
+void Graphics\+::\+Delete\+Buffer (\begin{DoxyParamCaption}\item[{unsigned int \&}]{buffer\+ID}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_acf86e8b7f165acf4efdebe4a894bd1e2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_afdbcfb53bbe1ebcc083b61c257d500e9}\index{Graphics@{Graphics}!DeleteProgram@{DeleteProgram}}
+\index{DeleteProgram@{DeleteProgram}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{DeleteProgram()}{DeleteProgram()}}
+{\footnotesize\ttfamily \label{namespace_graphics_afdbcfb53bbe1ebcc083b61c257d500e9} 
+void Graphics\+::\+Delete\+Program (\begin{DoxyParamCaption}\item[{unsigned int \&}]{program\+ID}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_afdbcfb53bbe1ebcc083b61c257d500e9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_ae68001fd676252881fa82cc39d85cd10}\index{Graphics@{Graphics}!DeleteShader@{DeleteShader}}
+\index{DeleteShader@{DeleteShader}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{DeleteShader()}{DeleteShader()}}
+{\footnotesize\ttfamily \label{namespace_graphics_ae68001fd676252881fa82cc39d85cd10} 
+void Graphics\+::\+Delete\+Shader (\begin{DoxyParamCaption}\item[{unsigned int}]{shader\+ID}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_ae68001fd676252881fa82cc39d85cd10_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a20f428e07745e02fa639b32596b4a8eb}\index{Graphics@{Graphics}!DeleteTexture@{DeleteTexture}}
+\index{DeleteTexture@{DeleteTexture}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{DeleteTexture()}{DeleteTexture()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a20f428e07745e02fa639b32596b4a8eb} 
+void Graphics\+::\+Delete\+Texture (\begin{DoxyParamCaption}\item[{unsigned int \&}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{namespace_graphics_a20f428e07745e02fa639b32596b4a8eb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a18d8e124bb0c6f61e760fb756031f7d3}\index{Graphics@{Graphics}!DeleteVertexArray@{DeleteVertexArray}}
+\index{DeleteVertexArray@{DeleteVertexArray}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{DeleteVertexArray()}{DeleteVertexArray()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a18d8e124bb0c6f61e760fb756031f7d3} 
+void Graphics\+::\+Delete\+Vertex\+Array (\begin{DoxyParamCaption}\item[{unsigned int \&}]{vao\+ID}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a18d8e124bb0c6f61e760fb756031f7d3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a18deab5d59141f8edb32da67363b941f}\index{Graphics@{Graphics}!Disable@{Disable}}
+\index{Disable@{Disable}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{Disable()}{Disable()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a18deab5d59141f8edb32da67363b941f} 
+void Graphics\+::\+Disable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graphics_8hpp_a11f9d69e8ac4334703e81ebfaa6a851d}{Capability}}}]{cap}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a18deab5d59141f8edb32da67363b941f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_abcfa613cdd2ca02fc8cd2004c5a9fbae}\index{Graphics@{Graphics}!DrawArrays@{DrawArrays}}
+\index{DrawArrays@{DrawArrays}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{DrawArrays()}{DrawArrays()}}
+{\footnotesize\ttfamily \label{namespace_graphics_abcfa613cdd2ca02fc8cd2004c5a9fbae} 
+void Graphics\+::\+Draw\+Arrays (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graphics_8hpp_a01a6315ff4ebc392a41cfa03464ca0c6}{Draw\+Mode}}}]{mode}{, }\item[{int}]{first}{, }\item[{int}]{count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_abcfa613cdd2ca02fc8cd2004c5a9fbae_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a089e01615af5ecb79cd1c1cecb62fb67}\index{Graphics@{Graphics}!DrawElements@{DrawElements}}
+\index{DrawElements@{DrawElements}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{DrawElements()}{DrawElements()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a089e01615af5ecb79cd1c1cecb62fb67} 
+void Graphics\+::\+Draw\+Elements (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graphics_8hpp_a01a6315ff4ebc392a41cfa03464ca0c6}{Draw\+Mode}}}]{mode}{, }\item[{int}]{count}{, }\item[{\mbox{\hyperlink{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290}{Data\+Type}}}]{type}{, }\item[{const void \texorpdfstring{$\ast$}{*}}]{indices}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a089e01615af5ecb79cd1c1cecb62fb67_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a833d3fce31a5b5813e613ced1ff9d747}\index{Graphics@{Graphics}!DrawElementsBaseVertex@{DrawElementsBaseVertex}}
+\index{DrawElementsBaseVertex@{DrawElementsBaseVertex}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{DrawElementsBaseVertex()}{DrawElementsBaseVertex()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a833d3fce31a5b5813e613ced1ff9d747} 
+void Graphics\+::\+Draw\+Elements\+Base\+Vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graphics_8hpp_a01a6315ff4ebc392a41cfa03464ca0c6}{Draw\+Mode}}}]{mode}{, }\item[{int}]{count}{, }\item[{\mbox{\hyperlink{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290}{Data\+Type}}}]{type}{, }\item[{const void \texorpdfstring{$\ast$}{*}}]{indices}{, }\item[{int}]{base\+Vertex}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a833d3fce31a5b5813e613ced1ff9d747_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a8e819d608213a011059060a2b0170e18}\index{Graphics@{Graphics}!Enable@{Enable}}
+\index{Enable@{Enable}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{Enable()}{Enable()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a8e819d608213a011059060a2b0170e18} 
+void Graphics\+::\+Enable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graphics_8hpp_a11f9d69e8ac4334703e81ebfaa6a851d}{Capability}}}]{cap}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a8e819d608213a011059060a2b0170e18_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_aa184d03626711a8afe423b4a50442c12}\index{Graphics@{Graphics}!EnableVertexAttrib@{EnableVertexAttrib}}
+\index{EnableVertexAttrib@{EnableVertexAttrib}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{EnableVertexAttrib()}{EnableVertexAttrib()}}
+{\footnotesize\ttfamily \label{namespace_graphics_aa184d03626711a8afe423b4a50442c12} 
+void Graphics\+::\+Enable\+Vertex\+Attrib (\begin{DoxyParamCaption}\item[{unsigned int}]{location}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_aa184d03626711a8afe423b4a50442c12_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a8109b501f710603a722a06a5c02ac5b8}\index{Graphics@{Graphics}!GenBuffer@{GenBuffer}}
+\index{GenBuffer@{GenBuffer}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{GenBuffer()}{GenBuffer()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a8109b501f710603a722a06a5c02ac5b8} 
+void Graphics\+::\+Gen\+Buffer (\begin{DoxyParamCaption}\item[{unsigned int \&}]{buffer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a8109b501f710603a722a06a5c02ac5b8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a653a8ff98cd652ab4f74b1dec756326e}\index{Graphics@{Graphics}!GenerateMipmaps@{GenerateMipmaps}}
+\index{GenerateMipmaps@{GenerateMipmaps}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{GenerateMipmaps()}{GenerateMipmaps()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a653a8ff98cd652ab4f74b1dec756326e} 
+void Graphics\+::\+Generate\+Mipmaps (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graphics_8hpp_aaec52e992383ff804b871ff27e476126}{Texture\+Target}}}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a653a8ff98cd652ab4f74b1dec756326e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a45ac40011db84b9f6dc2904e31f0de9b}\index{Graphics@{Graphics}!GenTexture@{GenTexture}}
+\index{GenTexture@{GenTexture}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{GenTexture()}{GenTexture()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a45ac40011db84b9f6dc2904e31f0de9b} 
+void Graphics\+::\+Gen\+Texture (\begin{DoxyParamCaption}\item[{unsigned int \&}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{namespace_graphics_a45ac40011db84b9f6dc2904e31f0de9b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_ae7b4fc0d405f3edef698219b304c4e97}\index{Graphics@{Graphics}!GenVertexArray@{GenVertexArray}}
+\index{GenVertexArray@{GenVertexArray}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{GenVertexArray()}{GenVertexArray()}}
+{\footnotesize\ttfamily \label{namespace_graphics_ae7b4fc0d405f3edef698219b304c4e97} 
+void Graphics\+::\+Gen\+Vertex\+Array (\begin{DoxyParamCaption}\item[{unsigned int \&}]{vao}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_ae7b4fc0d405f3edef698219b304c4e97_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a115a81fec1bcc4c543465c17488a4db4}\index{Graphics@{Graphics}!GetActiveUniformCount@{GetActiveUniformCount}}
+\index{GetActiveUniformCount@{GetActiveUniformCount}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{GetActiveUniformCount()}{GetActiveUniformCount()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a115a81fec1bcc4c543465c17488a4db4} 
+int Graphics\+::\+Get\+Active\+Uniform\+Count (\begin{DoxyParamCaption}\item[{unsigned int}]{program\+ID}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a115a81fec1bcc4c543465c17488a4db4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a6168c5c7c5a145aecd7681162f456977}\index{Graphics@{Graphics}!GetCurrentVertexArray@{GetCurrentVertexArray}}
+\index{GetCurrentVertexArray@{GetCurrentVertexArray}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{GetCurrentVertexArray()}{GetCurrentVertexArray()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a6168c5c7c5a145aecd7681162f456977} 
+unsigned int Graphics\+::\+Get\+Current\+Vertex\+Array (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a6168c5c7c5a145aecd7681162f456977_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a7c0a572c86359594da5745bf8341f33b}\index{Graphics@{Graphics}!GetError@{GetError}}
+\index{GetError@{GetError}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{GetError()}{GetError()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a7c0a572c86359594da5745bf8341f33b} 
+unsigned int Graphics\+::\+Get\+Error (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a7c0a572c86359594da5745bf8341f33b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a8ea6bfb283e0fb7318eb1a5f6c956745}\index{Graphics@{Graphics}!GetProgramLinkStatus@{GetProgramLinkStatus}}
+\index{GetProgramLinkStatus@{GetProgramLinkStatus}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{GetProgramLinkStatus()}{GetProgramLinkStatus()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a8ea6bfb283e0fb7318eb1a5f6c956745} 
+bool Graphics\+::\+Get\+Program\+Link\+Status (\begin{DoxyParamCaption}\item[{unsigned int}]{program\+ID}{, }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{out\+Log}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a8ea6bfb283e0fb7318eb1a5f6c956745_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a20e3108902da8b64c25d7eb9070d1a60}\index{Graphics@{Graphics}!GetShaderCompileStatus@{GetShaderCompileStatus}}
+\index{GetShaderCompileStatus@{GetShaderCompileStatus}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{GetShaderCompileStatus()}{GetShaderCompileStatus()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a20e3108902da8b64c25d7eb9070d1a60} 
+bool Graphics\+::\+Get\+Shader\+Compile\+Status (\begin{DoxyParamCaption}\item[{unsigned int}]{shader\+ID}{, }\item[{std\+::string \texorpdfstring{$\ast$}{*}}]{out\+Log}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a20e3108902da8b64c25d7eb9070d1a60_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a4975cdbaad38122f9120b8ea8b95cb18}\index{Graphics@{Graphics}!GetUniformLocation@{GetUniformLocation}}
+\index{GetUniformLocation@{GetUniformLocation}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{GetUniformLocation()}{GetUniformLocation()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a4975cdbaad38122f9120b8ea8b95cb18} 
+int Graphics\+::\+Get\+Uniform\+Location (\begin{DoxyParamCaption}\item[{unsigned int}]{program\+ID}{, }\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a4975cdbaad38122f9120b8ea8b95cb18_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a10a331aea50deff88f9719240a05d43f}\index{Graphics@{Graphics}!LinkProgram@{LinkProgram}}
+\index{LinkProgram@{LinkProgram}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{LinkProgram()}{LinkProgram()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a10a331aea50deff88f9719240a05d43f} 
+void Graphics\+::\+Link\+Program (\begin{DoxyParamCaption}\item[{unsigned int}]{program\+ID}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a10a331aea50deff88f9719240a05d43f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_ae0fe98919e3082c31e62dfcc7e76f31e}\index{Graphics@{Graphics}!OverridePositionVBO@{OverridePositionVBO}}
+\index{OverridePositionVBO@{OverridePositionVBO}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{OverridePositionVBO()}{OverridePositionVBO()}}
+{\footnotesize\ttfamily \label{namespace_graphics_ae0fe98919e3082c31e62dfcc7e76f31e} 
+void Graphics\+::\+Override\+Position\+VBO (\begin{DoxyParamCaption}\item[{unsigned int}]{vbo}{, }\item[{int}]{location}{ = {\ttfamily \mbox{\hyperlink{graphics_8hpp_a07e3b4345595467370ea6f1f6e235b25}{POSITION\+\_\+\+LOCATION}}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_ae0fe98919e3082c31e62dfcc7e76f31e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a1179041af4fce74143f19dd3f49f08af}\index{Graphics@{Graphics}!SetCullFace@{SetCullFace}}
+\index{SetCullFace@{SetCullFace}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{SetCullFace()}{SetCullFace()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a1179041af4fce74143f19dd3f49f08af} 
+void Graphics\+::\+Set\+Cull\+Face (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graphics_8hpp_a72f2198666e6f614143e503b8bb91961}{Cull\+Face\+Mode}}}]{mode}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a1179041af4fce74143f19dd3f49f08af_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_afaa64189fcf768986b859f4da49a49f0}\index{Graphics@{Graphics}!SetDepthWrite@{SetDepthWrite}}
+\index{SetDepthWrite@{SetDepthWrite}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{SetDepthWrite()}{SetDepthWrite()}}
+{\footnotesize\ttfamily \label{namespace_graphics_afaa64189fcf768986b859f4da49a49f0} 
+void Graphics\+::\+Set\+Depth\+Write (\begin{DoxyParamCaption}\item[{bool}]{enable}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_afaa64189fcf768986b859f4da49a49f0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_aa6894ba5520c821114697787cf244724}\index{Graphics@{Graphics}!SetFrontFace@{SetFrontFace}}
+\index{SetFrontFace@{SetFrontFace}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{SetFrontFace()}{SetFrontFace()}}
+{\footnotesize\ttfamily \label{namespace_graphics_aa6894ba5520c821114697787cf244724} 
+void Graphics\+::\+Set\+Front\+Face (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graphics_8hpp_a126ce8ce37f5f1098a355c0446c8ceef}{Front\+Face\+Order}}}]{order}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_aa6894ba5520c821114697787cf244724_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a2620bf73e9ab268102fafb95162e9b72}\index{Graphics@{Graphics}!SetShaderSource@{SetShaderSource}}
+\index{SetShaderSource@{SetShaderSource}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{SetShaderSource()}{SetShaderSource()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a2620bf73e9ab268102fafb95162e9b72} 
+void Graphics\+::\+Set\+Shader\+Source (\begin{DoxyParamCaption}\item[{unsigned int}]{shader\+ID}{, }\item[{const std\+::string \&}]{source}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a2620bf73e9ab268102fafb95162e9b72_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a9abc126621caa7f5dd8b4ba0ba9fd101}\index{Graphics@{Graphics}!SetUniform1f@{SetUniform1f}}
+\index{SetUniform1f@{SetUniform1f}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{SetUniform1f()}{SetUniform1f()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a9abc126621caa7f5dd8b4ba0ba9fd101} 
+void Graphics\+::\+Set\+Uniform1f (\begin{DoxyParamCaption}\item[{int}]{location}{, }\item[{float}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a9abc126621caa7f5dd8b4ba0ba9fd101_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_aa497253f01c048b2d15b339dc0f9f049}\index{Graphics@{Graphics}!SetUniform1i@{SetUniform1i}}
+\index{SetUniform1i@{SetUniform1i}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{SetUniform1i()}{SetUniform1i()}}
+{\footnotesize\ttfamily \label{namespace_graphics_aa497253f01c048b2d15b339dc0f9f049} 
+void Graphics\+::\+Set\+Uniform1i (\begin{DoxyParamCaption}\item[{int}]{location}{, }\item[{int}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_aa497253f01c048b2d15b339dc0f9f049_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a49bea1070bca7375a5e6132179214a3a}\index{Graphics@{Graphics}!SetUniform3f@{SetUniform3f}}
+\index{SetUniform3f@{SetUniform3f}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{SetUniform3f()}{SetUniform3f()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a49bea1070bca7375a5e6132179214a3a} 
+void Graphics\+::\+Set\+Uniform3f (\begin{DoxyParamCaption}\item[{int}]{location}{, }\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{float}]{z}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a49bea1070bca7375a5e6132179214a3a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a53ebeba7d0f7b777d50393490a557660}\index{Graphics@{Graphics}!SetUniformMat4@{SetUniformMat4}}
+\index{SetUniformMat4@{SetUniformMat4}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{SetUniformMat4()}{SetUniformMat4()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a53ebeba7d0f7b777d50393490a557660} 
+void Graphics\+::\+Set\+Uniform\+Mat4 (\begin{DoxyParamCaption}\item[{int}]{location}{, }\item[{const float \texorpdfstring{$\ast$}{*}}]{matrix\+Ptr}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a53ebeba7d0f7b777d50393490a557660_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a9334eb7750459b3f968a9bf13eb7f6b4}\index{Graphics@{Graphics}!SetVertexAttribPointer@{SetVertexAttribPointer}}
+\index{SetVertexAttribPointer@{SetVertexAttribPointer}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{SetVertexAttribPointer()}{SetVertexAttribPointer()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a9334eb7750459b3f968a9bf13eb7f6b4} 
+void Graphics\+::\+Set\+Vertex\+Attrib\+Pointer (\begin{DoxyParamCaption}\item[{unsigned int}]{location}{, }\item[{int}]{component\+Count}{, }\item[{\mbox{\hyperlink{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290}{Data\+Type}}}]{type}{, }\item[{bool}]{normalized}{, }\item[{size\+\_\+t}]{stride}{, }\item[{const void \texorpdfstring{$\ast$}{*}}]{offset}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a9334eb7750459b3f968a9bf13eb7f6b4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a6d20cab00d508c1926caab0e70ccbf77}\index{Graphics@{Graphics}!TexImage2D@{TexImage2D}}
+\index{TexImage2D@{TexImage2D}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{TexImage2D()}{TexImage2D()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a6d20cab00d508c1926caab0e70ccbf77} 
+void Graphics\+::\+Tex\+Image2D (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graphics_8hpp_aaec52e992383ff804b871ff27e476126}{Texture\+Target}}}]{target}{, }\item[{int}]{width}{, }\item[{int}]{height}{, }\item[{\mbox{\hyperlink{graphics_8hpp_a29891c193a3cdc6982963d2bda283739}{Texture\+Format}}}]{format}{, }\item[{const void \texorpdfstring{$\ast$}{*}}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a6d20cab00d508c1926caab0e70ccbf77_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a07852e62edecc3dc602915d6aec0e1ce}\index{Graphics@{Graphics}!UnbindBuffer@{UnbindBuffer}}
+\index{UnbindBuffer@{UnbindBuffer}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{UnbindBuffer()}{UnbindBuffer()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a07852e62edecc3dc602915d6aec0e1ce} 
+void Graphics\+::\+Unbind\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13}{Buffer\+Target}}}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a07852e62edecc3dc602915d6aec0e1ce_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a4fe2c80449bf103828d5ca29a02e8414}\index{Graphics@{Graphics}!UnbindProgram@{UnbindProgram}}
+\index{UnbindProgram@{UnbindProgram}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{UnbindProgram()}{UnbindProgram()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a4fe2c80449bf103828d5ca29a02e8414} 
+void Graphics\+::\+Unbind\+Program (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a4fe2c80449bf103828d5ca29a02e8414_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a55aadce60c9d25fb369920ad3e4b431b}\index{Graphics@{Graphics}!UnbindVertexArray@{UnbindVertexArray}}
+\index{UnbindVertexArray@{UnbindVertexArray}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{UnbindVertexArray()}{UnbindVertexArray()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a55aadce60c9d25fb369920ad3e4b431b} 
+void Graphics\+::\+Unbind\+Vertex\+Array (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a55aadce60c9d25fb369920ad3e4b431b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a4158ffcbcd5183969266c9b9f412d19d}\index{Graphics@{Graphics}!UseProgram@{UseProgram}}
+\index{UseProgram@{UseProgram}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{UseProgram()}{UseProgram()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a4158ffcbcd5183969266c9b9f412d19d} 
+void Graphics\+::\+Use\+Program (\begin{DoxyParamCaption}\item[{unsigned int}]{program}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a4158ffcbcd5183969266c9b9f412d19d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_graphics_a9bf304ec4ddf472a34dbd10d358805f5}\index{Graphics@{Graphics}!Viewport@{Viewport}}
+\index{Viewport@{Viewport}!Graphics@{Graphics}}
+\doxysubsubsection{\texorpdfstring{Viewport()}{Viewport()}}
+{\footnotesize\ttfamily \label{namespace_graphics_a9bf304ec4ddf472a34dbd10d358805f5} 
+void Graphics\+::\+Viewport (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{float}]{width}{, }\item[{float}]{height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_graphics_a9bf304ec4ddf472a34dbd10d358805f5_icgraph}
+\end{center}
+\end{figure}

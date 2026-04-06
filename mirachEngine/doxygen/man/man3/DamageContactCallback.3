@@ -1,0 +1,128 @@
+.TH "DamageContactCallback" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DamageContactCallback \- A physics collision callback that applies damage to entities hit by a thrown object\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <collision_callback\&.hpp>\fP
+.PP
+Inherits \fBPhysics::CollisionCallback\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDamageContactCallback\fP (\fBEntityManager\fP *em, \fBEntity\fP thrownEntity)"
+.br
+.RI "Constructs the callback with the entity manager and thrown entity\&. "
+.ti -1c
+.RI "void \fBOnContact\fP (\fBPhysics::RigidBody\fP *a, \fBPhysics::RigidBody\fP *b) override"
+.br
+.RI "Called by the physics system when a contact begins\&. Applies damage if the thrown object hits a valid robot entity with sufficient velocity\&. "
+.ti -1c
+.RI "void \fBOnContactExit\fP (\fBPhysics::RigidBody\fP *a, \fBPhysics::RigidBody\fP *b) override"
+.br
+.RI "Called by the physics system when a contact ends\&. Removes the robot-thrown contact pair from the active damage set\&. "
+.in -1c
+
+Public Member Functions inherited from \fBPhysics::CollisionCallback\fP
+.in +1c
+.ti -1c
+.RI "virtual \fB~CollisionCallback\fP ()=default"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEntity\fP \fBFindEntity\fP (\fBPhysics::RigidBody\fP *rb)"
+.br
+.RI "Finds the ECS entity corresponding to a given rigid body pointer\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBEntityManager\fP * \fBm_em\fP"
+.br
+.RI "Reference to the ECS entity manager\&. "
+.ti -1c
+.RI "\fBEntity\fP \fBm_thrown\fP"
+.br
+.RI "The entity that was thrown\&. "
+.ti -1c
+.RI "std::set< std::pair< \fBEntity\fP, \fBEntity\fP > > \fBactiveContacts\fP"
+.br
+.RI "Tracks currently colliding entity pairs to avoid repeated damage\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A physics collision callback that applies damage to entities hit by a thrown object\&. 
+
+This callback is registered when an object is thrown\&. It checks for collisions, and if the thrown object hits a robot with sufficient speed, it reduces the robot's health\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DamageContactCallback::DamageContactCallback (\fBEntityManager\fP * em, \fBEntity\fP thrownEntity)\fR [inline]\fP"
+
+.PP
+Constructs the callback with the entity manager and thrown entity\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIem\fP Pointer to the \fBEntityManager\fP used to access components\&. 
+.br
+\fIthrownEntity\fP The entity that was thrown and can deal damage\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBEntity\fP DamageContactCallback::FindEntity (\fBPhysics::RigidBody\fP * rb)\fR [inline]\fP, \fR [private]\fP"
+
+.PP
+Finds the ECS entity corresponding to a given rigid body pointer\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIrb\fP Pointer to the rigid body\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The matching entity or INVALID_ENTITY if not found\&. 
+.RE
+.PP
+
+.SS "void DamageContactCallback::OnContact (\fBPhysics::RigidBody\fP * a, \fBPhysics::RigidBody\fP * b)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called by the physics system when a contact begins\&. Applies damage if the thrown object hits a valid robot entity with sufficient velocity\&. 
+.PP
+Implements \fBPhysics::CollisionCallback\fP\&.
+.SS "void DamageContactCallback::OnContactExit (\fBPhysics::RigidBody\fP * a, \fBPhysics::RigidBody\fP * b)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called by the physics system when a contact ends\&. Removes the robot-thrown contact pair from the active damage set\&. 
+.PP
+Reimplemented from \fBPhysics::CollisionCallback\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::set<std::pair<\fBEntity\fP, \fBEntity\fP> > DamageContactCallback::activeContacts\fR [private]\fP"
+
+.PP
+Tracks currently colliding entity pairs to avoid repeated damage\&. 
+.SS "\fBEntityManager\fP* DamageContactCallback::m_em\fR [private]\fP"
+
+.PP
+Reference to the ECS entity manager\&. 
+.SS "\fBEntity\fP DamageContactCallback::m_thrown\fR [private]\fP"
+
+.PP
+The entity that was thrown\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

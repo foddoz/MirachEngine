@@ -1,0 +1,3 @@
+<map id="Collider" name="Collider">
+<area shape="rect" id="Node000001" title="Stores a pointer to the ReactPhysics3D collider." alt="" coords="5,5,60,75"/>
+</map>

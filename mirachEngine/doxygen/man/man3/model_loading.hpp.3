@@ -1,0 +1,134 @@
+.TH "C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/Graphics/model_loading.hpp" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/Graphics/model_loading.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <assimp/Importer\&.hpp>\fP
+.br
+\fR#include <assimp/scene\&.h>\fP
+.br
+\fR#include <assimp/postprocess\&.h>\fP
+.br
+\fR#include <string>\fP
+.br
+\fR#include '\&.\&./Math/math\&.hpp'\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "using \fBModelImporter\fP = Assimp::Importer"
+.br
+.ti -1c
+.RI "using \fBModelScene\fP = aiScene"
+.br
+.ti -1c
+.RI "using \fBModelMesh\fP = aiMesh"
+.br
+.ti -1c
+.RI "using \fBModelMaterial\fP = aiMaterial"
+.br
+.ti -1c
+.RI "using \fBModelFace\fP = aiFace"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "const \fBModelScene\fP * \fBLoadModel\fP (\fBModelImporter\fP &importer, const std::string &fileName)"
+.br
+.ti -1c
+.RI "unsigned int \fBGetMaterialTextureCount\fP (const \fBModelMaterial\fP *material)"
+.br
+.ti -1c
+.RI "std::string \fBGetMaterialName\fP (const \fBModelMaterial\fP *material)"
+.br
+.ti -1c
+.RI "bool \fBGetMaterialTexturePath\fP (const \fBModelMaterial\fP *material, std::string &outPath)"
+.br
+.ti -1c
+.RI "unsigned int \fBGetNumVertices\fP (const \fBModelMesh\fP *mesh)"
+.br
+.ti -1c
+.RI "unsigned int \fBGetNumFaces\fP (const \fBModelMesh\fP *mesh)"
+.br
+.ti -1c
+.RI "const \fBVector3f\fP \fBGetVertexPosition\fP (const \fBModelMesh\fP *mesh, unsigned int i)"
+.br
+.ti -1c
+.RI "const \fBVector3f\fP \fBGetVertexNormal\fP (const \fBModelMesh\fP *mesh, unsigned int i)"
+.br
+.ti -1c
+.RI "const \fBVector2f\fP \fBGetVertexTexCoord\fP (const \fBModelMesh\fP *mesh, unsigned int i)"
+.br
+.ti -1c
+.RI "bool \fBHasTextureCoords\fP (const \fBModelMesh\fP *mesh)"
+.br
+.ti -1c
+.RI "const \fBModelFace\fP & \fBGetFace\fP (const \fBModelMesh\fP *mesh, unsigned int i)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "constexpr unsigned int \fBModelLoadFlags\fP"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "using \fBModelFace\fP = aiFace"
+
+.SS "using \fBModelImporter\fP = Assimp::Importer"
+
+.SS "using \fBModelMaterial\fP = aiMaterial"
+
+.SS "using \fBModelMesh\fP = aiMesh"
+
+.SS "using \fBModelScene\fP = aiScene"
+
+.SH "Function Documentation"
+.PP 
+.SS "const \fBModelFace\fP & GetFace (const \fBModelMesh\fP * mesh, unsigned int i)\fR [inline]\fP"
+
+.SS "std::string GetMaterialName (const \fBModelMaterial\fP * material)\fR [inline]\fP"
+
+.SS "unsigned int GetMaterialTextureCount (const \fBModelMaterial\fP * material)\fR [inline]\fP"
+
+.SS "bool GetMaterialTexturePath (const \fBModelMaterial\fP * material, std::string & outPath)\fR [inline]\fP"
+
+.SS "unsigned int GetNumFaces (const \fBModelMesh\fP * mesh)\fR [inline]\fP"
+
+.SS "unsigned int GetNumVertices (const \fBModelMesh\fP * mesh)\fR [inline]\fP"
+
+.SS "const \fBVector3f\fP GetVertexNormal (const \fBModelMesh\fP * mesh, unsigned int i)\fR [inline]\fP"
+
+.SS "const \fBVector3f\fP GetVertexPosition (const \fBModelMesh\fP * mesh, unsigned int i)\fR [inline]\fP"
+
+.SS "const \fBVector2f\fP GetVertexTexCoord (const \fBModelMesh\fP * mesh, unsigned int i)\fR [inline]\fP"
+
+.SS "bool HasTextureCoords (const \fBModelMesh\fP * mesh)\fR [inline]\fP"
+
+.SS "const \fBModelScene\fP * LoadModel (\fBModelImporter\fP & importer, const std::string & fileName)\fR [inline]\fP"
+
+.SH "Variable Documentation"
+.PP 
+.SS "unsigned int ModelLoadFlags\fR [constexpr]\fP"
+\fBInitial value:\fP
+.nf
+=
+aiProcess_Triangulate |
+aiProcess_GenSmoothNormals |
+aiProcess_FlipUVs |
+aiProcess_JoinIdenticalVertices
+.PP
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

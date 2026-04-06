@@ -1,0 +1,221 @@
+.TH "PhysicsSystem" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PhysicsSystem \- Manages physics simulation, including rigid body updates and collider handling, in the ECS framework\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <physics_system\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPhysicsSystem\fP (\fBEntityManager\fP *manager)"
+.br
+.RI "Constructs the \fBPhysicsSystem\fP with a pointer to the \fBEntityManager\fP and initializes the physics world\&. "
+.ti -1c
+.RI "void \fBReset\fP (\fBEntityManager\fP *newManager)"
+.br
+.ti -1c
+.RI "void \fBDestroyEntity\fP (\fBEntity\fP e)"
+.br
+.RI "Destroys and cleans up physics-related components (rigid bodies and colliders) of a given entity\&. "
+.ti -1c
+.RI "void \fBUpdate\fP (float deltaTime)"
+.br
+.RI "Updates the physics world and synchronizes entity transforms with their rigid bodies\&. "
+.ti -1c
+.RI "\fBPhysics::World\fP * \fBGetWorld\fP () const"
+.br
+.RI "Gets the underlying physics world\&. "
+.ti -1c
+.RI "\fBEntityManager\fP * \fBGetEntityManagerPtr\fP () const"
+.br
+.RI "Gets the associated \fBEntityManager\fP pointer\&. "
+.ti -1c
+.RI "template<typename TerrainType> \fBPhysics::Collider\fP * \fBAddConcaveTerrainCollider\fP (\fBPhysics::RigidBody\fP *body, const TerrainType &terrain)"
+.br
+.RI "Adds a concave terrain collider to a rigid body using indexed triangle mesh data\&. "
+.ti -1c
+.RI "template<typename TerrainType> \fBPhysics::Collider\fP * \fBAddHeightFieldCollider\fP (\fBPhysics::RigidBody\fP *body, const TerrainType &terrain)"
+.br
+.RI "Adds a heightfield collider to a rigid body using terrain heightmap data\&. "
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static constexpr uint16_t \fBPLAYER_CATEGORY\fP = 0x0001"
+.br
+.RI "Bitmask category for player collision filtering\&. "
+.ti -1c
+.RI "static constexpr uint16_t \fBOBJECT_CATEGORY\fP = 0x0002"
+.br
+.RI "Bitmask category for interactable object collision filtering\&. "
+.ti -1c
+.RI "static constexpr uint16_t \fBTERRAIN_CATEGORY\fP = 0x0004"
+.br
+.RI "Bitmask category for terrain collision filtering\&. "
+.ti -1c
+.RI "static constexpr uint16_t \fBROBOT_CATEGORY\fP = 0x0010"
+.br
+.RI "Bitmask category for robot/AI collision filtering\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBEntityManager\fP * \fBentityManager\fP"
+.br
+.RI "Pointer to the ECS \fBEntityManager\fP\&. "
+.ti -1c
+.RI "std::unique_ptr< \fBPhysics::World\fP > \fBmWorld\fP"
+.br
+.RI "Unique pointer to the physics world\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Manages physics simulation, including rigid body updates and collider handling, in the ECS framework\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PhysicsSystem::PhysicsSystem (\fBEntityManager\fP * manager)\fR [inline]\fP"
+
+.PP
+Constructs the \fBPhysicsSystem\fP with a pointer to the \fBEntityManager\fP and initializes the physics world\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImanager\fP Pointer to the ECS \fBEntityManager\fP used to access entity components\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename TerrainType> \fBPhysics::Collider\fP * PhysicsSystem::AddConcaveTerrainCollider (\fBPhysics::RigidBody\fP * body, const TerrainType & terrain)\fR [inline]\fP"
+
+.PP
+Adds a concave terrain collider to a rigid body using indexed triangle mesh data\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fITerrainType\fP The terrain class type, must implement GetVertexData() and GetIndexData()\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIbody\fP The rigid body to attach the collider to\&. 
+.br
+\fIterrain\fP The terrain object containing vertex and index data\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the created \fBPhysics::Collider\fP\&. 
+.RE
+.PP
+
+.SS "template<typename TerrainType> \fBPhysics::Collider\fP * PhysicsSystem::AddHeightFieldCollider (\fBPhysics::RigidBody\fP * body, const TerrainType & terrain)\fR [inline]\fP"
+
+.PP
+Adds a heightfield collider to a rigid body using terrain heightmap data\&. 
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fITerrainType\fP The terrain class type, must implement GetHeightMap(), GetWidth(), GetDepth(), GetWorldWidth(), GetWorldDepth()\&. 
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIbody\fP The rigid body to attach the collider to\&. 
+.br
+\fIterrain\fP The terrain object containing heightmap and dimension data\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the created \fBPhysics::Collider\fP\&. 
+.RE
+.PP
+
+.SS "void PhysicsSystem::DestroyEntity (\fBEntity\fP e)\fR [inline]\fP"
+
+.PP
+Destroys and cleans up physics-related components (rigid bodies and colliders) of a given entity\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP The entity whose physics components should be destroyed\&. 
+.RE
+.PP
+< Also invalidates all associated colliders
+
+.PP
+< Prevent use-after-free
+.SS "\fBEntityManager\fP * PhysicsSystem::GetEntityManagerPtr () const\fR [inline]\fP"
+
+.PP
+Gets the associated \fBEntityManager\fP pointer\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the ECS \fBEntityManager\fP\&. 
+.RE
+.PP
+
+.SS "\fBPhysics::World\fP * PhysicsSystem::GetWorld () const\fR [inline]\fP"
+
+.PP
+Gets the underlying physics world\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the \fBPhysics::World\fP object\&. 
+.RE
+.PP
+
+.SS "void PhysicsSystem::Reset (\fBEntityManager\fP * newManager)\fR [inline]\fP"
+
+.SS "void PhysicsSystem::Update (float deltaTime)\fR [inline]\fP"
+
+.PP
+Updates the physics world and synchronizes entity transforms with their rigid bodies\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdeltaTime\fP \fBTime\fP step in seconds since the last update\&. 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBEntityManager\fP* PhysicsSystem::entityManager\fR [private]\fP"
+
+.PP
+Pointer to the ECS \fBEntityManager\fP\&. 
+.SS "std::unique_ptr<\fBPhysics::World\fP> PhysicsSystem::mWorld\fR [private]\fP"
+
+.PP
+Unique pointer to the physics world\&. 
+.SS "uint16_t PhysicsSystem::OBJECT_CATEGORY = 0x0002\fR [static]\fP, \fR [constexpr]\fP"
+
+.PP
+Bitmask category for interactable object collision filtering\&. 
+.SS "uint16_t PhysicsSystem::PLAYER_CATEGORY = 0x0001\fR [static]\fP, \fR [constexpr]\fP"
+
+.PP
+Bitmask category for player collision filtering\&. 
+.SS "uint16_t PhysicsSystem::ROBOT_CATEGORY = 0x0010\fR [static]\fP, \fR [constexpr]\fP"
+
+.PP
+Bitmask category for robot/AI collision filtering\&. 
+.SS "uint16_t PhysicsSystem::TERRAIN_CATEGORY = 0x0004\fR [static]\fP, \fR [constexpr]\fP"
+
+.PP
+Bitmask category for terrain collision filtering\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

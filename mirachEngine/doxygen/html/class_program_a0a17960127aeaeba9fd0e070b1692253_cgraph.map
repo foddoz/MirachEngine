@@ -1,0 +1,5 @@
+<map id="Program::UpdateDeltaTime" name="Program::UpdateDeltaTime">
+<area shape="rect" id="Node000001" title="Updates internal frame timing variables to compute delta time." alt="" coords="5,5,186,32"/>
+<area shape="rect" id="Node000002" href="$namespace_time.html#a89204d3bdd9a68fbc684ebade4aa32bc" title=" " alt="" coords="234,5,393,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,16,218,16,218,21,186,21"/>
+</map>

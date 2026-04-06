@@ -1,0 +1,264 @@
+\doxysection{Physics\+::World Class Reference}
+\hypertarget{class_physics_1_1_world}{}\label{class_physics_1_1_world}\index{Physics::World@{Physics::World}}
+
+
+Abstract interface for a physics simulation world.  
+
+
+
+
+{\ttfamily \#include $<$physics.\+hpp$>$}
+
+
+
+Inheritance diagram for Physics\+::World\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_physics_1_1_world__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Physics\+::World\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{class_physics_1_1_world__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_physics_1_1_world_a671ecc29b5ecd84d9ea72a30765a36e4}{\texorpdfstring{$\sim$}{\string~}\+World}} ()
+\item 
+virtual \mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_physics_1_1_world_aff45466a119e0d53150241cae9daaf53}{Create\+Rigid\+Body}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&position, \mbox{\hyperlink{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2}{Body\+Type}} type=\mbox{\hyperlink{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2a0fcc90da4811c877ba9f9c12f7d60bc9}{Body\+Type\+::\+DYNAMIC}})=0
+\begin{DoxyCompactList}\small\item\em Creates a new rigid body at a given position and type. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_physics_1_1_world_a86e2c982afe0377bd54ca86c6edfe1f4}{Update}} (float dt)=0
+\begin{DoxyCompactList}\small\item\em Advances the physics simulation by delta time. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_physics_1_1_world_a269fb925662338876c04276b0fbc9566}{Raycast}} (const \mbox{\hyperlink{class_physics_1_1_ray}{Ray}} \&ray, \mbox{\hyperlink{class_physics_1_1_raycast_callback}{Raycast\+Callback}} \texorpdfstring{$\ast$}{*}cb)=0
+\begin{DoxyCompactList}\small\item\em Performs a raycast and triggers callbacks on hit. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_physics_1_1_collider}{Collider}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_physics_1_1_world_ae41fcb9fd885f73835bf9b8e7f6df250}{Add\+Box\+Collider}} (\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}body, const \mbox{\hyperlink{struct_a_a_b_b}{AABB}} \&aabb)=0
+\item 
+virtual \mbox{\hyperlink{class_physics_1_1_collider}{Collider}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_physics_1_1_world_a9ff0fed5e907b3e3426c70750f231bd0}{Add\+Box\+Collider}} (\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}body, const \mbox{\hyperlink{struct_a_a_b_b}{AABB}} \&aabb, const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&scale)=0
+\item 
+virtual \mbox{\hyperlink{class_physics_1_1_collider}{Collider}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_physics_1_1_world_a0e4e928b88f825fbb7d219f966d4a8f3}{Add\+Sphere\+Collider}} (\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}body, float radius)=0
+\item 
+virtual \mbox{\hyperlink{class_physics_1_1_collider}{Collider}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_physics_1_1_world_ae21a4b3d74060c6368211e6edb3f1267}{Add\+Sphere\+Collider}} (\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}body, const \mbox{\hyperlink{struct_a_a_b_b}{AABB}} \&aabb)=0
+\item 
+virtual \mbox{\hyperlink{class_physics_1_1_collider}{Collider}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_physics_1_1_world_a415b810e372596503fe57e2c81aff6c6}{Add\+Capsule\+Collider}} (\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}body, float radius, float height)=0
+\item 
+virtual \mbox{\hyperlink{class_physics_1_1_collider}{Collider}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_physics_1_1_world_a948f89c7a0578ba1941278c1ec53702a}{Add\+Capsule\+Collider}} (\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}body, const \mbox{\hyperlink{struct_a_a_b_b}{AABB}} \&aabb)=0
+\item 
+virtual \mbox{\hyperlink{class_physics_1_1_collider}{Collider}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_physics_1_1_world_a287b13c3561a538c0bc526841e2bf309}{Add\+Capsule\+Collider}} (\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}body, const \mbox{\hyperlink{struct_a_a_b_b}{AABB}} \&aabb, const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&scale, const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&offset)=0
+\item 
+virtual \mbox{\hyperlink{class_physics_1_1_collider}{Collider}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_physics_1_1_world_a084d6823d2c9caf8d6fa99394eb5446e}{Add\+Concave\+Terrain\+Collider}} (\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}body, void \texorpdfstring{$\ast$}{*}terrain\+Key, const float \texorpdfstring{$\ast$}{*}vertices, size\+\_\+t vertex\+Count, size\+\_\+t vertex\+Stride, const unsigned int \texorpdfstring{$\ast$}{*}indices, size\+\_\+t index\+Count)=0
+\item 
+virtual \mbox{\hyperlink{class_physics_1_1_collider}{Collider}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_physics_1_1_world_ac9c26e088092cd78acf06103df054430}{Add\+Height\+Field\+Collider}} (\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}body, void \texorpdfstring{$\ast$}{*}height\+Key, const float \texorpdfstring{$\ast$}{*}height\+Values, int nb\+Rows, int nb\+Cols, const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&scale=\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}(1.f))=0
+\item 
+virtual void \mbox{\hyperlink{class_physics_1_1_world_adabe37ea49694f6e307d40b90c5e7211}{Register\+Collision\+Callback}} (\mbox{\hyperlink{class_physics_1_1_collision_callback}{Collision\+Callback}} \texorpdfstring{$\ast$}{*}cb)=0
+\begin{DoxyCompactList}\small\item\em Registers a global collision callback for contact events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_physics_1_1_world_a771c512ce4bb92c8e0f7da5b47f03f8e}{Unregister\+Collision\+Callback}} (\mbox{\hyperlink{class_physics_1_1_collision_callback}{Collision\+Callback}} \texorpdfstring{$\ast$}{*}cb)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract interface for a physics simulation world. 
+
+\label{doc-constructors}
+\Hypertarget{class_physics_1_1_world_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_physics_1_1_world_a671ecc29b5ecd84d9ea72a30765a36e4}\index{Physics::World@{Physics::World}!````~World@{\texorpdfstring{$\sim$}{\string~}World}}
+\index{````~World@{\texorpdfstring{$\sim$}{\string~}World}!Physics::World@{Physics::World}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}World()}{\string~World()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_world_a671ecc29b5ecd84d9ea72a30765a36e4} 
+virtual Physics\+::\+World\+::\texorpdfstring{$\sim$}{\string~}\+World (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_physics_1_1_world_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_physics_1_1_world_ae41fcb9fd885f73835bf9b8e7f6df250}\index{Physics::World@{Physics::World}!AddBoxCollider@{AddBoxCollider}}
+\index{AddBoxCollider@{AddBoxCollider}!Physics::World@{Physics::World}}
+\doxysubsubsection{\texorpdfstring{AddBoxCollider()}{AddBoxCollider()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_physics_1_1_world_ae41fcb9fd885f73835bf9b8e7f6df250} 
+virtual \mbox{\hyperlink{class_physics_1_1_collider}{Collider}} \texorpdfstring{$\ast$}{*} Physics\+::\+World\+::\+Add\+Box\+Collider (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{body}{, }\item[{const \mbox{\hyperlink{struct_a_a_b_b}{AABB}} \&}]{aabb}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a7e6088bf035db12d6b8a3ccba28e44eb}{Physics\+::\+Backend\+::\+World\+Backend}}.
+
+\Hypertarget{class_physics_1_1_world_a9ff0fed5e907b3e3426c70750f231bd0}\index{Physics::World@{Physics::World}!AddBoxCollider@{AddBoxCollider}}
+\index{AddBoxCollider@{AddBoxCollider}!Physics::World@{Physics::World}}
+\doxysubsubsection{\texorpdfstring{AddBoxCollider()}{AddBoxCollider()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_physics_1_1_world_a9ff0fed5e907b3e3426c70750f231bd0} 
+virtual \mbox{\hyperlink{class_physics_1_1_collider}{Collider}} \texorpdfstring{$\ast$}{*} Physics\+::\+World\+::\+Add\+Box\+Collider (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{body}{, }\item[{const \mbox{\hyperlink{struct_a_a_b_b}{AABB}} \&}]{aabb}{, }\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{scale}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_ab828f2b6c343b0ca3e259bed03878410}{Physics\+::\+Backend\+::\+World\+Backend}}.
+
+\Hypertarget{class_physics_1_1_world_a948f89c7a0578ba1941278c1ec53702a}\index{Physics::World@{Physics::World}!AddCapsuleCollider@{AddCapsuleCollider}}
+\index{AddCapsuleCollider@{AddCapsuleCollider}!Physics::World@{Physics::World}}
+\doxysubsubsection{\texorpdfstring{AddCapsuleCollider()}{AddCapsuleCollider()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_physics_1_1_world_a948f89c7a0578ba1941278c1ec53702a} 
+virtual \mbox{\hyperlink{class_physics_1_1_collider}{Collider}} \texorpdfstring{$\ast$}{*} Physics\+::\+World\+::\+Add\+Capsule\+Collider (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{body}{, }\item[{const \mbox{\hyperlink{struct_a_a_b_b}{AABB}} \&}]{aabb}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a205a697c89390f728dcad124a8024249}{Physics\+::\+Backend\+::\+World\+Backend}}.
+
+\Hypertarget{class_physics_1_1_world_a287b13c3561a538c0bc526841e2bf309}\index{Physics::World@{Physics::World}!AddCapsuleCollider@{AddCapsuleCollider}}
+\index{AddCapsuleCollider@{AddCapsuleCollider}!Physics::World@{Physics::World}}
+\doxysubsubsection{\texorpdfstring{AddCapsuleCollider()}{AddCapsuleCollider()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_physics_1_1_world_a287b13c3561a538c0bc526841e2bf309} 
+virtual \mbox{\hyperlink{class_physics_1_1_collider}{Collider}} \texorpdfstring{$\ast$}{*} Physics\+::\+World\+::\+Add\+Capsule\+Collider (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{body}{, }\item[{const \mbox{\hyperlink{struct_a_a_b_b}{AABB}} \&}]{aabb}{, }\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{scale}{, }\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{offset}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a5c799466bb82ccd5964219a07e6bd6ef}{Physics\+::\+Backend\+::\+World\+Backend}}.
+
+\Hypertarget{class_physics_1_1_world_a415b810e372596503fe57e2c81aff6c6}\index{Physics::World@{Physics::World}!AddCapsuleCollider@{AddCapsuleCollider}}
+\index{AddCapsuleCollider@{AddCapsuleCollider}!Physics::World@{Physics::World}}
+\doxysubsubsection{\texorpdfstring{AddCapsuleCollider()}{AddCapsuleCollider()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_physics_1_1_world_a415b810e372596503fe57e2c81aff6c6} 
+virtual \mbox{\hyperlink{class_physics_1_1_collider}{Collider}} \texorpdfstring{$\ast$}{*} Physics\+::\+World\+::\+Add\+Capsule\+Collider (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{body}{, }\item[{float}]{radius}{, }\item[{float}]{height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a75ff2852b8cc03f94dc61cd48f82ca56}{Physics\+::\+Backend\+::\+World\+Backend}}.
+
+\Hypertarget{class_physics_1_1_world_a084d6823d2c9caf8d6fa99394eb5446e}\index{Physics::World@{Physics::World}!AddConcaveTerrainCollider@{AddConcaveTerrainCollider}}
+\index{AddConcaveTerrainCollider@{AddConcaveTerrainCollider}!Physics::World@{Physics::World}}
+\doxysubsubsection{\texorpdfstring{AddConcaveTerrainCollider()}{AddConcaveTerrainCollider()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_world_a084d6823d2c9caf8d6fa99394eb5446e} 
+virtual \mbox{\hyperlink{class_physics_1_1_collider}{Collider}} \texorpdfstring{$\ast$}{*} Physics\+::\+World\+::\+Add\+Concave\+Terrain\+Collider (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{body}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{terrain\+Key}{, }\item[{const float \texorpdfstring{$\ast$}{*}}]{vertices}{, }\item[{size\+\_\+t}]{vertex\+Count}{, }\item[{size\+\_\+t}]{vertex\+Stride}{, }\item[{const unsigned int \texorpdfstring{$\ast$}{*}}]{indices}{, }\item[{size\+\_\+t}]{index\+Count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_aeddf434b553fc1918f534d17cf888eeb}{Physics\+::\+Backend\+::\+World\+Backend}}.
+
+\Hypertarget{class_physics_1_1_world_ac9c26e088092cd78acf06103df054430}\index{Physics::World@{Physics::World}!AddHeightFieldCollider@{AddHeightFieldCollider}}
+\index{AddHeightFieldCollider@{AddHeightFieldCollider}!Physics::World@{Physics::World}}
+\doxysubsubsection{\texorpdfstring{AddHeightFieldCollider()}{AddHeightFieldCollider()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_world_ac9c26e088092cd78acf06103df054430} 
+virtual \mbox{\hyperlink{class_physics_1_1_collider}{Collider}} \texorpdfstring{$\ast$}{*} Physics\+::\+World\+::\+Add\+Height\+Field\+Collider (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{body}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{height\+Key}{, }\item[{const float \texorpdfstring{$\ast$}{*}}]{height\+Values}{, }\item[{int}]{nb\+Rows}{, }\item[{int}]{nb\+Cols}{, }\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{scale}{ = {\ttfamily \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}(1.f)}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a1abe999373da7dd94104ceb18ba1c8bd}{Physics\+::\+Backend\+::\+World\+Backend}}.
+
+\Hypertarget{class_physics_1_1_world_ae21a4b3d74060c6368211e6edb3f1267}\index{Physics::World@{Physics::World}!AddSphereCollider@{AddSphereCollider}}
+\index{AddSphereCollider@{AddSphereCollider}!Physics::World@{Physics::World}}
+\doxysubsubsection{\texorpdfstring{AddSphereCollider()}{AddSphereCollider()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_physics_1_1_world_ae21a4b3d74060c6368211e6edb3f1267} 
+virtual \mbox{\hyperlink{class_physics_1_1_collider}{Collider}} \texorpdfstring{$\ast$}{*} Physics\+::\+World\+::\+Add\+Sphere\+Collider (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{body}{, }\item[{const \mbox{\hyperlink{struct_a_a_b_b}{AABB}} \&}]{aabb}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_aa3c166b6efcf6dfa08bbc9bd50517031}{Physics\+::\+Backend\+::\+World\+Backend}}.
+
+\Hypertarget{class_physics_1_1_world_a0e4e928b88f825fbb7d219f966d4a8f3}\index{Physics::World@{Physics::World}!AddSphereCollider@{AddSphereCollider}}
+\index{AddSphereCollider@{AddSphereCollider}!Physics::World@{Physics::World}}
+\doxysubsubsection{\texorpdfstring{AddSphereCollider()}{AddSphereCollider()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_physics_1_1_world_a0e4e928b88f825fbb7d219f966d4a8f3} 
+virtual \mbox{\hyperlink{class_physics_1_1_collider}{Collider}} \texorpdfstring{$\ast$}{*} Physics\+::\+World\+::\+Add\+Sphere\+Collider (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{body}{, }\item[{float}]{radius}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a14f355487fd23587d138096a3168ee6a}{Physics\+::\+Backend\+::\+World\+Backend}}.
+
+\Hypertarget{class_physics_1_1_world_aff45466a119e0d53150241cae9daaf53}\index{Physics::World@{Physics::World}!CreateRigidBody@{CreateRigidBody}}
+\index{CreateRigidBody@{CreateRigidBody}!Physics::World@{Physics::World}}
+\doxysubsubsection{\texorpdfstring{CreateRigidBody()}{CreateRigidBody()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_world_aff45466a119e0d53150241cae9daaf53} 
+virtual \mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*} Physics\+::\+World\+::\+Create\+Rigid\+Body (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{position}{, }\item[{\mbox{\hyperlink{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2}{Body\+Type}}}]{type}{ = {\ttfamily \mbox{\hyperlink{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2a0fcc90da4811c877ba9f9c12f7d60bc9}{Body\+Type\+::\+DYNAMIC}}}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Creates a new rigid body at a given position and type. 
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a3d22fea393f05c7643064e599d58c3d9}{Physics\+::\+Backend\+::\+World\+Backend}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_1_1_world_aff45466a119e0d53150241cae9daaf53_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_1_1_world_a269fb925662338876c04276b0fbc9566}\index{Physics::World@{Physics::World}!Raycast@{Raycast}}
+\index{Raycast@{Raycast}!Physics::World@{Physics::World}}
+\doxysubsubsection{\texorpdfstring{Raycast()}{Raycast()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_world_a269fb925662338876c04276b0fbc9566} 
+virtual void Physics\+::\+World\+::\+Raycast (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_physics_1_1_ray}{Ray}} \&}]{ray}{, }\item[{\mbox{\hyperlink{class_physics_1_1_raycast_callback}{Raycast\+Callback}} \texorpdfstring{$\ast$}{*}}]{cb}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Performs a raycast and triggers callbacks on hit. 
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a13cd45189124e8a69db2013a458c8ebf}{Physics\+::\+Backend\+::\+World\+Backend}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_1_1_world_a269fb925662338876c04276b0fbc9566_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_1_1_world_adabe37ea49694f6e307d40b90c5e7211}\index{Physics::World@{Physics::World}!RegisterCollisionCallback@{RegisterCollisionCallback}}
+\index{RegisterCollisionCallback@{RegisterCollisionCallback}!Physics::World@{Physics::World}}
+\doxysubsubsection{\texorpdfstring{RegisterCollisionCallback()}{RegisterCollisionCallback()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_world_adabe37ea49694f6e307d40b90c5e7211} 
+virtual void Physics\+::\+World\+::\+Register\+Collision\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_1_1_collision_callback}{Collision\+Callback}} \texorpdfstring{$\ast$}{*}}]{cb}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Registers a global collision callback for contact events. 
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a7807223bacd5dfa46a7afbffb9f8840e}{Physics\+::\+Backend\+::\+World\+Backend}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_1_1_world_adabe37ea49694f6e307d40b90c5e7211_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_physics_1_1_world_a771c512ce4bb92c8e0f7da5b47f03f8e}\index{Physics::World@{Physics::World}!UnregisterCollisionCallback@{UnregisterCollisionCallback}}
+\index{UnregisterCollisionCallback@{UnregisterCollisionCallback}!Physics::World@{Physics::World}}
+\doxysubsubsection{\texorpdfstring{UnregisterCollisionCallback()}{UnregisterCollisionCallback()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_world_a771c512ce4bb92c8e0f7da5b47f03f8e} 
+virtual void Physics\+::\+World\+::\+Unregister\+Collision\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_1_1_collision_callback}{Collision\+Callback}} \texorpdfstring{$\ast$}{*}}]{cb}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\Hypertarget{class_physics_1_1_world_a86e2c982afe0377bd54ca86c6edfe1f4}\index{Physics::World@{Physics::World}!Update@{Update}}
+\index{Update@{Update}!Physics::World@{Physics::World}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_world_a86e2c982afe0377bd54ca86c6edfe1f4} 
+virtual void Physics\+::\+World\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{dt}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Advances the physics simulation by delta time. 
+
+
+
+Implemented in \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a8651c3d69f2dffc474508e42741e2a21}{Physics\+::\+Backend\+::\+World\+Backend}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Physics/\mbox{\hyperlink{physics_8hpp}{physics.\+hpp}}\end{DoxyCompactItemize}

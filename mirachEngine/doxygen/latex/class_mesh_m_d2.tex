@@ -1,0 +1,494 @@
+\doxysection{Mesh\+MD2 Class Reference}
+\hypertarget{class_mesh_m_d2}{}\label{class_mesh_m_d2}\index{MeshMD2@{MeshMD2}}
+
+
+A 3D animated mesh class for rendering MD2 models with frame interpolation.  
+
+
+
+
+{\ttfamily \#include $<$MD2.\+hpp$>$}
+
+
+
+Inheritance diagram for Mesh\+MD2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_mesh_m_d2__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Mesh\+MD2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_mesh_m_d2__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mesh_m_d2_a591929b56f8a8f15f013b6d603912c30}{Mesh\+MD2}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mesh_m_d2_ad54c9b1e67af8911f1667f4858be24d1}{Mesh\+MD2}} (const \mbox{\hyperlink{class_mesh_m_d2}{Mesh\+MD2}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_mesh_m_d2_ab59a71217fe3fb9bc90cd85109c5d21a}{Load\+From\+File}} (const std\+::string \&model\+File, const std\+::string \&texture\+File)
+\begin{DoxyCompactList}\small\item\em Loads an MD2 model and its texture from file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_m_d2_a1f00d6728c70d5f12aa2cfc49411abc2}{Upload\+To\+GPU}} () override
+\begin{DoxyCompactList}\small\item\em Uploads the current mesh data to the GPU. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_m_d2_a4d598fab982e27abbb0bd59354a6c525}{Set\+Animation}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Sets the active animation by name. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{struct_animation_range}{Animation\+Range}} \& \mbox{\hyperlink{class_mesh_m_d2_a6a17ff4a9a0fe55748f18e263ac41e6b}{Get\+Animation\+Range}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Gets the frame range of a named animation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_m_d2_a2787cf4a322c0668d6e6ef2efdbade01}{Interpolate}} (int frameA, int frameB, float blend\+Alpha, std\+::vector$<$ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} $>$ \&out\+Vertices) const
+\begin{DoxyCompactList}\small\item\em Interpolates between two animation frames to produce smooth vertex output. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mesh_m_d2_acdeb511145ace82b97f30c1f295f0a32}{Get\+Vertex\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Gets the total number of vertices in the mesh. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_mesh_renderer}{Mesh\+Renderer}} \mbox{\hyperlink{class_mesh_m_d2_ad3324ff6fbee53ae91c7044b6cb1f143}{To\+Renderer}} () override
+\begin{DoxyCompactList}\small\item\em Converts the mesh into a \doxylink{struct_mesh_renderer}{Mesh\+Renderer} struct for ECS rendering. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_mesh3_d}{Mesh3D}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mesh3_d_a8cdefca0bf7171afd91f2a1a88e05a7e}{Mesh3D}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor initializes Open\+GL buffer handles and transforms. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mesh3_d_a18dc545efcaa749ea7649b9bcaa91ce1}{Mesh3D}} (const \mbox{\hyperlink{class_mesh3_d}{Mesh3D}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor for \doxylink{class_mesh3_d}{Mesh3D}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh3_d_a478bda9c8ff4adb50c56c26ef50af8d2}{Set\+Pipeline}} (unsigned int pipeline)
+\begin{DoxyCompactList}\small\item\em Assigns a graphics pipeline (shader program) to this mesh. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_mesh3_d_a08ad190035c6d8e8362f009a09e6bc17}{Delete}} ()
+\begin{DoxyCompactList}\small\item\em Releases GPU buffers and associated textures. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_ad2952df09ac54e7d5fafbcf87ae7c487}{get\+Pipeline}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the currently assigned graphics pipeline. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_mesh_m_d2_a296a12dbea02874b8a4ea7e450f63e3f}{Populate\+Buffers}} () override
+\begin{DoxyCompactList}\small\item\em Fills Open\+GL buffers with mesh data (called from Upload\+To\+GPU). \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_mesh_m_d2_acfbeabaf0385778b6d820ea92d61e478}{Extract\+Prefix}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Extracts the animation name prefix from a frame name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_m_d2_frame}{MD2\+Frame}} $>$ \mbox{\hyperlink{class_mesh_m_d2_ac09783c8f5849cd14f7758ab96a9a0d5}{m\+\_\+frames}}
+\begin{DoxyCompactList}\small\item\em All animation frames. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_m_d2_tex_coord}{MD2\+Tex\+Coord}} $>$ \mbox{\hyperlink{class_mesh_m_d2_ada76441297f96edabe64bfbab928abbe}{m\+\_\+tex\+Coords}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_texture}{Texture} coordinate list. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_m_d2_triangle}{MD2\+Triangle}} $>$ \mbox{\hyperlink{class_mesh_m_d2_a1bc910ec56272b8410c11fe2dbd235b2}{m\+\_\+triangles}}
+\begin{DoxyCompactList}\small\item\em Triangle definitions (indexed geometry). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mesh_m_d2_a1d852ca7f944aa8f5796dfc1af0c386c}{m\+\_\+num\+Vertices}}
+\begin{DoxyCompactList}\small\item\em Total number of vertices. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mesh_m_d2_a693866eb7f82c63ca8912e42cc140f07}{m\+\_\+skin\+Width}}
+\item 
+int \mbox{\hyperlink{class_mesh_m_d2_afdd3e28c66423dbccb1e91c5e3c8806e}{m\+\_\+skin\+Height}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_texture}{Texture} dimensions in pixels. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} $>$ \mbox{\hyperlink{class_mesh_m_d2_ae848515957e4babaaafdce227699d03a}{m\+\_\+interpolated\+Vertices}}
+\begin{DoxyCompactList}\small\item\em Working buffer for interpolated vertex positions. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{struct_animation_range}{Animation\+Range}} $>$ \mbox{\hyperlink{class_mesh_m_d2_a9ef136a366bac42d5267d4559169dfa1}{animations}}
+\begin{DoxyCompactList}\small\item\em Named animation ranges parsed from frame names. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_texture}{Texture}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_mesh_m_d2_a23b109baa01fbde67dd94eed6fd120e0}{texture}}
+\begin{DoxyCompactList}\small\item\em Associated texture (diffuse map). \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh_m_d2_adf50141b1ea6189bc6bc2cb9a82de166}{m\+UV}} = 0
+\begin{DoxyCompactList}\small\item\em Open\+GL UV buffer object (VBO). \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{math_8hpp_acfd9107b583da9f618732213cb319ced}{Vector2f}} $>$ \mbox{\hyperlink{class_mesh_m_d2_a2b73c774d857f32ac83d2ad29cc96a2b}{m\+\_\+uvs}}
+\begin{DoxyCompactList}\small\item\em UV coordinates per vertex. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_mesh3_d}{Mesh3D}}}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a9bb74668772fa08c0099f3aa0d242215}{m\+\_\+\+VAO}}
+\begin{DoxyCompactList}\small\item\em Open\+GL Vertex Array Object handle. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a064dc03404641d9b41dcc58f3244b5ea}{m\+\_\+\+Index\+Count}}
+\begin{DoxyCompactList}\small\item\em Number of indices used for drawing (gl\+Draw\+Elements or gl\+Draw\+Arrays). \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a0a78f966ef1aaf868c32523200ffd7b5}{m\+\_\+\+VBO}}
+\begin{DoxyCompactList}\small\item\em Vertex Buffer Object handle. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a79760be3f47e0cd2738e5932e2ce6a70}{m\+\_\+\+IBO}}
+\begin{DoxyCompactList}\small\item\em Index Buffer Object handle. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_texture}{Texture}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_mesh3_d_a878c07f3eab3dcc47195e3bc0b74fa30}{m\+\_\+\+Textures}}
+\begin{DoxyCompactList}\small\item\em Collection of textures associated with this mesh. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a6232eb241c460e30d607b59862d0e8f1}{m\+\_\+\+Pipeline}}
+\begin{DoxyCompactList}\small\item\em Open\+GL shader program ID assigned to this mesh. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_a_a_b_b}{AABB}} \mbox{\hyperlink{class_mesh3_d_aeaaf348709784591a9608a9e779e3cd3}{m\+\_\+\+AABB}}
+\begin{DoxyCompactList}\small\item\em Axis-\/aligned bounding box in local (object) space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A 3D animated mesh class for rendering MD2 models with frame interpolation. 
+
+Inherits from \doxylink{class_mesh3_d}{Mesh3D}. Supports loading MD2 models, playing animations by name, and interpolating between frames for smooth animation playback. 
+
+\label{doc-constructors}
+\Hypertarget{class_mesh_m_d2_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_mesh_m_d2_a591929b56f8a8f15f013b6d603912c30}\index{MeshMD2@{MeshMD2}!MeshMD2@{MeshMD2}}
+\index{MeshMD2@{MeshMD2}!MeshMD2@{MeshMD2}}
+\doxysubsubsection{\texorpdfstring{MeshMD2()}{MeshMD2()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_mesh_m_d2_a591929b56f8a8f15f013b6d603912c30} 
+Mesh\+MD2\+::\+Mesh\+MD2 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_mesh_m_d2_a591929b56f8a8f15f013b6d603912c30_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_m_d2_ad54c9b1e67af8911f1667f4858be24d1}\index{MeshMD2@{MeshMD2}!MeshMD2@{MeshMD2}}
+\index{MeshMD2@{MeshMD2}!MeshMD2@{MeshMD2}}
+\doxysubsubsection{\texorpdfstring{MeshMD2()}{MeshMD2()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_mesh_m_d2_ad54c9b1e67af8911f1667f4858be24d1} 
+Mesh\+MD2\+::\+Mesh\+MD2 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_mesh_m_d2}{Mesh\+MD2}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The mesh to copy. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_mesh_m_d2_ad54c9b1e67af8911f1667f4858be24d1_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{class_mesh_m_d2_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mesh_m_d2_acfbeabaf0385778b6d820ea92d61e478}\index{MeshMD2@{MeshMD2}!ExtractPrefix@{ExtractPrefix}}
+\index{ExtractPrefix@{ExtractPrefix}!MeshMD2@{MeshMD2}}
+\doxysubsubsection{\texorpdfstring{ExtractPrefix()}{ExtractPrefix()}}
+{\footnotesize\ttfamily \label{class_mesh_m_d2_acfbeabaf0385778b6d820ea92d61e478} 
+std\+::string Mesh\+MD2\+::\+Extract\+Prefix (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Extracts the animation name prefix from a frame name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The full frame name (e.\+g., "{}run01"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The extracted prefix (e.\+g., "{}run"{}). 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_m_d2_acfbeabaf0385778b6d820ea92d61e478_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_m_d2_a6a17ff4a9a0fe55748f18e263ac41e6b}\index{MeshMD2@{MeshMD2}!GetAnimationRange@{GetAnimationRange}}
+\index{GetAnimationRange@{GetAnimationRange}!MeshMD2@{MeshMD2}}
+\doxysubsubsection{\texorpdfstring{GetAnimationRange()}{GetAnimationRange()}}
+{\footnotesize\ttfamily \label{class_mesh_m_d2_a6a17ff4a9a0fe55748f18e263ac41e6b} 
+const \mbox{\hyperlink{struct_animation_range}{Animation\+Range}} \& Mesh\+MD2\+::\+Get\+Animation\+Range (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the frame range of a named animation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Animation name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{struct_animation_range}{Animation\+Range} corresponding to the name. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_m_d2_a6a17ff4a9a0fe55748f18e263ac41e6b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_m_d2_acdeb511145ace82b97f30c1f295f0a32}\index{MeshMD2@{MeshMD2}!GetVertexCount@{GetVertexCount}}
+\index{GetVertexCount@{GetVertexCount}!MeshMD2@{MeshMD2}}
+\doxysubsubsection{\texorpdfstring{GetVertexCount()}{GetVertexCount()}}
+{\footnotesize\ttfamily \label{class_mesh_m_d2_acdeb511145ace82b97f30c1f295f0a32} 
+int Mesh\+MD2\+::\+Get\+Vertex\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the total number of vertices in the mesh. 
+
+\begin{DoxyReturn}{Returns}
+Vertex count. 
+\end{DoxyReturn}
+\Hypertarget{class_mesh_m_d2_a2787cf4a322c0668d6e6ef2efdbade01}\index{MeshMD2@{MeshMD2}!Interpolate@{Interpolate}}
+\index{Interpolate@{Interpolate}!MeshMD2@{MeshMD2}}
+\doxysubsubsection{\texorpdfstring{Interpolate()}{Interpolate()}}
+{\footnotesize\ttfamily \label{class_mesh_m_d2_a2787cf4a322c0668d6e6ef2efdbade01} 
+void Mesh\+MD2\+::\+Interpolate (\begin{DoxyParamCaption}\item[{int}]{frameA}{, }\item[{int}]{frameB}{, }\item[{float}]{blend\+Alpha}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} $>$ \&}]{out\+Vertices}{}\end{DoxyParamCaption}) const}
+
+
+
+Interpolates between two animation frames to produce smooth vertex output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frameA} & Index of the first frame. \\
+\hline
+{\em frameB} & Index of the second frame. \\
+\hline
+{\em blend\+Alpha} & Interpolation factor \mbox{[}0.\+0, 1.\+0\mbox{]}. \\
+\hline
+{\em out\+Vertices} & Output array of interpolated vertices. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{class_mesh_m_d2_a2787cf4a322c0668d6e6ef2efdbade01_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_m_d2_ab59a71217fe3fb9bc90cd85109c5d21a}\index{MeshMD2@{MeshMD2}!LoadFromFile@{LoadFromFile}}
+\index{LoadFromFile@{LoadFromFile}!MeshMD2@{MeshMD2}}
+\doxysubsubsection{\texorpdfstring{LoadFromFile()}{LoadFromFile()}}
+{\footnotesize\ttfamily \label{class_mesh_m_d2_ab59a71217fe3fb9bc90cd85109c5d21a} 
+bool Mesh\+MD2\+::\+Load\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{model\+File}{, }\item[{const std\+::string \&}]{texture\+File}{}\end{DoxyParamCaption})}
+
+
+
+Loads an MD2 model and its texture from file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model\+File} & Path to the MD2 model file. \\
+\hline
+{\em texture\+File} & Path to the texture image file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loaded successfully. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_m_d2_ab59a71217fe3fb9bc90cd85109c5d21a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_m_d2_a296a12dbea02874b8a4ea7e450f63e3f}\index{MeshMD2@{MeshMD2}!PopulateBuffers@{PopulateBuffers}}
+\index{PopulateBuffers@{PopulateBuffers}!MeshMD2@{MeshMD2}}
+\doxysubsubsection{\texorpdfstring{PopulateBuffers()}{PopulateBuffers()}}
+{\footnotesize\ttfamily \label{class_mesh_m_d2_a296a12dbea02874b8a4ea7e450f63e3f} 
+void Mesh\+MD2\+::\+Populate\+Buffers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Fills Open\+GL buffers with mesh data (called from Upload\+To\+GPU). 
+
+
+
+Implements \mbox{\hyperlink{class_mesh3_d_a91aa0f790bb9f1acc3d270033d11e6ef}{Mesh3D}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_m_d2_a296a12dbea02874b8a4ea7e450f63e3f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_m_d2_a296a12dbea02874b8a4ea7e450f63e3f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_m_d2_a4d598fab982e27abbb0bd59354a6c525}\index{MeshMD2@{MeshMD2}!SetAnimation@{SetAnimation}}
+\index{SetAnimation@{SetAnimation}!MeshMD2@{MeshMD2}}
+\doxysubsubsection{\texorpdfstring{SetAnimation()}{SetAnimation()}}
+{\footnotesize\ttfamily \label{class_mesh_m_d2_a4d598fab982e27abbb0bd59354a6c525} 
+void Mesh\+MD2\+::\+Set\+Animation (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Sets the active animation by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The animation name. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mesh_m_d2_ad3324ff6fbee53ae91c7044b6cb1f143}\index{MeshMD2@{MeshMD2}!ToRenderer@{ToRenderer}}
+\index{ToRenderer@{ToRenderer}!MeshMD2@{MeshMD2}}
+\doxysubsubsection{\texorpdfstring{ToRenderer()}{ToRenderer()}}
+{\footnotesize\ttfamily \label{class_mesh_m_d2_ad3324ff6fbee53ae91c7044b6cb1f143} 
+\mbox{\hyperlink{struct_mesh_renderer}{Mesh\+Renderer}} Mesh\+MD2\+::\+To\+Renderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Converts the mesh into a \doxylink{struct_mesh_renderer}{Mesh\+Renderer} struct for ECS rendering. 
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{struct_mesh_renderer}{Mesh\+Renderer} representation. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_mesh3_d_a0bfe53bc0b4d0e2a9804ffa119f7aec9}{Mesh3D}}.
+
+\Hypertarget{class_mesh_m_d2_a1f00d6728c70d5f12aa2cfc49411abc2}\index{MeshMD2@{MeshMD2}!UploadToGPU@{UploadToGPU}}
+\index{UploadToGPU@{UploadToGPU}!MeshMD2@{MeshMD2}}
+\doxysubsubsection{\texorpdfstring{UploadToGPU()}{UploadToGPU()}}
+{\footnotesize\ttfamily \label{class_mesh_m_d2_a1f00d6728c70d5f12aa2cfc49411abc2} 
+void Mesh\+MD2\+::\+Upload\+To\+GPU (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Uploads the current mesh data to the GPU. 
+
+
+
+Implements \mbox{\hyperlink{class_mesh3_d_aef879f5ea3d9dce661e23ed2cb5f2c9e}{Mesh3D}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_m_d2_a1f00d6728c70d5f12aa2cfc49411abc2_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_mesh_m_d2_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_mesh_m_d2_a9ef136a366bac42d5267d4559169dfa1}\index{MeshMD2@{MeshMD2}!animations@{animations}}
+\index{animations@{animations}!MeshMD2@{MeshMD2}}
+\doxysubsubsection{\texorpdfstring{animations}{animations}}
+{\footnotesize\ttfamily \label{class_mesh_m_d2_a9ef136a366bac42d5267d4559169dfa1} 
+std\+::unordered\+\_\+map$<$std\+::string, \mbox{\hyperlink{struct_animation_range}{Animation\+Range}}$>$ Mesh\+MD2\+::animations\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Named animation ranges parsed from frame names. 
+
+\Hypertarget{class_mesh_m_d2_ac09783c8f5849cd14f7758ab96a9a0d5}\index{MeshMD2@{MeshMD2}!m\_frames@{m\_frames}}
+\index{m\_frames@{m\_frames}!MeshMD2@{MeshMD2}}
+\doxysubsubsection{\texorpdfstring{m\_frames}{m\_frames}}
+{\footnotesize\ttfamily \label{class_mesh_m_d2_ac09783c8f5849cd14f7758ab96a9a0d5} 
+std\+::vector$<$\mbox{\hyperlink{struct_m_d2_frame}{MD2\+Frame}}$>$ Mesh\+MD2\+::m\+\_\+frames\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+All animation frames. 
+
+\Hypertarget{class_mesh_m_d2_ae848515957e4babaaafdce227699d03a}\index{MeshMD2@{MeshMD2}!m\_interpolatedVertices@{m\_interpolatedVertices}}
+\index{m\_interpolatedVertices@{m\_interpolatedVertices}!MeshMD2@{MeshMD2}}
+\doxysubsubsection{\texorpdfstring{m\_interpolatedVertices}{m\_interpolatedVertices}}
+{\footnotesize\ttfamily \label{class_mesh_m_d2_ae848515957e4babaaafdce227699d03a} 
+std\+::vector$<$\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}$>$ Mesh\+MD2\+::m\+\_\+interpolated\+Vertices\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Working buffer for interpolated vertex positions. 
+
+\Hypertarget{class_mesh_m_d2_a1d852ca7f944aa8f5796dfc1af0c386c}\index{MeshMD2@{MeshMD2}!m\_numVertices@{m\_numVertices}}
+\index{m\_numVertices@{m\_numVertices}!MeshMD2@{MeshMD2}}
+\doxysubsubsection{\texorpdfstring{m\_numVertices}{m\_numVertices}}
+{\footnotesize\ttfamily \label{class_mesh_m_d2_a1d852ca7f944aa8f5796dfc1af0c386c} 
+int Mesh\+MD2\+::m\+\_\+num\+Vertices\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Total number of vertices. 
+
+\Hypertarget{class_mesh_m_d2_afdd3e28c66423dbccb1e91c5e3c8806e}\index{MeshMD2@{MeshMD2}!m\_skinHeight@{m\_skinHeight}}
+\index{m\_skinHeight@{m\_skinHeight}!MeshMD2@{MeshMD2}}
+\doxysubsubsection{\texorpdfstring{m\_skinHeight}{m\_skinHeight}}
+{\footnotesize\ttfamily \label{class_mesh_m_d2_afdd3e28c66423dbccb1e91c5e3c8806e} 
+int Mesh\+MD2\+::m\+\_\+skin\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{class_texture}{Texture} dimensions in pixels. 
+
+\Hypertarget{class_mesh_m_d2_a693866eb7f82c63ca8912e42cc140f07}\index{MeshMD2@{MeshMD2}!m\_skinWidth@{m\_skinWidth}}
+\index{m\_skinWidth@{m\_skinWidth}!MeshMD2@{MeshMD2}}
+\doxysubsubsection{\texorpdfstring{m\_skinWidth}{m\_skinWidth}}
+{\footnotesize\ttfamily \label{class_mesh_m_d2_a693866eb7f82c63ca8912e42cc140f07} 
+int Mesh\+MD2\+::m\+\_\+skin\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_mesh_m_d2_ada76441297f96edabe64bfbab928abbe}\index{MeshMD2@{MeshMD2}!m\_texCoords@{m\_texCoords}}
+\index{m\_texCoords@{m\_texCoords}!MeshMD2@{MeshMD2}}
+\doxysubsubsection{\texorpdfstring{m\_texCoords}{m\_texCoords}}
+{\footnotesize\ttfamily \label{class_mesh_m_d2_ada76441297f96edabe64bfbab928abbe} 
+std\+::vector$<$\mbox{\hyperlink{struct_m_d2_tex_coord}{MD2\+Tex\+Coord}}$>$ Mesh\+MD2\+::m\+\_\+tex\+Coords\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{class_texture}{Texture} coordinate list. 
+
+\Hypertarget{class_mesh_m_d2_a1bc910ec56272b8410c11fe2dbd235b2}\index{MeshMD2@{MeshMD2}!m\_triangles@{m\_triangles}}
+\index{m\_triangles@{m\_triangles}!MeshMD2@{MeshMD2}}
+\doxysubsubsection{\texorpdfstring{m\_triangles}{m\_triangles}}
+{\footnotesize\ttfamily \label{class_mesh_m_d2_a1bc910ec56272b8410c11fe2dbd235b2} 
+std\+::vector$<$\mbox{\hyperlink{struct_m_d2_triangle}{MD2\+Triangle}}$>$ Mesh\+MD2\+::m\+\_\+triangles\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Triangle definitions (indexed geometry). 
+
+\Hypertarget{class_mesh_m_d2_a2b73c774d857f32ac83d2ad29cc96a2b}\index{MeshMD2@{MeshMD2}!m\_uvs@{m\_uvs}}
+\index{m\_uvs@{m\_uvs}!MeshMD2@{MeshMD2}}
+\doxysubsubsection{\texorpdfstring{m\_uvs}{m\_uvs}}
+{\footnotesize\ttfamily \label{class_mesh_m_d2_a2b73c774d857f32ac83d2ad29cc96a2b} 
+std\+::vector$<$\mbox{\hyperlink{math_8hpp_acfd9107b583da9f618732213cb319ced}{Vector2f}}$>$ Mesh\+MD2\+::m\+\_\+uvs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+UV coordinates per vertex. 
+
+\Hypertarget{class_mesh_m_d2_adf50141b1ea6189bc6bc2cb9a82de166}\index{MeshMD2@{MeshMD2}!mUV@{mUV}}
+\index{mUV@{mUV}!MeshMD2@{MeshMD2}}
+\doxysubsubsection{\texorpdfstring{mUV}{mUV}}
+{\footnotesize\ttfamily \label{class_mesh_m_d2_adf50141b1ea6189bc6bc2cb9a82de166} 
+unsigned int Mesh\+MD2\+::m\+UV = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Open\+GL UV buffer object (VBO). 
+
+\Hypertarget{class_mesh_m_d2_a23b109baa01fbde67dd94eed6fd120e0}\index{MeshMD2@{MeshMD2}!texture@{texture}}
+\index{texture@{texture}!MeshMD2@{MeshMD2}}
+\doxysubsubsection{\texorpdfstring{texture}{texture}}
+{\footnotesize\ttfamily \label{class_mesh_m_d2_a23b109baa01fbde67dd94eed6fd120e0} 
+\mbox{\hyperlink{class_texture}{Texture}}\texorpdfstring{$\ast$}{*} Mesh\+MD2\+::texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Associated texture (diffuse map). 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Animation/\mbox{\hyperlink{_m_d2_8hpp}{MD2.\+hpp}}\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Animation/\mbox{\hyperlink{_m_d2_8cpp}{MD2.\+cpp}}\end{DoxyCompactItemize}

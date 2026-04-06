@@ -1,0 +1,5734 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "mirachEngine/libmirachd.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"target_link_libraries",
+			"include",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"mirachEngine/CMakeLists.txt",
+			"mirachEngine/cmake/mirach-fetch-dependencies.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 42,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 54,
+				"parent" : 0
+			},
+			{
+				"file" : 1,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 25,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 47,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -std=gnu++2a -fdiagnostics-color=always"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 5,
+					"path" : "C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/mirachEngine"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/download/lua/65bf91d511e1cf1b55640f2d5cf0d95808bf4cba/lua"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/mirachEngine/dependencies/glad/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/sdl-build/include-revision"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/download/sdl/c36bd7f276274a93380f372abcd6d4cccdd20c88/sdl/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/mirachEngine/dependencies/stb_image/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/download/glm/247d93788574cd7af455045b4ae5e6d8c4758fd1/glm/glm/.."
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/download/assimp/248954a90c949291c541ba7ee69b327d01e5f212/assimp/code/../include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/assimp-build/code/../include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/download/reactphysics3d/ff4072d3c72e1ee92428ade193a89f67d65269da/reactphysics3d/include"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					4
+				],
+				"standard" : "20"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34,
+				35,
+				36,
+				37,
+				38,
+				39,
+				40,
+				41,
+				42,
+				43,
+				44,
+				45,
+				46,
+				47,
+				48,
+				49,
+				50,
+				51,
+				52,
+				53,
+				54,
+				55,
+				56,
+				57,
+				58,
+				59,
+				60,
+				61,
+				62,
+				63,
+				64,
+				65,
+				66,
+				67,
+				68,
+				69,
+				70,
+				71,
+				72,
+				73,
+				74,
+				75,
+				76,
+				77,
+				78,
+				79,
+				80,
+				81,
+				82,
+				83,
+				84,
+				85,
+				86,
+				87,
+				88,
+				89,
+				90,
+				91,
+				92,
+				93,
+				94,
+				95,
+				96,
+				97,
+				98,
+				99,
+				100,
+				101,
+				102,
+				103,
+				104,
+				105,
+				106,
+				107,
+				108,
+				109,
+				110,
+				111,
+				112,
+				113,
+				114,
+				115,
+				116,
+				117,
+				118,
+				119,
+				120,
+				121,
+				122,
+				123,
+				124,
+				125,
+				126,
+				127,
+				128,
+				129,
+				130,
+				131,
+				132,
+				133,
+				134,
+				135,
+				136,
+				137,
+				138,
+				139,
+				140,
+				141,
+				142,
+				143,
+				144,
+				145,
+				146,
+				147,
+				148,
+				149,
+				150,
+				151,
+				152,
+				153,
+				154,
+				155,
+				156,
+				157,
+				158,
+				159,
+				160,
+				161,
+				162,
+				163,
+				164,
+				165,
+				166,
+				167,
+				168,
+				169,
+				170,
+				171,
+				172,
+				173,
+				174,
+				175,
+				176,
+				177,
+				178,
+				179,
+				180,
+				181,
+				182,
+				183,
+				184,
+				185,
+				186,
+				187,
+				188,
+				189,
+				190,
+				191,
+				192,
+				193,
+				194,
+				195,
+				196,
+				197,
+				198,
+				199,
+				200,
+				201,
+				202,
+				203,
+				204,
+				205,
+				206,
+				207,
+				208,
+				209,
+				210,
+				211,
+				212,
+				213,
+				214,
+				215,
+				216,
+				217,
+				218,
+				219,
+				220,
+				221,
+				222,
+				223,
+				224,
+				225,
+				226,
+				227,
+				228,
+				229,
+				230,
+				231,
+				232,
+				233,
+				234,
+				235,
+				236,
+				237,
+				238,
+				239,
+				240,
+				241,
+				242,
+				243,
+				244,
+				245,
+				246,
+				247,
+				248,
+				249,
+				250,
+				251,
+				252,
+				253,
+				254,
+				255,
+				256,
+				257,
+				258,
+				259,
+				260,
+				261,
+				262,
+				263,
+				264,
+				265,
+				266,
+				267,
+				268,
+				269,
+				270,
+				271,
+				272,
+				273,
+				274,
+				275,
+				276,
+				277,
+				278,
+				279,
+				280,
+				281,
+				282,
+				283,
+				284,
+				285,
+				286,
+				287,
+				288,
+				289,
+				290,
+				291,
+				292,
+				293,
+				294,
+				295,
+				296,
+				297,
+				298,
+				299,
+				300,
+				301,
+				302,
+				303,
+				304,
+				305,
+				306,
+				307,
+				308,
+				309,
+				310,
+				311,
+				312,
+				313,
+				314,
+				315,
+				316,
+				317,
+				318,
+				319,
+				320,
+				321,
+				322,
+				323,
+				324,
+				325,
+				326,
+				327,
+				328,
+				329,
+				330,
+				331,
+				332,
+				333,
+				334,
+				335,
+				336,
+				337,
+				338,
+				339,
+				340,
+				341,
+				342,
+				343,
+				344,
+				345,
+				346,
+				347,
+				348,
+				349,
+				350,
+				351,
+				352,
+				353,
+				354,
+				355,
+				356,
+				357,
+				358,
+				359,
+				360,
+				361,
+				362,
+				363,
+				364,
+				365,
+				366,
+				367,
+				368,
+				369,
+				370,
+				371,
+				372,
+				373,
+				374,
+				375,
+				376,
+				377,
+				378,
+				379,
+				380,
+				381,
+				382,
+				383,
+				384,
+				385,
+				386,
+				387,
+				388,
+				389,
+				390,
+				391,
+				392,
+				393,
+				394,
+				395,
+				396,
+				397,
+				398,
+				399,
+				400,
+				401,
+				402,
+				403,
+				404,
+				405,
+				406,
+				407,
+				408,
+				409,
+				410,
+				411,
+				412,
+				413,
+				414,
+				415,
+				416,
+				417,
+				418,
+				419,
+				420,
+				421,
+				422,
+				423,
+				424,
+				425,
+				426,
+				427,
+				428,
+				429,
+				430,
+				431,
+				432,
+				433,
+				434,
+				435,
+				436,
+				437,
+				438,
+				439,
+				440,
+				441,
+				442,
+				443,
+				444,
+				445,
+				446,
+				447,
+				448,
+				449,
+				450,
+				451,
+				452,
+				453,
+				454,
+				455,
+				456,
+				457,
+				458,
+				459,
+				460,
+				461,
+				462,
+				463,
+				464,
+				465,
+				466,
+				467,
+				468,
+				469,
+				470,
+				471,
+				472,
+				473,
+				474,
+				475,
+				476,
+				477,
+				478,
+				479,
+				480,
+				481,
+				482,
+				483,
+				484,
+				485,
+				486,
+				487,
+				488,
+				489,
+				490,
+				491,
+				492,
+				493,
+				494,
+				495,
+				496,
+				497,
+				498,
+				499,
+				500,
+				501,
+				502,
+				503,
+				504,
+				505,
+				506,
+				507,
+				508,
+				509,
+				510,
+				511,
+				512,
+				513,
+				514,
+				515,
+				516,
+				517,
+				518,
+				519,
+				520,
+				521,
+				522,
+				523,
+				524,
+				525,
+				526,
+				527,
+				528,
+				529,
+				530,
+				531,
+				532,
+				533,
+				534,
+				535,
+				536,
+				537,
+				538,
+				539,
+				540,
+				541,
+				542,
+				543,
+				544,
+				545,
+				546,
+				547,
+				548,
+				549,
+				550,
+				551,
+				552,
+				553,
+				554,
+				555,
+				556,
+				557,
+				558,
+				559,
+				560,
+				561,
+				562,
+				563,
+				564,
+				565,
+				566,
+				567,
+				568,
+				569,
+				570,
+				571,
+				572,
+				573,
+				574,
+				575,
+				576,
+				577,
+				578,
+				579,
+				580,
+				581,
+				582,
+				583,
+				584,
+				585,
+				586,
+				587,
+				588,
+				589,
+				590,
+				591,
+				592,
+				593,
+				594,
+				595,
+				596,
+				597,
+				598,
+				599,
+				600,
+				601,
+				602,
+				603,
+				604,
+				605,
+				606,
+				607,
+				608,
+				609,
+				610,
+				611,
+				612,
+				613,
+				614,
+				615,
+				616,
+				617,
+				618,
+				619,
+				620,
+				621,
+				622,
+				623,
+				624,
+				625,
+				626,
+				627,
+				628,
+				629,
+				630,
+				631,
+				632,
+				633,
+				634,
+				635,
+				636,
+				637,
+				638,
+				639,
+				640,
+				641,
+				642,
+				643,
+				644,
+				645,
+				646,
+				647,
+				648,
+				649,
+				650,
+				651,
+				652,
+				653,
+				654,
+				655,
+				656,
+				657,
+				658,
+				659,
+				660,
+				661,
+				662,
+				663,
+				664,
+				665,
+				666,
+				667,
+				668,
+				669,
+				670,
+				671,
+				672,
+				673,
+				674,
+				675,
+				676,
+				677,
+				678,
+				679,
+				680,
+				681,
+				682,
+				683,
+				684,
+				685,
+				686,
+				687,
+				688,
+				689,
+				690,
+				691,
+				692,
+				693
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 4,
+			"id" : "stb_image::@05bd52cf8d1c99c2443e"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "lua::@05bd52cf8d1c99c2443e"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "glad::@05bd52cf8d1c99c2443e"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "SDL3-static::@fc7b397d5a055aba6d5e"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "zlibstatic::@7fd99959cf8fe87d223a"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "assimp::@b1ea6f5c2178ebc90389"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "reactphysics3d::@5d9dcba1aa2a61aefaaa"
+		}
+	],
+	"id" : "mirach::@05bd52cf8d1c99c2443e",
+	"name" : "mirach",
+	"nameOnDisk" : "libmirachd.a",
+	"paths" : 
+	{
+		"build" : "mirachEngine",
+		"source" : "mirachEngine"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34,
+				35,
+				36,
+				37,
+				38,
+				39,
+				40,
+				41,
+				42,
+				43,
+				44,
+				45,
+				46,
+				47,
+				48,
+				49,
+				50,
+				51,
+				52,
+				53,
+				54,
+				55,
+				56,
+				57,
+				58,
+				59,
+				60,
+				61,
+				62,
+				63,
+				64,
+				65,
+				66,
+				67,
+				68,
+				69,
+				70,
+				71,
+				72,
+				73,
+				74,
+				75,
+				76,
+				77,
+				78,
+				79,
+				80,
+				81,
+				82,
+				83,
+				84,
+				85,
+				86,
+				87,
+				88,
+				89,
+				90,
+				91,
+				92,
+				93,
+				94,
+				95,
+				96,
+				97,
+				98,
+				99,
+				100,
+				101,
+				102,
+				103,
+				104,
+				105,
+				106,
+				107,
+				108,
+				109,
+				110,
+				111,
+				112,
+				113,
+				114,
+				115,
+				116,
+				117,
+				118,
+				119,
+				120,
+				121,
+				122,
+				123,
+				124,
+				125,
+				126,
+				127,
+				128,
+				129,
+				130,
+				131,
+				132,
+				133,
+				134,
+				135,
+				136,
+				137,
+				138,
+				139,
+				140,
+				141,
+				142,
+				143,
+				144,
+				145,
+				146,
+				147,
+				148,
+				149,
+				150,
+				151,
+				152,
+				153,
+				154,
+				155,
+				156,
+				157,
+				158,
+				159,
+				160,
+				161,
+				162,
+				163,
+				164,
+				165,
+				166,
+				167,
+				168,
+				169,
+				170,
+				171,
+				172,
+				173,
+				174,
+				175,
+				176,
+				177,
+				178,
+				179,
+				180,
+				181,
+				182,
+				183,
+				184,
+				185,
+				186,
+				187,
+				188,
+				189,
+				190,
+				191,
+				192,
+				193,
+				194,
+				195,
+				196,
+				197,
+				198,
+				199,
+				200,
+				201,
+				202,
+				203,
+				204,
+				205,
+				206,
+				207,
+				208,
+				209,
+				210,
+				211,
+				212,
+				213,
+				214,
+				215,
+				216,
+				217,
+				218,
+				219,
+				220,
+				221,
+				222,
+				223,
+				224,
+				225,
+				226,
+				227,
+				228,
+				229,
+				230,
+				231,
+				232,
+				233,
+				234,
+				235,
+				236,
+				237,
+				238,
+				239,
+				240,
+				241,
+				242,
+				243,
+				244,
+				245,
+				246,
+				247,
+				248,
+				249,
+				250,
+				251,
+				252,
+				253,
+				254,
+				255,
+				256,
+				257,
+				258,
+				259,
+				260,
+				261,
+				262,
+				263,
+				264,
+				265,
+				266,
+				267,
+				268,
+				269,
+				270,
+				271,
+				272,
+				273,
+				274,
+				275,
+				276,
+				277,
+				278,
+				279,
+				280,
+				281,
+				282,
+				283,
+				284,
+				285,
+				286,
+				287,
+				288,
+				289,
+				290,
+				291,
+				292,
+				293,
+				294,
+				295,
+				296,
+				297,
+				298,
+				299,
+				300,
+				301,
+				302,
+				303,
+				304,
+				305,
+				306,
+				307,
+				308,
+				309,
+				310,
+				311,
+				312,
+				313,
+				314,
+				315,
+				316,
+				317,
+				318,
+				319,
+				320,
+				321,
+				322,
+				323,
+				324,
+				325,
+				326,
+				327,
+				328,
+				329,
+				330,
+				331,
+				332,
+				333,
+				334,
+				335,
+				336,
+				337,
+				338,
+				339,
+				340,
+				341,
+				342,
+				343,
+				344,
+				345,
+				346,
+				347,
+				348,
+				349,
+				350,
+				351,
+				352,
+				353,
+				354,
+				355,
+				356,
+				357,
+				358,
+				359,
+				360,
+				361,
+				362,
+				363,
+				364,
+				365,
+				366,
+				367,
+				368,
+				369,
+				370,
+				371,
+				372,
+				373,
+				374,
+				375,
+				376,
+				377,
+				378,
+				379,
+				380,
+				381,
+				382,
+				383,
+				384,
+				385,
+				386,
+				387,
+				388,
+				389,
+				390,
+				391,
+				392,
+				393,
+				394,
+				395,
+				396,
+				397,
+				398,
+				399,
+				400,
+				401,
+				402,
+				403,
+				404,
+				405,
+				406,
+				407,
+				408,
+				409,
+				410,
+				411,
+				412,
+				413,
+				414,
+				415,
+				416,
+				417,
+				418,
+				419,
+				420,
+				421,
+				422,
+				423,
+				424,
+				425,
+				426,
+				427,
+				428,
+				429,
+				430,
+				431,
+				432,
+				433,
+				434,
+				435,
+				436,
+				437,
+				438,
+				439,
+				440,
+				441,
+				442,
+				443,
+				444,
+				445,
+				446,
+				447,
+				448,
+				449,
+				450,
+				451,
+				452,
+				453,
+				454,
+				455,
+				456,
+				457,
+				458,
+				459,
+				460,
+				461,
+				462,
+				463,
+				464,
+				465,
+				466,
+				467,
+				468,
+				469,
+				470,
+				471,
+				472,
+				473,
+				474,
+				475,
+				476,
+				477,
+				478,
+				479,
+				480,
+				481,
+				482,
+				483,
+				484,
+				485,
+				486,
+				487,
+				488,
+				489,
+				490,
+				491,
+				492,
+				493,
+				494,
+				495,
+				496,
+				497,
+				498,
+				499,
+				500,
+				501,
+				502,
+				503,
+				504,
+				505,
+				506,
+				507,
+				508,
+				509,
+				510,
+				511,
+				512,
+				513,
+				514,
+				515,
+				516,
+				517,
+				518,
+				519,
+				520,
+				521,
+				522,
+				523,
+				524,
+				525,
+				526,
+				527,
+				528,
+				529,
+				530,
+				531,
+				532,
+				533,
+				534,
+				535,
+				536,
+				537,
+				538,
+				539,
+				540,
+				541,
+				542,
+				543,
+				544,
+				545,
+				546,
+				547,
+				548,
+				549,
+				550,
+				551,
+				552,
+				553,
+				554,
+				555,
+				556,
+				557,
+				558,
+				559,
+				560,
+				561,
+				562,
+				563,
+				564,
+				565,
+				566,
+				567,
+				568,
+				569,
+				570,
+				571,
+				572,
+				573,
+				574,
+				575,
+				576,
+				577,
+				578,
+				579,
+				580,
+				581,
+				582,
+				583,
+				584,
+				585,
+				586,
+				587,
+				588,
+				589,
+				590,
+				591,
+				592,
+				593,
+				594,
+				595,
+				596,
+				597,
+				598,
+				599,
+				600,
+				601,
+				602,
+				603,
+				604,
+				605,
+				606,
+				607,
+				608,
+				609,
+				610,
+				611,
+				612,
+				613,
+				614,
+				615,
+				616,
+				617,
+				618,
+				619,
+				620,
+				621,
+				622,
+				623,
+				624,
+				625,
+				626,
+				627,
+				628,
+				629,
+				630,
+				631,
+				632,
+				633,
+				634,
+				635,
+				636,
+				637,
+				638,
+				639,
+				640,
+				641,
+				642,
+				643,
+				644,
+				645,
+				646,
+				647,
+				648,
+				649,
+				650,
+				651,
+				652,
+				653,
+				654,
+				655,
+				656,
+				657,
+				658,
+				659,
+				660,
+				661,
+				662,
+				663,
+				664,
+				665,
+				666,
+				667,
+				668,
+				669,
+				670,
+				671,
+				672,
+				673,
+				674,
+				675,
+				676,
+				677,
+				678,
+				679,
+				680,
+				681,
+				682,
+				683,
+				684,
+				685,
+				686,
+				687,
+				688,
+				689,
+				690,
+				691,
+				692,
+				693
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/component/camera.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/component/transform.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/core/math/math_funcs.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sdl/3777ee09ad2a7e06e722eaf2a74e2df755d81cad/sdl/VisualC-GDK/tests/testgdk/src/testgdk.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sdl/3777ee09ad2a7e06e722eaf2a74e2df755d81cad/sdl/src/core/gdk/SDL_gdk.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sdl/3777ee09ad2a7e06e722eaf2a74e2df755d81cad/sdl/src/core/windows/pch_cpp.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sdl/3777ee09ad2a7e06e722eaf2a74e2df755d81cad/sdl/src/filesystem/gdk/SDL_sysfilesystem.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sdl/3777ee09ad2a7e06e722eaf2a74e2df755d81cad/sdl/src/hidapi/android/hid.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sdl/3777ee09ad2a7e06e722eaf2a74e2df755d81cad/sdl/src/hidapi/testgui/test.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sdl/3777ee09ad2a7e06e722eaf2a74e2df755d81cad/sdl/src/main/gdk/SDL_sysmain_runapp.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sdl/3777ee09ad2a7e06e722eaf2a74e2df755d81cad/sdl/src/render/direct3d12/SDL_render_d3d12_xbox.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sdl/3777ee09ad2a7e06e722eaf2a74e2df755d81cad/sdl/src/render/direct3d12/SDL_shaders_d3d12_xboxone.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sdl/3777ee09ad2a7e06e722eaf2a74e2df755d81cad/sdl/src/render/direct3d12/SDL_shaders_d3d12_xboxseries.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sdl/3777ee09ad2a7e06e722eaf2a74e2df755d81cad/sdl/src/video/gdk/SDL_gdktextinput.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sdl/3777ee09ad2a7e06e722eaf2a74e2df755d81cad/sdl/test/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/customization/source/lua_interop.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/customization/source/lua_zm_interop.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/customization/source/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/interop/LuaBridge/source/LuaBridge.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/interop/kaguya/source/kaguya.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/interop/luwra/source/luwra.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/interop/tolua/source/tolua.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/require_dll_example/source/my_object.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/require_dll_example/source/require_from_dll.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/allocation_limit.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/any_return.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/args_from_container.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/as_returns.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/basic.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/c_array.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/c_call.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/calling_lua_functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/config.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/container_usertype_as_container.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/container_with_pairs.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/containers.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/containers_as_table.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/coroutine.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/coroutine_multiple_stacks.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/coroutine_state.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/custom_reader.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/customization_base_object_catch.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/customization_convert_on_get.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/customization_global_transparent_argument.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/customization_multiple.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/as_function.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/as_function_usertype_member_variable.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/as_table_ipairs.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/coroutine_main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/coroutine_thread.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/inheritance.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/my_panic.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/preparing_environments.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/references_in_lambdas.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/runtime_extension.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/simple_functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/simple_structs.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/state_script_safe.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/state_transfer.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/std_thread.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/dump.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/dynamic_object.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/environment_snooping.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/environment_state.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/environment_state_2.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/environments.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/environments_on_functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/error_handler.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/exception_handler.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/functions_empty_arguments.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/index_and_newindex_usertype.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/indirect_function_calls.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/lua_stream.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/lua_value.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/metatable_customization.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/metatable_key_low_level.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/multi_results.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/optional_with_iteration.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/overloading.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/overloading_with_fallback.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/overloading_with_members.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/overridable_function_members.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/pairs.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/pairs_with_raw_functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/property.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/protect.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/protected_functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/read_only.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/require.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/require_override_behavior.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/runtime_additions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/script_error_handling.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/self_from_lua.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/shared_ptr.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/shared_ptr_inheritance.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/shared_ptr_modify_in_place.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/singleton.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/stack_aligned_function.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/stack_aligned_stack_handler_function.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/static_variables.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/table_as_container.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/table_create_if_nil.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/table_proxy.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tables.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/this_state.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tie.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/erase_demo.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/first_snippet.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/lazy_demo.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/multiple_return.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/object_lifetime.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/open_multiple_libraries.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/pointer_lifetime.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/arguments_to_scripts.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/functions_all.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/functions_easy.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/make_tables.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/multiple_returns_from_lua.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/multiple_returns_to_lua.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/namespacing.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/opening_a_state.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/opening_state_on_raw_lua.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/running_lua_code.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/running_lua_code_low_level.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/running_lua_code_safely.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/self_call.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/set_and_get_variables.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/set_and_get_variables_exists.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/tables_and_nesting.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/userdata.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/userdata_memory_reference.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/usertypes.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/reading_functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/variables_demo.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/write_variables_demo.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/writing_functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/writing_member_functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/writing_overloaded_template_functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/writing_template_functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/unique_ptr.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/usertype.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/usertype_advanced.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/usertype_automatic_operators.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/usertype_basics.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/usertype_bitfields.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/usertype_call_from_c++.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/usertype_constructors.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/usertype_dynamic_get_set.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/usertype_initializers.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/usertype_special_functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/usertype_var.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/variables.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/variadic_args.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/variadic_args_into_lua.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/variadic_args_shifted.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/variadic_args_storage.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/wip/lua_inheritance.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/config_tests/function_pointers/source/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/config_tests/function_pointers/source/retrieval.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/config_tests/integer_value_fits/source/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/config_tests/integer_value_fits/source/negative_size_t.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/enum/source/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/enum/source/read_only_iteration.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/environment/source/get.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/environment/source/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/environment/source/sandboxing.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/environment/source/shadowing.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/environment/source/this_environment.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/exceptions/source/functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/exceptions/source/functions.noexcept.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/exceptions/source/functions.yielding.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/exceptions/source/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/exceptions/source/usertypes.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/exceptions/source/usertypes.yielding.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/as_args.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/as_returns.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/base_traits.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/bind_traits.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/bytecode.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/call.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/compatibility.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/compatibility/compat-5.3.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/compatibility/lua_version.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/config.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/coroutine.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/debug.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/demangle.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/deprecate.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/detail/build_version.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/ebco.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/environment.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/error.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/error_handler.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/forward.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/forward_detail.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/function.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/function_result.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/function_types.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/function_types_core.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/function_types_overloaded.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/function_types_stateful.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/function_types_stateless.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/function_types_templated.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/in_place.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/inheritance.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/load_result.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/lua_table.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/lua_value.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/make_reference.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/metatable.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/object.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/object_base.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/optional.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/optional_implementation.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/overload.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/packaged_coroutine.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/pairs_iterator.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/pointer_like.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/policies.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/property.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/protect.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/protected_function.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/protected_function_result.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/protected_handler.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/proxy.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/proxy_base.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/raii.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/reference.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/resolve.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/sol.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack/detail/pairs.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_check.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_check_get.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_check_get_qualified.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_check_get_unqualified.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_check_qualified.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_check_unqualified.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_core.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_field.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_get.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_get_qualified.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_get_unqualified.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_guard.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_iterator.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_pop.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_probe.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_proxy.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_proxy_base.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_push.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_reference.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/state.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/state_handling.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/state_view.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/string_view.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/table.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/table_core.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/table_iterator.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/thread.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/tie.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/traits.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/trampoline.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/tuple.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/types.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/unicode.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/unique_usertype_traits.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/unsafe_function.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/unsafe_function_result.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/userdata.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/usertype.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/usertype_container.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/usertype_container_launch.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/usertype_core.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/usertype_proxy.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/usertype_storage.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/usertype_traits.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/variadic_args.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/variadic_results.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/version.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/wrapper.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/lua_lifetime/source/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/numerics/source/large.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/numerics/source/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/1011/source/1011 - release mode crash MSVC.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1000 - readonly warning.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1008 - as_function binding triggers correctly.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1067 - optional bindings.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1072 - capture exception propagation.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1087 - readonly property error checking.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1095 - raw_get from global table fails.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1096 - functions binding wrong.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1144 - type destructed from non-destructed memory.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1149 - static method gets const-morphed in internals.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1192 - incorrect alignment calculation.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1211 - protected_function_result nullptr.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1266 - add method in Lua 5.4 showing freelist.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1315 - keep-alive memory.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/basic.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/container.usertype_check.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/container_semantics.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/container_semantics.custom.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/container_semantics.ordered.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/container_semantics.unordered.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/container_shims.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/container_table.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/containers.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/containers.roundtrip.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/containers.table.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/coroutines.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/customizations.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/customizations_private.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/dump.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/functions.std.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/gc.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/lua_value.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/operators.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/overflow.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/plain_types.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/policies.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/proxies.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/state.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/storage.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/strings.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/tables.checks.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/tables.clear.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/tables.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/tables.enums.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/tables.indexing.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/tables.insertion.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/tables.traversal.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/usertypes.auxiliary_keys.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/usertypes.basic.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/usertypes.constructors.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/usertypes.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/usertypes.inheritance.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/usertypes.inheritance.multi.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/usertypes.member_variables.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/usertypes.overload.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/usertypes.properties.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/usertypes.runtime.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/usertypes.unique.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/usertypes.unregister.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/utility.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/variadics.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/customization/source/lua_interop.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/customization/source/lua_zm_interop.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/customization/source/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/interop/LuaBridge/source/LuaBridge.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/interop/kaguya/source/kaguya.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/interop/luwra/source/luwra.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/interop/tolua/source/tolua.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/require_dll_example/source/my_object.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/require_dll_example/source/require_from_dll.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/allocation_limit.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/any_return.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/args_from_container.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/as_returns.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/basic.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/c_array.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/c_call.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/calling_lua_functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/config.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/container_usertype_as_container.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/container_with_pairs.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/containers.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/containers_as_table.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/coroutine.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/coroutine_multiple_stacks.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/coroutine_state.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/custom_reader.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/customization_base_object_catch.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/customization_convert_on_get.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/customization_global_transparent_argument.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/customization_multiple.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/as_function.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/as_function_usertype_member_variable.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/as_table_ipairs.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/coroutine_main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/coroutine_thread.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/inheritance.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/my_panic.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/preparing_environments.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/references_in_lambdas.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/runtime_extension.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/simple_functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/simple_structs.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/state_script_safe.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/state_transfer.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/docs/std_thread.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/dump.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/dynamic_object.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/environment_snooping.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/environment_state.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/environment_state_2.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/environments.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/environments_on_functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/error_handler.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/exception_handler.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/functions_empty_arguments.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/index_and_newindex_usertype.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/indirect_function_calls.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/lua_stream.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/lua_value.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/metatable_customization.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/metatable_key_low_level.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/multi_results.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/optional_with_iteration.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/overloading.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/overloading_with_fallback.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/overloading_with_members.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/overridable_function_members.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/pairs.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/pairs_with_raw_functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/property.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/protect.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/protected_functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/read_only.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/require.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/require_override_behavior.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/runtime_additions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/script_error_handling.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/self_from_lua.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/shared_ptr.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/shared_ptr_inheritance.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/shared_ptr_modify_in_place.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/singleton.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/stack_aligned_function.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/stack_aligned_stack_handler_function.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/static_variables.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/table_as_container.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/table_create_if_nil.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/table_proxy.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tables.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/this_state.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tie.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/erase_demo.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/first_snippet.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/lazy_demo.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/multiple_return.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/object_lifetime.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/open_multiple_libraries.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/pointer_lifetime.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/arguments_to_scripts.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/functions_all.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/functions_easy.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/make_tables.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/multiple_returns_from_lua.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/multiple_returns_to_lua.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/namespacing.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/opening_a_state.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/opening_state_on_raw_lua.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/running_lua_code.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/running_lua_code_low_level.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/running_lua_code_safely.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/self_call.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/set_and_get_variables.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/set_and_get_variables_exists.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/tables_and_nesting.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/userdata.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/userdata_memory_reference.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/quick_n_dirty/usertypes.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/reading_functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/variables_demo.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/write_variables_demo.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/writing_functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/writing_member_functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/writing_overloaded_template_functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/tutorials/writing_template_functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/unique_ptr.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/usertype.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/usertype_advanced.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/usertype_automatic_operators.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/usertype_basics.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/usertype_bitfields.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/usertype_call_from_c++.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/usertype_constructors.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/usertype_dynamic_get_set.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/usertype_initializers.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/usertype_special_functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/usertype_var.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/variables.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/variadic_args.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/variadic_args_into_lua.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/variadic_args_shifted.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/variadic_args_storage.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/examples/source/wip/lua_inheritance.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/config_tests/function_pointers/source/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/config_tests/function_pointers/source/retrieval.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/config_tests/integer_value_fits/source/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/config_tests/integer_value_fits/source/negative_size_t.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/enum/source/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/enum/source/read_only_iteration.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/environment/source/get.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/environment/source/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/environment/source/sandboxing.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/environment/source/shadowing.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/environment/source/this_environment.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/exceptions/source/functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/exceptions/source/functions.noexcept.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/exceptions/source/functions.yielding.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/exceptions/source/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/exceptions/source/usertypes.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/exceptions/source/usertypes.yielding.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/as_args.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/as_returns.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/base_traits.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/bind_traits.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/bytecode.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/call.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/compatibility.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/compatibility/compat-5.3.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/compatibility/lua_version.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/config.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/coroutine.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/debug.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/demangle.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/deprecate.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/detail/build_version.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/ebco.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/environment.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/error.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/error_handler.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/forward.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/forward_detail.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/function.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/function_result.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/function_types.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/function_types_core.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/function_types_overloaded.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/function_types_stateful.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/function_types_stateless.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/function_types_templated.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/in_place.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/inheritance.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/load_result.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/lua_table.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/lua_value.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/make_reference.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/metatable.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/object.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/object_base.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/optional.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/optional_implementation.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/overload.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/packaged_coroutine.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/pairs_iterator.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/pointer_like.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/policies.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/property.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/protect.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/protected_function.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/protected_function_result.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/protected_handler.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/proxy.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/proxy_base.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/raii.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/reference.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/resolve.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/sol.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack/detail/pairs.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_check.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_check_get.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_check_get_qualified.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_check_get_unqualified.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_check_qualified.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_check_unqualified.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_core.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_field.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_get.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_get_qualified.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_get_unqualified.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_guard.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_iterator.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_pop.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_probe.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_proxy.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_proxy_base.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_push.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/stack_reference.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/state.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/state_handling.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/state_view.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/string_view.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/table.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/table_core.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/table_iterator.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/thread.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/tie.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/traits.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/trampoline.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/tuple.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/types.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/unicode.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/unique_usertype_traits.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/unsafe_function.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/unsafe_function_result.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/userdata.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/usertype.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/usertype_container.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/usertype_container_launch.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/usertype_core.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/usertype_proxy.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/usertype_storage.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/usertype_traits.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/variadic_args.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/variadic_results.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/version.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/inclusion/source/wrapper.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/lua_lifetime/source/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/numerics/source/large.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/numerics/source/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/1011/source/1011 - release mode crash MSVC.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1000 - readonly warning.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1008 - as_function binding triggers correctly.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1067 - optional bindings.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1072 - capture exception propagation.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1087 - readonly property error checking.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1095 - raw_get from global table fails.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1096 - functions binding wrong.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1144 - type destructed from non-destructed memory.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1149 - static method gets const-morphed in internals.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1192 - incorrect alignment calculation.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1211 - protected_function_result nullptr.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1266 - add method in Lua 5.4 showing freelist.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/1315 - keep-alive memory.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/regression_tests/simple/source/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/basic.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/container.usertype_check.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/container_semantics.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/container_semantics.custom.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/container_semantics.ordered.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/container_semantics.unordered.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/container_shims.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/container_table.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/containers.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/containers.roundtrip.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/containers.table.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/coroutines.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/customizations.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/customizations_private.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/dump.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/functions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/functions.std.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/gc.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/lua_value.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/operators.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/overflow.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/plain_types.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/policies.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/proxies.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/state.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/storage.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/strings.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/tables.checks.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/tables.clear.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/tables.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/tables.enums.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/tables.indexing.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/tables.insertion.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/tables.traversal.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/usertypes.auxiliary_keys.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/usertypes.basic.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/usertypes.constructors.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/usertypes.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/usertypes.inheritance.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/usertypes.inheritance.multi.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/usertypes.member_variables.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/usertypes.overload.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/usertypes.properties.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/usertypes.runtime.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/usertypes.unique.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/usertypes.unregister.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/utility.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/tests/run_time/source/variadics.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/stb_image/src/stb_image.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/examples/terrain/01_create_from_heightmap/create_from_heightmap.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/main/mirach.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/resource/mesh/mesh3d.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/resource/mesh/mesh_file.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/resource/mesh/mesh_sky_dome.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/resource/mesh/mesh_terrain.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/resource/texture/image.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/resource/texture/texture.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/system/program.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/system/render_system.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

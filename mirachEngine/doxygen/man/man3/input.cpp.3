@@ -1,0 +1,44 @@
+.TH "C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/Events/input.cpp" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/Events/input.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'input\&.hpp'\fP
+.br
+\fR#include <SDL3/SDL\&.h>\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBInputBackend\fP"
+.br
+.RI "Backend namespace for platform-specific input functionality (SDL abstraction)\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBInputBackend::Init\fP ()"
+.br
+.RI "Initializes the input backend\&. Must be called before polling events\&. "
+.ti -1c
+.RI "bool \fBInputBackend::PollEvent\fP (\fBInputEvent\fP &outEvent)"
+.br
+.RI "Polls a single input event and fills the output event structure\&. "
+.ti -1c
+.RI "\fBKeyStateArray\fP \fBInputBackend::GetKeyboardState\fP (int *numKeys)"
+.br
+.RI "Returns the current state of all keyboard keys\&. "
+.ti -1c
+.RI "uint32_t \fBInputBackend::GetMouseButtons\fP ()"
+.br
+.RI "Returns the current state of all mouse buttons\&. "
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

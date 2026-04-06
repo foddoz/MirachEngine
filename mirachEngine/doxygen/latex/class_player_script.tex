@@ -1,0 +1,678 @@
+\doxysection{Player\+Script Class Reference}
+\hypertarget{class_player_script}{}\label{class_player_script}\index{PlayerScript@{PlayerScript}}
+
+
+Manages player-\/specific input, movement, jumping, and object interaction.  
+
+
+
+
+{\ttfamily \#include $<$player\+\_\+script.\+hpp$>$}
+
+
+
+Collaboration diagram for Player\+Script\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{class_player_script__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_player_script_aa95bc084c1144953d65200ba821fd893}{Player\+Script}} (const \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \&player)
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{class_player_script}{Player\+Script} with a reference to the player entity. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_script_a477310df8b50b588b853e7d174e12f13}{Capture\+Input}} (\mbox{\hyperlink{class_input_manager}{Input\+Manager}} \&input\+Manager, \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager)
+\begin{DoxyCompactList}\small\item\em Captures input states and updates internal flags. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_script_acf49a0688d3e9aac48601f9aebcf9207}{Post\+Physics\+Update}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager, \mbox{\hyperlink{class_physics_system}{Physics\+System}} \&physics\+System, float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Applies movement, jumping, and object interaction logic after the physics update. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_player_script_ad5255b13ec6d2547e0b90ef4598933ac}{Apply\+Player\+Movement}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&em, float oscillate\+Speed, float horizontal\+Speed)
+\begin{DoxyCompactList}\small\item\em Applies directional player movement based on input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_script_aeb656af66900e8954457c746f78c7e81}{Jump}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&em)
+\begin{DoxyCompactList}\small\item\em Applies vertical force for a normal jump if grounded. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_script_a6ca2961c6dc85d943a5e9450c011570e}{Double\+Jump}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&em, float oscillate\+Speed, float horizontal\+Speed)
+\begin{DoxyCompactList}\small\item\em Performs a double jump if eligible. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_script_a461158f5d6147b8338f872cf0802b68e}{Is\+Grounded}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&em, \mbox{\hyperlink{class_physics_system}{Physics\+System}} \&ps)
+\begin{DoxyCompactList}\small\item\em Checks whether the player is currently grounded. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_script_a1f56c64cd8cee085e6d64910b6a9acf7}{Launch\+Object}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&em, \mbox{\hyperlink{class_physics_system}{Physics\+System}} \&ps)
+\begin{DoxyCompactList}\small\item\em Attempts to launch a held object forward with force. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_script_a6340ea8b57a324cdf80747afbadffbef}{Launch\+Object\+Internal}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&em, \mbox{\hyperlink{class_physics_system}{Physics\+System}} \&ps, \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} object, \mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*}rb, \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} force)
+\begin{DoxyCompactList}\small\item\em Applies an internal impulse to a specific object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_script_ae7fe7c941bd066b9b28bd3cff60d0117}{Pickup\+Object}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&em, \mbox{\hyperlink{class_physics_system}{Physics\+System}} \&ps)
+\begin{DoxyCompactList}\small\item\em Performs object pickup logic using raycasting. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_script_aa3c58c5fbc952f37880acfa13a8b98a7}{Update\+Held\+Object}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&em)
+\begin{DoxyCompactList}\small\item\em Continuously updates the held object\textquotesingle{}s position and physics state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_player_script_abd58c2f0927e732e256307c2f868a17c}{Drop\+Object}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&em)
+\begin{DoxyCompactList}\small\item\em Drops the currently held object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_player_script_ab267a7b5da4a38194b01e3f41d775afd}{Get\+Valid\+Rigid\+Body}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&em, \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} object)
+\begin{DoxyCompactList}\small\item\em Gets a valid rigid body pointer from an entity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_physics_1_1_collider}{Physics\+::\+Collider}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_player_script_a8918632f4f400ee83584a34ba35f4bfa}{Get\+Valid\+Collider}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&em, \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} object)
+\begin{DoxyCompactList}\small\item\em Gets a valid collider pointer from an entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \mbox{\hyperlink{class_player_script_a0f4a311d8d5deffca3cfb1fce7f82550}{player\+ID}}
+\begin{DoxyCompactList}\small\item\em ID of the player entity this script is controlling. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_script_a4d8a188b696f82980c4a14f60d7796bd}{can\+Double\+Jump}}
+\begin{DoxyCompactList}\small\item\em Whether the player can perform a double jump. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \mbox{\hyperlink{class_player_script_af43b761ae8297b6c6b34299d60a5b136}{held\+Entity}} = \mbox{\hyperlink{ecs__types_8hpp_a273573770bdd417288da575784ee0aa3}{INVALID\+\_\+\+ENTITY}}
+\begin{DoxyCompactList}\small\item\em The currently held object (if any). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_player_script_a619219ea0c29263d6ca53f77cbbb65eb}{hold\+Distance}} = 3.\+0f
+\begin{DoxyCompactList}\small\item\em Distance from player to hold picked-\/up objects. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \mbox{\hyperlink{class_player_script_ae2f87da198e864dea7da943974f39c3c}{last\+Thrown\+Entity}} = \mbox{\hyperlink{ecs__types_8hpp_a273573770bdd417288da575784ee0aa3}{INVALID\+\_\+\+ENTITY}}
+\begin{DoxyCompactList}\small\item\em Last thrown object to avoid re-\/pickup. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_player_script_a9d47751f22f4f5774a0086a6561d5c46}{throw\+Cooldown\+Timer}} = 0.\+0f
+\begin{DoxyCompactList}\small\item\em \doxylink{namespace_time}{Time} remaining before another object can be thrown. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_player_script_a6f43abbbdc342c9464d134816d3af08f}{throw\+Cooldown\+Duration}} = 3.\+5f
+\begin{DoxyCompactList}\small\item\em Cooldown duration between throws. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_player_script_a1ff81db8c41db57a60a2548b7ad11f41}{move\+Forward}} = false
+\item 
+bool \mbox{\hyperlink{class_player_script_a2ae56bf5ccebff3617e42917045e155a}{move\+Backward}} = false
+\item 
+bool \mbox{\hyperlink{class_player_script_ac86c4ae904f6bad9267c2429be01931e}{move\+Left}} = false
+\item 
+bool \mbox{\hyperlink{class_player_script_a77ddbe080984bde61866b298f9752d3b}{move\+Right}} = false
+\item 
+bool \mbox{\hyperlink{class_player_script_a9d0d32006262d027da9fe760adac7599}{jump\+Pressed}} = false
+\item 
+bool \mbox{\hyperlink{class_player_script_a5d07690f11e5690c9e46c5a9a9b89716}{right\+Mouse\+Down}} = false
+\item 
+bool \mbox{\hyperlink{class_player_script_a8d30c32459e320a183f7b93ab3a51dbb}{left\+Mouse\+Pressed}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages player-\/specific input, movement, jumping, and object interaction. 
+
+Handles input polling, movement physics, grounded checks, object pickup/throwing, and post-\/physics updates such as held object tracking. 
+
+\label{doc-constructors}
+\Hypertarget{class_player_script_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_player_script_aa95bc084c1144953d65200ba821fd893}\index{PlayerScript@{PlayerScript}!PlayerScript@{PlayerScript}}
+\index{PlayerScript@{PlayerScript}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{PlayerScript()}{PlayerScript()}}
+{\footnotesize\ttfamily \label{class_player_script_aa95bc084c1144953d65200ba821fd893} 
+Player\+Script\+::\+Player\+Script (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \&}]{player}{}\end{DoxyParamCaption})}
+
+
+
+Constructs the \doxylink{class_player_script}{Player\+Script} with a reference to the player entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & The player entity ID. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_player_script_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_player_script_ad5255b13ec6d2547e0b90ef4598933ac}\index{PlayerScript@{PlayerScript}!ApplyPlayerMovement@{ApplyPlayerMovement}}
+\index{ApplyPlayerMovement@{ApplyPlayerMovement}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{ApplyPlayerMovement()}{ApplyPlayerMovement()}}
+{\footnotesize\ttfamily \label{class_player_script_ad5255b13ec6d2547e0b90ef4598933ac} 
+void Player\+Script\+::\+Apply\+Player\+Movement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{em}{, }\item[{float}]{oscillate\+Speed}{, }\item[{float}]{horizontal\+Speed}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Applies directional player movement based on input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em em} & \doxylink{class_entity_manager}{Entity\+Manager} reference. \\
+\hline
+{\em oscillate\+Speed} & Speed factor for movement oscillation (used in air). \\
+\hline
+{\em horizontal\+Speed} & Base horizontal movement speed. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_script_ad5255b13ec6d2547e0b90ef4598933ac_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_script_ad5255b13ec6d2547e0b90ef4598933ac_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_player_script_a477310df8b50b588b853e7d174e12f13}\index{PlayerScript@{PlayerScript}!CaptureInput@{CaptureInput}}
+\index{CaptureInput@{CaptureInput}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{CaptureInput()}{CaptureInput()}}
+{\footnotesize\ttfamily \label{class_player_script_a477310df8b50b588b853e7d174e12f13} 
+bool Player\+Script\+::\+Capture\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_input_manager}{Input\+Manager}} \&}]{input\+Manager}{, }\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{entity\+Manager}{}\end{DoxyParamCaption})}
+
+
+
+Captures input states and updates internal flags. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Manager} & Reference to the engine\textquotesingle{}s input system. \\
+\hline
+{\em entity\+Manager} & ECS manager to access player components. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the quit signal was received (e.\+g., ESC pressed), otherwise false. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_script_a477310df8b50b588b853e7d174e12f13_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_script_a477310df8b50b588b853e7d174e12f13_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_player_script_a6ca2961c6dc85d943a5e9450c011570e}\index{PlayerScript@{PlayerScript}!DoubleJump@{DoubleJump}}
+\index{DoubleJump@{DoubleJump}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{DoubleJump()}{DoubleJump()}}
+{\footnotesize\ttfamily \label{class_player_script_a6ca2961c6dc85d943a5e9450c011570e} 
+void Player\+Script\+::\+Double\+Jump (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{em}{, }\item[{float}]{oscillate\+Speed}{, }\item[{float}]{horizontal\+Speed}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Performs a double jump if eligible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em em} & \doxylink{class_entity_manager}{Entity\+Manager} reference. \\
+\hline
+{\em oscillate\+Speed} & Speed factor for movement oscillation. \\
+\hline
+{\em horizontal\+Speed} & Base movement speed. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_script_a6ca2961c6dc85d943a5e9450c011570e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_script_a6ca2961c6dc85d943a5e9450c011570e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_player_script_abd58c2f0927e732e256307c2f868a17c}\index{PlayerScript@{PlayerScript}!DropObject@{DropObject}}
+\index{DropObject@{DropObject}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{DropObject()}{DropObject()}}
+{\footnotesize\ttfamily \label{class_player_script_abd58c2f0927e732e256307c2f868a17c} 
+void Player\+Script\+::\+Drop\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{em}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Drops the currently held object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em em} & \doxylink{class_entity_manager}{Entity\+Manager} reference. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_script_abd58c2f0927e732e256307c2f868a17c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_script_abd58c2f0927e732e256307c2f868a17c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_player_script_a8918632f4f400ee83584a34ba35f4bfa}\index{PlayerScript@{PlayerScript}!GetValidCollider@{GetValidCollider}}
+\index{GetValidCollider@{GetValidCollider}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{GetValidCollider()}{GetValidCollider()}}
+{\footnotesize\ttfamily \label{class_player_script_a8918632f4f400ee83584a34ba35f4bfa} 
+\mbox{\hyperlink{class_physics_1_1_collider}{Physics\+::\+Collider}} \texorpdfstring{$\ast$}{*} Player\+Script\+::\+Get\+Valid\+Collider (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{em}{, }\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}}]{object}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gets a valid collider pointer from an entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em em} & \doxylink{class_entity_manager}{Entity\+Manager} reference. \\
+\hline
+{\em object} & Target entity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the \doxylink{struct_collider}{Collider} if valid; otherwise nullptr. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_script_a8918632f4f400ee83584a34ba35f4bfa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_script_a8918632f4f400ee83584a34ba35f4bfa_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_player_script_ab267a7b5da4a38194b01e3f41d775afd}\index{PlayerScript@{PlayerScript}!GetValidRigidBody@{GetValidRigidBody}}
+\index{GetValidRigidBody@{GetValidRigidBody}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{GetValidRigidBody()}{GetValidRigidBody()}}
+{\footnotesize\ttfamily \label{class_player_script_ab267a7b5da4a38194b01e3f41d775afd} 
+\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*} Player\+Script\+::\+Get\+Valid\+Rigid\+Body (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{em}{, }\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}}]{object}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gets a valid rigid body pointer from an entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em em} & \doxylink{class_entity_manager}{Entity\+Manager} reference. \\
+\hline
+{\em object} & Target entity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the Rigid\+Body if valid; otherwise nullptr. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_script_ab267a7b5da4a38194b01e3f41d775afd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_script_ab267a7b5da4a38194b01e3f41d775afd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_player_script_a461158f5d6147b8338f872cf0802b68e}\index{PlayerScript@{PlayerScript}!IsGrounded@{IsGrounded}}
+\index{IsGrounded@{IsGrounded}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{IsGrounded()}{IsGrounded()}}
+{\footnotesize\ttfamily \label{class_player_script_a461158f5d6147b8338f872cf0802b68e} 
+bool Player\+Script\+::\+Is\+Grounded (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{em}{, }\item[{\mbox{\hyperlink{class_physics_system}{Physics\+System}} \&}]{ps}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks whether the player is currently grounded. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em em} & \doxylink{class_entity_manager}{Entity\+Manager} reference. \\
+\hline
+{\em ps} & \doxylink{namespace_physics}{Physics} system reference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if grounded, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_script_a461158f5d6147b8338f872cf0802b68e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_script_a461158f5d6147b8338f872cf0802b68e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_player_script_aeb656af66900e8954457c746f78c7e81}\index{PlayerScript@{PlayerScript}!Jump@{Jump}}
+\index{Jump@{Jump}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{Jump()}{Jump()}}
+{\footnotesize\ttfamily \label{class_player_script_aeb656af66900e8954457c746f78c7e81} 
+void Player\+Script\+::\+Jump (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{em}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Applies vertical force for a normal jump if grounded. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em em} & \doxylink{class_entity_manager}{Entity\+Manager} reference. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_script_aeb656af66900e8954457c746f78c7e81_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_player_script_a1f56c64cd8cee085e6d64910b6a9acf7}\index{PlayerScript@{PlayerScript}!LaunchObject@{LaunchObject}}
+\index{LaunchObject@{LaunchObject}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{LaunchObject()}{LaunchObject()}}
+{\footnotesize\ttfamily \label{class_player_script_a1f56c64cd8cee085e6d64910b6a9acf7} 
+void Player\+Script\+::\+Launch\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{em}{, }\item[{\mbox{\hyperlink{class_physics_system}{Physics\+System}} \&}]{ps}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Attempts to launch a held object forward with force. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em em} & \doxylink{class_entity_manager}{Entity\+Manager} reference. \\
+\hline
+{\em ps} & \doxylink{namespace_physics}{Physics} system reference. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_script_a1f56c64cd8cee085e6d64910b6a9acf7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_script_a1f56c64cd8cee085e6d64910b6a9acf7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_player_script_a6340ea8b57a324cdf80747afbadffbef}\index{PlayerScript@{PlayerScript}!LaunchObjectInternal@{LaunchObjectInternal}}
+\index{LaunchObjectInternal@{LaunchObjectInternal}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{LaunchObjectInternal()}{LaunchObjectInternal()}}
+{\footnotesize\ttfamily \label{class_player_script_a6340ea8b57a324cdf80747afbadffbef} 
+void Player\+Script\+::\+Launch\+Object\+Internal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{em}{, }\item[{\mbox{\hyperlink{class_physics_system}{Physics\+System}} \&}]{ps}{, }\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}}]{object}{, }\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{rb}{, }\item[{\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}}]{force}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Applies an internal impulse to a specific object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em em} & \doxylink{class_entity_manager}{Entity\+Manager} reference. \\
+\hline
+{\em ps} & \doxylink{namespace_physics}{Physics} system reference. \\
+\hline
+{\em object} & The target entity to launch. \\
+\hline
+{\em rb} & Pointer to the rigid body of the object. \\
+\hline
+{\em force} & Force vector to apply. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_script_a6340ea8b57a324cdf80747afbadffbef_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_script_a6340ea8b57a324cdf80747afbadffbef_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_player_script_ae7fe7c941bd066b9b28bd3cff60d0117}\index{PlayerScript@{PlayerScript}!PickupObject@{PickupObject}}
+\index{PickupObject@{PickupObject}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{PickupObject()}{PickupObject()}}
+{\footnotesize\ttfamily \label{class_player_script_ae7fe7c941bd066b9b28bd3cff60d0117} 
+void Player\+Script\+::\+Pickup\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{em}{, }\item[{\mbox{\hyperlink{class_physics_system}{Physics\+System}} \&}]{ps}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Performs object pickup logic using raycasting. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em em} & \doxylink{class_entity_manager}{Entity\+Manager} reference. \\
+\hline
+{\em ps} & \doxylink{namespace_physics}{Physics} system reference. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_script_ae7fe7c941bd066b9b28bd3cff60d0117_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_script_ae7fe7c941bd066b9b28bd3cff60d0117_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_player_script_acf49a0688d3e9aac48601f9aebcf9207}\index{PlayerScript@{PlayerScript}!PostPhysicsUpdate@{PostPhysicsUpdate}}
+\index{PostPhysicsUpdate@{PostPhysicsUpdate}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{PostPhysicsUpdate()}{PostPhysicsUpdate()}}
+{\footnotesize\ttfamily \label{class_player_script_acf49a0688d3e9aac48601f9aebcf9207} 
+void Player\+Script\+::\+Post\+Physics\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{entity\+Manager}{, }\item[{\mbox{\hyperlink{class_physics_system}{Physics\+System}} \&}]{physics\+System}{, }\item[{float}]{delta\+Time}{}\end{DoxyParamCaption})}
+
+
+
+Applies movement, jumping, and object interaction logic after the physics update. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+Manager} & ECS manager for component access. \\
+\hline
+{\em physics\+System} & Reference to the active physics system. \\
+\hline
+{\em delta\+Time} & \doxylink{namespace_time}{Time} elapsed since last update. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_script_acf49a0688d3e9aac48601f9aebcf9207_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_script_acf49a0688d3e9aac48601f9aebcf9207_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_player_script_aa3c58c5fbc952f37880acfa13a8b98a7}\index{PlayerScript@{PlayerScript}!UpdateHeldObject@{UpdateHeldObject}}
+\index{UpdateHeldObject@{UpdateHeldObject}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{UpdateHeldObject()}{UpdateHeldObject()}}
+{\footnotesize\ttfamily \label{class_player_script_aa3c58c5fbc952f37880acfa13a8b98a7} 
+void Player\+Script\+::\+Update\+Held\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{em}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Continuously updates the held object\textquotesingle{}s position and physics state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em em} & \doxylink{class_entity_manager}{Entity\+Manager} reference. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_script_aa3c58c5fbc952f37880acfa13a8b98a7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_script_aa3c58c5fbc952f37880acfa13a8b98a7_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_player_script_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_player_script_a4d8a188b696f82980c4a14f60d7796bd}\index{PlayerScript@{PlayerScript}!canDoubleJump@{canDoubleJump}}
+\index{canDoubleJump@{canDoubleJump}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{canDoubleJump}{canDoubleJump}}
+{\footnotesize\ttfamily \label{class_player_script_a4d8a188b696f82980c4a14f60d7796bd} 
+bool Player\+Script\+::can\+Double\+Jump\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Whether the player can perform a double jump. 
+
+\Hypertarget{class_player_script_af43b761ae8297b6c6b34299d60a5b136}\index{PlayerScript@{PlayerScript}!heldEntity@{heldEntity}}
+\index{heldEntity@{heldEntity}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{heldEntity}{heldEntity}}
+{\footnotesize\ttfamily \label{class_player_script_af43b761ae8297b6c6b34299d60a5b136} 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} Player\+Script\+::held\+Entity = \mbox{\hyperlink{ecs__types_8hpp_a273573770bdd417288da575784ee0aa3}{INVALID\+\_\+\+ENTITY}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The currently held object (if any). 
+
+\Hypertarget{class_player_script_a619219ea0c29263d6ca53f77cbbb65eb}\index{PlayerScript@{PlayerScript}!holdDistance@{holdDistance}}
+\index{holdDistance@{holdDistance}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{holdDistance}{holdDistance}}
+{\footnotesize\ttfamily \label{class_player_script_a619219ea0c29263d6ca53f77cbbb65eb} 
+float Player\+Script\+::hold\+Distance = 3.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Distance from player to hold picked-\/up objects. 
+
+\Hypertarget{class_player_script_a9d0d32006262d027da9fe760adac7599}\index{PlayerScript@{PlayerScript}!jumpPressed@{jumpPressed}}
+\index{jumpPressed@{jumpPressed}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{jumpPressed}{jumpPressed}}
+{\footnotesize\ttfamily \label{class_player_script_a9d0d32006262d027da9fe760adac7599} 
+bool Player\+Script\+::jump\+Pressed = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_script_ae2f87da198e864dea7da943974f39c3c}\index{PlayerScript@{PlayerScript}!lastThrownEntity@{lastThrownEntity}}
+\index{lastThrownEntity@{lastThrownEntity}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{lastThrownEntity}{lastThrownEntity}}
+{\footnotesize\ttfamily \label{class_player_script_ae2f87da198e864dea7da943974f39c3c} 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} Player\+Script\+::last\+Thrown\+Entity = \mbox{\hyperlink{ecs__types_8hpp_a273573770bdd417288da575784ee0aa3}{INVALID\+\_\+\+ENTITY}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Last thrown object to avoid re-\/pickup. 
+
+\Hypertarget{class_player_script_a8d30c32459e320a183f7b93ab3a51dbb}\index{PlayerScript@{PlayerScript}!leftMousePressed@{leftMousePressed}}
+\index{leftMousePressed@{leftMousePressed}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{leftMousePressed}{leftMousePressed}}
+{\footnotesize\ttfamily \label{class_player_script_a8d30c32459e320a183f7b93ab3a51dbb} 
+bool Player\+Script\+::left\+Mouse\+Pressed = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_script_a2ae56bf5ccebff3617e42917045e155a}\index{PlayerScript@{PlayerScript}!moveBackward@{moveBackward}}
+\index{moveBackward@{moveBackward}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{moveBackward}{moveBackward}}
+{\footnotesize\ttfamily \label{class_player_script_a2ae56bf5ccebff3617e42917045e155a} 
+bool Player\+Script\+::move\+Backward = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_script_a1ff81db8c41db57a60a2548b7ad11f41}\index{PlayerScript@{PlayerScript}!moveForward@{moveForward}}
+\index{moveForward@{moveForward}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{moveForward}{moveForward}}
+{\footnotesize\ttfamily \label{class_player_script_a1ff81db8c41db57a60a2548b7ad11f41} 
+bool Player\+Script\+::move\+Forward = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_script_ac86c4ae904f6bad9267c2429be01931e}\index{PlayerScript@{PlayerScript}!moveLeft@{moveLeft}}
+\index{moveLeft@{moveLeft}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{moveLeft}{moveLeft}}
+{\footnotesize\ttfamily \label{class_player_script_ac86c4ae904f6bad9267c2429be01931e} 
+bool Player\+Script\+::move\+Left = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_script_a77ddbe080984bde61866b298f9752d3b}\index{PlayerScript@{PlayerScript}!moveRight@{moveRight}}
+\index{moveRight@{moveRight}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{moveRight}{moveRight}}
+{\footnotesize\ttfamily \label{class_player_script_a77ddbe080984bde61866b298f9752d3b} 
+bool Player\+Script\+::move\+Right = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_script_a0f4a311d8d5deffca3cfb1fce7f82550}\index{PlayerScript@{PlayerScript}!playerID@{playerID}}
+\index{playerID@{playerID}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{playerID}{playerID}}
+{\footnotesize\ttfamily \label{class_player_script_a0f4a311d8d5deffca3cfb1fce7f82550} 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} Player\+Script\+::player\+ID\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ID of the player entity this script is controlling. 
+
+\Hypertarget{class_player_script_a5d07690f11e5690c9e46c5a9a9b89716}\index{PlayerScript@{PlayerScript}!rightMouseDown@{rightMouseDown}}
+\index{rightMouseDown@{rightMouseDown}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{rightMouseDown}{rightMouseDown}}
+{\footnotesize\ttfamily \label{class_player_script_a5d07690f11e5690c9e46c5a9a9b89716} 
+bool Player\+Script\+::right\+Mouse\+Down = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_player_script_a6f43abbbdc342c9464d134816d3af08f}\index{PlayerScript@{PlayerScript}!throwCooldownDuration@{throwCooldownDuration}}
+\index{throwCooldownDuration@{throwCooldownDuration}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{throwCooldownDuration}{throwCooldownDuration}}
+{\footnotesize\ttfamily \label{class_player_script_a6f43abbbdc342c9464d134816d3af08f} 
+float Player\+Script\+::throw\+Cooldown\+Duration = 3.\+5f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Cooldown duration between throws. 
+
+\Hypertarget{class_player_script_a9d47751f22f4f5774a0086a6561d5c46}\index{PlayerScript@{PlayerScript}!throwCooldownTimer@{throwCooldownTimer}}
+\index{throwCooldownTimer@{throwCooldownTimer}!PlayerScript@{PlayerScript}}
+\doxysubsubsection{\texorpdfstring{throwCooldownTimer}{throwCooldownTimer}}
+{\footnotesize\ttfamily \label{class_player_script_a9d47751f22f4f5774a0086a6561d5c46} 
+float Player\+Script\+::throw\+Cooldown\+Timer = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{namespace_time}{Time} remaining before another object can be thrown. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Scripts/\mbox{\hyperlink{player__script_8hpp}{player\+\_\+script.\+hpp}}\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Scripts/\mbox{\hyperlink{player__script_8cpp}{player\+\_\+script.\+cpp}}\end{DoxyCompactItemize}

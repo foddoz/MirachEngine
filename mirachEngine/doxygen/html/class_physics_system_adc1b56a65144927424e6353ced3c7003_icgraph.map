@@ -1,0 +1,30 @@
+<map id="PhysicsSystem::GetWorld" name="PhysicsSystem::GetWorld">
+<area shape="rect" id="Node000001" title="Gets the underlying physics world." alt="" coords="1178,128,1354,155"/>
+<area shape="rect" id="Node000002" href="$class_player_script.html#a461158f5d6147b8338f872cf0802b68e" title="Checks whether the player is currently grounded." alt="" coords="721,5,888,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1236,120,1188,85,1159,69,1129,56,1068,39,1005,28,888,20,889,14,1005,22,1069,33,1131,51,1162,64,1191,81,1239,116"/>
+<area shape="rect" id="Node000007" href="$class_player_script.html#a1f56c64cd8cee085e6d64910b6a9acf7" title="Attempts to launch a held object forward with force." alt="" coords="714,72,894,99"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1229,122,1183,99,1130,81,1070,72,1008,69,895,75,895,70,1008,64,1070,67,1131,76,1185,94,1231,118"/>
+<area shape="rect" id="Node000008" href="$class_player_script.html#a6340ea8b57a324cdf80747afbadffbef" title="Applies an internal impulse to a specific object." alt="" coords="948,91,1128,133"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="1163,131,1128,126,1129,121,1163,125"/>
+<area shape="rect" id="Node000009" href="$class_player_script.html#ae7fe7c941bd066b9b28bd3cff60d0117" title="Performs object pickup logic using raycasting." alt="" coords="948,157,1127,184"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="1163,157,1128,162,1127,157,1163,152"/>
+<area shape="rect" id="Node000010" href="$class_i_enemy_state_logic.html#aa2c870d75eaf6bf1bb9dec538b0f57fb" title="Registers a collision callback to apply damage to the player." alt="" coords="945,208,1130,251"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="1219,163,1131,198,1101,210,1099,205,1129,194,1217,158"/>
+<area shape="rect" id="Node000013" href="$class_terrain_manager.html#a019ebedd94cb1fbe0a7b412478b1d41c" title="Registers all chunks as ECS entities with rendering and physics components." alt="" coords="954,275,1121,317"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="1244,168,1196,217,1165,242,1132,265,1109,276,1107,272,1129,260,1161,238,1192,213,1241,165"/>
+<area shape="rect" id="Node000003" href="$class_player_script.html#acf49a0688d3e9aac48601f9aebcf9207" title="Applies movement, jumping, and object interaction logic after the physics update." alt="" coords="489,64,664,107"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="742,39,653,66,651,61,741,34"/>
+<area shape="rect" id="Node000004" href="$class_terrain_scene.html#a55eb34067d9346aa7d9c3295a9e2dfb0" title="Executes the main loop: input, update, physics, animation, and rendering." alt="" coords="280,72,441,99"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="474,88,442,88,442,83,474,83"/>
+<area shape="rect" id="Node000005" href="$class_terrain_scene.html#ae8ec4e098386a74714255aed184761eb" title="Runs the full scene lifecycle in the correct execution order." alt="" coords="103,72,232,99"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="264,88,232,88,232,83,264,83"/>
+<area shape="rect" id="Node000006" href="$mirach_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point of the engine. Initializes subsystems, loads models, sets up ECS,..." alt="" coords="5,72,55,99"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="87,88,55,88,55,83,87,83"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="699,88,664,88,664,83,699,83"/>
+<area shape="poly" id="edge9_Node000008_Node000007" title=" " alt="" coords="932,103,895,98,895,93,932,97"/>
+<area shape="poly" id="edge11_Node000009_Node000003" title=" " alt="" coords="945,157,711,113,664,104,665,99,712,108,946,151"/>
+<area shape="rect" id="Node000011" href="$classenemy_state.html#a1c1bf6785b0e98fe2a2931f37756a4d6" title="Animation index reference." alt="" coords="713,185,896,212"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="929,218,896,213,896,208,930,212"/>
+<area shape="rect" id="Node000012" href="$classhover_enemy_state.html#a7c5d71325dc0ee5ab4e1273a56cf76e2" title="Called when entering the attack state." alt="" coords="712,236,897,279"/>
+<area shape="poly" id="edge14_Node000010_Node000012" title=" " alt="" coords="930,245,898,249,897,244,929,240"/>
+</map>

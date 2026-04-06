@@ -1,0 +1,61 @@
+.TH "EntityManager::ComponentManagerWrapper< T >" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+EntityManager::ComponentManagerWrapper< T > \- Concrete wrapper for a strongly typed component manager\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBEntityManager::IComponentManagerBase\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBRemoveComponent\fP (\fBEntity\fP e) override"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBEntityManager::IComponentManagerBase\fP
+.in +1c
+.ti -1c
+.RI "virtual \fB~IComponentManagerBase\fP ()=default"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBComponentManager\fP< T > \fBmanager\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename T>
+.br
+struct EntityManager::ComponentManagerWrapper< T >"Concrete wrapper for a strongly typed component manager\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP Component type\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename T> void \fBEntityManager::ComponentManagerWrapper\fP< T >::RemoveComponent (\fBEntity\fP e)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBEntityManager::IComponentManagerBase\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "template<typename T> \fBComponentManager\fP<T> \fBEntityManager::ComponentManagerWrapper\fP< T >::manager"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

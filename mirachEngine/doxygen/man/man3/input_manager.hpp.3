@@ -1,0 +1,67 @@
+.TH "C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/Events/input_manager.hpp" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/Events/input_manager.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'input\&.hpp'\fP
+.br
+\fR#include <unordered_map>\fP
+.br
+\fR#include <vector>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBInputManager\fP"
+.br
+.RI "Manages input actions, key states, and mouse interactions at a high level\&. "
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum class \fBInputAction\fP { \fBMoveForward\fP, \fBMoveBackward\fP, \fBMoveLeft\fP, \fBMoveRight\fP, \fBJump\fP, \fBQuit\fP, \fBObjectLaunch\fP, \fBObjectGrab\fP }"
+.br
+.RI "High-level input actions mapped to specific key codes\&. "
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum class \fBInputAction\fP\fR [strong]\fP"
+
+.PP
+High-level input actions mapped to specific key codes\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIMoveForward \fP
+Move player forward\&. 
+.TP
+\f(BIMoveBackward \fP
+Move player backward\&. 
+.TP
+\f(BIMoveLeft \fP
+Move player left\&. 
+.TP
+\f(BIMoveRight \fP
+Move player right\&. 
+.TP
+\f(BIJump \fP
+Make the player jump\&. 
+.TP
+\f(BIQuit \fP
+Trigger application quit\&. 
+.TP
+\f(BIObjectLaunch \fP
+Launch a held object\&. 
+.TP
+\f(BIObjectGrab \fP
+Grab or pick up an object\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

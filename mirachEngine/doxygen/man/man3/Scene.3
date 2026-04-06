@@ -1,0 +1,137 @@
+.TH "Scene" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Scene \- Abstract base class for defining and managing a game scene lifecycle\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <scene\&.hpp>\fP
+.PP
+Inherited by \fBTerrainScene\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBScene\fP ()=default"
+.br
+.RI "Default constructor\&. "
+.ti -1c
+.RI "virtual \fB~Scene\fP ()=default"
+.br
+.RI "Virtual destructor for proper cleanup in derived classes\&. "
+.ti -1c
+.RI "virtual void \fBRun\fP ()=0"
+.br
+.RI "Runs the full scene lifecycle in a fixed execution order\&. "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBGenerateCPUData\fP ()=0"
+.br
+.RI "Performs CPU-side data generation such as procedural meshes, textures, etc\&. "
+.ti -1c
+.RI "virtual void \fBInitialiseEngine\fP ()=0"
+.br
+.RI "Initializes core engine components (e\&.g\&., renderer, physics, input)\&. "
+.ti -1c
+.RI "virtual void \fBUploadAssetsToGPU\fP ()=0"
+.br
+.RI "Uploads assets like meshes and textures to the GPU\&. "
+.ti -1c
+.RI "virtual void \fBAssignPipelines\fP ()=0"
+.br
+.RI "Assigns graphics pipelines or shader programs to mesh renderers\&. "
+.ti -1c
+.RI "virtual void \fBSetupECS\fP ()=0"
+.br
+.RI "Sets up the ECS by creating entities and attaching components\&. "
+.ti -1c
+.RI "virtual void \fBMainLoop\fP ()=0"
+.br
+.RI "Executes the main game loop (input, update, render)\&. "
+.ti -1c
+.RI "virtual void \fBCleanUp\fP ()=0"
+.br
+.RI "Releases all resources and cleans up the scene\&. "
+.ti -1c
+.RI "virtual void \fBShutdown\fP ()=0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Abstract base class for defining and managing a game scene lifecycle\&. 
+
+This class enforces a fixed execution order for initializing, running, and cleaning up a scene, and must be subclassed to provide specific behavior\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Scene::Scene ()\fR [default]\fP"
+
+.PP
+Default constructor\&. 
+.SS "virtual Scene::~Scene ()\fR [virtual]\fP, \fR [default]\fP"
+
+.PP
+Virtual destructor for proper cleanup in derived classes\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void Scene::AssignPipelines ()\fR [protected]\fP, \fR [pure virtual]\fP"
+
+.PP
+Assigns graphics pipelines or shader programs to mesh renderers\&. 
+.PP
+Implemented in \fBTerrainScene\fP\&.
+.SS "virtual void Scene::CleanUp ()\fR [protected]\fP, \fR [pure virtual]\fP"
+
+.PP
+Releases all resources and cleans up the scene\&. 
+.PP
+Implemented in \fBTerrainScene\fP\&.
+.SS "virtual void Scene::GenerateCPUData ()\fR [protected]\fP, \fR [pure virtual]\fP"
+
+.PP
+Performs CPU-side data generation such as procedural meshes, textures, etc\&. 
+.PP
+Implemented in \fBTerrainScene\fP\&.
+.SS "virtual void Scene::InitialiseEngine ()\fR [protected]\fP, \fR [pure virtual]\fP"
+
+.PP
+Initializes core engine components (e\&.g\&., renderer, physics, input)\&. 
+.PP
+Implemented in \fBTerrainScene\fP\&.
+.SS "virtual void Scene::MainLoop ()\fR [protected]\fP, \fR [pure virtual]\fP"
+
+.PP
+Executes the main game loop (input, update, render)\&. 
+.PP
+Implemented in \fBTerrainScene\fP\&.
+.SS "virtual void Scene::Run ()\fR [pure virtual]\fP"
+
+.PP
+Runs the full scene lifecycle in a fixed execution order\&. Calls the following methods in sequence: GenerateCPUData -> InitialiseEngine -> UploadAssetsToGPU -> AssignPipelines -> SetupECS -> MainLoop -> CleanUp 
+.PP
+Implemented in \fBTerrainScene\fP\&.
+.SS "virtual void Scene::SetupECS ()\fR [protected]\fP, \fR [pure virtual]\fP"
+
+.PP
+Sets up the ECS by creating entities and attaching components\&. 
+.PP
+Implemented in \fBTerrainScene\fP\&.
+.SS "virtual void Scene::Shutdown ()\fR [protected]\fP, \fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBTerrainScene\fP\&.
+.SS "virtual void Scene::UploadAssetsToGPU ()\fR [protected]\fP, \fR [pure virtual]\fP"
+
+.PP
+Uploads assets like meshes and textures to the GPU\&. 
+.PP
+Implemented in \fBTerrainScene\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

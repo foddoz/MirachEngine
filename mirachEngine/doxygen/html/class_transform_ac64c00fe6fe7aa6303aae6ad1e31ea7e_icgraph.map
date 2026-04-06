@@ -1,0 +1,14 @@
+<map id="Transform::SetYAxisUp" name="Transform::SetYAxisUp">
+<area shape="rect" id="Node000001" title="Sets whether the object&#39;s up axis should be Y (true) or Z (false)." alt="" coords="739,31,898,57"/>
+<area shape="rect" id="Node000002" href="$class_terrain_scene.html#a92cf2eb19b5a090ec4666367d5a4c898" title="Spawns firefly models, likely with animation or light effects." alt="" coords="495,5,691,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="723,36,691,32,692,27,724,31"/>
+<area shape="rect" id="Node000006" href="$class_terrain_scene.html#a2605641f2858b4c1ad9033e27a39f0c5" title="Spawns robotic enemy NPCs with AI behavior." alt="" coords="499,56,687,83"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="724,57,687,61,687,56,723,52"/>
+<area shape="rect" id="Node000003" href="$class_terrain_scene.html#a64ff8229749692f3000ab0387dae7165" title="Creates and registers entities and components in the ECS." alt="" coords="280,31,447,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="480,34,448,37,448,32,479,29"/>
+<area shape="rect" id="Node000004" href="$class_terrain_scene.html#ae8ec4e098386a74714255aed184761eb" title="Runs the full scene lifecycle in the correct execution order." alt="" coords="103,31,232,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="264,47,232,47,232,41,264,41"/>
+<area shape="rect" id="Node000005" href="$mirach_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point of the engine. Initializes subsystems, loads models, sets up ECS,..." alt="" coords="5,31,55,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="87,47,55,47,55,41,87,41"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="483,60,448,56,448,51,484,55"/>
+</map>

@@ -1,0 +1,19 @@
+<map id="Mesh3D::Mesh3D" name="Mesh3D::Mesh3D">
+<area shape="rect" id="Node000001" title="Default constructor initializes OpenGL buffer handles and transforms." alt="" coords="886,81,1013,108"/>
+<area shape="rect" id="Node000002" href="$class_mesh3_d.html#a18dc545efcaa749ea7649b9bcaa91ce1" title="Copy constructor for Mesh3D." alt="" coords="688,5,816,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="906,77,837,46,803,35,805,30,839,42,908,72"/>
+<area shape="rect" id="Node000003" href="$class_mesh_file.html#add7cec2a09fdc4954c6b64c2ff9a9df6" title="Constructs an empty MeshFile object." alt="" coords="684,56,820,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="870,87,820,81,821,75,871,82"/>
+<area shape="rect" id="Node000004" href="$class_mesh_m_d2.html#ad54c9b1e67af8911f1667f4858be24d1" title="Copy constructor." alt="" coords="677,107,827,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="871,107,827,113,827,108,870,102"/>
+<area shape="rect" id="Node000005" href="$class_mesh_terrain.html#a75adb1babf83a1f6812d789d55f2b3ad" title="Constructs an empty MeshTerrain object." alt="" coords="666,157,838,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="908,117,839,148,805,159,803,154,837,143,906,112"/>
+<area shape="rect" id="Node000006" href="$struct_mesh_terrain_1_1_vertex.html#a58f3fdca3d472b4165dacf04ec17b5dd" title="Initializes vertex based on heightmap and terrain data." alt="" coords="458,120,595,163"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="651,160,596,153,596,148,651,155"/>
+<area shape="rect" id="Node000009" href="$class_terrain_chunk.html#a87708540b0fc236af648d35a209de730" title="Default constructor. Initializes internal state." alt="" coords="435,187,618,213"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="651,186,619,191,619,185,651,181"/>
+<area shape="rect" id="Node000007" href="$class_mesh_terrain.html#a7cd9ecf88516b6716cb76b804e8bd61b" title=" " alt="" coords="221,128,387,155"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="443,144,388,144,388,139,443,139"/>
+<area shape="rect" id="Node000008" href="$class_mesh_terrain.html#a02d8c1492362365710a818b9a4674774" title="Converts the terrain to a renderable mesh component." alt="" coords="5,128,173,155"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="205,144,173,144,173,139,205,139"/>
+</map>

@@ -1,0 +1,36 @@
+\doxysection{window.\+hpp}
+\hypertarget{window_8hpp_source}{}\label{window_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Program/window.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Program/window.hpp}}
+\mbox{\hyperlink{window_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ WINDOW\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ WINDOW\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_window_handle}{WindowHandle}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{using\ }\mbox{\hyperlink{window_8hpp_a0946984514c2d132fda9ae97e8ba739f}{GraphicsContextHandle}}\ =\ \textcolor{keywordtype}{void}*;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_window}{Window}}\ \{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{struct_window_handle}{WindowHandle}}*\ \mbox{\hyperlink{namespace_window_ac9bcff5409b21a92d947a03697816be8}{Create}}(\textcolor{keyword}{const}\ std::string\&\ title,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_window_ad9697b4c1ab7bfd9b385f461f275303b}{Destroy}}(\mbox{\hyperlink{struct_window_handle}{WindowHandle}}*\ window);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{window_8hpp_a0946984514c2d132fda9ae97e8ba739f}{GraphicsContextHandle}}\ \mbox{\hyperlink{namespace_window_a5187ba066cf3c391bc03ed296e48d8be}{CreateGraphicsContext}}(\mbox{\hyperlink{struct_window_handle}{WindowHandle}}*\ window);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_window_a38d3d02bafef36fc6d57d029d7ab7d96}{MakeContextCurrent}}(\mbox{\hyperlink{struct_window_handle}{WindowHandle}}*\ window,\ \mbox{\hyperlink{window_8hpp_a0946984514c2d132fda9ae97e8ba739f}{GraphicsContextHandle}}\ context);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_window_aceeb1c854437ec05d00801ffc7acc112}{SwapBuffers}}(\mbox{\hyperlink{struct_window_handle}{WindowHandle}}*\ window);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_window_ae89c506b55cf635c234885d7278debc4}{LockMouse}}(\mbox{\hyperlink{struct_window_handle}{WindowHandle}}*\ window,\ \textcolor{keywordtype}{bool}\ lock,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{namespace_window_a22537588ce8e2ea52ad832ea8d58a42d}{GetProcAddress}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespace_window_a2cae9e06fe965916ea997400acc84aeb}{InitGraphics}}();}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \}\ \textcolor{comment}{//\ namespace\ Window}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WINDOW\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,109 @@
+\doxysection{Input\+Backend Namespace Reference}
+\hypertarget{namespace_input_backend}{}\label{namespace_input_backend}\index{InputBackend@{InputBackend}}
+
+
+Backend namespace for platform-\/specific input functionality (SDL abstraction).  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespace_input_backend_a621be98711ee4ca6433d2bdbceb3cf38}{Init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the input backend. Must be called before polling events. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespace_input_backend_a0b2497db762ea8dfeb096986cac3037e}{Poll\+Event}} (\mbox{\hyperlink{struct_input_event}{Input\+Event}} \&out\+Event)
+\begin{DoxyCompactList}\small\item\em Polls a single input event and fills the output event structure. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{input_8hpp_a238b2f0546e69e7547255ec984309fcc}{Key\+State\+Array}} \mbox{\hyperlink{namespace_input_backend_a81af72d8c295d72d026a04bfaf1d8f15}{Get\+Keyboard\+State}} (int \texorpdfstring{$\ast$}{*}num\+Keys)
+\begin{DoxyCompactList}\small\item\em Returns the current state of all keyboard keys. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{namespace_input_backend_a41b48803a8095adecb22dd7c852ef45c}{Get\+Mouse\+Buttons}} ()
+\begin{DoxyCompactList}\small\item\em Returns the current state of all mouse buttons. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Backend namespace for platform-\/specific input functionality (SDL abstraction). 
+
+\label{doc-func-members}
+\Hypertarget{namespace_input_backend_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{namespace_input_backend_a81af72d8c295d72d026a04bfaf1d8f15}\index{InputBackend@{InputBackend}!GetKeyboardState@{GetKeyboardState}}
+\index{GetKeyboardState@{GetKeyboardState}!InputBackend@{InputBackend}}
+\doxysubsubsection{\texorpdfstring{GetKeyboardState()}{GetKeyboardState()}}
+{\footnotesize\ttfamily \label{namespace_input_backend_a81af72d8c295d72d026a04bfaf1d8f15} 
+\mbox{\hyperlink{input_8hpp_a238b2f0546e69e7547255ec984309fcc}{Key\+State\+Array}} Input\+Backend\+::\+Get\+Keyboard\+State (\begin{DoxyParamCaption}\item[{int \texorpdfstring{$\ast$}{*}}]{num\+Keys}{}\end{DoxyParamCaption})}
+
+
+
+Returns the current state of all keyboard keys. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Keys} & Pointer to int to receive the number of keys available. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to an array of key states (1 = pressed, 0 = not pressed). 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_input_backend_a81af72d8c295d72d026a04bfaf1d8f15_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_input_backend_a41b48803a8095adecb22dd7c852ef45c}\index{InputBackend@{InputBackend}!GetMouseButtons@{GetMouseButtons}}
+\index{GetMouseButtons@{GetMouseButtons}!InputBackend@{InputBackend}}
+\doxysubsubsection{\texorpdfstring{GetMouseButtons()}{GetMouseButtons()}}
+{\footnotesize\ttfamily \label{namespace_input_backend_a41b48803a8095adecb22dd7c852ef45c} 
+uint32\+\_\+t Input\+Backend\+::\+Get\+Mouse\+Buttons (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the current state of all mouse buttons. 
+
+\begin{DoxyReturn}{Returns}
+Bitmask representing the mouse buttons currently pressed. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_input_backend_a41b48803a8095adecb22dd7c852ef45c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_input_backend_a621be98711ee4ca6433d2bdbceb3cf38}\index{InputBackend@{InputBackend}!Init@{Init}}
+\index{Init@{Init}!InputBackend@{InputBackend}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily \label{namespace_input_backend_a621be98711ee4ca6433d2bdbceb3cf38} 
+void Input\+Backend\+::\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the input backend. Must be called before polling events. 
+
+\Hypertarget{namespace_input_backend_a0b2497db762ea8dfeb096986cac3037e}\index{InputBackend@{InputBackend}!PollEvent@{PollEvent}}
+\index{PollEvent@{PollEvent}!InputBackend@{InputBackend}}
+\doxysubsubsection{\texorpdfstring{PollEvent()}{PollEvent()}}
+{\footnotesize\ttfamily \label{namespace_input_backend_a0b2497db762ea8dfeb096986cac3037e} 
+bool Input\+Backend\+::\+Poll\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_input_event}{Input\+Event}} \&}]{out\+Event}{}\end{DoxyParamCaption})}
+
+
+
+Polls a single input event and fills the output event structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out\+Event} & Reference to an \doxylink{struct_input_event}{Input\+Event} structure to populate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if an event was polled; false if the event queue is empty. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_input_backend_a0b2497db762ea8dfeb096986cac3037e_icgraph}
+\end{center}
+\end{figure}

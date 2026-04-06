@@ -1,0 +1,46 @@
+\doxysection{mesh\+Sky\+Dome.\+hpp}
+\hypertarget{mesh_sky_dome_8hpp_source}{}\label{mesh_sky_dome_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/Meshes/meshSkyDome.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/Meshes/meshSkyDome.hpp}}
+\mbox{\hyperlink{mesh_sky_dome_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MESHSKYDOME\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MESHSKYDOME\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mesh3d_8hpp}{mesh3d.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{math_8hpp}{../../Math/math.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_mesh_sky_dome_ad29c67ed77e8b5192f7d7692b396aba7}{MeshSkyDome}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_mesh3_d_a8cdefca0bf7171afd91f2a1a88e05a7e}{Mesh3D}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_mesh_sky_dome_ad29c67ed77e8b5192f7d7692b396aba7}{MeshSkyDome}}();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_sky_dome_aa05607d946e8c2a159671453eef7a75f}{GenerateCPUData}}(\textcolor{keywordtype}{int}\ numRings,\ \textcolor{keywordtype}{int}\ numSectors,\ \textcolor{keywordtype}{float}\ radius,\ \textcolor{keyword}{const}\ std::string\&\ textureFile);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_sky_dome_a9189a41803ef3ba5e0058ba2263dea44}{UploadToGPU}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{struct_mesh_renderer}{MeshRenderer}}\ \mbox{\hyperlink{class_mesh_sky_dome_a515776765d9a26d5f57d3a915817f604}{ToRenderer}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_sky_dome_a994bf8d23f591e159a7aee8b1c3fb69b}{Delete}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_mesh_sky_dome_1_1_vertex}{Vertex}}}
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{struct_mesh_sky_dome_1_1_vertex_acaa1a3f1da1b45b4671dd5fb830bbd69}{Pos}};\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_acfd9107b583da9f618732213cb319ced}{Vector2f}}\ \mbox{\hyperlink{struct_mesh_sky_dome_1_1_vertex_a50f87d7c5e645e20dd80048e829e7b54}{Tex}};\ }
+\DoxyCodeLine{00060\ \ \ \ \ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_sky_dome_ab4c16fb980037e0ede6a41f8a08ba816}{PopulateBuffers}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_mesh_sky_dome_a0b4ce58466de8ee6b02ad1674c6c8970}{m\_numRings}};\ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_mesh_sky_dome_a4dba9ac6dc3df10ecaa27052b6979b1b}{m\_numSectors}};\ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_mesh_sky_dome_ab6f686e05996560119426b0465a9eb41}{m\_radius}};\ \ \ \ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ std::vector<Vertex>\ \mbox{\hyperlink{class_mesh_sky_dome_a60340f84b44b30ea65541306d817a6d2}{m\_CPU\_VertexData}};\ \ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ std::vector<unsigned\ int>\ \mbox{\hyperlink{class_mesh_sky_dome_a03e0c9740884c5bbe43cabd6a9c617bc}{m\_CPU\_IndexData}};\ }
+\DoxyCodeLine{00073\ \ \ \ \ std::string\ \mbox{\hyperlink{class_mesh_sky_dome_a23be894381b6ae458d015f2a30f140a6}{m\_TextureFileName}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00074\ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MESHSKYDOME\_HPP}}
+
+\end{DoxyCode}

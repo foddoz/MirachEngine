@@ -1,0 +1,41 @@
+\doxysection{raycast\+\_\+callback.\+hpp}
+\hypertarget{raycast__callback_8hpp_source}{}\label{raycast__callback_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Physics/raycast\_callback.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Physics/raycast\_callback.hpp}}
+\mbox{\hyperlink{raycast__callback_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RAYCAST\_CALLBACK\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RAYCAST\_CALLBACK\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{physics_8hpp}{physics.hpp}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ground_raycast}{GroundRaycast}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_physics_1_1_raycast_callback}{Physics::RaycastCallback}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\ \mbox{\hyperlink{class_ground_raycast_ac4381da170ab1a052e8c6cb1ca4d7e54}{self}}\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_ground_raycast_a8885edef05eee4c2cf4e78570620890c}{maxFraction}}\ =\ 1.0f;\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ground_raycast_a482d0dc7dc0bb577ef5cc84e3c4e3b70}{hit}}\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ground_raycast_aee50e7c963511063222ec516f4fa9cb4}{ReportHit}}(\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\ body,\ \textcolor{keywordtype}{float}\ hitFraction)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (body\ ==\ \mbox{\hyperlink{class_ground_raycast_ac4381da170ab1a052e8c6cb1ca4d7e54}{self}}\ \&\&\ !body-\/>\mbox{\hyperlink{class_physics_1_1_rigid_body_aacddecc8c08a26897d9240b8d50b056a}{IsDynamic}}())\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ Ignore\ self}}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hitFraction\ <=\ \mbox{\hyperlink{class_ground_raycast_a8885edef05eee4c2cf4e78570620890c}{maxFraction}})\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_ground_raycast_a482d0dc7dc0bb577ef5cc84e3c4e3b70}{hit}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ Stop\ the\ ray\ on\ first\ valid\ hit}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ Continue\ raycast}}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_force_raycast}{ForceRaycast}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_physics_1_1_raycast_callback}{Physics::RaycastCallback}}\ \{}
+\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\ \mbox{\hyperlink{class_force_raycast_adc2afc5e2ef29175aee52806cfde9a84}{hitBody}}\ =\ \textcolor{keyword}{nullptr};\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_force_raycast_abef8f6fe5bf0c72b14481d2791787f71}{ReportHit}}(\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\ body,\ \textcolor{keywordtype}{float}\ hitFraction)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (body\ \&\&\ body-\/>\mbox{\hyperlink{class_physics_1_1_rigid_body_aacddecc8c08a26897d9240b8d50b056a}{IsDynamic}}())\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_force_raycast_adc2afc5e2ef29175aee52806cfde9a84}{hitBody}}\ =\ body;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ Stop\ after\ first\ dynamic\ hit}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ Continue\ checking}}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !RAYCAST\_CALLBACK\_HPP}}
+
+\end{DoxyCode}

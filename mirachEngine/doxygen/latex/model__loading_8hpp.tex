@@ -1,0 +1,272 @@
+\doxysection{C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/model\+\_\+loading.hpp File Reference}
+\hypertarget{model__loading_8hpp}{}\label{model__loading_8hpp}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/model\_loading.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/model\_loading.hpp}}
+{\ttfamily \#include $<$assimp/\+Importer.\+hpp$>$}\newline
+{\ttfamily \#include $<$assimp/scene.\+h$>$}\newline
+{\ttfamily \#include $<$assimp/postprocess.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include "{}../\+Math/math.\+hpp"{}}\newline
+Include dependency graph for model\+\_\+loading.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model__loading_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model__loading_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{model__loading_8hpp_a5adb8a0689797ddd0f52f8b322fbbda9}{Model\+Importer}} = Assimp\+::\+Importer
+\item 
+using \mbox{\hyperlink{model__loading_8hpp_afab23fa78d458b04129130eccd3b69c3}{Model\+Scene}} = ai\+Scene
+\item 
+using \mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{Model\+Mesh}} = ai\+Mesh
+\item 
+using \mbox{\hyperlink{model__loading_8hpp_a50657a07d5382e795d62f2dc0cb1b2f8}{Model\+Material}} = ai\+Material
+\item 
+using \mbox{\hyperlink{model__loading_8hpp_ae97196518428a273d874dc94194aa135}{Model\+Face}} = ai\+Face
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{model__loading_8hpp_afab23fa78d458b04129130eccd3b69c3}{Model\+Scene}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model__loading_8hpp_adb6578d1d2ac0347ac0d996b0dff0179}{Load\+Model}} (\mbox{\hyperlink{model__loading_8hpp_a5adb8a0689797ddd0f52f8b322fbbda9}{Model\+Importer}} \&importer, const std\+::string \&file\+Name)
+\item 
+unsigned int \mbox{\hyperlink{model__loading_8hpp_aed6c5f86464e69e9c7bdb33ba5fd499b}{Get\+Material\+Texture\+Count}} (const \mbox{\hyperlink{model__loading_8hpp_a50657a07d5382e795d62f2dc0cb1b2f8}{Model\+Material}} \texorpdfstring{$\ast$}{*}material)
+\item 
+std\+::string \mbox{\hyperlink{model__loading_8hpp_a8f7cb8ea93936c83c1b65d311d968e84}{Get\+Material\+Name}} (const \mbox{\hyperlink{model__loading_8hpp_a50657a07d5382e795d62f2dc0cb1b2f8}{Model\+Material}} \texorpdfstring{$\ast$}{*}material)
+\item 
+bool \mbox{\hyperlink{model__loading_8hpp_a666fccb8aa3643dd8f763e5f2fb80493}{Get\+Material\+Texture\+Path}} (const \mbox{\hyperlink{model__loading_8hpp_a50657a07d5382e795d62f2dc0cb1b2f8}{Model\+Material}} \texorpdfstring{$\ast$}{*}material, std\+::string \&out\+Path)
+\item 
+unsigned int \mbox{\hyperlink{model__loading_8hpp_a2dc443d287bf0b4109d88852e4cdf341}{Get\+Num\+Vertices}} (const \mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{Model\+Mesh}} \texorpdfstring{$\ast$}{*}mesh)
+\item 
+unsigned int \mbox{\hyperlink{model__loading_8hpp_af56e441818cfe8218ef50bf8e0d0b2c5}{Get\+Num\+Faces}} (const \mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{Model\+Mesh}} \texorpdfstring{$\ast$}{*}mesh)
+\item 
+const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{model__loading_8hpp_af5a2e645c39d715a225b4a1fbd1acf28}{Get\+Vertex\+Position}} (const \mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{Model\+Mesh}} \texorpdfstring{$\ast$}{*}mesh, unsigned int i)
+\item 
+const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{model__loading_8hpp_a093f1748f206180e50c6e14afcd9463a}{Get\+Vertex\+Normal}} (const \mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{Model\+Mesh}} \texorpdfstring{$\ast$}{*}mesh, unsigned int i)
+\item 
+const \mbox{\hyperlink{math_8hpp_acfd9107b583da9f618732213cb319ced}{Vector2f}} \mbox{\hyperlink{model__loading_8hpp_a2ef363b31766132e1aad0fa3495ddab0}{Get\+Vertex\+Tex\+Coord}} (const \mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{Model\+Mesh}} \texorpdfstring{$\ast$}{*}mesh, unsigned int i)
+\item 
+bool \mbox{\hyperlink{model__loading_8hpp_a2f47274a64f6c01167f3c0ba345ecfdf}{Has\+Texture\+Coords}} (const \mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{Model\+Mesh}} \texorpdfstring{$\ast$}{*}mesh)
+\item 
+const \mbox{\hyperlink{model__loading_8hpp_ae97196518428a273d874dc94194aa135}{Model\+Face}} \& \mbox{\hyperlink{model__loading_8hpp_a64c7b852a2ea92a8176a242cb5f0bccd}{Get\+Face}} (const \mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{Model\+Mesh}} \texorpdfstring{$\ast$}{*}mesh, unsigned int i)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr unsigned int \mbox{\hyperlink{model__loading_8hpp_acaada1894e1fe5b3eca555fbd1e033a8}{Model\+Load\+Flags}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-typedef-members}
+\Hypertarget{model__loading_8hpp_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{model__loading_8hpp_ae97196518428a273d874dc94194aa135}\index{model\_loading.hpp@{model\_loading.hpp}!ModelFace@{ModelFace}}
+\index{ModelFace@{ModelFace}!model\_loading.hpp@{model\_loading.hpp}}
+\doxysubsubsection{\texorpdfstring{ModelFace}{ModelFace}}
+{\footnotesize\ttfamily \label{model__loading_8hpp_ae97196518428a273d874dc94194aa135} 
+using \mbox{\hyperlink{model__loading_8hpp_ae97196518428a273d874dc94194aa135}{Model\+Face}} = ai\+Face}
+
+\Hypertarget{model__loading_8hpp_a5adb8a0689797ddd0f52f8b322fbbda9}\index{model\_loading.hpp@{model\_loading.hpp}!ModelImporter@{ModelImporter}}
+\index{ModelImporter@{ModelImporter}!model\_loading.hpp@{model\_loading.hpp}}
+\doxysubsubsection{\texorpdfstring{ModelImporter}{ModelImporter}}
+{\footnotesize\ttfamily \label{model__loading_8hpp_a5adb8a0689797ddd0f52f8b322fbbda9} 
+using \mbox{\hyperlink{model__loading_8hpp_a5adb8a0689797ddd0f52f8b322fbbda9}{Model\+Importer}} = Assimp\+::\+Importer}
+
+\Hypertarget{model__loading_8hpp_a50657a07d5382e795d62f2dc0cb1b2f8}\index{model\_loading.hpp@{model\_loading.hpp}!ModelMaterial@{ModelMaterial}}
+\index{ModelMaterial@{ModelMaterial}!model\_loading.hpp@{model\_loading.hpp}}
+\doxysubsubsection{\texorpdfstring{ModelMaterial}{ModelMaterial}}
+{\footnotesize\ttfamily \label{model__loading_8hpp_a50657a07d5382e795d62f2dc0cb1b2f8} 
+using \mbox{\hyperlink{model__loading_8hpp_a50657a07d5382e795d62f2dc0cb1b2f8}{Model\+Material}} = ai\+Material}
+
+\Hypertarget{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}\index{model\_loading.hpp@{model\_loading.hpp}!ModelMesh@{ModelMesh}}
+\index{ModelMesh@{ModelMesh}!model\_loading.hpp@{model\_loading.hpp}}
+\doxysubsubsection{\texorpdfstring{ModelMesh}{ModelMesh}}
+{\footnotesize\ttfamily \label{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f} 
+using \mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{Model\+Mesh}} = ai\+Mesh}
+
+\Hypertarget{model__loading_8hpp_afab23fa78d458b04129130eccd3b69c3}\index{model\_loading.hpp@{model\_loading.hpp}!ModelScene@{ModelScene}}
+\index{ModelScene@{ModelScene}!model\_loading.hpp@{model\_loading.hpp}}
+\doxysubsubsection{\texorpdfstring{ModelScene}{ModelScene}}
+{\footnotesize\ttfamily \label{model__loading_8hpp_afab23fa78d458b04129130eccd3b69c3} 
+using \mbox{\hyperlink{model__loading_8hpp_afab23fa78d458b04129130eccd3b69c3}{Model\+Scene}} = ai\+Scene}
+
+
+
+\label{doc-func-members}
+\Hypertarget{model__loading_8hpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{model__loading_8hpp_a64c7b852a2ea92a8176a242cb5f0bccd}\index{model\_loading.hpp@{model\_loading.hpp}!GetFace@{GetFace}}
+\index{GetFace@{GetFace}!model\_loading.hpp@{model\_loading.hpp}}
+\doxysubsubsection{\texorpdfstring{GetFace()}{GetFace()}}
+{\footnotesize\ttfamily \label{model__loading_8hpp_a64c7b852a2ea92a8176a242cb5f0bccd} 
+const \mbox{\hyperlink{model__loading_8hpp_ae97196518428a273d874dc94194aa135}{Model\+Face}} \& Get\+Face (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{Model\+Mesh}} \texorpdfstring{$\ast$}{*}}]{mesh}{, }\item[{unsigned int}]{i}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model__loading_8hpp_a64c7b852a2ea92a8176a242cb5f0bccd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{model__loading_8hpp_a8f7cb8ea93936c83c1b65d311d968e84}\index{model\_loading.hpp@{model\_loading.hpp}!GetMaterialName@{GetMaterialName}}
+\index{GetMaterialName@{GetMaterialName}!model\_loading.hpp@{model\_loading.hpp}}
+\doxysubsubsection{\texorpdfstring{GetMaterialName()}{GetMaterialName()}}
+{\footnotesize\ttfamily \label{model__loading_8hpp_a8f7cb8ea93936c83c1b65d311d968e84} 
+std\+::string Get\+Material\+Name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{model__loading_8hpp_a50657a07d5382e795d62f2dc0cb1b2f8}{Model\+Material}} \texorpdfstring{$\ast$}{*}}]{material}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model__loading_8hpp_a8f7cb8ea93936c83c1b65d311d968e84_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{model__loading_8hpp_aed6c5f86464e69e9c7bdb33ba5fd499b}\index{model\_loading.hpp@{model\_loading.hpp}!GetMaterialTextureCount@{GetMaterialTextureCount}}
+\index{GetMaterialTextureCount@{GetMaterialTextureCount}!model\_loading.hpp@{model\_loading.hpp}}
+\doxysubsubsection{\texorpdfstring{GetMaterialTextureCount()}{GetMaterialTextureCount()}}
+{\footnotesize\ttfamily \label{model__loading_8hpp_aed6c5f86464e69e9c7bdb33ba5fd499b} 
+unsigned int Get\+Material\+Texture\+Count (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{model__loading_8hpp_a50657a07d5382e795d62f2dc0cb1b2f8}{Model\+Material}} \texorpdfstring{$\ast$}{*}}]{material}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model__loading_8hpp_aed6c5f86464e69e9c7bdb33ba5fd499b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{model__loading_8hpp_a666fccb8aa3643dd8f763e5f2fb80493}\index{model\_loading.hpp@{model\_loading.hpp}!GetMaterialTexturePath@{GetMaterialTexturePath}}
+\index{GetMaterialTexturePath@{GetMaterialTexturePath}!model\_loading.hpp@{model\_loading.hpp}}
+\doxysubsubsection{\texorpdfstring{GetMaterialTexturePath()}{GetMaterialTexturePath()}}
+{\footnotesize\ttfamily \label{model__loading_8hpp_a666fccb8aa3643dd8f763e5f2fb80493} 
+bool Get\+Material\+Texture\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{model__loading_8hpp_a50657a07d5382e795d62f2dc0cb1b2f8}{Model\+Material}} \texorpdfstring{$\ast$}{*}}]{material}{, }\item[{std\+::string \&}]{out\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model__loading_8hpp_a666fccb8aa3643dd8f763e5f2fb80493_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{model__loading_8hpp_af56e441818cfe8218ef50bf8e0d0b2c5}\index{model\_loading.hpp@{model\_loading.hpp}!GetNumFaces@{GetNumFaces}}
+\index{GetNumFaces@{GetNumFaces}!model\_loading.hpp@{model\_loading.hpp}}
+\doxysubsubsection{\texorpdfstring{GetNumFaces()}{GetNumFaces()}}
+{\footnotesize\ttfamily \label{model__loading_8hpp_af56e441818cfe8218ef50bf8e0d0b2c5} 
+unsigned int Get\+Num\+Faces (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{Model\+Mesh}} \texorpdfstring{$\ast$}{*}}]{mesh}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model__loading_8hpp_af56e441818cfe8218ef50bf8e0d0b2c5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{model__loading_8hpp_a2dc443d287bf0b4109d88852e4cdf341}\index{model\_loading.hpp@{model\_loading.hpp}!GetNumVertices@{GetNumVertices}}
+\index{GetNumVertices@{GetNumVertices}!model\_loading.hpp@{model\_loading.hpp}}
+\doxysubsubsection{\texorpdfstring{GetNumVertices()}{GetNumVertices()}}
+{\footnotesize\ttfamily \label{model__loading_8hpp_a2dc443d287bf0b4109d88852e4cdf341} 
+unsigned int Get\+Num\+Vertices (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{Model\+Mesh}} \texorpdfstring{$\ast$}{*}}]{mesh}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model__loading_8hpp_a2dc443d287bf0b4109d88852e4cdf341_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{model__loading_8hpp_a093f1748f206180e50c6e14afcd9463a}\index{model\_loading.hpp@{model\_loading.hpp}!GetVertexNormal@{GetVertexNormal}}
+\index{GetVertexNormal@{GetVertexNormal}!model\_loading.hpp@{model\_loading.hpp}}
+\doxysubsubsection{\texorpdfstring{GetVertexNormal()}{GetVertexNormal()}}
+{\footnotesize\ttfamily \label{model__loading_8hpp_a093f1748f206180e50c6e14afcd9463a} 
+const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Get\+Vertex\+Normal (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{Model\+Mesh}} \texorpdfstring{$\ast$}{*}}]{mesh}{, }\item[{unsigned int}]{i}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model__loading_8hpp_a093f1748f206180e50c6e14afcd9463a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{model__loading_8hpp_af5a2e645c39d715a225b4a1fbd1acf28}\index{model\_loading.hpp@{model\_loading.hpp}!GetVertexPosition@{GetVertexPosition}}
+\index{GetVertexPosition@{GetVertexPosition}!model\_loading.hpp@{model\_loading.hpp}}
+\doxysubsubsection{\texorpdfstring{GetVertexPosition()}{GetVertexPosition()}}
+{\footnotesize\ttfamily \label{model__loading_8hpp_af5a2e645c39d715a225b4a1fbd1acf28} 
+const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Get\+Vertex\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{Model\+Mesh}} \texorpdfstring{$\ast$}{*}}]{mesh}{, }\item[{unsigned int}]{i}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model__loading_8hpp_af5a2e645c39d715a225b4a1fbd1acf28_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{model__loading_8hpp_a2ef363b31766132e1aad0fa3495ddab0}\index{model\_loading.hpp@{model\_loading.hpp}!GetVertexTexCoord@{GetVertexTexCoord}}
+\index{GetVertexTexCoord@{GetVertexTexCoord}!model\_loading.hpp@{model\_loading.hpp}}
+\doxysubsubsection{\texorpdfstring{GetVertexTexCoord()}{GetVertexTexCoord()}}
+{\footnotesize\ttfamily \label{model__loading_8hpp_a2ef363b31766132e1aad0fa3495ddab0} 
+const \mbox{\hyperlink{math_8hpp_acfd9107b583da9f618732213cb319ced}{Vector2f}} Get\+Vertex\+Tex\+Coord (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{Model\+Mesh}} \texorpdfstring{$\ast$}{*}}]{mesh}{, }\item[{unsigned int}]{i}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{model__loading_8hpp_a2ef363b31766132e1aad0fa3495ddab0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{model__loading_8hpp_a2f47274a64f6c01167f3c0ba345ecfdf}\index{model\_loading.hpp@{model\_loading.hpp}!HasTextureCoords@{HasTextureCoords}}
+\index{HasTextureCoords@{HasTextureCoords}!model\_loading.hpp@{model\_loading.hpp}}
+\doxysubsubsection{\texorpdfstring{HasTextureCoords()}{HasTextureCoords()}}
+{\footnotesize\ttfamily \label{model__loading_8hpp_a2f47274a64f6c01167f3c0ba345ecfdf} 
+bool Has\+Texture\+Coords (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{Model\+Mesh}} \texorpdfstring{$\ast$}{*}}]{mesh}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{model__loading_8hpp_adb6578d1d2ac0347ac0d996b0dff0179}\index{model\_loading.hpp@{model\_loading.hpp}!LoadModel@{LoadModel}}
+\index{LoadModel@{LoadModel}!model\_loading.hpp@{model\_loading.hpp}}
+\doxysubsubsection{\texorpdfstring{LoadModel()}{LoadModel()}}
+{\footnotesize\ttfamily \label{model__loading_8hpp_adb6578d1d2ac0347ac0d996b0dff0179} 
+const \mbox{\hyperlink{model__loading_8hpp_afab23fa78d458b04129130eccd3b69c3}{Model\+Scene}} \texorpdfstring{$\ast$}{*} Load\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{model__loading_8hpp_a5adb8a0689797ddd0f52f8b322fbbda9}{Model\+Importer}} \&}]{importer}{, }\item[{const std\+::string \&}]{file\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{model__loading_8hpp_adb6578d1d2ac0347ac0d996b0dff0179_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-var-members}
+\Hypertarget{model__loading_8hpp_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{model__loading_8hpp_acaada1894e1fe5b3eca555fbd1e033a8}\index{model\_loading.hpp@{model\_loading.hpp}!ModelLoadFlags@{ModelLoadFlags}}
+\index{ModelLoadFlags@{ModelLoadFlags}!model\_loading.hpp@{model\_loading.hpp}}
+\doxysubsubsection{\texorpdfstring{ModelLoadFlags}{ModelLoadFlags}}
+{\footnotesize\ttfamily \label{model__loading_8hpp_acaada1894e1fe5b3eca555fbd1e033a8} 
+unsigned int Model\+Load\+Flags\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{aiProcess\_Triangulate\ |}
+\DoxyCodeLine{aiProcess\_GenSmoothNormals\ |}
+\DoxyCodeLine{aiProcess\_FlipUVs\ |}
+\DoxyCodeLine{aiProcess\_JoinIdenticalVertices}
+
+\end{DoxyCode}

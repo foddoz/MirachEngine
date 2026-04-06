@@ -1,0 +1,56 @@
+.TH "MD2Frame" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MD2Frame \- Stores a single animation frame's vertex positions in MD2\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <MD2\&.hpp>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "float \fBscale\fP [3]"
+.br
+.RI "Scale applied to each axis\&. "
+.ti -1c
+.RI "float \fBtranslate\fP [3]"
+.br
+.RI "Translation vector applied to each axis\&. "
+.ti -1c
+.RI "char \fBname\fP [16]"
+.br
+.RI "Frame name (often includes animation prefix)\&. "
+.ti -1c
+.RI "std::vector< \fBVector3f\fP > \fBvertices\fP"
+.br
+.RI "Decompressed vertex positions for this frame\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Stores a single animation frame's vertex positions in MD2\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "char MD2Frame::name[16]"
+
+.PP
+Frame name (often includes animation prefix)\&. 
+.SS "float MD2Frame::scale[3]"
+
+.PP
+Scale applied to each axis\&. 
+.SS "float MD2Frame::translate[3]"
+
+.PP
+Translation vector applied to each axis\&. 
+.SS "std::vector<\fBVector3f\fP> MD2Frame::vertices"
+
+.PP
+Decompressed vertex positions for this frame\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

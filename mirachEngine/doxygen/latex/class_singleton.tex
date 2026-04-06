@@ -1,0 +1,126 @@
+\doxysection{Singleton\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_singleton}{}\label{class_singleton}\index{Singleton$<$ T $>$@{Singleton$<$ T $>$}}
+
+
+A generic \doxylink{class_singleton}{Singleton} template class.  
+
+
+
+
+{\ttfamily \#include $<$singleton.\+h$>$}
+
+
+
+Collaboration diagram for Singleton\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{class_singleton__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_singleton_a4c569e7ab86e5654a3f094ee50e75d7c}{Instance}} ()
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the singleton instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_singleton_a923b995920da9c06590adb170ab2f890}{Singleton}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor (private to prevent external instantiation). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_singleton_ac6e7af82cba33f561bd64e5e0243e7f8}{\texorpdfstring{$\sim$}{\string~}\+Singleton}} ()
+\begin{DoxyCompactList}\small\item\em Destructor (private to prevent external deletion). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_singleton_a23b2407170cc04f6746874704b928044}{Singleton}} (const \mbox{\hyperlink{class_singleton}{Singleton}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Copy constructor is deleted to prevent copying. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_singleton}{Singleton}} \& \mbox{\hyperlink{class_singleton_a77024ec0dcc861c2d5f4a848d726e2ad}{operator=}} (const \mbox{\hyperlink{class_singleton}{Singleton}} \&)=delete
+\begin{DoxyCompactList}\small\item\em Copy assignment operator is deleted to prevent assignment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Singleton$<$ T $>$}
+A generic \doxylink{class_singleton}{Singleton} template class. 
+
+This template provides a thread-\/safe and lazy-\/initialized singleton instance. The constructor and assignment operators are deleted to enforce a single instance.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the singleton class. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\label{doc-constructors}
+\Hypertarget{class_singleton_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_singleton_a923b995920da9c06590adb170ab2f890}\index{Singleton$<$ T $>$@{Singleton$<$ T $>$}!Singleton@{Singleton}}
+\index{Singleton@{Singleton}!Singleton$<$ T $>$@{Singleton$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Singleton()}{Singleton()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_singleton_a923b995920da9c06590adb170ab2f890} 
+template$<$class T$>$ \\
+\mbox{\hyperlink{class_singleton}{Singleton}}$<$ T $>$\mbox{\hyperlink{class_singleton}{\+::\+Singleton}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Default constructor (private to prevent external instantiation). 
+
+\Hypertarget{class_singleton_ac6e7af82cba33f561bd64e5e0243e7f8}\index{Singleton$<$ T $>$@{Singleton$<$ T $>$}!````~Singleton@{\texorpdfstring{$\sim$}{\string~}Singleton}}
+\index{````~Singleton@{\texorpdfstring{$\sim$}{\string~}Singleton}!Singleton$<$ T $>$@{Singleton$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Singleton()}{\string~Singleton()}}
+{\footnotesize\ttfamily \label{class_singleton_ac6e7af82cba33f561bd64e5e0243e7f8} 
+template$<$class T$>$ \\
+\mbox{\hyperlink{class_singleton}{Singleton}}$<$ T $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{class_singleton}{Singleton}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Destructor (private to prevent external deletion). 
+
+\Hypertarget{class_singleton_a23b2407170cc04f6746874704b928044}\index{Singleton$<$ T $>$@{Singleton$<$ T $>$}!Singleton@{Singleton}}
+\index{Singleton@{Singleton}!Singleton$<$ T $>$@{Singleton$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Singleton()}{Singleton()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_singleton_a23b2407170cc04f6746874704b928044} 
+template$<$class T$>$ \\
+\mbox{\hyperlink{class_singleton}{Singleton}}$<$ T $>$\mbox{\hyperlink{class_singleton}{\+::\+Singleton}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_singleton}{Singleton}}$<$ T $>$ \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+Copy constructor is deleted to prevent copying. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_singleton_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_singleton_a4c569e7ab86e5654a3f094ee50e75d7c}\index{Singleton$<$ T $>$@{Singleton$<$ T $>$}!Instance@{Instance}}
+\index{Instance@{Instance}!Singleton$<$ T $>$@{Singleton$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Instance()}{Instance()}}
+{\footnotesize\ttfamily \label{class_singleton_a4c569e7ab86e5654a3f094ee50e75d7c} 
+template$<$class T$>$ \\
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_singleton}{Singleton}}$<$ T $>$\+::\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns a pointer to the singleton instance. 
+
+The instance is created the first time this method is called and destroyed automatically when the program terminates.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the single instance of type T. 
+\end{DoxyReturn}
+\Hypertarget{class_singleton_a77024ec0dcc861c2d5f4a848d726e2ad}\index{Singleton$<$ T $>$@{Singleton$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Singleton$<$ T $>$@{Singleton$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_singleton_a77024ec0dcc861c2d5f4a848d726e2ad} 
+template$<$class T$>$ \\
+\mbox{\hyperlink{class_singleton}{Singleton}} \& \mbox{\hyperlink{class_singleton}{Singleton}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_singleton}{Singleton}}$<$ T $>$ \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
+
+
+Copy assignment operator is deleted to prevent assignment. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+FSM/\mbox{\hyperlink{singleton_8h}{singleton.\+h}}\end{DoxyCompactItemize}

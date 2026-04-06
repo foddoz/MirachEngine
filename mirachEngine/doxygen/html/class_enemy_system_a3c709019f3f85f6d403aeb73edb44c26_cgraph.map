@@ -1,0 +1,9 @@
+<map id="EnemySystem::EnemySystem" name="EnemySystem::EnemySystem">
+<area shape="rect" id="Node000001" title="Constructor. Automatically collects all entities with Enemy components." alt="" coords="5,35,207,61"/>
+<area shape="rect" id="Node000002" href="$class_entity_manager.html#a1b3d1289d7f8bba2539e828e807a183c" title="Returns a reference to the map of all components of type T." alt="" coords="255,35,478,61"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="207,45,239,45,239,51,207,51"/>
+<area shape="rect" id="Node000003" href="$class_component_manager.html#a41507f22f5d9cf4158ead40fdc4b25d0" title=" " alt="" coords="528,5,711,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="478,32,513,28,514,34,479,38"/>
+<area shape="rect" id="Node000004" href="$class_entity_manager.html#a9792efcb1c6904999ab34b3a65a7c69d" title="Returns the manager for the given component type, creating it if needed." alt="" coords="526,56,713,99"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="479,58,511,62,510,67,478,64"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Window::SwapBuffers" name="Window::SwapBuffers">
+<area shape="rect" id="Node000001" title="Swaps the front and back buffers of the given window." alt="" coords="212,5,362,32"/>
+<area shape="rect" id="Node000002" href="$class_program.html#a24a65b3d84f203f9846e0a2dffc34f96" title="Swaps the OpenGL window buffer to display the current frame." alt="" coords="5,5,164,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,21,164,21,164,16,196,16"/>
+</map>

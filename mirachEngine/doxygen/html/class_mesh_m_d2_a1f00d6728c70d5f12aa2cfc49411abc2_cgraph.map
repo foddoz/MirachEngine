@@ -1,0 +1,21 @@
+<map id="MeshMD2::UploadToGPU" name="MeshMD2::UploadToGPU">
+<area shape="rect" id="Node000001" title="Uploads the current mesh data to the GPU." alt="" coords="5,183,179,209"/>
+<area shape="rect" id="Node000002" href="$class_mesh_m_d2.html#a296a12dbea02874b8a4ea7e450f63e3f" title="Fills OpenGL buffers with mesh data (called from UploadToGPU)." alt="" coords="227,183,408,209"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,193,211,193,211,199,179,199"/>
+<area shape="rect" id="Node000003" href="$namespace_graphics.html#a4765b419f51cd4a0d45b84dd4f7d7f17" title=" " alt="" coords="480,5,622,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="325,181,374,114,411,75,455,42,465,36,468,41,457,46,415,79,378,117,329,184"/>
+<area shape="rect" id="Node000004" href="$namespace_graphics.html#a6f4d24e455fdef40dfe6b467f9b3d6d4" title=" " alt="" coords="464,56,639,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="332,180,384,137,418,113,455,92,470,86,472,91,457,97,421,118,387,141,335,184"/>
+<area shape="rect" id="Node000005" href="$namespace_graphics.html#a6a2b8b04edd45dc9bbf6b70af7c5b16d" title=" " alt="" coords="480,107,623,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="352,180,455,143,480,135,481,141,457,148,354,185"/>
+<area shape="rect" id="Node000006" href="$namespace_graphics.html#aa184d03626711a8afe423b4a50442c12" title=" " alt="" coords="456,157,646,184"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="408,184,441,180,441,185,408,189"/>
+<area shape="rect" id="Node000007" href="$namespace_graphics.html#a8109b501f710603a722a06a5c02ac5b8" title=" " alt="" coords="482,208,621,235"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="408,203,467,210,466,215,408,208"/>
+<area shape="rect" id="Node000008" href="$namespace_graphics.html#ae7b4fc0d405f3edef698219b304c4e97" title=" " alt="" coords="464,259,638,285"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="354,207,457,244,481,251,480,257,455,249,352,212"/>
+<area shape="rect" id="Node000009" href="$namespace_graphics.html#a9334eb7750459b3f968a9bf13eb7f6b4" title=" " alt="" coords="466,309,636,352"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="336,208,388,250,457,295,468,300,466,305,455,300,385,254,332,212"/>
+<area shape="rect" id="Node000010" href="$namespace_graphics.html#a55aadce60c9d25fb369920ad3e4b431b" title=" " alt="" coords="456,376,646,403"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="328,208,347,240,376,282,413,325,458,362,467,367,464,372,454,366,409,329,372,285,342,243,324,211"/>
+</map>

@@ -1,0 +1,400 @@
+\doxysection{graphics.\+hpp}
+\hypertarget{graphics_8hpp_source}{}\label{graphics_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/graphics.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/graphics.hpp}}
+\mbox{\hyperlink{graphics_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GRAPHICS\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GRAPHICS\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ ===\ OpenGL\ ===}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <glad/gl.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{math_8hpp}{../Math/math.hpp}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ ===\ Vertex\ Attribute\ Layout\ Locations\ ===}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ POSITION\_LOCATION\ 0}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ TEX\_COORD\_LOCATION\ 1}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ NORMAL\_LOCATION\ 2}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ ===\ Texture\ Units\ ===}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ COLOR\_TEXTURE\_UNIT\ GL\_TEXTURE0}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ COLOR\_TEXTURE\_UNIT\_INDEX\_0\ 0}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ ===\ RGB\ Color\ Structure\ ===}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_color}{Color}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_color_a3958a556b47d2de3dd45c75aac833c20}{r}};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_color_a5defbb21620e480e556181772d665f34}{g}};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_color_a33e482be18d6ea31d2b403bee13683b7}{b}};}
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ ===\ Engine-\/Level\ Enum\ Abstractions\ for\ GL\ Constants\ ===}}
+\DoxyCodeLine{00025\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{graphics_8hpp_a11f9d69e8ac4334703e81ebfaa6a851d}{Capability}}\ :\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_a11f9d69e8ac4334703e81ebfaa6a851da5fbf085d301b88f5c73689461c9b221b}{CullFace}}\ =\ 0x0B44,\ \ \textcolor{comment}{//\ GL\_CULL\_FACE}}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_a11f9d69e8ac4334703e81ebfaa6a851da16704bc95ff0bd3291ba157e6f06e0ee}{DepthTest}}\ =\ 0x0B71,\ \ \textcolor{comment}{//\ GL\_DEPTH\_TEST}}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_a11f9d69e8ac4334703e81ebfaa6a851da09ac609fcdb514c9adca34e7f97b4ac4}{Blend}}\ =\ 0x0BE2\ \ \ \textcolor{comment}{//\ GL\_BLEND}}
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{graphics_8hpp_a72f2198666e6f614143e503b8bb91961}{CullFaceMode}}\ :\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_a72f2198666e6f614143e503b8bb91961a5835bab1ade0060909e31a06af2e2cde}{Front}}\ =\ 0x0404,\ \ \textcolor{comment}{//\ GL\_FRONT}}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_a72f2198666e6f614143e503b8bb91961a0557fa923dcee4d0f86b1409f5c2167f}{Back}}\ =\ 0x0405,\ \ \textcolor{comment}{//\ GL\_BACK}}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_a72f2198666e6f614143e503b8bb91961a8be41da9b58e32ece35a2b5751f6aeb9}{FrontAndBack}}\ =\ 0x0408\ \textcolor{comment}{//\ GL\_FRONT\_AND\_BACK}}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{graphics_8hpp_a126ce8ce37f5f1098a355c0446c8ceef}{FrontFaceOrder}}\ :\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_a126ce8ce37f5f1098a355c0446c8ceefa9af3107a066f6b0defb1cafc0499f6ed}{CW}}\ =\ 0x0900,\ \ \textcolor{comment}{//\ GL\_CW}}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_a126ce8ce37f5f1098a355c0446c8ceefa59ec5d573abd014f3ae2c26ca962e8cf}{CCW}}\ =\ 0x0901\ \ \ \textcolor{comment}{//\ GL\_CCW}}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{graphics_8hpp_a01a6315ff4ebc392a41cfa03464ca0c6}{DrawMode}}\ :\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_a01a6315ff4ebc392a41cfa03464ca0c6a7ca66fdfaad3eb33fc65d7490178f856}{Triangles}}\ =\ 0x0004,\ \ \textcolor{comment}{//\ GL\_TRIANGLES}}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_a01a6315ff4ebc392a41cfa03464ca0c6aa0b0293a2db49f5f93c15a62e095c819}{Lines}}\ =\ 0x0001\ \ \ \textcolor{comment}{//\ GL\_LINES}}
+\DoxyCodeLine{00045\ \};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290}{DataType}}\ :\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290a8f0fb883eb5a52838534191513e365a2}{UnsignedByte}}\ =\ 0x1401,\ \ \textcolor{comment}{//\ GL\_UNSIGNED\_BYTE}}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290aeb51124277f3ec904a9af74d5de34e7b}{UnsignedShort}}\ =\ 0x1403,\ \ \textcolor{comment}{//\ GL\_UNSIGNED\_SHORT}}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290ac93cff91b6b9a57fa32bbe1863150070}{UnsignedInt}}\ =\ 0x1405,\ \ \ \textcolor{comment}{//\ GL\_UNSIGNED\_INT}}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290a22ae0e2b89e5e3d477f988cc36d3272b}{Float}}\ =\ 0x1406\ \ \textcolor{comment}{//\ GL\_FLOAT}}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13}{BufferTarget}}\ :\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13aa2ba314746bfdbdd8161b87ab77914be}{ArrayBuffer}}\ =\ 0x8892,\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ GL\_ARRAY\_BUFFER}}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13a31f38857117a1e260e97d3c5fb9f47a1}{ElementArrayBuffer}}\ =\ 0x8893\ \ \ \ \ \ \ \textcolor{comment}{//\ GL\_ELEMENT\_ARRAY\_BUFFER}}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ Buffer\ usage\ patterns}}
+\DoxyCodeLine{00060\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{graphics_8hpp_ad3970b398ce82012811a2c0d15cabd76}{BufferUsage}}\ :\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_ad3970b398ce82012811a2c0d15cabd76ac3ed2ba606af12869974bdab26334e6c}{StaticDraw}}\ =\ 0x88E4,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ GL\_STATIC\_DRAW}}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_ad3970b398ce82012811a2c0d15cabd76a07988dce2d161630856fb73bc06682c0}{DynamicDraw}}\ =\ 0x88E8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ GL\_DYNAMIC\_DRAW\ (optional)}}
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{graphics_8hpp_ab573492f0fb48ce173d953fddc07b680}{BufferBit}}\ :\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{struct_color}{Color}}\ =\ 0x00004000,}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_ab573492f0fb48ce173d953fddc07b680a675056ad1441b6375b2c5abd48c27ef1}{Depth}}\ =\ 0x00000100,}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_ab573492f0fb48ce173d953fddc07b680ad821e7ccd4d4c25a491ba1a9ea248895}{Stencil}}\ =\ 0x00000400}
+\DoxyCodeLine{00069\ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{graphics_8hpp_a673b48dd9847a2dd36229062d78ca32e}{operator|}}(\mbox{\hyperlink{graphics_8hpp_ab573492f0fb48ce173d953fddc07b680}{BufferBit}}\ a,\ \mbox{\hyperlink{graphics_8hpp_ab573492f0fb48ce173d953fddc07b680}{BufferBit}}\ b)\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(a)\ |\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(b);}
+\DoxyCodeLine{00073\ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{graphics_8hpp_a588b3d3b1da518a1c08138ad96cc3813}{ShaderType}}\ :\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_a588b3d3b1da518a1c08138ad96cc3813ab22b929ba52471a02d18bb3a4e4472e6}{Vertex}}\ =\ 0x8B31,\ \ \textcolor{comment}{//\ GL\_VERTEX\_SHADER}}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_a588b3d3b1da518a1c08138ad96cc3813a37d01b98065725fe3a1d30acf3a0064a}{Fragment}}\ =\ 0x8B30\ \ \ \textcolor{comment}{//\ GL\_FRAGMENT\_SHADER}}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{comment}{//\ Add\ geometry,\ compute,\ etc.\ as\ needed}}
+\DoxyCodeLine{00079\ \};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{graphics_8hpp_aaec52e992383ff804b871ff27e476126}{TextureTarget}}\ :\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_aaec52e992383ff804b871ff27e476126aa6e2bae752d3bf4e34cb392bca789995}{Texture2D}}\ =\ 0x0DE1,\ \ \ \ \ \ \ \textcolor{comment}{//\ GL\_TEXTURE\_2D}}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_aaec52e992383ff804b871ff27e476126a6c4765d2cb592dcc2f21f311db02f43b}{CubeMap}}\ =\ 0x8513\ \ \ \ \ \ \ \ \textcolor{comment}{//\ GL\_TEXTURE\_CUBE\_MAP\ (optional)}}
+\DoxyCodeLine{00084\ \};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{graphics_8hpp_a29891c193a3cdc6982963d2bda283739}{TextureFormat}}\ :\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_a29891c193a3cdc6982963d2bda283739aee38e4d5dd68c4e440825018d549cb47}{Red}}\ =\ 0x1903,\ \textcolor{comment}{//\ GL\_RED}}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_a29891c193a3cdc6982963d2bda283739a889574aebacda6bfd3e534e2b49b8028}{RGB}}\ =\ 0x1907,\ \textcolor{comment}{//\ GL\_RGB}}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_a29891c193a3cdc6982963d2bda283739aea3495a278957dc58165e48a8945469f}{RGBA}}\ =\ 0x1908\ \ \textcolor{comment}{//\ GL\_RGBA}}
+\DoxyCodeLine{00090\ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_graphics}{Graphics}}\ \{}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{comment}{//\ ===\ Facaded\ OpenGL\ Functions\ ===}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a721c1c46b99ec4b0c263476217c844b2}{ClearColor}}(\textcolor{keywordtype}{float}\ r,\ \textcolor{keywordtype}{float}\ g,\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keywordtype}{float}\ a)\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ glClearColor(r,\ g,\ b,\ a);}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a9bf304ec4ddf472a34dbd10d358805f5}{Viewport}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{float}\ width,\ \textcolor{keywordtype}{float}\ height)\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ glViewport(x,\ y,\ \textcolor{keyword}{static\_cast<}GLsizei\textcolor{keyword}{>}(width),\ \textcolor{keyword}{static\_cast<}GLsizei\textcolor{keyword}{>}(height));}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a9824ab679a791100d350127b6453e77d}{Clear}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ mask)\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ glClear(\textcolor{keyword}{static\_cast<}GLbitfield\textcolor{keyword}{>}(mask));}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a8e819d608213a011059060a2b0170e18}{Enable}}(\mbox{\hyperlink{graphics_8hpp_a11f9d69e8ac4334703e81ebfaa6a851d}{Capability}}\ cap)\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ glEnable(\textcolor{keyword}{static\_cast<}GLenum\textcolor{keyword}{>}(cap));}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a18deab5d59141f8edb32da67363b941f}{Disable}}(\mbox{\hyperlink{graphics_8hpp_a11f9d69e8ac4334703e81ebfaa6a851d}{Capability}}\ cap)\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ glDisable(\textcolor{keyword}{static\_cast<}GLenum\textcolor{keyword}{>}(cap));}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a1179041af4fce74143f19dd3f49f08af}{SetCullFace}}(\mbox{\hyperlink{graphics_8hpp_a72f2198666e6f614143e503b8bb91961}{CullFaceMode}}\ mode)\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ glCullFace(\textcolor{keyword}{static\_cast<}GLenum\textcolor{keyword}{>}(mode));}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_aa6894ba5520c821114697787cf244724}{SetFrontFace}}(\mbox{\hyperlink{graphics_8hpp_a126ce8ce37f5f1098a355c0446c8ceef}{FrontFaceOrder}}\ order)\ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ glFrontFace(\textcolor{keyword}{static\_cast<}GLenum\textcolor{keyword}{>}(order));}
+\DoxyCodeLine{00121\ \ \ \ \ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_afaa64189fcf768986b859f4da49a49f0}{SetDepthWrite}}(\textcolor{keywordtype}{bool}\ enable)\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ glDepthMask(enable\ ?\ GL\_TRUE\ :\ GL\_FALSE);}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a4158ffcbcd5183969266c9b9f412d19d}{UseProgram}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ program)\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ glUseProgram(\textcolor{keyword}{static\_cast<}GLuint\textcolor{keyword}{>}(program));}
+\DoxyCodeLine{00129\ \ \ \ \ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespace_graphics_a4975cdbaad38122f9120b8ea8b95cb18}{GetUniformLocation}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ programID,\ \textcolor{keyword}{const}\ std::string\&\ name)\ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ glGetUniformLocation(programID,\ name.c\_str());}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a53ebeba7d0f7b777d50393490a557660}{SetUniformMat4}}(\textcolor{keywordtype}{int}\ location,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ matrixPtr)\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ glUniformMatrix4fv(location,\ 1,\ GL\_FALSE,\ matrixPtr);}
+\DoxyCodeLine{00137\ \ \ \ \ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a9abc126621caa7f5dd8b4ba0ba9fd101}{SetUniform1f}}(\textcolor{keywordtype}{int}\ location,\ \textcolor{keywordtype}{float}\ value)\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ glUniform1f(location,\ value);}
+\DoxyCodeLine{00141\ \ \ \ \ \}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_aa497253f01c048b2d15b339dc0f9f049}{SetUniform1i}}(\textcolor{keywordtype}{int}\ location,\ \textcolor{keywordtype}{int}\ value)\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ glUniform1i(location,\ value);}
+\DoxyCodeLine{00145\ \ \ \ \ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a49bea1070bca7375a5e6132179214a3a}{SetUniform3f}}(\textcolor{keywordtype}{int}\ location,\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z)\ \{}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ glUniform3f(location,\ x,\ y,\ z);}
+\DoxyCodeLine{00149\ \ \ \ \ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_ae7b4fc0d405f3edef698219b304c4e97}{GenVertexArray}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ vao)\ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ glGenVertexArrays(1,\ \&vao);}
+\DoxyCodeLine{00153\ \ \ \ \ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a8109b501f710603a722a06a5c02ac5b8}{GenBuffer}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ buffer)\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ glGenBuffers(1,\ \&buffer);}
+\DoxyCodeLine{00157\ \ \ \ \ \}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a076f7be95f278edc4620ff133340f982}{BufferSubData}}(\mbox{\hyperlink{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13}{BufferTarget}}\ target,\ \textcolor{keywordtype}{size\_t}\ offset,\ \textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data)\ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ glBufferSubData(\textcolor{keyword}{static\_cast<}GLenum\textcolor{keyword}{>}(target),\ \textcolor{keyword}{static\_cast<}GLintptr\textcolor{keyword}{>}(offset),\ \textcolor{keyword}{static\_cast<}GLsizeiptr\textcolor{keyword}{>}(size),\ data);}
+\DoxyCodeLine{00161\ \ \ \ \ \}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a6f4d24e455fdef40dfe6b467f9b3d6d4}{BindVertexArray}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ vao)\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ glBindVertexArray(vao);}
+\DoxyCodeLine{00166\ \ \ \ \ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a4765b419f51cd4a0d45b84dd4f7d7f17}{BindBuffer}}(\mbox{\hyperlink{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13}{BufferTarget}}\ target,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ buffer)\ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ glBindBuffer(\textcolor{keyword}{static\_cast<}GLenum\textcolor{keyword}{>}(target),\ buffer);}
+\DoxyCodeLine{00170\ \ \ \ \ \}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a55aadce60c9d25fb369920ad3e4b431b}{UnbindVertexArray}}()\ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ glBindVertexArray(0);}
+\DoxyCodeLine{00174\ \ \ \ \ \}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a07852e62edecc3dc602915d6aec0e1ce}{UnbindBuffer}}(\mbox{\hyperlink{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13}{BufferTarget}}\ target)\ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ glBindBuffer(\textcolor{keyword}{static\_cast<}GLenum\textcolor{keyword}{>}(target),\ 0);}
+\DoxyCodeLine{00178\ \ \ \ \ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a6a2b8b04edd45dc9bbf6b70af7c5b16d}{BufferData}}(\mbox{\hyperlink{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13}{BufferTarget}}\ target,\ \textcolor{keywordtype}{size\_t}\ size,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data,\ \mbox{\hyperlink{graphics_8hpp_ad3970b398ce82012811a2c0d15cabd76}{BufferUsage}}\ usage)\ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ glBufferData(\textcolor{keyword}{static\_cast<}GLenum\textcolor{keyword}{>}(target),\ \textcolor{keyword}{static\_cast<}GLsizeiptr\textcolor{keyword}{>}(size),\ data,\ \textcolor{keyword}{static\_cast<}GLenum\textcolor{keyword}{>}(usage));}
+\DoxyCodeLine{00182\ \ \ \ \ \}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_aa184d03626711a8afe423b4a50442c12}{EnableVertexAttrib}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ location)\ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ glEnableVertexAttribArray(location);}
+\DoxyCodeLine{00186\ \ \ \ \ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a9334eb7750459b3f968a9bf13eb7f6b4}{SetVertexAttribPointer}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ location,\ \textcolor{keywordtype}{int}\ componentCount,\ \mbox{\hyperlink{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290}{DataType}}\ type,\ \textcolor{keywordtype}{bool}\ normalized,\ \textcolor{keywordtype}{size\_t}\ stride,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ offset)}
+\DoxyCodeLine{00189\ \ \ \ \ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ glVertexAttribPointer(}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ location,}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ componentCount,}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}GLenum\textcolor{keyword}{>}(type),}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ normalized\ ?\ GL\_TRUE\ :\ GL\_FALSE,}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}GLsizei\textcolor{keyword}{>}(stride),}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ offset}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00198\ \ \ \ \ \}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_acf86e8b7f165acf4efdebe4a894bd1e2}{DeleteBuffer}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ bufferID)\ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (bufferID\ !=\ 0)\ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ glDeleteBuffers(1,\ \&bufferID);}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ bufferID\ =\ 0;\ \textcolor{comment}{//\ Optional:\ reset\ to\ avoid\ dangling\ handles}}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00205\ \ \ \ \ \}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a18d8e124bb0c6f61e760fb756031f7d3}{DeleteVertexArray}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ vaoID)\ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vaoID\ !=\ 0)\ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ glDeleteVertexArrays(1,\ \&vaoID);}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ vaoID\ =\ 0;\ \textcolor{comment}{//\ Optional:\ reset\ to\ avoid\ dangling\ handles}}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00212\ \ \ \ \ \}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a45ac40011db84b9f6dc2904e31f0de9b}{GenTexture}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ \textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ glGenTextures(1,\ \&\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00216\ \ \ \ \ \}}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_ab069888f717a4adcb9f69b5f34b53503}{BindTexture}}(\mbox{\hyperlink{graphics_8hpp_aaec52e992383ff804b871ff27e476126}{TextureTarget}}\ target,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ textureID)\ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ glBindTexture(\textcolor{keyword}{static\_cast<}GLenum\textcolor{keyword}{>}(target),\ textureID);}
+\DoxyCodeLine{00220\ \ \ \ \ \}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a62113f1c6225e86fd238faf3aa6463a0}{ActiveTextureUnit}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ unit)\ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ glActiveTexture(unit);}
+\DoxyCodeLine{00224\ \ \ \ \ \}}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a6d20cab00d508c1926caab0e70ccbf77}{TexImage2D}}(\mbox{\hyperlink{graphics_8hpp_aaec52e992383ff804b871ff27e476126}{TextureTarget}}\ target,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \mbox{\hyperlink{graphics_8hpp_a29891c193a3cdc6982963d2bda283739}{TextureFormat}}\ format,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data)\ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ glTexImage2D(\textcolor{keyword}{static\_cast<}GLenum\textcolor{keyword}{>}(target),\ 0,\ \textcolor{keyword}{static\_cast<}GLint\textcolor{keyword}{>}(format),}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ width,\ height,\ 0,}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}GLenum\textcolor{keyword}{>}(format),\ GL\_UNSIGNED\_BYTE,\ data);}
+\DoxyCodeLine{00230\ \ \ \ \ \}}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a653a8ff98cd652ab4f74b1dec756326e}{GenerateMipmaps}}(\mbox{\hyperlink{graphics_8hpp_aaec52e992383ff804b871ff27e476126}{TextureTarget}}\ target)\ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ glGenerateMipmap(\textcolor{keyword}{static\_cast<}GLenum\textcolor{keyword}{>}(target));}
+\DoxyCodeLine{00234\ \ \ \ \ \}}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a20f428e07745e02fa639b32596b4a8eb}{DeleteTexture}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ \textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ glDeleteTextures(1,\ \&\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ 0;}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00241\ \ \ \ \ \}}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a089e01615af5ecb79cd1c1cecb62fb67}{DrawElements}}(\mbox{\hyperlink{graphics_8hpp_a01a6315ff4ebc392a41cfa03464ca0c6}{DrawMode}}\ mode,\ \textcolor{keywordtype}{int}\ count,\ \mbox{\hyperlink{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290}{DataType}}\ type,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ indices)\ \{}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ glDrawElements(\textcolor{keyword}{static\_cast<}GLenum\textcolor{keyword}{>}(mode),\ count,\ \textcolor{keyword}{static\_cast<}GLenum\textcolor{keyword}{>}(type),\ indices);}
+\DoxyCodeLine{00245\ \ \ \ \ \}}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a833d3fce31a5b5813e613ced1ff9d747}{DrawElementsBaseVertex}}(\mbox{\hyperlink{graphics_8hpp_a01a6315ff4ebc392a41cfa03464ca0c6}{DrawMode}}\ mode,\ \textcolor{keywordtype}{int}\ count,\ \mbox{\hyperlink{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290}{DataType}}\ type,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ indices,\ \textcolor{keywordtype}{int}\ baseVertex)\ \{}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ glDrawElementsBaseVertex(\textcolor{keyword}{static\_cast<}GLenum\textcolor{keyword}{>}(mode),\ count,\ \textcolor{keyword}{static\_cast<}GLenum\textcolor{keyword}{>}(type),\ indices,\ baseVertex);}
+\DoxyCodeLine{00249\ \ \ \ \ \}}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespace_graphics_a6168c5c7c5a145aecd7681162f456977}{GetCurrentVertexArray}}()\ \{}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ GLint\ vao\ =\ 0;}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ glGetIntegerv(GL\_VERTEX\_ARRAY\_BINDING,\ \&vao);}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(vao);}
+\DoxyCodeLine{00255\ \ \ \ \ \}}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a4fe2c80449bf103828d5ca29a02e8414}{UnbindProgram}}()\ \{}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ glUseProgram(0);}
+\DoxyCodeLine{00259\ \ \ \ \ \}}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_abcfa613cdd2ca02fc8cd2004c5a9fbae}{DrawArrays}}(\mbox{\hyperlink{graphics_8hpp_a01a6315ff4ebc392a41cfa03464ca0c6}{DrawMode}}\ mode,\ \textcolor{keywordtype}{int}\ first,\ \textcolor{keywordtype}{int}\ count)\ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ glDrawArrays(}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}GLenum\textcolor{keyword}{>}(mode),}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}GLint\textcolor{keyword}{>}(first),}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}GLsizei\textcolor{keyword}{>}(count)}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00267\ \ \ \ \ \}}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespace_graphics_a7c0a572c86359594da5745bf8341f33b}{GetError}}()\ \{}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(glGetError());}
+\DoxyCodeLine{00271\ \ \ \ \ \}}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespace_graphics_abf5e5a480a0b920d263c67a4a3dd823e}{CheckGraphicsError}}()\ \{}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespace_graphics_a7c0a572c86359594da5745bf8341f33b}{GetError}}()\ ==\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(GL\_NO\_ERROR);}
+\DoxyCodeLine{00275\ \ \ \ \ \}}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespace_graphics_a58e663589156806b8e589f9f3c4d4143}{CreateShader}}(\mbox{\hyperlink{graphics_8hpp_a588b3d3b1da518a1c08138ad96cc3813}{ShaderType}}\ type)\ \{}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ glCreateShader(\textcolor{keyword}{static\_cast<}GLenum\textcolor{keyword}{>}(type));}
+\DoxyCodeLine{00279\ \ \ \ \ \}}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a2620bf73e9ab268102fafb95162e9b72}{SetShaderSource}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ shaderID,\ \textcolor{keyword}{const}\ std::string\&\ source)\ \{}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ src\ =\ source.c\_str();}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ glShaderSource(shaderID,\ 1,\ \&src,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00284\ \ \ \ \ \}}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a74bbc934f6143cb110b1dfd082a3b89b}{CompileShader}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ shaderID)\ \{}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ glCompileShader(shaderID);}
+\DoxyCodeLine{00288\ \ \ \ \ \}}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespace_graphics_a20e3108902da8b64c25d7eb9070d1a60}{GetShaderCompileStatus}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ shaderID,\ std::string*\ outLog\ =\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ success\ =\ 0;}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ glGetShaderiv(shaderID,\ GL\_COMPILE\_STATUS,\ \&success);}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!success\ \&\&\ outLog)\ \{}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ infoLog[512];}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ glGetShaderInfoLog(shaderID,\ 512,\ \textcolor{keyword}{nullptr},\ infoLog);}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ *outLog\ =\ infoLog;}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ success\ !=\ 0;}
+\DoxyCodeLine{00301\ \ \ \ \ \}}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespace_graphics_a58630573a0b89573bc72f8ceda3db1b5}{CreateProgram}}()\ \{}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ glCreateProgram();}
+\DoxyCodeLine{00305\ \ \ \ \ \}}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a5ce52d8241816959525ea3e275ab13ad}{AttachShader}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ programID,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ shaderID)\ \{}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ glAttachShader(programID,\ shaderID);}
+\DoxyCodeLine{00309\ \ \ \ \ \}}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_a10a331aea50deff88f9719240a05d43f}{LinkProgram}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ programID)\ \{}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ glLinkProgram(programID);}
+\DoxyCodeLine{00313\ \ \ \ \ \}}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00315\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespace_graphics_a8ea6bfb283e0fb7318eb1a5f6c956745}{GetProgramLinkStatus}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ programID,\ std::string*\ outLog\ =\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ success\ =\ 0;}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ glGetProgramiv(programID,\ GL\_LINK\_STATUS,\ \&success);}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!success\ \&\&\ outLog)\ \{}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ infoLog[512];}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ glGetProgramInfoLog(programID,\ 512,\ \textcolor{keyword}{nullptr},\ infoLog);}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ *outLog\ =\ infoLog;}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ success\ !=\ 0;}
+\DoxyCodeLine{00326\ \ \ \ \ \}}
+\DoxyCodeLine{00327\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00328\ \textcolor{comment}{\ \ \ \ inline\ unsigned\ int\ CloneBuffer(BufferTarget\ target,\ unsigned\ int\ sourceBuffer,\ size\_t\ size)\ \{}}
+\DoxyCodeLine{00329\ \textcolor{comment}{\ \ \ \ \ \ \ \ unsigned\ int\ newBuffer\ =\ 0;}}
+\DoxyCodeLine{00330\ \textcolor{comment}{\ \ \ \ \ \ \ \ glGenBuffers(1,\ \&newBuffer);}}
+\DoxyCodeLine{00331\ \textcolor{comment}{}}
+\DoxyCodeLine{00332\ \textcolor{comment}{\ \ \ \ \ \ \ \ glBindBuffer(static\_cast<GLenum>(target),\ sourceBuffer);}}
+\DoxyCodeLine{00333\ \textcolor{comment}{\ \ \ \ \ \ \ \ void*\ data\ =\ glMapBuffer(static\_cast<GLenum>(target),\ GL\_READ\_ONLY);}}
+\DoxyCodeLine{00334\ \textcolor{comment}{}}
+\DoxyCodeLine{00335\ \textcolor{comment}{\ \ \ \ \ \ \ \ if\ (!data)\ \{}}
+\DoxyCodeLine{00336\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ "{}Failed\ to\ map\ buffer\ for\ cloning.\(\backslash\)n"{};}}
+\DoxyCodeLine{00337\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ return\ 0;}}
+\DoxyCodeLine{00338\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00339\ \textcolor{comment}{}}
+\DoxyCodeLine{00340\ \textcolor{comment}{\ \ \ \ \ \ \ \ glBindBuffer(static\_cast<GLenum>(target),\ newBuffer);}}
+\DoxyCodeLine{00341\ \textcolor{comment}{\ \ \ \ \ \ \ \ glBufferData(static\_cast<GLenum>(target),\ size,\ data,\ GL\_DYNAMIC\_DRAW);}}
+\DoxyCodeLine{00342\ \textcolor{comment}{}}
+\DoxyCodeLine{00343\ \textcolor{comment}{\ \ \ \ \ \ \ \ glBindBuffer(static\_cast<GLenum>(target),\ sourceBuffer);}}
+\DoxyCodeLine{00344\ \textcolor{comment}{\ \ \ \ \ \ \ \ glUnmapBuffer(static\_cast<GLenum>(target));}}
+\DoxyCodeLine{00345\ \textcolor{comment}{}}
+\DoxyCodeLine{00346\ \textcolor{comment}{\ \ \ \ \ \ \ \ return\ newBuffer;}}
+\DoxyCodeLine{00347\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{00348\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00349\ }
+\DoxyCodeLine{00350\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespace_graphics_ab51204431218d844bc65a6e3a6dbf902}{CreateEmptyBuffer}}(\textcolor{keywordtype}{size\_t}\ size)\ \{}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ newBuffer;}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ glGenBuffers(1,\ \&newBuffer);}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ glBindBuffer(GL\_ARRAY\_BUFFER,\ newBuffer);}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ glBufferData(GL\_ARRAY\_BUFFER,\ size,\ \textcolor{keyword}{nullptr},\ GL\_DYNAMIC\_DRAW);}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ newBuffer;}
+\DoxyCodeLine{00356\ \ \ \ \ \}}
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00358\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_ae0fe98919e3082c31e62dfcc7e76f31e}{OverridePositionVBO}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ vbo,\ \textcolor{keywordtype}{int}\ location\ =\ \mbox{\hyperlink{graphics_8hpp_a07e3b4345595467370ea6f1f6e235b25}{POSITION\_LOCATION}})\ \{}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vbo\ ==\ 0)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ glBindBuffer(GL\_ARRAY\_BUFFER,\ vbo);}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ glVertexAttribPointer(}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ location,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ attribute\ location\ (default:\ POSITION\_LOCATION)}}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ 3,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 3\ components\ per\ vertex}}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}GLenum\textcolor{keyword}{>}(\mbox{\hyperlink{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290a22ae0e2b89e5e3d477f988cc36d3272b}{DataType::Float}}),\ \textcolor{comment}{//\ type\ =\ float}}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ GL\_FALSE,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ not\ normalized}}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}),\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ stride}}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}*\textcolor{keyword}{>}(0)\ \ \ \ \ \ \textcolor{comment}{//\ offset}}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ glEnableVertexAttribArray(location);}
+\DoxyCodeLine{00371\ \ \ \ \ \}}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ }
+\DoxyCodeLine{00375\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespace_graphics_a115a81fec1bcc4c543465c17488a4db4}{GetActiveUniformCount}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ programID)\ \{}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ glGetProgramiv(programID,\ GL\_ACTIVE\_UNIFORMS,\ \&count);}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ count;}
+\DoxyCodeLine{00379\ \ \ \ \ \}}
+\DoxyCodeLine{00380\ }
+\DoxyCodeLine{00381\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_ae68001fd676252881fa82cc39d85cd10}{DeleteShader}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ shaderID)\ \{}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ glDeleteShader(shaderID);}
+\DoxyCodeLine{00383\ \ \ \ \ \}}
+\DoxyCodeLine{00384\ }
+\DoxyCodeLine{00385\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_graphics_afdbcfb53bbe1ebcc083b61c257d500e9}{DeleteProgram}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\&\ programID)\ \{}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (programID\ !=\ 0)\ \{}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ glDeleteProgram(programID);}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ programID\ =\ 0;\ \textcolor{comment}{//\ avoid\ dangling\ reference}}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00390\ \ \ \ \ \}}
+\DoxyCodeLine{00391\ }
+\DoxyCodeLine{00392\ \}\ \textcolor{comment}{//\ namespace\ Graphics}}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00394\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GRAPHICS\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,621 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "mirachEngine",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4,
+						6,
+						9
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-mirachEngine-Debug-d3d73f315722b4ee5527.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "mirachEngine",
+					"targetIndexes" : 
+					[
+						32,
+						33,
+						34,
+						36
+					]
+				},
+				{
+					"build" : "_deps/sol2-build",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.sol2-build-Debug-2456ef2a441be1f138c1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27
+					]
+				},
+				{
+					"build" : "_deps/sdl-build",
+					"jsonFile" : "directory-_deps.sdl-build-Debug-24470c8e6a7a315f995c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 3,
+					"source" : "/download/sdl/c36bd7f276274a93380f372abcd6d4cccdd20c88/sdl",
+					"targetIndexes" : 
+					[
+						28,
+						29,
+						30
+					]
+				},
+				{
+					"build" : "_deps/glm-build",
+					"childIndexes" : 
+					[
+						5
+					],
+					"jsonFile" : "directory-_deps.glm-build-Debug-e2fa9c43f6125100eadf.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 4,
+					"source" : "/download/glm/247d93788574cd7af455045b4ae5e6d8c4758fd1/glm"
+				},
+				{
+					"build" : "_deps/glm-build/glm",
+					"jsonFile" : "directory-_deps.glm-build.glm-Debug-d1f35e1928672d371c7c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 4,
+					"projectIndex" : 4,
+					"source" : "/download/glm/247d93788574cd7af455045b4ae5e6d8c4758fd1/glm/glm"
+				},
+				{
+					"build" : "_deps/assimp-build",
+					"childIndexes" : 
+					[
+						7,
+						8
+					],
+					"jsonFile" : "directory-_deps.assimp-build-Debug-0375fa25992eeb748852.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 5,
+					"source" : "/download/assimp/248954a90c949291c541ba7ee69b327d01e5f212/assimp"
+				},
+				{
+					"build" : "_deps/assimp-build/contrib/zlib",
+					"jsonFile" : "directory-_deps.assimp-build.contrib.zlib-Debug-8a3e6824bf7c6b36dc57.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10.0"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 6,
+					"source" : "/download/assimp/248954a90c949291c541ba7ee69b327d01e5f212/assimp/contrib/zlib",
+					"targetIndexes" : 
+					[
+						37
+					]
+				},
+				{
+					"build" : "_deps/assimp-build/code",
+					"jsonFile" : "directory-_deps.assimp-build.code-Debug-0b733b0c108c8984eb74.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 5,
+					"source" : "/download/assimp/248954a90c949291c541ba7ee69b327d01e5f212/assimp/code",
+					"targetIndexes" : 
+					[
+						31
+					]
+				},
+				{
+					"build" : "_deps/reactphysics3d-build",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-_deps.reactphysics3d-build-Debug-6b1711e4066134523015.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 7,
+					"source" : "/download/reactphysics3d/ff4072d3c72e1ee92428ade193a89f67d65269da/reactphysics3d",
+					"targetIndexes" : 
+					[
+						35
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ICT397_Project"
+				},
+				{
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4,
+						5,
+						7
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "mirach",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						32,
+						33,
+						34,
+						36
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "sol2",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "SDL3",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						28,
+						29,
+						30
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4,
+						5
+					],
+					"name" : "glm",
+					"parentIndex" : 1
+				},
+				{
+					"childIndexes" : 
+					[
+						6
+					],
+					"directoryIndexes" : 
+					[
+						6,
+						8
+					],
+					"name" : "Assimp",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						31
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						7
+					],
+					"name" : "zlib",
+					"parentIndex" : 5,
+					"targetIndexes" : 
+					[
+						37
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						9
+					],
+					"name" : "ReactPhysics3D",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						35
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "Continuous::@9c379972b23dfa81a253",
+					"jsonFile" : "target-Continuous-Debug-139b482daccee834de14.json",
+					"name" : "Continuous",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ContinuousBuild::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ContinuousBuild-Debug-23b62d5c834c0a36a047.json",
+					"name" : "ContinuousBuild",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ContinuousConfigure::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ContinuousConfigure-Debug-c41d00f796e11fa4982f.json",
+					"name" : "ContinuousConfigure",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ContinuousCoverage::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ContinuousCoverage-Debug-cf42ebbb605022f552ce.json",
+					"name" : "ContinuousCoverage",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ContinuousMemCheck::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ContinuousMemCheck-Debug-6dbae02135eeb814127b.json",
+					"name" : "ContinuousMemCheck",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ContinuousStart::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ContinuousStart-Debug-73284936c847187d44ed.json",
+					"name" : "ContinuousStart",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ContinuousSubmit::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ContinuousSubmit-Debug-9d6f64ff36ff84ae1fc0.json",
+					"name" : "ContinuousSubmit",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ContinuousTest::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ContinuousTest-Debug-543bdfd6e347354b8529.json",
+					"name" : "ContinuousTest",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ContinuousUpdate::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ContinuousUpdate-Debug-4d1da9c896a5b08b23e7.json",
+					"name" : "ContinuousUpdate",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Experimental::@9c379972b23dfa81a253",
+					"jsonFile" : "target-Experimental-Debug-8e79dae9cf71d5fce7f4.json",
+					"name" : "Experimental",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ExperimentalBuild::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ExperimentalBuild-Debug-098adff60381545733b1.json",
+					"name" : "ExperimentalBuild",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ExperimentalConfigure::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ExperimentalConfigure-Debug-dbbb3213b6260b65f5ba.json",
+					"name" : "ExperimentalConfigure",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ExperimentalCoverage::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ExperimentalCoverage-Debug-0645c911857a582d66b5.json",
+					"name" : "ExperimentalCoverage",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ExperimentalMemCheck::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ExperimentalMemCheck-Debug-722c8394ea0831baa4ea.json",
+					"name" : "ExperimentalMemCheck",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ExperimentalStart::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ExperimentalStart-Debug-fce73dcd5a5e3417d4c3.json",
+					"name" : "ExperimentalStart",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ExperimentalSubmit::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ExperimentalSubmit-Debug-1b4c4fd237625643ef3a.json",
+					"name" : "ExperimentalSubmit",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ExperimentalTest::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ExperimentalTest-Debug-12df20aed035cdb40028.json",
+					"name" : "ExperimentalTest",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ExperimentalUpdate::@9c379972b23dfa81a253",
+					"jsonFile" : "target-ExperimentalUpdate-Debug-42bddbd8b3be912cffc3.json",
+					"name" : "ExperimentalUpdate",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Nightly::@9c379972b23dfa81a253",
+					"jsonFile" : "target-Nightly-Debug-7b6cd80253045a2a7720.json",
+					"name" : "Nightly",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "NightlyBuild::@9c379972b23dfa81a253",
+					"jsonFile" : "target-NightlyBuild-Debug-0cd2c11530a098f5ee1d.json",
+					"name" : "NightlyBuild",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "NightlyConfigure::@9c379972b23dfa81a253",
+					"jsonFile" : "target-NightlyConfigure-Debug-f420f36ae68257f4dfa4.json",
+					"name" : "NightlyConfigure",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "NightlyCoverage::@9c379972b23dfa81a253",
+					"jsonFile" : "target-NightlyCoverage-Debug-c8e52e8b335b9515f014.json",
+					"name" : "NightlyCoverage",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "NightlyMemCheck::@9c379972b23dfa81a253",
+					"jsonFile" : "target-NightlyMemCheck-Debug-69b36d137f4d403442fb.json",
+					"name" : "NightlyMemCheck",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "NightlyMemoryCheck::@9c379972b23dfa81a253",
+					"jsonFile" : "target-NightlyMemoryCheck-Debug-a4efd2f73c9975bcdcef.json",
+					"name" : "NightlyMemoryCheck",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "NightlyStart::@9c379972b23dfa81a253",
+					"jsonFile" : "target-NightlyStart-Debug-ee80d98418ed46048a28.json",
+					"name" : "NightlyStart",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "NightlySubmit::@9c379972b23dfa81a253",
+					"jsonFile" : "target-NightlySubmit-Debug-49fb10d2f592575bbc9f.json",
+					"name" : "NightlySubmit",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "NightlyTest::@9c379972b23dfa81a253",
+					"jsonFile" : "target-NightlyTest-Debug-8753ae91b4980355ab3b.json",
+					"name" : "NightlyTest",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "NightlyUpdate::@9c379972b23dfa81a253",
+					"jsonFile" : "target-NightlyUpdate-Debug-9c41fad2a53d42ee836c.json",
+					"name" : "NightlyUpdate",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "SDL3-static::@fc7b397d5a055aba6d5e",
+					"jsonFile" : "target-SDL3-static-Debug-1651936be826b50ed457.json",
+					"name" : "SDL3-static",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "SDL3_test::@fc7b397d5a055aba6d5e",
+					"jsonFile" : "target-SDL3_test-Debug-c1f24e981d6f16afc879.json",
+					"name" : "SDL3_test",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "SDL_uclibc::@fc7b397d5a055aba6d5e",
+					"jsonFile" : "target-SDL_uclibc-Debug-bb498f9b5117e9e084c1.json",
+					"name" : "SDL_uclibc",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "assimp::@b1ea6f5c2178ebc90389",
+					"jsonFile" : "target-assimp-Debug-0a32fb1671aeff24c340.json",
+					"name" : "assimp",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "glad::@05bd52cf8d1c99c2443e",
+					"jsonFile" : "target-glad-Debug-b0e3f0c9140d48a3fd41.json",
+					"name" : "glad",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "lua::@05bd52cf8d1c99c2443e",
+					"jsonFile" : "target-lua-Debug-994ec7d17cd65a5e8d20.json",
+					"name" : "lua",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "mirach::@05bd52cf8d1c99c2443e",
+					"jsonFile" : "target-mirach-Debug-d22680e3a0bcedf79a30.json",
+					"name" : "mirach",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "reactphysics3d::@5d9dcba1aa2a61aefaaa",
+					"jsonFile" : "target-reactphysics3d-Debug-09a43e648be7be04aa80.json",
+					"name" : "reactphysics3d",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "stb_image::@05bd52cf8d1c99c2443e",
+					"jsonFile" : "target-stb_image-Debug-1f2ff91abf10acb2abeb.json",
+					"name" : "stb_image",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "zlibstatic::@7fd99959cf8fe87d223a",
+					"jsonFile" : "target-zlibstatic-Debug-021fe2ad0a493b9c5a53.json",
+					"name" : "zlibstatic",
+					"projectIndex" : 6
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug",
+		"source" : "C:/Users/Liam/Documents/ICT397/Project/ICT397-Project"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

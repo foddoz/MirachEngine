@@ -1,0 +1,5 @@
+<map id="Physics::RigidBody::Invalidate" name="Physics::RigidBody::Invalidate">
+<area shape="rect" id="Node000001" title=" " alt="" coords="255,5,391,48"/>
+<area shape="rect" id="Node000002" href="$class_physics_system.html#a1cb8f9db231aa5c3cbd6f75d0a8656ea" title="Destroys and cleans up physics&#45;related components (rigid bodies and colliders) of a given entity." alt="" coords="5,13,207,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="239,29,207,29,207,24,239,24"/>
+</map>

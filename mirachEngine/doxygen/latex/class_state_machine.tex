@@ -1,0 +1,328 @@
+\doxysection{State\+Machine\texorpdfstring{$<$}{<} Entity\+Type \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_state_machine}{}\label{class_state_machine}\index{StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}}
+
+
+A generic finite state machine (FSM) class template.  
+
+
+
+
+{\ttfamily \#include $<$State\+Machine.\+h$>$}
+
+
+
+Collaboration diagram for State\+Machine\texorpdfstring{$<$}{<} Entity\+Type \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{class_state_machine__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_state_machine_af00e446c735c481288418c25be5083cc}{State\+Machine}} (Entity\+Type \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_state_machine_aebfdb0f7899174f3e63db15da8d6c12d}{owner}})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_state_machine_af62624b4a5f1163092d1b9b1071329c1}{Update}} () const
+\begin{DoxyCompactList}\small\item\em Calls the Execute() function of both global and current states. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_state_machine_a3f71e3da813131021e5a6299a731e138}{Change\+State}} (\mbox{\hyperlink{class_state}{State}}$<$ Entity\+Type $>$ \texorpdfstring{$\ast$}{*}new\+State)
+\begin{DoxyCompactList}\small\item\em Changes the current state to a new one. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_state_machine_aa1493df14f685e79c7f358c1ab473096}{Revert\+To\+Previous\+State}} ()
+\begin{DoxyCompactList}\small\item\em Reverts the state machine to the previous state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_state_machine_a3c92fbcca4ac80d4bb5fe5efa26014fe}{set\+Current\+State}} (\mbox{\hyperlink{class_state}{State}}$<$ Entity\+Type $>$ \texorpdfstring{$\ast$}{*}s)
+\begin{DoxyCompactList}\small\item\em Sets the current state (without triggering Enter()). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_state_machine_afd04374f0ec509816224b71804b3b982}{set\+Global\+State}} (\mbox{\hyperlink{class_state}{State}}$<$ Entity\+Type $>$ \texorpdfstring{$\ast$}{*}s)
+\begin{DoxyCompactList}\small\item\em Sets the global state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_state_machine_aab9f7c77b78afcf5685d0f11c61c4f86}{set\+Previous\+State}} (\mbox{\hyperlink{class_state}{State}}$<$ Entity\+Type $>$ \texorpdfstring{$\ast$}{*}s)
+\begin{DoxyCompactList}\small\item\em Sets the previous state manually. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_state}{State}}$<$ Entity\+Type $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_state_machine_a1d0625163ac9504b673eb56c34841f32}{get\+Current\+State}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_state}{State}}$<$ Entity\+Type $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_state_machine_ae48771bc3d13be0f84e99cd8cdc325c4}{get\+Previous\+State}} () const
+\begin{DoxyCompactList}\small\item\em Gets the previous state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_state}{State}}$<$ Entity\+Type $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_state_machine_abc0cb601035e291498b137c7cd6a9bd8}{get\+Global\+State}} () const
+\begin{DoxyCompactList}\small\item\em Gets the global state. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_state_machine_a2af4a1bf934509eb578eb951606354a9}{is\+In\+State}} (const \mbox{\hyperlink{class_state}{State}}$<$ Entity\+Type $>$ \&st) const
+\begin{DoxyCompactList}\small\item\em Checks if the current state matches a given state type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Entity\+Type \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_state_machine_aebfdb0f7899174f3e63db15da8d6c12d}{owner}}
+\begin{DoxyCompactList}\small\item\em Pointer to the entity that owns this state machine. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_state}{State}}$<$ Entity\+Type $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_state_machine_a49cfecb4fa0b4be6253f06283610d0a3}{current\+State}} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to the current state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_state}{State}}$<$ Entity\+Type $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_state_machine_afe63b33e3d15d8ea419f36b1f2f568f1}{previous\+State}} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to the previous state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_state}{State}}$<$ Entity\+Type $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_state_machine_a49bd03ea30d557df572c319f27968beb}{global\+State}} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to the global state that executes every update. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class Entity\+Type$>$\newline
+class State\+Machine$<$ Entity\+Type $>$}
+A generic finite state machine (FSM) class template. 
+
+This class manages state transitions and execution logic for an owner entity. It supports current, previous, and global states. Global states execute every update, while current states define the main behavior.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Entity\+Type} & The type of the entity that owns this state machine. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\label{doc-constructors}
+\Hypertarget{class_state_machine_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_state_machine_af00e446c735c481288418c25be5083cc}\index{StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}!StateMachine@{StateMachine}}
+\index{StateMachine@{StateMachine}!StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}}
+\doxysubsubsection{\texorpdfstring{StateMachine()}{StateMachine()}}
+{\footnotesize\ttfamily \label{class_state_machine_af00e446c735c481288418c25be5083cc} 
+template$<$class Entity\+Type$>$ \\
+\mbox{\hyperlink{class_state_machine}{State\+Machine}}$<$ Entity\+Type $>$\mbox{\hyperlink{class_state_machine}{\+::\+State\+Machine}} (\begin{DoxyParamCaption}\item[{Entity\+Type \texorpdfstring{$\ast$}{*}}]{owner}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner} & Pointer to the owner entity. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_state_machine_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_state_machine_a3f71e3da813131021e5a6299a731e138}\index{StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}!ChangeState@{ChangeState}}
+\index{ChangeState@{ChangeState}!StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}}
+\doxysubsubsection{\texorpdfstring{ChangeState()}{ChangeState()}}
+{\footnotesize\ttfamily \label{class_state_machine_a3f71e3da813131021e5a6299a731e138} 
+template$<$class Entity\+Type$>$ \\
+void \mbox{\hyperlink{class_state_machine}{State\+Machine}}$<$ Entity\+Type $>$\+::\+Change\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state}{State}}$<$ Entity\+Type $>$ \texorpdfstring{$\ast$}{*}}]{new\+State}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Changes the current state to a new one. 
+
+Calls Exit() on the old state and Enter() on the new one. Also stores the previous state for potential reversion.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+State} & Pointer to the new state to transition into. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_state_machine_a3f71e3da813131021e5a6299a731e138_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_state_machine_a1d0625163ac9504b673eb56c34841f32}\index{StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}!getCurrentState@{getCurrentState}}
+\index{getCurrentState@{getCurrentState}!StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}}
+\doxysubsubsection{\texorpdfstring{getCurrentState()}{getCurrentState()}}
+{\footnotesize\ttfamily \label{class_state_machine_a1d0625163ac9504b673eb56c34841f32} 
+template$<$class Entity\+Type$>$ \\
+\mbox{\hyperlink{class_state}{State}}$<$ Entity\+Type $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_state_machine}{State\+Machine}}$<$ Entity\+Type $>$\+::get\+Current\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current state. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the current state. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_state_machine_a1d0625163ac9504b673eb56c34841f32_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_state_machine_abc0cb601035e291498b137c7cd6a9bd8}\index{StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}!getGlobalState@{getGlobalState}}
+\index{getGlobalState@{getGlobalState}!StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}}
+\doxysubsubsection{\texorpdfstring{getGlobalState()}{getGlobalState()}}
+{\footnotesize\ttfamily \label{class_state_machine_abc0cb601035e291498b137c7cd6a9bd8} 
+template$<$class Entity\+Type$>$ \\
+\mbox{\hyperlink{class_state}{State}}$<$ Entity\+Type $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_state_machine}{State\+Machine}}$<$ Entity\+Type $>$\+::get\+Global\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the global state. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the global state. 
+\end{DoxyReturn}
+\Hypertarget{class_state_machine_ae48771bc3d13be0f84e99cd8cdc325c4}\index{StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}!getPreviousState@{getPreviousState}}
+\index{getPreviousState@{getPreviousState}!StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}}
+\doxysubsubsection{\texorpdfstring{getPreviousState()}{getPreviousState()}}
+{\footnotesize\ttfamily \label{class_state_machine_ae48771bc3d13be0f84e99cd8cdc325c4} 
+template$<$class Entity\+Type$>$ \\
+\mbox{\hyperlink{class_state}{State}}$<$ Entity\+Type $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_state_machine}{State\+Machine}}$<$ Entity\+Type $>$\+::get\+Previous\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the previous state. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the previous state. 
+\end{DoxyReturn}
+\Hypertarget{class_state_machine_a2af4a1bf934509eb578eb951606354a9}\index{StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}!isInState@{isInState}}
+\index{isInState@{isInState}!StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}}
+\doxysubsubsection{\texorpdfstring{isInState()}{isInState()}}
+{\footnotesize\ttfamily \label{class_state_machine_a2af4a1bf934509eb578eb951606354a9} 
+template$<$class Entity\+Type$>$ \\
+bool \mbox{\hyperlink{class_state_machine}{State\+Machine}}$<$ Entity\+Type $>$\+::is\+In\+State (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_state}{State}}$<$ Entity\+Type $>$ \&}]{st}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the current state matches a given state type. 
+
+Uses RTTI (typeid) to compare state types.
+
+
+\begin{DoxyParams}{Parameters}
+{\em st} & Reference to the state to compare with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the current state\textquotesingle{}s type matches, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_state_machine_aa1493df14f685e79c7f358c1ab473096}\index{StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}!RevertToPreviousState@{RevertToPreviousState}}
+\index{RevertToPreviousState@{RevertToPreviousState}!StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}}
+\doxysubsubsection{\texorpdfstring{RevertToPreviousState()}{RevertToPreviousState()}}
+{\footnotesize\ttfamily \label{class_state_machine_aa1493df14f685e79c7f358c1ab473096} 
+template$<$class Entity\+Type$>$ \\
+void \mbox{\hyperlink{class_state_machine}{State\+Machine}}$<$ Entity\+Type $>$\+::\+Revert\+To\+Previous\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reverts the state machine to the previous state. 
+
+This calls \doxylink{class_state_machine_a3f71e3da813131021e5a6299a731e138}{Change\+State()} with the previous state pointer. Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_state_machine_aa1493df14f685e79c7f358c1ab473096_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_state_machine_a3c92fbcca4ac80d4bb5fe5efa26014fe}\index{StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}!setCurrentState@{setCurrentState}}
+\index{setCurrentState@{setCurrentState}!StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}}
+\doxysubsubsection{\texorpdfstring{setCurrentState()}{setCurrentState()}}
+{\footnotesize\ttfamily \label{class_state_machine_a3c92fbcca4ac80d4bb5fe5efa26014fe} 
+template$<$class Entity\+Type$>$ \\
+void \mbox{\hyperlink{class_state_machine}{State\+Machine}}$<$ Entity\+Type $>$\+::set\+Current\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state}{State}}$<$ Entity\+Type $>$ \texorpdfstring{$\ast$}{*}}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the current state (without triggering Enter()). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Pointer to the state to set as current. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_state_machine_afd04374f0ec509816224b71804b3b982}\index{StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}!setGlobalState@{setGlobalState}}
+\index{setGlobalState@{setGlobalState}!StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}}
+\doxysubsubsection{\texorpdfstring{setGlobalState()}{setGlobalState()}}
+{\footnotesize\ttfamily \label{class_state_machine_afd04374f0ec509816224b71804b3b982} 
+template$<$class Entity\+Type$>$ \\
+void \mbox{\hyperlink{class_state_machine}{State\+Machine}}$<$ Entity\+Type $>$\+::set\+Global\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state}{State}}$<$ Entity\+Type $>$ \texorpdfstring{$\ast$}{*}}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the global state. 
+
+Global states execute during every call to \doxylink{class_state_machine_af62624b4a5f1163092d1b9b1071329c1}{Update()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Pointer to the state to set as global. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_state_machine_aab9f7c77b78afcf5685d0f11c61c4f86}\index{StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}!setPreviousState@{setPreviousState}}
+\index{setPreviousState@{setPreviousState}!StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}}
+\doxysubsubsection{\texorpdfstring{setPreviousState()}{setPreviousState()}}
+{\footnotesize\ttfamily \label{class_state_machine_aab9f7c77b78afcf5685d0f11c61c4f86} 
+template$<$class Entity\+Type$>$ \\
+void \mbox{\hyperlink{class_state_machine}{State\+Machine}}$<$ Entity\+Type $>$\+::set\+Previous\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_state}{State}}$<$ Entity\+Type $>$ \texorpdfstring{$\ast$}{*}}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the previous state manually. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Pointer to the state to set as previous. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_state_machine_af62624b4a5f1163092d1b9b1071329c1}\index{StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}!Update@{Update}}
+\index{Update@{Update}!StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_state_machine_af62624b4a5f1163092d1b9b1071329c1} 
+template$<$class Entity\+Type$>$ \\
+void \mbox{\hyperlink{class_state_machine}{State\+Machine}}$<$ Entity\+Type $>$\+::\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calls the Execute() function of both global and current states. 
+
+This should be called once per frame to update the behavior of the entity. 
+
+\label{doc-variable-members}
+\Hypertarget{class_state_machine_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_state_machine_a49cfecb4fa0b4be6253f06283610d0a3}\index{StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}!currentState@{currentState}}
+\index{currentState@{currentState}!StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}}
+\doxysubsubsection{\texorpdfstring{currentState}{currentState}}
+{\footnotesize\ttfamily \label{class_state_machine_a49cfecb4fa0b4be6253f06283610d0a3} 
+template$<$class Entity\+Type$>$ \\
+\mbox{\hyperlink{class_state}{State}}$<$Entity\+Type$>$\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_state_machine}{State\+Machine}}$<$ Entity\+Type $>$\+::current\+State = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the current state. 
+
+\Hypertarget{class_state_machine_a49bd03ea30d557df572c319f27968beb}\index{StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}!globalState@{globalState}}
+\index{globalState@{globalState}!StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}}
+\doxysubsubsection{\texorpdfstring{globalState}{globalState}}
+{\footnotesize\ttfamily \label{class_state_machine_a49bd03ea30d557df572c319f27968beb} 
+template$<$class Entity\+Type$>$ \\
+\mbox{\hyperlink{class_state}{State}}$<$Entity\+Type$>$\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_state_machine}{State\+Machine}}$<$ Entity\+Type $>$\+::global\+State = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the global state that executes every update. 
+
+\Hypertarget{class_state_machine_aebfdb0f7899174f3e63db15da8d6c12d}\index{StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}!owner@{owner}}
+\index{owner@{owner}!StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}}
+\doxysubsubsection{\texorpdfstring{owner}{owner}}
+{\footnotesize\ttfamily \label{class_state_machine_aebfdb0f7899174f3e63db15da8d6c12d} 
+template$<$class Entity\+Type$>$ \\
+Entity\+Type\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_state_machine}{State\+Machine}}$<$ Entity\+Type $>$\+::owner\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the entity that owns this state machine. 
+
+\Hypertarget{class_state_machine_afe63b33e3d15d8ea419f36b1f2f568f1}\index{StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}!previousState@{previousState}}
+\index{previousState@{previousState}!StateMachine$<$ EntityType $>$@{StateMachine$<$ EntityType $>$}}
+\doxysubsubsection{\texorpdfstring{previousState}{previousState}}
+{\footnotesize\ttfamily \label{class_state_machine_afe63b33e3d15d8ea419f36b1f2f568f1} 
+template$<$class Entity\+Type$>$ \\
+\mbox{\hyperlink{class_state}{State}}$<$Entity\+Type$>$\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_state_machine}{State\+Machine}}$<$ Entity\+Type $>$\+::previous\+State = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the previous state. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+FSM/\mbox{\hyperlink{_state_machine_8h}{State\+Machine.\+h}}\end{DoxyCompactItemize}

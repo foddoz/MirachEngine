@@ -1,0 +1,79 @@
+\doxysection{program.\+hpp}
+\hypertarget{program_8hpp_source}{}\label{program_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Program/program.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Program/program.hpp}}
+\mbox{\hyperlink{program_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PROGRAM\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PROGRAM\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{//\#include\ <SDL3/SDL.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{window_8hpp}{window.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//\#include\ <glad/gl.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{graphics_8hpp}{../Graphics/graphics.hpp}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{//\#include\ "{}Camera/camera.hpp"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_program_aac770fe6e3b5ef7a9980aee960fab27d}{Program}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_program_aac770fe6e3b5ef7a9980aee960fab27d}{Program}}(\textcolor{keywordtype}{float}\ screenWidth,\ \textcolor{keywordtype}{float}\ screenHeight);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_program_a5bb6c47f09263cba36270d82dda63085}{Initialise}}();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_program_a27a7101b483573c2a5a10b93bc6c2e72}{InitialiseGraphics}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_program_abd1a8ae880a973399bbcb27f4b92d710}{InitialiseWindow}}();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_program_afcb5d6229612eff24edc810365ada275}{CreateGraphicsPipeline}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ vsPath,\ \textcolor{keyword}{const}\ std::string\&\ fsPath);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_program_a3da228bdf5dc13e475d2a182f30ebf9f}{GetShaderProgram}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_program_aec028b584ab9fa1859cea93ce94a58d6}{Delete}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_program_a6e8e19b06ed7b9472c0e63ee7e44dd42}{DeleteWindow}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_program_a5316d10dacea062401d90777972fa15e}{DeleteGraphics}}();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_program_ac3d2e61a3e1b46f0f1acb4d1793f5ede}{LockMouse}}(\textcolor{keywordtype}{bool}\ lock)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_program_a0a17960127aeaeba9fd0e070b1692253}{UpdateDeltaTime}}();}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_program_a07e2c1cb61ee9fe783950b4ce2a65c6b}{GetDeltaTime}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_program_a24a65b3d84f203f9846e0a2dffc34f96}{SwapWindow}}();}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_program_a48219bbdc314921a45d7454dd212c646}{mScreenWidth}};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_program_a91addb3e2d8cd34bfe61e366f155759c}{mScreenHeight}};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{struct_window_handle}{WindowHandle}}*\ \mbox{\hyperlink{class_program_a37f22c547a2ddbf064f03bae4790fef5}{mWindow}};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{window_8hpp_a0946984514c2d132fda9ae97e8ba739f}{GraphicsContextHandle}}\ \mbox{\hyperlink{class_program_a4086de7d90a2f45979fe7359a357dd0c}{mGraphicsContext}};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_program_acfd39dfaba7e52d624d6b00d8c43833c}{mQuit}};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{comment}{//Camera\ mCamera;\ ///<\ [Optional]\ Main\ camera\ object\ for\ future\ implementation.}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00108\ \ \ \ \ std::string\ \mbox{\hyperlink{class_program_a6442897ef8c165999fba0c6473cd80fa}{LoadShader}}(\textcolor{keyword}{const}\ std::string\&\ fileName);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_program_a1399ab4a486a393733fb62383867dd1c}{CheckShaderCompile}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ shader);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_program_aad9814af796f7c9d2a8de476cacb71dd}{CheckProgramLink}}(\textcolor{keywordtype}{unsigned}\ program);}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_program_af642110055d21820331fce664e63a94c}{CompileShader}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ type,\ \textcolor{keyword}{const}\ std::string\&\ source);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_program_a8fe5b74b64633c27779f303e4f0ad8e8}{CreateShaderProgram}}(\textcolor{keyword}{const}\ std::string\&\ vertexShaderSource,\ \textcolor{keyword}{const}\ std::string\&\ fragmentShaderSource);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00139\ \ \ \ \ std::unordered\_map<std::string,\ unsigned\ int>\ \mbox{\hyperlink{class_program_a24d152cf41389dcee6aef9c8c079a45e}{mShaderPrograms}};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_program_a9c9ea8f5c5168332b1fdb174243992ab}{mLastFrameTime}};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_program_a5db09c239bdf316c6ef81a189992fb4b}{mDeltaTime}};}
+\DoxyCodeLine{00146\ \};}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,85 @@
+.TH "EnemyAttackCallback" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+EnemyAttackCallback
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <collision_callback\&.hpp>\fP
+.PP
+Inherits \fBPhysics::CollisionCallback\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEnemyAttackCallback\fP (\fBEntityManager\fP *em, \fBEntity\fP attacker, \fBEntity\fP target)"
+.br
+.ti -1c
+.RI "void \fBOnContact\fP (\fBPhysics::RigidBody\fP *a, \fBPhysics::RigidBody\fP *b) override"
+.br
+.RI "Called when two bodies start contact\&. "
+.in -1c
+
+Public Member Functions inherited from \fBPhysics::CollisionCallback\fP
+.in +1c
+.ti -1c
+.RI "virtual \fB~CollisionCallback\fP ()=default"
+.br
+.ti -1c
+.RI "virtual void \fBOnContactExit\fP (\fBRigidBody\fP *bodyA, \fBRigidBody\fP *bodyB)"
+.br
+.RI "Called when two bodies stop contact\&. "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEntity\fP \fBFindEntity\fP (\fBPhysics::RigidBody\fP *rb)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBEntityManager\fP * \fBm_em\fP"
+.br
+.ti -1c
+.RI "\fBEntity\fP \fBm_attacker\fP"
+.br
+.ti -1c
+.RI "\fBEntity\fP \fBm_target\fP"
+.br
+.ti -1c
+.RI "bool \fBtriggered\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "EnemyAttackCallback::EnemyAttackCallback (\fBEntityManager\fP * em, \fBEntity\fP attacker, \fBEntity\fP target)\fR [inline]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBEntity\fP EnemyAttackCallback::FindEntity (\fBPhysics::RigidBody\fP * rb)\fR [inline]\fP, \fR [private]\fP"
+
+.SS "void EnemyAttackCallback::OnContact (\fBPhysics::RigidBody\fP * bodyA, \fBPhysics::RigidBody\fP * bodyB)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called when two bodies start contact\&. 
+.PP
+Implements \fBPhysics::CollisionCallback\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBEntity\fP EnemyAttackCallback::m_attacker\fR [private]\fP"
+
+.SS "\fBEntityManager\fP* EnemyAttackCallback::m_em\fR [private]\fP"
+
+.SS "\fBEntity\fP EnemyAttackCallback::m_target\fR [private]\fP"
+
+.SS "bool EnemyAttackCallback::triggered\fR [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

@@ -1,0 +1,84 @@
+\doxysection{C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Rendering/health\+Bar.cpp File Reference}
+\hypertarget{health_bar_8cpp}{}\label{health_bar_8cpp}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/Rendering/healthBar.cpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/Rendering/healthBar.cpp}}
+{\ttfamily \#include "{}health\+Bar.\+h"{}}\newline
+{\ttfamily \#include $<$glad/gl.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+Include dependency graph for health\+Bar.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{health_bar_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{health_bar_8cpp_a9c3061c9d30b202e7377d6c9c992a082}{Load\+Text\+File}} (const std\+::string \&path)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{health_bar_8cpp_a5fde040c3a58bf4b7060a07fa6be0981}{health\+Bar\+VS}}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{health_bar_8cpp_ada357f1712d108868aecb31ddbfe9ef8}{health\+Bar\+FS}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{health_bar_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{health_bar_8cpp_a9c3061c9d30b202e7377d6c9c992a082}\index{healthBar.cpp@{healthBar.cpp}!LoadTextFile@{LoadTextFile}}
+\index{LoadTextFile@{LoadTextFile}!healthBar.cpp@{healthBar.cpp}}
+\doxysubsubsection{\texorpdfstring{LoadTextFile()}{LoadTextFile()}}
+{\footnotesize\ttfamily \label{health_bar_8cpp_a9c3061c9d30b202e7377d6c9c992a082} 
+std\+::string Load\+Text\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\label{doc-var-members}
+\Hypertarget{health_bar_8cpp_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{health_bar_8cpp_ada357f1712d108868aecb31ddbfe9ef8}\index{healthBar.cpp@{healthBar.cpp}!healthBarFS@{healthBarFS}}
+\index{healthBarFS@{healthBarFS}!healthBar.cpp@{healthBar.cpp}}
+\doxysubsubsection{\texorpdfstring{healthBarFS}{healthBarFS}}
+{\footnotesize\ttfamily \label{health_bar_8cpp_ada357f1712d108868aecb31ddbfe9ef8} 
+const char\texorpdfstring{$\ast$}{*} health\+Bar\+FS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ R\textcolor{stringliteral}{"{}glsl(}}
+\DoxyCodeLine{\textcolor{stringliteral}{\#version\ 330\ core}}
+\DoxyCodeLine{\textcolor{stringliteral}{out\ vec4\ FragColor;}}
+\DoxyCodeLine{\textcolor{stringliteral}{uniform\ vec3\ uColor;}}
+\DoxyCodeLine{\textcolor{stringliteral}{void\ main()}}
+\DoxyCodeLine{\textcolor{stringliteral}{\{}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \ \ FragColor\ =\ vec4(uColor,\ 1.0);}}
+\DoxyCodeLine{\textcolor{stringliteral}{\}}}
+\DoxyCodeLine{\textcolor{stringliteral}{)glsl"{}}}
+
+\end{DoxyCode}
+\Hypertarget{health_bar_8cpp_a5fde040c3a58bf4b7060a07fa6be0981}\index{healthBar.cpp@{healthBar.cpp}!healthBarVS@{healthBarVS}}
+\index{healthBarVS@{healthBarVS}!healthBar.cpp@{healthBar.cpp}}
+\doxysubsubsection{\texorpdfstring{healthBarVS}{healthBarVS}}
+{\footnotesize\ttfamily \label{health_bar_8cpp_a5fde040c3a58bf4b7060a07fa6be0981} 
+const char\texorpdfstring{$\ast$}{*} health\+Bar\+VS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ R\textcolor{stringliteral}{"{}glsl(}}
+\DoxyCodeLine{\textcolor{stringliteral}{\#version\ 330\ core}}
+\DoxyCodeLine{\textcolor{stringliteral}{layout\ (location\ =\ 0)\ in\ vec2\ aPos;}}
+\DoxyCodeLine{\textcolor{stringliteral}{uniform\ float\ uWidth;}}
+\DoxyCodeLine{\textcolor{stringliteral}{void\ main()}}
+\DoxyCodeLine{\textcolor{stringliteral}{\{}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \ \ vec2\ pos\ =\ aPos;}}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \ \ pos.x\ =\ -\/0.5\ +\ (pos.x\ +\ 0.5)\ *\ uWidth;\ \ \ \ \ \ }}
+\DoxyCodeLine{\textcolor{stringliteral}{\ \ \ \ gl\_Position\ =\ vec4(pos,\ 0.0,\ 1.0);}}
+\DoxyCodeLine{\textcolor{stringliteral}{\}}}
+\DoxyCodeLine{\textcolor{stringliteral}{)glsl"{}}}
+
+\end{DoxyCode}

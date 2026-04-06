@@ -1,0 +1,167 @@
+.TH "C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/Events/input.hpp" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/Events/input.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <cstdint>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBInputEvent\fP"
+.br
+.RI "Structure holding abstracted input event data for use in the engine\&. "
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBInputBackend\fP"
+.br
+.RI "Backend namespace for platform-specific input functionality (SDL abstraction)\&. "
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "using \fBKeyStateArray\fP = const uint8_t*"
+.br
+.RI "Raw pointer to SDL keyboard state array\&. "
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum class \fBKeyCode\fP : uint16_t { \fBUnknown\fP = 0, \fBW\fP = 26, \fBA\fP = 4, \fBS\fP = 22, \fBD\fP = 7, \fBSpace\fP = 44 }"
+.br
+.RI "Enum representing abstracted keyboard key codes (mapped from SDL scancodes)\&. "
+.ti -1c
+.RI "enum class \fBMouseButton\fP { \fBLeft\fP = 1, \fBRight\fP = 3, \fBMiddle\fP = 2 }"
+.br
+.RI "Enum representing mouse buttons (abstracted from SDL)\&. "
+.ti -1c
+.RI "enum class \fBInputEventType\fP { \fBQuit\fP, \fBMouseMotion\fP, \fBMouseButtonDown\fP, \fBMouseButtonUp\fP, \fBUnknown\fP }"
+.br
+.RI "Enum representing the type of input event polled from SDL\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "constexpr uint32_t \fBMouseButtonMask\fP (\fBMouseButton\fP button)"
+.br
+.RI "Utility to compute the SDL mouse button bitmask for a given button\&. "
+.ti -1c
+.RI "void \fBInputBackend::Init\fP ()"
+.br
+.RI "Initializes the input backend\&. Must be called before polling events\&. "
+.ti -1c
+.RI "bool \fBInputBackend::PollEvent\fP (\fBInputEvent\fP &outEvent)"
+.br
+.RI "Polls a single input event and fills the output event structure\&. "
+.ti -1c
+.RI "\fBKeyStateArray\fP \fBInputBackend::GetKeyboardState\fP (int *numKeys)"
+.br
+.RI "Returns the current state of all keyboard keys\&. "
+.ti -1c
+.RI "uint32_t \fBInputBackend::GetMouseButtons\fP ()"
+.br
+.RI "Returns the current state of all mouse buttons\&. "
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "using \fBKeyStateArray\fP = const uint8_t*"
+
+.PP
+Raw pointer to SDL keyboard state array\&. 
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum class \fBInputEventType\fP\fR [strong]\fP"
+
+.PP
+Enum representing the type of input event polled from SDL\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIQuit \fP
+Application quit event\&. 
+.TP
+\f(BIMouseMotion \fP
+Mouse movement event\&. 
+.TP
+\f(BIMouseButtonDown \fP
+Mouse button press\&. 
+.TP
+\f(BIMouseButtonUp \fP
+Mouse button release\&. 
+.TP
+\f(BIUnknown \fP
+Unrecognized or unsupported event\&. 
+.SS "enum class \fBKeyCode\fP : uint16_t\fR [strong]\fP"
+
+.PP
+Enum representing abstracted keyboard key codes (mapped from SDL scancodes)\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BIUnknown \fP
+Unknown or unrecognized key\&. 
+.TP
+\f(BIW \fP
+Forward movement key (typically 'W') 
+.TP
+\f(BIA \fP
+Left movement key (typically 'A') 
+.TP
+\f(BIS \fP
+Backward movement key (typically 'S') 
+.TP
+\f(BID \fP
+Right movement key (typically 'D') 
+.TP
+\f(BISpace \fP
+Jump or action key (spacebar) 
+.SS "enum class \fBMouseButton\fP\fR [strong]\fP"
+
+.PP
+Enum representing mouse buttons (abstracted from SDL)\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\f(BILeft \fP
+Left mouse button\&. 
+.TP
+\f(BIRight \fP
+Right mouse button\&. 
+.TP
+\f(BIMiddle \fP
+Middle (wheel) mouse button\&. 
+.SH "Function Documentation"
+.PP 
+.SS "uint32_t MouseButtonMask (\fBMouseButton\fP button)\fR [inline]\fP, \fR [constexpr]\fP"
+
+.PP
+Utility to compute the SDL mouse button bitmask for a given button\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIbutton\fP The mouse button\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Bitmask representing that button\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

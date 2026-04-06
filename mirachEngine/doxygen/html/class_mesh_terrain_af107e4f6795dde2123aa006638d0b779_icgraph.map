@@ -1,0 +1,13 @@
+<map id="MeshTerrain::InitIndices" name="MeshTerrain::InitIndices">
+<area shape="rect" id="Node000001" title="Fills index buffer with triangle strip indices." alt="" coords="524,31,684,57"/>
+<area shape="rect" id="Node000002" href="$class_mesh_terrain.html#a7cd9ecf88516b6716cb76b804e8bd61b" title=" " alt="" coords="290,5,456,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="508,36,456,30,457,25,509,31"/>
+<area shape="rect" id="Node000004" href="$class_mesh_terrain.html#a6bce579145dde6b4cde1c5bd622aa797" title="Generates vertices, normals, and triangle indices from heightmap." alt="" coords="270,56,476,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="509,57,477,61,476,55,508,52"/>
+<area shape="rect" id="Node000003" href="$class_mesh_terrain.html#a02d8c1492362365710a818b9a4674774" title="Converts the terrain to a renderable mesh component." alt="" coords="30,5,197,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="274,21,198,21,198,16,274,16"/>
+<area shape="rect" id="Node000005" href="$class_mesh_terrain.html#a8b774b6e68bb4e4e72e0690daeb5bf7f" title="Generates the heightmap and vertex data for terrain mesh." alt="" coords="8,56,219,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="254,72,219,72,219,67,254,67"/>
+<area shape="rect" id="Node000006" href="$class_terrain_chunk.html#ab8fb5256f460139f59aa6dae3de6dabc" title="Generates mesh data for this chunk from a global heightmap source." alt="" coords="5,107,222,133"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="287,89,186,109,185,103,285,84"/>
+</map>

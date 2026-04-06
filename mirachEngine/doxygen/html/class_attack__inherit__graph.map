@@ -1,0 +1,5 @@
+<map id="Attack&lt; Entity &gt;" name="Attack&lt; Entity &gt;">
+<area shape="rect" id="Node000001" title="Represents the Attack state for a finite state machine. Calls onAttackEnter, onAttackExecute,..." alt="" coords="5,187,112,299"/>
+<area shape="rect" id="Node000002" href="$class_state.html" title=" " alt="" coords="9,5,108,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="61,154,61,187,56,187,56,154"/>
+</map>

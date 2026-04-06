@@ -1,0 +1,55 @@
+\doxysection{mesh3d.\+hpp}
+\hypertarget{mesh3d_8hpp_source}{}\label{mesh3d_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/Meshes/mesh3d.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/Meshes/mesh3d.hpp}}
+\mbox{\hyperlink{mesh3d_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MESH3D\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MESH3D\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{utils_8hpp}{../../Utilities/utils.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mesh__renderer_8hpp}{../Rendering/mesh\_renderer.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{math_8hpp}{../../Math/math.hpp}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{texture_8hpp}{../Texturing/texture.hpp}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{graphics_8hpp}{../graphics.hpp}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_mesh3_d_a8cdefca0bf7171afd91f2a1a88e05a7e}{Mesh3D}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_mesh3_d_a8cdefca0bf7171afd91f2a1a88e05a7e}{Mesh3D}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_mesh3_d_a8cdefca0bf7171afd91f2a1a88e05a7e}{Mesh3D}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_mesh3_d_a8cdefca0bf7171afd91f2a1a88e05a7e}{Mesh3D}}\&\ other);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh3_d_aef879f5ea3d9dce661e23ed2cb5f2c9e}{UploadToGPU}}()\ =\ 0;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_mesh_renderer}{MeshRenderer}}\ \mbox{\hyperlink{class_mesh3_d_a0bfe53bc0b4d0e2a9804ffa119f7aec9}{ToRenderer}}()\ =\ 0;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh3_d_a478bda9c8ff4adb50c56c26ef50af8d2}{SetPipeline}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ pipeline);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh3_d_a08ad190035c6d8e8362f009a09e6bc17}{Delete}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_mesh3_d_ad2952df09ac54e7d5fafbcf87ae7c487}{getPipeline}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_mesh3_d_a9bb74668772fa08c0099f3aa0d242215}{m\_VAO}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_mesh3_d_a064dc03404641d9b41dcc58f3244b5ea}{m\_IndexCount}};\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_mesh3_d_a0a78f966ef1aaf868c32523200ffd7b5}{m\_VBO}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_mesh3_d_a79760be3f47e0cd2738e5932e2ce6a70}{m\_IBO}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ std::vector<Texture*>\ \mbox{\hyperlink{class_mesh3_d_a878c07f3eab3dcc47195e3bc0b74fa30}{m\_Textures}};\ }
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh3_d_a91aa0f790bb9f1acc3d270033d11e6ef}{PopulateBuffers}}()\ =\ 0;}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_mesh3_d_a6232eb241c460e30d607b59862d0e8f1}{m\_Pipeline}};\ \ \ }
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{struct_a_a_b_b}{AABB}}\ \mbox{\hyperlink{class_mesh3_d_aeaaf348709784591a9608a9e779e3cd3}{m\_AABB}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//\ Currently\ no\ private\ data\ members}}
+\DoxyCodeLine{00090\ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MESH3D\_HPP}}
+
+\end{DoxyCode}

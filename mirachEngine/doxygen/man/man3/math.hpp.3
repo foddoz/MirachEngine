@@ -1,0 +1,316 @@
+.TH "C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/Math/math.hpp" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/Math/math.hpp \- Provides math utilities, vector/matrix types, transformation functions, and \fBAABB\fP logic using GLM\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <cmath>\fP
+.br
+\fR#include <glm/glm\&.hpp>\fP
+.br
+\fR#include <glm/gtc/matrix_transform\&.hpp>\fP
+.br
+\fR#include <glm/gtc/quaternion\&.hpp>\fP
+.br
+\fR#include <glm/gtx/quaternion\&.hpp>\fP
+.br
+\fR#include <glm/gtc/type_ptr\&.hpp>\fP
+.br
+\fR#include <glm/gtx/norm\&.hpp>\fP
+.br
+\fR#include <glm/common\&.hpp>\fP
+.br
+\fR#include <limits>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBAABB\fP"
+.br
+.RI "Represents an axis-aligned bounding box\&. "
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "using \fBVector2f\fP = glm::vec2"
+.br
+.ti -1c
+.RI "using \fBVector3f\fP = glm::vec3"
+.br
+.ti -1c
+.RI "using \fBVector4f\fP = glm::vec4"
+.br
+.ti -1c
+.RI "using \fBMatrix3f\fP = glm::mat3"
+.br
+.ti -1c
+.RI "using \fBMatrix4f\fP = glm::mat4"
+.br
+.ti -1c
+.RI "using \fBQuaternion\fP = glm::quat"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMatrix4f\fP \fBPerspective\fP (float fovRadians, float aspectRatio, float nearPlane, float farPlane)"
+.br
+.RI "Creates a perspective projection matrix\&. "
+.ti -1c
+.RI "\fBMatrix4f\fP \fBLookAt\fP (const \fBVector3f\fP &eye, const \fBVector3f\fP &center, const \fBVector3f\fP &up)"
+.br
+.RI "Creates a view matrix looking from 'eye' to 'center' with 'up' direction\&. "
+.ti -1c
+.RI "float \fBClamp\fP (float value, float minVal, float maxVal)"
+.br
+.RI "Clamps a float between minVal and maxVal\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBNormalize\fP (const \fBVector3f\fP &v)"
+.br
+.RI "Normalizes a 3D vector\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBCross\fP (const \fBVector3f\fP &a, const \fBVector3f\fP &b)"
+.br
+.RI "Cross product of two 3D vectors\&. "
+.ti -1c
+.RI "float \fBDot\fP (const \fBVector3f\fP &a, const \fBVector3f\fP &b)"
+.br
+.RI "Dot product of two 3D vectors\&. "
+.ti -1c
+.RI "float \fBToRadians\fP (float degrees)"
+.br
+.RI "Converts degrees to radians\&. "
+.ti -1c
+.RI "float \fBToDegrees\fP (float radians)"
+.br
+.RI "Converts radians to degrees\&. "
+.ti -1c
+.RI "float \fBLength\fP (const \fBVector2f\fP &v)"
+.br
+.RI "Returns the length of a 2D vector\&. "
+.ti -1c
+.RI "float \fBLength\fP (const \fBVector3f\fP &v)"
+.br
+.RI "Returns the length of a 3D vector\&. "
+.ti -1c
+.RI "float \fBLength\fP (const \fBVector4f\fP &v)"
+.br
+.RI "Returns the length of a 4D vector\&. "
+.ti -1c
+.RI "float \fBDistance\fP (const \fBVector3f\fP &a, const \fBVector3f\fP &b)"
+.br
+.RI "Returns the Euclidean distance between two 3D vectors\&. "
+.ti -1c
+.RI "\fBMatrix4f\fP \fBIdentity\fP ()"
+.br
+.RI "Returns the identity matrix\&. "
+.ti -1c
+.RI "\fBMatrix4f\fP \fBTranslate\fP (const \fBMatrix4f\fP &matrix, const \fBVector3f\fP &v)"
+.br
+.RI "Applies translation to a matrix\&. "
+.ti -1c
+.RI "\fBMatrix4f\fP \fBScale\fP (const \fBMatrix4f\fP &matrix, const \fBVector3f\fP &v)"
+.br
+.RI "Applies scale to a matrix\&. "
+.ti -1c
+.RI "\fBMatrix4f\fP \fBRotate\fP (const \fBMatrix4f\fP &matrix, float angleRad, const \fBVector3f\fP &axis)"
+.br
+.RI "Applies rotation to a matrix\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBTransformVector\fP (const \fBMatrix4f\fP &m, const \fBVector3f\fP &v)"
+.br
+.RI "Transforms a 3D vector using a matrix\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBQuaternionToEulerDegrees\fP (const \fBQuaternion\fP &q)"
+.br
+.RI "Converts a quaternion to Euler angles (in degrees) "
+.ti -1c
+.RI "\fBQuaternion\fP \fBEulerDegreesToQuaternion\fP (const \fBVector3f\fP &degrees)"
+.br
+.RI "Converts Euler angles (in degrees) to a quaternion\&. "
+.ti -1c
+.RI "\fBQuaternion\fP \fBMakeQuaternion\fP (float w, float x, float y, float z)"
+.br
+.RI "Creates a quaternion from scalar-first values (w, x, y, z) "
+.ti -1c
+.RI "\fBMatrix4f\fP \fBToMat4\fP (const \fBQuaternion\fP &q)"
+.br
+.RI "Converts a quaternion to a 4x4 matrix\&. "
+.ti -1c
+.RI "\fBQuaternion\fP \fBInverse\fP (const \fBQuaternion\fP &q)"
+.br
+.RI "Returns the inverse of a quaternion\&. "
+.ti -1c
+.RI "\fBQuaternion\fP \fBNormalize\fP (const \fBQuaternion\fP &q)"
+.br
+.RI "Returns the normalized version of a quaternion\&. "
+.ti -1c
+.RI "float \fBLerp\fP (float a, float b, float t)"
+.br
+.RI "Performs linear interpolation between two scalar values\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBLerp\fP (const \fBVector3f\fP &a, const \fBVector3f\fP &b, float t)"
+.br
+.RI "Performs linear interpolation between two vectors\&. "
+.ti -1c
+.RI "float \fBLerpAngle\fP (float a, float b, float t)"
+.br
+.RI "Interpolates between angles and wraps around 360 degrees\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "constexpr float \fBPI\fP = 3\&.14159265358979323846f"
+.br
+.RI "Pi constant in float precision\&. "
+.ti -1c
+.RI "constexpr float \fBTWO_PI\fP = \fBPI\fP * 2\&.0f"
+.br
+.RI "2*Pi constant in float precision "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides math utilities, vector/matrix types, transformation functions, and \fBAABB\fP logic using GLM\&. 
+
+
+.SH "Typedef Documentation"
+.PP 
+.SS "using \fBMatrix3f\fP = glm::mat3"
+
+.SS "using \fBMatrix4f\fP = glm::mat4"
+
+.SS "using \fBQuaternion\fP = glm::quat"
+
+.SS "using \fBVector2f\fP = glm::vec2"
+
+.SS "using \fBVector3f\fP = glm::vec3"
+
+.SS "using \fBVector4f\fP = glm::vec4"
+
+.SH "Function Documentation"
+.PP 
+.SS "float Clamp (float value, float minVal, float maxVal)\fR [inline]\fP"
+
+.PP
+Clamps a float between minVal and maxVal\&. 
+.SS "\fBVector3f\fP Cross (const \fBVector3f\fP & a, const \fBVector3f\fP & b)\fR [inline]\fP"
+
+.PP
+Cross product of two 3D vectors\&. 
+.SS "float Distance (const \fBVector3f\fP & a, const \fBVector3f\fP & b)\fR [inline]\fP"
+
+.PP
+Returns the Euclidean distance between two 3D vectors\&. 
+.SS "float Dot (const \fBVector3f\fP & a, const \fBVector3f\fP & b)\fR [inline]\fP"
+
+.PP
+Dot product of two 3D vectors\&. 
+.SS "\fBQuaternion\fP EulerDegreesToQuaternion (const \fBVector3f\fP & degrees)\fR [inline]\fP"
+
+.PP
+Converts Euler angles (in degrees) to a quaternion\&. 
+.SS "\fBMatrix4f\fP Identity ()\fR [inline]\fP"
+
+.PP
+Returns the identity matrix\&. 
+.SS "\fBQuaternion\fP Inverse (const \fBQuaternion\fP & q)\fR [inline]\fP"
+
+.PP
+Returns the inverse of a quaternion\&. 
+.SS "float Length (const \fBVector2f\fP & v)\fR [inline]\fP"
+
+.PP
+Returns the length of a 2D vector\&. 
+.SS "float Length (const \fBVector3f\fP & v)\fR [inline]\fP"
+
+.PP
+Returns the length of a 3D vector\&. 
+.SS "float Length (const \fBVector4f\fP & v)\fR [inline]\fP"
+
+.PP
+Returns the length of a 4D vector\&. 
+.SS "\fBVector3f\fP Lerp (const \fBVector3f\fP & a, const \fBVector3f\fP & b, float t)\fR [inline]\fP"
+
+.PP
+Performs linear interpolation between two vectors\&. 
+.SS "float Lerp (float a, float b, float t)\fR [inline]\fP"
+
+.PP
+Performs linear interpolation between two scalar values\&. 
+.SS "float LerpAngle (float a, float b, float t)\fR [inline]\fP"
+
+.PP
+Interpolates between angles and wraps around 360 degrees\&. 
+.SS "\fBMatrix4f\fP LookAt (const \fBVector3f\fP & eye, const \fBVector3f\fP & center, const \fBVector3f\fP & up)\fR [inline]\fP"
+
+.PP
+Creates a view matrix looking from 'eye' to 'center' with 'up' direction\&. 
+.SS "\fBQuaternion\fP MakeQuaternion (float w, float x, float y, float z)\fR [inline]\fP"
+
+.PP
+Creates a quaternion from scalar-first values (w, x, y, z) 
+.SS "\fBQuaternion\fP Normalize (const \fBQuaternion\fP & q)\fR [inline]\fP"
+
+.PP
+Returns the normalized version of a quaternion\&. 
+.SS "\fBVector3f\fP Normalize (const \fBVector3f\fP & v)\fR [inline]\fP"
+
+.PP
+Normalizes a 3D vector\&. 
+.SS "\fBMatrix4f\fP Perspective (float fovRadians, float aspectRatio, float nearPlane, float farPlane)\fR [inline]\fP"
+
+.PP
+Creates a perspective projection matrix\&. 
+.SS "\fBVector3f\fP QuaternionToEulerDegrees (const \fBQuaternion\fP & q)\fR [inline]\fP"
+
+.PP
+Converts a quaternion to Euler angles (in degrees) 
+.SS "\fBMatrix4f\fP Rotate (const \fBMatrix4f\fP & matrix, float angleRad, const \fBVector3f\fP & axis)\fR [inline]\fP"
+
+.PP
+Applies rotation to a matrix\&. 
+.SS "\fBMatrix4f\fP Scale (const \fBMatrix4f\fP & matrix, const \fBVector3f\fP & v)\fR [inline]\fP"
+
+.PP
+Applies scale to a matrix\&. 
+.SS "float ToDegrees (float radians)\fR [inline]\fP"
+
+.PP
+Converts radians to degrees\&. 
+.SS "\fBMatrix4f\fP ToMat4 (const \fBQuaternion\fP & q)\fR [inline]\fP"
+
+.PP
+Converts a quaternion to a 4x4 matrix\&. 
+.SS "float ToRadians (float degrees)\fR [inline]\fP"
+
+.PP
+Converts degrees to radians\&. 
+.SS "\fBVector3f\fP TransformVector (const \fBMatrix4f\fP & m, const \fBVector3f\fP & v)\fR [inline]\fP"
+
+.PP
+Transforms a 3D vector using a matrix\&. 
+.SS "\fBMatrix4f\fP Translate (const \fBMatrix4f\fP & matrix, const \fBVector3f\fP & v)\fR [inline]\fP"
+
+.PP
+Applies translation to a matrix\&. 
+.SH "Variable Documentation"
+.PP 
+.SS "float PI = 3\&.14159265358979323846f\fR [constexpr]\fP"
+
+.PP
+Pi constant in float precision\&. 
+.SS "float TWO_PI = \fBPI\fP * 2\&.0f\fR [constexpr]\fP"
+
+.PP
+2*Pi constant in float precision 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

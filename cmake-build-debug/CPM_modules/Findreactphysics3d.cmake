@@ -1,0 +1,3 @@
+include("C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/mirachEngine/cmake/CPM.cmake")
+CPMAddPackage("NAME;reactphysics3d;VERSION;0.10.2;URL;https://github.com/DanielChappuis/reactphysics3d/archive/refs/tags/v0.10.2.tar.gz;OPTIONS;RP3D_COMPILE_LIBRARY ON;RP3D_COMPILE_TESTBED OFF;RP3D_COMPILE_TESTS OFF;RP3D_PROFILING_ENABLED OFF;RP3D_GENERATE_DOCUMENTATION OFF;RP3D_CODE_COVERAGE_ENABLED OFF;RP3D_DOUBLE_PRECISION_ENABLED OFF")
+set(reactphysics3d_FOUND TRUE)

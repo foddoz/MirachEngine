@@ -1,0 +1,321 @@
+.TH "TerrainScene" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TerrainScene \- A complete game scene that initializes, runs, and manages an interactive terrain environment with ECS, physics, and rendering\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <terrain_scene\&.hpp>\fP
+.PP
+Inherits \fBScene\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTerrainScene\fP ()"
+.br
+.RI "Constructs a \fBTerrainScene\fP instance, initializing core subsystems\&. "
+.ti -1c
+.RI "void \fBRun\fP () override"
+.br
+.RI "Runs the full scene lifecycle in the correct execution order\&. "
+.in -1c
+
+Public Member Functions inherited from \fBScene\fP
+.in +1c
+.ti -1c
+.RI "\fBScene\fP ()=default"
+.br
+.RI "Default constructor\&. "
+.ti -1c
+.RI "virtual \fB~Scene\fP ()=default"
+.br
+.RI "Virtual destructor for proper cleanup in derived classes\&. "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBGenerateCPUData\fP () override"
+.br
+.RI "Generates all CPU-side data such as terrain heightmaps and mesh geometry\&. "
+.ti -1c
+.RI "void \fBInitialiseEngine\fP () override"
+.br
+.RI "Initializes engine components like rendering, input, physics, and Lua bindings\&. "
+.ti -1c
+.RI "void \fBUploadAssetsToGPU\fP () override"
+.br
+.RI "Uploads mesh and texture data to the GPU\&. "
+.ti -1c
+.RI "void \fBAssignPipelines\fP () override"
+.br
+.RI "Assigns graphics pipelines (shaders) to meshes\&. "
+.ti -1c
+.RI "void \fBSetupECS\fP () override"
+.br
+.RI "Creates and registers entities and components in the ECS\&. "
+.ti -1c
+.RI "void \fBMainLoop\fP () override"
+.br
+.RI "Executes the main loop: input, update, physics, animation, and rendering\&. "
+.ti -1c
+.RI "void \fBCleanUp\fP () override"
+.br
+.RI "Cleans up scene resources and systems before shutdown\&. "
+.ti -1c
+.RI "void \fBShutdown\fP () override"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBRenderHBUI\fP ()"
+.br
+.RI "Player's \fBHealth\fP Bar\&. "
+.ti -1c
+.RI "void \fBSetupSkyDomeEntity\fP ()"
+.br
+.RI "Creates and registers the skydome entity in ECS\&. "
+.ti -1c
+.RI "void \fBSetupPlayer\fP ()"
+.br
+.RI "Creates and registers the player character entity\&. "
+.ti -1c
+.RI "void \fBRegisterTerrainToECS\fP ()"
+.br
+.RI "Registers terrain chunks and their colliders with the ECS and physics system\&. "
+.ti -1c
+.RI "void \fBSpawnRobots\fP ()"
+.br
+.RI "Spawns robotic enemy NPCs with AI behavior\&. "
+.ti -1c
+.RI "void \fBSpawnSacks\fP ()"
+.br
+.RI "Spawns cloth sacks as dynamic physics objects\&. "
+.ti -1c
+.RI "void \fBSpawnTrees\fP ()"
+.br
+.RI "Spawns static or decorative tree models in the scene\&. "
+.ti -1c
+.RI "void \fBSpawnCrates\fP ()"
+.br
+.RI "Spawns crates, potentially breakable or interactable\&. "
+.ti -1c
+.RI "void \fBSpawnFireFlies\fP ()"
+.br
+.RI "Spawns firefly models, likely with animation or light effects\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBProgram\fP \fBmApp\fP"
+.br
+.RI "Manages the window, input, and rendering pipeline\&. "
+.ti -1c
+.RI "\fBEntityManager\fP \fBmEntityManager\fP"
+.br
+.RI "ECS entity/component manager\&. "
+.ti -1c
+.RI "\fBPhysicsSystem\fP \fBmPhysicsSystem\fP"
+.br
+.RI "\fBPhysics\fP world and collider system\&. "
+.ti -1c
+.RI "std::vector< \fBMeshFile\fP > \fBmMeshFiles\fP"
+.br
+.RI "Loaded 3D mesh files (e\&.g\&., props, models) "
+.ti -1c
+.RI "\fBMeshMD2\fP \fBnpc\fP"
+.br
+.RI "Animated MD2 robot mesh\&. "
+.ti -1c
+.RI "\fBMeshMD2\fP \fBfirefly\fP"
+.br
+.RI "Animated MD2 firefly mesh\&. "
+.ti -1c
+.RI "\fBMeshTerrain\fP \fBmTerrain\fP"
+.br
+.RI "Procedural terrain mesh\&. "
+.ti -1c
+.RI "\fBMeshSkyDome\fP \fBmSky\fP"
+.br
+.RI "Skydome for atmospheric background\&. "
+.ti -1c
+.RI "\fBTerrainManager\fP \fBmTerrainManager\fP"
+.br
+.RI "Manages terrain chunks and ECS registration\&. "
+.ti -1c
+.RI "\fBEntity\fP \fBmPlayer\fP"
+.br
+.RI "\fBEntity\fP ID of the player character\&. "
+.ti -1c
+.RI "\fBenemyState\fP \fBenemyAI\fP"
+.br
+.RI "\fBEnemy\fP AI state machine instance\&. "
+.ti -1c
+.RI "\fBhoverEnemyState\fP \fBhoverEnemyAI\fP"
+.br
+.ti -1c
+.RI "\fBHealthBarRenderer\fP \fBmHealthBar\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A complete game scene that initializes, runs, and manages an interactive terrain environment with ECS, physics, and rendering\&. 
+
+This scene handles procedural terrain generation, model loading, entity creation, and a full game loop\&. It integrates physics (ReactPhysics3D), MD2 animation playback, and FSM-based AI for enemies\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TerrainScene::TerrainScene ()"
+
+.PP
+Constructs a \fBTerrainScene\fP instance, initializing core subsystems\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void TerrainScene::AssignPipelines ()\fR [override]\fP, \fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+Assigns graphics pipelines (shaders) to meshes\&. 
+.PP
+Implements \fBScene\fP\&.
+.SS "void TerrainScene::CleanUp ()\fR [override]\fP, \fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+Cleans up scene resources and systems before shutdown\&. 
+.PP
+Implements \fBScene\fP\&.
+.SS "void TerrainScene::GenerateCPUData ()\fR [override]\fP, \fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+Generates all CPU-side data such as terrain heightmaps and mesh geometry\&. 
+.PP
+Implements \fBScene\fP\&.
+.SS "void TerrainScene::InitialiseEngine ()\fR [override]\fP, \fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+Initializes engine components like rendering, input, physics, and Lua bindings\&. 
+.PP
+Implements \fBScene\fP\&.
+.SS "void TerrainScene::MainLoop ()\fR [override]\fP, \fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+Executes the main loop: input, update, physics, animation, and rendering\&. 
+.PP
+Implements \fBScene\fP\&.
+.SS "void TerrainScene::RegisterTerrainToECS ()\fR [private]\fP"
+
+.PP
+Registers terrain chunks and their colliders with the ECS and physics system\&. 
+.SS "void TerrainScene::RenderHBUI ()\fR [private]\fP"
+
+.PP
+Player's \fBHealth\fP Bar\&. 
+.SS "void TerrainScene::Run ()\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Runs the full scene lifecycle in the correct execution order\&. 
+.PP
+Implements \fBScene\fP\&.
+.SS "void TerrainScene::SetupECS ()\fR [override]\fP, \fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+Creates and registers entities and components in the ECS\&. 
+.PP
+Implements \fBScene\fP\&.
+.SS "void TerrainScene::SetupPlayer ()\fR [private]\fP"
+
+.PP
+Creates and registers the player character entity\&. 
+.SS "void TerrainScene::SetupSkyDomeEntity ()\fR [private]\fP"
+
+.PP
+Creates and registers the skydome entity in ECS\&. 
+.SS "void TerrainScene::Shutdown ()\fR [override]\fP, \fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBScene\fP\&.
+.SS "void TerrainScene::SpawnCrates ()\fR [private]\fP"
+
+.PP
+Spawns crates, potentially breakable or interactable\&. 
+.SS "void TerrainScene::SpawnFireFlies ()\fR [private]\fP"
+
+.PP
+Spawns firefly models, likely with animation or light effects\&. 
+.SS "void TerrainScene::SpawnRobots ()\fR [private]\fP"
+
+.PP
+Spawns robotic enemy NPCs with AI behavior\&. 
+.SS "void TerrainScene::SpawnSacks ()\fR [private]\fP"
+
+.PP
+Spawns cloth sacks as dynamic physics objects\&. 
+.SS "void TerrainScene::SpawnTrees ()\fR [private]\fP"
+
+.PP
+Spawns static or decorative tree models in the scene\&. 
+.SS "void TerrainScene::UploadAssetsToGPU ()\fR [override]\fP, \fR [protected]\fP, \fR [virtual]\fP"
+
+.PP
+Uploads mesh and texture data to the GPU\&. 
+.PP
+Implements \fBScene\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBenemyState\fP TerrainScene::enemyAI\fR [private]\fP"
+
+.PP
+\fBEnemy\fP AI state machine instance\&. 
+.SS "\fBMeshMD2\fP TerrainScene::firefly\fR [private]\fP"
+
+.PP
+Animated MD2 firefly mesh\&. 
+.SS "\fBhoverEnemyState\fP TerrainScene::hoverEnemyAI\fR [private]\fP"
+
+.SS "\fBProgram\fP TerrainScene::mApp\fR [private]\fP"
+
+.PP
+Manages the window, input, and rendering pipeline\&. 
+.SS "\fBEntityManager\fP TerrainScene::mEntityManager\fR [private]\fP"
+
+.PP
+ECS entity/component manager\&. 
+.SS "\fBHealthBarRenderer\fP TerrainScene::mHealthBar\fR [private]\fP"
+
+.SS "std::vector<\fBMeshFile\fP> TerrainScene::mMeshFiles\fR [private]\fP"
+
+.PP
+Loaded 3D mesh files (e\&.g\&., props, models) 
+.SS "\fBPhysicsSystem\fP TerrainScene::mPhysicsSystem\fR [private]\fP"
+
+.PP
+\fBPhysics\fP world and collider system\&. 
+.SS "\fBEntity\fP TerrainScene::mPlayer\fR [private]\fP"
+
+.PP
+\fBEntity\fP ID of the player character\&. 
+.SS "\fBMeshSkyDome\fP TerrainScene::mSky\fR [private]\fP"
+
+.PP
+Skydome for atmospheric background\&. 
+.SS "\fBMeshTerrain\fP TerrainScene::mTerrain\fR [private]\fP"
+
+.PP
+Procedural terrain mesh\&. 
+.SS "\fBTerrainManager\fP TerrainScene::mTerrainManager\fR [private]\fP"
+
+.PP
+Manages terrain chunks and ECS registration\&. 
+.SS "\fBMeshMD2\fP TerrainScene::npc\fR [private]\fP"
+
+.PP
+Animated MD2 robot mesh\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

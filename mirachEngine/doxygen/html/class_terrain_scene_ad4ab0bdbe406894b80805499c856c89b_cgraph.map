@@ -1,0 +1,29 @@
+<map id="TerrainScene::SpawnTrees" name="TerrainScene::SpawnTrees">
+<area shape="rect" id="Node000001" title="Spawns static or decorative tree models in the scene." alt="" coords="5,160,184,187"/>
+<area shape="rect" id="Node000002" href="$class_transform.html#a2bd3205164a8f8f64f1c738ab6cb365f" title="Retrieves the current position." alt="" coords="232,5,388,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,158,155,102,191,70,230,42,241,36,243,41,233,46,194,74,159,106,109,161"/>
+<area shape="rect" id="Node000003" href="$class_physics_1_1_collider.html#af86781953bc85e24c413e0bd41351250" title="Sets the category bitmask of this collider." alt="" coords="246,56,374,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="124,157,231,108,243,103,245,108,233,113,127,162"/>
+<area shape="rect" id="Node000004" href="$class_physics_1_1_collider.html#abf9488feabedf4d5d7cee829f9b5967a" title="Sets the bitmask controlling what this collider can collide with." alt="" coords="246,123,374,165"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="183,159,231,152,231,157,184,164"/>
+<area shape="rect" id="Node000005" href="$class_transform.html#a7c287f2ec371a1214df9fa7ad6a9718b" title="Sets the world&#45;space position of the object." alt="" coords="233,189,388,216"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="184,183,218,187,217,193,183,188"/>
+<area shape="rect" id="Node000010" href="$class_transform.html#a80e28cb7ca8818e944c6177ed6ca7bfe" title="Sets the object&#39;s rotation in Euler degrees." alt="" coords="232,291,389,317"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="112,185,163,229,197,254,233,276,245,282,243,287,230,281,194,259,160,234,108,189"/>
+<area shape="rect" id="Node000013" href="$class_transform.html#a3f4051624bff3c6d6c5be9fd9433fe2f" title="Sets the object&#39;s local scale." alt="" coords="240,240,381,267"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="130,185,233,226,251,232,249,237,231,230,128,190"/>
+<area shape="rect" id="Node000006" href="$class_transform.html#a766790cd6c7043b6d28fe75d36a7bcc6" title="Recalculates the cached model matrix based on current position, rotation, and scale." alt="" coords="437,240,638,267"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="374,214,460,233,459,239,373,219"/>
+<area shape="rect" id="Node000007" href="$math_8hpp.html#a57197be1224ca571c566c73c33081081" title="Applies scale to a matrix." alt="" coords="697,189,751,216"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="589,237,681,211,683,216,590,242"/>
+<area shape="rect" id="Node000008" href="$math_8hpp.html#a1213c92d8be7146176f8be90d8903ece" title="Converts a quaternion to a 4x4 matrix." alt="" coords="692,240,756,267"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="639,251,676,251,676,256,639,256"/>
+<area shape="rect" id="Node000009" href="$math_8hpp.html#a978278a474c16b86c65813cec08b513a" title="Applies translation to a matrix." alt="" coords="686,291,762,317"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="596,265,639,276,672,286,671,291,638,281,595,270"/>
+<area shape="poly" id="edge12_Node000010_Node000006" title=" " alt="" coords="373,287,459,268,460,273,374,293"/>
+<area shape="rect" id="Node000011" href="$math_8hpp.html#a01d6afce125900f6e5b446d5094ea823" title="Converts Euler angles (in degrees) to a quaternion." alt="" coords="449,291,626,317"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="390,301,433,301,433,307,390,307"/>
+<area shape="rect" id="Node000012" href="$class_transform.html#a0bd1bcdbc6da88be8ad16e6a90aa2c55" title="Wraps a rotation angle to the range [0, 360)." alt="" coords="452,341,624,368"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="374,315,460,335,459,340,373,321"/>
+<area shape="poly" id="edge14_Node000013_Node000006" title=" " alt="" coords="382,251,421,251,421,256,382,256"/>
+</map>

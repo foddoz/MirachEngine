@@ -1,0 +1,17 @@
+<map id="Enemy" name="Enemy">
+<area shape="rect" id="Node000001" title="Represents an enemy character controlled by a finite state machine (FSM). This class defines properti..." alt="" coords="220,885,358,1381"/>
+<area shape="rect" id="Node000003" href="$class_state_machine.html" title=" " alt="" coords="155,1496,322,1779"/>
+<area shape="poly" id="edge3_Node000003_Node000001" title=" " alt="" coords="239,1381,237,1406,235,1439,237,1472,237,1479,231,1479,231,1472,230,1439,231,1405,234,1381"/>
+<area shape="rect" id="Node000002" href="$class_i_enemy_state_logic.html" title="Interface class defining all enemy state transition logic." alt="" coords="5,488,175,813"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,812,168,860,183,884,215,948,210,950,179,887,164,863,142,814"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="279,1496,284,1472,291,1398,297,1399,289,1472,285,1497"/>
+<area shape="rect" id="Node000004" href="$class_state.html" title=" " alt="" coords="62,1067,169,1200"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="113,1200,111,1259,113,1328,122,1400,138,1471,150,1501,145,1503,133,1473,116,1401,108,1328,106,1259,107,1200"/>
+<area shape="rect" id="Node000005" href="$class_entity_manager.html" title="Manages entity creation, destruction, and component access in the ECS system." alt="" coords="147,5,343,416"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="241,416,239,488,234,651,234,722,239,813,245,868,239,869,234,814,228,722,228,651,234,488,235,416"/>
+<area shape="rect" id="Node000006" href="$class_physics_system.html" title="Manages physics simulation, including rigid body updates and collider handling, in the ECS framework." alt="" coords="342,499,532,803"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="337,415,367,482,362,484,332,417"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="393,803,366,891,361,889,388,802"/>
+<area shape="rect" id="Node000007" href="$class_physics_1_1_collision_callback.html" title="Callback interface for collision detection events." alt="" coords="556,595,723,707"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="612,708,546,815,458,934,371,1040,367,1037,453,930,541,812,607,705"/>
+</map>

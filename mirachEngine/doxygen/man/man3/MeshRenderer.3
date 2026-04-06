@@ -1,0 +1,90 @@
+.TH "MeshRenderer" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MeshRenderer \- Holds all GPU and rendering information needed for rendering a mesh\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <mesh_renderer\&.hpp>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBMeshLOD\fP > \fBLODs\fP"
+.br
+.RI "Mesh data for each level of detail\&. "
+.ti -1c
+.RI "unsigned int \fBPipeline\fP = 0"
+.br
+.RI "OpenGL shader program or graphics pipeline ID\&. "
+.ti -1c
+.RI "std::vector< \fBTexture\fP * > \fBTextures\fP"
+.br
+.RI "Pointers to texture objects used by this mesh\&. "
+.ti -1c
+.RI "std::vector< std::string > \fBTextureUniformNames\fP"
+.br
+.RI "Uniform names for each texture in the shader\&. "
+.ti -1c
+.RI "float \fBMinHeight\fP = 0\&.0f"
+.br
+.RI "Minimum height value (used for terrain height-based blending)\&. "
+.ti -1c
+.RI "float \fBMaxHeight\fP = 0\&.0f"
+.br
+.RI "Maximum height value\&. "
+.ti -1c
+.RI "std::vector< \fBMeshEntry\fP > \fBSubMeshes\fP"
+.br
+.RI "Submesh support for complex multi-material models\&. "
+.ti -1c
+.RI "int \fBcurrentLOD\fP = 0"
+.br
+.RI "Currently active LOD index for rendering\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Holds all GPU and rendering information needed for rendering a mesh\&. 
+
+This struct is created by Mesh3D-derived classes and used by the RenderSystem to issue draw calls with the appropriate LOD, shader pipeline, and textures\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "int MeshRenderer::currentLOD = 0"
+
+.PP
+Currently active LOD index for rendering\&. 
+.SS "std::vector<\fBMeshLOD\fP> MeshRenderer::LODs"
+
+.PP
+Mesh data for each level of detail\&. 
+.SS "float MeshRenderer::MaxHeight = 0\&.0f"
+
+.PP
+Maximum height value\&. 
+.SS "float MeshRenderer::MinHeight = 0\&.0f"
+
+.PP
+Minimum height value (used for terrain height-based blending)\&. 
+.SS "unsigned int MeshRenderer::Pipeline = 0"
+
+.PP
+OpenGL shader program or graphics pipeline ID\&. 
+.SS "std::vector<\fBMeshEntry\fP> MeshRenderer::SubMeshes"
+
+.PP
+Submesh support for complex multi-material models\&. 
+.SS "std::vector<\fBTexture\fP*> MeshRenderer::Textures"
+
+.PP
+Pointers to texture objects used by this mesh\&. 
+.SS "std::vector<std::string> MeshRenderer::TextureUniformNames"
+
+.PP
+Uniform names for each texture in the shader\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

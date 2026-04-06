@@ -1,0 +1,11 @@
+<map id="Enemy::IsPlayerInRange" name="Enemy::IsPlayerInRange">
+<area shape="rect" id="Node000001" title="Checks whether the player is within a given range." alt="" coords="5,31,173,57"/>
+<area shape="rect" id="Node000002" href="$class_enemy.html#a94f30d348b6d2840fd71675472ba38dd" title="Default constructor." alt="" coords="266,5,377,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,32,250,24,250,29,174,38"/>
+<area shape="rect" id="Node000003" href="$class_entity_manager.html#a00080c3855e9aab3796bb94f6b48ac9b" title="Retrieves a reference to the component of type T for an entity." alt="" coords="221,56,422,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="174,50,205,54,205,59,173,56"/>
+<area shape="rect" id="Node000004" href="$class_component_manager.html#a81536e74843307f9b9e27993cca3e72b" title="Retrieves a reference to the component of an entity." alt="" coords="470,31,704,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="422,57,454,54,455,59,423,62"/>
+<area shape="rect" id="Node000005" href="$class_entity_manager.html#aa02cffa1d2435ea5d0eadee749c2a965" title="Gets the component manager for a type (const)." alt="" coords="495,81,679,108"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="423,76,480,82,479,87,422,82"/>
+</map>

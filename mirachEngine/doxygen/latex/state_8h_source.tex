@@ -1,0 +1,24 @@
+\doxysection{state.\+h}
+\hypertarget{state_8h_source}{}\label{state_8h_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/FSM/state.h@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/FSM/state.h}}
+\mbox{\hyperlink{state_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ \_\_STATE\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ \_\_STATE\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_state}{State}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_state_aed40c4606cc22c76bf5ecc771dea4bf8}{\string~State}}()\ \{\}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_state_a38506784066afae0f710965cb50d9df9}{Enter}}(T*\ owner)\ =\ 0;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_state_a4298e08f3fc32436c7cf56705d0fa977}{Execute}}(T*\ owner)\ =\ 0;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_state_a72bd0ca2e59147791bfe67618a1d9fc5}{Exit}}(T*\ owner)\ =\ 0;}
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_STATE\_H}}
+
+\end{DoxyCode}

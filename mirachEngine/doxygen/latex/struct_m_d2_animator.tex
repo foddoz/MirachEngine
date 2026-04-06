@@ -1,0 +1,135 @@
+\doxysection{MD2\+Animator Struct Reference}
+\hypertarget{struct_m_d2_animator}{}\label{struct_m_d2_animator}\index{MD2Animator@{MD2Animator}}
+
+
+ECS component for animating an entity with an MD2 mesh.  
+
+
+
+
+{\ttfamily \#include $<$animation\+\_\+system.\+hpp$>$}
+
+
+
+Collaboration diagram for MD2\+Animator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{struct_m_d2_animator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mesh_m_d2}{Mesh\+MD2}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_m_d2_animator_a1d6c816428edd95e3ee9f0003597175d}{mesh}} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to shared, immutable MD2 mesh. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{struct_m_d2_animator_ab7709129912d075ed4e5bcc12f360dd6}{current\+Anim}} = "{}idle"{}
+\begin{DoxyCompactList}\small\item\em Name of the animation currently playing. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{struct_m_d2_animator_adbf080885ed1cd27fd0dcdec9e4a9972}{last\+Applied\+Anim}} = "{}"{}
+\begin{DoxyCompactList}\small\item\em Last animation applied, used to detect animation changes. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{struct_m_d2_animator_add81f539eaf80a7ecf56f5f2a70fef7c}{anim\+Time}} = 0.\+0f
+\begin{DoxyCompactList}\small\item\em Accumulated time for frame interpolation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_m_d2_animator_a748dff0778dc17651ece39412f095ecb}{current\+Frame}} = 0
+\begin{DoxyCompactList}\small\item\em Current frame index in the animation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{struct_m_d2_animator_ae2453e1bd4582d37e60c4c8deef8efed}{next\+Frame}} = 1
+\begin{DoxyCompactList}\small\item\em Next frame index in the animation. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{struct_m_d2_animator_a8500ec94e91b9978b5795231ee0650e4}{animated\+VBO}} = 0
+\begin{DoxyCompactList}\small\item\em GPU buffer storing interpolated vertices for this entity. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} $>$ \mbox{\hyperlink{struct_m_d2_animator_a79633bb4d4d8f5fa7e98d105d554a309}{interpolated\+Verts}}
+\begin{DoxyCompactList}\small\item\em CPU-\/side buffer storing interpolated vertex data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ECS component for animating an entity with an MD2 mesh. 
+
+Stores the current animation state for an entity and performs per-\/entity frame interpolation. Each entity shares a reference to a read-\/only MD2 mesh and owns its own animated vertex buffer. 
+
+\label{doc-variable-members}
+\Hypertarget{struct_m_d2_animator_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_m_d2_animator_a8500ec94e91b9978b5795231ee0650e4}\index{MD2Animator@{MD2Animator}!animatedVBO@{animatedVBO}}
+\index{animatedVBO@{animatedVBO}!MD2Animator@{MD2Animator}}
+\doxysubsubsection{\texorpdfstring{animatedVBO}{animatedVBO}}
+{\footnotesize\ttfamily \label{struct_m_d2_animator_a8500ec94e91b9978b5795231ee0650e4} 
+unsigned int MD2\+Animator\+::animated\+VBO = 0}
+
+
+
+GPU buffer storing interpolated vertices for this entity. 
+
+\Hypertarget{struct_m_d2_animator_add81f539eaf80a7ecf56f5f2a70fef7c}\index{MD2Animator@{MD2Animator}!animTime@{animTime}}
+\index{animTime@{animTime}!MD2Animator@{MD2Animator}}
+\doxysubsubsection{\texorpdfstring{animTime}{animTime}}
+{\footnotesize\ttfamily \label{struct_m_d2_animator_add81f539eaf80a7ecf56f5f2a70fef7c} 
+float MD2\+Animator\+::anim\+Time = 0.\+0f}
+
+
+
+Accumulated time for frame interpolation. 
+
+\Hypertarget{struct_m_d2_animator_ab7709129912d075ed4e5bcc12f360dd6}\index{MD2Animator@{MD2Animator}!currentAnim@{currentAnim}}
+\index{currentAnim@{currentAnim}!MD2Animator@{MD2Animator}}
+\doxysubsubsection{\texorpdfstring{currentAnim}{currentAnim}}
+{\footnotesize\ttfamily \label{struct_m_d2_animator_ab7709129912d075ed4e5bcc12f360dd6} 
+std\+::string MD2\+Animator\+::current\+Anim = "{}idle"{}}
+
+
+
+Name of the animation currently playing. 
+
+\Hypertarget{struct_m_d2_animator_a748dff0778dc17651ece39412f095ecb}\index{MD2Animator@{MD2Animator}!currentFrame@{currentFrame}}
+\index{currentFrame@{currentFrame}!MD2Animator@{MD2Animator}}
+\doxysubsubsection{\texorpdfstring{currentFrame}{currentFrame}}
+{\footnotesize\ttfamily \label{struct_m_d2_animator_a748dff0778dc17651ece39412f095ecb} 
+int MD2\+Animator\+::current\+Frame = 0}
+
+
+
+Current frame index in the animation. 
+
+\Hypertarget{struct_m_d2_animator_a79633bb4d4d8f5fa7e98d105d554a309}\index{MD2Animator@{MD2Animator}!interpolatedVerts@{interpolatedVerts}}
+\index{interpolatedVerts@{interpolatedVerts}!MD2Animator@{MD2Animator}}
+\doxysubsubsection{\texorpdfstring{interpolatedVerts}{interpolatedVerts}}
+{\footnotesize\ttfamily \label{struct_m_d2_animator_a79633bb4d4d8f5fa7e98d105d554a309} 
+std\+::vector$<$\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}$>$ MD2\+Animator\+::interpolated\+Verts}
+
+
+
+CPU-\/side buffer storing interpolated vertex data. 
+
+\Hypertarget{struct_m_d2_animator_adbf080885ed1cd27fd0dcdec9e4a9972}\index{MD2Animator@{MD2Animator}!lastAppliedAnim@{lastAppliedAnim}}
+\index{lastAppliedAnim@{lastAppliedAnim}!MD2Animator@{MD2Animator}}
+\doxysubsubsection{\texorpdfstring{lastAppliedAnim}{lastAppliedAnim}}
+{\footnotesize\ttfamily \label{struct_m_d2_animator_adbf080885ed1cd27fd0dcdec9e4a9972} 
+std\+::string MD2\+Animator\+::last\+Applied\+Anim = "{}"{}}
+
+
+
+Last animation applied, used to detect animation changes. 
+
+\Hypertarget{struct_m_d2_animator_a1d6c816428edd95e3ee9f0003597175d}\index{MD2Animator@{MD2Animator}!mesh@{mesh}}
+\index{mesh@{mesh}!MD2Animator@{MD2Animator}}
+\doxysubsubsection{\texorpdfstring{mesh}{mesh}}
+{\footnotesize\ttfamily \label{struct_m_d2_animator_a1d6c816428edd95e3ee9f0003597175d} 
+\mbox{\hyperlink{class_mesh_m_d2}{Mesh\+MD2}}\texorpdfstring{$\ast$}{*} MD2\+Animator\+::mesh = nullptr}
+
+
+
+Pointer to shared, immutable MD2 mesh. 
+
+\Hypertarget{struct_m_d2_animator_ae2453e1bd4582d37e60c4c8deef8efed}\index{MD2Animator@{MD2Animator}!nextFrame@{nextFrame}}
+\index{nextFrame@{nextFrame}!MD2Animator@{MD2Animator}}
+\doxysubsubsection{\texorpdfstring{nextFrame}{nextFrame}}
+{\footnotesize\ttfamily \label{struct_m_d2_animator_ae2453e1bd4582d37e60c4c8deef8efed} 
+int MD2\+Animator\+::next\+Frame = 1}
+
+
+
+Next frame index in the animation. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Animation/\mbox{\hyperlink{animation__system_8hpp}{animation\+\_\+system.\+hpp}}\end{DoxyCompactItemize}

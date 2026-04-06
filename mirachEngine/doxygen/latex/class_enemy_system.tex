@@ -1,0 +1,146 @@
+\doxysection{Enemy\+System Class Reference}
+\hypertarget{class_enemy_system}{}\label{class_enemy_system}\index{EnemySystem@{EnemySystem}}
+
+
+System class responsible for updating all \doxylink{class_enemy}{Enemy} entities.  
+
+
+
+
+{\ttfamily \#include $<$Enemy\+System.\+h$>$}
+
+
+
+Collaboration diagram for Enemy\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{class_enemy_system__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_enemy_system_a3c709019f3f85f6d403aeb73edb44c26}{Enemy\+System}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&em)
+\begin{DoxyCompactList}\small\item\em Constructor. Automatically collects all entities with \doxylink{class_enemy}{Enemy} components. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_system_af199ce30b80387110b68299836f760cf}{Update}} (float dt)
+\begin{DoxyCompactList}\small\item\em Updates all registered \doxylink{class_enemy}{Enemy} entities. Calls the {\ttfamily \doxylink{class_enemy_system_af199ce30b80387110b68299836f760cf}{Update()}} method of each \doxylink{class_enemy}{Enemy}, passing the delta time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_enemy_system_a8844738e2cebfea4d58ec55411b05cf3}{\texorpdfstring{$\sim$}{\string~}\+Enemy\+System}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor. Does not delete any enemy components, as memory is managed by the ECS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} $>$ \mbox{\hyperlink{class_enemy_system_a5043bcb3644148661cbc0e0e86c92da3}{enemies}}
+\begin{DoxyCompactList}\small\item\em List of entity IDs that have an \doxylink{class_enemy}{Enemy} component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \& \mbox{\hyperlink{class_enemy_system_aa120863f765fbe93fe7700e9f1cd8b28}{entity\+Manager}}
+\begin{DoxyCompactList}\small\item\em Reference to the entity manager used to access components. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+System class responsible for updating all \doxylink{class_enemy}{Enemy} entities. 
+
+This system queries all entities that have an \doxylink{class_enemy}{Enemy} component and updates them each frame by calling their individual {\ttfamily \doxylink{class_enemy_system_af199ce30b80387110b68299836f760cf}{Update()}} methods. It is designed to work with an ECS (Entity-\/\+Component-\/\+System) framework. 
+
+\label{doc-constructors}
+\Hypertarget{class_enemy_system_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_enemy_system_a3c709019f3f85f6d403aeb73edb44c26}\index{EnemySystem@{EnemySystem}!EnemySystem@{EnemySystem}}
+\index{EnemySystem@{EnemySystem}!EnemySystem@{EnemySystem}}
+\doxysubsubsection{\texorpdfstring{EnemySystem()}{EnemySystem()}}
+{\footnotesize\ttfamily \label{class_enemy_system_a3c709019f3f85f6d403aeb73edb44c26} 
+Enemy\+System\+::\+Enemy\+System (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{em}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. Automatically collects all entities with \doxylink{class_enemy}{Enemy} components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em em} & Reference to the global \doxylink{class_entity_manager}{Entity\+Manager}. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_system_a3c709019f3f85f6d403aeb73edb44c26_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_enemy_system_a8844738e2cebfea4d58ec55411b05cf3}\index{EnemySystem@{EnemySystem}!````~EnemySystem@{\texorpdfstring{$\sim$}{\string~}EnemySystem}}
+\index{````~EnemySystem@{\texorpdfstring{$\sim$}{\string~}EnemySystem}!EnemySystem@{EnemySystem}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}EnemySystem()}{\string~EnemySystem()}}
+{\footnotesize\ttfamily \label{class_enemy_system_a8844738e2cebfea4d58ec55411b05cf3} 
+Enemy\+System\+::\texorpdfstring{$\sim$}{\string~}\+Enemy\+System (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destructor. Does not delete any enemy components, as memory is managed by the ECS. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_enemy_system_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_enemy_system_af199ce30b80387110b68299836f760cf}\index{EnemySystem@{EnemySystem}!Update@{Update}}
+\index{Update@{Update}!EnemySystem@{EnemySystem}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_enemy_system_af199ce30b80387110b68299836f760cf} 
+void Enemy\+System\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{dt}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates all registered \doxylink{class_enemy}{Enemy} entities. Calls the {\ttfamily \doxylink{class_enemy_system_af199ce30b80387110b68299836f760cf}{Update()}} method of each \doxylink{class_enemy}{Enemy}, passing the delta time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & The time elapsed since the last frame (delta time). \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_enemy_system_af199ce30b80387110b68299836f760cf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_system_af199ce30b80387110b68299836f760cf_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_enemy_system_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_enemy_system_a5043bcb3644148661cbc0e0e86c92da3}\index{EnemySystem@{EnemySystem}!enemies@{enemies}}
+\index{enemies@{enemies}!EnemySystem@{EnemySystem}}
+\doxysubsubsection{\texorpdfstring{enemies}{enemies}}
+{\footnotesize\ttfamily \label{class_enemy_system_a5043bcb3644148661cbc0e0e86c92da3} 
+std\+::vector$<$\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ Enemy\+System\+::enemies\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+List of entity IDs that have an \doxylink{class_enemy}{Enemy} component. 
+
+\Hypertarget{class_enemy_system_aa120863f765fbe93fe7700e9f1cd8b28}\index{EnemySystem@{EnemySystem}!entityManager@{entityManager}}
+\index{entityManager@{entityManager}!EnemySystem@{EnemySystem}}
+\doxysubsubsection{\texorpdfstring{entityManager}{entityManager}}
+{\footnotesize\ttfamily \label{class_enemy_system_aa120863f765fbe93fe7700e9f1cd8b28} 
+\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}}\& Enemy\+System\+::entity\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference to the entity manager used to access components. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+FSM/\mbox{\hyperlink{_enemy_system_8h}{Enemy\+System.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,9 @@
+<map id="Enemy::IsHealthLow" name="Enemy::IsHealthLow">
+<area shape="rect" id="Node000001" title="Checks if the enemy&#39;s health is below a threshold." alt="" coords="253,56,396,83"/>
+<area shape="rect" id="Node000002" href="$classenemy_state.html#af377bab658f5ec2cfa6754ebaf4042e4" title="Called every frame while attacking. Plays attack animation, checks player distance for flee/chase swi..." alt="" coords="5,5,205,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="248,55,165,35,167,30,249,49"/>
+<area shape="rect" id="Node000003" href="$classenemy_state.html#a3d1c59242849477a2544c1b978545d9c" title="Called every frame while chasing the player. Switches to Attack/Flee/Patrol based on range and health..." alt="" coords="5,56,205,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="237,72,205,72,205,67,237,67"/>
+<area shape="rect" id="Node000004" href="$classenemy_state.html#a04a81b2a8709d0c6efc1fd004d6ba417" title="Called every frame during Patrol. Enemy wanders around, checks for player, and may switch to Chase or..." alt="" coords="7,107,203,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="249,89,167,109,165,103,248,84"/>
+</map>

@@ -1,0 +1,391 @@
+.TH "PlayerScript" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PlayerScript \- Manages player-specific input, movement, jumping, and object interaction\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <player_script\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPlayerScript\fP (const \fBEntity\fP &player)"
+.br
+.RI "Constructs the \fBPlayerScript\fP with a reference to the player entity\&. "
+.ti -1c
+.RI "bool \fBCaptureInput\fP (\fBInputManager\fP &inputManager, \fBEntityManager\fP &entityManager)"
+.br
+.RI "Captures input states and updates internal flags\&. "
+.ti -1c
+.RI "void \fBPostPhysicsUpdate\fP (\fBEntityManager\fP &entityManager, \fBPhysicsSystem\fP &physicsSystem, float deltaTime)"
+.br
+.RI "Applies movement, jumping, and object interaction logic after the physics update\&. "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBApplyPlayerMovement\fP (\fBEntityManager\fP &em, float oscillateSpeed, float horizontalSpeed)"
+.br
+.RI "Applies directional player movement based on input\&. "
+.ti -1c
+.RI "void \fBJump\fP (\fBEntityManager\fP &em)"
+.br
+.RI "Applies vertical force for a normal jump if grounded\&. "
+.ti -1c
+.RI "void \fBDoubleJump\fP (\fBEntityManager\fP &em, float oscillateSpeed, float horizontalSpeed)"
+.br
+.RI "Performs a double jump if eligible\&. "
+.ti -1c
+.RI "bool \fBIsGrounded\fP (\fBEntityManager\fP &em, \fBPhysicsSystem\fP &ps)"
+.br
+.RI "Checks whether the player is currently grounded\&. "
+.ti -1c
+.RI "void \fBLaunchObject\fP (\fBEntityManager\fP &em, \fBPhysicsSystem\fP &ps)"
+.br
+.RI "Attempts to launch a held object forward with force\&. "
+.ti -1c
+.RI "void \fBLaunchObjectInternal\fP (\fBEntityManager\fP &em, \fBPhysicsSystem\fP &ps, \fBEntity\fP object, \fBPhysics::RigidBody\fP *rb, \fBVector3f\fP force)"
+.br
+.RI "Applies an internal impulse to a specific object\&. "
+.ti -1c
+.RI "void \fBPickupObject\fP (\fBEntityManager\fP &em, \fBPhysicsSystem\fP &ps)"
+.br
+.RI "Performs object pickup logic using raycasting\&. "
+.ti -1c
+.RI "void \fBUpdateHeldObject\fP (\fBEntityManager\fP &em)"
+.br
+.RI "Continuously updates the held object's position and physics state\&. "
+.ti -1c
+.RI "void \fBDropObject\fP (\fBEntityManager\fP &em)"
+.br
+.RI "Drops the currently held object\&. "
+.ti -1c
+.RI "\fBPhysics::RigidBody\fP * \fBGetValidRigidBody\fP (\fBEntityManager\fP &em, \fBEntity\fP object)"
+.br
+.RI "Gets a valid rigid body pointer from an entity\&. "
+.ti -1c
+.RI "\fBPhysics::Collider\fP * \fBGetValidCollider\fP (\fBEntityManager\fP &em, \fBEntity\fP object)"
+.br
+.RI "Gets a valid collider pointer from an entity\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBEntity\fP \fBplayerID\fP"
+.br
+.RI "ID of the player entity this script is controlling\&. "
+.ti -1c
+.RI "bool \fBcanDoubleJump\fP"
+.br
+.RI "Whether the player can perform a double jump\&. "
+.ti -1c
+.RI "\fBEntity\fP \fBheldEntity\fP = \fBINVALID_ENTITY\fP"
+.br
+.RI "The currently held object (if any)\&. "
+.ti -1c
+.RI "float \fBholdDistance\fP = 3\&.0f"
+.br
+.RI "Distance from player to hold picked-up objects\&. "
+.ti -1c
+.RI "\fBEntity\fP \fBlastThrownEntity\fP = \fBINVALID_ENTITY\fP"
+.br
+.RI "Last thrown object to avoid re-pickup\&. "
+.ti -1c
+.RI "float \fBthrowCooldownTimer\fP = 0\&.0f"
+.br
+.RI "\fBTime\fP remaining before another object can be thrown\&. "
+.ti -1c
+.RI "float \fBthrowCooldownDuration\fP = 3\&.5f"
+.br
+.RI "Cooldown duration between throws\&. "
+.ti -1c
+.RI "bool \fBmoveForward\fP = false"
+.br
+.ti -1c
+.RI "bool \fBmoveBackward\fP = false"
+.br
+.ti -1c
+.RI "bool \fBmoveLeft\fP = false"
+.br
+.ti -1c
+.RI "bool \fBmoveRight\fP = false"
+.br
+.ti -1c
+.RI "bool \fBjumpPressed\fP = false"
+.br
+.ti -1c
+.RI "bool \fBrightMouseDown\fP = false"
+.br
+.ti -1c
+.RI "bool \fBleftMousePressed\fP = false"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Manages player-specific input, movement, jumping, and object interaction\&. 
+
+Handles input polling, movement physics, grounded checks, object pickup/throwing, and post-physics updates such as held object tracking\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PlayerScript::PlayerScript (const \fBEntity\fP & player)"
+
+.PP
+Constructs the \fBPlayerScript\fP with a reference to the player entity\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIplayer\fP The player entity ID\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void PlayerScript::ApplyPlayerMovement (\fBEntityManager\fP & em, float oscillateSpeed, float horizontalSpeed)\fR [private]\fP"
+
+.PP
+Applies directional player movement based on input\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIem\fP \fBEntityManager\fP reference\&. 
+.br
+\fIoscillateSpeed\fP Speed factor for movement oscillation (used in air)\&. 
+.br
+\fIhorizontalSpeed\fP Base horizontal movement speed\&. 
+.RE
+.PP
+
+.SS "bool PlayerScript::CaptureInput (\fBInputManager\fP & inputManager, \fBEntityManager\fP & entityManager)"
+
+.PP
+Captures input states and updates internal flags\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinputManager\fP Reference to the engine's input system\&. 
+.br
+\fIentityManager\fP ECS manager to access player components\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if the quit signal was received (e\&.g\&., ESC pressed), otherwise false\&. 
+.RE
+.PP
+
+.SS "void PlayerScript::DoubleJump (\fBEntityManager\fP & em, float oscillateSpeed, float horizontalSpeed)\fR [private]\fP"
+
+.PP
+Performs a double jump if eligible\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIem\fP \fBEntityManager\fP reference\&. 
+.br
+\fIoscillateSpeed\fP Speed factor for movement oscillation\&. 
+.br
+\fIhorizontalSpeed\fP Base movement speed\&. 
+.RE
+.PP
+
+.SS "void PlayerScript::DropObject (\fBEntityManager\fP & em)\fR [private]\fP"
+
+.PP
+Drops the currently held object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIem\fP \fBEntityManager\fP reference\&. 
+.RE
+.PP
+
+.SS "\fBPhysics::Collider\fP * PlayerScript::GetValidCollider (\fBEntityManager\fP & em, \fBEntity\fP object)\fR [private]\fP"
+
+.PP
+Gets a valid collider pointer from an entity\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIem\fP \fBEntityManager\fP reference\&. 
+.br
+\fIobject\fP Target entity\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the \fBCollider\fP if valid; otherwise nullptr\&. 
+.RE
+.PP
+
+.SS "\fBPhysics::RigidBody\fP * PlayerScript::GetValidRigidBody (\fBEntityManager\fP & em, \fBEntity\fP object)\fR [private]\fP"
+
+.PP
+Gets a valid rigid body pointer from an entity\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIem\fP \fBEntityManager\fP reference\&. 
+.br
+\fIobject\fP Target entity\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the RigidBody if valid; otherwise nullptr\&. 
+.RE
+.PP
+
+.SS "bool PlayerScript::IsGrounded (\fBEntityManager\fP & em, \fBPhysicsSystem\fP & ps)\fR [private]\fP"
+
+.PP
+Checks whether the player is currently grounded\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIem\fP \fBEntityManager\fP reference\&. 
+.br
+\fIps\fP \fBPhysics\fP system reference\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if grounded, false otherwise\&. 
+.RE
+.PP
+
+.SS "void PlayerScript::Jump (\fBEntityManager\fP & em)\fR [private]\fP"
+
+.PP
+Applies vertical force for a normal jump if grounded\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIem\fP \fBEntityManager\fP reference\&. 
+.RE
+.PP
+
+.SS "void PlayerScript::LaunchObject (\fBEntityManager\fP & em, \fBPhysicsSystem\fP & ps)\fR [private]\fP"
+
+.PP
+Attempts to launch a held object forward with force\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIem\fP \fBEntityManager\fP reference\&. 
+.br
+\fIps\fP \fBPhysics\fP system reference\&. 
+.RE
+.PP
+
+.SS "void PlayerScript::LaunchObjectInternal (\fBEntityManager\fP & em, \fBPhysicsSystem\fP & ps, \fBEntity\fP object, \fBPhysics::RigidBody\fP * rb, \fBVector3f\fP force)\fR [private]\fP"
+
+.PP
+Applies an internal impulse to a specific object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIem\fP \fBEntityManager\fP reference\&. 
+.br
+\fIps\fP \fBPhysics\fP system reference\&. 
+.br
+\fIobject\fP The target entity to launch\&. 
+.br
+\fIrb\fP Pointer to the rigid body of the object\&. 
+.br
+\fIforce\fP Force vector to apply\&. 
+.RE
+.PP
+
+.SS "void PlayerScript::PickupObject (\fBEntityManager\fP & em, \fBPhysicsSystem\fP & ps)\fR [private]\fP"
+
+.PP
+Performs object pickup logic using raycasting\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIem\fP \fBEntityManager\fP reference\&. 
+.br
+\fIps\fP \fBPhysics\fP system reference\&. 
+.RE
+.PP
+
+.SS "void PlayerScript::PostPhysicsUpdate (\fBEntityManager\fP & entityManager, \fBPhysicsSystem\fP & physicsSystem, float deltaTime)"
+
+.PP
+Applies movement, jumping, and object interaction logic after the physics update\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIentityManager\fP ECS manager for component access\&. 
+.br
+\fIphysicsSystem\fP Reference to the active physics system\&. 
+.br
+\fIdeltaTime\fP \fBTime\fP elapsed since last update\&. 
+.RE
+.PP
+
+.SS "void PlayerScript::UpdateHeldObject (\fBEntityManager\fP & em)\fR [private]\fP"
+
+.PP
+Continuously updates the held object's position and physics state\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIem\fP \fBEntityManager\fP reference\&. 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "bool PlayerScript::canDoubleJump\fR [private]\fP"
+
+.PP
+Whether the player can perform a double jump\&. 
+.SS "\fBEntity\fP PlayerScript::heldEntity = \fBINVALID_ENTITY\fP\fR [private]\fP"
+
+.PP
+The currently held object (if any)\&. 
+.SS "float PlayerScript::holdDistance = 3\&.0f\fR [private]\fP"
+
+.PP
+Distance from player to hold picked-up objects\&. 
+.SS "bool PlayerScript::jumpPressed = false\fR [private]\fP"
+
+.SS "\fBEntity\fP PlayerScript::lastThrownEntity = \fBINVALID_ENTITY\fP\fR [private]\fP"
+
+.PP
+Last thrown object to avoid re-pickup\&. 
+.SS "bool PlayerScript::leftMousePressed = false\fR [private]\fP"
+
+.SS "bool PlayerScript::moveBackward = false\fR [private]\fP"
+
+.SS "bool PlayerScript::moveForward = false\fR [private]\fP"
+
+.SS "bool PlayerScript::moveLeft = false\fR [private]\fP"
+
+.SS "bool PlayerScript::moveRight = false\fR [private]\fP"
+
+.SS "\fBEntity\fP PlayerScript::playerID\fR [private]\fP"
+
+.PP
+ID of the player entity this script is controlling\&. 
+.SS "bool PlayerScript::rightMouseDown = false\fR [private]\fP"
+
+.SS "float PlayerScript::throwCooldownDuration = 3\&.5f\fR [private]\fP"
+
+.PP
+Cooldown duration between throws\&. 
+.SS "float PlayerScript::throwCooldownTimer = 0\&.0f\fR [private]\fP"
+
+.PP
+\fBTime\fP remaining before another object can be thrown\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

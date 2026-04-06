@@ -1,0 +1,5 @@
+<map id="Physics::Collider" name="Physics::Collider">
+<area shape="rect" id="Node000001" title="Abstract interface for physics colliders." alt="" coords="23,5,157,224"/>
+<area shape="rect" id="Node000002" href="$class_physics_1_1_backend_1_1_collider_backend.html" title=" " alt="" coords="5,272,174,549"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,239,92,272,87,272,87,239"/>
+</map>

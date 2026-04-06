@@ -1,0 +1,11 @@
+<map id="Transform::SetScale" name="Transform::SetScale">
+<area shape="rect" id="Node000001" title="Sets the object&#39;s local scale." alt="" coords="5,56,147,83"/>
+<area shape="rect" id="Node000002" href="$class_transform.html#a766790cd6c7043b6d28fe75d36a7bcc6" title="Recalculates the cached model matrix based on current position, rotation, and scale." alt="" coords="195,56,396,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,67,179,67,179,72,147,72"/>
+<area shape="rect" id="Node000003" href="$math_8hpp.html#a57197be1224ca571c566c73c33081081" title="Applies scale to a matrix." alt="" coords="454,5,509,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="347,53,439,27,440,32,348,58"/>
+<area shape="rect" id="Node000004" href="$math_8hpp.html#a1213c92d8be7146176f8be90d8903ece" title="Converts a quaternion to a 4x4 matrix." alt="" coords="450,56,514,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="397,67,434,67,434,72,397,72"/>
+<area shape="rect" id="Node000005" href="$math_8hpp.html#a978278a474c16b86c65813cec08b513a" title="Applies translation to a matrix." alt="" coords="444,107,519,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="348,81,430,103,428,108,347,86"/>
+</map>

@@ -1,0 +1,88 @@
+.TH "EnemySystem" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+EnemySystem \- System class responsible for updating all \fBEnemy\fP entities\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <EnemySystem\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEnemySystem\fP (\fBEntityManager\fP &em)"
+.br
+.RI "Constructor\&. Automatically collects all entities with \fBEnemy\fP components\&. "
+.ti -1c
+.RI "void \fBUpdate\fP (float dt)"
+.br
+.RI "Updates all registered \fBEnemy\fP entities\&. Calls the \fR\fBUpdate()\fP\fP method of each \fBEnemy\fP, passing the delta time\&. "
+.ti -1c
+.RI "\fB~EnemySystem\fP ()=default"
+.br
+.RI "Destructor\&. Does not delete any enemy components, as memory is managed by the ECS\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBEntity\fP > \fBenemies\fP"
+.br
+.RI "List of entity IDs that have an \fBEnemy\fP component\&. "
+.ti -1c
+.RI "\fBEntityManager\fP & \fBentityManager\fP"
+.br
+.RI "Reference to the entity manager used to access components\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+System class responsible for updating all \fBEnemy\fP entities\&. 
+
+This system queries all entities that have an \fBEnemy\fP component and updates them each frame by calling their individual \fR\fBUpdate()\fP\fP methods\&. It is designed to work with an ECS (Entity-Component-System) framework\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "EnemySystem::EnemySystem (\fBEntityManager\fP & em)\fR [inline]\fP"
+
+.PP
+Constructor\&. Automatically collects all entities with \fBEnemy\fP components\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIem\fP Reference to the global \fBEntityManager\fP\&. 
+.RE
+.PP
+
+.SS "EnemySystem::~EnemySystem ()\fR [default]\fP"
+
+.PP
+Destructor\&. Does not delete any enemy components, as memory is managed by the ECS\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void EnemySystem::Update (float dt)\fR [inline]\fP"
+
+.PP
+Updates all registered \fBEnemy\fP entities\&. Calls the \fR\fBUpdate()\fP\fP method of each \fBEnemy\fP, passing the delta time\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdt\fP The time elapsed since the last frame (delta time)\&. 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBEntity\fP> EnemySystem::enemies\fR [private]\fP"
+
+.PP
+List of entity IDs that have an \fBEnemy\fP component\&. 
+.SS "\fBEntityManager\fP& EnemySystem::entityManager\fR [private]\fP"
+
+.PP
+Reference to the entity manager used to access components\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

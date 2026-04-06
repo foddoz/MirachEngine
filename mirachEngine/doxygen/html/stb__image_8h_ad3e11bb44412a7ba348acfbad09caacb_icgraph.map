@@ -1,0 +1,11 @@
+<map id="stbi_image_free" name="stbi_image_free">
+<area shape="rect" id="Node000001" title=" " alt="" coords="596,31,710,57"/>
+<area shape="rect" id="Node000002" href="$image_8cpp.html#a1d6bfb89d8b124b070bab503c43bd581" title="Loads an image file using stb_image and populates the given ImageData structure." alt="" coords="463,31,548,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="581,47,549,47,549,41,581,41"/>
+<area shape="rect" id="Node000003" href="$class_texture.html#a9b5013aca3b13b0f6bc6419a9f124010" title="Loads image data from a file into CPU memory." alt="" coords="264,31,415,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="447,47,415,47,415,41,447,41"/>
+<area shape="rect" id="Node000004" href="$class_mesh_terrain.html#a8b774b6e68bb4e4e72e0690daeb5bf7f" title="Generates the heightmap and vertex data for terrain mesh." alt="" coords="5,5,216,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="248,37,216,33,217,28,249,31"/>
+<area shape="rect" id="Node000005" href="$class_terrain_manager.html#a898a6abcd4022dbb828932037cff7b4d" title="Initializes terrain system settings and global parameters." alt="" coords="27,56,194,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="249,57,195,63,194,57,248,51"/>
+</map>

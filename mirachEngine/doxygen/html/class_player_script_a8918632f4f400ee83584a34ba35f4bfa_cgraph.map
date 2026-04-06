@@ -1,0 +1,14 @@
+<map id="PlayerScript::GetValidCollider" name="PlayerScript::GetValidCollider">
+<area shape="rect" id="Node000001" title="Gets a valid collider pointer from an entity." alt="" coords="5,56,199,83"/>
+<area shape="rect" id="Node000002" href="$class_entity_manager.html#a00080c3855e9aab3796bb94f6b48ac9b" title="Retrieves a reference to the component of type T for an entity." alt="" coords="248,31,450,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,57,232,53,233,59,199,62"/>
+<area shape="rect" id="Node000005" href="$class_entity_manager.html#af086011ae902ac5704362571a8217975" title="Checks if an entity has a component of type T." alt="" coords="247,81,451,108"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="199,77,231,80,231,85,199,82"/>
+<area shape="rect" id="Node000003" href="$class_component_manager.html#a81536e74843307f9b9e27993cca3e72b" title="Retrieves a reference to the component of an entity." alt="" coords="500,5,735,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="450,32,485,28,486,34,450,37"/>
+<area shape="rect" id="Node000004" href="$class_entity_manager.html#aa02cffa1d2435ea5d0eadee749c2a965" title="Gets the component manager for a type (const)." alt="" coords="526,56,710,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="450,51,510,57,510,62,450,56"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="451,82,510,77,510,82,452,88"/>
+<area shape="rect" id="Node000006" href="$class_component_manager.html#a8a8d1ef9e132029f47f452d64f0c3f7a" title="Checks if an entity has a component of this type." alt="" coords="499,107,736,133"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="452,102,484,105,483,110,451,107"/>
+</map>

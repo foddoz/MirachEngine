@@ -1,0 +1,456 @@
+\doxysection{C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/graphics.hpp File Reference}
+\hypertarget{graphics_8hpp}{}\label{graphics_8hpp}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/graphics.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/graphics.hpp}}
+{\ttfamily \#include $<$glad/gl.\+h$>$}\newline
+{\ttfamily \#include "{}../\+Math/math.\+hpp"{}}\newline
+Include dependency graph for graphics.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{graphics_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{graphics_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_color}{Color}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_graphics}{Graphics}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{graphics_8hpp_a07e3b4345595467370ea6f1f6e235b25}{POSITION\+\_\+\+LOCATION}}~0
+\item 
+\#define \mbox{\hyperlink{graphics_8hpp_acc35fe3f9394fbaa0bfeb582c656fade}{TEX\+\_\+\+COORD\+\_\+\+LOCATION}}~1
+\item 
+\#define \mbox{\hyperlink{graphics_8hpp_a94a4d9ca49a3a7c41b7fc0255818f588}{NORMAL\+\_\+\+LOCATION}}~2
+\item 
+\#define \mbox{\hyperlink{graphics_8hpp_a6d3146eb14eac12e5cbb06d4c6afa0b4}{COLOR\+\_\+\+TEXTURE\+\_\+\+UNIT}}~GL\+\_\+\+TEXTURE0
+\item 
+\#define \mbox{\hyperlink{graphics_8hpp_aa78d3fecb751530abfdadc8e70a99bbc}{COLOR\+\_\+\+TEXTURE\+\_\+\+UNIT\+\_\+\+INDEX\+\_\+0}}~0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{graphics_8hpp_a11f9d69e8ac4334703e81ebfaa6a851d}{Capability}} \+: unsigned int \{ \mbox{\hyperlink{graphics_8hpp_a11f9d69e8ac4334703e81ebfaa6a851da5fbf085d301b88f5c73689461c9b221b}{Cull\+Face}} = 0x0\+B44
+, \mbox{\hyperlink{graphics_8hpp_a11f9d69e8ac4334703e81ebfaa6a851da16704bc95ff0bd3291ba157e6f06e0ee}{Depth\+Test}} = 0x0\+B71
+, \mbox{\hyperlink{graphics_8hpp_a11f9d69e8ac4334703e81ebfaa6a851da09ac609fcdb514c9adca34e7f97b4ac4}{Blend}} = 0x0\+BE2
+ \}
+\item 
+enum class \mbox{\hyperlink{graphics_8hpp_a72f2198666e6f614143e503b8bb91961}{Cull\+Face\+Mode}} \+: unsigned int \{ \mbox{\hyperlink{graphics_8hpp_a72f2198666e6f614143e503b8bb91961a5835bab1ade0060909e31a06af2e2cde}{Front}} = 0x0404
+, \mbox{\hyperlink{graphics_8hpp_a72f2198666e6f614143e503b8bb91961a0557fa923dcee4d0f86b1409f5c2167f}{Back}} = 0x0405
+, \mbox{\hyperlink{graphics_8hpp_a72f2198666e6f614143e503b8bb91961a8be41da9b58e32ece35a2b5751f6aeb9}{Front\+And\+Back}} = 0x0408
+ \}
+\item 
+enum class \mbox{\hyperlink{graphics_8hpp_a126ce8ce37f5f1098a355c0446c8ceef}{Front\+Face\+Order}} \+: unsigned int \{ \mbox{\hyperlink{graphics_8hpp_a126ce8ce37f5f1098a355c0446c8ceefa9af3107a066f6b0defb1cafc0499f6ed}{CW}} = 0x0900
+, \mbox{\hyperlink{graphics_8hpp_a126ce8ce37f5f1098a355c0446c8ceefa59ec5d573abd014f3ae2c26ca962e8cf}{CCW}} = 0x0901
+ \}
+\item 
+enum class \mbox{\hyperlink{graphics_8hpp_a01a6315ff4ebc392a41cfa03464ca0c6}{Draw\+Mode}} \+: unsigned int \{ \mbox{\hyperlink{graphics_8hpp_a01a6315ff4ebc392a41cfa03464ca0c6a7ca66fdfaad3eb33fc65d7490178f856}{Triangles}} = 0x0004
+, \mbox{\hyperlink{graphics_8hpp_a01a6315ff4ebc392a41cfa03464ca0c6aa0b0293a2db49f5f93c15a62e095c819}{Lines}} = 0x0001
+ \}
+\item 
+enum class \mbox{\hyperlink{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290}{Data\+Type}} \+: unsigned int \{ \mbox{\hyperlink{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290a8f0fb883eb5a52838534191513e365a2}{Unsigned\+Byte}} = 0x1401
+, \mbox{\hyperlink{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290aeb51124277f3ec904a9af74d5de34e7b}{Unsigned\+Short}} = 0x1403
+, \mbox{\hyperlink{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290ac93cff91b6b9a57fa32bbe1863150070}{Unsigned\+Int}} = 0x1405
+, \mbox{\hyperlink{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290a22ae0e2b89e5e3d477f988cc36d3272b}{Float}} = 0x1406
+ \}
+\item 
+enum class \mbox{\hyperlink{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13}{Buffer\+Target}} \+: unsigned int \{ \mbox{\hyperlink{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13aa2ba314746bfdbdd8161b87ab77914be}{Array\+Buffer}} = 0x8892
+, \mbox{\hyperlink{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13a31f38857117a1e260e97d3c5fb9f47a1}{Element\+Array\+Buffer}} = 0x8893
+ \}
+\item 
+enum class \mbox{\hyperlink{graphics_8hpp_ad3970b398ce82012811a2c0d15cabd76}{Buffer\+Usage}} \+: unsigned int \{ \mbox{\hyperlink{graphics_8hpp_ad3970b398ce82012811a2c0d15cabd76ac3ed2ba606af12869974bdab26334e6c}{Static\+Draw}} = 0x88\+E4
+, \mbox{\hyperlink{graphics_8hpp_ad3970b398ce82012811a2c0d15cabd76a07988dce2d161630856fb73bc06682c0}{Dynamic\+Draw}} = 0x88\+E8
+ \}
+\item 
+enum class \mbox{\hyperlink{graphics_8hpp_ab573492f0fb48ce173d953fddc07b680}{Buffer\+Bit}} \+: unsigned int \{ \mbox{\hyperlink{graphics_8hpp_ab573492f0fb48ce173d953fddc07b680acb5feb1b7314637725a2e73bdc9f7295}{Color}} = 0x00004000
+, \mbox{\hyperlink{graphics_8hpp_ab573492f0fb48ce173d953fddc07b680a675056ad1441b6375b2c5abd48c27ef1}{Depth}} = 0x00000100
+, \mbox{\hyperlink{graphics_8hpp_ab573492f0fb48ce173d953fddc07b680ad821e7ccd4d4c25a491ba1a9ea248895}{Stencil}} = 0x00000400
+ \}
+\item 
+enum class \mbox{\hyperlink{graphics_8hpp_a588b3d3b1da518a1c08138ad96cc3813}{Shader\+Type}} \+: unsigned int \{ \mbox{\hyperlink{graphics_8hpp_a588b3d3b1da518a1c08138ad96cc3813ab22b929ba52471a02d18bb3a4e4472e6}{Vertex}} = 0x8\+B31
+, \mbox{\hyperlink{graphics_8hpp_a588b3d3b1da518a1c08138ad96cc3813a37d01b98065725fe3a1d30acf3a0064a}{Fragment}} = 0x8\+B30
+ \}
+\item 
+enum class \mbox{\hyperlink{graphics_8hpp_aaec52e992383ff804b871ff27e476126}{Texture\+Target}} \+: unsigned int \{ \mbox{\hyperlink{graphics_8hpp_aaec52e992383ff804b871ff27e476126aa6e2bae752d3bf4e34cb392bca789995}{Texture2D}} = 0x0\+DE1
+, \mbox{\hyperlink{graphics_8hpp_aaec52e992383ff804b871ff27e476126a6c4765d2cb592dcc2f21f311db02f43b}{Cube\+Map}} = 0x8513
+ \}
+\item 
+enum class \mbox{\hyperlink{graphics_8hpp_a29891c193a3cdc6982963d2bda283739}{Texture\+Format}} \+: unsigned int \{ \mbox{\hyperlink{graphics_8hpp_a29891c193a3cdc6982963d2bda283739aee38e4d5dd68c4e440825018d549cb47}{Red}} = 0x1903
+, \mbox{\hyperlink{graphics_8hpp_a29891c193a3cdc6982963d2bda283739a889574aebacda6bfd3e534e2b49b8028}{RGB}} = 0x1907
+, \mbox{\hyperlink{graphics_8hpp_a29891c193a3cdc6982963d2bda283739aea3495a278957dc58165e48a8945469f}{RGBA}} = 0x1908
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{graphics_8hpp_a673b48dd9847a2dd36229062d78ca32e}{operator\texorpdfstring{$\vert$}{|}}} (\mbox{\hyperlink{graphics_8hpp_ab573492f0fb48ce173d953fddc07b680}{Buffer\+Bit}} a, \mbox{\hyperlink{graphics_8hpp_ab573492f0fb48ce173d953fddc07b680}{Buffer\+Bit}} b)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a721c1c46b99ec4b0c263476217c844b2}{Graphics\+::\+Clear\+Color}} (float r, float g, float b, float a)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a9bf304ec4ddf472a34dbd10d358805f5}{Graphics\+::\+Viewport}} (int x, int y, float width, float height)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a9824ab679a791100d350127b6453e77d}{Graphics\+::\+Clear}} (unsigned int mask)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a8e819d608213a011059060a2b0170e18}{Graphics\+::\+Enable}} (\mbox{\hyperlink{graphics_8hpp_a11f9d69e8ac4334703e81ebfaa6a851d}{Capability}} cap)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a18deab5d59141f8edb32da67363b941f}{Graphics\+::\+Disable}} (\mbox{\hyperlink{graphics_8hpp_a11f9d69e8ac4334703e81ebfaa6a851d}{Capability}} cap)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a1179041af4fce74143f19dd3f49f08af}{Graphics\+::\+Set\+Cull\+Face}} (\mbox{\hyperlink{graphics_8hpp_a72f2198666e6f614143e503b8bb91961}{Cull\+Face\+Mode}} mode)
+\item 
+void \mbox{\hyperlink{namespace_graphics_aa6894ba5520c821114697787cf244724}{Graphics\+::\+Set\+Front\+Face}} (\mbox{\hyperlink{graphics_8hpp_a126ce8ce37f5f1098a355c0446c8ceef}{Front\+Face\+Order}} order)
+\item 
+void \mbox{\hyperlink{namespace_graphics_afaa64189fcf768986b859f4da49a49f0}{Graphics\+::\+Set\+Depth\+Write}} (bool enable)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a4158ffcbcd5183969266c9b9f412d19d}{Graphics\+::\+Use\+Program}} (unsigned int program)
+\item 
+int \mbox{\hyperlink{namespace_graphics_a4975cdbaad38122f9120b8ea8b95cb18}{Graphics\+::\+Get\+Uniform\+Location}} (unsigned int program\+ID, const std\+::string \&name)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a53ebeba7d0f7b777d50393490a557660}{Graphics\+::\+Set\+Uniform\+Mat4}} (int location, const float \texorpdfstring{$\ast$}{*}matrix\+Ptr)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a9abc126621caa7f5dd8b4ba0ba9fd101}{Graphics\+::\+Set\+Uniform1f}} (int location, float value)
+\item 
+void \mbox{\hyperlink{namespace_graphics_aa497253f01c048b2d15b339dc0f9f049}{Graphics\+::\+Set\+Uniform1i}} (int location, int value)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a49bea1070bca7375a5e6132179214a3a}{Graphics\+::\+Set\+Uniform3f}} (int location, float x, float y, float z)
+\item 
+void \mbox{\hyperlink{namespace_graphics_ae7b4fc0d405f3edef698219b304c4e97}{Graphics\+::\+Gen\+Vertex\+Array}} (unsigned int \&vao)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a8109b501f710603a722a06a5c02ac5b8}{Graphics\+::\+Gen\+Buffer}} (unsigned int \&buffer)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a076f7be95f278edc4620ff133340f982}{Graphics\+::\+Buffer\+Sub\+Data}} (\mbox{\hyperlink{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13}{Buffer\+Target}} target, size\+\_\+t offset, size\+\_\+t size, const void \texorpdfstring{$\ast$}{*}data)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a6f4d24e455fdef40dfe6b467f9b3d6d4}{Graphics\+::\+Bind\+Vertex\+Array}} (unsigned int vao)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a4765b419f51cd4a0d45b84dd4f7d7f17}{Graphics\+::\+Bind\+Buffer}} (\mbox{\hyperlink{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13}{Buffer\+Target}} target, unsigned int buffer)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a55aadce60c9d25fb369920ad3e4b431b}{Graphics\+::\+Unbind\+Vertex\+Array}} ()
+\item 
+void \mbox{\hyperlink{namespace_graphics_a07852e62edecc3dc602915d6aec0e1ce}{Graphics\+::\+Unbind\+Buffer}} (\mbox{\hyperlink{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13}{Buffer\+Target}} target)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a6a2b8b04edd45dc9bbf6b70af7c5b16d}{Graphics\+::\+Buffer\+Data}} (\mbox{\hyperlink{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13}{Buffer\+Target}} target, size\+\_\+t size, const void \texorpdfstring{$\ast$}{*}data, \mbox{\hyperlink{graphics_8hpp_ad3970b398ce82012811a2c0d15cabd76}{Buffer\+Usage}} usage)
+\item 
+void \mbox{\hyperlink{namespace_graphics_aa184d03626711a8afe423b4a50442c12}{Graphics\+::\+Enable\+Vertex\+Attrib}} (unsigned int location)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a9334eb7750459b3f968a9bf13eb7f6b4}{Graphics\+::\+Set\+Vertex\+Attrib\+Pointer}} (unsigned int location, int component\+Count, \mbox{\hyperlink{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290}{Data\+Type}} type, bool normalized, size\+\_\+t stride, const void \texorpdfstring{$\ast$}{*}offset)
+\item 
+void \mbox{\hyperlink{namespace_graphics_acf86e8b7f165acf4efdebe4a894bd1e2}{Graphics\+::\+Delete\+Buffer}} (unsigned int \&buffer\+ID)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a18d8e124bb0c6f61e760fb756031f7d3}{Graphics\+::\+Delete\+Vertex\+Array}} (unsigned int \&vao\+ID)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a45ac40011db84b9f6dc2904e31f0de9b}{Graphics\+::\+Gen\+Texture}} (unsigned int \&id)
+\item 
+void \mbox{\hyperlink{namespace_graphics_ab069888f717a4adcb9f69b5f34b53503}{Graphics\+::\+Bind\+Texture}} (\mbox{\hyperlink{graphics_8hpp_aaec52e992383ff804b871ff27e476126}{Texture\+Target}} target, unsigned int texture\+ID)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a62113f1c6225e86fd238faf3aa6463a0}{Graphics\+::\+Active\+Texture\+Unit}} (unsigned int unit)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a6d20cab00d508c1926caab0e70ccbf77}{Graphics\+::\+Tex\+Image2D}} (\mbox{\hyperlink{graphics_8hpp_aaec52e992383ff804b871ff27e476126}{Texture\+Target}} target, int width, int height, \mbox{\hyperlink{graphics_8hpp_a29891c193a3cdc6982963d2bda283739}{Texture\+Format}} format, const void \texorpdfstring{$\ast$}{*}data)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a653a8ff98cd652ab4f74b1dec756326e}{Graphics\+::\+Generate\+Mipmaps}} (\mbox{\hyperlink{graphics_8hpp_aaec52e992383ff804b871ff27e476126}{Texture\+Target}} target)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a20f428e07745e02fa639b32596b4a8eb}{Graphics\+::\+Delete\+Texture}} (unsigned int \&id)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a089e01615af5ecb79cd1c1cecb62fb67}{Graphics\+::\+Draw\+Elements}} (\mbox{\hyperlink{graphics_8hpp_a01a6315ff4ebc392a41cfa03464ca0c6}{Draw\+Mode}} mode, int count, \mbox{\hyperlink{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290}{Data\+Type}} type, const void \texorpdfstring{$\ast$}{*}indices)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a833d3fce31a5b5813e613ced1ff9d747}{Graphics\+::\+Draw\+Elements\+Base\+Vertex}} (\mbox{\hyperlink{graphics_8hpp_a01a6315ff4ebc392a41cfa03464ca0c6}{Draw\+Mode}} mode, int count, \mbox{\hyperlink{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290}{Data\+Type}} type, const void \texorpdfstring{$\ast$}{*}indices, int base\+Vertex)
+\item 
+unsigned int \mbox{\hyperlink{namespace_graphics_a6168c5c7c5a145aecd7681162f456977}{Graphics\+::\+Get\+Current\+Vertex\+Array}} ()
+\item 
+void \mbox{\hyperlink{namespace_graphics_a4fe2c80449bf103828d5ca29a02e8414}{Graphics\+::\+Unbind\+Program}} ()
+\item 
+void \mbox{\hyperlink{namespace_graphics_abcfa613cdd2ca02fc8cd2004c5a9fbae}{Graphics\+::\+Draw\+Arrays}} (\mbox{\hyperlink{graphics_8hpp_a01a6315ff4ebc392a41cfa03464ca0c6}{Draw\+Mode}} mode, int first, int count)
+\item 
+unsigned int \mbox{\hyperlink{namespace_graphics_a7c0a572c86359594da5745bf8341f33b}{Graphics\+::\+Get\+Error}} ()
+\item 
+bool \mbox{\hyperlink{namespace_graphics_abf5e5a480a0b920d263c67a4a3dd823e}{Graphics\+::\+Check\+Graphics\+Error}} ()
+\item 
+unsigned int \mbox{\hyperlink{namespace_graphics_a58e663589156806b8e589f9f3c4d4143}{Graphics\+::\+Create\+Shader}} (\mbox{\hyperlink{graphics_8hpp_a588b3d3b1da518a1c08138ad96cc3813}{Shader\+Type}} type)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a2620bf73e9ab268102fafb95162e9b72}{Graphics\+::\+Set\+Shader\+Source}} (unsigned int shader\+ID, const std\+::string \&source)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a74bbc934f6143cb110b1dfd082a3b89b}{Graphics\+::\+Compile\+Shader}} (unsigned int shader\+ID)
+\item 
+bool \mbox{\hyperlink{namespace_graphics_a20e3108902da8b64c25d7eb9070d1a60}{Graphics\+::\+Get\+Shader\+Compile\+Status}} (unsigned int shader\+ID, std\+::string \texorpdfstring{$\ast$}{*}out\+Log=nullptr)
+\item 
+unsigned int \mbox{\hyperlink{namespace_graphics_a58630573a0b89573bc72f8ceda3db1b5}{Graphics\+::\+Create\+Program}} ()
+\item 
+void \mbox{\hyperlink{namespace_graphics_a5ce52d8241816959525ea3e275ab13ad}{Graphics\+::\+Attach\+Shader}} (unsigned int program\+ID, unsigned int shader\+ID)
+\item 
+void \mbox{\hyperlink{namespace_graphics_a10a331aea50deff88f9719240a05d43f}{Graphics\+::\+Link\+Program}} (unsigned int program\+ID)
+\item 
+bool \mbox{\hyperlink{namespace_graphics_a8ea6bfb283e0fb7318eb1a5f6c956745}{Graphics\+::\+Get\+Program\+Link\+Status}} (unsigned int program\+ID, std\+::string \texorpdfstring{$\ast$}{*}out\+Log=nullptr)
+\item 
+unsigned int \mbox{\hyperlink{namespace_graphics_ab51204431218d844bc65a6e3a6dbf902}{Graphics\+::\+Create\+Empty\+Buffer}} (size\+\_\+t size)
+\item 
+void \mbox{\hyperlink{namespace_graphics_ae0fe98919e3082c31e62dfcc7e76f31e}{Graphics\+::\+Override\+Position\+VBO}} (unsigned int vbo, int location=\mbox{\hyperlink{graphics_8hpp_a07e3b4345595467370ea6f1f6e235b25}{POSITION\+\_\+\+LOCATION}})
+\item 
+int \mbox{\hyperlink{namespace_graphics_a115a81fec1bcc4c543465c17488a4db4}{Graphics\+::\+Get\+Active\+Uniform\+Count}} (unsigned int program\+ID)
+\item 
+void \mbox{\hyperlink{namespace_graphics_ae68001fd676252881fa82cc39d85cd10}{Graphics\+::\+Delete\+Shader}} (unsigned int shader\+ID)
+\item 
+void \mbox{\hyperlink{namespace_graphics_afdbcfb53bbe1ebcc083b61c257d500e9}{Graphics\+::\+Delete\+Program}} (unsigned int \&program\+ID)
+\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{graphics_8hpp_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{graphics_8hpp_a6d3146eb14eac12e5cbb06d4c6afa0b4}\index{graphics.hpp@{graphics.hpp}!COLOR\_TEXTURE\_UNIT@{COLOR\_TEXTURE\_UNIT}}
+\index{COLOR\_TEXTURE\_UNIT@{COLOR\_TEXTURE\_UNIT}!graphics.hpp@{graphics.hpp}}
+\doxysubsubsection{\texorpdfstring{COLOR\_TEXTURE\_UNIT}{COLOR\_TEXTURE\_UNIT}}
+{\footnotesize\ttfamily \label{graphics_8hpp_a6d3146eb14eac12e5cbb06d4c6afa0b4} 
+\#define COLOR\+\_\+\+TEXTURE\+\_\+\+UNIT~GL\+\_\+\+TEXTURE0}
+
+\Hypertarget{graphics_8hpp_aa78d3fecb751530abfdadc8e70a99bbc}\index{graphics.hpp@{graphics.hpp}!COLOR\_TEXTURE\_UNIT\_INDEX\_0@{COLOR\_TEXTURE\_UNIT\_INDEX\_0}}
+\index{COLOR\_TEXTURE\_UNIT\_INDEX\_0@{COLOR\_TEXTURE\_UNIT\_INDEX\_0}!graphics.hpp@{graphics.hpp}}
+\doxysubsubsection{\texorpdfstring{COLOR\_TEXTURE\_UNIT\_INDEX\_0}{COLOR\_TEXTURE\_UNIT\_INDEX\_0}}
+{\footnotesize\ttfamily \label{graphics_8hpp_aa78d3fecb751530abfdadc8e70a99bbc} 
+\#define COLOR\+\_\+\+TEXTURE\+\_\+\+UNIT\+\_\+\+INDEX\+\_\+0~0}
+
+\Hypertarget{graphics_8hpp_a94a4d9ca49a3a7c41b7fc0255818f588}\index{graphics.hpp@{graphics.hpp}!NORMAL\_LOCATION@{NORMAL\_LOCATION}}
+\index{NORMAL\_LOCATION@{NORMAL\_LOCATION}!graphics.hpp@{graphics.hpp}}
+\doxysubsubsection{\texorpdfstring{NORMAL\_LOCATION}{NORMAL\_LOCATION}}
+{\footnotesize\ttfamily \label{graphics_8hpp_a94a4d9ca49a3a7c41b7fc0255818f588} 
+\#define NORMAL\+\_\+\+LOCATION~2}
+
+\Hypertarget{graphics_8hpp_a07e3b4345595467370ea6f1f6e235b25}\index{graphics.hpp@{graphics.hpp}!POSITION\_LOCATION@{POSITION\_LOCATION}}
+\index{POSITION\_LOCATION@{POSITION\_LOCATION}!graphics.hpp@{graphics.hpp}}
+\doxysubsubsection{\texorpdfstring{POSITION\_LOCATION}{POSITION\_LOCATION}}
+{\footnotesize\ttfamily \label{graphics_8hpp_a07e3b4345595467370ea6f1f6e235b25} 
+\#define POSITION\+\_\+\+LOCATION~0}
+
+\Hypertarget{graphics_8hpp_acc35fe3f9394fbaa0bfeb582c656fade}\index{graphics.hpp@{graphics.hpp}!TEX\_COORD\_LOCATION@{TEX\_COORD\_LOCATION}}
+\index{TEX\_COORD\_LOCATION@{TEX\_COORD\_LOCATION}!graphics.hpp@{graphics.hpp}}
+\doxysubsubsection{\texorpdfstring{TEX\_COORD\_LOCATION}{TEX\_COORD\_LOCATION}}
+{\footnotesize\ttfamily \label{graphics_8hpp_acc35fe3f9394fbaa0bfeb582c656fade} 
+\#define TEX\+\_\+\+COORD\+\_\+\+LOCATION~1}
+
+
+
+\label{doc-enum-members}
+\Hypertarget{graphics_8hpp_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{graphics_8hpp_ab573492f0fb48ce173d953fddc07b680}\index{graphics.hpp@{graphics.hpp}!BufferBit@{BufferBit}}
+\index{BufferBit@{BufferBit}!graphics.hpp@{graphics.hpp}}
+\doxysubsubsection{\texorpdfstring{BufferBit}{BufferBit}}
+{\footnotesize\ttfamily \label{graphics_8hpp_ab573492f0fb48ce173d953fddc07b680} 
+enum class \mbox{\hyperlink{graphics_8hpp_ab573492f0fb48ce173d953fddc07b680}{Buffer\+Bit}} \+: unsigned int\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Color@{Color}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!Color@{Color}}}\Hypertarget{graphics_8hpp_ab573492f0fb48ce173d953fddc07b680acb5feb1b7314637725a2e73bdc9f7295}\label{graphics_8hpp_ab573492f0fb48ce173d953fddc07b680acb5feb1b7314637725a2e73bdc9f7295} 
+Color&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Depth@{Depth}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!Depth@{Depth}}}\Hypertarget{graphics_8hpp_ab573492f0fb48ce173d953fddc07b680a675056ad1441b6375b2c5abd48c27ef1}\label{graphics_8hpp_ab573492f0fb48ce173d953fddc07b680a675056ad1441b6375b2c5abd48c27ef1} 
+Depth&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Stencil@{Stencil}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!Stencil@{Stencil}}}\Hypertarget{graphics_8hpp_ab573492f0fb48ce173d953fddc07b680ad821e7ccd4d4c25a491ba1a9ea248895}\label{graphics_8hpp_ab573492f0fb48ce173d953fddc07b680ad821e7ccd4d4c25a491ba1a9ea248895} 
+Stencil&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13}\index{graphics.hpp@{graphics.hpp}!BufferTarget@{BufferTarget}}
+\index{BufferTarget@{BufferTarget}!graphics.hpp@{graphics.hpp}}
+\doxysubsubsection{\texorpdfstring{BufferTarget}{BufferTarget}}
+{\footnotesize\ttfamily \label{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13} 
+enum class \mbox{\hyperlink{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13}{Buffer\+Target}} \+: unsigned int\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ArrayBuffer@{ArrayBuffer}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!ArrayBuffer@{ArrayBuffer}}}\Hypertarget{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13aa2ba314746bfdbdd8161b87ab77914be}\label{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13aa2ba314746bfdbdd8161b87ab77914be} 
+Array\+Buffer&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ElementArrayBuffer@{ElementArrayBuffer}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!ElementArrayBuffer@{ElementArrayBuffer}}}\Hypertarget{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13a31f38857117a1e260e97d3c5fb9f47a1}\label{graphics_8hpp_a295c1d31c70c7f33210c2ce16c21ea13a31f38857117a1e260e97d3c5fb9f47a1} 
+Element\+Array\+Buffer&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{graphics_8hpp_ad3970b398ce82012811a2c0d15cabd76}\index{graphics.hpp@{graphics.hpp}!BufferUsage@{BufferUsage}}
+\index{BufferUsage@{BufferUsage}!graphics.hpp@{graphics.hpp}}
+\doxysubsubsection{\texorpdfstring{BufferUsage}{BufferUsage}}
+{\footnotesize\ttfamily \label{graphics_8hpp_ad3970b398ce82012811a2c0d15cabd76} 
+enum class \mbox{\hyperlink{graphics_8hpp_ad3970b398ce82012811a2c0d15cabd76}{Buffer\+Usage}} \+: unsigned int\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{StaticDraw@{StaticDraw}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!StaticDraw@{StaticDraw}}}\Hypertarget{graphics_8hpp_ad3970b398ce82012811a2c0d15cabd76ac3ed2ba606af12869974bdab26334e6c}\label{graphics_8hpp_ad3970b398ce82012811a2c0d15cabd76ac3ed2ba606af12869974bdab26334e6c} 
+Static\+Draw&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DynamicDraw@{DynamicDraw}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!DynamicDraw@{DynamicDraw}}}\Hypertarget{graphics_8hpp_ad3970b398ce82012811a2c0d15cabd76a07988dce2d161630856fb73bc06682c0}\label{graphics_8hpp_ad3970b398ce82012811a2c0d15cabd76a07988dce2d161630856fb73bc06682c0} 
+Dynamic\+Draw&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{graphics_8hpp_a11f9d69e8ac4334703e81ebfaa6a851d}\index{graphics.hpp@{graphics.hpp}!Capability@{Capability}}
+\index{Capability@{Capability}!graphics.hpp@{graphics.hpp}}
+\doxysubsubsection{\texorpdfstring{Capability}{Capability}}
+{\footnotesize\ttfamily \label{graphics_8hpp_a11f9d69e8ac4334703e81ebfaa6a851d} 
+enum class \mbox{\hyperlink{graphics_8hpp_a11f9d69e8ac4334703e81ebfaa6a851d}{Capability}} \+: unsigned int\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CullFace@{CullFace}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!CullFace@{CullFace}}}\Hypertarget{graphics_8hpp_a11f9d69e8ac4334703e81ebfaa6a851da5fbf085d301b88f5c73689461c9b221b}\label{graphics_8hpp_a11f9d69e8ac4334703e81ebfaa6a851da5fbf085d301b88f5c73689461c9b221b} 
+Cull\+Face&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DepthTest@{DepthTest}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!DepthTest@{DepthTest}}}\Hypertarget{graphics_8hpp_a11f9d69e8ac4334703e81ebfaa6a851da16704bc95ff0bd3291ba157e6f06e0ee}\label{graphics_8hpp_a11f9d69e8ac4334703e81ebfaa6a851da16704bc95ff0bd3291ba157e6f06e0ee} 
+Depth\+Test&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Blend@{Blend}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!Blend@{Blend}}}\Hypertarget{graphics_8hpp_a11f9d69e8ac4334703e81ebfaa6a851da09ac609fcdb514c9adca34e7f97b4ac4}\label{graphics_8hpp_a11f9d69e8ac4334703e81ebfaa6a851da09ac609fcdb514c9adca34e7f97b4ac4} 
+Blend&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{graphics_8hpp_a72f2198666e6f614143e503b8bb91961}\index{graphics.hpp@{graphics.hpp}!CullFaceMode@{CullFaceMode}}
+\index{CullFaceMode@{CullFaceMode}!graphics.hpp@{graphics.hpp}}
+\doxysubsubsection{\texorpdfstring{CullFaceMode}{CullFaceMode}}
+{\footnotesize\ttfamily \label{graphics_8hpp_a72f2198666e6f614143e503b8bb91961} 
+enum class \mbox{\hyperlink{graphics_8hpp_a72f2198666e6f614143e503b8bb91961}{Cull\+Face\+Mode}} \+: unsigned int\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Front@{Front}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!Front@{Front}}}\Hypertarget{graphics_8hpp_a72f2198666e6f614143e503b8bb91961a5835bab1ade0060909e31a06af2e2cde}\label{graphics_8hpp_a72f2198666e6f614143e503b8bb91961a5835bab1ade0060909e31a06af2e2cde} 
+Front&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Back@{Back}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!Back@{Back}}}\Hypertarget{graphics_8hpp_a72f2198666e6f614143e503b8bb91961a0557fa923dcee4d0f86b1409f5c2167f}\label{graphics_8hpp_a72f2198666e6f614143e503b8bb91961a0557fa923dcee4d0f86b1409f5c2167f} 
+Back&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FrontAndBack@{FrontAndBack}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!FrontAndBack@{FrontAndBack}}}\Hypertarget{graphics_8hpp_a72f2198666e6f614143e503b8bb91961a8be41da9b58e32ece35a2b5751f6aeb9}\label{graphics_8hpp_a72f2198666e6f614143e503b8bb91961a8be41da9b58e32ece35a2b5751f6aeb9} 
+Front\+And\+Back&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290}\index{graphics.hpp@{graphics.hpp}!DataType@{DataType}}
+\index{DataType@{DataType}!graphics.hpp@{graphics.hpp}}
+\doxysubsubsection{\texorpdfstring{DataType}{DataType}}
+{\footnotesize\ttfamily \label{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290} 
+enum class \mbox{\hyperlink{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290}{Data\+Type}} \+: unsigned int\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UnsignedByte@{UnsignedByte}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!UnsignedByte@{UnsignedByte}}}\Hypertarget{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290a8f0fb883eb5a52838534191513e365a2}\label{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290a8f0fb883eb5a52838534191513e365a2} 
+Unsigned\+Byte&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UnsignedShort@{UnsignedShort}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!UnsignedShort@{UnsignedShort}}}\Hypertarget{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290aeb51124277f3ec904a9af74d5de34e7b}\label{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290aeb51124277f3ec904a9af74d5de34e7b} 
+Unsigned\+Short&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UnsignedInt@{UnsignedInt}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!UnsignedInt@{UnsignedInt}}}\Hypertarget{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290ac93cff91b6b9a57fa32bbe1863150070}\label{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290ac93cff91b6b9a57fa32bbe1863150070} 
+Unsigned\+Int&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Float@{Float}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!Float@{Float}}}\Hypertarget{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290a22ae0e2b89e5e3d477f988cc36d3272b}\label{graphics_8hpp_a8060e096237887b0b8b80ea1d50dd290a22ae0e2b89e5e3d477f988cc36d3272b} 
+Float&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{graphics_8hpp_a01a6315ff4ebc392a41cfa03464ca0c6}\index{graphics.hpp@{graphics.hpp}!DrawMode@{DrawMode}}
+\index{DrawMode@{DrawMode}!graphics.hpp@{graphics.hpp}}
+\doxysubsubsection{\texorpdfstring{DrawMode}{DrawMode}}
+{\footnotesize\ttfamily \label{graphics_8hpp_a01a6315ff4ebc392a41cfa03464ca0c6} 
+enum class \mbox{\hyperlink{graphics_8hpp_a01a6315ff4ebc392a41cfa03464ca0c6}{Draw\+Mode}} \+: unsigned int\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Triangles@{Triangles}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!Triangles@{Triangles}}}\Hypertarget{graphics_8hpp_a01a6315ff4ebc392a41cfa03464ca0c6a7ca66fdfaad3eb33fc65d7490178f856}\label{graphics_8hpp_a01a6315ff4ebc392a41cfa03464ca0c6a7ca66fdfaad3eb33fc65d7490178f856} 
+Triangles&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Lines@{Lines}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!Lines@{Lines}}}\Hypertarget{graphics_8hpp_a01a6315ff4ebc392a41cfa03464ca0c6aa0b0293a2db49f5f93c15a62e095c819}\label{graphics_8hpp_a01a6315ff4ebc392a41cfa03464ca0c6aa0b0293a2db49f5f93c15a62e095c819} 
+Lines&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{graphics_8hpp_a126ce8ce37f5f1098a355c0446c8ceef}\index{graphics.hpp@{graphics.hpp}!FrontFaceOrder@{FrontFaceOrder}}
+\index{FrontFaceOrder@{FrontFaceOrder}!graphics.hpp@{graphics.hpp}}
+\doxysubsubsection{\texorpdfstring{FrontFaceOrder}{FrontFaceOrder}}
+{\footnotesize\ttfamily \label{graphics_8hpp_a126ce8ce37f5f1098a355c0446c8ceef} 
+enum class \mbox{\hyperlink{graphics_8hpp_a126ce8ce37f5f1098a355c0446c8ceef}{Front\+Face\+Order}} \+: unsigned int\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CW@{CW}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!CW@{CW}}}\Hypertarget{graphics_8hpp_a126ce8ce37f5f1098a355c0446c8ceefa9af3107a066f6b0defb1cafc0499f6ed}\label{graphics_8hpp_a126ce8ce37f5f1098a355c0446c8ceefa9af3107a066f6b0defb1cafc0499f6ed} 
+CW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CCW@{CCW}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!CCW@{CCW}}}\Hypertarget{graphics_8hpp_a126ce8ce37f5f1098a355c0446c8ceefa59ec5d573abd014f3ae2c26ca962e8cf}\label{graphics_8hpp_a126ce8ce37f5f1098a355c0446c8ceefa59ec5d573abd014f3ae2c26ca962e8cf} 
+CCW&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{graphics_8hpp_a588b3d3b1da518a1c08138ad96cc3813}\index{graphics.hpp@{graphics.hpp}!ShaderType@{ShaderType}}
+\index{ShaderType@{ShaderType}!graphics.hpp@{graphics.hpp}}
+\doxysubsubsection{\texorpdfstring{ShaderType}{ShaderType}}
+{\footnotesize\ttfamily \label{graphics_8hpp_a588b3d3b1da518a1c08138ad96cc3813} 
+enum class \mbox{\hyperlink{graphics_8hpp_a588b3d3b1da518a1c08138ad96cc3813}{Shader\+Type}} \+: unsigned int\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Vertex@{Vertex}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!Vertex@{Vertex}}}\Hypertarget{graphics_8hpp_a588b3d3b1da518a1c08138ad96cc3813ab22b929ba52471a02d18bb3a4e4472e6}\label{graphics_8hpp_a588b3d3b1da518a1c08138ad96cc3813ab22b929ba52471a02d18bb3a4e4472e6} 
+Vertex&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fragment@{Fragment}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!Fragment@{Fragment}}}\Hypertarget{graphics_8hpp_a588b3d3b1da518a1c08138ad96cc3813a37d01b98065725fe3a1d30acf3a0064a}\label{graphics_8hpp_a588b3d3b1da518a1c08138ad96cc3813a37d01b98065725fe3a1d30acf3a0064a} 
+Fragment&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{graphics_8hpp_a29891c193a3cdc6982963d2bda283739}\index{graphics.hpp@{graphics.hpp}!TextureFormat@{TextureFormat}}
+\index{TextureFormat@{TextureFormat}!graphics.hpp@{graphics.hpp}}
+\doxysubsubsection{\texorpdfstring{TextureFormat}{TextureFormat}}
+{\footnotesize\ttfamily \label{graphics_8hpp_a29891c193a3cdc6982963d2bda283739} 
+enum class \mbox{\hyperlink{graphics_8hpp_a29891c193a3cdc6982963d2bda283739}{Texture\+Format}} \+: unsigned int\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Red@{Red}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!Red@{Red}}}\Hypertarget{graphics_8hpp_a29891c193a3cdc6982963d2bda283739aee38e4d5dd68c4e440825018d549cb47}\label{graphics_8hpp_a29891c193a3cdc6982963d2bda283739aee38e4d5dd68c4e440825018d549cb47} 
+Red&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RGB@{RGB}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!RGB@{RGB}}}\Hypertarget{graphics_8hpp_a29891c193a3cdc6982963d2bda283739a889574aebacda6bfd3e534e2b49b8028}\label{graphics_8hpp_a29891c193a3cdc6982963d2bda283739a889574aebacda6bfd3e534e2b49b8028} 
+RGB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RGBA@{RGBA}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!RGBA@{RGBA}}}\Hypertarget{graphics_8hpp_a29891c193a3cdc6982963d2bda283739aea3495a278957dc58165e48a8945469f}\label{graphics_8hpp_a29891c193a3cdc6982963d2bda283739aea3495a278957dc58165e48a8945469f} 
+RGBA&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{graphics_8hpp_aaec52e992383ff804b871ff27e476126}\index{graphics.hpp@{graphics.hpp}!TextureTarget@{TextureTarget}}
+\index{TextureTarget@{TextureTarget}!graphics.hpp@{graphics.hpp}}
+\doxysubsubsection{\texorpdfstring{TextureTarget}{TextureTarget}}
+{\footnotesize\ttfamily \label{graphics_8hpp_aaec52e992383ff804b871ff27e476126} 
+enum class \mbox{\hyperlink{graphics_8hpp_aaec52e992383ff804b871ff27e476126}{Texture\+Target}} \+: unsigned int\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Texture2D@{Texture2D}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!Texture2D@{Texture2D}}}\Hypertarget{graphics_8hpp_aaec52e992383ff804b871ff27e476126aa6e2bae752d3bf4e34cb392bca789995}\label{graphics_8hpp_aaec52e992383ff804b871ff27e476126aa6e2bae752d3bf4e34cb392bca789995} 
+Texture2D&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CubeMap@{CubeMap}!graphics.hpp@{graphics.hpp}}\index{graphics.hpp@{graphics.hpp}!CubeMap@{CubeMap}}}\Hypertarget{graphics_8hpp_aaec52e992383ff804b871ff27e476126a6c4765d2cb592dcc2f21f311db02f43b}\label{graphics_8hpp_aaec52e992383ff804b871ff27e476126a6c4765d2cb592dcc2f21f311db02f43b} 
+Cube\+Map&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-func-members}
+\Hypertarget{graphics_8hpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{graphics_8hpp_a673b48dd9847a2dd36229062d78ca32e}\index{graphics.hpp@{graphics.hpp}!operator\texttt{"|}@{operator\texttt{"|}}}
+\index{operator\texttt{"|}@{operator\texttt{"|}}!graphics.hpp@{graphics.hpp}}
+\doxysubsubsection{\texorpdfstring{operator\texttt{"|}()}{operator|()}}
+{\footnotesize\ttfamily \label{graphics_8hpp_a673b48dd9847a2dd36229062d78ca32e} 
+unsigned int operator\texorpdfstring{$\vert$}{|} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graphics_8hpp_ab573492f0fb48ce173d953fddc07b680}{Buffer\+Bit}}}]{a}{, }\item[{\mbox{\hyperlink{graphics_8hpp_ab573492f0fb48ce173d953fddc07b680}{Buffer\+Bit}}}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+

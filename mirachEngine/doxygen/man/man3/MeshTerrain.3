@@ -1,0 +1,459 @@
+.TH "MeshTerrain" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MeshTerrain \- Terrain mesh class using heightmap generation\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <meshTerrain\&.hpp>\fP
+.PP
+Inherits \fBMesh3D\fP\&.
+.PP
+Inherited by \fBTerrainChunk\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBTerrainPoint\fP"
+.br
+.RI "Structure representing a vertex on the terrain mesh\&. "
+.ti -1c
+.RI "struct \fBVertex\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMeshTerrain\fP ()"
+.br
+.RI "Constructs an empty \fBMeshTerrain\fP object\&. "
+.ti -1c
+.RI "void \fBGenerateCPUData\fP (int terrainSize, int iterations, float minHeight, float maxHeight, float filter, float textureScale, const std::vector< std::string > &textureFileNames, bool randomise=true)"
+.br
+.RI "Generates the heightmap and vertex data for terrain mesh\&. "
+.ti -1c
+.RI "void \fBCreateFaultFormation\fP (int iterations, float minHeight, float maxHeight, float filter, int terrainSize, bool randomise)"
+.br
+.RI "Internal fault formation algorithm with smoothing filter\&. "
+.ti -1c
+.RI "void \fBUploadToGPU\fP () override"
+.br
+.RI "Uploads generated mesh data and textures to the GPU\&. "
+.ti -1c
+.RI "\fBMeshRenderer\fP \fBToRenderer\fP () override"
+.br
+.RI "Converts the terrain to a renderable mesh component\&. "
+.ti -1c
+.RI "\fBMeshLOD\fP \fBCreateLOD\fP (int stepSize)"
+.br
+.ti -1c
+.RI "float \fBGetHeight\fP (int x, int z) const"
+.br
+.RI "Gets the height at the given integer terrain grid coordinates\&. "
+.ti -1c
+.RI "float \fBGetWorldHeight\fP (float x, float z) const"
+.br
+.ti -1c
+.RI "float \fBGetHeightInterpolated\fP (float x, float z) const"
+.br
+.RI "Gets bilinearly interpolated height from floating point coordinates\&. "
+.ti -1c
+.RI "int \fBGetSize\fP () const"
+.br
+.RI "Gets terrain grid size\&. "
+.ti -1c
+.RI "int \fBGetWidth\fP () const"
+.br
+.RI "Gets the width (x-size) of the terrain\&. "
+.ti -1c
+.RI "int \fBGetDepth\fP () const"
+.br
+.RI "Gets the depth (z-size) of the terrain\&. "
+.ti -1c
+.RI "float \fBGetWorldWidth\fP () const"
+.br
+.ti -1c
+.RI "float \fBGetWorldDepth\fP () const"
+.br
+.ti -1c
+.RI "int \fBGetMinHeight\fP () const"
+.br
+.ti -1c
+.RI "int \fBGetMaxHeight\fP () const"
+.br
+.ti -1c
+.RI "const std::vector< float > & \fBGetHeightMap\fP () const"
+.br
+.ti -1c
+.RI "const std::vector< \fBMeshTerrain::Vertex\fP > & \fBGetVertexData\fP () const"
+.br
+.ti -1c
+.RI "const std::vector< unsigned int > & \fBGetIndexData\fP () const"
+.br
+.ti -1c
+.RI "void \fBClearCPUData\fP ()"
+.br
+.ti -1c
+.RI "float \fBGetTextureScale\fP () const"
+.br
+.RI "Gets the texture UV scale factor\&. "
+.ti -1c
+.RI "void \fBDelete\fP () override"
+.br
+.RI "Deletes GPU resources associated with the terrain\&. "
+.in -1c
+
+Public Member Functions inherited from \fBMesh3D\fP
+.in +1c
+.ti -1c
+.RI "\fBMesh3D\fP ()"
+.br
+.RI "Default constructor initializes OpenGL buffer handles and transforms\&. "
+.ti -1c
+.RI "\fBMesh3D\fP (const \fBMesh3D\fP &other)"
+.br
+.RI "Copy constructor for \fBMesh3D\fP\&. "
+.ti -1c
+.RI "void \fBSetPipeline\fP (unsigned int pipeline)"
+.br
+.RI "Assigns a graphics pipeline (shader program) to this mesh\&. "
+.ti -1c
+.RI "unsigned int \fBgetPipeline\fP () const"
+.br
+.RI "Retrieves the currently assigned graphics pipeline\&. "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBCreateTriangleList\fP (int width, int depth)"
+.br
+.RI "Generates vertices, normals, and triangle indices from heightmap\&. "
+.ti -1c
+.RI "void \fBSetHeight\fP (int x, int z, float value)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< std::string > \fBm_TextureFileNames\fP"
+.br
+.RI "\fBTexture\fP file names for terrain layers\&. "
+.ti -1c
+.RI "int \fBm_width\fP"
+.br
+.RI "Final mesh width after generation\&. "
+.ti -1c
+.RI "int \fBm_depth\fP"
+.br
+.RI "Final mesh depth after generation\&. "
+.ti -1c
+.RI "int \fBm_minHeight\fP"
+.br
+.RI "Cached minimum height value\&. "
+.ti -1c
+.RI "int \fBm_maxHeight\fP"
+.br
+.RI "Cached maximum height value\&. "
+.ti -1c
+.RI "float \fBm_worldSizeX\fP"
+.br
+.ti -1c
+.RI "float \fBm_worldSizeZ\fP"
+.br
+.ti -1c
+.RI "int \fBm_terrainSize\fP"
+.br
+.RI "Size of the terrain (width = depth)\&. "
+.ti -1c
+.RI "std::vector< float > \fBm_heightMap\fP"
+.br
+.RI "2D heightmap values\&. "
+.ti -1c
+.RI "float \fBm_textureScale\fP"
+.br
+.RI "\fBTexture\fP scale used for UV mapping\&. "
+.in -1c
+
+Protected Attributes inherited from \fBMesh3D\fP
+.in +1c
+.ti -1c
+.RI "unsigned int \fBm_VAO\fP"
+.br
+.RI "OpenGL Vertex Array Object handle\&. "
+.ti -1c
+.RI "unsigned int \fBm_IndexCount\fP"
+.br
+.RI "Number of indices used for drawing (glDrawElements or glDrawArrays)\&. "
+.ti -1c
+.RI "unsigned int \fBm_VBO\fP"
+.br
+.RI "Vertex Buffer Object handle\&. "
+.ti -1c
+.RI "unsigned int \fBm_IBO\fP"
+.br
+.RI "Index Buffer Object handle\&. "
+.ti -1c
+.RI "std::vector< \fBTexture\fP * > \fBm_Textures\fP"
+.br
+.RI "Collection of textures associated with this mesh\&. "
+.ti -1c
+.RI "unsigned int \fBm_Pipeline\fP"
+.br
+.RI "OpenGL shader program ID assigned to this mesh\&. "
+.ti -1c
+.RI "\fBAABB\fP \fBm_AABB\fP"
+.br
+.RI "Axis-aligned bounding box in local (object) space\&. "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBInitIndices\fP (std::vector< unsigned int > &indices, int width, int depth)"
+.br
+.RI "Fills index buffer with triangle strip indices\&. "
+.ti -1c
+.RI "void \fBPopulateBuffers\fP () override"
+.br
+.RI "Allocates OpenGL VAO/VBO/IBO and sets vertex format\&. "
+.ti -1c
+.RI "void \fBInitVertices\fP (std::vector< \fBVertex\fP > &Vertices)"
+.br
+.RI "Initializes vertex positions and texture coordinates\&. "
+.ti -1c
+.RI "void \fBCalcNormals\fP (std::vector< \fBVertex\fP > &Vertices, int width, int depth)"
+.br
+.RI "Computes per-vertex normals by averaging surrounding triangles\&. "
+.ti -1c
+.RI "void \fBGenRandomTerrainPoints\fP (\fBTerrainPoint\fP &p1, \fBTerrainPoint\fP &p2)"
+.br
+.RI "Generates two random points for a fault line\&. "
+.ti -1c
+.RI "void \fBApplyFIRFilter\fP (float filter)"
+.br
+.RI "Applies FIR filter in 4 directions for terrain smoothing\&. "
+.ti -1c
+.RI "float \fBFIRFilterSinglePoint\fP (int x, int z, float prevVal, float filter)"
+.br
+.RI "Applies FIR filtering on a single height value\&. "
+.ti -1c
+.RI "void \fBNormaliseHeightMap\fP (float minHeight, float maxHeight)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBVertex\fP > \fBm_CPU_VertexData\fP"
+.br
+.RI "Vertices generated on CPU\&. "
+.ti -1c
+.RI "std::vector< unsigned int > \fBm_CPU_IndexData\fP"
+.br
+.RI "Indices for terrain triangles\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Terrain mesh class using heightmap generation\&. 
+
+Generates and manages terrain data using a fault formation algorithm and uploads the mesh to GPU\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MeshTerrain::MeshTerrain ()"
+
+.PP
+Constructs an empty \fBMeshTerrain\fP object\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void MeshTerrain::ApplyFIRFilter (float filter)\fR [private]\fP"
+
+.PP
+Applies FIR filter in 4 directions for terrain smoothing\&. 
+.SS "void MeshTerrain::CalcNormals (std::vector< \fBVertex\fP > & Vertices, int width, int depth)\fR [private]\fP"
+
+.PP
+Computes per-vertex normals by averaging surrounding triangles\&. 
+.SS "void MeshTerrain::ClearCPUData ()"
+
+.SS "void MeshTerrain::CreateFaultFormation (int iterations, float minHeight, float maxHeight, float filter, int terrainSize, bool randomise)"
+
+.PP
+Internal fault formation algorithm with smoothing filter\&. 
+.SS "\fBMeshLOD\fP MeshTerrain::CreateLOD (int stepSize)"
+
+.SS "void MeshTerrain::CreateTriangleList (int width, int depth)\fR [protected]\fP"
+
+.PP
+Generates vertices, normals, and triangle indices from heightmap\&. 
+.SS "void MeshTerrain::Delete ()\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Deletes GPU resources associated with the terrain\&. 
+.PP
+Reimplemented from \fBMesh3D\fP\&.
+.SS "float MeshTerrain::FIRFilterSinglePoint (int x, int z, float prevVal, float filter)\fR [private]\fP"
+
+.PP
+Applies FIR filtering on a single height value\&. 
+.SS "void MeshTerrain::GenerateCPUData (int terrainSize, int iterations, float minHeight, float maxHeight, float filter, float textureScale, const std::vector< std::string > & textureFileNames, bool randomise = \fRtrue\fP)"
+
+.PP
+Generates the heightmap and vertex data for terrain mesh\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIterrainSize\fP Width and depth of the terrain grid\&. 
+.br
+\fIiterations\fP Number of fault iterations\&. 
+.br
+\fIminHeight\fP Minimum height value\&. 
+.br
+\fImaxHeight\fP Maximum height value\&. 
+.br
+\fIfilter\fP FIR filter strength for smoothing\&. 
+.br
+\fItextureScale\fP Multiplier for texture UV mapping\&. 
+.br
+\fItextureFileNames\fP List of texture file paths for the terrain layers\&. 
+.RE
+.PP
+
+.SS "void MeshTerrain::GenRandomTerrainPoints (\fBTerrainPoint\fP & p1, \fBTerrainPoint\fP & p2)\fR [private]\fP"
+
+.PP
+Generates two random points for a fault line\&. 
+.SS "int MeshTerrain::GetDepth () const"
+
+.PP
+Gets the depth (z-size) of the terrain\&. 
+.SS "float MeshTerrain::GetHeight (int x, int z) const"
+
+.PP
+Gets the height at the given integer terrain grid coordinates\&. 
+.SS "float MeshTerrain::GetHeightInterpolated (float x, float z) const"
+
+.PP
+Gets bilinearly interpolated height from floating point coordinates\&. 
+.SS "const std::vector< float > & MeshTerrain::GetHeightMap () const"
+
+.SS "const std::vector< unsigned int > & MeshTerrain::GetIndexData () const\fR [inline]\fP"
+
+.SS "int MeshTerrain::GetMaxHeight () const"
+
+.SS "int MeshTerrain::GetMinHeight () const"
+
+.SS "int MeshTerrain::GetSize () const"
+
+.PP
+Gets terrain grid size\&. 
+.SS "float MeshTerrain::GetTextureScale () const"
+
+.PP
+Gets the texture UV scale factor\&. 
+.SS "const std::vector< \fBMeshTerrain::Vertex\fP > & MeshTerrain::GetVertexData () const\fR [inline]\fP"
+
+.SS "int MeshTerrain::GetWidth () const"
+
+.PP
+Gets the width (x-size) of the terrain\&. 
+.SS "float MeshTerrain::GetWorldDepth () const"
+
+.SS "float MeshTerrain::GetWorldHeight (float x, float z) const"
+
+.SS "float MeshTerrain::GetWorldWidth () const"
+
+.SS "void MeshTerrain::InitIndices (std::vector< unsigned int > & indices, int width, int depth)\fR [private]\fP"
+
+.PP
+Fills index buffer with triangle strip indices\&. 
+.SS "void MeshTerrain::InitVertices (std::vector< \fBVertex\fP > & Vertices)\fR [private]\fP"
+
+.PP
+Initializes vertex positions and texture coordinates\&. 
+.SS "void MeshTerrain::NormaliseHeightMap (float minHeight, float maxHeight)\fR [private]\fP"
+
+.SS "void MeshTerrain::PopulateBuffers ()\fR [override]\fP, \fR [private]\fP, \fR [virtual]\fP"
+
+.PP
+Allocates OpenGL VAO/VBO/IBO and sets vertex format\&. 
+.PP
+Implements \fBMesh3D\fP\&.
+.SS "void MeshTerrain::SetHeight (int x, int z, float value)\fR [protected]\fP"
+
+.SS "\fBMeshRenderer\fP MeshTerrain::ToRenderer ()\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Converts the terrain to a renderable mesh component\&. 
+.PP
+\fBReturns\fP
+.RS 4
+A \fBMeshRenderer\fP component for use in ECS rendering\&. 
+.RE
+.PP
+
+.PP
+Implements \fBMesh3D\fP\&.
+.SS "void MeshTerrain::UploadToGPU ()\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Uploads generated mesh data and textures to the GPU\&. 
+.PP
+Implements \fBMesh3D\fP\&.
+.PP
+Reimplemented in \fBTerrainChunk\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<unsigned int> MeshTerrain::m_CPU_IndexData\fR [private]\fP"
+
+.PP
+Indices for terrain triangles\&. 
+.SS "std::vector<\fBVertex\fP> MeshTerrain::m_CPU_VertexData\fR [private]\fP"
+
+.PP
+Vertices generated on CPU\&. 
+.SS "int MeshTerrain::m_depth\fR [protected]\fP"
+
+.PP
+Final mesh depth after generation\&. 
+.SS "std::vector<float> MeshTerrain::m_heightMap\fR [protected]\fP"
+
+.PP
+2D heightmap values\&. 
+.SS "int MeshTerrain::m_maxHeight\fR [protected]\fP"
+
+.PP
+Cached maximum height value\&. 
+.SS "int MeshTerrain::m_minHeight\fR [protected]\fP"
+
+.PP
+Cached minimum height value\&. 
+.SS "int MeshTerrain::m_terrainSize\fR [protected]\fP"
+
+.PP
+Size of the terrain (width = depth)\&. 
+.SS "std::vector<std::string> MeshTerrain::m_TextureFileNames\fR [protected]\fP"
+
+.PP
+\fBTexture\fP file names for terrain layers\&. 
+.SS "float MeshTerrain::m_textureScale\fR [protected]\fP"
+
+.PP
+\fBTexture\fP scale used for UV mapping\&. 
+.SS "int MeshTerrain::m_width\fR [protected]\fP"
+
+.PP
+Final mesh width after generation\&. 
+.SS "float MeshTerrain::m_worldSizeX\fR [protected]\fP"
+
+.SS "float MeshTerrain::m_worldSizeZ\fR [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

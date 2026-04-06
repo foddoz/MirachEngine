@@ -1,0 +1,87 @@
+\doxysection{MD2.\+hpp}
+\hypertarget{_m_d2_8hpp_source}{}\label{_m_d2_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/Animation/MD2.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/Animation/MD2.hpp}}
+\mbox{\hyperlink{_m_d2_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{math_8hpp}{../../Math/math.hpp}}"{}}\ \ \ \ \ \textcolor{comment}{//\ Contains\ Vector3f,\ Vector2f}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{graphics_8hpp}{../graphics.hpp}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mesh3d_8hpp}{../Meshes/mesh3d.hpp}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{texture_8hpp}{../Texturing/texture.hpp}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_m_d2_vertex}{MD2Vertex}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_m_d2_vertex_a8cbbc5fabcc2bc616debf49a4ebfa422}{v}}[3];\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_m_d2_vertex_a014fb880a50093433acdfe81f09679cb}{normalIndex}};\ \ \ }
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_m_d2_frame}{MD2Frame}}\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_m_d2_frame_a3525f7d41190b890ce9f79ad7ff8a09f}{scale}}[3];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_m_d2_frame_a1e80759a93a7b3f63f718996d89cae38}{translate}}[3];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_m_d2_frame_aae5c7c7dde49684dca8de947adf89844}{name}}[16];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ std::vector<Vector3f>\ \mbox{\hyperlink{struct_m_d2_frame_abaee7d2b134f4df1a507e4b705d09496}{vertices}};\ \ \ \ }
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_m_d2_tex_coord}{MD2TexCoord}}\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ int16\_t\ \mbox{\hyperlink{struct_m_d2_tex_coord_a15438cc71e4f0076706532d0e0889610}{s}},\ \mbox{\hyperlink{struct_m_d2_tex_coord_ad2435a29e04789d57b052ae51c7fc6a2}{t}};\ \ \ }
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_m_d2_triangle}{MD2Triangle}}\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_m_d2_triangle_a47905ea4aff4af4bd93d04f882b96320}{vertexIndices}}[3];\ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_m_d2_triangle_a6cb48d214ecc25745eca0b3ab8ff8dd9}{texCoordIndices}}[3];\ \ \ }
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_animation_range}{AnimationRange}}\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_animation_range_a4e6c1fff19c4f217fde10e0931716d61}{startFrame}};\ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_animation_range_a7a2baa31c824b36754086a0c9f14deb0}{endFrame}};\ \ \ \ }
+\DoxyCodeLine{00058\ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_mesh_m_d2_a591929b56f8a8f15f013b6d603912c30}{MeshMD2}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_mesh3_d_a8cdefca0bf7171afd91f2a1a88e05a7e}{Mesh3D}}\ \{}
+\DoxyCodeLine{00068\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_mesh_m_d2_a591929b56f8a8f15f013b6d603912c30}{MeshMD2}}();}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{class_mesh_m_d2_a591929b56f8a8f15f013b6d603912c30}{MeshMD2}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_mesh_m_d2_a591929b56f8a8f15f013b6d603912c30}{MeshMD2}}\&\ other);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_mesh_m_d2_ab59a71217fe3fb9bc90cd85109c5d21a}{LoadFromFile}}(\textcolor{keyword}{const}\ std::string\&\ modelFile,\ \textcolor{keyword}{const}\ std::string\&\ textureFile);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_m_d2_a1f00d6728c70d5f12aa2cfc49411abc2}{UploadToGPU}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_m_d2_a4d598fab982e27abbb0bd59354a6c525}{SetAnimation}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_animation_range}{AnimationRange}}\&\ \mbox{\hyperlink{class_mesh_m_d2_a6a17ff4a9a0fe55748f18e263ac41e6b}{GetAnimationRange}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_m_d2_a2787cf4a322c0668d6e6ef2efdbade01}{Interpolate}}(\textcolor{keywordtype}{int}\ frameA,\ \textcolor{keywordtype}{int}\ frameB,\ \textcolor{keywordtype}{float}\ blendAlpha,\ std::vector<Vector3f>\&\ outVertices)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_mesh_m_d2_acdeb511145ace82b97f30c1f295f0a32}{GetVertexCount}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{struct_mesh_renderer}{MeshRenderer}}\ \mbox{\hyperlink{class_mesh_m_d2_ad3324ff6fbee53ae91c7044b6cb1f143}{ToRenderer}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00128\ \ \ \ \ std::vector<MD2Frame>\ \mbox{\hyperlink{class_mesh_m_d2_ac09783c8f5849cd14f7758ab96a9a0d5}{m\_frames}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00129\ \ \ \ \ std::vector<MD2TexCoord>\ \mbox{\hyperlink{class_mesh_m_d2_ada76441297f96edabe64bfbab928abbe}{m\_texCoords}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00130\ \ \ \ \ std::vector<MD2Triangle>\ \mbox{\hyperlink{class_mesh_m_d2_a1bc910ec56272b8410c11fe2dbd235b2}{m\_triangles}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_mesh_m_d2_a1d852ca7f944aa8f5796dfc1af0c386c}{m\_numVertices}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_mesh_m_d2_a693866eb7f82c63ca8912e42cc140f07}{m\_skinWidth}},\ \mbox{\hyperlink{class_mesh_m_d2_afdd3e28c66423dbccb1e91c5e3c8806e}{m\_skinHeight}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_m_d2_a296a12dbea02874b8a4ea7e450f63e3f}{PopulateBuffers}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00145\ \ \ \ \ std::string\ \mbox{\hyperlink{class_mesh_m_d2_acfbeabaf0385778b6d820ea92d61e478}{ExtractPrefix}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ std::vector<Vector3f>\ \mbox{\hyperlink{class_mesh_m_d2_ae848515957e4babaaafdce227699d03a}{m\_interpolatedVertices}};\ \ }
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ std::unordered\_map<std::string,\ AnimationRange>\ \mbox{\hyperlink{class_mesh_m_d2_a9ef136a366bac42d5267d4559169dfa1}{animations}};\ }
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \mbox{\hyperlink{class_texture}{Texture}}*\ \mbox{\hyperlink{class_mesh_m_d2_a23b109baa01fbde67dd94eed6fd120e0}{texture}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_mesh_m_d2_adf50141b1ea6189bc6bc2cb9a82de166}{mUV}}\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00154\ \ \ \ \ std::vector<Vector2f>\ \mbox{\hyperlink{class_mesh_m_d2_a2b73c774d857f32ac83d2ad29cc96a2b}{m\_uvs}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00155\ \};}
+\DoxyCodeLine{00156\ }
+
+\end{DoxyCode}

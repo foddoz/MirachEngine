@@ -1,0 +1,5 @@
+<map id="MeshTerrain::GetHeight" name="MeshTerrain::GetHeight">
+<area shape="rect" id="Node000001" title="Gets the height at the given integer terrain grid coordinates." alt="" coords="5,5,165,32"/>
+<area shape="rect" id="Node000002" href="$math_8hpp.html#a61311699c1533817e1272e777558b611" title="Clamps a float between minVal and maxVal." alt="" coords="213,5,272,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,16,197,16,197,21,165,21"/>
+</map>

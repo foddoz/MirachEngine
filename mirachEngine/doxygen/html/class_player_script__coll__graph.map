@@ -1,0 +1,3 @@
+<map id="PlayerScript" name="PlayerScript">
+<area shape="rect" id="Node000001" title="Manages player&#45;specific input, movement, jumping, and object interaction." alt="" coords="5,5,168,629"/>
+</map>

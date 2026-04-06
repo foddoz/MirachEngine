@@ -1,0 +1,41 @@
+\doxysection{hover\+Enemy\+State.\+hpp}
+\hypertarget{hover_enemy_state_8hpp_source}{}\label{hover_enemy_state_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/FSM/hoverEnemyState.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/FSM/hoverEnemyState.hpp}}
+\mbox{\hyperlink{hover_enemy_state_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_enemy_state_logic_8h}{IEnemyStateLogic.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{enemy_8h}{enemy.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_common_states_8h}{CommonStates.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_m_d2_8hpp}{../Graphics/Animation/MD2.hpp}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classhover_enemy_state}{hoverEnemyState}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_enemy_state_logic}{IEnemyStateLogic}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhover_enemy_state_a7c5d71325dc0ee5ab4e1273a56cf76e2}{onAttackEnter}}(\mbox{\hyperlink{class_enemy}{Enemy}}*\ e)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhover_enemy_state_aa24ca2aca45524238e5bb96f974f2e89}{onAttackExecute}}(\mbox{\hyperlink{class_enemy}{Enemy}}*\ e)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhover_enemy_state_a23a03d6c522b36f4379c3156c9c5dd97}{onAttackExit}}(\mbox{\hyperlink{class_enemy}{Enemy}}*\ e)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhover_enemy_state_a238ab1abb38aef4d2948c550e636bf86}{onFleeEnter}}(\mbox{\hyperlink{class_enemy}{Enemy}}*\ e)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhover_enemy_state_ad7cd98306d5b0bf2de9ca00fe378e967}{onFleeExecute}}(\mbox{\hyperlink{class_enemy}{Enemy}}*\ e)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhover_enemy_state_aaec78737af8ed7b43bd78b9e183dffa9}{onFleeExit}}(\mbox{\hyperlink{class_enemy}{Enemy}}*\ e)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhover_enemy_state_a128109051d2396114bdb93f58f2d6929}{onPatrolEnter}}(\mbox{\hyperlink{class_enemy}{Enemy}}*\ e)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhover_enemy_state_a0ddf4df81e33b8da8da33d9f103f76ea}{onPatrolExecute}}(\mbox{\hyperlink{class_enemy}{Enemy}}*\ e)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhover_enemy_state_ac490fa54b7c8202f23372c189a4a21c4}{onPatrolExit}}(\mbox{\hyperlink{class_enemy}{Enemy}}*\ e)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhover_enemy_state_a87d3f23c1455298032a61365f2a15e32}{onChaseEnter}}(\mbox{\hyperlink{class_enemy}{Enemy}}*\ e)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhover_enemy_state_a3feb46f45992d1ffe44ce6fadff11ce9}{onChaseExecute}}(\mbox{\hyperlink{class_enemy}{Enemy}}*\ e)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhover_enemy_state_a2fad2df844a1afe6c60224c224da0995}{onChaseExit}}(\mbox{\hyperlink{class_enemy}{Enemy}}*\ e)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhover_enemy_state_a7580588244f47158f2b96d6dfef5d47a}{onDeathEnter}}(\mbox{\hyperlink{class_enemy}{Enemy}}*\ e)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhover_enemy_state_a68279b72847ec8b0ac75ab063e4b6ac7}{onDeathExecute}}(\mbox{\hyperlink{class_enemy}{Enemy}}*\ e)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhover_enemy_state_a20a004e051d5ea3c527c5ca96acfbc6c}{onDeathExit}}(\mbox{\hyperlink{class_enemy}{Enemy}}*\ e)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhover_enemy_state_a4008fc559b6b7b399bf8e89f7774d065}{onPainEnter}}(\mbox{\hyperlink{class_enemy}{Enemy}}*\ e)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhover_enemy_state_ae60bee692d8aeb4d696d7d9467b9f4ac}{onPainExecute}}(\mbox{\hyperlink{class_enemy}{Enemy}}*\ e)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classhover_enemy_state_a0f0206709142b83402a6ae2bf3a55fef}{onPainExit}}(\mbox{\hyperlink{class_enemy}{Enemy}}*\ e)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \};}
+
+\end{DoxyCode}

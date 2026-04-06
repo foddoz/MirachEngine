@@ -1,0 +1,92 @@
+\doxysection{Physics\+::Collision\+Callback Class Reference}
+\hypertarget{class_physics_1_1_collision_callback}{}\label{class_physics_1_1_collision_callback}\index{Physics::CollisionCallback@{Physics::CollisionCallback}}
+
+
+Callback interface for collision detection events.  
+
+
+
+
+{\ttfamily \#include $<$physics.\+hpp$>$}
+
+
+
+Inheritance diagram for Physics\+::Collision\+Callback\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_physics_1_1_collision_callback__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Physics\+::Collision\+Callback\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{class_physics_1_1_collision_callback__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_physics_1_1_collision_callback_ac262af0d466968ba35abceb46791f197}{\texorpdfstring{$\sim$}{\string~}\+Collision\+Callback}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_physics_1_1_collision_callback_a897cacd80e87ca3a179e6da4a4be889f}{On\+Contact}} (\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}bodyA, \mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}bodyB)=0
+\begin{DoxyCompactList}\small\item\em Called when two bodies start contact. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_physics_1_1_collision_callback_a433f15f1438f1d49f1a33ca32467fb73}{On\+Contact\+Exit}} (\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}bodyA, \mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}bodyB)
+\begin{DoxyCompactList}\small\item\em Called when two bodies stop contact. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Callback interface for collision detection events. 
+
+\label{doc-constructors}
+\Hypertarget{class_physics_1_1_collision_callback_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_physics_1_1_collision_callback_ac262af0d466968ba35abceb46791f197}\index{Physics::CollisionCallback@{Physics::CollisionCallback}!````~CollisionCallback@{\texorpdfstring{$\sim$}{\string~}CollisionCallback}}
+\index{````~CollisionCallback@{\texorpdfstring{$\sim$}{\string~}CollisionCallback}!Physics::CollisionCallback@{Physics::CollisionCallback}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CollisionCallback()}{\string~CollisionCallback()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_collision_callback_ac262af0d466968ba35abceb46791f197} 
+virtual Physics\+::\+Collision\+Callback\+::\texorpdfstring{$\sim$}{\string~}\+Collision\+Callback (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_physics_1_1_collision_callback_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_physics_1_1_collision_callback_a897cacd80e87ca3a179e6da4a4be889f}\index{Physics::CollisionCallback@{Physics::CollisionCallback}!OnContact@{OnContact}}
+\index{OnContact@{OnContact}!Physics::CollisionCallback@{Physics::CollisionCallback}}
+\doxysubsubsection{\texorpdfstring{OnContact()}{OnContact()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_collision_callback_a897cacd80e87ca3a179e6da4a4be889f} 
+virtual void Physics\+::\+Collision\+Callback\+::\+On\+Contact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{bodyA}{, }\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{bodyB}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Called when two bodies start contact. 
+
+
+
+Implemented in \mbox{\hyperlink{class_damage_contact_callback_a429e4591d8ea4e3ad26d6e626352cc50}{Damage\+Contact\+Callback}}, and \mbox{\hyperlink{class_enemy_attack_callback_a55d6139be817c7851aa8bfc80bdb7f23}{Enemy\+Attack\+Callback}}.
+
+\Hypertarget{class_physics_1_1_collision_callback_a433f15f1438f1d49f1a33ca32467fb73}\index{Physics::CollisionCallback@{Physics::CollisionCallback}!OnContactExit@{OnContactExit}}
+\index{OnContactExit@{OnContactExit}!Physics::CollisionCallback@{Physics::CollisionCallback}}
+\doxysubsubsection{\texorpdfstring{OnContactExit()}{OnContactExit()}}
+{\footnotesize\ttfamily \label{class_physics_1_1_collision_callback_a433f15f1438f1d49f1a33ca32467fb73} 
+virtual void Physics\+::\+Collision\+Callback\+::\+On\+Contact\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{bodyA}{, }\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{bodyB}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Called when two bodies stop contact. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_damage_contact_callback_a31163b0020da8e1b004057ae0123596f}{Damage\+Contact\+Callback}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Physics/\mbox{\hyperlink{physics_8hpp}{physics.\+hpp}}\end{DoxyCompactItemize}

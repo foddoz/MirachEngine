@@ -1,0 +1,45 @@
+\doxysection{Enemy\+System.\+h}
+\hypertarget{_enemy_system_8h_source}{}\label{_enemy_system_8h_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/FSM/EnemySystem.h@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/FSM/EnemySystem.h}}
+\mbox{\hyperlink{_enemy_system_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{enemy_8h}{enemy.h}}"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_enemy_system_a3c709019f3f85f6d403aeb73edb44c26}{EnemySystem}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ std::vector<Entity>\ \mbox{\hyperlink{class_enemy_system_a5043bcb3644148661cbc0e0e86c92da3}{enemies}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ \mbox{\hyperlink{class_enemy_system_aa120863f765fbe93fe7700e9f1cd8b28}{entityManager}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_enemy_system_a3c709019f3f85f6d403aeb73edb44c26}{EnemySystem}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ em)\ :\ \mbox{\hyperlink{class_enemy_system_aa120863f765fbe93fe7700e9f1cd8b28}{entityManager}}(em)}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ allEnemies\ =\ em.\mbox{\hyperlink{class_entity_manager_a1b3d1289d7f8bba2539e828e807a183c}{GetAllComponents}}<\mbox{\hyperlink{class_enemy}{Enemy}}*>();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [entity,\ enemyPtr]\ :\ allEnemies)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (enemyPtr)\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_enemy_system_a5043bcb3644148661cbc0e0e86c92da3}{enemies}}.push\_back(entity);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00036\ \ \ \ \ void\ Register(Enemy*\ e)\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ enemies.push\_back(e);}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ */}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_system_af199ce30b80387110b68299836f760cf}{Update}}(\textcolor{keywordtype}{float}\ dt)\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ e\ :\ \mbox{\hyperlink{class_enemy_system_a5043bcb3644148661cbc0e0e86c92da3}{enemies}})\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_enemy_system_aa120863f765fbe93fe7700e9f1cd8b28}{entityManager}}.HasComponent<\mbox{\hyperlink{class_enemy}{Enemy}}*>(e))\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_enemy}{Enemy}}*\ enemy\ =\ \mbox{\hyperlink{class_enemy_system_aa120863f765fbe93fe7700e9f1cd8b28}{entityManager}}.GetComponent<\mbox{\hyperlink{class_enemy}{Enemy}}*>(e);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (enemy)\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enemy-\/>\mbox{\hyperlink{class_enemy_a9a1ef91d86d0a6994ee63b81f266fc22}{Update}}(dt);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{class_enemy_system_a8844738e2cebfea4d58ec55411b05cf3}{\string~EnemySystem}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00062\ \};}
+
+\end{DoxyCode}

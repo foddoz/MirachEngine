@@ -1,0 +1,7 @@
+<map id="EntityManager::HasComponent" name="EntityManager::HasComponent">
+<area shape="rect" id="Node000001" title="Checks if an entity has a component of type T." alt="" coords="5,31,210,57"/>
+<area shape="rect" id="Node000002" href="$class_entity_manager.html#aa02cffa1d2435ea5d0eadee749c2a965" title="Gets the component manager for a type (const)." alt="" coords="284,5,468,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,32,268,26,269,31,210,37"/>
+<area shape="rect" id="Node000003" href="$class_component_manager.html#a8a8d1ef9e132029f47f452d64f0c3f7a" title="Checks if an entity has a component of this type." alt="" coords="258,56,495,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="210,51,242,54,242,59,210,56"/>
+</map>

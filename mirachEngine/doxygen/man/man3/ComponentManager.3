@@ -1,0 +1,142 @@
+.TH "ComponentManager< ComponentType >" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ComponentManager< ComponentType > \- Generic ECS Component Manager that maps entities to component data\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <component_manager\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBAddComponent\fP (\fBEntity\fP e, const ComponentType &component)"
+.br
+.RI "Adds a component to the specified entity\&. "
+.ti -1c
+.RI "void \fBRemoveComponent\fP (\fBEntity\fP e)"
+.br
+.RI "Removes the component associated with an entity\&. "
+.ti -1c
+.RI "bool \fBHasComponent\fP (\fBEntity\fP e) const"
+.br
+.RI "Checks if an entity has a component of this type\&. "
+.ti -1c
+.RI "ComponentType & \fBGetComponent\fP (\fBEntity\fP e)"
+.br
+.RI "Retrieves a reference to the component of an entity\&. "
+.ti -1c
+.RI "std::unordered_map< \fBEntity\fP, ComponentType > & \fBGetAll\fP ()"
+.br
+.ti -1c
+.RI "const std::unordered_map< \fBEntity\fP, ComponentType > & \fBGetAll\fP () const"
+.br
+.RI "Returns all stored components for iteration or access\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::unordered_map< \fBEntity\fP, ComponentType > \fBm_Components\fP"
+.br
+.RI "Map of \fBEntity\fP -> Component\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename ComponentType>
+.br
+class ComponentManager< ComponentType >"Generic ECS Component Manager that maps entities to component data\&. 
+
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIComponentType\fP The type of component managed (e\&.g\&., \fBTransform\fP, \fBMeshRenderer\fP)\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename ComponentType> void \fBComponentManager\fP< ComponentType >::AddComponent (\fBEntity\fP e, const ComponentType & component)\fR [inline]\fP"
+
+.PP
+Adds a component to the specified entity\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP The entity to assign the component to\&. 
+.br
+\fIcomponent\fP The component data to store\&. 
+.RE
+.PP
+
+.SS "template<typename ComponentType> std::unordered_map< \fBEntity\fP, ComponentType > & \fBComponentManager\fP< ComponentType >::GetAll ()\fR [inline]\fP"
+
+.SS "template<typename ComponentType> const std::unordered_map< \fBEntity\fP, ComponentType > & \fBComponentManager\fP< ComponentType >::GetAll () const\fR [inline]\fP"
+
+.PP
+Returns all stored components for iteration or access\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Const reference to the internal unordered map\&. 
+.RE
+.PP
+
+.SS "template<typename ComponentType> ComponentType & \fBComponentManager\fP< ComponentType >::GetComponent (\fBEntity\fP e)\fR [inline]\fP"
+
+.PP
+Retrieves a reference to the component of an entity\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP The entity whose component to retrieve\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Reference to the component\&. 
+.RE
+.PP
+
+.SS "template<typename ComponentType> bool \fBComponentManager\fP< ComponentType >::HasComponent (\fBEntity\fP e) const\fR [inline]\fP"
+
+.PP
+Checks if an entity has a component of this type\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP The entity to check\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the component exists, false otherwise\&. 
+.RE
+.PP
+
+.SS "template<typename ComponentType> void \fBComponentManager\fP< ComponentType >::RemoveComponent (\fBEntity\fP e)\fR [inline]\fP"
+
+.PP
+Removes the component associated with an entity\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP The entity whose component should be removed\&. 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "template<typename ComponentType> std::unordered_map<\fBEntity\fP, ComponentType> \fBComponentManager\fP< ComponentType >::m_Components\fR [private]\fP"
+
+.PP
+Map of \fBEntity\fP -> Component\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

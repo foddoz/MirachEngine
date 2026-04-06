@@ -1,0 +1,236 @@
+.TH "StateMachine< EntityType >" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+StateMachine< EntityType > \- A generic finite state machine (FSM) class template\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <StateMachine\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStateMachine\fP (EntityType *\fBowner\fP)"
+.br
+.RI "Constructor\&. "
+.ti -1c
+.RI "void \fBUpdate\fP () const"
+.br
+.RI "Calls the Execute() function of both global and current states\&. "
+.ti -1c
+.RI "void \fBChangeState\fP (\fBState\fP< EntityType > *newState)"
+.br
+.RI "Changes the current state to a new one\&. "
+.ti -1c
+.RI "void \fBRevertToPreviousState\fP ()"
+.br
+.RI "Reverts the state machine to the previous state\&. "
+.ti -1c
+.RI "void \fBsetCurrentState\fP (\fBState\fP< EntityType > *s)"
+.br
+.RI "Sets the current state (without triggering Enter())\&. "
+.ti -1c
+.RI "void \fBsetGlobalState\fP (\fBState\fP< EntityType > *s)"
+.br
+.RI "Sets the global state\&. "
+.ti -1c
+.RI "void \fBsetPreviousState\fP (\fBState\fP< EntityType > *s)"
+.br
+.RI "Sets the previous state manually\&. "
+.ti -1c
+.RI "\fBState\fP< EntityType > * \fBgetCurrentState\fP () const"
+.br
+.RI "Gets the current state\&. "
+.ti -1c
+.RI "\fBState\fP< EntityType > * \fBgetPreviousState\fP () const"
+.br
+.RI "Gets the previous state\&. "
+.ti -1c
+.RI "\fBState\fP< EntityType > * \fBgetGlobalState\fP () const"
+.br
+.RI "Gets the global state\&. "
+.ti -1c
+.RI "bool \fBisInState\fP (const \fBState\fP< EntityType > &st) const"
+.br
+.RI "Checks if the current state matches a given state type\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "EntityType * \fBowner\fP"
+.br
+.RI "Pointer to the entity that owns this state machine\&. "
+.ti -1c
+.RI "\fBState\fP< EntityType > * \fBcurrentState\fP = nullptr"
+.br
+.RI "Pointer to the current state\&. "
+.ti -1c
+.RI "\fBState\fP< EntityType > * \fBpreviousState\fP = nullptr"
+.br
+.RI "Pointer to the previous state\&. "
+.ti -1c
+.RI "\fBState\fP< EntityType > * \fBglobalState\fP = nullptr"
+.br
+.RI "Pointer to the global state that executes every update\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class EntityType>
+.br
+class StateMachine< EntityType >"A generic finite state machine (FSM) class template\&. 
+
+This class manages state transitions and execution logic for an owner entity\&. It supports current, previous, and global states\&. Global states execute every update, while current states define the main behavior\&.
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIEntityType\fP The type of the entity that owns this state machine\&. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class EntityType> \fBStateMachine\fP< EntityType >\fB::StateMachine\fP (EntityType * owner)\fR [inline]\fP"
+
+.PP
+Constructor\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIowner\fP Pointer to the owner entity\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class EntityType> void \fBStateMachine\fP< EntityType >::ChangeState (\fBState\fP< EntityType > * newState)\fR [inline]\fP"
+
+.PP
+Changes the current state to a new one\&. Calls Exit() on the old state and Enter() on the new one\&. Also stores the previous state for potential reversion\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fInewState\fP Pointer to the new state to transition into\&. 
+.RE
+.PP
+
+.SS "template<class EntityType> \fBState\fP< EntityType > * \fBStateMachine\fP< EntityType >::getCurrentState () const\fR [inline]\fP"
+
+.PP
+Gets the current state\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the current state\&. 
+.RE
+.PP
+
+.SS "template<class EntityType> \fBState\fP< EntityType > * \fBStateMachine\fP< EntityType >::getGlobalState () const\fR [inline]\fP"
+
+.PP
+Gets the global state\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the global state\&. 
+.RE
+.PP
+
+.SS "template<class EntityType> \fBState\fP< EntityType > * \fBStateMachine\fP< EntityType >::getPreviousState () const\fR [inline]\fP"
+
+.PP
+Gets the previous state\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the previous state\&. 
+.RE
+.PP
+
+.SS "template<class EntityType> bool \fBStateMachine\fP< EntityType >::isInState (const \fBState\fP< EntityType > & st) const\fR [inline]\fP"
+
+.PP
+Checks if the current state matches a given state type\&. Uses RTTI (typeid) to compare state types\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIst\fP Reference to the state to compare with\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if the current state's type matches, false otherwise\&. 
+.RE
+.PP
+
+.SS "template<class EntityType> void \fBStateMachine\fP< EntityType >::RevertToPreviousState ()\fR [inline]\fP"
+
+.PP
+Reverts the state machine to the previous state\&. This calls \fBChangeState()\fP with the previous state pointer\&. 
+.SS "template<class EntityType> void \fBStateMachine\fP< EntityType >::setCurrentState (\fBState\fP< EntityType > * s)\fR [inline]\fP"
+
+.PP
+Sets the current state (without triggering Enter())\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIs\fP Pointer to the state to set as current\&. 
+.RE
+.PP
+
+.SS "template<class EntityType> void \fBStateMachine\fP< EntityType >::setGlobalState (\fBState\fP< EntityType > * s)\fR [inline]\fP"
+
+.PP
+Sets the global state\&. Global states execute during every call to \fBUpdate()\fP\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIs\fP Pointer to the state to set as global\&. 
+.RE
+.PP
+
+.SS "template<class EntityType> void \fBStateMachine\fP< EntityType >::setPreviousState (\fBState\fP< EntityType > * s)\fR [inline]\fP"
+
+.PP
+Sets the previous state manually\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIs\fP Pointer to the state to set as previous\&. 
+.RE
+.PP
+
+.SS "template<class EntityType> void \fBStateMachine\fP< EntityType >::Update () const\fR [inline]\fP"
+
+.PP
+Calls the Execute() function of both global and current states\&. This should be called once per frame to update the behavior of the entity\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "template<class EntityType> \fBState\fP<EntityType>* \fBStateMachine\fP< EntityType >::currentState = nullptr\fR [private]\fP"
+
+.PP
+Pointer to the current state\&. 
+.SS "template<class EntityType> \fBState\fP<EntityType>* \fBStateMachine\fP< EntityType >::globalState = nullptr\fR [private]\fP"
+
+.PP
+Pointer to the global state that executes every update\&. 
+.SS "template<class EntityType> EntityType* \fBStateMachine\fP< EntityType >::owner\fR [private]\fP"
+
+.PP
+Pointer to the entity that owns this state machine\&. 
+.SS "template<class EntityType> \fBState\fP<EntityType>* \fBStateMachine\fP< EntityType >::previousState = nullptr\fR [private]\fP"
+
+.PP
+Pointer to the previous state\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

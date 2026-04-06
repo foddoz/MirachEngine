@@ -1,0 +1,9 @@
+<map id="EntityManager::AddComponent" name="EntityManager::AddComponent">
+<area shape="rect" id="Node000001" title="Adds a component of type T to the given entity." alt="" coords="259,56,462,83"/>
+<area shape="rect" id="Node000002" href="$classenemy_state.html#ac9f5fadd862ee625c68a4220c031974b" title="Called when exiting the Death state. Adds Dead component and resets timer." alt="" coords="22,5,194,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="275,55,177,35,179,30,276,50"/>
+<area shape="rect" id="Node000003" href="$classhover_enemy_state.html#a20a004e051d5ea3c527c5ca96acfbc6c" title=" " alt="" coords="5,56,211,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="243,72,211,72,211,67,243,67"/>
+<area shape="rect" id="Node000004" href="$class_terrain_manager.html#a019ebedd94cb1fbe0a7b412478b1d41c" title="Registers all chunks as ECS entities with rendering and physics components." alt="" coords="24,107,192,149"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="286,89,193,111,192,106,284,84"/>
+</map>

@@ -1,0 +1,45 @@
+<map id="PlayerScript::LaunchObject" name="PlayerScript::LaunchObject">
+<area shape="rect" id="Node000001" title="Attempts to launch a held object forward with force." alt="" coords="5,291,186,317"/>
+<area shape="rect" id="Node000002" href="$class_player_script.html#abd58c2f0927e732e256307c2f868a17c" title="Drops the currently held object." alt="" coords="262,84,428,111"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,289,150,214,187,170,232,131,265,114,267,119,235,136,191,174,154,218,106,292"/>
+<area shape="rect" id="Node000003" href="$class_entity_manager.html#a00080c3855e9aab3796bb94f6b48ac9b" title="Retrieves a reference to the component of type T for an entity." alt="" coords="506,139,708,165"/>
+<area shape="poly" id="edge10_Node000001_Node000003" title=" " alt="" coords="105,288,154,231,191,199,233,175,297,154,364,142,430,137,491,138,491,143,430,143,365,147,298,159,235,180,194,204,158,235,109,292"/>
+<area shape="rect" id="Node000008" href="$class_entity_manager.html#a1b3d1289d7f8bba2539e828e807a183c" title="Returns a reference to the map of all components of type T." alt="" coords="234,291,457,317"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="186,301,218,301,218,307,186,307"/>
+<area shape="rect" id="Node000011" href="$class_camera.html#a8b6bb70c82fe92444295d4f3fcb07f22" title="Retrieves the camera&#39;s forward (front) direction vector." alt="" coords="264,240,427,267"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="164,287,261,268,262,273,166,293"/>
+<area shape="rect" id="Node000012" href="$class_player_script.html#ab267a7b5da4a38194b01e3f41d775afd" title="Gets a valid rigid body pointer from an entity." alt="" coords="241,189,450,216"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="116,288,168,257,233,226,255,218,256,223,235,230,170,261,119,293"/>
+<area shape="rect" id="Node000015" href="$class_physics_system.html#adc1b56a65144927424e6353ced3c7003" title="Gets the underlying physics world." alt="" coords="520,357,695,384"/>
+<area shape="poly" id="edge17_Node000001_Node000015" title=" " alt="" coords="167,315,234,327,504,359,504,364,233,332,167,321"/>
+<area shape="rect" id="Node000016" href="$class_player_script.html#a6340ea8b57a324cdf80747afbadffbef" title="Applies an internal impulse to a specific object." alt="" coords="255,392,436,435"/>
+<area shape="poly" id="edge18_Node000001_Node000016" title=" " alt="" coords="123,316,235,371,266,384,264,388,233,376,121,320"/>
+<area shape="rect" id="Node000019" href="$math_8hpp.html#a11c0426b3a7e98489b250e45d0240c5f" title="Normalizes a 3D vector." alt="" coords="305,459,386,485"/>
+<area shape="poly" id="edge22_Node000001_Node000019" title=" " alt="" coords="108,316,157,379,193,414,235,444,262,456,290,463,289,469,260,461,232,449,190,419,153,382,104,320"/>
+<area shape="rect" id="Node000020" href="$class_physics_1_1_world.html#a269fb925662338876c04276b0fbc9566" title="Performs a raycast and triggers callbacks on hit." alt="" coords="262,509,428,536"/>
+<area shape="poly" id="edge23_Node000001_Node000020" title=" " alt="" coords="105,317,122,353,150,402,188,453,210,476,235,495,249,503,246,507,232,500,207,480,184,456,145,405,117,356,100,319"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="413,109,526,132,525,138,412,114"/>
+<area shape="rect" id="Node000006" href="$class_physics_1_1_rigid_body.html#abf8f5f785bd470586c7398b3d759d04d" title=" " alt="" coords="534,5,681,48"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="397,81,518,48,519,53,399,86"/>
+<area shape="rect" id="Node000007" href="$class_physics_1_1_collider.html#abf9488feabedf4d5d7cee829f9b5967a" title="Sets the bitmask controlling what this collider can collide with." alt="" coords="543,72,671,115"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="429,93,527,92,527,97,429,99"/>
+<area shape="rect" id="Node000004" href="$class_component_manager.html#a81536e74843307f9b9e27993cca3e72b" title="Retrieves a reference to the component of an entity." alt="" coords="759,113,993,140"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="708,140,743,136,744,142,709,145"/>
+<area shape="rect" id="Node000005" href="$class_entity_manager.html#aa02cffa1d2435ea5d0eadee749c2a965" title="Gets the component manager for a type (const)." alt="" coords="784,164,968,191"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="709,159,769,165,768,170,708,164"/>
+<area shape="rect" id="Node000009" href="$class_component_manager.html#a41507f22f5d9cf4158ead40fdc4b25d0" title=" " alt="" coords="516,307,698,333"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="457,308,500,311,500,316,457,313"/>
+<area shape="rect" id="Node000010" href="$class_entity_manager.html#a9792efcb1c6904999ab34b3a65a7c69d" title="Returns the manager for the given component type, creating it if needed." alt="" coords="514,240,701,283"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="431,287,498,276,499,282,432,293"/>
+<area shape="poly" id="edge13_Node000012_Node000003" title=" " alt="" coords="418,186,519,166,520,171,419,191"/>
+<area shape="rect" id="Node000013" href="$class_entity_manager.html#af086011ae902ac5704362571a8217975" title="Checks if an entity has a component of type T." alt="" coords="505,189,709,216"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="451,200,489,200,489,205,451,205"/>
+<area shape="poly" id="edge15_Node000013_Node000005" title=" " alt="" coords="710,190,768,185,769,190,710,196"/>
+<area shape="rect" id="Node000014" href="$class_component_manager.html#a8a8d1ef9e132029f47f452d64f0c3f7a" title="Checks if an entity has a component of this type." alt="" coords="757,215,995,241"/>
+<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="710,210,742,213,742,218,710,215"/>
+<area shape="poly" id="edge20_Node000016_Node000015" title=" " alt="" coords="435,396,505,384,506,390,436,401"/>
+<area shape="rect" id="Node000017" href="$class_physics_1_1_rigid_body.html#a214081eeac9a81be404acea1601d40f0" title=" " alt="" coords="534,475,681,517"/>
+<area shape="poly" id="edge19_Node000016_Node000017" title=" " alt="" coords="421,433,458,444,506,460,526,467,525,472,504,465,456,449,420,438"/>
+<area shape="rect" id="Node000018" href="$class_physics_1_1_world.html#adabe37ea49694f6e307d40b90c5e7211" title="Registers a global collision callback for contact events." alt="" coords="524,408,690,451"/>
+<area shape="poly" id="edge21_Node000016_Node000018" title=" " alt="" coords="436,416,509,421,508,426,436,422"/>
+</map>

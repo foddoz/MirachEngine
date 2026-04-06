@@ -1,0 +1,72 @@
+.TH "C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/Program/window.hpp" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/Program/window.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <string>\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBWindow\fP"
+.br
+.RI "Provides a platform-agnostic facade for window and OpenGL context management\&. "
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "using \fBGraphicsContextHandle\fP = void*"
+.br
+.RI "Alias for a platform-specific graphics context handle (e\&.g\&., OpenGL context)\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWindowHandle\fP * \fBWindow::Create\fP (const std::string &title, int width, int height)"
+.br
+.RI "Creates a new window with the specified title and dimensions\&. "
+.ti -1c
+.RI "void \fBWindow::Destroy\fP (\fBWindowHandle\fP *window)"
+.br
+.RI "Destroys a previously created window\&. "
+.ti -1c
+.RI "\fBGraphicsContextHandle\fP \fBWindow::CreateGraphicsContext\fP (\fBWindowHandle\fP *window)"
+.br
+.RI "Creates a graphics context (e\&.g\&., OpenGL) for the given window\&. "
+.ti -1c
+.RI "void \fBWindow::MakeContextCurrent\fP (\fBWindowHandle\fP *window, \fBGraphicsContextHandle\fP context)"
+.br
+.RI "Makes the specified graphics context current for the given window\&. "
+.ti -1c
+.RI "void \fBWindow::SwapBuffers\fP (\fBWindowHandle\fP *window)"
+.br
+.RI "Swaps the front and back buffers of the given window\&. "
+.ti -1c
+.RI "void \fBWindow::LockMouse\fP (\fBWindowHandle\fP *window, bool lock, int width, int height)"
+.br
+.RI "Locks or unlocks the mouse cursor to the window center\&. "
+.ti -1c
+.RI "void * \fBWindow::GetProcAddress\fP (const char *name)"
+.br
+.RI "Retrieves the OpenGL function pointer for the given function name\&. "
+.ti -1c
+.RI "bool \fBWindow::InitGraphics\fP ()"
+.br
+.RI "Initializes platform-specific graphics loaders (e\&.g\&., GLAD)\&. "
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "using \fBGraphicsContextHandle\fP = void*"
+
+.PP
+Alias for a platform-specific graphics context handle (e\&.g\&., OpenGL context)\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

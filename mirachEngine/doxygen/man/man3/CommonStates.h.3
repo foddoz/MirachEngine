@@ -1,0 +1,111 @@
+.TH "C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/FSM/CommonStates.h" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/Users/user/Documents/GitHub/ICT397-Project/mirachEngine/src/FSM/CommonStates.h
+.SH SYNOPSIS
+.br
+.PP
+\fR#include 'state\&.h'\fP
+.br
+\fR#include 'singleton\&.h'\fP
+.br
+\fR#include <iostream>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBAttack< Entity >\fP"
+.br
+.RI "Represents the \fBAttack\fP state for a finite state machine\&. Calls onAttackEnter, onAttackExecute, and onAttackExit on the entity\&. "
+.ti -1c
+.RI "class \fBFlee< Entity >\fP"
+.br
+.RI "Represents the \fBFlee\fP state\&. Calls onFleeEnter, onFleeExecute, and onFleeExit on the entity\&. "
+.ti -1c
+.RI "class \fBPatrol< Entity >\fP"
+.br
+.RI "Represents the \fBPatrol\fP state\&. Calls onPatrolEnter, onPatrolExecute, and onPatrolExit on the entity\&. "
+.ti -1c
+.RI "class \fBChase< Entity >\fP"
+.br
+.RI "Represents the \fBChase\fP state\&. Calls onChaseEnter, onChaseExecute, and onChaseExit on the entity\&. "
+.ti -1c
+.RI "class \fBDeath< Entity >\fP"
+.br
+.RI "Represents the \fBDeath\fP state\&. "
+.ti -1c
+.RI "class \fBPain< Entity >\fP"
+.br
+.RI "Represents the \fBPain\fP (e\&.g\&., hit reaction) state\&. Calls onPainEnter, onPainExecute, and onPainExit on the entity\&. "
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCOMMON_STATES_H\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "template<typename \fBEntity\fP> using \fBAttackState\fP = \fBSingleton\fP<\fBAttack\fP<\fBEntity\fP>>"
+.br
+.RI "\fBSingleton\fP instance alias for \fBAttack\fP state\&. "
+.ti -1c
+.RI "template<typename \fBEntity\fP> using \fBFleeState\fP = \fBSingleton\fP<\fBFlee\fP<\fBEntity\fP>>"
+.br
+.RI "\fBSingleton\fP instance alias for \fBFlee\fP state\&. "
+.ti -1c
+.RI "template<typename \fBEntity\fP> using \fBPatrolState\fP = \fBSingleton\fP<\fBPatrol\fP<\fBEntity\fP>>"
+.br
+.RI "\fBSingleton\fP instance alias for \fBPatrol\fP state\&. "
+.ti -1c
+.RI "template<typename \fBEntity\fP> using \fBChaseState\fP = \fBSingleton\fP<\fBChase\fP<\fBEntity\fP>>"
+.br
+.RI "\fBSingleton\fP instance alias for \fBChase\fP state\&. "
+.ti -1c
+.RI "template<typename \fBEntity\fP> using \fBDeathState\fP = \fBSingleton\fP<\fBDeath\fP<\fBEntity\fP>>"
+.br
+.RI "\fBSingleton\fP instance alias for \fBDeath\fP state\&. "
+.ti -1c
+.RI "template<typename \fBEntity\fP> using \fBPainState\fP = \fBSingleton\fP<\fBPain\fP<\fBEntity\fP>>"
+.br
+.RI "\fBSingleton\fP instance alias for \fBPain\fP state\&. "
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define COMMON_STATES_H"
+
+.SH "Typedef Documentation"
+.PP 
+.SS "template<typename \fBEntity\fP> using \fBAttackState\fP = \fBSingleton\fP<\fBAttack\fP<\fBEntity\fP>>"
+
+.PP
+\fBSingleton\fP instance alias for \fBAttack\fP state\&. 
+.SS "template<typename \fBEntity\fP> using \fBChaseState\fP = \fBSingleton\fP<\fBChase\fP<\fBEntity\fP>>"
+
+.PP
+\fBSingleton\fP instance alias for \fBChase\fP state\&. 
+.SS "template<typename \fBEntity\fP> using \fBDeathState\fP = \fBSingleton\fP<\fBDeath\fP<\fBEntity\fP>>"
+
+.PP
+\fBSingleton\fP instance alias for \fBDeath\fP state\&. 
+.SS "template<typename \fBEntity\fP> using \fBFleeState\fP = \fBSingleton\fP<\fBFlee\fP<\fBEntity\fP>>"
+
+.PP
+\fBSingleton\fP instance alias for \fBFlee\fP state\&. 
+.SS "template<typename \fBEntity\fP> using \fBPainState\fP = \fBSingleton\fP<\fBPain\fP<\fBEntity\fP>>"
+
+.PP
+\fBSingleton\fP instance alias for \fBPain\fP state\&. 
+.SS "template<typename \fBEntity\fP> using \fBPatrolState\fP = \fBSingleton\fP<\fBPatrol\fP<\fBEntity\fP>>"
+
+.PP
+\fBSingleton\fP instance alias for \fBPatrol\fP state\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

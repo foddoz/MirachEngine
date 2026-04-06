@@ -1,0 +1,13 @@
+<map id="Camera::Look" name="Camera::Look">
+<area shape="rect" id="Node000001" title="Applies mouse input to rotate the camera using yaw and pitch." alt="" coords="5,31,109,57"/>
+<area shape="rect" id="Node000002" href="$math_8hpp.html#a61311699c1533817e1272e777558b611" title="Clamps a float between minVal and maxVal." alt="" coords="208,5,267,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,34,192,22,193,28,110,39"/>
+<area shape="rect" id="Node000003" href="$class_camera.html#ae94de322124a68e32113235eeec78008" title="Updates the camera&#39;s direction vectors (front, right, up) based on its current yaw and pitch." alt="" coords="157,56,318,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="110,49,142,53,141,58,109,54"/>
+<area shape="rect" id="Node000004" href="$math_8hpp.html#a670c0a5216c9f579310c5202fba83257" title="Cross product of two 3D vectors." alt="" coords="380,5,436,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="284,53,364,29,365,34,286,58"/>
+<area shape="rect" id="Node000005" href="$math_8hpp.html#a11c0426b3a7e98489b250e45d0240c5f" title="Normalizes a 3D vector." alt="" coords="368,56,448,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="319,67,352,67,352,72,319,72"/>
+<area shape="rect" id="Node000006" href="$math_8hpp.html#a387a686169e8f84d5abcedaefd2c8d5d" title="Converts degrees to radians." alt="" coords="366,107,449,133"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="286,81,352,101,350,106,284,86"/>
+</map>

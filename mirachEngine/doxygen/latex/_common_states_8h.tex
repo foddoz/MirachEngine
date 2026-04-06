@@ -1,0 +1,138 @@
+\doxysection{C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+FSM/\+Common\+States.h File Reference}
+\hypertarget{_common_states_8h}{}\label{_common_states_8h}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/FSM/CommonStates.h@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/FSM/CommonStates.h}}
+{\ttfamily \#include "{}state.\+h"{}}\newline
+{\ttfamily \#include "{}singleton.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for Common\+States.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{_common_states_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_common_states_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_attack}{Attack$<$ Entity $>$}}
+\begin{DoxyCompactList}\small\item\em Represents the \doxylink{class_attack}{Attack} state for a finite state machine. Calls on\+Attack\+Enter, on\+Attack\+Execute, and on\+Attack\+Exit on the entity. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_flee}{Flee$<$ Entity $>$}}
+\begin{DoxyCompactList}\small\item\em Represents the \doxylink{class_flee}{Flee} state. Calls on\+Flee\+Enter, on\+Flee\+Execute, and on\+Flee\+Exit on the entity. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_patrol}{Patrol$<$ Entity $>$}}
+\begin{DoxyCompactList}\small\item\em Represents the \doxylink{class_patrol}{Patrol} state. Calls on\+Patrol\+Enter, on\+Patrol\+Execute, and on\+Patrol\+Exit on the entity. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_chase}{Chase$<$ Entity $>$}}
+\begin{DoxyCompactList}\small\item\em Represents the \doxylink{class_chase}{Chase} state. Calls on\+Chase\+Enter, on\+Chase\+Execute, and on\+Chase\+Exit on the entity. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_death}{Death$<$ Entity $>$}}
+\begin{DoxyCompactList}\small\item\em Represents the \doxylink{class_death}{Death} state. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_pain}{Pain$<$ Entity $>$}}
+\begin{DoxyCompactList}\small\item\em Represents the \doxylink{class_pain}{Pain} (e.\+g., hit reaction) state. Calls on\+Pain\+Enter, on\+Pain\+Execute, and on\+Pain\+Exit on the entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_common_states_8h_a7baac06c00ab66ddcad0f741093120b1}{COMMON\+\_\+\+STATES\+\_\+H}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ }\\using \mbox{\hyperlink{_common_states_8h_a7ce27577ddddedd9224c4ede32c95fc1}{Attack\+State}} = \mbox{\hyperlink{class_singleton}{Singleton}}$<$\mbox{\hyperlink{class_attack}{Attack}}$<$\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$$>$
+\begin{DoxyCompactList}\small\item\em \doxylink{class_singleton}{Singleton} instance alias for \doxylink{class_attack}{Attack} state. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ }\\using \mbox{\hyperlink{_common_states_8h_aea8bc8962c053b3351b6ee3f9a40cb55}{Flee\+State}} = \mbox{\hyperlink{class_singleton}{Singleton}}$<$\mbox{\hyperlink{class_flee}{Flee}}$<$\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$$>$
+\begin{DoxyCompactList}\small\item\em \doxylink{class_singleton}{Singleton} instance alias for \doxylink{class_flee}{Flee} state. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ }\\using \mbox{\hyperlink{_common_states_8h_adb4e43b9d669a909be07c54ecc0d2df6}{Patrol\+State}} = \mbox{\hyperlink{class_singleton}{Singleton}}$<$\mbox{\hyperlink{class_patrol}{Patrol}}$<$\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$$>$
+\begin{DoxyCompactList}\small\item\em \doxylink{class_singleton}{Singleton} instance alias for \doxylink{class_patrol}{Patrol} state. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ }\\using \mbox{\hyperlink{_common_states_8h_a9f6f87ae5e4029b841bff2c742b93368}{Chase\+State}} = \mbox{\hyperlink{class_singleton}{Singleton}}$<$\mbox{\hyperlink{class_chase}{Chase}}$<$\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$$>$
+\begin{DoxyCompactList}\small\item\em \doxylink{class_singleton}{Singleton} instance alias for \doxylink{class_chase}{Chase} state. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ }\\using \mbox{\hyperlink{_common_states_8h_a4d5b218cb0159b4c87558c27e5e210e2}{Death\+State}} = \mbox{\hyperlink{class_singleton}{Singleton}}$<$\mbox{\hyperlink{class_death}{Death}}$<$\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$$>$
+\begin{DoxyCompactList}\small\item\em \doxylink{class_singleton}{Singleton} instance alias for \doxylink{class_death}{Death} state. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ }\\using \mbox{\hyperlink{_common_states_8h_ae0c783a96478fe4fdeead4d7294aef9e}{Pain\+State}} = \mbox{\hyperlink{class_singleton}{Singleton}}$<$\mbox{\hyperlink{class_pain}{Pain}}$<$\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$$>$
+\begin{DoxyCompactList}\small\item\em \doxylink{class_singleton}{Singleton} instance alias for \doxylink{class_pain}{Pain} state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{_common_states_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_common_states_8h_a7baac06c00ab66ddcad0f741093120b1}\index{CommonStates.h@{CommonStates.h}!COMMON\_STATES\_H@{COMMON\_STATES\_H}}
+\index{COMMON\_STATES\_H@{COMMON\_STATES\_H}!CommonStates.h@{CommonStates.h}}
+\doxysubsubsection{\texorpdfstring{COMMON\_STATES\_H}{COMMON\_STATES\_H}}
+{\footnotesize\ttfamily \label{_common_states_8h_a7baac06c00ab66ddcad0f741093120b1} 
+\#define COMMON\+\_\+\+STATES\+\_\+H}
+
+
+
+\label{doc-typedef-members}
+\Hypertarget{_common_states_8h_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{_common_states_8h_a7ce27577ddddedd9224c4ede32c95fc1}\index{CommonStates.h@{CommonStates.h}!AttackState@{AttackState}}
+\index{AttackState@{AttackState}!CommonStates.h@{CommonStates.h}}
+\doxysubsubsection{\texorpdfstring{AttackState}{AttackState}}
+{\footnotesize\ttfamily \label{_common_states_8h_a7ce27577ddddedd9224c4ede32c95fc1} 
+template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ \\
+using \mbox{\hyperlink{_common_states_8h_a7ce27577ddddedd9224c4ede32c95fc1}{Attack\+State}} = \mbox{\hyperlink{class_singleton}{Singleton}}$<$\mbox{\hyperlink{class_attack}{Attack}}$<$\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$$>$}
+
+
+
+\doxylink{class_singleton}{Singleton} instance alias for \doxylink{class_attack}{Attack} state. 
+
+\Hypertarget{_common_states_8h_a9f6f87ae5e4029b841bff2c742b93368}\index{CommonStates.h@{CommonStates.h}!ChaseState@{ChaseState}}
+\index{ChaseState@{ChaseState}!CommonStates.h@{CommonStates.h}}
+\doxysubsubsection{\texorpdfstring{ChaseState}{ChaseState}}
+{\footnotesize\ttfamily \label{_common_states_8h_a9f6f87ae5e4029b841bff2c742b93368} 
+template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ \\
+using \mbox{\hyperlink{_common_states_8h_a9f6f87ae5e4029b841bff2c742b93368}{Chase\+State}} = \mbox{\hyperlink{class_singleton}{Singleton}}$<$\mbox{\hyperlink{class_chase}{Chase}}$<$\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$$>$}
+
+
+
+\doxylink{class_singleton}{Singleton} instance alias for \doxylink{class_chase}{Chase} state. 
+
+\Hypertarget{_common_states_8h_a4d5b218cb0159b4c87558c27e5e210e2}\index{CommonStates.h@{CommonStates.h}!DeathState@{DeathState}}
+\index{DeathState@{DeathState}!CommonStates.h@{CommonStates.h}}
+\doxysubsubsection{\texorpdfstring{DeathState}{DeathState}}
+{\footnotesize\ttfamily \label{_common_states_8h_a4d5b218cb0159b4c87558c27e5e210e2} 
+template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ \\
+using \mbox{\hyperlink{_common_states_8h_a4d5b218cb0159b4c87558c27e5e210e2}{Death\+State}} = \mbox{\hyperlink{class_singleton}{Singleton}}$<$\mbox{\hyperlink{class_death}{Death}}$<$\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$$>$}
+
+
+
+\doxylink{class_singleton}{Singleton} instance alias for \doxylink{class_death}{Death} state. 
+
+\Hypertarget{_common_states_8h_aea8bc8962c053b3351b6ee3f9a40cb55}\index{CommonStates.h@{CommonStates.h}!FleeState@{FleeState}}
+\index{FleeState@{FleeState}!CommonStates.h@{CommonStates.h}}
+\doxysubsubsection{\texorpdfstring{FleeState}{FleeState}}
+{\footnotesize\ttfamily \label{_common_states_8h_aea8bc8962c053b3351b6ee3f9a40cb55} 
+template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ \\
+using \mbox{\hyperlink{_common_states_8h_aea8bc8962c053b3351b6ee3f9a40cb55}{Flee\+State}} = \mbox{\hyperlink{class_singleton}{Singleton}}$<$\mbox{\hyperlink{class_flee}{Flee}}$<$\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$$>$}
+
+
+
+\doxylink{class_singleton}{Singleton} instance alias for \doxylink{class_flee}{Flee} state. 
+
+\Hypertarget{_common_states_8h_ae0c783a96478fe4fdeead4d7294aef9e}\index{CommonStates.h@{CommonStates.h}!PainState@{PainState}}
+\index{PainState@{PainState}!CommonStates.h@{CommonStates.h}}
+\doxysubsubsection{\texorpdfstring{PainState}{PainState}}
+{\footnotesize\ttfamily \label{_common_states_8h_ae0c783a96478fe4fdeead4d7294aef9e} 
+template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ \\
+using \mbox{\hyperlink{_common_states_8h_ae0c783a96478fe4fdeead4d7294aef9e}{Pain\+State}} = \mbox{\hyperlink{class_singleton}{Singleton}}$<$\mbox{\hyperlink{class_pain}{Pain}}$<$\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$$>$}
+
+
+
+\doxylink{class_singleton}{Singleton} instance alias for \doxylink{class_pain}{Pain} state. 
+
+\Hypertarget{_common_states_8h_adb4e43b9d669a909be07c54ecc0d2df6}\index{CommonStates.h@{CommonStates.h}!PatrolState@{PatrolState}}
+\index{PatrolState@{PatrolState}!CommonStates.h@{CommonStates.h}}
+\doxysubsubsection{\texorpdfstring{PatrolState}{PatrolState}}
+{\footnotesize\ttfamily \label{_common_states_8h_adb4e43b9d669a909be07c54ecc0d2df6} 
+template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ \\
+using \mbox{\hyperlink{_common_states_8h_adb4e43b9d669a909be07c54ecc0d2df6}{Patrol\+State}} = \mbox{\hyperlink{class_singleton}{Singleton}}$<$\mbox{\hyperlink{class_patrol}{Patrol}}$<$\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$$>$}
+
+
+
+\doxylink{class_singleton}{Singleton} instance alias for \doxylink{class_patrol}{Patrol} state. 
+

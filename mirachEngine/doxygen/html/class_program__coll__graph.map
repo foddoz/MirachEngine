@@ -1,0 +1,5 @@
+<map id="Program" name="Program">
+<area shape="rect" id="Node000001" title="Manages core SDL and OpenGL initialization, shader program creation, window rendering,..." alt="" coords="5,147,174,707"/>
+<area shape="rect" id="Node000002" href="$struct_window_handle.html" title=" " alt="" coords="40,5,139,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,74,92,130,87,130,87,74"/>
+</map>

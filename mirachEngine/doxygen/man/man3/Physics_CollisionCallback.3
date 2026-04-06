@@ -1,0 +1,53 @@
+.TH "Physics::CollisionCallback" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Physics::CollisionCallback \- Callback interface for collision detection events\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <physics\&.hpp>\fP
+.PP
+Inherited by \fBDamageContactCallback\fP, and \fBEnemyAttackCallback\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~CollisionCallback\fP ()=default"
+.br
+.ti -1c
+.RI "virtual void \fBOnContact\fP (\fBRigidBody\fP *bodyA, \fBRigidBody\fP *bodyB)=0"
+.br
+.RI "Called when two bodies start contact\&. "
+.ti -1c
+.RI "virtual void \fBOnContactExit\fP (\fBRigidBody\fP *bodyA, \fBRigidBody\fP *bodyB)"
+.br
+.RI "Called when two bodies stop contact\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Callback interface for collision detection events\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual Physics::CollisionCallback::~CollisionCallback ()\fR [virtual]\fP, \fR [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void Physics::CollisionCallback::OnContact (\fBRigidBody\fP * bodyA, \fBRigidBody\fP * bodyB)\fR [pure virtual]\fP"
+
+.PP
+Called when two bodies start contact\&. 
+.PP
+Implemented in \fBDamageContactCallback\fP, and \fBEnemyAttackCallback\fP\&.
+.SS "virtual void Physics::CollisionCallback::OnContactExit (\fBRigidBody\fP * bodyA, \fBRigidBody\fP * bodyB)\fR [inline]\fP, \fR [virtual]\fP"
+
+.PP
+Called when two bodies stop contact\&. 
+.PP
+Reimplemented in \fBDamageContactCallback\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

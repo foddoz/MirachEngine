@@ -1,0 +1,89 @@
+<map id="TerrainScene::SetupECS" name="TerrainScene::SetupECS">
+<area shape="rect" id="Node000001" title="Creates and registers entities and components in the ECS." alt="" coords="5,215,173,241"/>
+<area shape="rect" id="Node000002" href="$class_terrain_scene.html#a861ee882caf0f23c2a3f15dab4f4ea2a" title="Registers terrain chunks and their colliders with the ECS and physics system." alt="" coords="223,5,416,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,213,141,140,176,96,219,58,226,53,229,58,222,62,180,100,145,143,100,215"/>
+<area shape="rect" id="Node000003" href="$class_terrain_scene.html#a6291d6d85bd763167900c0929c50e152" title="Creates and registers the player character entity." alt="" coords="231,139,408,165"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="122,212,220,175,245,167,247,172,222,180,124,217"/>
+<area shape="rect" id="Node000013" href="$class_terrain_scene.html#aa6538750bf2e1c3dd02481c541b5e0f9" title="Creates and registers the skydome entity in ECS." alt="" coords="221,72,418,115"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="103,212,152,170,219,124,230,119,232,124,222,129,156,174,107,216"/>
+<area shape="rect" id="Node000014" href="$class_terrain_scene.html#ae061572dd4fc80786d66d8e57f666067" title="Spawns crates, potentially breakable or interactable." alt="" coords="227,240,412,267"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="173,235,212,239,211,244,173,240"/>
+<area shape="rect" id="Node000020" href="$class_terrain_scene.html#a92cf2eb19b5a090ec4666367d5a4c898" title="Spawns firefly models, likely with animation or light effects." alt="" coords="222,345,417,372"/>
+<area shape="poly" id="edge23_Node000001_Node000020" title=" " alt="" coords="106,240,155,282,187,306,222,327,246,337,244,342,219,332,184,311,152,287,103,244"/>
+<area shape="rect" id="Node000026" href="$class_terrain_scene.html#a2605641f2858b4c1ad9033e27a39f0c5" title="Spawns robotic enemy NPCs with AI behavior." alt="" coords="226,396,413,423"/>
+<area shape="poly" id="edge35_Node000001_Node000026" title=" " alt="" coords="100,240,145,309,181,348,222,382,232,387,229,392,219,386,177,352,141,312,96,243"/>
+<area shape="rect" id="Node000028" href="$class_terrain_scene.html#a279bc61858303d2909e922df19c82e24" title="Spawns cloth sacks as dynamic physics objects." alt="" coords="228,189,410,216"/>
+<area shape="poly" id="edge46_Node000001_Node000028" title=" " alt="" coords="173,216,212,212,213,217,173,221"/>
+<area shape="rect" id="Node000029" href="$class_terrain_scene.html#ad4ab0bdbe406894b80805499c856c89b" title="Spawns static or decorative tree models in the scene." alt="" coords="230,291,408,317"/>
+<area shape="poly" id="edge52_Node000001_Node000029" title=" " alt="" coords="124,239,222,276,247,284,245,289,220,281,122,244"/>
+<area shape="rect" id="Node000004" href="$class_transform.html#a2bd3205164a8f8f64f1c738ab6cb365f" title="Retrieves the current position." alt="" coords="484,171,640,197"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="408,161,469,169,468,174,408,166"/>
+<area shape="rect" id="Node000005" href="$class_transform.html#a7c287f2ec371a1214df9fa7ad6a9718b" title="Sets the world&#45;space position of the object." alt="" coords="484,120,640,147"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="408,143,469,138,469,143,408,148"/>
+<area shape="rect" id="Node000010" href="$class_camera.html#a8953636ad3b9bfec7cb1d3cf2917d445" title="Sets the perspective projection matrix using a field of view, aspect ratio, and near/far planes." alt="" coords="468,69,657,96"/>
+<area shape="poly" id="edge9_Node000003_Node000010" title=" " alt="" coords="378,136,417,124,465,105,489,98,491,103,467,111,419,129,379,141"/>
+<area shape="rect" id="Node000006" href="$class_transform.html#a766790cd6c7043b6d28fe75d36a7bcc6" title="Recalculates the cached model matrix based on current position, rotation, and scale." alt="" coords="706,339,908,365"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="642,144,660,157,676,178,684,200,685,243,686,285,693,305,708,325,712,328,708,332,704,328,688,307,681,286,680,243,679,201,672,181,656,161,639,148"/>
+<area shape="rect" id="Node000007" href="$math_8hpp.html#a57197be1224ca571c566c73c33081081" title="Applies scale to a matrix." alt="" coords="966,288,1020,315"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="864,335,907,324,950,311,952,317,908,329,865,341"/>
+<area shape="rect" id="Node000008" href="$math_8hpp.html#a1213c92d8be7146176f8be90d8903ece" title="Converts a quaternion to a 4x4 matrix." alt="" coords="961,339,1026,365"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="908,349,945,349,945,355,908,355"/>
+<area shape="rect" id="Node000009" href="$math_8hpp.html#a978278a474c16b86c65813cec08b513a" title="Applies translation to a matrix." alt="" coords="956,389,1031,416"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="860,363,941,386,940,391,858,369"/>
+<area shape="rect" id="Node000011" href="$math_8hpp.html#ab547e31f984090bdf628c013a91555d6" title="Creates a perspective projection matrix." alt="" coords="762,95,852,121"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="658,90,747,99,746,104,657,95"/>
+<area shape="rect" id="Node000012" href="$math_8hpp.html#a387a686169e8f84d5abcedaefd2c8d5d" title="Converts degrees to radians." alt="" coords="765,44,849,71"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="657,70,750,61,750,66,658,75"/>
+<area shape="poly" id="edge13_Node000013_Node000005" title=" " alt="" coords="419,107,469,115,468,121,418,112"/>
+<area shape="poly" id="edge15_Node000014_Node000004" title=" " alt="" coords="378,237,417,225,465,207,489,199,491,205,467,212,419,231,379,242"/>
+<area shape="poly" id="edge18_Node000014_Node000005" title=" " alt="" coords="395,237,416,226,432,210,440,192,448,174,464,157,472,152,475,156,468,161,452,177,444,194,436,213,420,230,398,242"/>
+<area shape="rect" id="Node000015" href="$class_physics_1_1_collider.html#af86781953bc85e24c413e0bd41351250" title="Sets the category bitmask of this collider." alt="" coords="498,221,626,264"/>
+<area shape="poly" id="edge16_Node000014_Node000015" title=" " alt="" coords="412,247,482,243,483,249,412,252"/>
+<area shape="rect" id="Node000016" href="$class_physics_1_1_collider.html#abf9488feabedf4d5d7cee829f9b5967a" title="Sets the bitmask controlling what this collider can collide with." alt="" coords="498,339,626,381"/>
+<area shape="poly" id="edge17_Node000014_Node000016" title=" " alt="" coords="393,265,419,276,435,288,444,301,453,313,467,324,485,334,483,339,465,329,449,316,440,304,431,292,417,281,391,270"/>
+<area shape="rect" id="Node000017" href="$class_transform.html#a80e28cb7ca8818e944c6177ed6ca7bfe" title="Sets the object&#39;s rotation in Euler degrees." alt="" coords="484,288,641,315"/>
+<area shape="poly" id="edge19_Node000014_Node000017" title=" " alt="" coords="391,265,477,282,476,287,390,270"/>
+<area shape="poly" id="edge22_Node000017_Node000006" title=" " alt="" coords="631,313,725,332,724,338,630,318"/>
+<area shape="rect" id="Node000018" href="$math_8hpp.html#a01d6afce125900f6e5b446d5094ea823" title="Converts Euler angles (in degrees) to a quaternion." alt="" coords="718,237,896,264"/>
+<area shape="poly" id="edge20_Node000017_Node000018" title=" " alt="" coords="630,285,724,265,725,270,631,290"/>
+<area shape="rect" id="Node000019" href="$class_transform.html#a0bd1bcdbc6da88be8ad16e6a90aa2c55" title="Wraps a rotation angle to the range [0, 360)." alt="" coords="721,288,893,315"/>
+<area shape="poly" id="edge21_Node000017_Node000019" title=" " alt="" coords="641,299,705,299,705,304,641,304"/>
+<area shape="poly" id="edge26_Node000020_Node000004" title=" " alt="" coords="392,342,416,327,428,313,435,299,439,269,444,238,451,222,464,207,469,204,472,208,468,211,456,225,449,239,444,269,440,300,433,316,420,331,395,347"/>
+<area shape="poly" id="edge30_Node000020_Node000005" title=" " alt="" coords="394,343,416,327,431,307,438,286,439,244,440,200,448,178,464,157,469,152,473,156,468,160,452,181,445,201,444,244,444,287,436,309,420,331,397,347"/>
+<area shape="poly" id="edge28_Node000020_Node000015" title=" " alt="" coords="384,342,417,327,431,315,440,301,449,288,464,274,482,264,485,268,468,278,453,291,444,304,435,318,419,332,386,347"/>
+<area shape="poly" id="edge29_Node000020_Node000016" title=" " alt="" coords="418,357,483,357,483,362,418,362"/>
+<area shape="poly" id="edge31_Node000020_Node000017" title=" " alt="" coords="378,342,487,316,488,321,379,347"/>
+<area shape="rect" id="Node000021" href="$namespace_graphics.html#ab51204431218d844bc65a6e3a6dbf902" title=" " alt="" coords="466,640,658,667"/>
+<area shape="poly" id="edge24_Node000020_Node000021" title=" " alt="" coords="405,370,420,382,441,413,449,444,449,475,445,506,440,537,440,567,448,597,468,626,470,629,467,632,464,630,443,599,435,567,435,536,439,506,444,475,444,445,436,415,416,386,402,375"/>
+<area shape="rect" id="Node000022" href="$class_physics_1_1_rigid_body.html#a528678560a077f88e2d0822322be794f" title=" " alt="" coords="494,456,630,499"/>
+<area shape="poly" id="edge25_Node000020_Node000022" title=" " alt="" coords="396,370,420,382,436,397,445,412,453,427,468,442,482,450,479,455,464,446,449,431,440,415,432,400,416,386,394,375"/>
+<area shape="rect" id="Node000023" href="$class_physics_1_1_rigid_body.html#abf8f5f785bd470586c7398b3d759d04d" title=" " alt="" coords="488,523,636,565"/>
+<area shape="poly" id="edge27_Node000020_Node000023" title=" " alt="" coords="402,370,420,382,433,398,441,414,445,446,449,478,456,493,468,509,477,516,473,520,464,513,451,496,444,479,440,447,436,416,429,401,416,386,400,375"/>
+<area shape="rect" id="Node000024" href="$class_transform.html#a3f4051624bff3c6d6c5be9fd9433fe2f" title="Sets the object&#39;s local scale." alt="" coords="492,405,633,432"/>
+<area shape="poly" id="edge32_Node000020_Node000024" title=" " alt="" coords="377,370,491,398,490,404,376,375"/>
+<area shape="rect" id="Node000025" href="$class_transform.html#ac64c00fe6fe7aa6303aae6ad1e31ea7e" title="Sets whether the object&#39;s up axis should be Y (true) or Z (false)." alt="" coords="482,589,642,616"/>
+<area shape="poly" id="edge34_Node000020_Node000025" title=" " alt="" coords="404,370,420,382,438,407,446,431,447,456,445,481,443,505,444,529,451,552,468,576,471,579,468,583,464,579,446,555,438,530,437,505,439,480,442,456,440,432,433,409,416,386,401,375"/>
+<area shape="poly" id="edge33_Node000024_Node000006" title=" " alt="" coords="616,402,658,391,741,368,743,373,659,396,617,407"/>
+<area shape="poly" id="edge37_Node000026_Node000004" title=" " alt="" coords="401,393,416,382,432,361,439,340,439,297,440,252,448,230,464,208,469,203,473,207,468,211,452,232,445,253,445,297,444,341,437,364,420,386,404,398"/>
+<area shape="poly" id="edge42_Node000026_Node000005" title=" " alt="" coords="402,393,416,382,435,355,443,328,443,300,439,272,436,243,436,214,444,185,464,157,470,151,473,155,468,160,449,188,441,215,441,243,445,271,448,300,448,328,440,357,420,386,405,398"/>
+<area shape="poly" id="edge39_Node000026_Node000015" title=" " alt="" coords="398,393,416,382,428,370,434,357,440,330,445,302,452,288,464,274,482,261,485,265,468,278,457,291,450,304,445,331,439,359,432,373,420,386,401,398"/>
+<area shape="poly" id="edge40_Node000026_Node000016" title=" " alt="" coords="388,393,482,373,483,379,389,398"/>
+<area shape="poly" id="edge43_Node000026_Node000017" title=" " alt="" coords="393,393,417,382,431,368,440,354,449,339,464,325,474,319,477,324,468,329,453,342,444,357,435,372,419,386,396,398"/>
+<area shape="poly" id="edge36_Node000026_Node000021" title=" " alt="" coords="328,422,345,463,375,518,416,576,440,603,468,626,475,631,472,635,464,630,437,607,411,580,370,521,341,465,323,424"/>
+<area shape="poly" id="edge38_Node000026_Node000023" title=" " alt="" coords="339,421,394,463,467,508,479,514,477,519,465,513,391,467,336,425"/>
+<area shape="poly" id="edge44_Node000026_Node000024" title=" " alt="" coords="414,410,476,413,476,418,413,416"/>
+<area shape="poly" id="edge45_Node000026_Node000025" title=" " alt="" coords="331,422,351,453,382,495,421,538,467,575,477,581,475,585,465,580,418,542,378,498,347,456,326,425"/>
+<area shape="rect" id="Node000027" href="$class_physics_1_1_rigid_body.html#a9787414017781d2227edefdbb73091cb" title=" " alt="" coords="494,691,630,733"/>
+<area shape="poly" id="edge41_Node000026_Node000027" title=" " alt="" coords="327,422,342,470,370,538,411,612,438,646,468,677,482,686,478,691,464,681,434,650,407,615,365,540,337,472,322,424"/>
+<area shape="poly" id="edge47_Node000028_Node000004" title=" " alt="" coords="411,193,468,189,469,194,411,198"/>
+<area shape="poly" id="edge50_Node000028_Node000005" title=" " alt="" coords="378,186,417,175,465,156,489,149,491,154,467,161,419,180,379,191"/>
+<area shape="poly" id="edge48_Node000028_Node000015" title=" " alt="" coords="405,214,483,227,482,232,404,219"/>
+<area shape="poly" id="edge49_Node000028_Node000016" title=" " alt="" coords="401,214,420,226,432,238,439,251,445,276,451,301,457,313,468,325,485,337,482,341,464,329,453,316,446,303,440,277,434,253,427,241,416,230,398,219"/>
+<area shape="poly" id="edge51_Node000028_Node000017" title=" " alt="" coords="393,214,419,226,435,238,444,250,453,262,467,274,479,280,476,284,465,278,449,266,440,254,431,242,417,230,391,219"/>
+<area shape="poly" id="edge53_Node000029_Node000004" title=" " alt="" coords="395,288,416,277,432,260,440,243,448,225,464,207,472,202,475,207,468,211,452,228,444,245,436,263,420,281,398,292"/>
+<area shape="poly" id="edge56_Node000029_Node000005" title=" " alt="" coords="399,288,416,277,428,263,435,248,439,218,444,187,451,172,464,157,470,152,473,157,468,161,456,175,449,189,445,219,440,250,433,266,420,281,402,292"/>
+<area shape="poly" id="edge54_Node000029_Node000015" title=" " alt="" coords="375,287,482,260,484,265,376,293"/>
+<area shape="poly" id="edge55_Node000029_Node000016" title=" " alt="" coords="381,315,483,339,482,344,380,321"/>
+<area shape="poly" id="edge57_Node000029_Node000017" title=" " alt="" coords="409,300,468,300,468,305,409,306"/>
+<area shape="poly" id="edge58_Node000029_Node000024" title=" " alt="" coords="388,315,420,331,436,347,444,362,453,377,468,391,479,397,476,402,464,395,448,380,440,365,431,350,416,336,385,320"/>
+</map>

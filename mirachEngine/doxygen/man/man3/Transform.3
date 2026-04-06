@@ -1,0 +1,276 @@
+.TH "Transform" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Transform \- Represents position, rotation, and scale of an object in 3D space\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <transform\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTransform\fP ()"
+.br
+.RI "Default constructor initializes position to (0,0,0), scale to (1,1,1), and rotation to identity\&. "
+.ti -1c
+.RI "\fBMatrix4f\fP \fBgetModelMatrix\fP () const"
+.br
+.RI "Computes and returns the model (world) transformation matrix\&. "
+.ti -1c
+.RI "void \fBSetPosition\fP (float x, float y, float z)"
+.br
+.RI "Sets the world-space position of the object\&. "
+.ti -1c
+.RI "void \fBSetRotation\fP (float x, float y, float z)"
+.br
+.RI "Sets the object's rotation in Euler degrees\&. "
+.ti -1c
+.RI "void \fBSetRotation\fP (const \fBQuaternion\fP &q)"
+.br
+.RI "Sets the object's rotation using a quaternion\&. "
+.ti -1c
+.RI "void \fBSetScale\fP (float x, float y, float z)"
+.br
+.RI "Sets the object's local scale\&. "
+.ti -1c
+.RI "void \fBSetYAxisUp\fP (bool up)"
+.br
+.RI "Sets whether the object's up axis should be Y (true) or Z (false)\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBGetPosition\fP () const"
+.br
+.RI "Retrieves the current position\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBGetRotation\fP () const"
+.br
+.RI "Retrieves the current rotation in Euler angles (degrees)\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBGetScale\fP () const"
+.br
+.RI "Retrieves the current scale vector\&. "
+.ti -1c
+.RI "bool \fBIsYAxisUp\fP () const"
+.br
+.RI "Returns whether the object's up axis is Y\&. "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "float \fBResetRotation\fP (float axis)"
+.br
+.RI "Wraps a rotation angle to the range [0, 360)\&. "
+.ti -1c
+.RI "void \fBUpdateModelMatrix\fP ()"
+.br
+.RI "Recalculates the cached model matrix based on current position, rotation, and scale\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBMatrix4f\fP \fBmModelMatrix\fP"
+.br
+.RI "Cached 4x4 model matrix used for rendering and physics\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBm_position\fP"
+.br
+.RI "World-space position of the object\&. "
+.ti -1c
+.RI "\fBQuaternion\fP \fBm_rotation\fP"
+.br
+.RI "Orientation represented as a unit quaternion\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBm_scale\fP"
+.br
+.RI "Local scale vector\&. "
+.ti -1c
+.RI "bool \fByAxisUp\fP"
+.br
+.RI "Flag indicating whether Y (true) or Z (false) is the up axis\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents position, rotation, and scale of an object in 3D space\&. 
+
+Encapsulates spatial transformations using position vectors, scale, and rotation (as a quaternion)\&. Provides a method to compute the model matrix used for rendering and physics\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Transform::Transform ()"
+
+.PP
+Default constructor initializes position to (0,0,0), scale to (1,1,1), and rotation to identity\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBMatrix4f\fP Transform::getModelMatrix () const"
+
+.PP
+Computes and returns the model (world) transformation matrix\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Model matrix as \fBMatrix4f\fP\&. 
+.RE
+.PP
+
+.SS "\fBVector3f\fP Transform::GetPosition () const"
+
+.PP
+Retrieves the current position\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Position as a \fBVector3f\fP\&. 
+.RE
+.PP
+
+.SS "\fBVector3f\fP Transform::GetRotation () const"
+
+.PP
+Retrieves the current rotation in Euler angles (degrees)\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Rotation as \fBVector3f\fP (pitch, yaw, roll)\&. 
+.RE
+.PP
+
+.SS "\fBVector3f\fP Transform::GetScale () const"
+
+.PP
+Retrieves the current scale vector\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Scale as a \fBVector3f\fP\&. 
+.RE
+.PP
+
+.SS "bool Transform::IsYAxisUp () const"
+
+.PP
+Returns whether the object's up axis is Y\&. 
+.PP
+\fBReturns\fP
+.RS 4
+True if Y is up, false if Z is up\&. 
+.RE
+.PP
+
+.SS "float Transform::ResetRotation (float axis)\fR [private]\fP"
+
+.PP
+Wraps a rotation angle to the range [0, 360)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIaxis\fP Angle in degrees\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Normalized angle\&. 
+.RE
+.PP
+
+.SS "void Transform::SetPosition (float x, float y, float z)"
+
+.PP
+Sets the world-space position of the object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP X coordinate\&. 
+.br
+\fIy\fP Y coordinate\&. 
+.br
+\fIz\fP Z coordinate\&. 
+.RE
+.PP
+
+.SS "void Transform::SetRotation (const \fBQuaternion\fP & q)"
+
+.PP
+Sets the object's rotation using a quaternion\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIq\fP \fBQuaternion\fP representing orientation\&. 
+.RE
+.PP
+
+.SS "void Transform::SetRotation (float x, float y, float z)"
+
+.PP
+Sets the object's rotation in Euler degrees\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP Rotation around X (pitch)\&. 
+.br
+\fIy\fP Rotation around Y (yaw)\&. 
+.br
+\fIz\fP Rotation around Z (roll)\&. 
+.RE
+.PP
+
+.SS "void Transform::SetScale (float x, float y, float z)"
+
+.PP
+Sets the object's local scale\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP Scale along X axis\&. 
+.br
+\fIy\fP Scale along Y axis\&. 
+.br
+\fIz\fP Scale along Z axis\&. 
+.RE
+.PP
+
+.SS "void Transform::SetYAxisUp (bool up)"
+
+.PP
+Sets whether the object's up axis should be Y (true) or Z (false)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIup\fP True for Y-up, false for Z-up\&. 
+.RE
+.PP
+
+.SS "void Transform::UpdateModelMatrix ()\fR [private]\fP"
+
+.PP
+Recalculates the cached model matrix based on current position, rotation, and scale\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBVector3f\fP Transform::m_position\fR [private]\fP"
+
+.PP
+World-space position of the object\&. 
+.SS "\fBQuaternion\fP Transform::m_rotation\fR [private]\fP"
+
+.PP
+Orientation represented as a unit quaternion\&. 
+.SS "\fBVector3f\fP Transform::m_scale\fR [private]\fP"
+
+.PP
+Local scale vector\&. 
+.SS "\fBMatrix4f\fP Transform::mModelMatrix\fR [private]\fP"
+
+.PP
+Cached 4x4 model matrix used for rendering and physics\&. 
+.SS "bool Transform::yAxisUp\fR [private]\fP"
+
+.PP
+Flag indicating whether Y (true) or Z (false) is the up axis\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

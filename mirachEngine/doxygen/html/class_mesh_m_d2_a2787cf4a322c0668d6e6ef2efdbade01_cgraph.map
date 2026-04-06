@@ -1,0 +1,5 @@
+<map id="MeshMD2::Interpolate" name="MeshMD2::Interpolate">
+<area shape="rect" id="Node000001" title="Interpolates between two animation frames to produce smooth vertex output." alt="" coords="5,5,156,32"/>
+<area shape="rect" id="Node000002" href="$math_8hpp.html#a2682da5e8a67f74aed0fc41b0b79866d" title="Performs linear interpolation between two scalar values." alt="" coords="204,5,250,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,16,188,16,188,21,156,21"/>
+</map>

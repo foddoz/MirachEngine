@@ -1,0 +1,127 @@
+\doxysection{Attack\texorpdfstring{$<$}{<} Entity \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_attack}{}\label{class_attack}\index{Attack$<$ Entity $>$@{Attack$<$ Entity $>$}}
+
+
+Represents the \doxylink{class_attack}{Attack} state for a finite state machine. Calls on\+Attack\+Enter, on\+Attack\+Execute, and on\+Attack\+Exit on the entity.  
+
+
+
+
+{\ttfamily \#include $<$Common\+States.\+h$>$}
+
+
+
+Inheritance diagram for Attack\texorpdfstring{$<$}{<} Entity \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{class_attack__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Attack\texorpdfstring{$<$}{<} Entity \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{class_attack__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_attack_a88bb2c9ff4b56b089fc40dc3ced26bc7}{Enter}} (\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}e) override
+\begin{DoxyCompactList}\small\item\em Called when the state is entered. This method is used to perform any initialization or setup for the state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_attack_a0a2881295dbfc57af801e96a6e5537f5}{Execute}} (\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}e) override
+\begin{DoxyCompactList}\small\item\em Called every frame to update the state. This method should implement the main behavior of the state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_attack_a15f4b3bc47388ddc5013b895677a3824}{Exit}} (\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}e) override
+\begin{DoxyCompactList}\small\item\em Called when the state is exited. This method should handle cleanup or transition logic before leaving the state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_state}{State$<$ Entity $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_state_aed40c4606cc22c76bf5ecc771dea4bf8}{\texorpdfstring{$\sim$}{\string~}\+State}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure proper cleanup of derived states. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$\newline
+class Attack$<$ Entity $>$}
+Represents the \doxylink{class_attack}{Attack} state for a finite state machine. Calls on\+Attack\+Enter, on\+Attack\+Execute, and on\+Attack\+Exit on the entity. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em \doxylink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} & The type of entity using this state. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_attack_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_attack_a88bb2c9ff4b56b089fc40dc3ced26bc7}\index{Attack$<$ Entity $>$@{Attack$<$ Entity $>$}!Enter@{Enter}}
+\index{Enter@{Enter}!Attack$<$ Entity $>$@{Attack$<$ Entity $>$}}
+\doxysubsubsection{\texorpdfstring{Enter()}{Enter()}}
+{\footnotesize\ttfamily \label{class_attack_a88bb2c9ff4b56b089fc40dc3ced26bc7} 
+template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ \\
+void \mbox{\hyperlink{class_attack}{Attack}}$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} $>$\+::\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}}]{owner}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called when the state is entered. This method is used to perform any initialization or setup for the state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner} & Pointer to the owner entity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_a38506784066afae0f710965cb50d9df9}{State$<$ Entity $>$}}.
+
+\Hypertarget{class_attack_a0a2881295dbfc57af801e96a6e5537f5}\index{Attack$<$ Entity $>$@{Attack$<$ Entity $>$}!Execute@{Execute}}
+\index{Execute@{Execute}!Attack$<$ Entity $>$@{Attack$<$ Entity $>$}}
+\doxysubsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily \label{class_attack_a0a2881295dbfc57af801e96a6e5537f5} 
+template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ \\
+void \mbox{\hyperlink{class_attack}{Attack}}$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} $>$\+::\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}}]{owner}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called every frame to update the state. This method should implement the main behavior of the state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner} & Pointer to the owner entity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_a4298e08f3fc32436c7cf56705d0fa977}{State$<$ Entity $>$}}.
+
+\Hypertarget{class_attack_a15f4b3bc47388ddc5013b895677a3824}\index{Attack$<$ Entity $>$@{Attack$<$ Entity $>$}!Exit@{Exit}}
+\index{Exit@{Exit}!Attack$<$ Entity $>$@{Attack$<$ Entity $>$}}
+\doxysubsubsection{\texorpdfstring{Exit()}{Exit()}}
+{\footnotesize\ttfamily \label{class_attack_a15f4b3bc47388ddc5013b895677a3824} 
+template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ \\
+void \mbox{\hyperlink{class_attack}{Attack}}$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} $>$\+::\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}}]{owner}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called when the state is exited. This method should handle cleanup or transition logic before leaving the state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner} & Pointer to the owner entity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_a72bd0ca2e59147791bfe67618a1d9fc5}{State$<$ Entity $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+FSM/\mbox{\hyperlink{_common_states_8h}{Common\+States.\+h}}\end{DoxyCompactItemize}

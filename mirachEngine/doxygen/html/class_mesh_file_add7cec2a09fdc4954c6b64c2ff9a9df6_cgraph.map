@@ -1,0 +1,5 @@
+<map id="MeshFile::MeshFile" name="MeshFile::MeshFile">
+<area shape="rect" id="Node000001" title="Constructs an empty MeshFile object." alt="" coords="5,5,141,32"/>
+<area shape="rect" id="Node000002" href="$class_mesh3_d.html#a8cdefca0bf7171afd91f2a1a88e05a7e" title="Default constructor initializes OpenGL buffer handles and transforms." alt="" coords="189,5,316,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,16,173,16,173,21,141,21"/>
+</map>

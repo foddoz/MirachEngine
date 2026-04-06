@@ -1,0 +1,653 @@
+\doxysection{physics\+\_\+backend.\+hpp}
+\hypertarget{physics__backend_8hpp_source}{}\label{physics__backend_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Physics/physics\_backend.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Physics/physics\_backend.hpp}}
+\mbox{\hyperlink{physics__backend_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PHYSICS\_BACKEND\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PHYSICS\_BACKEND\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{physics_8hpp}{physics.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <reactphysics3d/reactphysics3d.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_physics_1_1_backend}{Physics::Backend}}\ \{}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a5ead1f45c8d1e6c75a5d9472a0c5ddc7}{RigidBodyBackend}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a5ead1f45c8d1e6c75a5d9472a0c5ddc7}{RigidBodyBackend}}(rp3d::RigidBody*\ body)\ :\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}(body)}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}[DEBUG]\ RigidBodyBackend\ created\ for\ raw:\ "{}\ <<\ body\ <<\ "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}-\/>setUserData(\textcolor{keyword}{this});}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8af1428033499d10594e89702300a8fe}{\string~RigidBodyBackend}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}[DEBUG]\ \string~RigidBodyBackend()\ called\ for:\ "{}\ <<\ m\_body\ <<\ "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Do\ not\ delete\ m\_body\ ?owned\ by\ ReactPhysics3D}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a7d5c49d645bed62f6c075846fc8845d0}{m\_liveColliders}}.clear();\ \textcolor{comment}{//\ clear\ local\ tracking\ list}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a27ce17f6748dc8fa7d62c2c9a1eec391}{SetPosition}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ pos)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ rp3d::Transform\ tf\ =\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}-\/>getTransform();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ tf.setPosition(rp3d::Vector3(pos.x,\ pos.y,\ pos.z));}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}-\/>setTransform(tf);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_ae32d3387c183a48908672772b3aaa5fb}{GetPosition}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ pos\ =\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}-\/>getTransform().getPosition();}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}(pos.x,\ pos.y,\ pos.z);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a79a01e2da9968cdf3df414b55970dc2a}{GetOrientation}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ q\ =\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}-\/>getTransform().getOrientation();}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}}(q.w,\ q.x,\ q.y,\ q.z);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ rp3d::RigidBody*\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_aeb04a4057f4a3bc8469b952b5b88345c}{GetInternal}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}};\ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a0ea6acc282b9c7f16f0550228e70d235}{ApplyForceAtCenter}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ force)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}-\/>applyWorldForceAtCenterOfMass(rp3d::Vector3(force.x,\ force.y,\ force.z));}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a10927d5c6d418670552acc9110e19b7f}{ApplyImpulseAtCenter}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ impulse)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ mass\ =\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}-\/>getMass();}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mass\ >\ 0.0f)\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rp3d::Vector3\ currentVel\ =\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}-\/>getLinearVelocity();}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rp3d::Vector3\ velocityChange(impulse.x\ /\ mass,\ impulse.y\ /\ mass,\ impulse.z\ /\ mass);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}-\/>setLinearVelocity(currentVel\ +\ velocityChange);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a50242f58fec8c30e9cce47b4513e966e}{SetLinearVelocity}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ vel)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}-\/>setLinearVelocity(rp3d::Vector3(vel.x,\ vel.y,\ vel.z));}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_aafaffe2ddc7aaa500eeb6425aacfc38d}{GetLinearVelocity}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ v\ =\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}-\/>getLinearVelocity();}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}(v.x,\ v.y,\ v.z);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a495903d446a0965b316328e3ffe3a161}{SetAngularVelocity}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ vel)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}-\/>setAngularVelocity(rp3d::Vector3(vel.x,\ vel.y,\ vel.z));}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_ac15ad345a33805a67cbc8a58aa82483b}{GetAngularVelocity}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ v\ =\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}-\/>getAngularVelocity();}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}(v.x,\ v.y,\ v.z);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a3254456fdc2e1bb6245bf3de975562b0}{IsDynamic}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}-\/>getType()\ ==\ rp3d::BodyType::DYNAMIC;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_adaad3043157f9270a14457a9c2510bb6}{SetMass}}(\textcolor{keywordtype}{float}\ mass)\textcolor{keyword}{\ const\ override}}
+\DoxyCodeLine{00079\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}-\/>setMass(mass);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a1bcf12aa810ec2a1f69906a49cc6cad5}{GetMass}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}-\/>getMass();}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2}{BodyType}}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a78a1df1a57ba31508d086960898884f1}{GetType}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}-\/>getType())\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ rp3d::BodyType::STATIC:\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2afe6f99ef1ec99efbdc19a9786cf1facc}{BodyType::STATIC}};}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ rp3d::BodyType::DYNAMIC:\ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2a0fcc90da4811c877ba9f9c12f7d60bc9}{BodyType::DYNAMIC}};}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ rp3d::BodyType::KINEMATIC:\textcolor{keywordflow}{return}\ \mbox{\hyperlink{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2a019b36cb8fbb31ba1f7c7b7595eb964d}{BodyType::KINEMATIC}};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2afe6f99ef1ec99efbdc19a9786cf1facc}{BodyType::STATIC}};}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a1d33e18aef597895318cf8f1c9eb8ac3}{SetAngularLockAxis}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ lock)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}-\/>setAngularLockAxisFactor(rp3d::Vector3(lock.x,\ lock.y,\ lock.z));}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_ad117faeaa68a7ba390fcac9fd84f6ee8}{SetAngularDamping}}(\textcolor{keywordtype}{float}\ damping)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}-\/>setAngularDamping(damping);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a1a191e9aa452d8fbda6434b005315a2e}{Invalidate}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}[DEBUG]\ RigidBodyBackend\ created\ for\ raw:\ "{}\ <<\ m\_body\ <<\ "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a58d43395fd5cb6449e76ca2f2118b06b}{m\_valid}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a7d5c49d645bed62f6c075846fc8845d0}{m\_liveColliders}}.clear();\ \ \textcolor{comment}{//\ prevent\ stale\ references}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a89367c3397c4f0eb5ca88766e06cf4cb}{EnableGravity}}(\textcolor{keywordtype}{bool}\ enabled)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}})\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}-\/>enableGravity(enabled);}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_ad2e3470233fb0aed11eecb75db8bed33}{IsGravityEnabled}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}\ ?\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}-\/>isGravityEnabled()\ :\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_abc398533a504d9a22536066a11c374e9}{IsValid}}()\textcolor{keyword}{\ const\ override}}
+\DoxyCodeLine{00125\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a58d43395fd5cb6449e76ca2f2118b06b}{m\_valid}}\ \&\&\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}}\ !=\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_aa2e649000fc4aeefd7be71e6ff30c087}{RegisterCollider}}(rp3d::Collider*\ c)\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a7d5c49d645bed62f6c075846fc8845d0}{m\_liveColliders}}.push\_back(c);}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_afbc857b600d59e65095cbeaae3b8a795}{OwnsCollider}}(rp3d::Collider*\ c)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}*\ live\ :\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a7d5c49d645bed62f6c075846fc8845d0}{m\_liveColliders}})\ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (live\ ==\ c\ \&\&\ c-\/>getBody()\ ==\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ rp3d::RigidBody*\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a8724ffd2a353e968e8b7839f3ea22d3f}{m\_body}};}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a58d43395fd5cb6449e76ca2f2118b06b}{m\_valid}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ std::vector<rp3d::Collider*>\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_a7d5c49d645bed62f6c075846fc8845d0}{m\_liveColliders}};}
+\DoxyCodeLine{00146\ \ \ \ \ \};}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_a83167ac0785f44f27fa08b5f307fd8e8}{ColliderBackend}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_physics_1_1_collider}{Physics::Collider}}\ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_a83167ac0785f44f27fa08b5f307fd8e8}{ColliderBackend}}(rp3d::Collider*\ c)\ :\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_acec06704e749782cf4596265213abbd9}{collider}}(c)}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}[DEBUG]\ ColliderBackend\ created\ for\ raw:\ "{}\ <<\ c\ <<\ "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_ab0971475b8b193dbd2cb7555b87acc08}{\string~ColliderBackend}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}[DEBUG]\ \string~ColliderBackend()\ called\ for\ raw:\ "{}\ <<\ collider\ <<\ "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_acec06704e749782cf4596265213abbd9}{collider}}\ =\ \textcolor{keyword}{nullptr};\ \ \textcolor{comment}{//\ Clear\ to\ prevent\ dangling\ use}}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_ad82c74c8d2e508e407f14d6c65df38cb}{SetCategoryBits}}(uint16\_t\ categoryBits)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_acec06704e749782cf4596265213abbd9}{collider}})\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}[SetCategoryBits]\ ERROR:\ collider\ is\ null\(\backslash\)n"{}};}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ rp3d::Body*\ baseBody\ =\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_acec06704e749782cf4596265213abbd9}{collider}}-\/>getBody();}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!baseBody)\ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}[SetCategoryBits]\ ERROR:\ collider-\/>getBody()\ is\ null\(\backslash\)n"{}};}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ rp3d::RigidBody*\ rawBody\ =\ \textcolor{keyword}{static\_cast<}rp3d::RigidBody*\textcolor{keyword}{>}(baseBody);}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ rawUserData\ =\ rawBody-\/>getUserData();}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!rawUserData)\ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}[SetCategoryBits]\ ERROR:\ userData\ is\ null\(\backslash\)n"{}};}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\ physRB\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\textcolor{keyword}{>}(rawUserData);}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ backend\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend}{RigidBodyBackend}}*\textcolor{keyword}{>}(physRB);}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!backend\ ||\ !backend-\/>IsValid()\ ||\ !backend-\/>OwnsCollider(\mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_acec06704e749782cf4596265213abbd9}{collider}}))\ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}[SetCategoryBits]\ ERROR:\ Invalid\ or\ orphaned\ collider\(\backslash\)n"{}};}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_acec06704e749782cf4596265213abbd9}{collider}}-\/>setCollisionCategoryBits(categoryBits);}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}[DEBUG]\ SetCategoryBits\ raw\ ptr\ =\ "{}\ <<\ reinterpret\_cast<void*>(collider)\ <<\ "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_ae1788c9ef859f9e6d674b6b4609bb859}{SetCollisionMask}}(uint16\_t\ categoryBits)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_acec06704e749782cf4596265213abbd9}{collider}})\ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}[SetCollisionMask]\ ERROR:\ collider\ is\ null\(\backslash\)n"{}};}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ rp3d::Body*\ baseBody\ =\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_acec06704e749782cf4596265213abbd9}{collider}}-\/>getBody();}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!baseBody)\ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}[SetCollisionMask]\ ERROR:\ collider-\/>getBody()\ is\ null\(\backslash\)n"{}};}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ rp3d::RigidBody*\ rawBody\ =\ \textcolor{keyword}{static\_cast<}rp3d::RigidBody*\textcolor{keyword}{>}(baseBody);}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ rawUserData\ =\ rawBody-\/>getUserData();}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!rawUserData)\ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}[SetCollisionMask]\ ERROR:\ userData\ is\ null\(\backslash\)n"{}};}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\ physRB\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\textcolor{keyword}{>}(rawUserData);}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ backend\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend}{RigidBodyBackend}}*\textcolor{keyword}{>}(physRB);}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!backend\ ||\ !backend-\/>IsValid()\ ||\ !backend-\/>OwnsCollider(\mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_acec06704e749782cf4596265213abbd9}{collider}}))\ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}[SetCollisionMask]\ ERROR:\ Invalid\ or\ orphaned\ collider\(\backslash\)n"{}};}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_acec06704e749782cf4596265213abbd9}{collider}}-\/>setCollideWithMaskBits(categoryBits);}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}[DEBUG]\ SetCollisionMask\ raw\ ptr\ =\ "{}\ <<\ reinterpret\_cast<void*>(collider)\ <<\ "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ uint16\_t\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_a2fbfb16e6e94efcebffa04f99e8b9b98}{GetCategoryBits}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_acec06704e749782cf4596265213abbd9}{collider}})\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_acec06704e749782cf4596265213abbd9}{collider}}-\/>getCollisionCategoryBits();}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_a71389efd6fdf2658b95f954acdcdb765}{SetFriction}}(\textcolor{keywordtype}{float}\ coefficient)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_acec06704e749782cf4596265213abbd9}{collider}}-\/>getMaterial().setFrictionCoefficient(coefficient);}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_a97992a722457de6d27599c6af0d845dd}{SetBounciness}}(\textcolor{keywordtype}{float}\ bounciness)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_acec06704e749782cf4596265213abbd9}{collider}}-\/>getMaterial().setBounciness(bounciness);}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_a0dae91e507d492195523438f6115c5a7}{IsValid}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_acec06704e749782cf4596265213abbd9}{collider}})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Validate\ that\ collider-\/>getBody()\ still\ points\ to\ a\ valid\ RigidBody}}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ baseBody\ =\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_acec06704e749782cf4596265213abbd9}{collider}}-\/>getBody();}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!baseBody)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Safe\ cast\ to\ RigidBody*}}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ rawBody\ =\ \textcolor{keyword}{static\_cast<}rp3d::RigidBody*\textcolor{keyword}{>}(baseBody);}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ rawUserData\ =\ rawBody-\/>getUserData();}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!rawUserData)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ backend\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend}{RigidBodyBackend}}*\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\textcolor{keyword}{>}(rawUserData));}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!backend\ ||\ !backend-\/>IsValid())\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ this\ collider\ is\ still\ owned\ by\ the\ body}}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!backend-\/>OwnsCollider(\mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_acec06704e749782cf4596265213abbd9}{collider}}))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_a4dc1e01522f6555637e95c19216ac7c1}{Invalidate}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ "{}[DEBUG]\ ColliderBackend\ invalidated\ for\ raw:\ "{}\ <<\ collider\ <<\ "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_acec06704e749782cf4596265213abbd9}{collider}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ rp3d::Collider*\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_a0614b75b78f745cb7611545f156ed5ac}{GetInternal}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_acec06704e749782cf4596265213abbd9}{collider}};}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00275\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ rp3d::Collider*\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend_acec06704e749782cf4596265213abbd9}{collider}};}
+\DoxyCodeLine{00277\ \ \ \ \ \};}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_physics_1_1_backend_1_1_raycast_adapter_a329b81cbec73cdd03c4d9ea9f202e05a}{RaycastAdapter}}\ :\ \textcolor{keyword}{public}\ rp3d::RaycastCallback\ \{}
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_raycast_callback}{Physics::RaycastCallback}}*\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_raycast_adapter_ae5db1f47ad6c1bf51442329f6e6add19}{userCallback}};}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_raycast_adapter_a329b81cbec73cdd03c4d9ea9f202e05a}{RaycastAdapter}}(\mbox{\hyperlink{class_physics_1_1_raycast_callback}{Physics::RaycastCallback}}*\ cb)\ :\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_raycast_adapter_ae5db1f47ad6c1bf51442329f6e6add19}{userCallback}}(cb)\ \{\}}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ rp3d::decimal\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_raycast_adapter_a34df9a9b2f9e2f8de23c90b1fa06dd4b}{notifyRaycastHit}}(\textcolor{keyword}{const}\ rp3d::RaycastInfo\&\ info)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_physics_1_1_backend_1_1_raycast_adapter_ae5db1f47ad6c1bf51442329f6e6add19}{userCallback}}\ \&\&\ info.body)\ \{}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ rawPtr\ =\ info.body-\/>getUserData();}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ backend\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend}{Physics::Backend::RigidBodyBackend}}*\textcolor{keyword}{>}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\textcolor{keyword}{>}(rawPtr));}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!backend\ ||\ !backend-\/>IsValid())\ \{}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}[RaycastAdapter]\ Invalid\ userData\ in\ raycast!\(\backslash\)n"{}};}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rp3d::decimal(1.0);}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (backend)\ \{}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_raycast_adapter_ae5db1f47ad6c1bf51442329f6e6add19}{userCallback}}-\/>ReportHit(backend,\ info.hitFraction)}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ info.hitFraction\ :\ rp3d::decimal(1.0);}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rp3d::decimal(1.0);}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00302\ \ \ \ \ \};}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_physics_1_1_backend_1_1_contact_listener_adapter_a3fc9d130b071906aa89f39a11a4ef97a}{ContactListenerAdapter}}\ :\ \textcolor{keyword}{public}\ rp3d::EventListener\ \{}
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ std::vector<Physics::CollisionCallback*>\&\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_contact_listener_adapter_a12da3a1ad35c244a1c280d19b1db7fd4}{callbacks}};}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_contact_listener_adapter_a3fc9d130b071906aa89f39a11a4ef97a}{ContactListenerAdapter}}(std::vector<Physics::CollisionCallback*>\&\ cbs)\ :\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_contact_listener_adapter_a12da3a1ad35c244a1c280d19b1db7fd4}{callbacks}}(cbs)\ \{\}}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_contact_listener_adapter_a8925fff644dd78bbd08f73a780ec1f57}{onContact}}(\textcolor{keyword}{const}\ rp3d::CollisionCallback::CallbackData\&\ data)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (uint32\_t\ i\ =\ 0;\ i\ <\ data.getNbContactPairs();\ ++i)\ \{}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ pair\ =\ data.getContactPair(i);}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ a\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\textcolor{keyword}{>}(pair.getBody1()-\/>getUserData());}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ b\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\textcolor{keyword}{>}(pair.getBody2()-\/>getUserData());}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Skip\ invalid\ body\ pointers}}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!a\ ||\ !b)\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}*\ cb\ :\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_contact_listener_adapter_a12da3a1ad35c244a1c280d19b1db7fd4}{callbacks}})\ \{}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (pair.getEventType())\ \{}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ rp3d::CollisionCallback::ContactPair::EventType::ContactStart:}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ rp3d::CollisionCallback::ContactPair::EventType::ContactStay:}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cb-\/>OnContact(a,\ b);}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ rp3d::CollisionCallback::ContactPair::EventType::ContactExit:}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cb-\/>OnContactExit(a,\ b);}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00335\ \ \ \ \ \};}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_aa938ed3aaab44d8a54b475599a5e371c}{WorldBackend}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_physics_1_1_world}{Physics::World}}\ \{}
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_aa938ed3aaab44d8a54b475599a5e371c}{WorldBackend}}()}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a6fd435af44ed2d41bc5b6095ab3276ec}{m\_contactListener}}(\mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a44c4177b5ae445eeaaf178ad6e2acf99}{m\_collisionCallbacks}})}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a0278029f521e7a299d5d5f71e45e9cc9}{m\_world}}\ =\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a4c51bd50dabe5289cc5eefcd71aeb51b}{m\_common}}.createPhysicsWorld();}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a0278029f521e7a299d5d5f71e45e9cc9}{m\_world}}-\/>setEventListener(\&\mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a6fd435af44ed2d41bc5b6095ab3276ec}{m\_contactListener}});}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00346\ }
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_af9b90243059ca6d0ffd4fc5c29dde02f}{\string~WorldBackend}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a0278029f521e7a299d5d5f71e45e9cc9}{m\_world}})\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a4c51bd50dabe5289cc5eefcd71aeb51b}{m\_common}}.destroyPhysicsWorld(\mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a0278029f521e7a299d5d5f71e45e9cc9}{m\_world}});}
+\DoxyCodeLine{00350\ }
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}*\ vertexArray\ :\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a28dfefbc2dabf73ee872a5178d8eddb1}{m\_ownedVertexArrays}})}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ vertexArray;}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a28dfefbc2dabf73ee872a5178d8eddb1}{m\_ownedVertexArrays}}.clear();}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ [\_,\ field]\ :\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a4cbcfea8fc3c83df4caa79b7786073db}{m\_heightFieldCache}})}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a4c51bd50dabe5289cc5eefcd71aeb51b}{m\_common}}.destroyHeightField(field);}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a4cbcfea8fc3c83df4caa79b7786073db}{m\_heightFieldCache}}.clear();}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00359\ }
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a3d22fea393f05c7643064e599d58c3d9}{CreateRigidBody}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ pos,\ \mbox{\hyperlink{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2}{BodyType}}\ type\ =\ \mbox{\hyperlink{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2a0fcc90da4811c877ba9f9c12f7d60bc9}{BodyType::DYNAMIC}})\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ rp3d::Transform\ transform;}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ transform.setPosition(rp3d::Vector3(pos.x,\ pos.y,\ pos.z));}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ rp3dBody\ =\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a0278029f521e7a299d5d5f71e45e9cc9}{m\_world}}-\/>createRigidBody(transform);}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ rp3dBody-\/>setType(\mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a8bceb5e6df234489934c4372b9034d20}{ToRP3DBodyType}}(type));}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ wrapper\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend}{RigidBodyBackend}}(rp3dBody);}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_acc14b5d02f26da6ce60a0795dacc4b6a}{m\_rigidBodies}}.push\_back(wrapper);}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ wrapper;}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ rp3d::BodyType\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a8bceb5e6df234489934c4372b9034d20}{ToRP3DBodyType}}(\mbox{\hyperlink{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2}{BodyType}}\ type)\ \{}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (type)\ \{}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2afe6f99ef1ec99efbdc19a9786cf1facc}{BodyType::STATIC}}:\ \ \ \textcolor{keywordflow}{return}\ rp3d::BodyType::STATIC;}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2a0fcc90da4811c877ba9f9c12f7d60bc9}{BodyType::DYNAMIC}}:\ \ \textcolor{keywordflow}{return}\ rp3d::BodyType::DYNAMIC;}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2a019b36cb8fbb31ba1f7c7b7595eb964d}{BodyType::KINEMATIC}}:\textcolor{keywordflow}{return}\ rp3d::BodyType::KINEMATIC;}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ rp3d::BodyType::STATIC;\ \textcolor{comment}{//\ fallback}}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00380\ }
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a8651c3d69f2dffc474508e42741e2a21}{Update}}(\textcolor{keywordtype}{float}\ dt)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a0278029f521e7a299d5d5f71e45e9cc9}{m\_world}}-\/>update(dt);}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00384\ }
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ rp3d::PhysicsWorld*\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_aff44b70f6dce5e529d587dab974c97cc}{GetInternal}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a0278029f521e7a299d5d5f71e45e9cc9}{m\_world}};\ \}}
+\DoxyCodeLine{00386\ }
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a13cd45189124e8a69db2013a458c8ebf}{Raycast}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_physics_1_1_ray}{Physics::Ray}}\&\ ray,\ \mbox{\hyperlink{class_physics_1_1_raycast_callback}{Physics::RaycastCallback}}*\ cb)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!cb)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00389\ }
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ rp3d::Ray\ rpRay(}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ ray.\mbox{\hyperlink{class_physics_1_1_ray_aef73b7b9c7bcd8c980d22f73574bf7e8}{start}}.x,\ ray.\mbox{\hyperlink{class_physics_1_1_ray_aef73b7b9c7bcd8c980d22f73574bf7e8}{start}}.y,\ ray.\mbox{\hyperlink{class_physics_1_1_ray_aef73b7b9c7bcd8c980d22f73574bf7e8}{start}}.z\ \},}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ ray.\mbox{\hyperlink{class_physics_1_1_ray_a994130d299469b8e20edcfb7b4553413}{end}}.x,\ ray.\mbox{\hyperlink{class_physics_1_1_ray_a994130d299469b8e20edcfb7b4553413}{end}}.y,\ ray.\mbox{\hyperlink{class_physics_1_1_ray_a994130d299469b8e20edcfb7b4553413}{end}}.z\ \}}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_raycast_adapter}{RaycastAdapter}}\ adapter(cb);}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a0278029f521e7a299d5d5f71e45e9cc9}{m\_world}}-\/>raycast(rpRay,\ \&adapter);}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_collider}{Collider}}*\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a7e6088bf035db12d6b8a3ccba28e44eb}{AddBoxCollider}}(\mbox{\hyperlink{class_physics_1_1_rigid_body}{RigidBody}}*\ body,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_a_a_b_b}{AABB}}\&\ aabb)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ extents\ =\ (aabb.\mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}}\ -\/\ aabb.\mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}})\ *\ 0.5f;}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ offset\ =\ (aabb.\mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}}\ +\ aabb.\mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}})\ *\ 0.5f;}
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ shape\ =\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a4c51bd50dabe5289cc5eefcd71aeb51b}{m\_common}}.createBoxShape(\{\ extents.x,\ extents.y,\ extents.z\ \});}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \ \ \ \ rp3d::Transform\ localTf;}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \ \ \ \ localTf.setPosition(\{\ offset.x,\ offset.y,\ offset.z\ \});}
+\DoxyCodeLine{00406\ }
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ backend\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend}{RigidBodyBackend}}*\textcolor{keyword}{>}(body);}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ collider\ =\ backend-\/>\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_aeb04a4057f4a3bc8469b952b5b88345c}{GetInternal}}()-\/>addCollider(shape,\ localTf);}
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \ \ \ \ backend-\/>RegisterCollider(collider);\ \ \textcolor{comment}{//\ NEW\ LINE}}
+\DoxyCodeLine{00411\ }
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend}{ColliderBackend}}(collider);}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00414\ }
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_collider}{Collider}}*\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_ab828f2b6c343b0ca3e259bed03878410}{AddBoxCollider}}(\mbox{\hyperlink{class_physics_1_1_rigid_body}{RigidBody}}*\ body,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_a_a_b_b}{AABB}}\&\ aabb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ scale)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ center\ =\ (aabb.\mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}}\ +\ aabb.\mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}})\ *\ 0.5f;}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ halfExtents\ =\ (aabb.\mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}}\ -\/\ aabb.\mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}})\ *\ 0.5f;}
+\DoxyCodeLine{00418\ }
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ scaledHalfExtents\ =\ halfExtents\ *\ scale;}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ scaledCenter\ =\ center\ *\ scale;}
+\DoxyCodeLine{00421\ }
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ shape\ =\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a4c51bd50dabe5289cc5eefcd71aeb51b}{m\_common}}.createBoxShape(\{\ scaledHalfExtents.x,\ scaledHalfExtents.y,\ scaledHalfExtents.z\ \});}
+\DoxyCodeLine{00423\ }
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \ \ \ \ rp3d::Transform\ localTf;}
+\DoxyCodeLine{00425\ \ \ \ \ \ \ \ \ \ \ \ \ localTf.setPosition(\{\ scaledCenter.x,\ scaledCenter.y,\ scaledCenter.z\ \});}
+\DoxyCodeLine{00426\ }
+\DoxyCodeLine{00427\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ backend\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend}{RigidBodyBackend}}*\textcolor{keyword}{>}(body);}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ collider\ =\ backend-\/>\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_aeb04a4057f4a3bc8469b952b5b88345c}{GetInternal}}()-\/>addCollider(shape,\ localTf);}
+\DoxyCodeLine{00429\ }
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \ \ \ \ backend-\/>RegisterCollider(collider);\ \ \textcolor{comment}{//\ Keep\ track\ of\ it}}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend}{ColliderBackend}}(collider);}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00434\ }
+\DoxyCodeLine{00435\ }
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_collider}{Collider}}*\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a14f355487fd23587d138096a3168ee6a}{AddSphereCollider}}(\mbox{\hyperlink{class_physics_1_1_rigid_body}{RigidBody}}*\ body,\ \textcolor{keywordtype}{float}\ radius)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ shape\ =\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a4c51bd50dabe5289cc5eefcd71aeb51b}{m\_common}}.createSphereShape(radius);}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ backend\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend}{RigidBodyBackend}}*\textcolor{keyword}{>}(body);}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!backend)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00440\ }
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ collider\ =\ backend-\/>\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_aeb04a4057f4a3bc8469b952b5b88345c}{GetInternal}}()-\/>addCollider(shape,\ rp3d::Transform::identity());}
+\DoxyCodeLine{00442\ }
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ backend-\/>RegisterCollider(collider);\ \ \textcolor{comment}{//Track\ this\ collider}}
+\DoxyCodeLine{00444\ }
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//auto*\ wrapper\ =\ new\ ColliderBackend(collider);\ \ //Only\ allocate\ once}}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ECS\ or\ PhysicsSystem\ should\ store\ this\ pointer}}
+\DoxyCodeLine{00447\ }
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend}{ColliderBackend}}(collider);}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00450\ }
+\DoxyCodeLine{00451\ }
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_collider}{Collider}}*\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_aa3c166b6efcf6dfa08bbc9bd50517031}{AddSphereCollider}}(\mbox{\hyperlink{class_physics_1_1_rigid_body}{RigidBody}}*\ body,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_a_a_b_b}{AABB}}\&\ aabb)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ center\ =\ (aabb.\mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}}\ +\ aabb.\mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}})\ *\ 0.5f;}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ extents\ =\ (aabb.\mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}}\ -\/\ aabb.\mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}})\ *\ 0.5f;}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ radius\ =\ \mbox{\hyperlink{math_8hpp_a449ecbbd825f26c183caeac2bda40c41}{Length}}(extents);}
+\DoxyCodeLine{00456\ }
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ shape\ =\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a4c51bd50dabe5289cc5eefcd71aeb51b}{m\_common}}.createSphereShape(radius);}
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \ \ \ \ rp3d::Transform\ localTransform;}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \ \ \ \ localTransform.setPosition(\{\ center.x,\ center.y,\ center.z\ \});}
+\DoxyCodeLine{00460\ }
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ backend\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend}{RigidBodyBackend}}*\textcolor{keyword}{>}(body);}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ collider\ =\ backend-\/>\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_aeb04a4057f4a3bc8469b952b5b88345c}{GetInternal}}()-\/>addCollider(shape,\ localTransform);}
+\DoxyCodeLine{00463\ }
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \ \ \ \ backend-\/>RegisterCollider(collider);\ \ \textcolor{comment}{//\ NEW\ LINE}}
+\DoxyCodeLine{00465\ }
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend}{ColliderBackend}}(collider);}
+\DoxyCodeLine{00467\ }
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00469\ }
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_collider}{Collider}}*\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a75ff2852b8cc03f94dc61cd48f82ca56}{AddCapsuleCollider}}(\mbox{\hyperlink{class_physics_1_1_rigid_body}{RigidBody}}*\ body,\ \textcolor{keywordtype}{float}\ radius,\ \textcolor{keywordtype}{float}\ height)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ shape\ =\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a4c51bd50dabe5289cc5eefcd71aeb51b}{m\_common}}.createCapsuleShape(radius,\ height);}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \ \ \ \ rp3d::Transform\ localTransform\ =\ rp3d::Transform::identity();}
+\DoxyCodeLine{00473\ }
+\DoxyCodeLine{00474\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ backend\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend}{RigidBodyBackend}}*\textcolor{keyword}{>}(body);}
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ collider\ =\ backend-\/>\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_aeb04a4057f4a3bc8469b952b5b88345c}{GetInternal}}()-\/>addCollider(shape,\ localTransform);}
+\DoxyCodeLine{00476\ }
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \ \ \ \ backend-\/>RegisterCollider(collider);\ \ \textcolor{comment}{//\ NEW\ LINE}}
+\DoxyCodeLine{00478\ }
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend}{ColliderBackend}}(collider);}
+\DoxyCodeLine{00480\ }
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00482\ }
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_collider}{Collider}}*\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a205a697c89390f728dcad124a8024249}{AddCapsuleCollider}}(\mbox{\hyperlink{class_physics_1_1_rigid_body}{RigidBody}}*\ body,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_a_a_b_b}{AABB}}\&\ aabb)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00484\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ extents\ =\ (aabb.\mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}}\ -\/\ aabb.\mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}})\ *\ 0.5f;}
+\DoxyCodeLine{00485\ }
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ radius\ =\ std::min(extents.x,\ extents.z);}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ height\ =\ std::max(0.0f,\ (extents.y\ *\ 2.0f)\ -\/\ (radius\ *\ 2.0f));}
+\DoxyCodeLine{00488\ }
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Vector3f\ center\ =\ (aabb.max\ +\ aabb.min)\ *\ 0.5f;\ //\ FIXED:\ true\ center\ of\ the\ AABB}}
+\DoxyCodeLine{00490\ }
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ fullCapsuleHeight\ =\ height\ +\ 2.0f\ *\ radius;}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ center\ =\ (aabb.\mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}}\ +\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}(0.f,\ fullCapsuleHeight,\ 0.f)\ *\ 0.5f);}
+\DoxyCodeLine{00493\ }
+\DoxyCodeLine{00494\ }
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ shape\ =\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a4c51bd50dabe5289cc5eefcd71aeb51b}{m\_common}}.createCapsuleShape(radius,\ height);}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \ \ \ \ rp3d::Transform\ localTransform;}
+\DoxyCodeLine{00497\ \ \ \ \ \ \ \ \ \ \ \ \ localTransform.setPosition(\{\ center.x,\ center.y,\ center.z\ \});}
+\DoxyCodeLine{00498\ }
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ backend\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend}{RigidBodyBackend}}*\textcolor{keyword}{>}(body);}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ collider\ =\ backend-\/>\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_aeb04a4057f4a3bc8469b952b5b88345c}{GetInternal}}()-\/>addCollider(shape,\ localTransform);}
+\DoxyCodeLine{00501\ }
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \ \ \ \ backend-\/>RegisterCollider(collider);\ \ \textcolor{comment}{//\ NEW\ LINE}}
+\DoxyCodeLine{00503\ }
+\DoxyCodeLine{00504\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend}{ColliderBackend}}(collider);}
+\DoxyCodeLine{00505\ }
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00507\ }
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_collider}{Collider}}*\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a5c799466bb82ccd5964219a07e6bd6ef}{AddCapsuleCollider}}(\mbox{\hyperlink{class_physics_1_1_rigid_body}{RigidBody}}*\ body,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_a_a_b_b}{AABB}}\&\ aabb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ scale,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ offset)\ \{}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ center\ =\ (aabb.\mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}}\ +\ aabb.\mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}})\ *\ 0.5f;}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ halfExtents\ =\ (aabb.\mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}}\ -\/\ aabb.\mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}})\ *\ 0.5f;}
+\DoxyCodeLine{00511\ }
+\DoxyCodeLine{00512\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ scaledHalfExtents\ =\ halfExtents\ *\ scale;}
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ scaledCenter\ =\ center\ *\ scale;}
+\DoxyCodeLine{00514\ }
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Apply\ offset}}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Vector3f\ finalCenter\ =\ (center\ +\ offset)\ *\ scale;}}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ finalCenter\ =\ scaledCenter\ +\ offset;}
+\DoxyCodeLine{00518\ }
+\DoxyCodeLine{00519\ }
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ radius\ =\ std::min(scaledHalfExtents.x,\ scaledHalfExtents.z);}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ height\ =\ std::max(0.0f,\ (scaledHalfExtents.y\ *\ 2.0f)\ -\/\ (radius\ *\ 2.0f));}
+\DoxyCodeLine{00522\ }
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ shape\ =\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a4c51bd50dabe5289cc5eefcd71aeb51b}{m\_common}}.createCapsuleShape(radius,\ height);}
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \ \ \ \ rp3d::Transform\ localTransform;}
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ \ \ \ \ localTransform.setPosition(\{\ finalCenter.x,\ finalCenter.y,\ finalCenter.z\ \});}
+\DoxyCodeLine{00526\ }
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ backend\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend}{RigidBodyBackend}}*\textcolor{keyword}{>}(body);}
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ collider\ =\ backend-\/>\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_aeb04a4057f4a3bc8469b952b5b88345c}{GetInternal}}()-\/>addCollider(shape,\ localTransform);}
+\DoxyCodeLine{00529\ }
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \ \ \ \ backend-\/>RegisterCollider(collider);\ \ \textcolor{comment}{//\ required\ to\ keep\ it\ alive}}
+\DoxyCodeLine{00531\ }
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend}{ColliderBackend}}(collider);}
+\DoxyCodeLine{00533\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00534\ }
+\DoxyCodeLine{00535\ }
+\DoxyCodeLine{00536\ }
+\DoxyCodeLine{00537\ }
+\DoxyCodeLine{00538\ }
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_collider}{Collider}}*\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_aeddf434b553fc1918f534d17cf888eeb}{AddConcaveTerrainCollider}}(\mbox{\hyperlink{class_physics_1_1_rigid_body}{RigidBody}}*\ body,\ \textcolor{keywordtype}{void}*\ terrainKey,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ vertices,\ \textcolor{keywordtype}{size\_t}\ vertexCount,\ \textcolor{keywordtype}{size\_t}\ vertexStride,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}*\ indices,\ \textcolor{keywordtype}{size\_t}\ indexCount)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ \ \ \ \ uintptr\_t\ terrainID\ =\ \textcolor{keyword}{reinterpret\_cast<}uintptr\_t\textcolor{keyword}{>}(terrainKey);}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \ \ \ \ rp3d::TriangleMesh*\ triangleMesh\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00542\ }
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_ac0ec02531e481bbcf01ccaa2407beb92}{m\_terrainMeshCache}}.count(terrainID))\ \{}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ triangleMesh\ =\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_ac0ec02531e481bbcf01ccaa2407beb92}{m\_terrainMeshCache}}[terrainID];}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00546\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ vertexArray\ =\ \textcolor{keyword}{new}\ rp3d::TriangleVertexArray(}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(vertexCount),}
+\DoxyCodeLine{00549\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vertices,}
+\DoxyCodeLine{00550\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(vertexStride),}
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(indexCount\ /\ 3),}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indices,}
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int})\ *\ 3,}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rp3d::TriangleVertexArray::VertexDataType::VERTEX\_FLOAT\_TYPE,\ \ \textcolor{comment}{//\ Corrected\ (no\ change\ needed)}}
+\DoxyCodeLine{00555\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rp3d::TriangleVertexArray::IndexDataType::INDEX\_INTEGER\_TYPE\ \ \ \textcolor{comment}{//\ Corrected\ (no\ change\ needed)}}
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00557\ }
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<rp3d::Message>\ messages;}
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ triangleMesh\ =\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a4c51bd50dabe5289cc5eefcd71aeb51b}{m\_common}}.createTriangleMesh(*vertexArray,\ messages);}
+\DoxyCodeLine{00560\ }
+\DoxyCodeLine{00561\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!triangleMesh)\ \{}
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ vertexArray;}
+\DoxyCodeLine{00563\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00564\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00565\ }
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_ac0ec02531e481bbcf01ccaa2407beb92}{m\_terrainMeshCache}}[terrainID]\ =\ triangleMesh;}
+\DoxyCodeLine{00567\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a28dfefbc2dabf73ee872a5178d8eddb1}{m\_ownedVertexArrays}}.push\_back(vertexArray);}
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00569\ }
+\DoxyCodeLine{00570\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ shape\ =\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a4c51bd50dabe5289cc5eefcd71aeb51b}{m\_common}}.createConcaveMeshShape(triangleMesh,\ \{\ 1.f,\ 1.f,\ 1.f\ \});}
+\DoxyCodeLine{00571\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ backend\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend}{RigidBodyBackend}}*\textcolor{keyword}{>}(body);}
+\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ collider\ =\ backend-\/>\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_aeb04a4057f4a3bc8469b952b5b88345c}{GetInternal}}()-\/>addCollider(shape,\ rp3d::Transform::identity());}
+\DoxyCodeLine{00573\ }
+\DoxyCodeLine{00574\ \ \ \ \ \ \ \ \ \ \ \ \ backend-\/>RegisterCollider(collider);\ \ \textcolor{comment}{//\ NEW\ LINE}}
+\DoxyCodeLine{00575\ }
+\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend}{ColliderBackend}}(collider);}
+\DoxyCodeLine{00577\ }
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00579\ }
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ===\ Add\ to\ WorldBackend\ in\ physics\_backend.hpp\ ===}}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_collider}{Collider}}*\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a1abe999373da7dd94104ceb18ba1c8bd}{AddHeightFieldCollider}}(\mbox{\hyperlink{class_physics_1_1_rigid_body}{RigidBody}}*\ body,}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ heightKey,}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}*\ heightValues,}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nbRows,\ \textcolor{keywordtype}{int}\ nbCols,}
+\DoxyCodeLine{00585\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ scale\ =\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}(1.f))\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ \ \ \ \ uintptr\_t\ key\ =\ \textcolor{keyword}{reinterpret\_cast<}uintptr\_t\textcolor{keyword}{>}(heightKey);}
+\DoxyCodeLine{00587\ }
+\DoxyCodeLine{00588\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a4cbcfea8fc3c83df4caa79b7786073db}{m\_heightFieldCache}}.count(key)\ ==\ 0)\ \{}
+\DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<rp3d::Message>\ messages;}
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ heightField\ =\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a4c51bd50dabe5289cc5eefcd71aeb51b}{m\_common}}.createHeightField(}
+\DoxyCodeLine{00591\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nbRows,\ nbCols,}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ heightValues,}
+\DoxyCodeLine{00593\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rp3d::HeightField::HeightDataType::HEIGHT\_FLOAT\_TYPE,}
+\DoxyCodeLine{00594\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ messages}
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00596\ }
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ msg\ :\ messages)\ \{}
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}[HeightField]\ "{}}\ <<\ msg.text\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00599\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00600\ }
+\DoxyCodeLine{00601\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!heightField)\ \{}
+\DoxyCodeLine{00602\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}[ERROR]\ Failed\ to\ create\ height\ field.\(\backslash\)n"{}};}
+\DoxyCodeLine{00603\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00604\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00605\ }
+\DoxyCodeLine{00606\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a4cbcfea8fc3c83df4caa79b7786073db}{m\_heightFieldCache}}[key]\ =\ heightField;}
+\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00608\ }
+\DoxyCodeLine{00609\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ field\ =\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a4cbcfea8fc3c83df4caa79b7786073db}{m\_heightFieldCache}}[key];}
+\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ shape\ =\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a4c51bd50dabe5289cc5eefcd71aeb51b}{m\_common}}.createHeightFieldShape(field,\ \{\ scale.x,\ scale.y,\ scale.z\ \});}
+\DoxyCodeLine{00611\ }
+\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ backend\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend}{RigidBodyBackend}}*\textcolor{keyword}{>}(body);}
+\DoxyCodeLine{00613\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ collider\ =\ backend-\/>\mbox{\hyperlink{class_physics_1_1_backend_1_1_rigid_body_backend_aeb04a4057f4a3bc8469b952b5b88345c}{GetInternal}}()-\/>addCollider(shape,\ rp3d::Transform::identity());}
+\DoxyCodeLine{00614\ \ \ \ \ \ \ \ \ \ \ \ \ backend-\/>RegisterCollider(collider);}
+\DoxyCodeLine{00615\ }
+\DoxyCodeLine{00616\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_collider_backend}{ColliderBackend}}(collider);}
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00618\ }
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a7807223bacd5dfa46a7afbffb9f8840e}{RegisterCollisionCallback}}(\mbox{\hyperlink{class_physics_1_1_collision_callback}{Physics::CollisionCallback}}*\ cb)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cb)\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a44c4177b5ae445eeaaf178ad6e2acf99}{m\_collisionCallbacks}}.push\_back(cb);}
+\DoxyCodeLine{00621\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00622\ }
+\DoxyCodeLine{00623\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_1_1_world_a771c512ce4bb92c8e0f7da5b47f03f8e}{World::UnregisterCollisionCallback}}(\mbox{\hyperlink{class_physics_1_1_collision_callback}{Physics::CollisionCallback}}*\ cb)\ \{}
+\DoxyCodeLine{00624\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::find(\mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a44c4177b5ae445eeaaf178ad6e2acf99}{m\_collisionCallbacks}}.begin(),\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a44c4177b5ae445eeaaf178ad6e2acf99}{m\_collisionCallbacks}}.end(),\ cb);}
+\DoxyCodeLine{00625\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a44c4177b5ae445eeaaf178ad6e2acf99}{m\_collisionCallbacks}}.end())}
+\DoxyCodeLine{00626\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a44c4177b5ae445eeaaf178ad6e2acf99}{m\_collisionCallbacks}}.erase(it);}
+\DoxyCodeLine{00627\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00628\ }
+\DoxyCodeLine{00629\ }
+\DoxyCodeLine{00630\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00631\ \ \ \ \ \ \ \ \ rp3d::PhysicsCommon\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a4c51bd50dabe5289cc5eefcd71aeb51b}{m\_common}};}
+\DoxyCodeLine{00632\ \ \ \ \ \ \ \ \ rp3d::PhysicsWorld*\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a0278029f521e7a299d5d5f71e45e9cc9}{m\_world}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00633\ \ \ \ \ \ \ \ \ std::vector<RigidBody*>\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_acc14b5d02f26da6ce60a0795dacc4b6a}{m\_rigidBodies}};}
+\DoxyCodeLine{00634\ }
+\DoxyCodeLine{00635\ \ \ \ \ \ \ \ \ std::unordered\_map<uintptr\_t,\ rp3d::TriangleMesh*>\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_ac0ec02531e481bbcf01ccaa2407beb92}{m\_terrainMeshCache}};}
+\DoxyCodeLine{00636\ \ \ \ \ \ \ \ \ std::vector<rp3d::TriangleVertexArray*>\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a28dfefbc2dabf73ee872a5178d8eddb1}{m\_ownedVertexArrays}};}
+\DoxyCodeLine{00637\ }
+\DoxyCodeLine{00638\ \ \ \ \ \ \ \ \ std::unordered\_map<uintptr\_t,\ rp3d::HeightField*>\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a4cbcfea8fc3c83df4caa79b7786073db}{m\_heightFieldCache}};}
+\DoxyCodeLine{00639\ }
+\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ std::vector<Physics::CollisionCallback*>\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a44c4177b5ae445eeaaf178ad6e2acf99}{m\_collisionCallbacks}};}
+\DoxyCodeLine{00641\ }
+\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_backend_1_1_contact_listener_adapter}{ContactListenerAdapter}}\ \mbox{\hyperlink{class_physics_1_1_backend_1_1_world_backend_a6fd435af44ed2d41bc5b6095ab3276ec}{m\_contactListener}};}
+\DoxyCodeLine{00643\ \ \ \ \ \};}
+\DoxyCodeLine{00644\ }
+\DoxyCodeLine{00645\ \}\ \textcolor{comment}{//\ namespace\ Physics::Backend}}
+\DoxyCodeLine{00646\ }
+\DoxyCodeLine{00647\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

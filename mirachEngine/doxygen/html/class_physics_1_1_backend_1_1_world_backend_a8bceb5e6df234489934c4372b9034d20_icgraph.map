@@ -1,0 +1,5 @@
+<map id="Physics::Backend::WorldBackend::ToRP3DBodyType" name="Physics::Backend::WorldBackend::ToRP3DBodyType">
+<area shape="rect" id="Node000001" title=" " alt="" coords="273,5,492,48"/>
+<area shape="rect" id="Node000002" href="$class_physics_1_1_backend_1_1_world_backend.html#a3d22fea393f05c7643064e599d58c3d9" title="Creates a new rigid body at a given position and type." alt="" coords="5,5,225,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="257,29,225,29,225,24,257,24"/>
+</map>

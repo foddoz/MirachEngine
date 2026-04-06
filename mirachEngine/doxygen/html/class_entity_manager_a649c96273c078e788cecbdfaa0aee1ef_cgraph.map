@@ -1,0 +1,7 @@
+<map id="EntityManager::AddComponent" name="EntityManager::AddComponent">
+<area shape="rect" id="Node000001" title="Adds a component of type T to the given entity." alt="" coords="5,35,209,61"/>
+<area shape="rect" id="Node000002" href="$class_component_manager.html#af278794db44296d707492fef01b15e96" title="Adds a component to the specified entity." alt="" coords="257,5,493,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,34,241,31,241,36,209,40"/>
+<area shape="rect" id="Node000003" href="$class_entity_manager.html#a9792efcb1c6904999ab34b3a65a7c69d" title="Returns the manager for the given component type, creating it if needed." alt="" coords="281,56,468,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="209,56,266,63,266,68,209,62"/>
+</map>

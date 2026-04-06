@@ -1,0 +1,7 @@
+<map id="EntityManager::RemoveComponent" name="EntityManager::RemoveComponent">
+<area shape="rect" id="Node000001" title="Removes a component of type T from the given entity." alt="" coords="5,47,235,73"/>
+<area shape="rect" id="Node000002" href="$class_entity_manager.html#a9792efcb1c6904999ab34b3a65a7c69d" title="Returns the manager for the given component type, creating it if needed." alt="" coords="287,5,474,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,43,271,38,272,43,230,49"/>
+<area shape="rect" id="Node000003" href="$class_component_manager.html#a2501a3794e300d71b6279e76d311846c" title="Removes the component associated with an entity." alt="" coords="283,72,478,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="230,71,267,76,267,82,229,77"/>
+</map>

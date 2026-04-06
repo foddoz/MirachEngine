@@ -1,0 +1,21 @@
+<map id="Graphics::GenVertexArray" name="Graphics::GenVertexArray">
+<area shape="rect" id="Node000001" title=" " alt="" coords="516,107,689,133"/>
+<area shape="rect" id="Node000002" href="$class_mesh_terrain.html#a7cd9ecf88516b6716cb76b804e8bd61b" title=" " alt="" coords="279,5,446,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="568,100,521,72,467,46,432,35,434,30,469,42,523,68,570,96"/>
+<area shape="rect" id="Node000004" href="$class_mesh_m_d2.html#a296a12dbea02874b8a4ea7e450f63e3f" title="Fills OpenGL buffers with mesh data (called from UploadToGPU)." alt="" coords="272,56,453,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="520,105,428,86,430,81,522,100"/>
+<area shape="rect" id="Node000006" href="$class_mesh_sky_dome.html#ab4c16fb980037e0ede6a41f8a08ba816" title="Generates VAO, VBO, and IBO and uploads vertex/index data to the GPU." alt="" coords="257,107,468,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="500,123,468,123,468,117,500,117"/>
+<area shape="rect" id="Node000008" href="$class_mesh_terrain.html#a9991fb5a1a6635d5b5116c553caf1007" title="Allocates OpenGL VAO/VBO/IBO and sets vertex format." alt="" coords="266,157,458,184"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="522,140,430,159,428,154,520,135"/>
+<area shape="rect" id="Node000010" href="$class_mesh_file.html#a4941fd25cb0aa2b390a2ced9c80bfe00" title="Uploads vertex/index data and textures to GPU buffers." alt="" coords="279,208,446,235"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="570,144,523,172,469,198,434,210,432,205,467,194,521,168,568,140"/>
+<area shape="rect" id="Node000003" href="$class_mesh_terrain.html#a02d8c1492362365710a818b9a4674774" title="Converts the terrain to a renderable mesh component." alt="" coords="23,5,191,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="264,21,191,21,191,16,264,16"/>
+<area shape="rect" id="Node000005" href="$class_mesh_m_d2.html#a1f00d6728c70d5f12aa2cfc49411abc2" title="Uploads the current mesh data to the GPU." alt="" coords="20,56,194,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="256,72,194,72,194,67,256,67"/>
+<area shape="rect" id="Node000007" href="$class_mesh_sky_dome.html#a9189a41803ef3ba5e0058ba2263dea44" title="Uploads geometry and texture data from CPU to GPU." alt="" coords="5,107,209,133"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="241,123,209,123,209,117,241,117"/>
+<area shape="rect" id="Node000009" href="$class_mesh_terrain.html#a7f27655ea001536d577eefcaff6421e6" title="Uploads generated mesh data and textures to the GPU." alt="" coords="15,157,199,184"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="251,173,200,173,200,168,251,168"/>
+</map>

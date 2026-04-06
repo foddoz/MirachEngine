@@ -1,0 +1,5 @@
+<map id="enemyState::onFleeEnter" name="enemyState::onFleeEnter">
+<area shape="rect" id="Node000001" title="Called when entering the Flee state. Plays hurt animation and resets timer." alt="" coords="5,5,175,32"/>
+<area shape="rect" id="Node000002" href="$class_enemy.html#a15a7cf1b50848f5fe57062e376f83e61" title="Sets the current animation by name." alt="" coords="223,5,371,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,16,207,16,207,21,175,21"/>
+</map>

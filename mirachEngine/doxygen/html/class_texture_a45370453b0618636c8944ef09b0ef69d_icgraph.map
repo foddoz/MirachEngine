@@ -1,0 +1,5 @@
+<map id="Texture::Texture" name="Texture::Texture">
+<area shape="rect" id="Node000001" title="Constructs a texture with a specified OpenGL texture target." alt="" coords="169,5,284,32"/>
+<area shape="rect" id="Node000002" href="$class_texture.html#aea6e2585385d350d16497e27da372f3a" title="Copy constructor for deep&#45;copying texture state (image data only, not GPU handle)." alt="" coords="5,5,121,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,21,121,21,121,16,153,16"/>
+</map>

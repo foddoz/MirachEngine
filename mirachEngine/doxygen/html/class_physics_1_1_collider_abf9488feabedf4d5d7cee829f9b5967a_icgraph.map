@@ -1,0 +1,33 @@
+<map id="Physics::Collider::SetCollisionMask" name="Physics::Collider::SetCollisionMask">
+<area shape="rect" id="Node000001" title="Sets the bitmask controlling what this collider can collide with." alt="" coords="1183,124,1312,167"/>
+<area shape="rect" id="Node000002" href="$class_player_script.html#abd58c2f0927e732e256307c2f868a17c" title="Drops the currently held object." alt="" coords="954,5,1121,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1216,114,1179,78,1134,46,1107,35,1110,30,1137,42,1183,74,1220,110"/>
+<area shape="rect" id="Node000008" href="$class_terrain_scene.html#ae061572dd4fc80786d66d8e57f666067" title="Spawns crates, potentially breakable or interactable." alt="" coords="946,56,1130,83"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="1188,119,1134,97,1098,86,1099,81,1136,92,1190,114"/>
+<area shape="rect" id="Node000010" href="$class_terrain_scene.html#a92cf2eb19b5a090ec4666367d5a4c898" title="Spawns firefly models, likely with animation or light effects." alt="" coords="940,107,1135,133"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="1168,138,1136,134,1136,129,1168,133"/>
+<area shape="rect" id="Node000011" href="$class_terrain_scene.html#a2605641f2858b4c1ad9033e27a39f0c5" title="Spawns robotic enemy NPCs with AI behavior." alt="" coords="944,157,1131,184"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="1168,158,1132,162,1131,157,1167,152"/>
+<area shape="rect" id="Node000012" href="$class_terrain_scene.html#a279bc61858303d2909e922df19c82e24" title="Spawns cloth sacks as dynamic physics objects." alt="" coords="946,208,1129,235"/>
+<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="1190,176,1136,199,1099,210,1098,205,1134,193,1188,171"/>
+<area shape="rect" id="Node000013" href="$class_terrain_scene.html#ad4ab0bdbe406894b80805499c856c89b" title="Spawns static or decorative tree models in the scene." alt="" coords="948,259,1127,285"/>
+<area shape="poly" id="edge17_Node000001_Node000013" title=" " alt="" coords="1220,180,1183,216,1137,249,1110,261,1107,256,1134,244,1179,212,1216,176"/>
+<area shape="rect" id="Node000003" href="$class_player_script.html#a1f56c64cd8cee085e6d64910b6a9acf7" title="Attempts to launch a held object forward with force." alt="" coords="712,5,892,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="939,21,893,21,893,16,939,16"/>
+<area shape="rect" id="Node000004" href="$class_player_script.html#acf49a0688d3e9aac48601f9aebcf9207" title="Applies movement, jumping, and object interaction logic after the physics update." alt="" coords="489,48,664,91"/>
+<area shape="poly" id="edge7_Node000002_Node000004" title=" " alt="" coords="950,38,892,47,773,59,664,67,664,62,773,54,892,41,949,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="725,39,665,52,663,47,724,33"/>
+<area shape="rect" id="Node000005" href="$class_terrain_scene.html#a55eb34067d9346aa7d9c3295a9e2dfb0" title="Executes the main loop: input, update, physics, animation, and rendering." alt="" coords="280,81,441,108"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="474,84,442,88,442,83,474,79"/>
+<area shape="rect" id="Node000006" href="$class_terrain_scene.html#ae8ec4e098386a74714255aed184761eb" title="Runs the full scene lifecycle in the correct execution order." alt="" coords="103,111,232,137"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="265,112,233,117,232,112,264,107"/>
+<area shape="rect" id="Node000007" href="$mirach_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point of the engine. Initializes subsystems, loads models, sets up ECS,..." alt="" coords="5,111,55,137"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="87,127,55,127,55,121,87,121"/>
+<area shape="rect" id="Node000009" href="$class_terrain_scene.html#a64ff8229749692f3000ab0387dae7165" title="Creates and registers entities and components in the ECS." alt="" coords="718,147,886,173"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="963,90,941,97,880,123,829,149,827,144,878,118,939,92,961,85"/>
+<area shape="poly" id="edge10_Node000009_Node000006" title=" " alt="" coords="703,157,232,130,233,125,703,152"/>
+<area shape="poly" id="edge12_Node000010_Node000009" title=" " alt="" coords="941,139,885,149,884,143,940,134"/>
+<area shape="poly" id="edge14_Node000011_Node000009" title=" " alt="" coords="928,168,886,166,886,161,928,163"/>
+<area shape="poly" id="edge16_Node000012_Node000009" title=" " alt="" coords="968,206,856,177,857,171,969,201"/>
+<area shape="poly" id="edge18_Node000013_Node000009" title=" " alt="" coords="957,256,939,249,872,212,820,176,823,172,874,208,941,244,959,251"/>
+</map>

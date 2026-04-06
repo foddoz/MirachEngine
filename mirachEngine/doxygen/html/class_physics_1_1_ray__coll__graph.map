@@ -1,0 +1,3 @@
+<map id="Physics::Ray" name="Physics::Ray">
+<area shape="rect" id="Node000001" title="Represents a ray used for raycasting." alt="" coords="5,5,95,96"/>
+</map>

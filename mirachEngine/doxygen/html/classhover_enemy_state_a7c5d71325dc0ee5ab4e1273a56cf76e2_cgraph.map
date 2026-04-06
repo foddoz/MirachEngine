@@ -1,0 +1,21 @@
+<map id="hoverEnemyState::onAttackEnter" name="hoverEnemyState::onAttackEnter">
+<area shape="rect" id="Node000001" title="Called when entering the attack state." alt="" coords="5,179,191,221"/>
+<area shape="rect" id="Node000002" href="$class_i_enemy_state_logic.html#aa2c870d75eaf6bf1bb9dec538b0f57fb" title="Registers a collision callback to apply damage to the player." alt="" coords="239,149,424,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,186,223,182,223,187,191,191"/>
+<area shape="rect" id="Node000010" href="$class_enemy.html#a15a7cf1b50848f5fe57062e376f83e61" title="Sets the current animation by name." alt="" coords="257,216,406,243"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="191,209,242,215,241,221,191,214"/>
+<area shape="rect" id="Node000003" href="$class_enemy.html#a6c4671cb8be935f9a9be8926925f00f4" title=" " alt="" coords="476,5,651,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="349,147,400,94,434,66,471,42,483,36,485,41,473,46,437,70,404,98,353,151"/>
+<area shape="rect" id="Node000004" href="$class_enemy.html#aea7262d326b48478bd5e3e6cd2a35331" title="Physics Accessors." alt="" coords="472,56,655,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="366,146,415,119,471,92,490,85,492,90,473,97,418,123,369,151"/>
+<area shape="rect" id="Node000005" href="$class_enemy.html#a6823df17129aabfc6a5fe8cf58aac9bd" title=" " alt="" coords="482,107,645,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="424,148,484,135,485,140,425,153"/>
+<area shape="rect" id="Node000006" href="$class_enemy.html#aaeac8ad6fedccb72cc4b5c99ded26c87" title=" " alt="" coords="490,157,638,184"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="424,168,474,168,474,173,424,173"/>
+<area shape="rect" id="Node000007" href="$class_physics_system.html#adc1b56a65144927424e6353ced3c7003" title="Gets the underlying physics world." alt="" coords="476,208,651,235"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="425,188,485,202,484,207,424,193"/>
+<area shape="rect" id="Node000008" href="$class_physics_1_1_world.html#adabe37ea49694f6e307d40b90c5e7211" title="Registers a global collision callback for contact events." alt="" coords="480,259,647,301"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="403,190,426,202,450,223,474,244,482,249,480,254,470,249,446,227,422,206,400,195"/>
+<area shape="rect" id="Node000009" href="$class_enemy.html#a4d9d075e8c408036a4c21675ed00333e" title=" " alt="" coords="474,325,653,352"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="410,190,426,202,438,216,445,231,450,259,456,286,462,299,474,311,478,315,475,319,470,315,458,302,451,288,445,260,440,232,433,219,422,206,407,195"/>
+</map>

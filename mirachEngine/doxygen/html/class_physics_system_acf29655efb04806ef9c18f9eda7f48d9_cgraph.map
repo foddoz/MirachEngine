@@ -1,0 +1,23 @@
+<map id="PhysicsSystem::Update" name="PhysicsSystem::Update">
+<area shape="rect" id="Node000001" title="Updates the physics world and synchronizes entity transforms with their rigid bodies." alt="" coords="5,56,169,83"/>
+<area shape="rect" id="Node000002" href="$math_8hpp.html#a01d6afce125900f6e5b446d5094ea823" title="Converts Euler angles (in degrees) to a quaternion." alt="" coords="434,5,611,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,53,161,32,216,16,268,9,320,5,419,6,419,12,320,11,268,14,217,21,162,37,116,58"/>
+<area shape="rect" id="Node000003" href="$class_transform.html#abd58e4999a545d0041205d28ea83bd80" title="Returns whether the object&#39;s up axis is Y." alt="" coords="220,31,370,57"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="169,57,204,52,205,58,169,62"/>
+<area shape="rect" id="Node000004" href="$class_transform.html#a7c287f2ec371a1214df9fa7ad6a9718b" title="Sets the world&#45;space position of the object." alt="" coords="218,132,373,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="123,81,218,117,237,124,235,129,216,123,121,86"/>
+<area shape="rect" id="Node000009" href="$class_transform.html#a80e28cb7ca8818e944c6177ed6ca7bfe" title="Sets the object&#39;s rotation in Euler degrees." alt="" coords="217,81,374,108"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="169,77,202,81,201,86,169,82"/>
+<area shape="rect" id="Node000005" href="$class_transform.html#a766790cd6c7043b6d28fe75d36a7bcc6" title="Recalculates the cached model matrix based on current position, rotation, and scale." alt="" coords="422,132,623,159"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="373,143,406,143,406,148,373,148"/>
+<area shape="rect" id="Node000006" href="$math_8hpp.html#a57197be1224ca571c566c73c33081081" title="Applies scale to a matrix." alt="" coords="682,81,736,108"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="580,129,623,117,666,105,668,110,624,123,581,134"/>
+<area shape="rect" id="Node000007" href="$math_8hpp.html#a1213c92d8be7146176f8be90d8903ece" title="Converts a quaternion to a 4x4 matrix." alt="" coords="677,132,741,159"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="624,143,661,143,661,148,624,148"/>
+<area shape="rect" id="Node000008" href="$math_8hpp.html#a978278a474c16b86c65813cec08b513a" title="Applies translation to a matrix." alt="" coords="671,183,747,209"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="575,157,657,179,656,184,574,162"/>
+<area shape="poly" id="edge9_Node000009_Node000002" title=" " alt="" coords="339,78,373,67,466,35,468,40,375,72,340,83"/>
+<area shape="poly" id="edge11_Node000009_Node000005" title=" " alt="" coords="359,106,445,125,444,131,358,111"/>
+<area shape="rect" id="Node000010" href="$class_transform.html#a0bd1bcdbc6da88be8ad16e6a90aa2c55" title="Wraps a rotation angle to the range [0, 360)." alt="" coords="436,81,609,108"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="375,92,421,92,421,97,375,97"/>
+</map>

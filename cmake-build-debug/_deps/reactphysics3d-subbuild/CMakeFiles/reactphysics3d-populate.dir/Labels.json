@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/reactphysics3d-subbuild/CMakeFiles/reactphysics3d-populate"
+		},
+		{
+			"file" : "C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/reactphysics3d-subbuild/CMakeFiles/reactphysics3d-populate.rule"
+		},
+		{
+			"file" : "C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/reactphysics3d-subbuild/CMakeFiles/reactphysics3d-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/reactphysics3d-subbuild/reactphysics3d-populate-prefix/src/reactphysics3d-populate-stamp/reactphysics3d-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/reactphysics3d-subbuild/reactphysics3d-populate-prefix/src/reactphysics3d-populate-stamp/reactphysics3d-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/reactphysics3d-subbuild/reactphysics3d-populate-prefix/src/reactphysics3d-populate-stamp/reactphysics3d-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/reactphysics3d-subbuild/reactphysics3d-populate-prefix/src/reactphysics3d-populate-stamp/reactphysics3d-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/reactphysics3d-subbuild/reactphysics3d-populate-prefix/src/reactphysics3d-populate-stamp/reactphysics3d-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/reactphysics3d-subbuild/reactphysics3d-populate-prefix/src/reactphysics3d-populate-stamp/reactphysics3d-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/reactphysics3d-subbuild/reactphysics3d-populate-prefix/src/reactphysics3d-populate-stamp/reactphysics3d-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/reactphysics3d-subbuild/reactphysics3d-populate-prefix/src/reactphysics3d-populate-stamp/reactphysics3d-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"reactphysics3d-populate"
+		],
+		"name" : "reactphysics3d-populate"
+	}
+}

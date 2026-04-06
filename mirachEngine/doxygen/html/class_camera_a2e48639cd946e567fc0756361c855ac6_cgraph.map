@@ -1,0 +1,9 @@
+<map id="Camera::UpdateFrustumPlanes" name="Camera::UpdateFrustumPlanes">
+<area shape="rect" id="Node000001" title="Updates the six frustum planes based on the camera&#39;s view&#45;projection matrix and position." alt="" coords="5,31,211,57"/>
+<area shape="rect" id="Node000002" href="$class_camera.html#a6e3587a907ed288508c97493e7d51fc1" title="Calculates and retrieves the current view matrix based on a given position." alt="" coords="259,5,420,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,30,243,26,244,32,211,35"/>
+<area shape="rect" id="Node000004" href="$math_8hpp.html#a449ecbbd825f26c183caeac2bda40c41" title="Returns the length of a 2D vector." alt="" coords="309,56,370,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="211,53,294,62,293,67,211,58"/>
+<area shape="rect" id="Node000003" href="$math_8hpp.html#a4c4521724debb415e676587b9b4e8bff" title="Creates a view matrix looking from &#39;eye&#39; to &#39;center&#39; with &#39;up&#39; direction." alt="" coords="468,5,530,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="421,16,452,16,452,21,421,21"/>
+</map>

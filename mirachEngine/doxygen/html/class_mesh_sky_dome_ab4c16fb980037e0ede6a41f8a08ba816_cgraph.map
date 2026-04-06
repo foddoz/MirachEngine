@@ -1,0 +1,19 @@
+<map id="MeshSkyDome::PopulateBuffers" name="MeshSkyDome::PopulateBuffers">
+<area shape="rect" id="Node000001" title="Generates VAO, VBO, and IBO and uploads vertex/index data to the GPU." alt="" coords="5,183,217,209"/>
+<area shape="rect" id="Node000002" href="$namespace_graphics.html#a4765b419f51cd4a0d45b84dd4f7d7f17" title=" " alt="" coords="289,5,430,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,181,175,114,217,75,263,42,275,36,277,40,266,46,220,79,179,118,124,184"/>
+<area shape="rect" id="Node000003" href="$namespace_graphics.html#a6f4d24e455fdef40dfe6b467f9b3d6d4" title=" " alt="" coords="272,56,448,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="127,180,186,137,223,113,264,92,280,85,282,90,266,97,226,118,189,142,131,184"/>
+<area shape="rect" id="Node000004" href="$namespace_graphics.html#a6a2b8b04edd45dc9bbf6b70af7c5b16d" title=" " alt="" coords="288,107,432,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="151,179,264,143,290,135,291,140,265,148,153,185"/>
+<area shape="rect" id="Node000005" href="$namespace_graphics.html#aa184d03626711a8afe423b4a50442c12" title=" " alt="" coords="265,157,454,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="217,183,249,179,250,185,217,188"/>
+<area shape="rect" id="Node000006" href="$namespace_graphics.html#a8109b501f710603a722a06a5c02ac5b8" title=" " alt="" coords="290,208,430,235"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="217,204,275,210,274,215,217,209"/>
+<area shape="rect" id="Node000007" href="$namespace_graphics.html#ae7b4fc0d405f3edef698219b304c4e97" title=" " alt="" coords="273,259,446,285"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="153,207,265,244,291,252,290,257,264,249,151,213"/>
+<area shape="rect" id="Node000008" href="$namespace_graphics.html#a9334eb7750459b3f968a9bf13eb7f6b4" title=" " alt="" coords="275,309,444,352"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="131,208,189,249,266,295,278,301,275,305,263,300,187,254,128,212"/>
+<area shape="rect" id="Node000009" href="$namespace_graphics.html#a55aadce60c9d25fb369920ad3e4b431b" title=" " alt="" coords="265,376,455,403"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="123,208,144,240,177,282,218,325,266,362,276,367,274,372,263,366,215,329,173,285,140,243,119,211"/>
+</map>

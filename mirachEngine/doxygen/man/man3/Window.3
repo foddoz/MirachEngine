@@ -1,0 +1,168 @@
+.TH "Window" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Window \- Provides a platform-agnostic facade for window and OpenGL context management\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWindowHandle\fP * \fBCreate\fP (const std::string &title, int width, int height)"
+.br
+.RI "Creates a new window with the specified title and dimensions\&. "
+.ti -1c
+.RI "void \fBDestroy\fP (\fBWindowHandle\fP *window)"
+.br
+.RI "Destroys a previously created window\&. "
+.ti -1c
+.RI "\fBGraphicsContextHandle\fP \fBCreateGraphicsContext\fP (\fBWindowHandle\fP *window)"
+.br
+.RI "Creates a graphics context (e\&.g\&., OpenGL) for the given window\&. "
+.ti -1c
+.RI "void \fBMakeContextCurrent\fP (\fBWindowHandle\fP *window, \fBGraphicsContextHandle\fP context)"
+.br
+.RI "Makes the specified graphics context current for the given window\&. "
+.ti -1c
+.RI "void \fBSwapBuffers\fP (\fBWindowHandle\fP *window)"
+.br
+.RI "Swaps the front and back buffers of the given window\&. "
+.ti -1c
+.RI "void \fBLockMouse\fP (\fBWindowHandle\fP *window, bool lock, int width, int height)"
+.br
+.RI "Locks or unlocks the mouse cursor to the window center\&. "
+.ti -1c
+.RI "void * \fBGetProcAddress\fP (const char *name)"
+.br
+.RI "Retrieves the OpenGL function pointer for the given function name\&. "
+.ti -1c
+.RI "bool \fBInitGraphics\fP ()"
+.br
+.RI "Initializes platform-specific graphics loaders (e\&.g\&., GLAD)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Provides a platform-agnostic facade for window and OpenGL context management\&. 
+.SH "Function Documentation"
+.PP 
+.SS "\fBWindowHandle\fP * Window::Create (const std::string & title, int width, int height)"
+
+.PP
+Creates a new window with the specified title and dimensions\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItitle\fP Title of the window\&. 
+.br
+\fIwidth\fP Width of the window in pixels\&. 
+.br
+\fIheight\fP Height of the window in pixels\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the created \fBWindowHandle\fP\&. 
+.RE
+.PP
+
+.SS "\fBGraphicsContextHandle\fP Window::CreateGraphicsContext (\fBWindowHandle\fP * window)"
+
+.PP
+Creates a graphics context (e\&.g\&., OpenGL) for the given window\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIwindow\fP Pointer to the target window\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Handle to the graphics context\&. 
+.RE
+.PP
+
+.SS "void Window::Destroy (\fBWindowHandle\fP * window)"
+
+.PP
+Destroys a previously created window\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIwindow\fP Pointer to the \fBWindowHandle\fP to destroy\&. 
+.RE
+.PP
+
+.SS "void * Window::GetProcAddress (const char * name)"
+
+.PP
+Retrieves the OpenGL function pointer for the given function name\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP Name of the OpenGL function\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the function, or nullptr if not found\&. 
+.RE
+.PP
+
+.SS "bool Window::InitGraphics ()"
+
+.PP
+Initializes platform-specific graphics loaders (e\&.g\&., GLAD)\&. 
+.PP
+\fBReturns\fP
+.RS 4
+True if successful, false otherwise\&. 
+.RE
+.PP
+
+.SS "void Window::LockMouse (\fBWindowHandle\fP * window, bool lock, int width, int height)"
+
+.PP
+Locks or unlocks the mouse cursor to the window center\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIwindow\fP Pointer to the window\&. 
+.br
+\fIlock\fP If true, locks the mouse; otherwise, unlocks it\&. 
+.br
+\fIwidth\fP Width of the window (used for centering)\&. 
+.br
+\fIheight\fP Height of the window (used for centering)\&. 
+.RE
+.PP
+
+.SS "void Window::MakeContextCurrent (\fBWindowHandle\fP * window, \fBGraphicsContextHandle\fP context)"
+
+.PP
+Makes the specified graphics context current for the given window\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIwindow\fP Pointer to the window\&. 
+.br
+\fIcontext\fP \fBGraphics\fP context to make current\&. 
+.RE
+.PP
+
+.SS "void Window::SwapBuffers (\fBWindowHandle\fP * window)"
+
+.PP
+Swaps the front and back buffers of the given window\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIwindow\fP Pointer to the window\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

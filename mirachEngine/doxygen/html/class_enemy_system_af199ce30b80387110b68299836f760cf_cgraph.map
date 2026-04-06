@@ -1,0 +1,5 @@
+<map id="EnemySystem::Update" name="EnemySystem::Update">
+<area shape="rect" id="Node000001" title="Updates all registered Enemy entities. Calls the Update() method of each Enemy, passing the delta tim..." alt="" coords="5,5,163,32"/>
+<area shape="rect" id="Node000002" href="$class_enemy.html#a9a1ef91d86d0a6994ee63b81f266fc22" title="Per&#45;frame update for the enemy. Delegates to the FSM." alt="" coords="211,5,323,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,16,195,16,195,21,163,21"/>
+</map>

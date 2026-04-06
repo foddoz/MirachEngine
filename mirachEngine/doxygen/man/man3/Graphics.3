@@ -1,0 +1,277 @@
+.TH "Graphics" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Graphics
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBClearColor\fP (float r, float g, float b, float a)"
+.br
+.ti -1c
+.RI "void \fBViewport\fP (int x, int y, float width, float height)"
+.br
+.ti -1c
+.RI "void \fBClear\fP (unsigned int mask)"
+.br
+.ti -1c
+.RI "void \fBEnable\fP (\fBCapability\fP cap)"
+.br
+.ti -1c
+.RI "void \fBDisable\fP (\fBCapability\fP cap)"
+.br
+.ti -1c
+.RI "void \fBSetCullFace\fP (\fBCullFaceMode\fP mode)"
+.br
+.ti -1c
+.RI "void \fBSetFrontFace\fP (\fBFrontFaceOrder\fP order)"
+.br
+.ti -1c
+.RI "void \fBSetDepthWrite\fP (bool enable)"
+.br
+.ti -1c
+.RI "void \fBUseProgram\fP (unsigned int program)"
+.br
+.ti -1c
+.RI "int \fBGetUniformLocation\fP (unsigned int programID, const std::string &name)"
+.br
+.ti -1c
+.RI "void \fBSetUniformMat4\fP (int location, const float *matrixPtr)"
+.br
+.ti -1c
+.RI "void \fBSetUniform1f\fP (int location, float value)"
+.br
+.ti -1c
+.RI "void \fBSetUniform1i\fP (int location, int value)"
+.br
+.ti -1c
+.RI "void \fBSetUniform3f\fP (int location, float x, float y, float z)"
+.br
+.ti -1c
+.RI "void \fBGenVertexArray\fP (unsigned int &vao)"
+.br
+.ti -1c
+.RI "void \fBGenBuffer\fP (unsigned int &buffer)"
+.br
+.ti -1c
+.RI "void \fBBufferSubData\fP (\fBBufferTarget\fP target, size_t offset, size_t size, const void *data)"
+.br
+.ti -1c
+.RI "void \fBBindVertexArray\fP (unsigned int vao)"
+.br
+.ti -1c
+.RI "void \fBBindBuffer\fP (\fBBufferTarget\fP target, unsigned int buffer)"
+.br
+.ti -1c
+.RI "void \fBUnbindVertexArray\fP ()"
+.br
+.ti -1c
+.RI "void \fBUnbindBuffer\fP (\fBBufferTarget\fP target)"
+.br
+.ti -1c
+.RI "void \fBBufferData\fP (\fBBufferTarget\fP target, size_t size, const void *data, \fBBufferUsage\fP usage)"
+.br
+.ti -1c
+.RI "void \fBEnableVertexAttrib\fP (unsigned int location)"
+.br
+.ti -1c
+.RI "void \fBSetVertexAttribPointer\fP (unsigned int location, int componentCount, \fBDataType\fP type, bool normalized, size_t stride, const void *offset)"
+.br
+.ti -1c
+.RI "void \fBDeleteBuffer\fP (unsigned int &bufferID)"
+.br
+.ti -1c
+.RI "void \fBDeleteVertexArray\fP (unsigned int &vaoID)"
+.br
+.ti -1c
+.RI "void \fBGenTexture\fP (unsigned int &id)"
+.br
+.ti -1c
+.RI "void \fBBindTexture\fP (\fBTextureTarget\fP target, unsigned int textureID)"
+.br
+.ti -1c
+.RI "void \fBActiveTextureUnit\fP (unsigned int unit)"
+.br
+.ti -1c
+.RI "void \fBTexImage2D\fP (\fBTextureTarget\fP target, int width, int height, \fBTextureFormat\fP format, const void *data)"
+.br
+.ti -1c
+.RI "void \fBGenerateMipmaps\fP (\fBTextureTarget\fP target)"
+.br
+.ti -1c
+.RI "void \fBDeleteTexture\fP (unsigned int &id)"
+.br
+.ti -1c
+.RI "void \fBDrawElements\fP (\fBDrawMode\fP mode, int count, \fBDataType\fP type, const void *indices)"
+.br
+.ti -1c
+.RI "void \fBDrawElementsBaseVertex\fP (\fBDrawMode\fP mode, int count, \fBDataType\fP type, const void *indices, int baseVertex)"
+.br
+.ti -1c
+.RI "unsigned int \fBGetCurrentVertexArray\fP ()"
+.br
+.ti -1c
+.RI "void \fBUnbindProgram\fP ()"
+.br
+.ti -1c
+.RI "void \fBDrawArrays\fP (\fBDrawMode\fP mode, int first, int count)"
+.br
+.ti -1c
+.RI "unsigned int \fBGetError\fP ()"
+.br
+.ti -1c
+.RI "bool \fBCheckGraphicsError\fP ()"
+.br
+.ti -1c
+.RI "unsigned int \fBCreateShader\fP (\fBShaderType\fP type)"
+.br
+.ti -1c
+.RI "void \fBSetShaderSource\fP (unsigned int shaderID, const std::string &source)"
+.br
+.ti -1c
+.RI "void \fBCompileShader\fP (unsigned int shaderID)"
+.br
+.ti -1c
+.RI "bool \fBGetShaderCompileStatus\fP (unsigned int shaderID, std::string *outLog=nullptr)"
+.br
+.ti -1c
+.RI "unsigned int \fBCreateProgram\fP ()"
+.br
+.ti -1c
+.RI "void \fBAttachShader\fP (unsigned int programID, unsigned int shaderID)"
+.br
+.ti -1c
+.RI "void \fBLinkProgram\fP (unsigned int programID)"
+.br
+.ti -1c
+.RI "bool \fBGetProgramLinkStatus\fP (unsigned int programID, std::string *outLog=nullptr)"
+.br
+.ti -1c
+.RI "unsigned int \fBCreateEmptyBuffer\fP (size_t size)"
+.br
+.ti -1c
+.RI "void \fBOverridePositionVBO\fP (unsigned int vbo, int location=\fBPOSITION_LOCATION\fP)"
+.br
+.ti -1c
+.RI "int \fBGetActiveUniformCount\fP (unsigned int programID)"
+.br
+.ti -1c
+.RI "void \fBDeleteShader\fP (unsigned int shaderID)"
+.br
+.ti -1c
+.RI "void \fBDeleteProgram\fP (unsigned int &programID)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void Graphics::ActiveTextureUnit (unsigned int unit)\fR [inline]\fP"
+
+.SS "void Graphics::AttachShader (unsigned int programID, unsigned int shaderID)\fR [inline]\fP"
+
+.SS "void Graphics::BindBuffer (\fBBufferTarget\fP target, unsigned int buffer)\fR [inline]\fP"
+
+.SS "void Graphics::BindTexture (\fBTextureTarget\fP target, unsigned int textureID)\fR [inline]\fP"
+
+.SS "void Graphics::BindVertexArray (unsigned int vao)\fR [inline]\fP"
+
+.SS "void Graphics::BufferData (\fBBufferTarget\fP target, size_t size, const void * data, \fBBufferUsage\fP usage)\fR [inline]\fP"
+
+.SS "void Graphics::BufferSubData (\fBBufferTarget\fP target, size_t offset, size_t size, const void * data)\fR [inline]\fP"
+
+.SS "bool Graphics::CheckGraphicsError ()\fR [inline]\fP"
+
+.SS "void Graphics::Clear (unsigned int mask)\fR [inline]\fP"
+
+.SS "void Graphics::ClearColor (float r, float g, float b, float a)\fR [inline]\fP"
+
+.SS "void Graphics::CompileShader (unsigned int shaderID)\fR [inline]\fP"
+
+.SS "unsigned int Graphics::CreateEmptyBuffer (size_t size)\fR [inline]\fP"
+
+.SS "unsigned int Graphics::CreateProgram ()\fR [inline]\fP"
+
+.SS "unsigned int Graphics::CreateShader (\fBShaderType\fP type)\fR [inline]\fP"
+
+.SS "void Graphics::DeleteBuffer (unsigned int & bufferID)\fR [inline]\fP"
+
+.SS "void Graphics::DeleteProgram (unsigned int & programID)\fR [inline]\fP"
+
+.SS "void Graphics::DeleteShader (unsigned int shaderID)\fR [inline]\fP"
+
+.SS "void Graphics::DeleteTexture (unsigned int & id)\fR [inline]\fP"
+
+.SS "void Graphics::DeleteVertexArray (unsigned int & vaoID)\fR [inline]\fP"
+
+.SS "void Graphics::Disable (\fBCapability\fP cap)\fR [inline]\fP"
+
+.SS "void Graphics::DrawArrays (\fBDrawMode\fP mode, int first, int count)\fR [inline]\fP"
+
+.SS "void Graphics::DrawElements (\fBDrawMode\fP mode, int count, \fBDataType\fP type, const void * indices)\fR [inline]\fP"
+
+.SS "void Graphics::DrawElementsBaseVertex (\fBDrawMode\fP mode, int count, \fBDataType\fP type, const void * indices, int baseVertex)\fR [inline]\fP"
+
+.SS "void Graphics::Enable (\fBCapability\fP cap)\fR [inline]\fP"
+
+.SS "void Graphics::EnableVertexAttrib (unsigned int location)\fR [inline]\fP"
+
+.SS "void Graphics::GenBuffer (unsigned int & buffer)\fR [inline]\fP"
+
+.SS "void Graphics::GenerateMipmaps (\fBTextureTarget\fP target)\fR [inline]\fP"
+
+.SS "void Graphics::GenTexture (unsigned int & id)\fR [inline]\fP"
+
+.SS "void Graphics::GenVertexArray (unsigned int & vao)\fR [inline]\fP"
+
+.SS "int Graphics::GetActiveUniformCount (unsigned int programID)\fR [inline]\fP"
+
+.SS "unsigned int Graphics::GetCurrentVertexArray ()\fR [inline]\fP"
+
+.SS "unsigned int Graphics::GetError ()\fR [inline]\fP"
+
+.SS "bool Graphics::GetProgramLinkStatus (unsigned int programID, std::string * outLog = \fRnullptr\fP)\fR [inline]\fP"
+
+.SS "bool Graphics::GetShaderCompileStatus (unsigned int shaderID, std::string * outLog = \fRnullptr\fP)\fR [inline]\fP"
+
+.SS "int Graphics::GetUniformLocation (unsigned int programID, const std::string & name)\fR [inline]\fP"
+
+.SS "void Graphics::LinkProgram (unsigned int programID)\fR [inline]\fP"
+
+.SS "void Graphics::OverridePositionVBO (unsigned int vbo, int location = \fR\fBPOSITION_LOCATION\fP\fP)\fR [inline]\fP"
+
+.SS "void Graphics::SetCullFace (\fBCullFaceMode\fP mode)\fR [inline]\fP"
+
+.SS "void Graphics::SetDepthWrite (bool enable)\fR [inline]\fP"
+
+.SS "void Graphics::SetFrontFace (\fBFrontFaceOrder\fP order)\fR [inline]\fP"
+
+.SS "void Graphics::SetShaderSource (unsigned int shaderID, const std::string & source)\fR [inline]\fP"
+
+.SS "void Graphics::SetUniform1f (int location, float value)\fR [inline]\fP"
+
+.SS "void Graphics::SetUniform1i (int location, int value)\fR [inline]\fP"
+
+.SS "void Graphics::SetUniform3f (int location, float x, float y, float z)\fR [inline]\fP"
+
+.SS "void Graphics::SetUniformMat4 (int location, const float * matrixPtr)\fR [inline]\fP"
+
+.SS "void Graphics::SetVertexAttribPointer (unsigned int location, int componentCount, \fBDataType\fP type, bool normalized, size_t stride, const void * offset)\fR [inline]\fP"
+
+.SS "void Graphics::TexImage2D (\fBTextureTarget\fP target, int width, int height, \fBTextureFormat\fP format, const void * data)\fR [inline]\fP"
+
+.SS "void Graphics::UnbindBuffer (\fBBufferTarget\fP target)\fR [inline]\fP"
+
+.SS "void Graphics::UnbindProgram ()\fR [inline]\fP"
+
+.SS "void Graphics::UnbindVertexArray ()\fR [inline]\fP"
+
+.SS "void Graphics::UseProgram (unsigned int program)\fR [inline]\fP"
+
+.SS "void Graphics::Viewport (int x, int y, float width, float height)\fR [inline]\fP"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

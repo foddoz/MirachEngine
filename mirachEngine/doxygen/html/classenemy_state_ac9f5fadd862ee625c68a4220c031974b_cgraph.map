@@ -1,0 +1,9 @@
+<map id="enemyState::onDeathExit" name="enemyState::onDeathExit">
+<area shape="rect" id="Node000001" title="Called when exiting the Death state. Adds Dead component and resets timer." alt="" coords="5,35,177,61"/>
+<area shape="rect" id="Node000002" href="$class_entity_manager.html#a649c96273c078e788cecbdfaa0aee1ef" title="Adds a component of type T to the given entity." alt="" coords="225,35,428,61"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,45,209,45,209,51,177,51"/>
+<area shape="rect" id="Node000003" href="$class_component_manager.html#af278794db44296d707492fef01b15e96" title="Adds a component to the specified entity." alt="" coords="476,5,712,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="428,34,460,31,461,36,429,40"/>
+<area shape="rect" id="Node000004" href="$class_entity_manager.html#a9792efcb1c6904999ab34b3a65a7c69d" title="Returns the manager for the given component type, creating it if needed." alt="" coords="500,56,688,99"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="429,56,486,63,485,68,428,62"/>
+</map>

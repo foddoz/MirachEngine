@@ -1,0 +1,3 @@
+<map id="Texture" name="Texture">
+<area shape="rect" id="Node000001" title="Handles image loading, GPU uploading, binding, and cleanup of texture resources." alt="" coords="5,5,123,331"/>
+</map>

@@ -1,0 +1,808 @@
+\doxysection{Enemy Class Reference}
+\hypertarget{class_enemy}{}\label{class_enemy}\index{Enemy@{Enemy}}
+
+
+Represents an enemy character controlled by a finite state machine (FSM). This class defines properties, behavior, and state transitions for an enemy AI agent. It is integrated with ECS (Entity-\/\+Component System), physics, animation, and health systems.  
+
+
+
+
+{\ttfamily \#include $<$enemy.\+h$>$}
+
+
+
+Collaboration diagram for Enemy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_enemy__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_enemy_a94f30d348b6d2840fd71675472ba38dd}{Enemy}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_enemy_a2597c7f1f719dfe2df861e48aba45dff}{Enemy}} (const std\+::string \&\mbox{\hyperlink{class_enemy_a62b43d24fa5a537d45bdba46a4e2559b}{name}}, \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} self, \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}player, \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*}mgr, \mbox{\hyperlink{class_i_enemy_state_logic}{IEnemy\+State\+Logic}} \texorpdfstring{$\ast$}{*}AILogic, \mbox{\hyperlink{class_physics_system}{Physics\+System}} \texorpdfstring{$\ast$}{*}physics)
+\begin{DoxyCompactList}\small\item\em Full constructor for initializing enemy state and dependencies. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_enemy_ac0eec4755e28c02688065f9657150ac3}{\texorpdfstring{$\sim$}{\string~}\+Enemy}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_a9a1ef91d86d0a6994ee63b81f266fc22}{Update}} (float dt)
+\begin{DoxyCompactList}\small\item\em Per-\/frame update for the enemy. Delegates to the FSM. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_enemy_a342051a8cf9fe6e329774e37af486fca}{get\+Speed}} () const
+\begin{DoxyCompactList}\small\item\em Getters and Setters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_ad56be7de3130fefb3a4a56d418ef69cb}{set\+Speed}} (float s)
+\item 
+\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_enemy_a6c4671cb8be935f9a9be8926925f00f4}{Get\+Entity\+Manager}} () const
+\item 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \mbox{\hyperlink{class_enemy_aaeac8ad6fedccb72cc4b5c99ded26c87}{Get\+Self\+Entity}} () const
+\item 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_enemy_a6823df17129aabfc6a5fe8cf58aac9bd}{Get\+Player\+Entity}} () const
+\item 
+std\+::string \mbox{\hyperlink{class_enemy_acc2a72d8a2af5edba5fca650abebd652}{get\+Name}} () const
+\item 
+\mbox{\hyperlink{class_state_machine}{State\+Machine}}$<$ \mbox{\hyperlink{class_enemy}{Enemy}} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_enemy_a6a53cb0274226ee5528ab2d0290960f4}{get\+FSM}} () const
+\item 
+float \mbox{\hyperlink{class_enemy_a1aab2890fa809595ba526f3126245531}{get\+Damage}} () const
+\item 
+void \mbox{\hyperlink{class_enemy_abecf6dd78cde581d8d80314d544ddf72}{Face\+Target}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&target\+Pos)
+\begin{DoxyCompactList}\small\item\em Rotates the enemy to face a specific target position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_a15a7cf1b50848f5fe57062e376f83e61}{Set\+Animation}} (const std\+::string \&anim\+Name)
+\begin{DoxyCompactList}\small\item\em Sets the current animation by name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_enemy_a23955b57eed292653412616a12fb38a8}{Is\+Player\+In\+Range}} (\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}e, float range)
+\begin{DoxyCompactList}\small\item\em Checks whether the player is within a given range. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_enemy_a47cf9a1e2dc95bc2c76763686b470e3a}{Is\+Animation\+Ended}} () const
+\begin{DoxyCompactList}\small\item\em Returns whether the current animation has ended. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_enemy_afed1f34385bbc4d7dc77c4861c56ca8c}{Is\+Health\+Low}} (float threshold) const
+\begin{DoxyCompactList}\small\item\em Checks if the enemy\textquotesingle{}s health is below a threshold. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_ae62e38383deee4d466f7374d0cdc764c}{Alert\+Nearby\+Enemies}} ()
+\begin{DoxyCompactList}\small\item\em Notifies nearby enemies (if implemented) that the player is detected. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_physics_system}{Physics\+System}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_enemy_aea7262d326b48478bd5e3e6cd2a35331}{Get\+Physics\+System}} () const
+\begin{DoxyCompactList}\small\item\em \doxylink{namespace_physics}{Physics} Accessors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_a4d9d075e8c408036a4c21675ed00333e}{Set\+Attack\+Callback}} (\mbox{\hyperlink{class_physics_1_1_collision_callback}{Physics\+::\+Collision\+Callback}} \texorpdfstring{$\ast$}{*}cb)
+\item 
+void \mbox{\hyperlink{class_enemy_a9d091969b26bf7254de76f6c2f3d7715}{Clear\+Attack\+Callback}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_accc7a71574730e56c46e91a72e8f6d8c}{on\+Attack\+Enter}} ()
+\begin{DoxyCompactList}\small\item\em === FSM \doxylink{class_state}{State} Hooks === \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_enemy_a0e6928b565ff07ab933a07566d3e1542}{on\+Attack\+Execute}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_ae0e050f4ee8d28cf28490d8078fd756a}{on\+Attack\+Exit}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_a2f5395090ffcfad21ea4c2357bc589ec}{on\+Flee\+Enter}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_a65bb1d5557c61f766bd2b4a194cc4f91}{on\+Flee\+Execute}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_a8347612e49fb9ddc1f678226eef3e456}{on\+Flee\+Exit}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_a33315056c603f39f5164635b2094086d}{on\+Patrol\+Enter}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_a15dd4a1a7398faf16ff3b7fb3ec65830}{on\+Patrol\+Execute}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_aa7780a0602c862b313d023c704a26291}{on\+Patrol\+Exit}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_a13b87cb6c21ef2d7e471fe5519019d9e}{on\+Chase\+Enter}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_a23c60f844782e9ece581dffccbe3820d}{on\+Chase\+Execute}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_a0667f5715476fbdcc7aca0fd1ed62692}{on\+Chase\+Exit}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_a0862eb2c5a157a8aae3c2449d4d5225c}{on\+Death\+Enter}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_a086bf93c777bc97981d2057c825b1409}{on\+Death\+Execute}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_a37d9be6c5fd7a31a3c3c6384c3889648}{on\+Death\+Exit}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_ad10dbe33f79025c5b4c21659ae1b0ba0}{on\+Pain\+Enter}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_a4f501008e40a0f192e2ceefd9570c614}{on\+Pain\+Execute}} ()
+\item 
+void \mbox{\hyperlink{class_enemy_a48c1aa85d7c458d79f1a81a3ff89d3ac}{on\+Pain\+Exit}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_enemy_a62b43d24fa5a537d45bdba46a4e2559b}{name}}
+\begin{DoxyCompactList}\small\item\em The name/label of the enemy (used for identification or debugging). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_i_enemy_state_logic}{IEnemy\+State\+Logic}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_enemy_ae8645f8147ecfcf079c60c890bee3b65}{logic}}
+\begin{DoxyCompactList}\small\item\em Logic interface that implements the behaviors for all states (\doxylink{class_attack}{Attack}, \doxylink{class_chase}{Chase}, etc.). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_state_machine}{State\+Machine}}$<$ \mbox{\hyperlink{class_enemy}{Enemy}} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_enemy_a252c92dee41a63dabd302753e8af3c6a}{fsm}}
+\begin{DoxyCompactList}\small\item\em Finite \doxylink{class_state}{State} Machine controlling the current behavior state of the enemy. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \mbox{\hyperlink{class_enemy_ae56bc7f70cf1ee86eacc20bd55e25dd8}{self\+Entity}}
+\begin{DoxyCompactList}\small\item\em ECS entities used for this enemy and the player (used in AI targeting). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_enemy_a11c4e0c978a45c4772e34428310c50d5}{player\+Entity}}
+\item 
+\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_enemy_a607316fd31ad537633a131902999e31b}{entity\+Manager}}
+\item 
+float \mbox{\hyperlink{class_enemy_a98766d083fc49e746a37d0dc69be09e0}{speed}} = 5.\+0f
+\begin{DoxyCompactList}\small\item\em Movement speed of the enemy. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{class_enemy_a0362a025bc753a68b8fdbd2aeb59157a}{Direction}} = \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}(1.f, 0.f, 0.f)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_patrol}{Patrol} behavior\+: direction and timing. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_enemy_a609f88dfcbc93d9f49b7747ad4da34ab}{Timer}} = 0.f
+\item 
+float \mbox{\hyperlink{class_enemy_a7d45612126533b2d50dff190bab8c922}{Switch\+Interval}} = 3.f
+\item 
+const float \mbox{\hyperlink{class_enemy_a52614c95bedc5fd925dd2beeeed85f50}{max\+Chase\+Distance}} = 50.\+0f
+\begin{DoxyCompactList}\small\item\em AI parameters. \end{DoxyCompactList}\item 
+const float \mbox{\hyperlink{class_enemy_aa81f145150709646c0cdcabde5af73ec}{attack\+Range}} = 5.\+0f
+\begin{DoxyCompactList}\small\item\em Distance required to start attacking. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_enemy_a096e668a35b984815bf3f64f0a347b86}{is\+Attacking}} = false
+\begin{DoxyCompactList}\small\item\em Whether currently in attack state. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_enemy_a5d5917c222119c1d8eb3183c27c7adb7}{damage}} = 10
+\begin{DoxyCompactList}\small\item\em Damage dealt per attack. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_physics_system}{Physics\+System}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_enemy_a4253bd4e40c2b64268b3a703fbff576d}{physics\+System}} = nullptr
+\begin{DoxyCompactList}\small\item\em \doxylink{namespace_physics}{Physics} system reference and temporary attack callback used during combat. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_physics_1_1_collision_callback}{Physics\+::\+Collision\+Callback}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_enemy_a294239239dad0b0a33d7ad4b478175b9}{temp\+Attack\+Callback}} = nullptr
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_enemy_a0a526338dad5336c7a2af21763d9996a}{enemy\+State}}
+\item 
+class \mbox{\hyperlink{class_enemy_a86bcc83e29ee9828aa7d70dc7d8f8a1f}{hover\+Enemy\+State}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an enemy character controlled by a finite state machine (FSM). This class defines properties, behavior, and state transitions for an enemy AI agent. It is integrated with ECS (Entity-\/\+Component System), physics, animation, and health systems. 
+
+\label{doc-constructors}
+\Hypertarget{class_enemy_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_enemy_a94f30d348b6d2840fd71675472ba38dd}\index{Enemy@{Enemy}!Enemy@{Enemy}}
+\index{Enemy@{Enemy}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{Enemy()}{Enemy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_enemy_a94f30d348b6d2840fd71675472ba38dd} 
+Enemy\+::\+Enemy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_a94f30d348b6d2840fd71675472ba38dd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_enemy_a2597c7f1f719dfe2df861e48aba45dff}\index{Enemy@{Enemy}!Enemy@{Enemy}}
+\index{Enemy@{Enemy}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{Enemy()}{Enemy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_enemy_a2597c7f1f719dfe2df861e48aba45dff} 
+Enemy\+::\+Enemy (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}}]{self}{, }\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}}]{player}{, }\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*}}]{mgr}{, }\item[{\mbox{\hyperlink{class_i_enemy_state_logic}{IEnemy\+State\+Logic}} \texorpdfstring{$\ast$}{*}}]{AILogic}{, }\item[{\mbox{\hyperlink{class_physics_system}{Physics\+System}} \texorpdfstring{$\ast$}{*}}]{physics}{}\end{DoxyParamCaption})}
+
+
+
+Full constructor for initializing enemy state and dependencies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the enemy. \\
+\hline
+{\em self} & This entity\textquotesingle{}s ID. \\
+\hline
+{\em player} & Pointer to player entity ID. \\
+\hline
+{\em mgr} & Pointer to the \doxylink{class_entity_manager}{Entity\+Manager}. \\
+\hline
+{\em AILogic} & Pointer to the AI logic implementation. \\
+\hline
+{\em physics} & Pointer to the physics system. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{class_enemy_a2597c7f1f719dfe2df861e48aba45dff_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_enemy_ac0eec4755e28c02688065f9657150ac3}\index{Enemy@{Enemy}!````~Enemy@{\texorpdfstring{$\sim$}{\string~}Enemy}}
+\index{````~Enemy@{\texorpdfstring{$\sim$}{\string~}Enemy}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Enemy()}{\string~Enemy()}}
+{\footnotesize\ttfamily \label{class_enemy_ac0eec4755e28c02688065f9657150ac3} 
+Enemy\+::\texorpdfstring{$\sim$}{\string~}\+Enemy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_enemy_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_enemy_ae62e38383deee4d466f7374d0cdc764c}\index{Enemy@{Enemy}!AlertNearbyEnemies@{AlertNearbyEnemies}}
+\index{AlertNearbyEnemies@{AlertNearbyEnemies}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{AlertNearbyEnemies()}{AlertNearbyEnemies()}}
+{\footnotesize\ttfamily \label{class_enemy_ae62e38383deee4d466f7374d0cdc764c} 
+void Enemy\+::\+Alert\+Nearby\+Enemies (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Notifies nearby enemies (if implemented) that the player is detected. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_ae62e38383deee4d466f7374d0cdc764c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_ae62e38383deee4d466f7374d0cdc764c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_enemy_a9d091969b26bf7254de76f6c2f3d7715}\index{Enemy@{Enemy}!ClearAttackCallback@{ClearAttackCallback}}
+\index{ClearAttackCallback@{ClearAttackCallback}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{ClearAttackCallback()}{ClearAttackCallback()}}
+{\footnotesize\ttfamily \label{class_enemy_a9d091969b26bf7254de76f6c2f3d7715} 
+void Enemy\+::\+Clear\+Attack\+Callback (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_a9d091969b26bf7254de76f6c2f3d7715_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_enemy_abecf6dd78cde581d8d80314d544ddf72}\index{Enemy@{Enemy}!FaceTarget@{FaceTarget}}
+\index{FaceTarget@{FaceTarget}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{FaceTarget()}{FaceTarget()}}
+{\footnotesize\ttfamily \label{class_enemy_abecf6dd78cde581d8d80314d544ddf72} 
+void Enemy\+::\+Face\+Target (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{target\+Pos}{}\end{DoxyParamCaption})}
+
+
+
+Rotates the enemy to face a specific target position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target\+Pos} & Target world-\/space position to look at. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_enemy_abecf6dd78cde581d8d80314d544ddf72_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_enemy_a1aab2890fa809595ba526f3126245531}\index{Enemy@{Enemy}!getDamage@{getDamage}}
+\index{getDamage@{getDamage}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{getDamage()}{getDamage()}}
+{\footnotesize\ttfamily \label{class_enemy_a1aab2890fa809595ba526f3126245531} 
+float Enemy\+::get\+Damage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_enemy_a6c4671cb8be935f9a9be8926925f00f4}\index{Enemy@{Enemy}!GetEntityManager@{GetEntityManager}}
+\index{GetEntityManager@{GetEntityManager}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{GetEntityManager()}{GetEntityManager()}}
+{\footnotesize\ttfamily \label{class_enemy_a6c4671cb8be935f9a9be8926925f00f4} 
+\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*} Enemy\+::\+Get\+Entity\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_a6c4671cb8be935f9a9be8926925f00f4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_enemy_a6a53cb0274226ee5528ab2d0290960f4}\index{Enemy@{Enemy}!getFSM@{getFSM}}
+\index{getFSM@{getFSM}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{getFSM()}{getFSM()}}
+{\footnotesize\ttfamily \label{class_enemy_a6a53cb0274226ee5528ab2d0290960f4} 
+\mbox{\hyperlink{class_state_machine}{State\+Machine}}$<$ \mbox{\hyperlink{class_enemy}{Enemy}} $>$ \texorpdfstring{$\ast$}{*} Enemy\+::get\+FSM (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_a6a53cb0274226ee5528ab2d0290960f4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_enemy_acc2a72d8a2af5edba5fca650abebd652}\index{Enemy@{Enemy}!getName@{getName}}
+\index{getName@{getName}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily \label{class_enemy_acc2a72d8a2af5edba5fca650abebd652} 
+std\+::string Enemy\+::get\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_enemy_aea7262d326b48478bd5e3e6cd2a35331}\index{Enemy@{Enemy}!GetPhysicsSystem@{GetPhysicsSystem}}
+\index{GetPhysicsSystem@{GetPhysicsSystem}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{GetPhysicsSystem()}{GetPhysicsSystem()}}
+{\footnotesize\ttfamily \label{class_enemy_aea7262d326b48478bd5e3e6cd2a35331} 
+\mbox{\hyperlink{class_physics_system}{Physics\+System}} \texorpdfstring{$\ast$}{*} Enemy\+::\+Get\+Physics\+System (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+\doxylink{namespace_physics}{Physics} Accessors. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_aea7262d326b48478bd5e3e6cd2a35331_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_enemy_a6823df17129aabfc6a5fe8cf58aac9bd}\index{Enemy@{Enemy}!GetPlayerEntity@{GetPlayerEntity}}
+\index{GetPlayerEntity@{GetPlayerEntity}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{GetPlayerEntity()}{GetPlayerEntity()}}
+{\footnotesize\ttfamily \label{class_enemy_a6823df17129aabfc6a5fe8cf58aac9bd} 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*} Enemy\+::\+Get\+Player\+Entity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_a6823df17129aabfc6a5fe8cf58aac9bd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_enemy_aaeac8ad6fedccb72cc4b5c99ded26c87}\index{Enemy@{Enemy}!GetSelfEntity@{GetSelfEntity}}
+\index{GetSelfEntity@{GetSelfEntity}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{GetSelfEntity()}{GetSelfEntity()}}
+{\footnotesize\ttfamily \label{class_enemy_aaeac8ad6fedccb72cc4b5c99ded26c87} 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} Enemy\+::\+Get\+Self\+Entity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_aaeac8ad6fedccb72cc4b5c99ded26c87_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_enemy_a342051a8cf9fe6e329774e37af486fca}\index{Enemy@{Enemy}!getSpeed@{getSpeed}}
+\index{getSpeed@{getSpeed}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{getSpeed()}{getSpeed()}}
+{\footnotesize\ttfamily \label{class_enemy_a342051a8cf9fe6e329774e37af486fca} 
+float Enemy\+::get\+Speed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Getters and Setters. 
+
+\Hypertarget{class_enemy_a47cf9a1e2dc95bc2c76763686b470e3a}\index{Enemy@{Enemy}!IsAnimationEnded@{IsAnimationEnded}}
+\index{IsAnimationEnded@{IsAnimationEnded}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{IsAnimationEnded()}{IsAnimationEnded()}}
+{\footnotesize\ttfamily \label{class_enemy_a47cf9a1e2dc95bc2c76763686b470e3a} 
+bool Enemy\+::\+Is\+Animation\+Ended (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns whether the current animation has ended. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_a47cf9a1e2dc95bc2c76763686b470e3a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_a47cf9a1e2dc95bc2c76763686b470e3a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_enemy_afed1f34385bbc4d7dc77c4861c56ca8c}\index{Enemy@{Enemy}!IsHealthLow@{IsHealthLow}}
+\index{IsHealthLow@{IsHealthLow}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{IsHealthLow()}{IsHealthLow()}}
+{\footnotesize\ttfamily \label{class_enemy_afed1f34385bbc4d7dc77c4861c56ca8c} 
+bool Enemy\+::\+Is\+Health\+Low (\begin{DoxyParamCaption}\item[{float}]{threshold}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if the enemy\textquotesingle{}s health is below a threshold. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em threshold} & A normalized value. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_afed1f34385bbc4d7dc77c4861c56ca8c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_enemy_a23955b57eed292653412616a12fb38a8}\index{Enemy@{Enemy}!IsPlayerInRange@{IsPlayerInRange}}
+\index{IsPlayerInRange@{IsPlayerInRange}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{IsPlayerInRange()}{IsPlayerInRange()}}
+{\footnotesize\ttfamily \label{class_enemy_a23955b57eed292653412616a12fb38a8} 
+bool Enemy\+::\+Is\+Player\+In\+Range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}}]{e}{, }\item[{float}]{range}{}\end{DoxyParamCaption})}
+
+
+
+Checks whether the player is within a given range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Pointer to the enemy (used to query position). \\
+\hline
+{\em range} & Max detection range. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if player is within range. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_a23955b57eed292653412616a12fb38a8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_a23955b57eed292653412616a12fb38a8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_enemy_accc7a71574730e56c46e91a72e8f6d8c}\index{Enemy@{Enemy}!onAttackEnter@{onAttackEnter}}
+\index{onAttackEnter@{onAttackEnter}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{onAttackEnter()}{onAttackEnter()}}
+{\footnotesize\ttfamily \label{class_enemy_accc7a71574730e56c46e91a72e8f6d8c} 
+void Enemy\+::on\+Attack\+Enter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+=== FSM \doxylink{class_state}{State} Hooks === 
+
+\Hypertarget{class_enemy_a0e6928b565ff07ab933a07566d3e1542}\index{Enemy@{Enemy}!onAttackExecute@{onAttackExecute}}
+\index{onAttackExecute@{onAttackExecute}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{onAttackExecute()}{onAttackExecute()}}
+{\footnotesize\ttfamily \label{class_enemy_a0e6928b565ff07ab933a07566d3e1542} 
+void Enemy\+::on\+Attack\+Execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_enemy_ae0e050f4ee8d28cf28490d8078fd756a}\index{Enemy@{Enemy}!onAttackExit@{onAttackExit}}
+\index{onAttackExit@{onAttackExit}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{onAttackExit()}{onAttackExit()}}
+{\footnotesize\ttfamily \label{class_enemy_ae0e050f4ee8d28cf28490d8078fd756a} 
+void Enemy\+::on\+Attack\+Exit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_enemy_a13b87cb6c21ef2d7e471fe5519019d9e}\index{Enemy@{Enemy}!onChaseEnter@{onChaseEnter}}
+\index{onChaseEnter@{onChaseEnter}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{onChaseEnter()}{onChaseEnter()}}
+{\footnotesize\ttfamily \label{class_enemy_a13b87cb6c21ef2d7e471fe5519019d9e} 
+void Enemy\+::on\+Chase\+Enter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_enemy_a23c60f844782e9ece581dffccbe3820d}\index{Enemy@{Enemy}!onChaseExecute@{onChaseExecute}}
+\index{onChaseExecute@{onChaseExecute}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{onChaseExecute()}{onChaseExecute()}}
+{\footnotesize\ttfamily \label{class_enemy_a23c60f844782e9ece581dffccbe3820d} 
+void Enemy\+::on\+Chase\+Execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_enemy_a0667f5715476fbdcc7aca0fd1ed62692}\index{Enemy@{Enemy}!onChaseExit@{onChaseExit}}
+\index{onChaseExit@{onChaseExit}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{onChaseExit()}{onChaseExit()}}
+{\footnotesize\ttfamily \label{class_enemy_a0667f5715476fbdcc7aca0fd1ed62692} 
+void Enemy\+::on\+Chase\+Exit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_enemy_a0862eb2c5a157a8aae3c2449d4d5225c}\index{Enemy@{Enemy}!onDeathEnter@{onDeathEnter}}
+\index{onDeathEnter@{onDeathEnter}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{onDeathEnter()}{onDeathEnter()}}
+{\footnotesize\ttfamily \label{class_enemy_a0862eb2c5a157a8aae3c2449d4d5225c} 
+void Enemy\+::on\+Death\+Enter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_enemy_a086bf93c777bc97981d2057c825b1409}\index{Enemy@{Enemy}!onDeathExecute@{onDeathExecute}}
+\index{onDeathExecute@{onDeathExecute}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{onDeathExecute()}{onDeathExecute()}}
+{\footnotesize\ttfamily \label{class_enemy_a086bf93c777bc97981d2057c825b1409} 
+void Enemy\+::on\+Death\+Execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_enemy_a37d9be6c5fd7a31a3c3c6384c3889648}\index{Enemy@{Enemy}!onDeathExit@{onDeathExit}}
+\index{onDeathExit@{onDeathExit}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{onDeathExit()}{onDeathExit()}}
+{\footnotesize\ttfamily \label{class_enemy_a37d9be6c5fd7a31a3c3c6384c3889648} 
+void Enemy\+::on\+Death\+Exit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_enemy_a2f5395090ffcfad21ea4c2357bc589ec}\index{Enemy@{Enemy}!onFleeEnter@{onFleeEnter}}
+\index{onFleeEnter@{onFleeEnter}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{onFleeEnter()}{onFleeEnter()}}
+{\footnotesize\ttfamily \label{class_enemy_a2f5395090ffcfad21ea4c2357bc589ec} 
+void Enemy\+::on\+Flee\+Enter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_enemy_a65bb1d5557c61f766bd2b4a194cc4f91}\index{Enemy@{Enemy}!onFleeExecute@{onFleeExecute}}
+\index{onFleeExecute@{onFleeExecute}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{onFleeExecute()}{onFleeExecute()}}
+{\footnotesize\ttfamily \label{class_enemy_a65bb1d5557c61f766bd2b4a194cc4f91} 
+void Enemy\+::on\+Flee\+Execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_enemy_a8347612e49fb9ddc1f678226eef3e456}\index{Enemy@{Enemy}!onFleeExit@{onFleeExit}}
+\index{onFleeExit@{onFleeExit}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{onFleeExit()}{onFleeExit()}}
+{\footnotesize\ttfamily \label{class_enemy_a8347612e49fb9ddc1f678226eef3e456} 
+void Enemy\+::on\+Flee\+Exit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_enemy_ad10dbe33f79025c5b4c21659ae1b0ba0}\index{Enemy@{Enemy}!onPainEnter@{onPainEnter}}
+\index{onPainEnter@{onPainEnter}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{onPainEnter()}{onPainEnter()}}
+{\footnotesize\ttfamily \label{class_enemy_ad10dbe33f79025c5b4c21659ae1b0ba0} 
+void Enemy\+::on\+Pain\+Enter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_enemy_a4f501008e40a0f192e2ceefd9570c614}\index{Enemy@{Enemy}!onPainExecute@{onPainExecute}}
+\index{onPainExecute@{onPainExecute}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{onPainExecute()}{onPainExecute()}}
+{\footnotesize\ttfamily \label{class_enemy_a4f501008e40a0f192e2ceefd9570c614} 
+void Enemy\+::on\+Pain\+Execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_enemy_a48c1aa85d7c458d79f1a81a3ff89d3ac}\index{Enemy@{Enemy}!onPainExit@{onPainExit}}
+\index{onPainExit@{onPainExit}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{onPainExit()}{onPainExit()}}
+{\footnotesize\ttfamily \label{class_enemy_a48c1aa85d7c458d79f1a81a3ff89d3ac} 
+void Enemy\+::on\+Pain\+Exit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_enemy_a33315056c603f39f5164635b2094086d}\index{Enemy@{Enemy}!onPatrolEnter@{onPatrolEnter}}
+\index{onPatrolEnter@{onPatrolEnter}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{onPatrolEnter()}{onPatrolEnter()}}
+{\footnotesize\ttfamily \label{class_enemy_a33315056c603f39f5164635b2094086d} 
+void Enemy\+::on\+Patrol\+Enter (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_enemy_a15dd4a1a7398faf16ff3b7fb3ec65830}\index{Enemy@{Enemy}!onPatrolExecute@{onPatrolExecute}}
+\index{onPatrolExecute@{onPatrolExecute}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{onPatrolExecute()}{onPatrolExecute()}}
+{\footnotesize\ttfamily \label{class_enemy_a15dd4a1a7398faf16ff3b7fb3ec65830} 
+void Enemy\+::on\+Patrol\+Execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_enemy_aa7780a0602c862b313d023c704a26291}\index{Enemy@{Enemy}!onPatrolExit@{onPatrolExit}}
+\index{onPatrolExit@{onPatrolExit}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{onPatrolExit()}{onPatrolExit()}}
+{\footnotesize\ttfamily \label{class_enemy_aa7780a0602c862b313d023c704a26291} 
+void Enemy\+::on\+Patrol\+Exit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_enemy_a15a7cf1b50848f5fe57062e376f83e61}\index{Enemy@{Enemy}!SetAnimation@{SetAnimation}}
+\index{SetAnimation@{SetAnimation}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{SetAnimation()}{SetAnimation()}}
+{\footnotesize\ttfamily \label{class_enemy_a15a7cf1b50848f5fe57062e376f83e61} 
+void Enemy\+::\+Set\+Animation (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{anim\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Sets the current animation by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em anim\+Name} & Name of the animation (e.\+g., "{}walk"{}, "{}att\+\_\+c"{}). \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_enemy_a15a7cf1b50848f5fe57062e376f83e61_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_enemy_a4d9d075e8c408036a4c21675ed00333e}\index{Enemy@{Enemy}!SetAttackCallback@{SetAttackCallback}}
+\index{SetAttackCallback@{SetAttackCallback}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{SetAttackCallback()}{SetAttackCallback()}}
+{\footnotesize\ttfamily \label{class_enemy_a4d9d075e8c408036a4c21675ed00333e} 
+void Enemy\+::\+Set\+Attack\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_1_1_collision_callback}{Physics\+::\+Collision\+Callback}} \texorpdfstring{$\ast$}{*}}]{cb}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_a4d9d075e8c408036a4c21675ed00333e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_enemy_ad56be7de3130fefb3a4a56d418ef69cb}\index{Enemy@{Enemy}!setSpeed@{setSpeed}}
+\index{setSpeed@{setSpeed}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{setSpeed()}{setSpeed()}}
+{\footnotesize\ttfamily \label{class_enemy_ad56be7de3130fefb3a4a56d418ef69cb} 
+void Enemy\+::set\+Speed (\begin{DoxyParamCaption}\item[{float}]{s}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_enemy_a9a1ef91d86d0a6994ee63b81f266fc22}\index{Enemy@{Enemy}!Update@{Update}}
+\index{Update@{Update}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_enemy_a9a1ef91d86d0a6994ee63b81f266fc22} 
+void Enemy\+::\+Update (\begin{DoxyParamCaption}\item[{float}]{dt}{}\end{DoxyParamCaption})}
+
+
+
+Per-\/frame update for the enemy. Delegates to the FSM. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & Delta time since last frame. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_a9a1ef91d86d0a6994ee63b81f266fc22_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-related-members}
+\Hypertarget{class_enemy_doc-related-members}
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_enemy_a0a526338dad5336c7a2af21763d9996a}\index{Enemy@{Enemy}!enemyState@{enemyState}}
+\index{enemyState@{enemyState}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{enemyState}{enemyState}}
+{\footnotesize\ttfamily \label{class_enemy_a0a526338dad5336c7a2af21763d9996a} 
+friend class \mbox{\hyperlink{classenemy_state}{enemy\+State}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{class_enemy_a86bcc83e29ee9828aa7d70dc7d8f8a1f}\index{Enemy@{Enemy}!hoverEnemyState@{hoverEnemyState}}
+\index{hoverEnemyState@{hoverEnemyState}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{hoverEnemyState}{hoverEnemyState}}
+{\footnotesize\ttfamily \label{class_enemy_a86bcc83e29ee9828aa7d70dc7d8f8a1f} 
+friend class \mbox{\hyperlink{classhover_enemy_state}{hover\+Enemy\+State}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_enemy_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_enemy_aa81f145150709646c0cdcabde5af73ec}\index{Enemy@{Enemy}!attackRange@{attackRange}}
+\index{attackRange@{attackRange}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{attackRange}{attackRange}}
+{\footnotesize\ttfamily \label{class_enemy_aa81f145150709646c0cdcabde5af73ec} 
+const float Enemy\+::attack\+Range = 5.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Distance required to start attacking. 
+
+\Hypertarget{class_enemy_a5d5917c222119c1d8eb3183c27c7adb7}\index{Enemy@{Enemy}!damage@{damage}}
+\index{damage@{damage}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{damage}{damage}}
+{\footnotesize\ttfamily \label{class_enemy_a5d5917c222119c1d8eb3183c27c7adb7} 
+float Enemy\+::damage = 10\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Damage dealt per attack. 
+
+\Hypertarget{class_enemy_a0362a025bc753a68b8fdbd2aeb59157a}\index{Enemy@{Enemy}!Direction@{Direction}}
+\index{Direction@{Direction}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{Direction}{Direction}}
+{\footnotesize\ttfamily \label{class_enemy_a0362a025bc753a68b8fdbd2aeb59157a} 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Enemy\+::\+Direction = \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}(1.f, 0.f, 0.f)\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{class_patrol}{Patrol} behavior\+: direction and timing. 
+
+\Hypertarget{class_enemy_a607316fd31ad537633a131902999e31b}\index{Enemy@{Enemy}!entityManager@{entityManager}}
+\index{entityManager@{entityManager}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{entityManager}{entityManager}}
+{\footnotesize\ttfamily \label{class_enemy_a607316fd31ad537633a131902999e31b} 
+\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}}\texorpdfstring{$\ast$}{*} Enemy\+::entity\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_enemy_a252c92dee41a63dabd302753e8af3c6a}\index{Enemy@{Enemy}!fsm@{fsm}}
+\index{fsm@{fsm}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{fsm}{fsm}}
+{\footnotesize\ttfamily \label{class_enemy_a252c92dee41a63dabd302753e8af3c6a} 
+\mbox{\hyperlink{class_state_machine}{State\+Machine}}$<$\mbox{\hyperlink{class_enemy}{Enemy}}$>$\texorpdfstring{$\ast$}{*} Enemy\+::fsm\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Finite \doxylink{class_state}{State} Machine controlling the current behavior state of the enemy. 
+
+\Hypertarget{class_enemy_a096e668a35b984815bf3f64f0a347b86}\index{Enemy@{Enemy}!isAttacking@{isAttacking}}
+\index{isAttacking@{isAttacking}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{isAttacking}{isAttacking}}
+{\footnotesize\ttfamily \label{class_enemy_a096e668a35b984815bf3f64f0a347b86} 
+bool Enemy\+::is\+Attacking = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Whether currently in attack state. 
+
+\Hypertarget{class_enemy_ae8645f8147ecfcf079c60c890bee3b65}\index{Enemy@{Enemy}!logic@{logic}}
+\index{logic@{logic}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{logic}{logic}}
+{\footnotesize\ttfamily \label{class_enemy_ae8645f8147ecfcf079c60c890bee3b65} 
+\mbox{\hyperlink{class_i_enemy_state_logic}{IEnemy\+State\+Logic}}\texorpdfstring{$\ast$}{*} Enemy\+::logic\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Logic interface that implements the behaviors for all states (\doxylink{class_attack}{Attack}, \doxylink{class_chase}{Chase}, etc.). 
+
+\Hypertarget{class_enemy_a52614c95bedc5fd925dd2beeeed85f50}\index{Enemy@{Enemy}!maxChaseDistance@{maxChaseDistance}}
+\index{maxChaseDistance@{maxChaseDistance}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{maxChaseDistance}{maxChaseDistance}}
+{\footnotesize\ttfamily \label{class_enemy_a52614c95bedc5fd925dd2beeeed85f50} 
+const float Enemy\+::max\+Chase\+Distance = 50.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+AI parameters. 
+
+Max distance to chase the player. \Hypertarget{class_enemy_a62b43d24fa5a537d45bdba46a4e2559b}\index{Enemy@{Enemy}!name@{name}}
+\index{name@{name}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{class_enemy_a62b43d24fa5a537d45bdba46a4e2559b} 
+std\+::string Enemy\+::name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The name/label of the enemy (used for identification or debugging). 
+
+\Hypertarget{class_enemy_a4253bd4e40c2b64268b3a703fbff576d}\index{Enemy@{Enemy}!physicsSystem@{physicsSystem}}
+\index{physicsSystem@{physicsSystem}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{physicsSystem}{physicsSystem}}
+{\footnotesize\ttfamily \label{class_enemy_a4253bd4e40c2b64268b3a703fbff576d} 
+\mbox{\hyperlink{class_physics_system}{Physics\+System}}\texorpdfstring{$\ast$}{*} Enemy\+::physics\+System = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{namespace_physics}{Physics} system reference and temporary attack callback used during combat. 
+
+\Hypertarget{class_enemy_a11c4e0c978a45c4772e34428310c50d5}\index{Enemy@{Enemy}!playerEntity@{playerEntity}}
+\index{playerEntity@{playerEntity}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{playerEntity}{playerEntity}}
+{\footnotesize\ttfamily \label{class_enemy_a11c4e0c978a45c4772e34428310c50d5} 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\texorpdfstring{$\ast$}{*} Enemy\+::player\+Entity\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_enemy_ae56bc7f70cf1ee86eacc20bd55e25dd8}\index{Enemy@{Enemy}!selfEntity@{selfEntity}}
+\index{selfEntity@{selfEntity}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{selfEntity}{selfEntity}}
+{\footnotesize\ttfamily \label{class_enemy_ae56bc7f70cf1ee86eacc20bd55e25dd8} 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} Enemy\+::self\+Entity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ECS entities used for this enemy and the player (used in AI targeting). 
+
+\Hypertarget{class_enemy_a98766d083fc49e746a37d0dc69be09e0}\index{Enemy@{Enemy}!speed@{speed}}
+\index{speed@{speed}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{speed}{speed}}
+{\footnotesize\ttfamily \label{class_enemy_a98766d083fc49e746a37d0dc69be09e0} 
+float Enemy\+::speed = 5.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Movement speed of the enemy. 
+
+\Hypertarget{class_enemy_a7d45612126533b2d50dff190bab8c922}\index{Enemy@{Enemy}!SwitchInterval@{SwitchInterval}}
+\index{SwitchInterval@{SwitchInterval}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{SwitchInterval}{SwitchInterval}}
+{\footnotesize\ttfamily \label{class_enemy_a7d45612126533b2d50dff190bab8c922} 
+float Enemy\+::\+Switch\+Interval = 3.f\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_enemy_a294239239dad0b0a33d7ad4b478175b9}\index{Enemy@{Enemy}!tempAttackCallback@{tempAttackCallback}}
+\index{tempAttackCallback@{tempAttackCallback}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{tempAttackCallback}{tempAttackCallback}}
+{\footnotesize\ttfamily \label{class_enemy_a294239239dad0b0a33d7ad4b478175b9} 
+\mbox{\hyperlink{class_physics_1_1_collision_callback}{Physics\+::\+Collision\+Callback}}\texorpdfstring{$\ast$}{*} Enemy\+::temp\+Attack\+Callback = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_enemy_a609f88dfcbc93d9f49b7747ad4da34ab}\index{Enemy@{Enemy}!Timer@{Timer}}
+\index{Timer@{Timer}!Enemy@{Enemy}}
+\doxysubsubsection{\texorpdfstring{Timer}{Timer}}
+{\footnotesize\ttfamily \label{class_enemy_a609f88dfcbc93d9f49b7747ad4da34ab} 
+float Enemy\+::\+Timer = 0.f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+FSM/\mbox{\hyperlink{enemy_8h}{enemy.\+h}}\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+FSM/\mbox{\hyperlink{enemy_8cpp}{enemy.\+cpp}}\end{DoxyCompactItemize}

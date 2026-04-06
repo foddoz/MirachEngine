@@ -1,0 +1,84 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 122,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 126,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 129,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/sol2",
+			"exportName" : "sol2",
+			"exportTargets" : 
+			[
+				{
+					"id" : "sol2::@9c379972b23dfa81a253",
+					"index" : 0
+				}
+			],
+			"paths" : 
+			[
+				"_deps/sol2-build/CMakeFiles/Export/ebf4908cad80355a54bbda7e9be6ae68/sol2-targets.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "include",
+			"paths" : 
+			[
+				"/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/include/sol"
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "lib/cmake/sol2",
+			"paths" : 
+			[
+				"cmake-build-debug/_deps/sol2-build/cmake/sol2-config.cmake",
+				"cmake-build-debug/_deps/sol2-build/cmake/sol2-config-version.cmake"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "_deps/sol2-build",
+		"source" : "/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2"
+	}
+}

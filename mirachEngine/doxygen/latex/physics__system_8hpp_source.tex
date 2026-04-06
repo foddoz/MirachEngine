@@ -1,0 +1,126 @@
+\doxysection{physics\+\_\+system.\+hpp}
+\hypertarget{physics__system_8hpp_source}{}\label{physics__system_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Physics/physics\_system.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Physics/physics\_system.hpp}}
+\mbox{\hyperlink{physics__system_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ ===\ File:\ physics\_system.hpp\ ===}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{physics_8hpp}{physics.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{transform_8hpp}{../Transform/transform.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{entity__manager_8hpp}{../ECS/entity\_manager.hpp}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mesh_terrain_8hpp}{../Graphics/Meshes/meshTerrain.hpp}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{math_8hpp}{../Math/math.hpp}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_physics_system_a6b1823f73c30209565f1cf3ad4b51c8a}{PhysicsSystem}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint16\_t\ \mbox{\hyperlink{class_physics_system_a46647281121c9966951090ceb2e9d168}{PLAYER\_CATEGORY}}\ =\ 0x0001;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint16\_t\ \mbox{\hyperlink{class_physics_system_a96f70dfc8d158f56f6c655c185c33426}{OBJECT\_CATEGORY}}\ =\ 0x0002;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint16\_t\ \mbox{\hyperlink{class_physics_system_a0a41f114e90a05757f09d78fb9ddcc29}{TERRAIN\_CATEGORY}}\ =\ 0x0004;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ uint16\_t\ \mbox{\hyperlink{class_physics_system_a7fa974b477f4d37ac9bd42165edf339a}{ROBOT\_CATEGORY}}\ =\ 0x0010;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_physics_system_a6b1823f73c30209565f1cf3ad4b51c8a}{PhysicsSystem}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}*\ manager)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_physics_system_a0aae8929f070078a77d962908ee0e0ea}{entityManager}}(manager),\ \mbox{\hyperlink{class_physics_system_a484888adf66a1b33d3a1eadd5613f341}{mWorld}}(\mbox{\hyperlink{namespace_physics}{Physics}}::CreatePhysicsWorld())\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_system_aa8f86078f650b71a35f461d5223896c7}{Reset}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}*\ newManager)\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_system_a484888adf66a1b33d3a1eadd5613f341}{mWorld}}.reset();\ \textcolor{comment}{//\ properly\ destroys\ old\ world}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_system_a0aae8929f070078a77d962908ee0e0ea}{entityManager}}\ =\ newManager;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_system_a484888adf66a1b33d3a1eadd5613f341}{mWorld}}\ =\ \mbox{\hyperlink{namespace_physics_ac971b78de8acf7f103a4a763775f55ac}{Physics::CreatePhysicsWorld}}();\ \textcolor{comment}{//\ Recreate\ a\ new\ world\ (must\ return\ unique\_ptr)}}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_system_a1cb8f9db231aa5c3cbd6f75d0a8656ea}{DestroyEntity}}(\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ e)\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_physics_system_a0aae8929f070078a77d962908ee0e0ea}{entityManager}}-\/>HasComponent<\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*>(e))\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\ rb\ =\ \mbox{\hyperlink{class_physics_system_a0aae8929f070078a77d962908ee0e0ea}{entityManager}}-\/>GetComponent<\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*>(e);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rb)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rb-\/>\mbox{\hyperlink{class_physics_1_1_rigid_body_a9a4746734cec2fbd44f466a66a7a1dd5}{Invalidate}}();\ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ rb;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_system_a0aae8929f070078a77d962908ee0e0ea}{entityManager}}-\/>RemoveComponent<\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*>(e);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_physics_system_a0aae8929f070078a77d962908ee0e0ea}{entityManager}}-\/>HasComponent<\mbox{\hyperlink{class_physics_1_1_collider}{Physics::Collider}}*>(e))\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_collider}{Physics::Collider}}*\ col\ =\ \mbox{\hyperlink{class_physics_system_a0aae8929f070078a77d962908ee0e0ea}{entityManager}}-\/>GetComponent<\mbox{\hyperlink{class_physics_1_1_collider}{Physics::Collider}}*>(e);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (col)\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ col-\/>\mbox{\hyperlink{class_physics_1_1_collider_a033fc633ec7538c738aee85c62e2d446}{Invalidate}}();\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ col;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_system_a0aae8929f070078a77d962908ee0e0ea}{entityManager}}-\/>RemoveComponent<\mbox{\hyperlink{class_physics_1_1_collider}{Physics::Collider}}*>(e);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_physics_system_acf29655efb04806ef9c18f9eda7f48d9}{Update}}(\textcolor{keywordtype}{float}\ deltaTime)\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_system_a484888adf66a1b33d3a1eadd5613f341}{mWorld}}-\/>Update(deltaTime);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ rigidbodies\ =\ \mbox{\hyperlink{class_physics_system_a0aae8929f070078a77d962908ee0e0ea}{entityManager}}-\/>GetAllComponents<\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*>();}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [entity,\ rb]\ :\ rigidbodies)\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!rb\ ||\ !\mbox{\hyperlink{class_physics_system_a0aae8929f070078a77d962908ee0e0ea}{entityManager}}-\/>HasComponent<\mbox{\hyperlink{class_transform}{Transform}}>(entity))}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_transform}{Transform}}\&\ tf\ =\ \mbox{\hyperlink{class_physics_system_a0aae8929f070078a77d962908ee0e0ea}{entityManager}}-\/>GetComponent<\mbox{\hyperlink{class_transform}{Transform}}>(entity);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ pos\ =\ rb-\/>GetPosition();}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ tf.\mbox{\hyperlink{class_transform_a7c287f2ec371a1214df9fa7ad6a9718b}{SetPosition}}(pos.x,\ pos.y,\ pos.z);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}}\ q\ =\ rb-\/>GetOrientation();}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!tf.\mbox{\hyperlink{class_transform_abd58e4999a545d0041205d28ea83bd80}{IsYAxisUp}}())\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Apply\ rotation\ offset\ for\ Z-\/up\ coordinate\ systems}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}}\ offset\ =\ \mbox{\hyperlink{math_8hpp_a01d6afce125900f6e5b446d5094ea823}{EulerDegreesToQuaternion}}(\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}(-\/90.f,\ 0.f,\ 0.f));}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ q\ =\ offset\ *\ q;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ tf.\mbox{\hyperlink{class_transform_a80e28cb7ca8818e944c6177ed6ca7bfe}{SetRotation}}(q);}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_world}{Physics::World}}*\ \mbox{\hyperlink{class_physics_system_adc1b56a65144927424e6353ced3c7003}{GetWorld}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_physics_system_a484888adf66a1b33d3a1eadd5613f341}{mWorld}}.get();\ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{class_entity_manager}{EntityManager}}*\ \mbox{\hyperlink{class_physics_system_a0765d7b3da85a2cd1e9a9d5f8f533000}{GetEntityManagerPtr}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_physics_system_a0aae8929f070078a77d962908ee0e0ea}{entityManager}};\ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TerrainType>}
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_collider}{Physics::Collider}}*\ \mbox{\hyperlink{class_physics_system_a3b8f5a2bf225a3e35fe9c684c3d5e1c3}{AddConcaveTerrainCollider}}(\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\ body,\ \textcolor{keyword}{const}\ TerrainType\&\ terrain)\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ vertices\ =\ terrain.GetVertexData();}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ indices\ =\ terrain.GetIndexData();}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_physics_system_a484888adf66a1b33d3a1eadd5613f341}{mWorld}}-\/>AddConcaveTerrainCollider(}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ body,}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void}*)\&terrain,}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{float}*\textcolor{keyword}{>}(\&vertices[0].Pos),}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ vertices.size(),}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{sizeof}(\textcolor{keyword}{decltype}(vertices[0])),}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ indices.data(),}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ indices.size()}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00130\ \ \ \ \ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TerrainType>}
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_collider}{Physics::Collider}}*\ \mbox{\hyperlink{class_physics_system_a21b34ff242d0aac8664d21ccd02889cd}{AddHeightFieldCollider}}(\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\ body,\ \textcolor{keyword}{const}\ TerrainType\&\ terrain)\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rows\ =\ terrain.GetDepth();\ \ \ \ \ \textcolor{comment}{//\ Z\ axis}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ cols\ =\ terrain.GetWidth();\ \ \ \ \ \textcolor{comment}{//\ X\ axis}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ scale;}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ scale.x\ =\ terrain.GetWorldWidth()\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(cols);}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ scale.y\ =\ 1.0f;\ \textcolor{comment}{//\ Assuming\ heightmap\ is\ already\ in\ world\ units}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ scale.z\ =\ terrain.GetWorldDepth()\ /\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(rows);}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_physics_system_a484888adf66a1b33d3a1eadd5613f341}{mWorld}}-\/>AddHeightFieldCollider(}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ body,}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void}*)\&terrain,}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ terrain.GetHeightMap().data(),}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ rows,}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ cols,}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ scale}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00157\ \ \ \ \ \}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{class_entity_manager}{EntityManager}}*\ \mbox{\hyperlink{class_physics_system_a0aae8929f070078a77d962908ee0e0ea}{entityManager}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00161\ \ \ \ \ std::unique\_ptr<Physics::World>\ \mbox{\hyperlink{class_physics_system_a484888adf66a1b33d3a1eadd5613f341}{mWorld}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00162\ \};}
+
+\end{DoxyCode}

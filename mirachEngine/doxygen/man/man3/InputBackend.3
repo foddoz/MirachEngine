@@ -1,0 +1,84 @@
+.TH "InputBackend" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+InputBackend \- Backend namespace for platform-specific input functionality (SDL abstraction)\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBInit\fP ()"
+.br
+.RI "Initializes the input backend\&. Must be called before polling events\&. "
+.ti -1c
+.RI "bool \fBPollEvent\fP (\fBInputEvent\fP &outEvent)"
+.br
+.RI "Polls a single input event and fills the output event structure\&. "
+.ti -1c
+.RI "\fBKeyStateArray\fP \fBGetKeyboardState\fP (int *numKeys)"
+.br
+.RI "Returns the current state of all keyboard keys\&. "
+.ti -1c
+.RI "uint32_t \fBGetMouseButtons\fP ()"
+.br
+.RI "Returns the current state of all mouse buttons\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Backend namespace for platform-specific input functionality (SDL abstraction)\&. 
+.SH "Function Documentation"
+.PP 
+.SS "\fBKeyStateArray\fP InputBackend::GetKeyboardState (int * numKeys)"
+
+.PP
+Returns the current state of all keyboard keys\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fInumKeys\fP Pointer to int to receive the number of keys available\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to an array of key states (1 = pressed, 0 = not pressed)\&. 
+.RE
+.PP
+
+.SS "uint32_t InputBackend::GetMouseButtons ()"
+
+.PP
+Returns the current state of all mouse buttons\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Bitmask representing the mouse buttons currently pressed\&. 
+.RE
+.PP
+
+.SS "void InputBackend::Init ()"
+
+.PP
+Initializes the input backend\&. Must be called before polling events\&. 
+.SS "bool InputBackend::PollEvent (\fBInputEvent\fP & outEvent)"
+
+.PP
+Polls a single input event and fills the output event structure\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIoutEvent\fP Reference to an \fBInputEvent\fP structure to populate\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if an event was polled; false if the event queue is empty\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

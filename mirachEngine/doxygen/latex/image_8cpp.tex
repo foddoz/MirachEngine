@@ -1,0 +1,85 @@
+\doxysection{C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Texturing/image.cpp File Reference}
+\hypertarget{image_8cpp}{}\label{image_8cpp}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/Texturing/image.cpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/Texturing/image.cpp}}
+{\ttfamily \#include "{}image.\+hpp"{}}\newline
+{\ttfamily \#include "{}../../stb\+\_\+image/stb\+\_\+image.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for image.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{image_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{image_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78}{STB\+\_\+\+IMAGE\+\_\+\+IMPLEMENTATION}}
+\item 
+\#define \mbox{\hyperlink{image_8cpp_a03f11c185c278fd82e6d2624e9ce9214}{STBI\+\_\+\+FAILURE\+\_\+\+USERMSG}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{image_8cpp_a1d6bfb89d8b124b070bab503c43bd581}{Load\+Image}} (const std\+::string \&filename, \mbox{\hyperlink{struct_image_data}{Image\+Data}} \&out\+Image)
+\begin{DoxyCompactList}\small\item\em Loads an image file using stb\+\_\+image and populates the given \doxylink{struct_image_data}{Image\+Data} structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{image_8cpp_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{image_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78}\index{image.cpp@{image.cpp}!STB\_IMAGE\_IMPLEMENTATION@{STB\_IMAGE\_IMPLEMENTATION}}
+\index{STB\_IMAGE\_IMPLEMENTATION@{STB\_IMAGE\_IMPLEMENTATION}!image.cpp@{image.cpp}}
+\doxysubsubsection{\texorpdfstring{STB\_IMAGE\_IMPLEMENTATION}{STB\_IMAGE\_IMPLEMENTATION}}
+{\footnotesize\ttfamily \label{image_8cpp_a18372412ad2fc3ce1e3240b3cf0efe78} 
+\#define STB\+\_\+\+IMAGE\+\_\+\+IMPLEMENTATION}
+
+\Hypertarget{image_8cpp_a03f11c185c278fd82e6d2624e9ce9214}\index{image.cpp@{image.cpp}!STBI\_FAILURE\_USERMSG@{STBI\_FAILURE\_USERMSG}}
+\index{STBI\_FAILURE\_USERMSG@{STBI\_FAILURE\_USERMSG}!image.cpp@{image.cpp}}
+\doxysubsubsection{\texorpdfstring{STBI\_FAILURE\_USERMSG}{STBI\_FAILURE\_USERMSG}}
+{\footnotesize\ttfamily \label{image_8cpp_a03f11c185c278fd82e6d2624e9ce9214} 
+\#define STBI\+\_\+\+FAILURE\+\_\+\+USERMSG}
+
+
+
+\label{doc-func-members}
+\Hypertarget{image_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{image_8cpp_a1d6bfb89d8b124b070bab503c43bd581}\index{image.cpp@{image.cpp}!LoadImage@{LoadImage}}
+\index{LoadImage@{LoadImage}!image.cpp@{image.cpp}}
+\doxysubsubsection{\texorpdfstring{LoadImage()}{LoadImage()}}
+{\footnotesize\ttfamily \label{image_8cpp_a1d6bfb89d8b124b070bab503c43bd581} 
+bool Load\+Image (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{\mbox{\hyperlink{struct_image_data}{Image\+Data}} \&}]{out\+Image}{}\end{DoxyParamCaption})}
+
+
+
+Loads an image file using stb\+\_\+image and populates the given \doxylink{struct_image_data}{Image\+Data} structure. 
+
+This function reads an image from disk using stb\+\_\+image, flips it vertically for Open\+GL compatibility, and fills the output \doxylink{struct_image_data}{Image\+Data} struct with pixel data, width, height, and bytes-\/per-\/pixel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file path to the image to be loaded. \\
+\hline
+{\em out\+Image} & Reference to an \doxylink{struct_image_data}{Image\+Data} struct where loaded image info will be stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the image loads successfully; false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{image_8cpp_a1d6bfb89d8b124b070bab503c43bd581_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{image_8cpp_a1d6bfb89d8b124b070bab503c43bd581_icgraph}
+\end{center}
+\end{figure}

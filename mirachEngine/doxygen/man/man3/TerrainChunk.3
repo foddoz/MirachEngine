@@ -1,0 +1,332 @@
+.TH "TerrainChunk" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TerrainChunk \- Represents a sub-section of a larger terrain for LOD or streaming\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <terrain_chunk\&.hpp>\fP
+.PP
+Inherits \fBMeshTerrain\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTerrainChunk\fP ()"
+.br
+.RI "Default constructor\&. Initializes internal state\&. "
+.ti -1c
+.RI "void \fBGenerateCPUData\fP (const std::vector< float > &globalHeightmap, int startX, int startZ, int chunkSize, int globalWidth, float minHeight, float maxHeight, float textureScale, const std::vector< std::string > &textureFileNames)"
+.br
+.RI "Generates mesh data for this chunk from a global heightmap source\&. "
+.ti -1c
+.RI "void \fBUploadToGPU\fP () override"
+.br
+.RI "Uploads this chunk’s vertex/index/texture data to the GPU\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBGetOrigin\fP () const"
+.br
+.RI "Returns the world-space origin of this chunk in terrain units\&. "
+.ti -1c
+.RI "void \fBSetSharedTextures\fP (const std::vector< \fBTexture\fP * > &textures)"
+.br
+.RI "Shares preloaded textures across multiple chunks to reduce memory usage\&. "
+.in -1c
+
+Public Member Functions inherited from \fBMeshTerrain\fP
+.in +1c
+.ti -1c
+.RI "\fBMeshTerrain\fP ()"
+.br
+.RI "Constructs an empty \fBMeshTerrain\fP object\&. "
+.ti -1c
+.RI "void \fBGenerateCPUData\fP (int terrainSize, int iterations, float minHeight, float maxHeight, float filter, float textureScale, const std::vector< std::string > &textureFileNames, bool randomise=true)"
+.br
+.RI "Generates the heightmap and vertex data for terrain mesh\&. "
+.ti -1c
+.RI "void \fBCreateFaultFormation\fP (int iterations, float minHeight, float maxHeight, float filter, int terrainSize, bool randomise)"
+.br
+.RI "Internal fault formation algorithm with smoothing filter\&. "
+.ti -1c
+.RI "\fBMeshRenderer\fP \fBToRenderer\fP () override"
+.br
+.RI "Converts the terrain to a renderable mesh component\&. "
+.ti -1c
+.RI "\fBMeshLOD\fP \fBCreateLOD\fP (int stepSize)"
+.br
+.ti -1c
+.RI "float \fBGetHeight\fP (int x, int z) const"
+.br
+.RI "Gets the height at the given integer terrain grid coordinates\&. "
+.ti -1c
+.RI "float \fBGetWorldHeight\fP (float x, float z) const"
+.br
+.ti -1c
+.RI "float \fBGetHeightInterpolated\fP (float x, float z) const"
+.br
+.RI "Gets bilinearly interpolated height from floating point coordinates\&. "
+.ti -1c
+.RI "int \fBGetSize\fP () const"
+.br
+.RI "Gets terrain grid size\&. "
+.ti -1c
+.RI "int \fBGetWidth\fP () const"
+.br
+.RI "Gets the width (x-size) of the terrain\&. "
+.ti -1c
+.RI "int \fBGetDepth\fP () const"
+.br
+.RI "Gets the depth (z-size) of the terrain\&. "
+.ti -1c
+.RI "float \fBGetWorldWidth\fP () const"
+.br
+.ti -1c
+.RI "float \fBGetWorldDepth\fP () const"
+.br
+.ti -1c
+.RI "int \fBGetMinHeight\fP () const"
+.br
+.ti -1c
+.RI "int \fBGetMaxHeight\fP () const"
+.br
+.ti -1c
+.RI "const std::vector< float > & \fBGetHeightMap\fP () const"
+.br
+.ti -1c
+.RI "const std::vector< \fBMeshTerrain::Vertex\fP > & \fBGetVertexData\fP () const"
+.br
+.ti -1c
+.RI "const std::vector< unsigned int > & \fBGetIndexData\fP () const"
+.br
+.ti -1c
+.RI "void \fBClearCPUData\fP ()"
+.br
+.ti -1c
+.RI "float \fBGetTextureScale\fP () const"
+.br
+.RI "Gets the texture UV scale factor\&. "
+.ti -1c
+.RI "void \fBDelete\fP () override"
+.br
+.RI "Deletes GPU resources associated with the terrain\&. "
+.in -1c
+
+Public Member Functions inherited from \fBMesh3D\fP
+.in +1c
+.ti -1c
+.RI "\fBMesh3D\fP ()"
+.br
+.RI "Default constructor initializes OpenGL buffer handles and transforms\&. "
+.ti -1c
+.RI "\fBMesh3D\fP (const \fBMesh3D\fP &other)"
+.br
+.RI "Copy constructor for \fBMesh3D\fP\&. "
+.ti -1c
+.RI "void \fBSetPipeline\fP (unsigned int pipeline)"
+.br
+.RI "Assigns a graphics pipeline (shader program) to this mesh\&. "
+.ti -1c
+.RI "unsigned int \fBgetPipeline\fP () const"
+.br
+.RI "Retrieves the currently assigned graphics pipeline\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBm_startX\fP"
+.br
+.RI "Start X index in global heightmap\&. "
+.ti -1c
+.RI "int \fBm_startZ\fP"
+.br
+.RI "Start Z index in global heightmap\&. "
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Member Functions inherited from \fBMeshTerrain\fP
+.in +1c
+.ti -1c
+.RI "void \fBCreateTriangleList\fP (int width, int depth)"
+.br
+.RI "Generates vertices, normals, and triangle indices from heightmap\&. "
+.ti -1c
+.RI "void \fBSetHeight\fP (int x, int z, float value)"
+.br
+.in -1c
+
+Protected Attributes inherited from \fBMeshTerrain\fP
+.in +1c
+.ti -1c
+.RI "std::vector< std::string > \fBm_TextureFileNames\fP"
+.br
+.RI "\fBTexture\fP file names for terrain layers\&. "
+.ti -1c
+.RI "int \fBm_width\fP"
+.br
+.RI "Final mesh width after generation\&. "
+.ti -1c
+.RI "int \fBm_depth\fP"
+.br
+.RI "Final mesh depth after generation\&. "
+.ti -1c
+.RI "int \fBm_minHeight\fP"
+.br
+.RI "Cached minimum height value\&. "
+.ti -1c
+.RI "int \fBm_maxHeight\fP"
+.br
+.RI "Cached maximum height value\&. "
+.ti -1c
+.RI "float \fBm_worldSizeX\fP"
+.br
+.ti -1c
+.RI "float \fBm_worldSizeZ\fP"
+.br
+.ti -1c
+.RI "int \fBm_terrainSize\fP"
+.br
+.RI "Size of the terrain (width = depth)\&. "
+.ti -1c
+.RI "std::vector< float > \fBm_heightMap\fP"
+.br
+.RI "2D heightmap values\&. "
+.ti -1c
+.RI "float \fBm_textureScale\fP"
+.br
+.RI "\fBTexture\fP scale used for UV mapping\&. "
+.in -1c
+
+Protected Attributes inherited from \fBMesh3D\fP
+.in +1c
+.ti -1c
+.RI "unsigned int \fBm_VAO\fP"
+.br
+.RI "OpenGL Vertex Array Object handle\&. "
+.ti -1c
+.RI "unsigned int \fBm_IndexCount\fP"
+.br
+.RI "Number of indices used for drawing (glDrawElements or glDrawArrays)\&. "
+.ti -1c
+.RI "unsigned int \fBm_VBO\fP"
+.br
+.RI "Vertex Buffer Object handle\&. "
+.ti -1c
+.RI "unsigned int \fBm_IBO\fP"
+.br
+.RI "Index Buffer Object handle\&. "
+.ti -1c
+.RI "std::vector< \fBTexture\fP * > \fBm_Textures\fP"
+.br
+.RI "Collection of textures associated with this mesh\&. "
+.ti -1c
+.RI "unsigned int \fBm_Pipeline\fP"
+.br
+.RI "OpenGL shader program ID assigned to this mesh\&. "
+.ti -1c
+.RI "\fBAABB\fP \fBm_AABB\fP"
+.br
+.RI "Axis-aligned bounding box in local (object) space\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a sub-section of a larger terrain for LOD or streaming\&. 
+
+Inherits from \fBMeshTerrain\fP and extracts its data from a global heightmap\&. This allows terrain to be split into smaller pieces for performance and culling\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TerrainChunk::TerrainChunk ()"
+
+.PP
+Default constructor\&. Initializes internal state\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void TerrainChunk::GenerateCPUData (const std::vector< float > & globalHeightmap, int startX, int startZ, int chunkSize, int globalWidth, float minHeight, float maxHeight, float textureScale, const std::vector< std::string > & textureFileNames)"
+
+.PP
+Generates mesh data for this chunk from a global heightmap source\&. Generate terrain chunk mesh from a portion of a global heightmap\&.
+
+.PP
+This function extracts a rectangular region of height values from a larger terrain and constructs vertex/index buffers only for that portion\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIglobalHeightmap\fP The full terrain heightmap shared across all chunks\&. 
+.br
+\fIstartX\fP The X-coordinate (column) in the global heightmap to start this chunk\&. 
+.br
+\fIstartZ\fP The Z-coordinate (row) in the global heightmap to start this chunk\&. 
+.br
+\fIchunkSize\fP The number of vertices in width and depth this chunk should span\&. 
+.br
+\fIglobalWidth\fP The full width of the global heightmap (used for indexing)\&. 
+.br
+\fIminHeight\fP Minimum expected height value (used for \fBAABB\fP normalization)\&. 
+.br
+\fImaxHeight\fP Maximum expected height value\&. 
+.br
+\fItextureScale\fP UV scaling factor for this chunk's texture coordinates\&. 
+.br
+\fItextureFileNames\fP A list of texture file paths to use on this chunk\&. 
+.RE
+.PP
+
+.SS "\fBVector3f\fP TerrainChunk::GetOrigin () const"
+
+.PP
+Returns the world-space origin of this chunk in terrain units\&. Get the world origin of this chunk based on grid location\&.
+
+.PP
+Typically used for placing the chunk correctly in the world or computing transforms\&. 
+.PP
+\fBReturns\fP
+.RS 4
+\fBVector3f\fP representing bottom-left corner of the chunk\&.
+
+.PP
+\fBVector3f\fP representing the chunk's base position in world space\&. 
+.RE
+.PP
+
+.SS "void TerrainChunk::SetSharedTextures (const std::vector< \fBTexture\fP * > & textures)"
+
+.PP
+Shares preloaded textures across multiple chunks to reduce memory usage\&. Replace current textures with shared texture pointers\&.
+
+.PP
+Replaces this chunk's texture list with a reference to shared ones\&. Textures are not copied or loaded again\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fItextures\fP List of preloaded texture pointers\&.
+.br
+\fItextures\fP Shared terrain texture list (already loaded and uploaded)\&. 
+.RE
+.PP
+
+.SS "void TerrainChunk::UploadToGPU ()\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Uploads this chunk’s vertex/index/texture data to the GPU\&. Upload terrain chunk texture data to GPU\&. 
+.PP
+Reimplemented from \fBMeshTerrain\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int TerrainChunk::m_startX\fR [private]\fP"
+
+.PP
+Start X index in global heightmap\&. 
+.SS "int TerrainChunk::m_startZ\fR [private]\fP"
+
+.PP
+Start Z index in global heightmap\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

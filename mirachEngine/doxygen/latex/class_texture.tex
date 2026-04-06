@@ -1,0 +1,308 @@
+\doxysection{Texture Class Reference}
+\hypertarget{class_texture}{}\label{class_texture}\index{Texture@{Texture}}
+
+
+Handles image loading, GPU uploading, binding, and cleanup of texture resources.  
+
+
+
+
+{\ttfamily \#include $<$texture.\+hpp$>$}
+
+
+
+Collaboration diagram for Texture\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{class_texture__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_texture_a45370453b0618636c8944ef09b0ef69d}{Texture}} (\mbox{\hyperlink{graphics_8hpp_aaec52e992383ff804b871ff27e476126}{Texture\+Target}} target)
+\begin{DoxyCompactList}\small\item\em Constructs a texture with a specified Open\+GL texture target. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_texture_aea6e2585385d350d16497e27da372f3a}{Texture}} (const \mbox{\hyperlink{class_texture}{Texture}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor for deep-\/copying texture state (image data only, not GPU handle). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_texture_a9b5013aca3b13b0f6bc6419a9f124010}{Load\+From\+File}} (const std\+::string \&file\+Name)
+\begin{DoxyCompactList}\small\item\em Loads image data from a file into CPU memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_texture_ac26bd39efa1bf8cbc700d93a487695c8}{Upload\+To\+GPU}} ()
+\begin{DoxyCompactList}\small\item\em Uploads the loaded image data to GPU and creates an Open\+GL texture. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_texture_aa9a3935938a1a89365225c11ae79c74f}{Bind}} (unsigned int texture\+Unit)
+\begin{DoxyCompactList}\small\item\em Binds the texture to a specified texture unit for rendering. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_texture_a653216bcd1509432e28502d9fc7826ce}{Delete}} ()
+\begin{DoxyCompactList}\small\item\em Frees GPU texture memory and clears the texture object. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_texture_a407a62eb84bc65d2a7b2ff8ca71f050f}{Get\+ID}} () const
+\begin{DoxyCompactList}\small\item\em Returns the Open\+GL texture object ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_texture_a134afcb583dcb10662ad6227f7ab8ac1}{m\+\_\+file\+Name}}
+\begin{DoxyCompactList}\small\item\em Path to the loaded image file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{graphics_8hpp_aaec52e992383ff804b871ff27e476126}{Texture\+Target}} \mbox{\hyperlink{class_texture_a56b33ec17d5043228b2a43efacdfc9cb}{m\+\_\+texture\+Target}}
+\begin{DoxyCompactList}\small\item\em Open\+GL texture target type (e.\+g., GL\+\_\+\+TEXTURE\+\_\+2D). \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_texture_a4231c742bb1f090214b61e9ad00821b8}{m\+\_\+texture\+Obj}} = 0
+\begin{DoxyCompactList}\small\item\em Open\+GL texture object ID. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_texture_a7927533b08c19c23152d6041011be9bf}{m\+\_\+image\+Width}} = 0
+\begin{DoxyCompactList}\small\item\em Width of the loaded image. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_texture_ab2ef7c7a22213d8acce9f476b7941f0b}{m\+\_\+image\+Height}} = 0
+\begin{DoxyCompactList}\small\item\em Height of the loaded image. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_texture_af8db99487d2db4cc87b245e9a2a4d6a7}{m\+\_\+image\+BPP}} = 0
+\begin{DoxyCompactList}\small\item\em Bytes per pixel of the loaded image. \end{DoxyCompactList}\item 
+std\+::vector$<$ unsigned char $>$ \mbox{\hyperlink{class_texture_adfea4eb255746d42d01d7be3a98d23c6}{m\+\_\+image\+Data}}
+\begin{DoxyCompactList}\small\item\em Raw pixel data loaded from the image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles image loading, GPU uploading, binding, and cleanup of texture resources. 
+
+This class provides an abstraction over Open\+GL texture operations. It supports 2D textures and wraps functionality for loading from file, uploading to GPU memory, and binding to specific texture units. 
+
+\label{doc-constructors}
+\Hypertarget{class_texture_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_texture_a45370453b0618636c8944ef09b0ef69d}\index{Texture@{Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{Texture()}{Texture()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_texture_a45370453b0618636c8944ef09b0ef69d} 
+Texture\+::\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{graphics_8hpp_aaec52e992383ff804b871ff27e476126}{Texture\+Target}}}]{target}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a texture with a specified Open\+GL texture target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The Open\+GL texture target (e.\+g., \doxylink{graphics_8hpp_aaec52e992383ff804b871ff27e476126aa6e2bae752d3bf4e34cb392bca789995}{Texture\+Target\+::\+Texture2D}). \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{class_texture_a45370453b0618636c8944ef09b0ef69d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_texture_aea6e2585385d350d16497e27da372f3a}\index{Texture@{Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{Texture()}{Texture()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_texture_aea6e2585385d350d16497e27da372f3a} 
+Texture\+::\+Texture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_texture}{Texture}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor for deep-\/copying texture state (image data only, not GPU handle). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \doxylink{class_texture}{Texture} object to copy from. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{class_texture_aea6e2585385d350d16497e27da372f3a_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{class_texture_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_texture_aa9a3935938a1a89365225c11ae79c74f}\index{Texture@{Texture}!Bind@{Bind}}
+\index{Bind@{Bind}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{Bind()}{Bind()}}
+{\footnotesize\ttfamily \label{class_texture_aa9a3935938a1a89365225c11ae79c74f} 
+void Texture\+::\+Bind (\begin{DoxyParamCaption}\item[{unsigned int}]{texture\+Unit}{}\end{DoxyParamCaption})}
+
+
+
+Binds the texture to a specified texture unit for rendering. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture\+Unit} & The Open\+GL texture unit (e.\+g., GL\+\_\+\+TEXTURE0 or COLOR\+\_\+\+TEXTURE\+\_\+\+UNIT). \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{class_texture_aa9a3935938a1a89365225c11ae79c74f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_texture_aa9a3935938a1a89365225c11ae79c74f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_texture_a653216bcd1509432e28502d9fc7826ce}\index{Texture@{Texture}!Delete@{Delete}}
+\index{Delete@{Delete}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily \label{class_texture_a653216bcd1509432e28502d9fc7826ce} 
+void Texture\+::\+Delete (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Frees GPU texture memory and clears the texture object. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{class_texture_a653216bcd1509432e28502d9fc7826ce_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_texture_a407a62eb84bc65d2a7b2ff8ca71f050f}\index{Texture@{Texture}!GetID@{GetID}}
+\index{GetID@{GetID}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{GetID()}{GetID()}}
+{\footnotesize\ttfamily \label{class_texture_a407a62eb84bc65d2a7b2ff8ca71f050f} 
+unsigned int Texture\+::\+Get\+ID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the Open\+GL texture object ID. 
+
+\begin{DoxyReturn}{Returns}
+GLuint texture handle. 
+\end{DoxyReturn}
+\Hypertarget{class_texture_a9b5013aca3b13b0f6bc6419a9f124010}\index{Texture@{Texture}!LoadFromFile@{LoadFromFile}}
+\index{LoadFromFile@{LoadFromFile}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{LoadFromFile()}{LoadFromFile()}}
+{\footnotesize\ttfamily \label{class_texture_a9b5013aca3b13b0f6bc6419a9f124010} 
+void Texture\+::\+Load\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Loads image data from a file into CPU memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Path to the image file to load. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_texture_a9b5013aca3b13b0f6bc6419a9f124010_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_texture_a9b5013aca3b13b0f6bc6419a9f124010_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_texture_ac26bd39efa1bf8cbc700d93a487695c8}\index{Texture@{Texture}!UploadToGPU@{UploadToGPU}}
+\index{UploadToGPU@{UploadToGPU}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{UploadToGPU()}{UploadToGPU()}}
+{\footnotesize\ttfamily \label{class_texture_ac26bd39efa1bf8cbc700d93a487695c8} 
+void Texture\+::\+Upload\+To\+GPU (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Uploads the loaded image data to GPU and creates an Open\+GL texture. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_texture_ac26bd39efa1bf8cbc700d93a487695c8_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_texture_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_texture_a134afcb583dcb10662ad6227f7ab8ac1}\index{Texture@{Texture}!m\_fileName@{m\_fileName}}
+\index{m\_fileName@{m\_fileName}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{m\_fileName}{m\_fileName}}
+{\footnotesize\ttfamily \label{class_texture_a134afcb583dcb10662ad6227f7ab8ac1} 
+std\+::string Texture\+::m\+\_\+file\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Path to the loaded image file. 
+
+\Hypertarget{class_texture_af8db99487d2db4cc87b245e9a2a4d6a7}\index{Texture@{Texture}!m\_imageBPP@{m\_imageBPP}}
+\index{m\_imageBPP@{m\_imageBPP}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{m\_imageBPP}{m\_imageBPP}}
+{\footnotesize\ttfamily \label{class_texture_af8db99487d2db4cc87b245e9a2a4d6a7} 
+int Texture\+::m\+\_\+image\+BPP = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bytes per pixel of the loaded image. 
+
+\Hypertarget{class_texture_adfea4eb255746d42d01d7be3a98d23c6}\index{Texture@{Texture}!m\_imageData@{m\_imageData}}
+\index{m\_imageData@{m\_imageData}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{m\_imageData}{m\_imageData}}
+{\footnotesize\ttfamily \label{class_texture_adfea4eb255746d42d01d7be3a98d23c6} 
+std\+::vector$<$unsigned char$>$ Texture\+::m\+\_\+image\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Raw pixel data loaded from the image. 
+
+\Hypertarget{class_texture_ab2ef7c7a22213d8acce9f476b7941f0b}\index{Texture@{Texture}!m\_imageHeight@{m\_imageHeight}}
+\index{m\_imageHeight@{m\_imageHeight}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{m\_imageHeight}{m\_imageHeight}}
+{\footnotesize\ttfamily \label{class_texture_ab2ef7c7a22213d8acce9f476b7941f0b} 
+int Texture\+::m\+\_\+image\+Height = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Height of the loaded image. 
+
+\Hypertarget{class_texture_a7927533b08c19c23152d6041011be9bf}\index{Texture@{Texture}!m\_imageWidth@{m\_imageWidth}}
+\index{m\_imageWidth@{m\_imageWidth}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{m\_imageWidth}{m\_imageWidth}}
+{\footnotesize\ttfamily \label{class_texture_a7927533b08c19c23152d6041011be9bf} 
+int Texture\+::m\+\_\+image\+Width = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Width of the loaded image. 
+
+\Hypertarget{class_texture_a4231c742bb1f090214b61e9ad00821b8}\index{Texture@{Texture}!m\_textureObj@{m\_textureObj}}
+\index{m\_textureObj@{m\_textureObj}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{m\_textureObj}{m\_textureObj}}
+{\footnotesize\ttfamily \label{class_texture_a4231c742bb1f090214b61e9ad00821b8} 
+unsigned int Texture\+::m\+\_\+texture\+Obj = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Open\+GL texture object ID. 
+
+\Hypertarget{class_texture_a56b33ec17d5043228b2a43efacdfc9cb}\index{Texture@{Texture}!m\_textureTarget@{m\_textureTarget}}
+\index{m\_textureTarget@{m\_textureTarget}!Texture@{Texture}}
+\doxysubsubsection{\texorpdfstring{m\_textureTarget}{m\_textureTarget}}
+{\footnotesize\ttfamily \label{class_texture_a56b33ec17d5043228b2a43efacdfc9cb} 
+\mbox{\hyperlink{graphics_8hpp_aaec52e992383ff804b871ff27e476126}{Texture\+Target}} Texture\+::m\+\_\+texture\+Target\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Open\+GL texture target type (e.\+g., GL\+\_\+\+TEXTURE\+\_\+2D). 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Texturing/\mbox{\hyperlink{texture_8hpp}{texture.\+hpp}}\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Texturing/\mbox{\hyperlink{texture_8cpp}{texture.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,23 @@
+# ninja log v6
+2	68	7664698309034936	assimp-populate-prefix/src/assimp-populate-stamp/assimp-populate-mkdir	6d5ff79e65a2cb3e
+2	68	7664698309034936	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/assimp-subbuild/assimp-populate-prefix/src/assimp-populate-stamp/assimp-populate-mkdir	6d5ff79e65a2cb3e
+69	8303	7664698391369114	assimp-populate-prefix/src/assimp-populate-stamp/assimp-populate-download	2b7416adafae4663
+69	8303	7664698391369114	assimp-populate-prefix/src/v5.4.3.tar.gz	2b7416adafae4663
+69	8303	7664698391369114	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/assimp-subbuild/assimp-populate-prefix/src/assimp-populate-stamp/assimp-populate-download	2b7416adafae4663
+69	8303	7664698391369114	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/assimp-subbuild/assimp-populate-prefix/src/v5.4.3.tar.gz	2b7416adafae4663
+8303	8374	7664698392087182	assimp-populate-prefix/src/assimp-populate-stamp/assimp-populate-update	6509233df92f5100
+8303	8374	7664698392087182	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/assimp-subbuild/assimp-populate-prefix/src/assimp-populate-stamp/assimp-populate-update	6509233df92f5100
+8374	8438	7664698392727178	assimp-populate-prefix/src/assimp-populate-stamp/assimp-populate-patch	fb093317b8abdd29
+8374	8438	7664698392727178	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/assimp-subbuild/assimp-populate-prefix/src/assimp-populate-stamp/assimp-populate-patch	fb093317b8abdd29
+8438	8502	7664698393375345	assimp-populate-prefix/src/assimp-populate-stamp/assimp-populate-configure	fb5b6f409743977
+8438	8502	7664698393375345	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/assimp-subbuild/assimp-populate-prefix/src/assimp-populate-stamp/assimp-populate-configure	fb5b6f409743977
+8503	8572	7664698394061282	assimp-populate-prefix/src/assimp-populate-stamp/assimp-populate-build	82bb074348369e27
+8503	8572	7664698394061282	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/assimp-subbuild/assimp-populate-prefix/src/assimp-populate-stamp/assimp-populate-build	82bb074348369e27
+8572	8650	7664698394839196	assimp-populate-prefix/src/assimp-populate-stamp/assimp-populate-install	6d16198ee040d205
+8572	8650	7664698394839196	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/assimp-subbuild/assimp-populate-prefix/src/assimp-populate-stamp/assimp-populate-install	6d16198ee040d205
+8651	8728	7664698395617367	assimp-populate-prefix/src/assimp-populate-stamp/assimp-populate-test	20aa3e2fab1ed2ce
+8651	8728	7664698395617367	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/assimp-subbuild/assimp-populate-prefix/src/assimp-populate-stamp/assimp-populate-test	20aa3e2fab1ed2ce
+8728	8829	7664698396614452	CMakeFiles/assimp-populate-complete	2ef4cd5244f90023
+8728	8829	7664698396614452	assimp-populate-prefix/src/assimp-populate-stamp/assimp-populate-done	2ef4cd5244f90023
+8728	8829	7664698396614452	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/assimp-subbuild/CMakeFiles/assimp-populate-complete	2ef4cd5244f90023
+8728	8829	7664698396614452	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/assimp-subbuild/assimp-populate-prefix/src/assimp-populate-stamp/assimp-populate-done	2ef4cd5244f90023

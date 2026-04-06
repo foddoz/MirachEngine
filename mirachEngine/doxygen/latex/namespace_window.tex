@@ -1,0 +1,229 @@
+\doxysection{Window Namespace Reference}
+\hypertarget{namespace_window}{}\label{namespace_window}\index{Window@{Window}}
+
+
+Provides a platform-\/agnostic facade for window and Open\+GL context management.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_window_handle}{Window\+Handle}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespace_window_ac9bcff5409b21a92d947a03697816be8}{Create}} (const std\+::string \&title, int width, int height)
+\begin{DoxyCompactList}\small\item\em Creates a new window with the specified title and dimensions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_window_ad9697b4c1ab7bfd9b385f461f275303b}{Destroy}} (\mbox{\hyperlink{struct_window_handle}{Window\+Handle}} \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Destroys a previously created window. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{window_8hpp_a0946984514c2d132fda9ae97e8ba739f}{Graphics\+Context\+Handle}} \mbox{\hyperlink{namespace_window_a5187ba066cf3c391bc03ed296e48d8be}{Create\+Graphics\+Context}} (\mbox{\hyperlink{struct_window_handle}{Window\+Handle}} \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Creates a graphics context (e.\+g., Open\+GL) for the given window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_window_a38d3d02bafef36fc6d57d029d7ab7d96}{Make\+Context\+Current}} (\mbox{\hyperlink{struct_window_handle}{Window\+Handle}} \texorpdfstring{$\ast$}{*}window, \mbox{\hyperlink{window_8hpp_a0946984514c2d132fda9ae97e8ba739f}{Graphics\+Context\+Handle}} context)
+\begin{DoxyCompactList}\small\item\em Makes the specified graphics context current for the given window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_window_aceeb1c854437ec05d00801ffc7acc112}{Swap\+Buffers}} (\mbox{\hyperlink{struct_window_handle}{Window\+Handle}} \texorpdfstring{$\ast$}{*}window)
+\begin{DoxyCompactList}\small\item\em Swaps the front and back buffers of the given window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_window_ae89c506b55cf635c234885d7278debc4}{Lock\+Mouse}} (\mbox{\hyperlink{struct_window_handle}{Window\+Handle}} \texorpdfstring{$\ast$}{*}window, bool lock, int width, int height)
+\begin{DoxyCompactList}\small\item\em Locks or unlocks the mouse cursor to the window center. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespace_window_a22537588ce8e2ea52ad832ea8d58a42d}{Get\+Proc\+Address}} (const char \texorpdfstring{$\ast$}{*}name)
+\begin{DoxyCompactList}\small\item\em Retrieves the Open\+GL function pointer for the given function name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespace_window_a2cae9e06fe965916ea997400acc84aeb}{Init\+Graphics}} ()
+\begin{DoxyCompactList}\small\item\em Initializes platform-\/specific graphics loaders (e.\+g., GLAD). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides a platform-\/agnostic facade for window and Open\+GL context management. 
+
+\label{doc-func-members}
+\Hypertarget{namespace_window_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{namespace_window_ac9bcff5409b21a92d947a03697816be8}\index{Window@{Window}!Create@{Create}}
+\index{Create@{Create}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \label{namespace_window_ac9bcff5409b21a92d947a03697816be8} 
+\mbox{\hyperlink{struct_window_handle}{Window\+Handle}} \texorpdfstring{$\ast$}{*} Window\+::\+Create (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{title}{, }\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new window with the specified title and dimensions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & Title of the window. \\
+\hline
+{\em width} & Width of the window in pixels. \\
+\hline
+{\em height} & Height of the window in pixels. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the created \doxylink{struct_window_handle}{Window\+Handle}. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{namespace_window_ac9bcff5409b21a92d947a03697816be8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_window_a5187ba066cf3c391bc03ed296e48d8be}\index{Window@{Window}!CreateGraphicsContext@{CreateGraphicsContext}}
+\index{CreateGraphicsContext@{CreateGraphicsContext}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{CreateGraphicsContext()}{CreateGraphicsContext()}}
+{\footnotesize\ttfamily \label{namespace_window_a5187ba066cf3c391bc03ed296e48d8be} 
+\mbox{\hyperlink{window_8hpp_a0946984514c2d132fda9ae97e8ba739f}{Graphics\+Context\+Handle}} Window\+::\+Create\+Graphics\+Context (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_window_handle}{Window\+Handle}} \texorpdfstring{$\ast$}{*}}]{window}{}\end{DoxyParamCaption})}
+
+
+
+Creates a graphics context (e.\+g., Open\+GL) for the given window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Pointer to the target window. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Handle to the graphics context. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_window_a5187ba066cf3c391bc03ed296e48d8be_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_window_ad9697b4c1ab7bfd9b385f461f275303b}\index{Window@{Window}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{Destroy()}{Destroy()}}
+{\footnotesize\ttfamily \label{namespace_window_ad9697b4c1ab7bfd9b385f461f275303b} 
+void Window\+::\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_window_handle}{Window\+Handle}} \texorpdfstring{$\ast$}{*}}]{window}{}\end{DoxyParamCaption})}
+
+
+
+Destroys a previously created window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Pointer to the \doxylink{struct_window_handle}{Window\+Handle} to destroy. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_window_ad9697b4c1ab7bfd9b385f461f275303b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_window_a22537588ce8e2ea52ad832ea8d58a42d}\index{Window@{Window}!GetProcAddress@{GetProcAddress}}
+\index{GetProcAddress@{GetProcAddress}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{GetProcAddress()}{GetProcAddress()}}
+{\footnotesize\ttfamily \label{namespace_window_a22537588ce8e2ea52ad832ea8d58a42d} 
+void \texorpdfstring{$\ast$}{*} Window\+::\+Get\+Proc\+Address (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the Open\+GL function pointer for the given function name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the Open\+GL function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the function, or nullptr if not found. 
+\end{DoxyReturn}
+\Hypertarget{namespace_window_a2cae9e06fe965916ea997400acc84aeb}\index{Window@{Window}!InitGraphics@{InitGraphics}}
+\index{InitGraphics@{InitGraphics}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{InitGraphics()}{InitGraphics()}}
+{\footnotesize\ttfamily \label{namespace_window_a2cae9e06fe965916ea997400acc84aeb} 
+bool Window\+::\+Init\+Graphics (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes platform-\/specific graphics loaders (e.\+g., GLAD). 
+
+\begin{DoxyReturn}{Returns}
+True if successful, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_window_a2cae9e06fe965916ea997400acc84aeb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_window_ae89c506b55cf635c234885d7278debc4}\index{Window@{Window}!LockMouse@{LockMouse}}
+\index{LockMouse@{LockMouse}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{LockMouse()}{LockMouse()}}
+{\footnotesize\ttfamily \label{namespace_window_ae89c506b55cf635c234885d7278debc4} 
+void Window\+::\+Lock\+Mouse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_window_handle}{Window\+Handle}} \texorpdfstring{$\ast$}{*}}]{window}{, }\item[{bool}]{lock}{, }\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})}
+
+
+
+Locks or unlocks the mouse cursor to the window center. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Pointer to the window. \\
+\hline
+{\em lock} & If true, locks the mouse; otherwise, unlocks it. \\
+\hline
+{\em width} & Width of the window (used for centering). \\
+\hline
+{\em height} & Height of the window (used for centering). \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{namespace_window_ae89c506b55cf635c234885d7278debc4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_window_a38d3d02bafef36fc6d57d029d7ab7d96}\index{Window@{Window}!MakeContextCurrent@{MakeContextCurrent}}
+\index{MakeContextCurrent@{MakeContextCurrent}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{MakeContextCurrent()}{MakeContextCurrent()}}
+{\footnotesize\ttfamily \label{namespace_window_a38d3d02bafef36fc6d57d029d7ab7d96} 
+void Window\+::\+Make\+Context\+Current (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_window_handle}{Window\+Handle}} \texorpdfstring{$\ast$}{*}}]{window}{, }\item[{\mbox{\hyperlink{window_8hpp_a0946984514c2d132fda9ae97e8ba739f}{Graphics\+Context\+Handle}}}]{context}{}\end{DoxyParamCaption})}
+
+
+
+Makes the specified graphics context current for the given window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Pointer to the window. \\
+\hline
+{\em context} & \doxylink{namespace_graphics}{Graphics} context to make current. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_window_a38d3d02bafef36fc6d57d029d7ab7d96_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{namespace_window_aceeb1c854437ec05d00801ffc7acc112}\index{Window@{Window}!SwapBuffers@{SwapBuffers}}
+\index{SwapBuffers@{SwapBuffers}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{SwapBuffers()}{SwapBuffers()}}
+{\footnotesize\ttfamily \label{namespace_window_aceeb1c854437ec05d00801ffc7acc112} 
+void Window\+::\+Swap\+Buffers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_window_handle}{Window\+Handle}} \texorpdfstring{$\ast$}{*}}]{window}{}\end{DoxyParamCaption})}
+
+
+
+Swaps the front and back buffers of the given window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Pointer to the window. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{namespace_window_aceeb1c854437ec05d00801ffc7acc112_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,36 @@
+\doxysection{terrain\+\_\+chunk.\+hpp}
+\hypertarget{terrain__chunk_8hpp_source}{}\label{terrain__chunk_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/Meshes/terrain\_chunk.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/Meshes/terrain\_chunk.hpp}}
+\mbox{\hyperlink{terrain__chunk_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TERRAINCHUNK\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TERRAINCHUNK\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mesh_terrain_8hpp}{meshTerrain.hpp}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_terrain_chunk_a87708540b0fc236af648d35a209de730}{TerrainChunk}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_mesh_terrain_a75adb1babf83a1f6812d789d55f2b3ad}{MeshTerrain}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_terrain_chunk_a87708540b0fc236af648d35a209de730}{TerrainChunk}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_chunk_ab8fb5256f460139f59aa6dae3de6dabc}{GenerateCPUData}}(\textcolor{keyword}{const}\ std::vector<float>\&\ globalHeightmap,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ startX,\ \textcolor{keywordtype}{int}\ startZ,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ chunkSize,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ globalWidth,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ minHeight,\ \textcolor{keywordtype}{float}\ maxHeight,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ textureScale,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\&\ textureFileNames);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_chunk_aa82cd547ca7e8dc428c80cd6a71257a3}{UploadToGPU}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{class_terrain_chunk_a2bf92b420424d9d395377a98fac8d898}{GetOrigin}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_terrain_chunk_a8dce173976c3ddbd93ed7add594527df}{SetSharedTextures}}(\textcolor{keyword}{const}\ std::vector<Texture*>\&\ textures);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_terrain_chunk_a595eb50aad9ceee6d855c63e50642e35}{m\_startX}};\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_terrain_chunk_a64f2d42e9861377effcf31f42260a1a9}{m\_startZ}};\ }
+\DoxyCodeLine{00071\ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TERRAINCHUNK\_HPP}}
+
+\end{DoxyCode}

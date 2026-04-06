@@ -1,0 +1,15 @@
+<map id="Physics::RigidBody::ApplyImpulseAtCenter" name="Physics::RigidBody::ApplyImpulseAtCenter">
+<area shape="rect" id="Node000001" title=" " alt="" coords="959,35,1119,77"/>
+<area shape="rect" id="Node000002" href="$class_player_script.html#ad5255b13ec6d2547e0b90ef4598933ac" title="Applies directional player movement based on input." alt="" coords="726,5,896,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="943,46,897,40,897,35,944,41"/>
+<area shape="rect" id="Node000007" href="$classenemy_state.html#af377bab658f5ec2cfa6754ebaf4042e4" title="Called every frame while attacking. Plays attack animation, checks player distance for flee/chase swi..." alt="" coords="712,72,911,99"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="944,71,912,75,911,70,943,66"/>
+<area shape="rect" id="Node000003" href="$class_player_script.html#acf49a0688d3e9aac48601f9aebcf9207" title="Applies movement, jumping, and object interaction logic after the physics update." alt="" coords="489,5,664,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="710,29,664,29,664,24,710,24"/>
+<area shape="rect" id="Node000004" href="$class_terrain_scene.html#a55eb34067d9346aa7d9c3295a9e2dfb0" title="Executes the main loop: input, update, physics, animation, and rendering." alt="" coords="280,13,441,40"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="474,29,442,29,442,24,474,24"/>
+<area shape="rect" id="Node000005" href="$class_terrain_scene.html#ae8ec4e098386a74714255aed184761eb" title="Runs the full scene lifecycle in the correct execution order." alt="" coords="103,13,232,40"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="264,29,232,29,232,24,264,24"/>
+<area shape="rect" id="Node000006" href="$mirach_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point of the engine. Initializes subsystems, loads models, sets up ECS,..." alt="" coords="5,13,55,40"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="87,29,55,29,55,24,87,24"/>
+</map>

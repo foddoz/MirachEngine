@@ -1,0 +1,162 @@
+\doxysection{AABB Struct Reference}
+\hypertarget{struct_a_a_b_b}{}\label{struct_a_a_b_b}\index{AABB@{AABB}}
+
+
+Represents an axis-\/aligned bounding box.  
+
+
+
+
+{\ttfamily \#include $<$math.\+hpp$>$}
+
+
+
+Collaboration diagram for AABB\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{struct_a_a_b_b__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_a_a_b_b_a5f5baf6c533905aa1456b3a3eb57bab2}{AABB}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an invalid \doxylink{struct_a_a_b_b}{AABB} by resetting its values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_a_a_b_b_afbd7dcd97080cd1c046bace01dcc6999}{Reset}} ()
+\begin{DoxyCompactList}\small\item\em Resets the \doxylink{struct_a_a_b_b}{AABB} to an empty state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{struct_a_a_b_b_a812706f15e5916a48fdeaefe9e7bc388}{Expand}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&point)
+\begin{DoxyCompactList}\small\item\em Expands the \doxylink{struct_a_a_b_b}{AABB} to include the specified point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_a_a_b_b}{AABB}} \mbox{\hyperlink{struct_a_a_b_b_a8943a9826c0982a4dd39e2c111de8ac9}{Transform}} (const \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} \&model\+Matrix) const
+\begin{DoxyCompactList}\small\item\em Transforms this \doxylink{struct_a_a_b_b}{AABB} by a transformation matrix and returns the result. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}}
+\item 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an axis-\/aligned bounding box. 
+
+\label{doc-constructors}
+\Hypertarget{struct_a_a_b_b_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{struct_a_a_b_b_a5f5baf6c533905aa1456b3a3eb57bab2}\index{AABB@{AABB}!AABB@{AABB}}
+\index{AABB@{AABB}!AABB@{AABB}}
+\doxysubsubsection{\texorpdfstring{AABB()}{AABB()}}
+{\footnotesize\ttfamily \label{struct_a_a_b_b_a5f5baf6c533905aa1456b3a3eb57bab2} 
+AABB\+::\+AABB (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs an invalid \doxylink{struct_a_a_b_b}{AABB} by resetting its values. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{struct_a_a_b_b_a5f5baf6c533905aa1456b3a3eb57bab2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_a_a_b_b_a5f5baf6c533905aa1456b3a3eb57bab2_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{struct_a_a_b_b_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_a_a_b_b_a812706f15e5916a48fdeaefe9e7bc388}\index{AABB@{AABB}!Expand@{Expand}}
+\index{Expand@{Expand}!AABB@{AABB}}
+\doxysubsubsection{\texorpdfstring{Expand()}{Expand()}}
+{\footnotesize\ttfamily \label{struct_a_a_b_b_a812706f15e5916a48fdeaefe9e7bc388} 
+void AABB\+::\+Expand (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{point}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Expands the \doxylink{struct_a_a_b_b}{AABB} to include the specified point. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_a_a_b_b_a812706f15e5916a48fdeaefe9e7bc388_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_a_a_b_b_afbd7dcd97080cd1c046bace01dcc6999}\index{AABB@{AABB}!Reset@{Reset}}
+\index{Reset@{Reset}!AABB@{AABB}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily \label{struct_a_a_b_b_afbd7dcd97080cd1c046bace01dcc6999} 
+void AABB\+::\+Reset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Resets the \doxylink{struct_a_a_b_b}{AABB} to an empty state. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_a_a_b_b_afbd7dcd97080cd1c046bace01dcc6999_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{struct_a_a_b_b_a8943a9826c0982a4dd39e2c111de8ac9}\index{AABB@{AABB}!Transform@{Transform}}
+\index{Transform@{Transform}!AABB@{AABB}}
+\doxysubsubsection{\texorpdfstring{Transform()}{Transform()}}
+{\footnotesize\ttfamily \label{struct_a_a_b_b_a8943a9826c0982a4dd39e2c111de8ac9} 
+\mbox{\hyperlink{struct_a_a_b_b}{AABB}} AABB\+::\+Transform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} \&}]{model\+Matrix}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Transforms this \doxylink{struct_a_a_b_b}{AABB} by a transformation matrix and returns the result. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_a_a_b_b_a8943a9826c0982a4dd39e2c111de8ac9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_a_a_b_b_a8943a9826c0982a4dd39e2c111de8ac9_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_a_a_b_b_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}\index{AABB@{AABB}!max@{max}}
+\index{max@{max}!AABB@{AABB}}
+\doxysubsubsection{\texorpdfstring{max}{max}}
+{\footnotesize\ttfamily \label{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023} 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} AABB\+::max}
+
+\Hypertarget{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}\index{AABB@{AABB}!min@{min}}
+\index{min@{min}!AABB@{AABB}}
+\doxysubsubsection{\texorpdfstring{min}{min}}
+{\footnotesize\ttfamily \label{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5} 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} AABB\+::min}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Math/\mbox{\hyperlink{math_8hpp}{math.\+hpp}}\end{DoxyCompactItemize}

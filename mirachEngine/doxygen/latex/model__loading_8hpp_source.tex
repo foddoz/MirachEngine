@@ -1,0 +1,111 @@
+\doxysection{model\+\_\+loading.\+hpp}
+\hypertarget{model__loading_8hpp_source}{}\label{model__loading_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/model\_loading.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/model\_loading.hpp}}
+\mbox{\hyperlink{model__loading_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MODEL\_LOADING\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MODEL\_LOADING\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ ===\ Assimp\ ===}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <assimp/Importer.hpp>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <assimp/scene.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <assimp/postprocess.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{math_8hpp}{../Math/math.hpp}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ ===\ Assimp\ Type\ Aliases\ ===}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{using\ }\mbox{\hyperlink{model__loading_8hpp_a5adb8a0689797ddd0f52f8b322fbbda9}{ModelImporter}}\ =\ Assimp::Importer;}
+\DoxyCodeLine{00013\ \textcolor{keyword}{using\ }\mbox{\hyperlink{model__loading_8hpp_afab23fa78d458b04129130eccd3b69c3}{ModelScene}}\ =\ aiScene;}
+\DoxyCodeLine{00014\ \textcolor{keyword}{using\ }\mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{ModelMesh}}\ =\ aiMesh;}
+\DoxyCodeLine{00015\ \textcolor{keyword}{using\ }\mbox{\hyperlink{model__loading_8hpp_a50657a07d5382e795d62f2dc0cb1b2f8}{ModelMaterial}}\ =\ aiMaterial;}
+\DoxyCodeLine{00016\ \textcolor{keyword}{using\ }\mbox{\hyperlink{model__loading_8hpp_ae97196518428a273d874dc94194aa135}{ModelFace}}\ =\ aiFace;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ ===\ Assimp\ Load\ Flags\ ===}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{model__loading_8hpp_acaada1894e1fe5b3eca555fbd1e033a8}{ModelLoadFlags}}\ =}
+\DoxyCodeLine{00020\ aiProcess\_Triangulate\ |}
+\DoxyCodeLine{00021\ aiProcess\_GenSmoothNormals\ |}
+\DoxyCodeLine{00022\ aiProcess\_FlipUVs\ |}
+\DoxyCodeLine{00023\ aiProcess\_JoinIdenticalVertices;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ ===\ Assimp\ Helper\ Functions\ ===}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ Load\ model\ from\ file}}
+\DoxyCodeLine{00028\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{model__loading_8hpp_afab23fa78d458b04129130eccd3b69c3}{ModelScene}}*\ \mbox{\hyperlink{model__loading_8hpp_adb6578d1d2ac0347ac0d996b0dff0179}{LoadModel}}(\mbox{\hyperlink{model__loading_8hpp_a5adb8a0689797ddd0f52f8b322fbbda9}{ModelImporter}}\&\ importer,\ \textcolor{keyword}{const}\ std::string\&\ fileName)}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{return}\ importer.ReadFile(fileName,\ \mbox{\hyperlink{model__loading_8hpp_acaada1894e1fe5b3eca555fbd1e033a8}{ModelLoadFlags}});}
+\DoxyCodeLine{00031\ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{comment}{//\ Get\ material\ texture\ count}}
+\DoxyCodeLine{00034\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{model__loading_8hpp_aed6c5f86464e69e9c7bdb33ba5fd499b}{GetMaterialTextureCount}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{model__loading_8hpp_a50657a07d5382e795d62f2dc0cb1b2f8}{ModelMaterial}}*\ material)}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{return}\ material-\/>GetTextureCount(aiTextureType\_DIFFUSE);}
+\DoxyCodeLine{00037\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{//\ Get\ the\ name\ of\ the\ material\ (if\ present)}}
+\DoxyCodeLine{00040\ \textcolor{keyword}{inline}\ std::string\ \mbox{\hyperlink{model__loading_8hpp_a8f7cb8ea93936c83c1b65d311d968e84}{GetMaterialName}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{model__loading_8hpp_a50657a07d5382e795d62f2dc0cb1b2f8}{ModelMaterial}}*\ material)}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ aiString\ name;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{if}\ (material-\/>Get(AI\_MATKEY\_NAME,\ name)\ ==\ AI\_SUCCESS)}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::string(name.C\_Str());}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}(Unnamed)"{}};}
+\DoxyCodeLine{00046\ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{comment}{//\ Get\ material\ texture\ path}}
+\DoxyCodeLine{00050\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{model__loading_8hpp_a666fccb8aa3643dd8f763e5f2fb80493}{GetMaterialTexturePath}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{model__loading_8hpp_a50657a07d5382e795d62f2dc0cb1b2f8}{ModelMaterial}}*\ material,\ std::string\&\ outPath)}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ aiString\ path;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{if}\ (material-\/>GetTexture(aiTextureType\_DIFFUSE,\ 0,\ \&path)\ ==\ AI\_SUCCESS)}
+\DoxyCodeLine{00054\ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ outPath\ =\ path.C\_Str();}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00059\ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ Accessor\ helpers\ for\ meshes}}
+\DoxyCodeLine{00062\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{model__loading_8hpp_a2dc443d287bf0b4109d88852e4cdf341}{GetNumVertices}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{ModelMesh}}*\ mesh)}
+\DoxyCodeLine{00063\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{return}\ mesh-\/>mNumVertices;}
+\DoxyCodeLine{00065\ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{model__loading_8hpp_af56e441818cfe8218ef50bf8e0d0b2c5}{GetNumFaces}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{ModelMesh}}*\ mesh)}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{return}\ mesh-\/>mNumFaces;}
+\DoxyCodeLine{00070\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{model__loading_8hpp_af5a2e645c39d715a225b4a1fbd1acf28}{GetVertexPosition}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{ModelMesh}}*\ mesh,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i)}
+\DoxyCodeLine{00073\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{const}\ aiVector3D\&\ v\ =\ mesh-\/>mVertices[i];}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}(v.x,\ v.y,\ v.z);}
+\DoxyCodeLine{00076\ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{model__loading_8hpp_a093f1748f206180e50c6e14afcd9463a}{GetVertexNormal}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{ModelMesh}}*\ mesh,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i)}
+\DoxyCodeLine{00079\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{const}\ aiVector3D\&\ n\ =\ mesh-\/>mNormals[i];}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}(n.x,\ n.y,\ n.z);}
+\DoxyCodeLine{00082\ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_acfd9107b583da9f618732213cb319ced}{Vector2f}}\ \mbox{\hyperlink{model__loading_8hpp_a2ef363b31766132e1aad0fa3495ddab0}{GetVertexTexCoord}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{ModelMesh}}*\ mesh,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i)}
+\DoxyCodeLine{00085\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordflow}{if}\ (mesh-\/>HasTextureCoords(0))\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ aiVector3D\&\ uv\ =\ mesh-\/>mTextureCoords[0][i];}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{math_8hpp_acfd9107b583da9f618732213cb319ced}{Vector2f}}(uv.x,\ uv.y);\ \textcolor{comment}{//\ Preserve\ z\ =\ 0.0\ for\ 2D\ texcoords}}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{math_8hpp_acfd9107b583da9f618732213cb319ced}{Vector2f}}(0.0f,\ 0.0f);}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{model__loading_8hpp_a2f47274a64f6c01167f3c0ba345ecfdf}{HasTextureCoords}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{ModelMesh}}*\ mesh)}
+\DoxyCodeLine{00096\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{return}\ mesh-\/>HasTextureCoords(0);}
+\DoxyCodeLine{00098\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{model__loading_8hpp_ae97196518428a273d874dc94194aa135}{ModelFace}}\&\ \mbox{\hyperlink{model__loading_8hpp_a64c7b852a2ea92a8176a242cb5f0bccd}{GetFace}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{model__loading_8hpp_a17af26dcb4ed4945824f31455e11017f}{ModelMesh}}*\ mesh,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i)}
+\DoxyCodeLine{00101\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordflow}{return}\ mesh-\/>mFaces[i];}
+\DoxyCodeLine{00103\ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !MODEL\_LOADING\_HPP}}
+
+\end{DoxyCode}

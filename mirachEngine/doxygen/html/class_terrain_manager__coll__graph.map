@@ -1,0 +1,3 @@
+<map id="TerrainManager" name="TerrainManager">
+<area shape="rect" id="Node000001" title="Handles generation, GPU upload, and ECS/physics registration of terrain chunks." alt="" coords="5,5,173,373"/>
+</map>

@@ -1,0 +1,217 @@
+\doxysection{C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Events/input.hpp File Reference}
+\hypertarget{input_8hpp}{}\label{input_8hpp}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Events/input.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Events/input.hpp}}
+{\ttfamily \#include $<$cstdint$>$}\newline
+Include dependency graph for input.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{input_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{input_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_input_event}{Input\+Event}}
+\begin{DoxyCompactList}\small\item\em Structure holding abstracted input event data for use in the engine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_input_backend}{Input\+Backend}}
+\begin{DoxyCompactList}\small\item\em Backend namespace for platform-\/specific input functionality (SDL abstraction). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{input_8hpp_a238b2f0546e69e7547255ec984309fcc}{Key\+State\+Array}} = const uint8\+\_\+t\texorpdfstring{$\ast$}{*}
+\begin{DoxyCompactList}\small\item\em Raw pointer to SDL keyboard state array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3ef}{Key\+Code}} \+: uint16\+\_\+t \{ \newline
+\mbox{\hyperlink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3efa88183b946cc5f0e8c96b2e66e1c74a7e}{Unknown}} = 0
+, \mbox{\hyperlink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3efa61e9c06ea9a85a5088a499df6458d276}{W}} = 26
+, \mbox{\hyperlink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3efa7fc56270e7a70fa81a5935b72eacbe29}{A}} = 4
+, \mbox{\hyperlink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3efa5dbc98dcc983a70728bd082d1a47546e}{S}} = 22
+, \newline
+\mbox{\hyperlink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3efaf623e75af30e62bbd73d6df5b50bb7b5}{D}} = 7
+, \mbox{\hyperlink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3efad511f8439ecde36647437fbba67a4394}{Space}} = 44
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing abstracted keyboard key codes (mapped from SDL scancodes). \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{input_8hpp_ac1ec3647c005eacad401b06e7e18f711}{Mouse\+Button}} \{ \mbox{\hyperlink{input_8hpp_ac1ec3647c005eacad401b06e7e18f711a945d5e233cf7d6240f6b783b36a374ff}{Left}} = 1
+, \mbox{\hyperlink{input_8hpp_ac1ec3647c005eacad401b06e7e18f711a92b09c7c48c520c3c55e497875da437c}{Right}} = 3
+, \mbox{\hyperlink{input_8hpp_ac1ec3647c005eacad401b06e7e18f711ab1ca34f82e83c52b010f86955f264e05}{Middle}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing mouse buttons (abstracted from SDL). \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{input_8hpp_a2b2905130ee6827c925a34fe221b95fa}{Input\+Event\+Type}} \{ \newline
+\mbox{\hyperlink{input_8hpp_a2b2905130ee6827c925a34fe221b95faa0d82790b0612935992bd564a17ce37d6}{Quit}}
+, \mbox{\hyperlink{input_8hpp_a2b2905130ee6827c925a34fe221b95faae22334c0cac2399971712cf9ae02fa4f}{Mouse\+Motion}}
+, \mbox{\hyperlink{input_8hpp_a2b2905130ee6827c925a34fe221b95faa8cdc59370ca82c9591c1f0f212a2971c}{Mouse\+Button\+Down}}
+, \mbox{\hyperlink{input_8hpp_a2b2905130ee6827c925a34fe221b95faa2a3ccd10f3eb3ee5e6009dde78de0d1f}{Mouse\+Button\+Up}}
+, \newline
+\mbox{\hyperlink{input_8hpp_a2b2905130ee6827c925a34fe221b95faa88183b946cc5f0e8c96b2e66e1c74a7e}{Unknown}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum representing the type of input event polled from SDL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr uint32\+\_\+t \mbox{\hyperlink{input_8hpp_ab1730206d833ef6f9ffd30a129b65caa}{Mouse\+Button\+Mask}} (\mbox{\hyperlink{input_8hpp_ac1ec3647c005eacad401b06e7e18f711}{Mouse\+Button}} button)
+\begin{DoxyCompactList}\small\item\em Utility to compute the SDL mouse button bitmask for a given button. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_input_backend_a621be98711ee4ca6433d2bdbceb3cf38}{Input\+Backend\+::\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the input backend. Must be called before polling events. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespace_input_backend_a0b2497db762ea8dfeb096986cac3037e}{Input\+Backend\+::\+Poll\+Event}} (\mbox{\hyperlink{struct_input_event}{Input\+Event}} \&out\+Event)
+\begin{DoxyCompactList}\small\item\em Polls a single input event and fills the output event structure. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{input_8hpp_a238b2f0546e69e7547255ec984309fcc}{Key\+State\+Array}} \mbox{\hyperlink{namespace_input_backend_a81af72d8c295d72d026a04bfaf1d8f15}{Input\+Backend\+::\+Get\+Keyboard\+State}} (int \texorpdfstring{$\ast$}{*}num\+Keys)
+\begin{DoxyCompactList}\small\item\em Returns the current state of all keyboard keys. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{namespace_input_backend_a41b48803a8095adecb22dd7c852ef45c}{Input\+Backend\+::\+Get\+Mouse\+Buttons}} ()
+\begin{DoxyCompactList}\small\item\em Returns the current state of all mouse buttons. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-typedef-members}
+\Hypertarget{input_8hpp_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{input_8hpp_a238b2f0546e69e7547255ec984309fcc}\index{input.hpp@{input.hpp}!KeyStateArray@{KeyStateArray}}
+\index{KeyStateArray@{KeyStateArray}!input.hpp@{input.hpp}}
+\doxysubsubsection{\texorpdfstring{KeyStateArray}{KeyStateArray}}
+{\footnotesize\ttfamily \label{input_8hpp_a238b2f0546e69e7547255ec984309fcc} 
+using \mbox{\hyperlink{input_8hpp_a238b2f0546e69e7547255ec984309fcc}{Key\+State\+Array}} = const uint8\+\_\+t\texorpdfstring{$\ast$}{*}}
+
+
+
+Raw pointer to SDL keyboard state array. 
+
+
+
+\label{doc-enum-members}
+\Hypertarget{input_8hpp_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{input_8hpp_a2b2905130ee6827c925a34fe221b95fa}\index{input.hpp@{input.hpp}!InputEventType@{InputEventType}}
+\index{InputEventType@{InputEventType}!input.hpp@{input.hpp}}
+\doxysubsubsection{\texorpdfstring{InputEventType}{InputEventType}}
+{\footnotesize\ttfamily \label{input_8hpp_a2b2905130ee6827c925a34fe221b95fa} 
+enum class \mbox{\hyperlink{input_8hpp_a2b2905130ee6827c925a34fe221b95fa}{Input\+Event\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enum representing the type of input event polled from SDL. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Quit@{Quit}!input.hpp@{input.hpp}}\index{input.hpp@{input.hpp}!Quit@{Quit}}}\Hypertarget{input_8hpp_a2b2905130ee6827c925a34fe221b95faa0d82790b0612935992bd564a17ce37d6}\label{input_8hpp_a2b2905130ee6827c925a34fe221b95faa0d82790b0612935992bd564a17ce37d6} 
+Quit&Application quit event. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MouseMotion@{MouseMotion}!input.hpp@{input.hpp}}\index{input.hpp@{input.hpp}!MouseMotion@{MouseMotion}}}\Hypertarget{input_8hpp_a2b2905130ee6827c925a34fe221b95faae22334c0cac2399971712cf9ae02fa4f}\label{input_8hpp_a2b2905130ee6827c925a34fe221b95faae22334c0cac2399971712cf9ae02fa4f} 
+Mouse\+Motion&Mouse movement event. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MouseButtonDown@{MouseButtonDown}!input.hpp@{input.hpp}}\index{input.hpp@{input.hpp}!MouseButtonDown@{MouseButtonDown}}}\Hypertarget{input_8hpp_a2b2905130ee6827c925a34fe221b95faa8cdc59370ca82c9591c1f0f212a2971c}\label{input_8hpp_a2b2905130ee6827c925a34fe221b95faa8cdc59370ca82c9591c1f0f212a2971c} 
+Mouse\+Button\+Down&Mouse button press. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MouseButtonUp@{MouseButtonUp}!input.hpp@{input.hpp}}\index{input.hpp@{input.hpp}!MouseButtonUp@{MouseButtonUp}}}\Hypertarget{input_8hpp_a2b2905130ee6827c925a34fe221b95faa2a3ccd10f3eb3ee5e6009dde78de0d1f}\label{input_8hpp_a2b2905130ee6827c925a34fe221b95faa2a3ccd10f3eb3ee5e6009dde78de0d1f} 
+Mouse\+Button\+Up&Mouse button release. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Unknown@{Unknown}!input.hpp@{input.hpp}}\index{input.hpp@{input.hpp}!Unknown@{Unknown}}}\Hypertarget{input_8hpp_a2b2905130ee6827c925a34fe221b95faa88183b946cc5f0e8c96b2e66e1c74a7e}\label{input_8hpp_a2b2905130ee6827c925a34fe221b95faa88183b946cc5f0e8c96b2e66e1c74a7e} 
+Unknown&Unrecognized or unsupported event. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{input_8hpp_a7945bb457f02c164182b3c18bb8ad3ef}\index{input.hpp@{input.hpp}!KeyCode@{KeyCode}}
+\index{KeyCode@{KeyCode}!input.hpp@{input.hpp}}
+\doxysubsubsection{\texorpdfstring{KeyCode}{KeyCode}}
+{\footnotesize\ttfamily \label{input_8hpp_a7945bb457f02c164182b3c18bb8ad3ef} 
+enum class \mbox{\hyperlink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3ef}{Key\+Code}} \+: uint16\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enum representing abstracted keyboard key codes (mapped from SDL scancodes). 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Unknown@{Unknown}!input.hpp@{input.hpp}}\index{input.hpp@{input.hpp}!Unknown@{Unknown}}}\Hypertarget{input_8hpp_a7945bb457f02c164182b3c18bb8ad3efa88183b946cc5f0e8c96b2e66e1c74a7e}\label{input_8hpp_a7945bb457f02c164182b3c18bb8ad3efa88183b946cc5f0e8c96b2e66e1c74a7e} 
+Unknown&Unknown or unrecognized key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W@{W}!input.hpp@{input.hpp}}\index{input.hpp@{input.hpp}!W@{W}}}\Hypertarget{input_8hpp_a7945bb457f02c164182b3c18bb8ad3efa61e9c06ea9a85a5088a499df6458d276}\label{input_8hpp_a7945bb457f02c164182b3c18bb8ad3efa61e9c06ea9a85a5088a499df6458d276} 
+W&Forward movement key (typically \textquotesingle{}W\textquotesingle{}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A@{A}!input.hpp@{input.hpp}}\index{input.hpp@{input.hpp}!A@{A}}}\Hypertarget{input_8hpp_a7945bb457f02c164182b3c18bb8ad3efa7fc56270e7a70fa81a5935b72eacbe29}\label{input_8hpp_a7945bb457f02c164182b3c18bb8ad3efa7fc56270e7a70fa81a5935b72eacbe29} 
+A&Left movement key (typically \textquotesingle{}A\textquotesingle{}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S@{S}!input.hpp@{input.hpp}}\index{input.hpp@{input.hpp}!S@{S}}}\Hypertarget{input_8hpp_a7945bb457f02c164182b3c18bb8ad3efa5dbc98dcc983a70728bd082d1a47546e}\label{input_8hpp_a7945bb457f02c164182b3c18bb8ad3efa5dbc98dcc983a70728bd082d1a47546e} 
+S&Backward movement key (typically \textquotesingle{}S\textquotesingle{}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D@{D}!input.hpp@{input.hpp}}\index{input.hpp@{input.hpp}!D@{D}}}\Hypertarget{input_8hpp_a7945bb457f02c164182b3c18bb8ad3efaf623e75af30e62bbd73d6df5b50bb7b5}\label{input_8hpp_a7945bb457f02c164182b3c18bb8ad3efaf623e75af30e62bbd73d6df5b50bb7b5} 
+D&Right movement key (typically \textquotesingle{}D\textquotesingle{}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Space@{Space}!input.hpp@{input.hpp}}\index{input.hpp@{input.hpp}!Space@{Space}}}\Hypertarget{input_8hpp_a7945bb457f02c164182b3c18bb8ad3efad511f8439ecde36647437fbba67a4394}\label{input_8hpp_a7945bb457f02c164182b3c18bb8ad3efad511f8439ecde36647437fbba67a4394} 
+Space&Jump or action key (spacebar) \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{input_8hpp_ac1ec3647c005eacad401b06e7e18f711}\index{input.hpp@{input.hpp}!MouseButton@{MouseButton}}
+\index{MouseButton@{MouseButton}!input.hpp@{input.hpp}}
+\doxysubsubsection{\texorpdfstring{MouseButton}{MouseButton}}
+{\footnotesize\ttfamily \label{input_8hpp_ac1ec3647c005eacad401b06e7e18f711} 
+enum class \mbox{\hyperlink{input_8hpp_ac1ec3647c005eacad401b06e7e18f711}{Mouse\+Button}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enum representing mouse buttons (abstracted from SDL). 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Left@{Left}!input.hpp@{input.hpp}}\index{input.hpp@{input.hpp}!Left@{Left}}}\Hypertarget{input_8hpp_ac1ec3647c005eacad401b06e7e18f711a945d5e233cf7d6240f6b783b36a374ff}\label{input_8hpp_ac1ec3647c005eacad401b06e7e18f711a945d5e233cf7d6240f6b783b36a374ff} 
+Left&Left mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Right@{Right}!input.hpp@{input.hpp}}\index{input.hpp@{input.hpp}!Right@{Right}}}\Hypertarget{input_8hpp_ac1ec3647c005eacad401b06e7e18f711a92b09c7c48c520c3c55e497875da437c}\label{input_8hpp_ac1ec3647c005eacad401b06e7e18f711a92b09c7c48c520c3c55e497875da437c} 
+Right&Right mouse button. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Middle@{Middle}!input.hpp@{input.hpp}}\index{input.hpp@{input.hpp}!Middle@{Middle}}}\Hypertarget{input_8hpp_ac1ec3647c005eacad401b06e7e18f711ab1ca34f82e83c52b010f86955f264e05}\label{input_8hpp_ac1ec3647c005eacad401b06e7e18f711ab1ca34f82e83c52b010f86955f264e05} 
+Middle&Middle (wheel) mouse button. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-func-members}
+\Hypertarget{input_8hpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{input_8hpp_ab1730206d833ef6f9ffd30a129b65caa}\index{input.hpp@{input.hpp}!MouseButtonMask@{MouseButtonMask}}
+\index{MouseButtonMask@{MouseButtonMask}!input.hpp@{input.hpp}}
+\doxysubsubsection{\texorpdfstring{MouseButtonMask()}{MouseButtonMask()}}
+{\footnotesize\ttfamily \label{input_8hpp_ab1730206d833ef6f9ffd30a129b65caa} 
+uint32\+\_\+t Mouse\+Button\+Mask (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{input_8hpp_ac1ec3647c005eacad401b06e7e18f711}{Mouse\+Button}}}]{button}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+
+
+Utility to compute the SDL mouse button bitmask for a given button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & The mouse button. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Bitmask representing that button. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{input_8hpp_ab1730206d833ef6f9ffd30a129b65caa_icgraph}
+\end{center}
+\end{figure}

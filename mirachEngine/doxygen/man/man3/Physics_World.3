@@ -1,0 +1,141 @@
+.TH "Physics::World" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Physics::World \- Abstract interface for a physics simulation world\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <physics\&.hpp>\fP
+.PP
+Inherited by \fBPhysics::Backend::WorldBackend\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~World\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBRigidBody\fP * \fBCreateRigidBody\fP (const \fBVector3f\fP &position, \fBBodyType\fP type=\fBBodyType::DYNAMIC\fP)=0"
+.br
+.RI "Creates a new rigid body at a given position and type\&. "
+.ti -1c
+.RI "virtual void \fBUpdate\fP (float dt)=0"
+.br
+.RI "Advances the physics simulation by delta time\&. "
+.ti -1c
+.RI "virtual void \fBRaycast\fP (const \fBRay\fP &ray, \fBRaycastCallback\fP *cb)=0"
+.br
+.RI "Performs a raycast and triggers callbacks on hit\&. "
+.ti -1c
+.RI "virtual \fBCollider\fP * \fBAddBoxCollider\fP (\fBRigidBody\fP *body, const \fBAABB\fP &aabb)=0"
+.br
+.ti -1c
+.RI "virtual \fBCollider\fP * \fBAddBoxCollider\fP (\fBRigidBody\fP *body, const \fBAABB\fP &aabb, const \fBVector3f\fP &scale)=0"
+.br
+.ti -1c
+.RI "virtual \fBCollider\fP * \fBAddSphereCollider\fP (\fBRigidBody\fP *body, float radius)=0"
+.br
+.ti -1c
+.RI "virtual \fBCollider\fP * \fBAddSphereCollider\fP (\fBRigidBody\fP *body, const \fBAABB\fP &aabb)=0"
+.br
+.ti -1c
+.RI "virtual \fBCollider\fP * \fBAddCapsuleCollider\fP (\fBRigidBody\fP *body, float radius, float height)=0"
+.br
+.ti -1c
+.RI "virtual \fBCollider\fP * \fBAddCapsuleCollider\fP (\fBRigidBody\fP *body, const \fBAABB\fP &aabb)=0"
+.br
+.ti -1c
+.RI "virtual \fBCollider\fP * \fBAddCapsuleCollider\fP (\fBRigidBody\fP *body, const \fBAABB\fP &aabb, const \fBVector3f\fP &scale, const \fBVector3f\fP &offset)=0"
+.br
+.ti -1c
+.RI "virtual \fBCollider\fP * \fBAddConcaveTerrainCollider\fP (\fBRigidBody\fP *body, void *terrainKey, const float *vertices, size_t vertexCount, size_t vertexStride, const unsigned int *indices, size_t indexCount)=0"
+.br
+.ti -1c
+.RI "virtual \fBCollider\fP * \fBAddHeightFieldCollider\fP (\fBRigidBody\fP *body, void *heightKey, const float *heightValues, int nbRows, int nbCols, const \fBVector3f\fP &scale=\fBVector3f\fP(1\&.f))=0"
+.br
+.ti -1c
+.RI "virtual void \fBRegisterCollisionCallback\fP (\fBCollisionCallback\fP *cb)=0"
+.br
+.RI "Registers a global collision callback for contact events\&. "
+.ti -1c
+.RI "virtual void \fBUnregisterCollisionCallback\fP (\fBCollisionCallback\fP *cb)=0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Abstract interface for a physics simulation world\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual Physics::World::~World ()\fR [inline]\fP, \fR [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual \fBCollider\fP * Physics::World::AddBoxCollider (\fBRigidBody\fP * body, const \fBAABB\fP & aabb)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::WorldBackend\fP\&.
+.SS "virtual \fBCollider\fP * Physics::World::AddBoxCollider (\fBRigidBody\fP * body, const \fBAABB\fP & aabb, const \fBVector3f\fP & scale)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::WorldBackend\fP\&.
+.SS "virtual \fBCollider\fP * Physics::World::AddCapsuleCollider (\fBRigidBody\fP * body, const \fBAABB\fP & aabb)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::WorldBackend\fP\&.
+.SS "virtual \fBCollider\fP * Physics::World::AddCapsuleCollider (\fBRigidBody\fP * body, const \fBAABB\fP & aabb, const \fBVector3f\fP & scale, const \fBVector3f\fP & offset)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::WorldBackend\fP\&.
+.SS "virtual \fBCollider\fP * Physics::World::AddCapsuleCollider (\fBRigidBody\fP * body, float radius, float height)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::WorldBackend\fP\&.
+.SS "virtual \fBCollider\fP * Physics::World::AddConcaveTerrainCollider (\fBRigidBody\fP * body, void * terrainKey, const float * vertices, size_t vertexCount, size_t vertexStride, const unsigned int * indices, size_t indexCount)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::WorldBackend\fP\&.
+.SS "virtual \fBCollider\fP * Physics::World::AddHeightFieldCollider (\fBRigidBody\fP * body, void * heightKey, const float * heightValues, int nbRows, int nbCols, const \fBVector3f\fP & scale = \fR\fBVector3f\fP(1\&.f)\fP)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::WorldBackend\fP\&.
+.SS "virtual \fBCollider\fP * Physics::World::AddSphereCollider (\fBRigidBody\fP * body, const \fBAABB\fP & aabb)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::WorldBackend\fP\&.
+.SS "virtual \fBCollider\fP * Physics::World::AddSphereCollider (\fBRigidBody\fP * body, float radius)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBPhysics::Backend::WorldBackend\fP\&.
+.SS "virtual \fBRigidBody\fP * Physics::World::CreateRigidBody (const \fBVector3f\fP & position, \fBBodyType\fP type = \fR\fBBodyType::DYNAMIC\fP\fP)\fR [pure virtual]\fP"
+
+.PP
+Creates a new rigid body at a given position and type\&. 
+.PP
+Implemented in \fBPhysics::Backend::WorldBackend\fP\&.
+.SS "virtual void Physics::World::Raycast (const \fBRay\fP & ray, \fBRaycastCallback\fP * cb)\fR [pure virtual]\fP"
+
+.PP
+Performs a raycast and triggers callbacks on hit\&. 
+.PP
+Implemented in \fBPhysics::Backend::WorldBackend\fP\&.
+.SS "virtual void Physics::World::RegisterCollisionCallback (\fBCollisionCallback\fP * cb)\fR [pure virtual]\fP"
+
+.PP
+Registers a global collision callback for contact events\&. 
+.PP
+Implemented in \fBPhysics::Backend::WorldBackend\fP\&.
+.SS "virtual void Physics::World::UnregisterCollisionCallback (\fBCollisionCallback\fP * cb)\fR [pure virtual]\fP"
+
+.SS "virtual void Physics::World::Update (float dt)\fR [pure virtual]\fP"
+
+.PP
+Advances the physics simulation by delta time\&. 
+.PP
+Implemented in \fBPhysics::Backend::WorldBackend\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

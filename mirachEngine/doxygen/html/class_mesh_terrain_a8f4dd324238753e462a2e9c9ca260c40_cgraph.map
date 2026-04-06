@@ -1,0 +1,19 @@
+<map id="MeshTerrain::CreateFaultFormation" name="MeshTerrain::CreateFaultFormation">
+<area shape="rect" id="Node000001" title="Internal fault formation algorithm with smoothing filter." alt="" coords="5,87,174,129"/>
+<area shape="rect" id="Node000002" href="$class_mesh_terrain.html#a766c22ce021c46dcd0fa93726717e13c" title="Applies FIR filter in 4 directions for terrain smoothing." alt="" coords="241,35,425,61"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,84,221,72,258,63,259,68,222,77,175,89"/>
+<area shape="rect" id="Node000007" href="$class_mesh_terrain.html#a3b250d6762ed4984c36561fb8b986088" title="Generates two random points for a fault line." alt="" coords="227,87,439,129"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="174,105,211,105,211,111,174,111"/>
+<area shape="rect" id="Node000009" href="$class_mesh_terrain.html#a0ccd49d3d667b512eed2f4a65ed67e64" title=" " alt="" coords="222,153,444,180"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="175,127,222,139,256,147,255,152,221,144,174,132"/>
+<area shape="rect" id="Node000003" href="$class_mesh_terrain.html#ad1253af0199061cbd5f288e34b4deec5" title="Applies FIR filtering on a single height value." alt="" coords="492,23,679,65"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="426,44,476,43,476,48,426,49"/>
+<area shape="rect" id="Node000004" href="$class_mesh_terrain.html#a82c9aa1166f4c0cf04b6ca44314714b9" title="Gets the height at the given integer terrain grid coordinates." alt="" coords="727,5,887,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="679,31,712,27,712,32,680,36"/>
+<area shape="rect" id="Node000006" href="$class_mesh_terrain.html#a8c27c53059bd5313ee5300d266abbb72" title=" " alt="" coords="728,56,886,83"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="680,52,713,56,712,61,679,57"/>
+<area shape="rect" id="Node000005" href="$math_8hpp.html#a61311699c1533817e1272e777558b611" title="Clamps a float between minVal and maxVal." alt="" coords="935,5,994,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="887,16,919,16,919,21,887,21"/>
+<area shape="rect" id="Node000008" href="$struct_mesh_terrain_1_1_terrain_point.html#acf4de239a7354ad5d3989b77ecddae05" title=" " alt="" coords="501,89,670,132"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="440,106,485,107,485,112,440,112"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Patrol&lt; Entity &gt;" name="Patrol&lt; Entity &gt;">
+<area shape="rect" id="Node000001" title="Represents the Patrol state. Calls onPatrolEnter, onPatrolExecute, and onPatrolExit on the entity." alt="" coords="5,187,108,299"/>
+<area shape="rect" id="Node000002" href="$class_state.html" title=" " alt="" coords="7,5,106,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,154,59,187,54,187,54,154"/>
+</map>

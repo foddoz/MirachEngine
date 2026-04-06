@@ -1,0 +1,525 @@
+\doxysection{Entity\+Manager Class Reference}
+\hypertarget{class_entity_manager}{}\label{class_entity_manager}\index{EntityManager@{EntityManager}}
+
+
+Manages entity creation, destruction, and component access in the ECS system.  
+
+
+
+
+{\ttfamily \#include $<$entity\+\_\+manager.\+hpp$>$}
+
+
+
+Collaboration diagram for Entity\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{class_entity_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_entity_manager_1_1_component_manager_wrapper}{Component\+Manager\+Wrapper}}
+\begin{DoxyCompactList}\small\item\em Concrete wrapper for a strongly typed component manager. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_entity_manager_1_1_i_component_manager_base}{IComponent\+Manager\+Base}}
+\begin{DoxyCompactList}\small\item\em Abstract base class for all component manager wrappers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_entity_manager_a7555637657d090171be6ceee8451de0a}{Entity\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{class_entity_manager}{Entity\+Manager} instance with ID counter initialized. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \mbox{\hyperlink{class_entity_manager_ab991c19abfa8d1a3f5ca279f53ad2e38}{Create\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Creates a new unique entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_entity_manager_a9947fdd09be8b19112c539d556cdcfff}{Destroy\+Entity}} (\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} e)
+\begin{DoxyCompactList}\small\item\em Destroys an entity and removes all its associated components. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} $>$ \& \mbox{\hyperlink{class_entity_manager_ad6b2504873ebd0ed8fdaba1dc855a988}{Get\+All\+Entities}} () const
+\begin{DoxyCompactList}\small\item\em Returns a list of all currently active entities. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{class_entity_manager_a649c96273c078e788cecbdfaa0aee1ef}{Add\+Component}} (\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} e, const T \&component)
+\begin{DoxyCompactList}\small\item\em Adds a component of type T to the given entity. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{class_entity_manager_a5c8b70a4b72748d8f72b697bd28f98fa}{Remove\+Component}} (\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} e)
+\begin{DoxyCompactList}\small\item\em Removes a component of type T from the given entity. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\bool \mbox{\hyperlink{class_entity_manager_af086011ae902ac5704362571a8217975}{Has\+Component}} (\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} e) const
+\begin{DoxyCompactList}\small\item\em Checks if an entity has a component of type T. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\T \& \mbox{\hyperlink{class_entity_manager_a00080c3855e9aab3796bb94f6b48ac9b}{Get\+Component}} (\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} e)
+\begin{DoxyCompactList}\small\item\em Retrieves a reference to the component of type T for an entity. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\bool \mbox{\hyperlink{class_entity_manager_a779fbb902f08d652f6aadee007b3b3e2}{Has\+Component\+Type}} () const
+\begin{DoxyCompactList}\small\item\em Checks if any components of type T are registered in the system. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}, T $>$ \& \mbox{\hyperlink{class_entity_manager_a1b3d1289d7f8bba2539e828e807a183c}{Get\+All\+Components}} ()
+\begin{DoxyCompactList}\small\item\em Returns a reference to the map of all components of type T. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\const std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}, T $>$ \& \mbox{\hyperlink{class_entity_manager_a4baa6e8ef06a8ebbf18a1b1669768bb9}{Get\+All\+Components}} () const
+\begin{DoxyCompactList}\small\item\em Returns a const reference to the map of all components of type T. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_entity_manager_a1e0533eb42cebf7a0bdda06a566ad3ff}{Print\+Registered\+Components}} () const
+\begin{DoxyCompactList}\small\item\em Prints all registered component types and their internal pointers. Useful for debugging component registration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\\mbox{\hyperlink{class_component_manager}{Component\+Manager}}$<$ T $>$ \& \mbox{\hyperlink{class_entity_manager_a9792efcb1c6904999ab34b3a65a7c69d}{Get\+Or\+Create\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Returns the manager for the given component type, creating it if needed. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\const \mbox{\hyperlink{class_component_manager}{Component\+Manager}}$<$ T $>$ \& \mbox{\hyperlink{class_entity_manager_aa02cffa1d2435ea5d0eadee749c2a965}{Get\+Manager}} () const
+\begin{DoxyCompactList}\small\item\em Gets the component manager for a type (const). \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\\mbox{\hyperlink{class_component_manager}{Component\+Manager}}$<$ T $>$ \& \mbox{\hyperlink{class_entity_manager_a2ffcf74e0a72cc3d24d741474a8e7f28}{Get\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Gets the component manager for a type (non-\/const). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \mbox{\hyperlink{class_entity_manager_ac275f4b7fea72be8c31d367efedd90c7}{m\+\_\+\+Next\+Entity\+ID}}
+\begin{DoxyCompactList}\small\item\em Next available entity ID. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} $>$ \mbox{\hyperlink{class_entity_manager_a6f510a087fc5085efac12c0288a2e52f}{m\+\_\+\+Entities}}
+\begin{DoxyCompactList}\small\item\em List of all active entity IDs. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ std\+::type\+\_\+index, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{struct_entity_manager_1_1_i_component_manager_base}{IComponent\+Manager\+Base}} $>$ $>$ \mbox{\hyperlink{class_entity_manager_a16e4f1fc01dbbc389629d07d275316d7}{m\+\_\+\+Component\+Managers}}
+\begin{DoxyCompactList}\small\item\em Map of component types to their managers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages entity creation, destruction, and component access in the ECS system. 
+
+This class handles creation of unique entity IDs, storage of active entities, and dynamic registration and access of typed component managers. 
+
+\label{doc-constructors}
+\Hypertarget{class_entity_manager_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_entity_manager_a7555637657d090171be6ceee8451de0a}\index{EntityManager@{EntityManager}!EntityManager@{EntityManager}}
+\index{EntityManager@{EntityManager}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{EntityManager()}{EntityManager()}}
+{\footnotesize\ttfamily \label{class_entity_manager_a7555637657d090171be6ceee8451de0a} 
+Entity\+Manager\+::\+Entity\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a new \doxylink{class_entity_manager}{Entity\+Manager} instance with ID counter initialized. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_entity_manager_a7555637657d090171be6ceee8451de0a_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{class_entity_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_entity_manager_a649c96273c078e788cecbdfaa0aee1ef}\index{EntityManager@{EntityManager}!AddComponent@{AddComponent}}
+\index{AddComponent@{AddComponent}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{AddComponent()}{AddComponent()}}
+{\footnotesize\ttfamily \label{class_entity_manager_a649c96273c078e788cecbdfaa0aee1ef} 
+template$<$typename T$>$ \\
+void Entity\+Manager\+::\+Add\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}}]{e}{, }\item[{const T \&}]{component}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a component of type T to the given entity. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The component type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The entity to attach the component to. \\
+\hline
+{\em component} & The component instance to copy. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_entity_manager_a649c96273c078e788cecbdfaa0aee1ef_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_entity_manager_a649c96273c078e788cecbdfaa0aee1ef_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_entity_manager_ab991c19abfa8d1a3f5ca279f53ad2e38}\index{EntityManager@{EntityManager}!CreateEntity@{CreateEntity}}
+\index{CreateEntity@{CreateEntity}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{CreateEntity()}{CreateEntity()}}
+{\footnotesize\ttfamily \label{class_entity_manager_ab991c19abfa8d1a3f5ca279f53ad2e38} 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} Entity\+Manager\+::\+Create\+Entity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a new unique entity. 
+
+\begin{DoxyReturn}{Returns}
+The created entity ID. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_entity_manager_ab991c19abfa8d1a3f5ca279f53ad2e38_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_entity_manager_a9947fdd09be8b19112c539d556cdcfff}\index{EntityManager@{EntityManager}!DestroyEntity@{DestroyEntity}}
+\index{DestroyEntity@{DestroyEntity}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{DestroyEntity()}{DestroyEntity()}}
+{\footnotesize\ttfamily \label{class_entity_manager_a9947fdd09be8b19112c539d556cdcfff} 
+void Entity\+Manager\+::\+Destroy\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroys an entity and removes all its associated components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The entity to destroy. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_entity_manager_a1b3d1289d7f8bba2539e828e807a183c}\index{EntityManager@{EntityManager}!GetAllComponents@{GetAllComponents}}
+\index{GetAllComponents@{GetAllComponents}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{GetAllComponents()}{GetAllComponents()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_entity_manager_a1b3d1289d7f8bba2539e828e807a183c} 
+template$<$typename T$>$ \\
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}, T $>$ \& Entity\+Manager\+::\+Get\+All\+Components (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a reference to the map of all components of type T. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The component type. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+Mutable reference to the entity-\/component map. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_entity_manager_a1b3d1289d7f8bba2539e828e807a183c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_entity_manager_a1b3d1289d7f8bba2539e828e807a183c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_entity_manager_a4baa6e8ef06a8ebbf18a1b1669768bb9}\index{EntityManager@{EntityManager}!GetAllComponents@{GetAllComponents}}
+\index{GetAllComponents@{GetAllComponents}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{GetAllComponents()}{GetAllComponents()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_entity_manager_a4baa6e8ef06a8ebbf18a1b1669768bb9} 
+template$<$typename T$>$ \\
+const std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}, T $>$ \& Entity\+Manager\+::\+Get\+All\+Components (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a const reference to the map of all components of type T. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The component type. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+Const reference to the entity-\/component map. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_entity_manager_a4baa6e8ef06a8ebbf18a1b1669768bb9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_entity_manager_ad6b2504873ebd0ed8fdaba1dc855a988}\index{EntityManager@{EntityManager}!GetAllEntities@{GetAllEntities}}
+\index{GetAllEntities@{GetAllEntities}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{GetAllEntities()}{GetAllEntities()}}
+{\footnotesize\ttfamily \label{class_entity_manager_ad6b2504873ebd0ed8fdaba1dc855a988} 
+const std\+::vector$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} $>$ \& Entity\+Manager\+::\+Get\+All\+Entities (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a list of all currently active entities. 
+
+\begin{DoxyReturn}{Returns}
+Vector of active entity IDs. 
+\end{DoxyReturn}
+\Hypertarget{class_entity_manager_a00080c3855e9aab3796bb94f6b48ac9b}\index{EntityManager@{EntityManager}!GetComponent@{GetComponent}}
+\index{GetComponent@{GetComponent}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{GetComponent()}{GetComponent()}}
+{\footnotesize\ttfamily \label{class_entity_manager_a00080c3855e9aab3796bb94f6b48ac9b} 
+template$<$typename T$>$ \\
+T \& Entity\+Manager\+::\+Get\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves a reference to the component of type T for an entity. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The component type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The entity owning the component. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the component. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the component does not exist. \\
+\hline
+\end{DoxyExceptions}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_entity_manager_a00080c3855e9aab3796bb94f6b48ac9b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_entity_manager_a00080c3855e9aab3796bb94f6b48ac9b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_entity_manager_a2ffcf74e0a72cc3d24d741474a8e7f28}\index{EntityManager@{EntityManager}!GetManager@{GetManager}}
+\index{GetManager@{GetManager}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{GetManager()}{GetManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_entity_manager_a2ffcf74e0a72cc3d24d741474a8e7f28} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_component_manager}{Component\+Manager}}$<$ T $>$ \& Entity\+Manager\+::\+Get\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Gets the component manager for a type (non-\/const). 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Component type. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+Reference to the component manager. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_entity_manager_a2ffcf74e0a72cc3d24d741474a8e7f28_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_entity_manager_aa02cffa1d2435ea5d0eadee749c2a965}\index{EntityManager@{EntityManager}!GetManager@{GetManager}}
+\index{GetManager@{GetManager}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{GetManager()}{GetManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_entity_manager_aa02cffa1d2435ea5d0eadee749c2a965} 
+template$<$typename T$>$ \\
+const \mbox{\hyperlink{class_component_manager}{Component\+Manager}}$<$ T $>$ \& Entity\+Manager\+::\+Get\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Gets the component manager for a type (const). 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Component type. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+Const reference to the component manager. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the manager doesn\textquotesingle{}t exist. \\
+\hline
+\end{DoxyExceptions}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_entity_manager_aa02cffa1d2435ea5d0eadee749c2a965_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_entity_manager_a9792efcb1c6904999ab34b3a65a7c69d}\index{EntityManager@{EntityManager}!GetOrCreateManager@{GetOrCreateManager}}
+\index{GetOrCreateManager@{GetOrCreateManager}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{GetOrCreateManager()}{GetOrCreateManager()}}
+{\footnotesize\ttfamily \label{class_entity_manager_a9792efcb1c6904999ab34b3a65a7c69d} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_component_manager}{Component\+Manager}}$<$ T $>$ \& Entity\+Manager\+::\+Get\+Or\+Create\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Returns the manager for the given component type, creating it if needed. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Component type. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+Reference to the component manager. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_entity_manager_a9792efcb1c6904999ab34b3a65a7c69d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_entity_manager_af086011ae902ac5704362571a8217975}\index{EntityManager@{EntityManager}!HasComponent@{HasComponent}}
+\index{HasComponent@{HasComponent}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{HasComponent()}{HasComponent()}}
+{\footnotesize\ttfamily \label{class_entity_manager_af086011ae902ac5704362571a8217975} 
+template$<$typename T$>$ \\
+bool Entity\+Manager\+::\+Has\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}}]{e}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if an entity has a component of type T. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The component type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The entity to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the entity has the component, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_entity_manager_af086011ae902ac5704362571a8217975_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_entity_manager_af086011ae902ac5704362571a8217975_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_entity_manager_a779fbb902f08d652f6aadee007b3b3e2}\index{EntityManager@{EntityManager}!HasComponentType@{HasComponentType}}
+\index{HasComponentType@{HasComponentType}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{HasComponentType()}{HasComponentType()}}
+{\footnotesize\ttfamily \label{class_entity_manager_a779fbb902f08d652f6aadee007b3b3e2} 
+template$<$typename T$>$ \\
+bool Entity\+Manager\+::\+Has\+Component\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if any components of type T are registered in the system. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The component type. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+True if the component type exists, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_entity_manager_a1e0533eb42cebf7a0bdda06a566ad3ff}\index{EntityManager@{EntityManager}!PrintRegisteredComponents@{PrintRegisteredComponents}}
+\index{PrintRegisteredComponents@{PrintRegisteredComponents}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{PrintRegisteredComponents()}{PrintRegisteredComponents()}}
+{\footnotesize\ttfamily \label{class_entity_manager_a1e0533eb42cebf7a0bdda06a566ad3ff} 
+void Entity\+Manager\+::\+Print\+Registered\+Components (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Prints all registered component types and their internal pointers. Useful for debugging component registration. 
+
+\Hypertarget{class_entity_manager_a5c8b70a4b72748d8f72b697bd28f98fa}\index{EntityManager@{EntityManager}!RemoveComponent@{RemoveComponent}}
+\index{RemoveComponent@{RemoveComponent}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{RemoveComponent()}{RemoveComponent()}}
+{\footnotesize\ttfamily \label{class_entity_manager_a5c8b70a4b72748d8f72b697bd28f98fa} 
+template$<$typename T$>$ \\
+void Entity\+Manager\+::\+Remove\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes a component of type T from the given entity. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The component type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em e} & The entity to remove the component from. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_entity_manager_a5c8b70a4b72748d8f72b697bd28f98fa_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_entity_manager_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_entity_manager_a16e4f1fc01dbbc389629d07d275316d7}\index{EntityManager@{EntityManager}!m\_ComponentManagers@{m\_ComponentManagers}}
+\index{m\_ComponentManagers@{m\_ComponentManagers}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{m\_ComponentManagers}{m\_ComponentManagers}}
+{\footnotesize\ttfamily \label{class_entity_manager_a16e4f1fc01dbbc389629d07d275316d7} 
+std\+::unordered\+\_\+map$<$std\+::type\+\_\+index, std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{struct_entity_manager_1_1_i_component_manager_base}{IComponent\+Manager\+Base}}$>$ $>$ Entity\+Manager\+::m\+\_\+\+Component\+Managers\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Map of component types to their managers. 
+
+\Hypertarget{class_entity_manager_a6f510a087fc5085efac12c0288a2e52f}\index{EntityManager@{EntityManager}!m\_Entities@{m\_Entities}}
+\index{m\_Entities@{m\_Entities}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{m\_Entities}{m\_Entities}}
+{\footnotesize\ttfamily \label{class_entity_manager_a6f510a087fc5085efac12c0288a2e52f} 
+std\+::vector$<$\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ Entity\+Manager\+::m\+\_\+\+Entities\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+List of all active entity IDs. 
+
+\Hypertarget{class_entity_manager_ac275f4b7fea72be8c31d367efedd90c7}\index{EntityManager@{EntityManager}!m\_NextEntityID@{m\_NextEntityID}}
+\index{m\_NextEntityID@{m\_NextEntityID}!EntityManager@{EntityManager}}
+\doxysubsubsection{\texorpdfstring{m\_NextEntityID}{m\_NextEntityID}}
+{\footnotesize\ttfamily \label{class_entity_manager_ac275f4b7fea72be8c31d367efedd90c7} 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} Entity\+Manager\+::m\+\_\+\+Next\+Entity\+ID\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Next available entity ID. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+ECS/\mbox{\hyperlink{entity__manager_8hpp}{entity\+\_\+manager.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,7 @@
+<map id="Camera::SetProjectionMatrix" name="Camera::SetProjectionMatrix">
+<area shape="rect" id="Node000001" title="Sets the perspective projection matrix using a field of view, aspect ratio, and near/far planes." alt="" coords="5,31,195,57"/>
+<area shape="rect" id="Node000002" href="$math_8hpp.html#ab547e31f984090bdf628c013a91555d6" title="Creates a perspective projection matrix." alt="" coords="243,5,333,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,29,227,24,228,29,195,34"/>
+<area shape="rect" id="Node000003" href="$math_8hpp.html#a387a686169e8f84d5abcedaefd2c8d5d" title="Converts degrees to radians." alt="" coords="246,56,330,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="195,54,231,59,230,64,195,59"/>
+</map>

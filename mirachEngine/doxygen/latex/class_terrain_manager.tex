@@ -1,0 +1,298 @@
+\doxysection{Terrain\+Manager Class Reference}
+\hypertarget{class_terrain_manager}{}\label{class_terrain_manager}\index{TerrainManager@{TerrainManager}}
+
+
+Handles generation, GPU upload, and ECS/physics registration of terrain chunks.  
+
+
+
+
+{\ttfamily \#include $<$terrain\+\_\+manager.\+hpp$>$}
+
+
+
+Collaboration diagram for Terrain\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{class_terrain_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_terrain_manager_a898a6abcd4022dbb828932037cff7b4d}{Initialize}} (const std\+::vector$<$ float $>$ \&heightmap, int terrain\+Size, int chunk\+Size, float min\+Height, float max\+Height, float texture\+Scale, const std\+::vector$<$ std\+::string $>$ \&texture\+Files)
+\begin{DoxyCompactList}\small\item\em Initializes terrain system settings and global parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_manager_ad680729dc5af97de82ddae13496b363e}{Generate\+All\+Chunks}} ()
+\begin{DoxyCompactList}\small\item\em Generates all terrain chunks from the global heightmap. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_manager_a07c00a33754db3a50d50e83b0976de84}{Upload\+Chunks\+To\+GPU}} ()
+\begin{DoxyCompactList}\small\item\em Uploads all generated chunks to the GPU (VAOs, VBOs, textures). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_manager_a019ebedd94cb1fbe0a7b412478b1d41c}{Register\+Chunks\+To\+ECS}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager, \mbox{\hyperlink{class_physics_system}{Physics\+System}} \&physics\+System, unsigned int terrain\+Shader)
+\begin{DoxyCompactList}\small\item\em Registers all chunks as ECS entities with rendering and physics components. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_manager_a939078fc7a682a62d98232a5820d0c43}{Register\+To\+ECS}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager, \mbox{\hyperlink{class_physics_system}{Physics\+System}} \&physics\+System, unsigned int terrain\+Shader, \mbox{\hyperlink{class_mesh_terrain}{Mesh\+Terrain}} \&terrain)
+\begin{DoxyCompactList}\small\item\em Registers a single monolithic terrain mesh into the ECS. \end{DoxyCompactList}\item 
+const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_terrain_chunk}{Terrain\+Chunk}} $>$ $>$ \& \mbox{\hyperlink{class_terrain_manager_a8688ce9f386697c69b4ced193daac828}{Get\+Chunks}} () const
+\begin{DoxyCompactList}\small\item\em Returns all terrain chunks managed by this class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::vector$<$ float $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_terrain_manager_a657910d3ab0b32da4b6b1a140afafc42}{m\+\_\+global\+Heightmap}} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to the global terrain heightmap (not owned). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_terrain_manager_acb63b3dba199ddfcdc732d8d9778283a}{m\+\_\+terrain\+Size}} = 0
+\begin{DoxyCompactList}\small\item\em Size of the full terrain grid (number of vertices along one axis). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_terrain_manager_a55ddb56e5f83a341e93d7784ee107f3d}{m\+\_\+chunk\+Size}} = 0
+\begin{DoxyCompactList}\small\item\em Size of each terrain chunk. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_terrain_manager_a11c5c07f0ee455e964ae59f99f74abe2}{m\+\_\+min\+Height}} = 0.\+0f
+\begin{DoxyCompactList}\small\item\em Minimum terrain elevation. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_terrain_manager_a35a46ed43fce6388a03acb6b5c7167e8}{m\+\_\+max\+Height}} = 0.\+0f
+\begin{DoxyCompactList}\small\item\em Maximum terrain elevation. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_terrain_manager_a597c0bb228763409d375cc6b4263b98e}{m\+\_\+texture\+Scale}} = 1.\+0f
+\begin{DoxyCompactList}\small\item\em Scale factor for texture UV tiling. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_terrain_manager_afe26899f79b11e5972f0cf4b398295ac}{m\+\_\+texture\+File\+Names}}
+\begin{DoxyCompactList}\small\item\em Filenames of the textures used for terrain blending. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_terrain_chunk}{Terrain\+Chunk}} $>$ $>$ \mbox{\hyperlink{class_terrain_manager_a9abfa47b56bba26063a085f14a13204b}{m\+\_\+chunks}}
+\begin{DoxyCompactList}\small\item\em List of all generated terrain chunks. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_texture}{Texture}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_terrain_manager_aa5dcc54d98df7baa64e6d3115cc537c4}{m\+\_\+shared\+Textures}}
+\begin{DoxyCompactList}\small\item\em Shared texture pointers used by all terrain chunks. \end{DoxyCompactList}\item 
+std\+::mutex \mbox{\hyperlink{class_terrain_manager_a53fceaa53f3bc13292dffb0ca73338e5}{m\+\_\+chunk\+Mutex}}
+\begin{DoxyCompactList}\small\item\em Mutex for thread-\/safe chunk generation (if multithreaded). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles generation, GPU upload, and ECS/physics registration of terrain chunks. 
+
+This class is responsible for dividing a large heightmap into chunks, generating mesh data for each chunk, uploading it to the GPU, and registering each chunk with the ECS and physics systems for rendering and collision. 
+
+\label{doc-func-members}
+\Hypertarget{class_terrain_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_terrain_manager_ad680729dc5af97de82ddae13496b363e}\index{TerrainManager@{TerrainManager}!GenerateAllChunks@{GenerateAllChunks}}
+\index{GenerateAllChunks@{GenerateAllChunks}!TerrainManager@{TerrainManager}}
+\doxysubsubsection{\texorpdfstring{GenerateAllChunks()}{GenerateAllChunks()}}
+{\footnotesize\ttfamily \label{class_terrain_manager_ad680729dc5af97de82ddae13496b363e} 
+void Terrain\+Manager\+::\+Generate\+All\+Chunks (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Generates all terrain chunks from the global heightmap. 
+
+Must be called after \doxylink{class_terrain_manager_a898a6abcd4022dbb828932037cff7b4d}{Initialize()}. \Hypertarget{class_terrain_manager_a8688ce9f386697c69b4ced193daac828}\index{TerrainManager@{TerrainManager}!GetChunks@{GetChunks}}
+\index{GetChunks@{GetChunks}!TerrainManager@{TerrainManager}}
+\doxysubsubsection{\texorpdfstring{GetChunks()}{GetChunks()}}
+{\footnotesize\ttfamily \label{class_terrain_manager_a8688ce9f386697c69b4ced193daac828} 
+const std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_terrain_chunk}{Terrain\+Chunk}} $>$ $>$ \& Terrain\+Manager\+::\+Get\+Chunks (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns all terrain chunks managed by this class. 
+
+\begin{DoxyReturn}{Returns}
+Const reference to a vector of unique pointers to \doxylink{class_terrain_chunk}{Terrain\+Chunk}. 
+\end{DoxyReturn}
+\Hypertarget{class_terrain_manager_a898a6abcd4022dbb828932037cff7b4d}\index{TerrainManager@{TerrainManager}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!TerrainManager@{TerrainManager}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily \label{class_terrain_manager_a898a6abcd4022dbb828932037cff7b4d} 
+void Terrain\+Manager\+::\+Initialize (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{heightmap}{, }\item[{int}]{terrain\+Size}{, }\item[{int}]{chunk\+Size}{, }\item[{float}]{min\+Height}{, }\item[{float}]{max\+Height}{, }\item[{float}]{texture\+Scale}{, }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{texture\+Files}{}\end{DoxyParamCaption})}
+
+
+
+Initializes terrain system settings and global parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em heightmap} & Reference to the full terrain heightmap (row-\/major). \\
+\hline
+{\em terrain\+Size} & Size (width/height) of the full terrain grid. \\
+\hline
+{\em chunk\+Size} & Size of each terrain chunk (square). \\
+\hline
+{\em min\+Height} & Minimum possible height value. \\
+\hline
+{\em max\+Height} & Maximum possible height value. \\
+\hline
+{\em texture\+Scale} & \doxylink{class_texture}{Texture} tiling scale factor. \\
+\hline
+{\em texture\+Files} & List of texture file paths for terrain layers. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_manager_a898a6abcd4022dbb828932037cff7b4d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_terrain_manager_a019ebedd94cb1fbe0a7b412478b1d41c}\index{TerrainManager@{TerrainManager}!RegisterChunksToECS@{RegisterChunksToECS}}
+\index{RegisterChunksToECS@{RegisterChunksToECS}!TerrainManager@{TerrainManager}}
+\doxysubsubsection{\texorpdfstring{RegisterChunksToECS()}{RegisterChunksToECS()}}
+{\footnotesize\ttfamily \label{class_terrain_manager_a019ebedd94cb1fbe0a7b412478b1d41c} 
+void Terrain\+Manager\+::\+Register\+Chunks\+To\+ECS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{entity\+Manager}{, }\item[{\mbox{\hyperlink{class_physics_system}{Physics\+System}} \&}]{physics\+System}{, }\item[{unsigned int}]{terrain\+Shader}{}\end{DoxyParamCaption})}
+
+
+
+Registers all chunks as ECS entities with rendering and physics components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+Manager} & Reference to the ECS \doxylink{class_entity_manager}{Entity\+Manager}. \\
+\hline
+{\em physics\+System} & Reference to the \doxylink{class_physics_system}{Physics\+System}. \\
+\hline
+{\em terrain\+Shader} & Shader program ID used for terrain rendering. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_manager_a019ebedd94cb1fbe0a7b412478b1d41c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_terrain_manager_a939078fc7a682a62d98232a5820d0c43}\index{TerrainManager@{TerrainManager}!RegisterToECS@{RegisterToECS}}
+\index{RegisterToECS@{RegisterToECS}!TerrainManager@{TerrainManager}}
+\doxysubsubsection{\texorpdfstring{RegisterToECS()}{RegisterToECS()}}
+{\footnotesize\ttfamily \label{class_terrain_manager_a939078fc7a682a62d98232a5820d0c43} 
+void Terrain\+Manager\+::\+Register\+To\+ECS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{entity\+Manager}{, }\item[{\mbox{\hyperlink{class_physics_system}{Physics\+System}} \&}]{physics\+System}{, }\item[{unsigned int}]{terrain\+Shader}{, }\item[{\mbox{\hyperlink{class_mesh_terrain}{Mesh\+Terrain}} \&}]{terrain}{}\end{DoxyParamCaption})}
+
+
+
+Registers a single monolithic terrain mesh into the ECS. 
+
+Used when not chunking terrain.
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+Manager} & Reference to the ECS \doxylink{class_entity_manager}{Entity\+Manager}. \\
+\hline
+{\em physics\+System} & Reference to the \doxylink{class_physics_system}{Physics\+System}. \\
+\hline
+{\em terrain\+Shader} & Shader program ID used for rendering. \\
+\hline
+{\em terrain} & Reference to the \doxylink{class_mesh_terrain}{Mesh\+Terrain} object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_terrain_manager_a07c00a33754db3a50d50e83b0976de84}\index{TerrainManager@{TerrainManager}!UploadChunksToGPU@{UploadChunksToGPU}}
+\index{UploadChunksToGPU@{UploadChunksToGPU}!TerrainManager@{TerrainManager}}
+\doxysubsubsection{\texorpdfstring{UploadChunksToGPU()}{UploadChunksToGPU()}}
+{\footnotesize\ttfamily \label{class_terrain_manager_a07c00a33754db3a50d50e83b0976de84} 
+void Terrain\+Manager\+::\+Upload\+Chunks\+To\+GPU (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Uploads all generated chunks to the GPU (VAOs, VBOs, textures). 
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_terrain_manager_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_terrain_manager_a53fceaa53f3bc13292dffb0ca73338e5}\index{TerrainManager@{TerrainManager}!m\_chunkMutex@{m\_chunkMutex}}
+\index{m\_chunkMutex@{m\_chunkMutex}!TerrainManager@{TerrainManager}}
+\doxysubsubsection{\texorpdfstring{m\_chunkMutex}{m\_chunkMutex}}
+{\footnotesize\ttfamily \label{class_terrain_manager_a53fceaa53f3bc13292dffb0ca73338e5} 
+std\+::mutex Terrain\+Manager\+::m\+\_\+chunk\+Mutex\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mutex for thread-\/safe chunk generation (if multithreaded). 
+
+\Hypertarget{class_terrain_manager_a9abfa47b56bba26063a085f14a13204b}\index{TerrainManager@{TerrainManager}!m\_chunks@{m\_chunks}}
+\index{m\_chunks@{m\_chunks}!TerrainManager@{TerrainManager}}
+\doxysubsubsection{\texorpdfstring{m\_chunks}{m\_chunks}}
+{\footnotesize\ttfamily \label{class_terrain_manager_a9abfa47b56bba26063a085f14a13204b} 
+std\+::vector$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_terrain_chunk}{Terrain\+Chunk}}$>$ $>$ Terrain\+Manager\+::m\+\_\+chunks\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+List of all generated terrain chunks. 
+
+\Hypertarget{class_terrain_manager_a55ddb56e5f83a341e93d7784ee107f3d}\index{TerrainManager@{TerrainManager}!m\_chunkSize@{m\_chunkSize}}
+\index{m\_chunkSize@{m\_chunkSize}!TerrainManager@{TerrainManager}}
+\doxysubsubsection{\texorpdfstring{m\_chunkSize}{m\_chunkSize}}
+{\footnotesize\ttfamily \label{class_terrain_manager_a55ddb56e5f83a341e93d7784ee107f3d} 
+int Terrain\+Manager\+::m\+\_\+chunk\+Size = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Size of each terrain chunk. 
+
+\Hypertarget{class_terrain_manager_a657910d3ab0b32da4b6b1a140afafc42}\index{TerrainManager@{TerrainManager}!m\_globalHeightmap@{m\_globalHeightmap}}
+\index{m\_globalHeightmap@{m\_globalHeightmap}!TerrainManager@{TerrainManager}}
+\doxysubsubsection{\texorpdfstring{m\_globalHeightmap}{m\_globalHeightmap}}
+{\footnotesize\ttfamily \label{class_terrain_manager_a657910d3ab0b32da4b6b1a140afafc42} 
+const std\+::vector$<$float$>$\texorpdfstring{$\ast$}{*} Terrain\+Manager\+::m\+\_\+global\+Heightmap = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the global terrain heightmap (not owned). 
+
+\Hypertarget{class_terrain_manager_a35a46ed43fce6388a03acb6b5c7167e8}\index{TerrainManager@{TerrainManager}!m\_maxHeight@{m\_maxHeight}}
+\index{m\_maxHeight@{m\_maxHeight}!TerrainManager@{TerrainManager}}
+\doxysubsubsection{\texorpdfstring{m\_maxHeight}{m\_maxHeight}}
+{\footnotesize\ttfamily \label{class_terrain_manager_a35a46ed43fce6388a03acb6b5c7167e8} 
+float Terrain\+Manager\+::m\+\_\+max\+Height = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Maximum terrain elevation. 
+
+\Hypertarget{class_terrain_manager_a11c5c07f0ee455e964ae59f99f74abe2}\index{TerrainManager@{TerrainManager}!m\_minHeight@{m\_minHeight}}
+\index{m\_minHeight@{m\_minHeight}!TerrainManager@{TerrainManager}}
+\doxysubsubsection{\texorpdfstring{m\_minHeight}{m\_minHeight}}
+{\footnotesize\ttfamily \label{class_terrain_manager_a11c5c07f0ee455e964ae59f99f74abe2} 
+float Terrain\+Manager\+::m\+\_\+min\+Height = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Minimum terrain elevation. 
+
+\Hypertarget{class_terrain_manager_aa5dcc54d98df7baa64e6d3115cc537c4}\index{TerrainManager@{TerrainManager}!m\_sharedTextures@{m\_sharedTextures}}
+\index{m\_sharedTextures@{m\_sharedTextures}!TerrainManager@{TerrainManager}}
+\doxysubsubsection{\texorpdfstring{m\_sharedTextures}{m\_sharedTextures}}
+{\footnotesize\ttfamily \label{class_terrain_manager_aa5dcc54d98df7baa64e6d3115cc537c4} 
+std\+::vector$<$\mbox{\hyperlink{class_texture}{Texture}}\texorpdfstring{$\ast$}{*}$>$ Terrain\+Manager\+::m\+\_\+shared\+Textures\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Shared texture pointers used by all terrain chunks. 
+
+\Hypertarget{class_terrain_manager_acb63b3dba199ddfcdc732d8d9778283a}\index{TerrainManager@{TerrainManager}!m\_terrainSize@{m\_terrainSize}}
+\index{m\_terrainSize@{m\_terrainSize}!TerrainManager@{TerrainManager}}
+\doxysubsubsection{\texorpdfstring{m\_terrainSize}{m\_terrainSize}}
+{\footnotesize\ttfamily \label{class_terrain_manager_acb63b3dba199ddfcdc732d8d9778283a} 
+int Terrain\+Manager\+::m\+\_\+terrain\+Size = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Size of the full terrain grid (number of vertices along one axis). 
+
+\Hypertarget{class_terrain_manager_afe26899f79b11e5972f0cf4b398295ac}\index{TerrainManager@{TerrainManager}!m\_textureFileNames@{m\_textureFileNames}}
+\index{m\_textureFileNames@{m\_textureFileNames}!TerrainManager@{TerrainManager}}
+\doxysubsubsection{\texorpdfstring{m\_textureFileNames}{m\_textureFileNames}}
+{\footnotesize\ttfamily \label{class_terrain_manager_afe26899f79b11e5972f0cf4b398295ac} 
+std\+::vector$<$std\+::string$>$ Terrain\+Manager\+::m\+\_\+texture\+File\+Names\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Filenames of the textures used for terrain blending. 
+
+\Hypertarget{class_terrain_manager_a597c0bb228763409d375cc6b4263b98e}\index{TerrainManager@{TerrainManager}!m\_textureScale@{m\_textureScale}}
+\index{m\_textureScale@{m\_textureScale}!TerrainManager@{TerrainManager}}
+\doxysubsubsection{\texorpdfstring{m\_textureScale}{m\_textureScale}}
+{\footnotesize\ttfamily \label{class_terrain_manager_a597c0bb228763409d375cc6b4263b98e} 
+float Terrain\+Manager\+::m\+\_\+texture\+Scale = 1.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Scale factor for texture UV tiling. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Terrain/\mbox{\hyperlink{terrain__manager_8hpp}{terrain\+\_\+manager.\+hpp}}\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Terrain/\mbox{\hyperlink{terrain__manager_8cpp}{terrain\+\_\+manager.\+cpp}}\end{DoxyCompactItemize}

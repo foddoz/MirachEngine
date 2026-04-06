@@ -1,0 +1,112 @@
+\doxysection{C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Rendering/render\+\_\+system.hpp File Reference}
+\hypertarget{render__system_8hpp}{}\label{render__system_8hpp}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/Rendering/render\_system.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/Rendering/render\_system.hpp}}
+{\ttfamily \#include "{}../../\+Camera/camera.\+hpp"{}}\newline
+{\ttfamily \#include "{}../../\+Transform/transform.\+hpp"{}}\newline
+{\ttfamily \#include "{}../../\+Program/program.\+hpp"{}}\newline
+{\ttfamily \#include "{}mesh\+\_\+renderer.\+hpp"{}}\newline
+{\ttfamily \#include "{}../../\+ECS/entity\+\_\+manager.\+hpp"{}}\newline
+{\ttfamily \#include "{}../graphics.\+hpp"{}}\newline
+Include dependency graph for render\+\_\+system.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{render__system_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{render__system_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{render__system_8hpp_a8cce4f902aee95fff82f762a4fcd10be}{Render\+System}} (const \mbox{\hyperlink{class_program}{Program}} \&g\+App, const \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \&cam\+Entity, \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&entity\+Manager)
+\begin{DoxyCompactList}\small\item\em Core ECS-\/based rendering system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{render__system_8hpp_a079030225b1b31b63cc28799a7923ff0}{Render\+Skybox}} (const \mbox{\hyperlink{class_program}{Program}} \&g\+App, const \mbox{\hyperlink{class_camera}{Camera}} \&cam, const \mbox{\hyperlink{class_transform}{Transform}} \&transform, const \mbox{\hyperlink{struct_mesh_renderer}{Mesh\+Renderer}} \&renderer)
+\begin{DoxyCompactList}\small\item\em Renders a skybox or skydome mesh as a background element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{render__system_8hpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{render__system_8hpp_a079030225b1b31b63cc28799a7923ff0}\index{render\_system.hpp@{render\_system.hpp}!RenderSkybox@{RenderSkybox}}
+\index{RenderSkybox@{RenderSkybox}!render\_system.hpp@{render\_system.hpp}}
+\doxysubsubsection{\texorpdfstring{RenderSkybox()}{RenderSkybox()}}
+{\footnotesize\ttfamily \label{render__system_8hpp_a079030225b1b31b63cc28799a7923ff0} 
+void Render\+Skybox (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_program}{Program}} \&}]{g\+App}{, }\item[{const \mbox{\hyperlink{class_camera}{Camera}} \&}]{cam}{, }\item[{const \mbox{\hyperlink{class_transform}{Transform}} \&}]{transform}{, }\item[{const \mbox{\hyperlink{struct_mesh_renderer}{Mesh\+Renderer}} \&}]{renderer}{}\end{DoxyParamCaption})}
+
+
+
+Renders a skybox or skydome mesh as a background element. 
+
+This should be called before rendering opaque geometry. It disables depth writing to ensure it is always behind other objects.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g\+App} & Reference to the main \doxylink{class_program}{Program} instance for shader control. \\
+\hline
+{\em cam} & Reference to the \doxylink{class_camera}{Camera} used for view-\/projection matrix. \\
+\hline
+{\em transform} & \doxylink{class_transform}{Transform} of the skybox/skydome entity. \\
+\hline
+{\em renderer} & \doxylink{struct_mesh_renderer}{Mesh\+Renderer} containing the mesh and texture data. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{render__system_8hpp_a079030225b1b31b63cc28799a7923ff0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{render__system_8hpp_a079030225b1b31b63cc28799a7923ff0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{render__system_8hpp_a8cce4f902aee95fff82f762a4fcd10be}\index{render\_system.hpp@{render\_system.hpp}!RenderSystem@{RenderSystem}}
+\index{RenderSystem@{RenderSystem}!render\_system.hpp@{render\_system.hpp}}
+\doxysubsubsection{\texorpdfstring{RenderSystem()}{RenderSystem()}}
+{\footnotesize\ttfamily \label{render__system_8hpp_a8cce4f902aee95fff82f762a4fcd10be} 
+void Render\+System (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_program}{Program}} \&}]{g\+App}{, }\item[{const \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \&}]{cam\+Entity}{, }\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \&}]{entity\+Manager}{}\end{DoxyParamCaption})}
+
+
+
+Core ECS-\/based rendering system. 
+
+Iterates over all entities that contain a \doxylink{struct_mesh_renderer}{Mesh\+Renderer} and \doxylink{class_transform}{Transform} component, and renders each using its assigned shader pipeline and transform. Applies frustum culling using the provided camera, binds the appropriate vertex arrays and textures, and issues draw calls.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g\+App} & Reference to the main \doxylink{class_program}{Program} instance holding global GPU state. \\
+\hline
+{\em cam\+Entity} & The entity containing the active camera component. \\
+\hline
+{\em entity\+Manager} & Reference to the ECS \doxylink{class_entity_manager}{Entity\+Manager} for accessing components. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{render__system_8hpp_a8cce4f902aee95fff82f762a4fcd10be_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{render__system_8hpp_a8cce4f902aee95fff82f762a4fcd10be_icgraph}
+\end{center}
+\end{figure}

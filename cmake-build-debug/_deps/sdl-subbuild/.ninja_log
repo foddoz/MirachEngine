@@ -1,0 +1,23 @@
+# ninja log v6
+3	83	7664698113675734	sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-mkdir	31cb9eb0bfa29798
+3	83	7664698113675734	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/sdl-subbuild/sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-mkdir	31cb9eb0bfa29798
+84	4860	7664698161457931	sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-download	81fc75ebccac4959
+84	4860	7664698161457931	sdl-populate-prefix/src/SDL3-3.2.8.tar.gz	81fc75ebccac4959
+84	4860	7664698161457931	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/sdl-subbuild/sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-download	81fc75ebccac4959
+84	4860	7664698161457931	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/sdl-subbuild/sdl-populate-prefix/src/SDL3-3.2.8.tar.gz	81fc75ebccac4959
+4862	4936	7664698162215904	sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-update	662e5f9b1ac56eba
+4862	4936	7664698162215904	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/sdl-subbuild/sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-update	662e5f9b1ac56eba
+4936	5009	7664698162943975	sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-patch	48acf7bd5150f8d3
+4936	5009	7664698162943975	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/sdl-subbuild/sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-patch	48acf7bd5150f8d3
+5009	5082	7664698163681983	sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-configure	d5d4ef25a8483910
+5009	5082	7664698163681983	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/sdl-subbuild/sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-configure	d5d4ef25a8483910
+5083	5156	7664698164420009	sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-build	e28e00f8ec36f030
+5083	5156	7664698164420009	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/sdl-subbuild/sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-build	e28e00f8ec36f030
+5156	5230	7664698165158036	sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-install	98edbff2e24eab8a
+5156	5230	7664698165158036	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/sdl-subbuild/sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-install	98edbff2e24eab8a
+5230	5303	7664698165896062	sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-test	bebb40fcfd5d30ab
+5230	5303	7664698165896062	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/sdl-subbuild/sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-test	bebb40fcfd5d30ab
+5303	5422	7664698167072914	CMakeFiles/sdl-populate-complete	4980c00c8be7003a
+5303	5422	7664698167072914	sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-done	4980c00c8be7003a
+5303	5422	7664698167072914	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/sdl-subbuild/CMakeFiles/sdl-populate-complete	4980c00c8be7003a
+5303	5422	7664698167072914	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/sdl-subbuild/sdl-populate-prefix/src/sdl-populate-stamp/sdl-populate-done	4980c00c8be7003a

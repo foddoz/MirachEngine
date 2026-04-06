@@ -1,0 +1,181 @@
+.TH "Texture" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Texture \- Handles image loading, GPU uploading, binding, and cleanup of texture resources\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <texture\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTexture\fP (\fBTextureTarget\fP target)"
+.br
+.RI "Constructs a texture with a specified OpenGL texture target\&. "
+.ti -1c
+.RI "\fBTexture\fP (const \fBTexture\fP &other)"
+.br
+.RI "Copy constructor for deep-copying texture state (image data only, not GPU handle)\&. "
+.ti -1c
+.RI "void \fBLoadFromFile\fP (const std::string &fileName)"
+.br
+.RI "Loads image data from a file into CPU memory\&. "
+.ti -1c
+.RI "void \fBUploadToGPU\fP ()"
+.br
+.RI "Uploads the loaded image data to GPU and creates an OpenGL texture\&. "
+.ti -1c
+.RI "void \fBBind\fP (unsigned int textureUnit)"
+.br
+.RI "Binds the texture to a specified texture unit for rendering\&. "
+.ti -1c
+.RI "void \fBDelete\fP ()"
+.br
+.RI "Frees GPU texture memory and clears the texture object\&. "
+.ti -1c
+.RI "unsigned int \fBGetID\fP () const"
+.br
+.RI "Returns the OpenGL texture object ID\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBm_fileName\fP"
+.br
+.RI "Path to the loaded image file\&. "
+.ti -1c
+.RI "\fBTextureTarget\fP \fBm_textureTarget\fP"
+.br
+.RI "OpenGL texture target type (e\&.g\&., GL_TEXTURE_2D)\&. "
+.ti -1c
+.RI "unsigned int \fBm_textureObj\fP = 0"
+.br
+.RI "OpenGL texture object ID\&. "
+.ti -1c
+.RI "int \fBm_imageWidth\fP = 0"
+.br
+.RI "Width of the loaded image\&. "
+.ti -1c
+.RI "int \fBm_imageHeight\fP = 0"
+.br
+.RI "Height of the loaded image\&. "
+.ti -1c
+.RI "int \fBm_imageBPP\fP = 0"
+.br
+.RI "Bytes per pixel of the loaded image\&. "
+.ti -1c
+.RI "std::vector< unsigned char > \fBm_imageData\fP"
+.br
+.RI "Raw pixel data loaded from the image\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Handles image loading, GPU uploading, binding, and cleanup of texture resources\&. 
+
+This class provides an abstraction over OpenGL texture operations\&. It supports 2D textures and wraps functionality for loading from file, uploading to GPU memory, and binding to specific texture units\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Texture::Texture (\fBTextureTarget\fP target)"
+
+.PP
+Constructs a texture with a specified OpenGL texture target\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItarget\fP The OpenGL texture target (e\&.g\&., \fBTextureTarget::Texture2D\fP)\&. 
+.RE
+.PP
+
+.SS "Texture::Texture (const \fBTexture\fP & other)"
+
+.PP
+Copy constructor for deep-copying texture state (image data only, not GPU handle)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP \fBTexture\fP object to copy from\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void Texture::Bind (unsigned int textureUnit)"
+
+.PP
+Binds the texture to a specified texture unit for rendering\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItextureUnit\fP The OpenGL texture unit (e\&.g\&., GL_TEXTURE0 or COLOR_TEXTURE_UNIT)\&. 
+.RE
+.PP
+
+.SS "void Texture::Delete ()"
+
+.PP
+Frees GPU texture memory and clears the texture object\&. 
+.SS "unsigned int Texture::GetID () const"
+
+.PP
+Returns the OpenGL texture object ID\&. 
+.PP
+\fBReturns\fP
+.RS 4
+GLuint texture handle\&. 
+.RE
+.PP
+
+.SS "void Texture::LoadFromFile (const std::string & fileName)"
+
+.PP
+Loads image data from a file into CPU memory\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfileName\fP Path to the image file to load\&. 
+.RE
+.PP
+
+.SS "void Texture::UploadToGPU ()"
+
+.PP
+Uploads the loaded image data to GPU and creates an OpenGL texture\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "std::string Texture::m_fileName\fR [private]\fP"
+
+.PP
+Path to the loaded image file\&. 
+.SS "int Texture::m_imageBPP = 0\fR [private]\fP"
+
+.PP
+Bytes per pixel of the loaded image\&. 
+.SS "std::vector<unsigned char> Texture::m_imageData\fR [private]\fP"
+
+.PP
+Raw pixel data loaded from the image\&. 
+.SS "int Texture::m_imageHeight = 0\fR [private]\fP"
+
+.PP
+Height of the loaded image\&. 
+.SS "int Texture::m_imageWidth = 0\fR [private]\fP"
+
+.PP
+Width of the loaded image\&. 
+.SS "unsigned int Texture::m_textureObj = 0\fR [private]\fP"
+
+.PP
+OpenGL texture object ID\&. 
+.SS "\fBTextureTarget\fP Texture::m_textureTarget\fR [private]\fP"
+
+.PP
+OpenGL texture target type (e\&.g\&., GL_TEXTURE_2D)\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

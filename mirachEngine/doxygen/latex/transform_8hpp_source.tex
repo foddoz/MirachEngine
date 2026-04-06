@@ -1,0 +1,50 @@
+\doxysection{transform.\+hpp}
+\hypertarget{transform_8hpp_source}{}\label{transform_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Transform/transform.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Transform/transform.hpp}}
+\mbox{\hyperlink{transform_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TRANSFORM\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TRANSFORM\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{math_8hpp}{../Math/math.hpp}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_transform_aa08ca4266efabc768973cdeea51945ab}{Transform}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_transform_aa08ca4266efabc768973cdeea51945ab}{Transform}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}}\ \mbox{\hyperlink{class_transform_a273b1e2cae794e45d5f038e736416c9b}{getModelMatrix}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_transform_a7c287f2ec371a1214df9fa7ad6a9718b}{SetPosition}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_transform_a80e28cb7ca8818e944c6177ed6ca7bfe}{SetRotation}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_transform_a80e28cb7ca8818e944c6177ed6ca7bfe}{SetRotation}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}}\&\ q);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_transform_a3f4051624bff3c6d6c5be9fd9433fe2f}{SetScale}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_transform_ac64c00fe6fe7aa6303aae6ad1e31ea7e}{SetYAxisUp}}(\textcolor{keywordtype}{bool}\ up);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{class_transform_a2bd3205164a8f8f64f1c738ab6cb365f}{GetPosition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{class_transform_aacfcec9acc36a2dafe8b1eaf6e887963}{GetRotation}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{class_transform_add9a8eede0d4e807c66fc4dcd440c99b}{GetScale}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_transform_abd58e4999a545d0041205d28ea83bd80}{IsYAxisUp}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_transform_a0bd1bcdbc6da88be8ad16e6a90aa2c55}{ResetRotation}}(\textcolor{keywordtype}{float}\ axis);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_transform_a766790cd6c7043b6d28fe75d36a7bcc6}{UpdateModelMatrix}}();}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}}\ \mbox{\hyperlink{class_transform_a2314334c615e95ecceddb19e7d28d8e6}{mModelMatrix}};\ \ \ \ \ }
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{class_transform_ad1da5a5e2ebe8739901035f9859ab493}{m\_position}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}}\ \mbox{\hyperlink{class_transform_a478b68aed5a7e0e06104cf544581ac67}{m\_rotation}};\ \ \ \ \ }
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{class_transform_a9787eec78997d62f498cf262de3daf7c}{m\_scale}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_transform_afd2999b19640c1497ae4244f1e256cd8}{yAxisUp}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00106\ \};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TRANSFORM\_HPP}}
+
+\end{DoxyCode}

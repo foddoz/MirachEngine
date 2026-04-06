@@ -1,0 +1,496 @@
+\doxysection{Camera Class Reference}
+\hypertarget{class_camera}{}\label{class_camera}\index{Camera@{Camera}}
+
+
+A 3D camera that handles projection, view matrix generation, frustum culling, and orientation logic.  
+
+
+
+
+{\ttfamily \#include $<$camera.\+hpp$>$}
+
+
+
+Collaboration diagram for Camera\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{class_camera__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_camera_a01f94c3543f56ede7af49dc778f19331}{Camera}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a camera with default orientation and projection parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_camera_a8953636ad3b9bfec7cb1d3cf2917d445}{Set\+Projection\+Matrix}} (float fov, float aspect, float near, float far)
+\begin{DoxyCompactList}\small\item\em Sets the perspective projection matrix using a field of view, aspect ratio, and near/far planes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} \mbox{\hyperlink{class_camera_a6e3587a907ed288508c97493e7d51fc1}{Get\+View\+Matrix}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&position) const
+\begin{DoxyCompactList}\small\item\em Calculates and retrieves the current view matrix based on a given position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} \mbox{\hyperlink{class_camera_acfb250cdca698879b5de804524960005}{Get\+Projection\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the current projection matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_camera_a08e827a4ea64e448beabaa52881c58ab}{Look}} (float deltaX, float deltaY, float look\+Speed)
+\begin{DoxyCompactList}\small\item\em Applies mouse input to rotate the camera using yaw and pitch. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_camera_a3683dabb5bf414d8af9036316655f52a}{Is\+Box\+In\+Frustum}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&min, const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&max) const
+\begin{DoxyCompactList}\small\item\em Tests whether a given axis-\/aligned bounding box (\doxylink{struct_a_a_b_b}{AABB}) is inside the camera\textquotesingle{}s view frustum. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_camera_a5f991880cabaeeb3c8bf350e4c96499f}{Enable}} (bool enabled)
+\begin{DoxyCompactList}\small\item\em Enables or disables the camera. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_camera_aa209d0832d633c0dd840b3308e1c0ad8}{Is\+Enabled}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the camera is currently enabled. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_camera_a2e48639cd946e567fc0756361c855ac6}{Update\+Frustum\+Planes}} (const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&position)
+\begin{DoxyCompactList}\small\item\em Updates the six frustum planes based on the camera\textquotesingle{}s view-\/projection matrix and position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{class_camera_a8b6bb70c82fe92444295d4f3fcb07f22}{Get\+Front\+Vector}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the camera\textquotesingle{}s forward (front) direction vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{class_camera_a0ad7fef0153402b50f70bd9327afdbd6}{Get\+Right\+Vector}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the camera\textquotesingle{}s right direction vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_camera_ae94de322124a68e32113235eeec78008}{Update\+Vectors}} ()
+\begin{DoxyCompactList}\small\item\em Updates the camera\textquotesingle{}s direction vectors (front, right, up) based on its current yaw and pitch. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} \mbox{\hyperlink{class_camera_aae9049c70d00836edb7fe33068bee3a7}{m\+Projection\+Matrix}}
+\begin{DoxyCompactList}\small\item\em Perspective projection matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{class_camera_a3a748cf0bba2c7334717490424719d42}{m\+Front\+Vector}}
+\begin{DoxyCompactList}\small\item\em Normalized forward direction vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{class_camera_a39d3f969ef0e89b2e3bb0c5529ecba17}{m\+Right\+Vector}}
+\begin{DoxyCompactList}\small\item\em Normalized right direction vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{class_camera_aae9ed4d86aa7c1703cf6726280f393f5}{m\+Up\+Vector}}
+\begin{DoxyCompactList}\small\item\em Normalized up direction vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{class_camera_a029cb37c93e3ebb2e3de80405c8a9f7c}{m\+World\+Up}}
+\begin{DoxyCompactList}\small\item\em World-\/space up vector, usually (0,1,0). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_camera_a1787f828365ee9927f781e7fb358e600}{m\+Yaw}}
+\begin{DoxyCompactList}\small\item\em Horizontal angle in degrees (yaw rotation). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_camera_a0d0729ca735aa3ca3c88c7d37ede6c9b}{m\+Pitch}}
+\begin{DoxyCompactList}\small\item\em Vertical angle in degrees (pitch rotation). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_adba234791e87b8e2d638fbf2b55a0db1}{Vector4f}} \mbox{\hyperlink{class_camera_ad499e163fc7409d7ac056a08890bf533}{m\+Frustum\+Planes}} \mbox{[}6\mbox{]}
+\begin{DoxyCompactList}\small\item\em View frustum planes\+: left, right, bottom, top, near, far. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_camera_a4df90bc49242742dda978a769c04e832}{m\+Enabled}}
+\begin{DoxyCompactList}\small\item\em Whether the camera is currently active or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A 3D camera that handles projection, view matrix generation, frustum culling, and orientation logic. 
+
+Used in the Mirach engine to compute view and projection matrices, manage orientation using pitch and yaw, and determine whether objects are visible within the view frustum. 
+
+\label{doc-constructors}
+\Hypertarget{class_camera_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_camera_a01f94c3543f56ede7af49dc778f19331}\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}}
+{\footnotesize\ttfamily \label{class_camera_a01f94c3543f56ede7af49dc778f19331} 
+Camera\+::\+Camera (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a camera with default orientation and projection parameters. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_camera_a01f94c3543f56ede7af49dc778f19331_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{class_camera_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_camera_a5f991880cabaeeb3c8bf350e4c96499f}\index{Camera@{Camera}!Enable@{Enable}}
+\index{Enable@{Enable}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Enable()}{Enable()}}
+{\footnotesize\ttfamily \label{class_camera_a5f991880cabaeeb3c8bf350e4c96499f} 
+void Camera\+::\+Enable (\begin{DoxyParamCaption}\item[{bool}]{enabled}{}\end{DoxyParamCaption})}
+
+
+
+Enables or disables the camera. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enabled} & True to enable the camera, false to disable. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_camera_a8b6bb70c82fe92444295d4f3fcb07f22}\index{Camera@{Camera}!GetFrontVector@{GetFrontVector}}
+\index{GetFrontVector@{GetFrontVector}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{GetFrontVector()}{GetFrontVector()}}
+{\footnotesize\ttfamily \label{class_camera_a8b6bb70c82fe92444295d4f3fcb07f22} 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Camera\+::\+Get\+Front\+Vector (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the camera\textquotesingle{}s forward (front) direction vector. 
+
+\begin{DoxyReturn}{Returns}
+Normalized front vector (\doxylink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}). 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_camera_a8b6bb70c82fe92444295d4f3fcb07f22_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_camera_acfb250cdca698879b5de804524960005}\index{Camera@{Camera}!GetProjectionMatrix@{GetProjectionMatrix}}
+\index{GetProjectionMatrix@{GetProjectionMatrix}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{GetProjectionMatrix()}{GetProjectionMatrix()}}
+{\footnotesize\ttfamily \label{class_camera_acfb250cdca698879b5de804524960005} 
+\mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} Camera\+::\+Get\+Projection\+Matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the current projection matrix. 
+
+\begin{DoxyReturn}{Returns}
+Projection matrix (\doxylink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}). 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_camera_acfb250cdca698879b5de804524960005_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_camera_a0ad7fef0153402b50f70bd9327afdbd6}\index{Camera@{Camera}!GetRightVector@{GetRightVector}}
+\index{GetRightVector@{GetRightVector}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{GetRightVector()}{GetRightVector()}}
+{\footnotesize\ttfamily \label{class_camera_a0ad7fef0153402b50f70bd9327afdbd6} 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Camera\+::\+Get\+Right\+Vector (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the camera\textquotesingle{}s right direction vector. 
+
+\begin{DoxyReturn}{Returns}
+Normalized right vector (\doxylink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}). 
+\end{DoxyReturn}
+\Hypertarget{class_camera_a6e3587a907ed288508c97493e7d51fc1}\index{Camera@{Camera}!GetViewMatrix@{GetViewMatrix}}
+\index{GetViewMatrix@{GetViewMatrix}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{GetViewMatrix()}{GetViewMatrix()}}
+{\footnotesize\ttfamily \label{class_camera_a6e3587a907ed288508c97493e7d51fc1} 
+\mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} Camera\+::\+Get\+View\+Matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{position}{}\end{DoxyParamCaption}) const}
+
+
+
+Calculates and retrieves the current view matrix based on a given position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The world-\/space position of the camera. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+View matrix (\doxylink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}). 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{class_camera_a6e3587a907ed288508c97493e7d51fc1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_camera_a6e3587a907ed288508c97493e7d51fc1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_camera_a3683dabb5bf414d8af9036316655f52a}\index{Camera@{Camera}!IsBoxInFrustum@{IsBoxInFrustum}}
+\index{IsBoxInFrustum@{IsBoxInFrustum}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{IsBoxInFrustum()}{IsBoxInFrustum()}}
+{\footnotesize\ttfamily \label{class_camera_a3683dabb5bf414d8af9036316655f52a} 
+bool Camera\+::\+Is\+Box\+In\+Frustum (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{min}{, }\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{max}{}\end{DoxyParamCaption}) const}
+
+
+
+Tests whether a given axis-\/aligned bounding box (\doxylink{struct_a_a_b_b}{AABB}) is inside the camera\textquotesingle{}s view frustum. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & Minimum corner of the \doxylink{struct_a_a_b_b}{AABB} (\doxylink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}). \\
+\hline
+{\em max} & Maximum corner of the \doxylink{struct_a_a_b_b}{AABB} (\doxylink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the box is at least partially inside the frustum; false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{class_camera_a3683dabb5bf414d8af9036316655f52a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_camera_a3683dabb5bf414d8af9036316655f52a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_camera_aa209d0832d633c0dd840b3308e1c0ad8}\index{Camera@{Camera}!IsEnabled@{IsEnabled}}
+\index{IsEnabled@{IsEnabled}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{IsEnabled()}{IsEnabled()}}
+{\footnotesize\ttfamily \label{class_camera_aa209d0832d633c0dd840b3308e1c0ad8} 
+bool Camera\+::\+Is\+Enabled (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if the camera is currently enabled. 
+
+\begin{DoxyReturn}{Returns}
+True if enabled, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_camera_aa209d0832d633c0dd840b3308e1c0ad8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_camera_a08e827a4ea64e448beabaa52881c58ab}\index{Camera@{Camera}!Look@{Look}}
+\index{Look@{Look}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Look()}{Look()}}
+{\footnotesize\ttfamily \label{class_camera_a08e827a4ea64e448beabaa52881c58ab} 
+void Camera\+::\+Look (\begin{DoxyParamCaption}\item[{float}]{deltaX}{, }\item[{float}]{deltaY}{, }\item[{float}]{look\+Speed}{}\end{DoxyParamCaption})}
+
+
+
+Applies mouse input to rotate the camera using yaw and pitch. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deltaX} & Change in mouse X position. \\
+\hline
+{\em deltaY} & Change in mouse Y position. \\
+\hline
+{\em look\+Speed} & Sensitivity multiplier for look speed. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_camera_a08e827a4ea64e448beabaa52881c58ab_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_camera_a08e827a4ea64e448beabaa52881c58ab_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_camera_a8953636ad3b9bfec7cb1d3cf2917d445}\index{Camera@{Camera}!SetProjectionMatrix@{SetProjectionMatrix}}
+\index{SetProjectionMatrix@{SetProjectionMatrix}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{SetProjectionMatrix()}{SetProjectionMatrix()}}
+{\footnotesize\ttfamily \label{class_camera_a8953636ad3b9bfec7cb1d3cf2917d445} 
+void Camera\+::\+Set\+Projection\+Matrix (\begin{DoxyParamCaption}\item[{float}]{fov}{, }\item[{float}]{aspect}{, }\item[{float}]{near}{, }\item[{float}]{far}{}\end{DoxyParamCaption})}
+
+
+
+Sets the perspective projection matrix using a field of view, aspect ratio, and near/far planes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fov} & Field of view in radians. \\
+\hline
+{\em aspect} & Aspect ratio (width divided by height). \\
+\hline
+{\em near} & Near clipping plane distance. \\
+\hline
+{\em far} & Far clipping plane distance. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{class_camera_a8953636ad3b9bfec7cb1d3cf2917d445_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_camera_a8953636ad3b9bfec7cb1d3cf2917d445_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_camera_a2e48639cd946e567fc0756361c855ac6}\index{Camera@{Camera}!UpdateFrustumPlanes@{UpdateFrustumPlanes}}
+\index{UpdateFrustumPlanes@{UpdateFrustumPlanes}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{UpdateFrustumPlanes()}{UpdateFrustumPlanes()}}
+{\footnotesize\ttfamily \label{class_camera_a2e48639cd946e567fc0756361c855ac6} 
+void Camera\+::\+Update\+Frustum\+Planes (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \&}]{position}{}\end{DoxyParamCaption})}
+
+
+
+Updates the six frustum planes based on the camera\textquotesingle{}s view-\/projection matrix and position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The world-\/space position of the camera. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_camera_a2e48639cd946e567fc0756361c855ac6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_camera_a2e48639cd946e567fc0756361c855ac6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_camera_ae94de322124a68e32113235eeec78008}\index{Camera@{Camera}!UpdateVectors@{UpdateVectors}}
+\index{UpdateVectors@{UpdateVectors}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{UpdateVectors()}{UpdateVectors()}}
+{\footnotesize\ttfamily \label{class_camera_ae94de322124a68e32113235eeec78008} 
+void Camera\+::\+Update\+Vectors (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Updates the camera\textquotesingle{}s direction vectors (front, right, up) based on its current yaw and pitch. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_camera_ae94de322124a68e32113235eeec78008_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_camera_ae94de322124a68e32113235eeec78008_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_camera_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_camera_a4df90bc49242742dda978a769c04e832}\index{Camera@{Camera}!mEnabled@{mEnabled}}
+\index{mEnabled@{mEnabled}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{mEnabled}{mEnabled}}
+{\footnotesize\ttfamily \label{class_camera_a4df90bc49242742dda978a769c04e832} 
+bool Camera\+::m\+Enabled\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Whether the camera is currently active or not. 
+
+\Hypertarget{class_camera_a3a748cf0bba2c7334717490424719d42}\index{Camera@{Camera}!mFrontVector@{mFrontVector}}
+\index{mFrontVector@{mFrontVector}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{mFrontVector}{mFrontVector}}
+{\footnotesize\ttfamily \label{class_camera_a3a748cf0bba2c7334717490424719d42} 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Camera\+::m\+Front\+Vector\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Normalized forward direction vector. 
+
+\Hypertarget{class_camera_ad499e163fc7409d7ac056a08890bf533}\index{Camera@{Camera}!mFrustumPlanes@{mFrustumPlanes}}
+\index{mFrustumPlanes@{mFrustumPlanes}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{mFrustumPlanes}{mFrustumPlanes}}
+{\footnotesize\ttfamily \label{class_camera_ad499e163fc7409d7ac056a08890bf533} 
+\mbox{\hyperlink{math_8hpp_adba234791e87b8e2d638fbf2b55a0db1}{Vector4f}} Camera\+::m\+Frustum\+Planes\mbox{[}6\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+View frustum planes\+: left, right, bottom, top, near, far. 
+
+\Hypertarget{class_camera_a0d0729ca735aa3ca3c88c7d37ede6c9b}\index{Camera@{Camera}!mPitch@{mPitch}}
+\index{mPitch@{mPitch}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{mPitch}{mPitch}}
+{\footnotesize\ttfamily \label{class_camera_a0d0729ca735aa3ca3c88c7d37ede6c9b} 
+float Camera\+::m\+Pitch\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vertical angle in degrees (pitch rotation). 
+
+\Hypertarget{class_camera_aae9049c70d00836edb7fe33068bee3a7}\index{Camera@{Camera}!mProjectionMatrix@{mProjectionMatrix}}
+\index{mProjectionMatrix@{mProjectionMatrix}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{mProjectionMatrix}{mProjectionMatrix}}
+{\footnotesize\ttfamily \label{class_camera_aae9049c70d00836edb7fe33068bee3a7} 
+\mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} Camera\+::m\+Projection\+Matrix\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Perspective projection matrix. 
+
+\Hypertarget{class_camera_a39d3f969ef0e89b2e3bb0c5529ecba17}\index{Camera@{Camera}!mRightVector@{mRightVector}}
+\index{mRightVector@{mRightVector}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{mRightVector}{mRightVector}}
+{\footnotesize\ttfamily \label{class_camera_a39d3f969ef0e89b2e3bb0c5529ecba17} 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Camera\+::m\+Right\+Vector\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Normalized right direction vector. 
+
+\Hypertarget{class_camera_aae9ed4d86aa7c1703cf6726280f393f5}\index{Camera@{Camera}!mUpVector@{mUpVector}}
+\index{mUpVector@{mUpVector}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{mUpVector}{mUpVector}}
+{\footnotesize\ttfamily \label{class_camera_aae9ed4d86aa7c1703cf6726280f393f5} 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Camera\+::m\+Up\+Vector\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Normalized up direction vector. 
+
+\Hypertarget{class_camera_a029cb37c93e3ebb2e3de80405c8a9f7c}\index{Camera@{Camera}!mWorldUp@{mWorldUp}}
+\index{mWorldUp@{mWorldUp}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{mWorldUp}{mWorldUp}}
+{\footnotesize\ttfamily \label{class_camera_a029cb37c93e3ebb2e3de80405c8a9f7c} 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Camera\+::m\+World\+Up\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+World-\/space up vector, usually (0,1,0). 
+
+\Hypertarget{class_camera_a1787f828365ee9927f781e7fb358e600}\index{Camera@{Camera}!mYaw@{mYaw}}
+\index{mYaw@{mYaw}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{mYaw}{mYaw}}
+{\footnotesize\ttfamily \label{class_camera_a1787f828365ee9927f781e7fb358e600} 
+float Camera\+::m\+Yaw\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Horizontal angle in degrees (yaw rotation). 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Camera/\mbox{\hyperlink{camera_8hpp}{camera.\+hpp}}\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Camera/\mbox{\hyperlink{camera_8cpp}{camera.\+cpp}}\end{DoxyCompactItemize}

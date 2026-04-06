@@ -1,0 +1,99 @@
+\doxysection{Mesh\+LOD Struct Reference}
+\hypertarget{struct_mesh_l_o_d}{}\label{struct_mesh_l_o_d}\index{MeshLOD@{MeshLOD}}
+
+
+Represents a single Level of Detail (LOD) variant of a mesh.  
+
+
+
+
+{\ttfamily \#include $<$mesh\+\_\+renderer.\+hpp$>$}
+
+
+
+Collaboration diagram for Mesh\+LOD\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{struct_mesh_l_o_d__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{struct_mesh_l_o_d_ab95592773a0bc2fcbab5dd35f91bfe67}{VAO}}
+\begin{DoxyCompactList}\small\item\em Vertex Array Object ID. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{struct_mesh_l_o_d_ada0836a04601ff8c5812619ed84b6dcb}{VBO}}
+\begin{DoxyCompactList}\small\item\em Vertex Buffer Object ID. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{struct_mesh_l_o_d_ace50b67c3815ca7f441e4702c697620e}{IBO}}
+\begin{DoxyCompactList}\small\item\em Index Buffer Object ID. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{struct_mesh_l_o_d_ad0333a1e216357618e3602d79e8589d3}{Index\+Count}}
+\begin{DoxyCompactList}\small\item\em Number of indices to render. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_a_a_b_b}{AABB}} \mbox{\hyperlink{struct_mesh_l_o_d_ab509ebac7a90e220e5efd5578f6177aa}{Local\+AABB}}
+\begin{DoxyCompactList}\small\item\em Local-\/space axis-\/aligned bounding box. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a single Level of Detail (LOD) variant of a mesh. 
+
+Each LOD stores its own VAO, VBO, and IBO, along with index count and a local \doxylink{struct_a_a_b_b}{AABB}. Used for LOD switching in rendering systems to improve performance based on distance. 
+
+\label{doc-variable-members}
+\Hypertarget{struct_mesh_l_o_d_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{struct_mesh_l_o_d_ace50b67c3815ca7f441e4702c697620e}\index{MeshLOD@{MeshLOD}!IBO@{IBO}}
+\index{IBO@{IBO}!MeshLOD@{MeshLOD}}
+\doxysubsubsection{\texorpdfstring{IBO}{IBO}}
+{\footnotesize\ttfamily \label{struct_mesh_l_o_d_ace50b67c3815ca7f441e4702c697620e} 
+unsigned int Mesh\+LOD\+::\+IBO}
+
+
+
+Index Buffer Object ID. 
+
+\Hypertarget{struct_mesh_l_o_d_ad0333a1e216357618e3602d79e8589d3}\index{MeshLOD@{MeshLOD}!IndexCount@{IndexCount}}
+\index{IndexCount@{IndexCount}!MeshLOD@{MeshLOD}}
+\doxysubsubsection{\texorpdfstring{IndexCount}{IndexCount}}
+{\footnotesize\ttfamily \label{struct_mesh_l_o_d_ad0333a1e216357618e3602d79e8589d3} 
+unsigned int Mesh\+LOD\+::\+Index\+Count}
+
+
+
+Number of indices to render. 
+
+\Hypertarget{struct_mesh_l_o_d_ab509ebac7a90e220e5efd5578f6177aa}\index{MeshLOD@{MeshLOD}!LocalAABB@{LocalAABB}}
+\index{LocalAABB@{LocalAABB}!MeshLOD@{MeshLOD}}
+\doxysubsubsection{\texorpdfstring{LocalAABB}{LocalAABB}}
+{\footnotesize\ttfamily \label{struct_mesh_l_o_d_ab509ebac7a90e220e5efd5578f6177aa} 
+\mbox{\hyperlink{struct_a_a_b_b}{AABB}} Mesh\+LOD\+::\+Local\+AABB}
+
+
+
+Local-\/space axis-\/aligned bounding box. 
+
+\Hypertarget{struct_mesh_l_o_d_ab95592773a0bc2fcbab5dd35f91bfe67}\index{MeshLOD@{MeshLOD}!VAO@{VAO}}
+\index{VAO@{VAO}!MeshLOD@{MeshLOD}}
+\doxysubsubsection{\texorpdfstring{VAO}{VAO}}
+{\footnotesize\ttfamily \label{struct_mesh_l_o_d_ab95592773a0bc2fcbab5dd35f91bfe67} 
+unsigned int Mesh\+LOD\+::\+VAO}
+
+
+
+Vertex Array Object ID. 
+
+\Hypertarget{struct_mesh_l_o_d_ada0836a04601ff8c5812619ed84b6dcb}\index{MeshLOD@{MeshLOD}!VBO@{VBO}}
+\index{VBO@{VBO}!MeshLOD@{MeshLOD}}
+\doxysubsubsection{\texorpdfstring{VBO}{VBO}}
+{\footnotesize\ttfamily \label{struct_mesh_l_o_d_ada0836a04601ff8c5812619ed84b6dcb} 
+unsigned int Mesh\+LOD\+::\+VBO}
+
+
+
+Vertex Buffer Object ID. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Rendering/\mbox{\hyperlink{mesh__renderer_8hpp}{mesh\+\_\+renderer.\+hpp}}\end{DoxyCompactItemize}

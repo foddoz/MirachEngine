@@ -1,0 +1,13 @@
+<map id="TerrainScene::SetupSkyDomeEntity" name="TerrainScene::SetupSkyDomeEntity">
+<area shape="rect" id="Node000001" title="Creates and registers the skydome entity in ECS." alt="" coords="5,48,203,91"/>
+<area shape="rect" id="Node000002" href="$class_transform.html#a7c287f2ec371a1214df9fa7ad6a9718b" title="Sets the world&#45;space position of the object." alt="" coords="251,56,406,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,67,235,67,235,72,203,72"/>
+<area shape="rect" id="Node000003" href="$class_transform.html#a766790cd6c7043b6d28fe75d36a7bcc6" title="Recalculates the cached model matrix based on current position, rotation, and scale." alt="" coords="454,56,655,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="407,67,438,67,438,72,407,72"/>
+<area shape="rect" id="Node000004" href="$math_8hpp.html#a57197be1224ca571c566c73c33081081" title="Applies scale to a matrix." alt="" coords="714,5,768,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="606,53,698,27,700,32,607,58"/>
+<area shape="rect" id="Node000005" href="$math_8hpp.html#a1213c92d8be7146176f8be90d8903ece" title="Converts a quaternion to a 4x4 matrix." alt="" coords="709,56,773,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="656,67,693,67,693,72,656,72"/>
+<area shape="rect" id="Node000006" href="$math_8hpp.html#a978278a474c16b86c65813cec08b513a" title="Applies translation to a matrix." alt="" coords="703,107,779,133"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="607,81,689,103,688,108,606,86"/>
+</map>

@@ -1,0 +1,356 @@
+.TH "MeshMD2" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MeshMD2 \- A 3D animated mesh class for rendering MD2 models with frame interpolation\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <MD2\&.hpp>\fP
+.PP
+Inherits \fBMesh3D\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMeshMD2\fP ()"
+.br
+.RI "Default constructor\&. "
+.ti -1c
+.RI "\fBMeshMD2\fP (const \fBMeshMD2\fP &other)"
+.br
+.RI "Copy constructor\&. "
+.ti -1c
+.RI "bool \fBLoadFromFile\fP (const std::string &modelFile, const std::string &textureFile)"
+.br
+.RI "Loads an MD2 model and its texture from file\&. "
+.ti -1c
+.RI "void \fBUploadToGPU\fP () override"
+.br
+.RI "Uploads the current mesh data to the GPU\&. "
+.ti -1c
+.RI "void \fBSetAnimation\fP (const std::string &name)"
+.br
+.RI "Sets the active animation by name\&. "
+.ti -1c
+.RI "const \fBAnimationRange\fP & \fBGetAnimationRange\fP (const std::string &name) const"
+.br
+.RI "Gets the frame range of a named animation\&. "
+.ti -1c
+.RI "void \fBInterpolate\fP (int frameA, int frameB, float blendAlpha, std::vector< \fBVector3f\fP > &outVertices) const"
+.br
+.RI "Interpolates between two animation frames to produce smooth vertex output\&. "
+.ti -1c
+.RI "int \fBGetVertexCount\fP () const"
+.br
+.RI "Gets the total number of vertices in the mesh\&. "
+.ti -1c
+.RI "\fBMeshRenderer\fP \fBToRenderer\fP () override"
+.br
+.RI "Converts the mesh into a \fBMeshRenderer\fP struct for ECS rendering\&. "
+.in -1c
+
+Public Member Functions inherited from \fBMesh3D\fP
+.in +1c
+.ti -1c
+.RI "\fBMesh3D\fP ()"
+.br
+.RI "Default constructor initializes OpenGL buffer handles and transforms\&. "
+.ti -1c
+.RI "\fBMesh3D\fP (const \fBMesh3D\fP &other)"
+.br
+.RI "Copy constructor for \fBMesh3D\fP\&. "
+.ti -1c
+.RI "void \fBSetPipeline\fP (unsigned int pipeline)"
+.br
+.RI "Assigns a graphics pipeline (shader program) to this mesh\&. "
+.ti -1c
+.RI "virtual void \fBDelete\fP ()"
+.br
+.RI "Releases GPU buffers and associated textures\&. "
+.ti -1c
+.RI "unsigned int \fBgetPipeline\fP () const"
+.br
+.RI "Retrieves the currently assigned graphics pipeline\&. "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBPopulateBuffers\fP () override"
+.br
+.RI "Fills OpenGL buffers with mesh data (called from UploadToGPU)\&. "
+.ti -1c
+.RI "std::string \fBExtractPrefix\fP (const std::string &name)"
+.br
+.RI "Extracts the animation name prefix from a frame name\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBMD2Frame\fP > \fBm_frames\fP"
+.br
+.RI "All animation frames\&. "
+.ti -1c
+.RI "std::vector< \fBMD2TexCoord\fP > \fBm_texCoords\fP"
+.br
+.RI "\fBTexture\fP coordinate list\&. "
+.ti -1c
+.RI "std::vector< \fBMD2Triangle\fP > \fBm_triangles\fP"
+.br
+.RI "Triangle definitions (indexed geometry)\&. "
+.ti -1c
+.RI "int \fBm_numVertices\fP"
+.br
+.RI "Total number of vertices\&. "
+.ti -1c
+.RI "int \fBm_skinWidth\fP"
+.br
+.ti -1c
+.RI "int \fBm_skinHeight\fP"
+.br
+.RI "\fBTexture\fP dimensions in pixels\&. "
+.ti -1c
+.RI "std::vector< \fBVector3f\fP > \fBm_interpolatedVertices\fP"
+.br
+.RI "Working buffer for interpolated vertex positions\&. "
+.ti -1c
+.RI "std::unordered_map< std::string, \fBAnimationRange\fP > \fBanimations\fP"
+.br
+.RI "Named animation ranges parsed from frame names\&. "
+.ti -1c
+.RI "\fBTexture\fP * \fBtexture\fP"
+.br
+.RI "Associated texture (diffuse map)\&. "
+.ti -1c
+.RI "unsigned int \fBmUV\fP = 0"
+.br
+.RI "OpenGL UV buffer object (VBO)\&. "
+.ti -1c
+.RI "std::vector< \fBVector2f\fP > \fBm_uvs\fP"
+.br
+.RI "UV coordinates per vertex\&. "
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Attributes inherited from \fBMesh3D\fP
+.in +1c
+.ti -1c
+.RI "unsigned int \fBm_VAO\fP"
+.br
+.RI "OpenGL Vertex Array Object handle\&. "
+.ti -1c
+.RI "unsigned int \fBm_IndexCount\fP"
+.br
+.RI "Number of indices used for drawing (glDrawElements or glDrawArrays)\&. "
+.ti -1c
+.RI "unsigned int \fBm_VBO\fP"
+.br
+.RI "Vertex Buffer Object handle\&. "
+.ti -1c
+.RI "unsigned int \fBm_IBO\fP"
+.br
+.RI "Index Buffer Object handle\&. "
+.ti -1c
+.RI "std::vector< \fBTexture\fP * > \fBm_Textures\fP"
+.br
+.RI "Collection of textures associated with this mesh\&. "
+.ti -1c
+.RI "unsigned int \fBm_Pipeline\fP"
+.br
+.RI "OpenGL shader program ID assigned to this mesh\&. "
+.ti -1c
+.RI "\fBAABB\fP \fBm_AABB\fP"
+.br
+.RI "Axis-aligned bounding box in local (object) space\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+A 3D animated mesh class for rendering MD2 models with frame interpolation\&. 
+
+Inherits from \fBMesh3D\fP\&. Supports loading MD2 models, playing animations by name, and interpolating between frames for smooth animation playback\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MeshMD2::MeshMD2 ()"
+
+.PP
+Default constructor\&. 
+.SS "MeshMD2::MeshMD2 (const \fBMeshMD2\fP & other)"
+
+.PP
+Copy constructor\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The mesh to copy\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "std::string MeshMD2::ExtractPrefix (const std::string & name)\fR [private]\fP"
+
+.PP
+Extracts the animation name prefix from a frame name\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP The full frame name (e\&.g\&., "run01")\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The extracted prefix (e\&.g\&., "run")\&. 
+.RE
+.PP
+
+.SS "const \fBAnimationRange\fP & MeshMD2::GetAnimationRange (const std::string & name) const"
+
+.PP
+Gets the frame range of a named animation\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP Animation name\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The \fBAnimationRange\fP corresponding to the name\&. 
+.RE
+.PP
+
+.SS "int MeshMD2::GetVertexCount () const"
+
+.PP
+Gets the total number of vertices in the mesh\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Vertex count\&. 
+.RE
+.PP
+
+.SS "void MeshMD2::Interpolate (int frameA, int frameB, float blendAlpha, std::vector< \fBVector3f\fP > & outVertices) const"
+
+.PP
+Interpolates between two animation frames to produce smooth vertex output\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIframeA\fP Index of the first frame\&. 
+.br
+\fIframeB\fP Index of the second frame\&. 
+.br
+\fIblendAlpha\fP Interpolation factor [0\&.0, 1\&.0]\&. 
+.br
+\fIoutVertices\fP Output array of interpolated vertices\&. 
+.RE
+.PP
+
+.SS "bool MeshMD2::LoadFromFile (const std::string & modelFile, const std::string & textureFile)"
+
+.PP
+Loads an MD2 model and its texture from file\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fImodelFile\fP Path to the MD2 model file\&. 
+.br
+\fItextureFile\fP Path to the texture image file\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if loaded successfully\&. 
+.RE
+.PP
+
+.SS "void MeshMD2::PopulateBuffers ()\fR [override]\fP, \fR [private]\fP, \fR [virtual]\fP"
+
+.PP
+Fills OpenGL buffers with mesh data (called from UploadToGPU)\&. 
+.PP
+Implements \fBMesh3D\fP\&.
+.SS "void MeshMD2::SetAnimation (const std::string & name)"
+
+.PP
+Sets the active animation by name\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP The animation name\&. 
+.RE
+.PP
+
+.SS "\fBMeshRenderer\fP MeshMD2::ToRenderer ()\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Converts the mesh into a \fBMeshRenderer\fP struct for ECS rendering\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The \fBMeshRenderer\fP representation\&. 
+.RE
+.PP
+
+.PP
+Implements \fBMesh3D\fP\&.
+.SS "void MeshMD2::UploadToGPU ()\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Uploads the current mesh data to the GPU\&. 
+.PP
+Implements \fBMesh3D\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::unordered_map<std::string, \fBAnimationRange\fP> MeshMD2::animations\fR [private]\fP"
+
+.PP
+Named animation ranges parsed from frame names\&. 
+.SS "std::vector<\fBMD2Frame\fP> MeshMD2::m_frames\fR [private]\fP"
+
+.PP
+All animation frames\&. 
+.SS "std::vector<\fBVector3f\fP> MeshMD2::m_interpolatedVertices\fR [private]\fP"
+
+.PP
+Working buffer for interpolated vertex positions\&. 
+.SS "int MeshMD2::m_numVertices\fR [private]\fP"
+
+.PP
+Total number of vertices\&. 
+.SS "int MeshMD2::m_skinHeight\fR [private]\fP"
+
+.PP
+\fBTexture\fP dimensions in pixels\&. 
+.SS "int MeshMD2::m_skinWidth\fR [private]\fP"
+
+.SS "std::vector<\fBMD2TexCoord\fP> MeshMD2::m_texCoords\fR [private]\fP"
+
+.PP
+\fBTexture\fP coordinate list\&. 
+.SS "std::vector<\fBMD2Triangle\fP> MeshMD2::m_triangles\fR [private]\fP"
+
+.PP
+Triangle definitions (indexed geometry)\&. 
+.SS "std::vector<\fBVector2f\fP> MeshMD2::m_uvs\fR [private]\fP"
+
+.PP
+UV coordinates per vertex\&. 
+.SS "unsigned int MeshMD2::mUV = 0\fR [private]\fP"
+
+.PP
+OpenGL UV buffer object (VBO)\&. 
+.SS "\fBTexture\fP* MeshMD2::texture\fR [private]\fP"
+
+.PP
+Associated texture (diffuse map)\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

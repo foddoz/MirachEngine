@@ -1,0 +1,208 @@
+.TH "Physics::Backend::WorldBackend" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Physics::Backend::WorldBackend
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <physics_backend\&.hpp>\fP
+.PP
+Inherits \fBPhysics::World\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWorldBackend\fP ()"
+.br
+.ti -1c
+.RI "\fB~WorldBackend\fP () override"
+.br
+.ti -1c
+.RI "\fBPhysics::RigidBody\fP * \fBCreateRigidBody\fP (const \fBVector3f\fP &pos, \fBBodyType\fP type=\fBBodyType::DYNAMIC\fP) override"
+.br
+.RI "Creates a new rigid body at a given position and type\&. "
+.ti -1c
+.RI "rp3d::BodyType \fBToRP3DBodyType\fP (\fBBodyType\fP type)"
+.br
+.ti -1c
+.RI "void \fBUpdate\fP (float dt) override"
+.br
+.RI "Advances the physics simulation by delta time\&. "
+.ti -1c
+.RI "rp3d::PhysicsWorld * \fBGetInternal\fP () const"
+.br
+.ti -1c
+.RI "void \fBRaycast\fP (const \fBPhysics::Ray\fP &ray, \fBPhysics::RaycastCallback\fP *cb) override"
+.br
+.RI "Performs a raycast and triggers callbacks on hit\&. "
+.ti -1c
+.RI "\fBCollider\fP * \fBAddBoxCollider\fP (\fBRigidBody\fP *body, const \fBAABB\fP &aabb) override"
+.br
+.ti -1c
+.RI "\fBCollider\fP * \fBAddBoxCollider\fP (\fBRigidBody\fP *body, const \fBAABB\fP &aabb, const \fBVector3f\fP &scale) override"
+.br
+.ti -1c
+.RI "\fBCollider\fP * \fBAddSphereCollider\fP (\fBRigidBody\fP *body, float radius) override"
+.br
+.ti -1c
+.RI "\fBCollider\fP * \fBAddSphereCollider\fP (\fBRigidBody\fP *body, const \fBAABB\fP &aabb) override"
+.br
+.ti -1c
+.RI "\fBCollider\fP * \fBAddCapsuleCollider\fP (\fBRigidBody\fP *body, float radius, float height) override"
+.br
+.ti -1c
+.RI "\fBCollider\fP * \fBAddCapsuleCollider\fP (\fBRigidBody\fP *body, const \fBAABB\fP &aabb) override"
+.br
+.ti -1c
+.RI "\fBCollider\fP * \fBAddCapsuleCollider\fP (\fBRigidBody\fP *body, const \fBAABB\fP &aabb, const \fBVector3f\fP &scale, const \fBVector3f\fP &offset)"
+.br
+.ti -1c
+.RI "\fBCollider\fP * \fBAddConcaveTerrainCollider\fP (\fBRigidBody\fP *body, void *terrainKey, const float *vertices, size_t vertexCount, size_t vertexStride, const unsigned int *indices, size_t indexCount) override"
+.br
+.ti -1c
+.RI "\fBCollider\fP * \fBAddHeightFieldCollider\fP (\fBRigidBody\fP *body, void *heightKey, const float *heightValues, int nbRows, int nbCols, const \fBVector3f\fP &scale=\fBVector3f\fP(1\&.f)) override"
+.br
+.ti -1c
+.RI "void \fBRegisterCollisionCallback\fP (\fBPhysics::CollisionCallback\fP *cb) override"
+.br
+.RI "Registers a global collision callback for contact events\&. "
+.ti -1c
+.RI "void \fBWorld::UnregisterCollisionCallback\fP (\fBPhysics::CollisionCallback\fP *cb)"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBPhysics::World\fP
+.in +1c
+.ti -1c
+.RI "virtual \fB~World\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBUnregisterCollisionCallback\fP (\fBCollisionCallback\fP *cb)=0"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "rp3d::PhysicsCommon \fBm_common\fP"
+.br
+.ti -1c
+.RI "rp3d::PhysicsWorld * \fBm_world\fP = nullptr"
+.br
+.ti -1c
+.RI "std::vector< \fBRigidBody\fP * > \fBm_rigidBodies\fP"
+.br
+.ti -1c
+.RI "std::unordered_map< uintptr_t, rp3d::TriangleMesh * > \fBm_terrainMeshCache\fP"
+.br
+.ti -1c
+.RI "std::vector< rp3d::TriangleVertexArray * > \fBm_ownedVertexArrays\fP"
+.br
+.ti -1c
+.RI "std::unordered_map< uintptr_t, rp3d::HeightField * > \fBm_heightFieldCache\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBPhysics::CollisionCallback\fP * > \fBm_collisionCallbacks\fP"
+.br
+.ti -1c
+.RI "\fBContactListenerAdapter\fP \fBm_contactListener\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Physics::Backend::WorldBackend::WorldBackend ()\fR [inline]\fP"
+
+.SS "Physics::Backend::WorldBackend::~WorldBackend ()\fR [inline]\fP, \fR [override]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBCollider\fP * Physics::Backend::WorldBackend::AddBoxCollider (\fBRigidBody\fP * body, const \fBAABB\fP & aabb)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::World\fP\&.
+.SS "\fBCollider\fP * Physics::Backend::WorldBackend::AddBoxCollider (\fBRigidBody\fP * body, const \fBAABB\fP & aabb, const \fBVector3f\fP & scale)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::World\fP\&.
+.SS "\fBCollider\fP * Physics::Backend::WorldBackend::AddCapsuleCollider (\fBRigidBody\fP * body, const \fBAABB\fP & aabb)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::World\fP\&.
+.SS "\fBCollider\fP * Physics::Backend::WorldBackend::AddCapsuleCollider (\fBRigidBody\fP * body, const \fBAABB\fP & aabb, const \fBVector3f\fP & scale, const \fBVector3f\fP & offset)\fR [inline]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::World\fP\&.
+.SS "\fBCollider\fP * Physics::Backend::WorldBackend::AddCapsuleCollider (\fBRigidBody\fP * body, float radius, float height)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::World\fP\&.
+.SS "\fBCollider\fP * Physics::Backend::WorldBackend::AddConcaveTerrainCollider (\fBRigidBody\fP * body, void * terrainKey, const float * vertices, size_t vertexCount, size_t vertexStride, const unsigned int * indices, size_t indexCount)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::World\fP\&.
+.SS "\fBCollider\fP * Physics::Backend::WorldBackend::AddHeightFieldCollider (\fBRigidBody\fP * body, void * heightKey, const float * heightValues, int nbRows, int nbCols, const \fBVector3f\fP & scale = \fR\fBVector3f\fP(1\&.f)\fP)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::World\fP\&.
+.SS "\fBCollider\fP * Physics::Backend::WorldBackend::AddSphereCollider (\fBRigidBody\fP * body, const \fBAABB\fP & aabb)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::World\fP\&.
+.SS "\fBCollider\fP * Physics::Backend::WorldBackend::AddSphereCollider (\fBRigidBody\fP * body, float radius)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::World\fP\&.
+.SS "\fBPhysics::RigidBody\fP * Physics::Backend::WorldBackend::CreateRigidBody (const \fBVector3f\fP & position, \fBBodyType\fP type = \fR\fBBodyType::DYNAMIC\fP\fP)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Creates a new rigid body at a given position and type\&. 
+.PP
+Implements \fBPhysics::World\fP\&.
+.SS "rp3d::PhysicsWorld * Physics::Backend::WorldBackend::GetInternal () const\fR [inline]\fP"
+
+.SS "void Physics::Backend::WorldBackend::Raycast (const \fBPhysics::Ray\fP & ray, \fBPhysics::RaycastCallback\fP * cb)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Performs a raycast and triggers callbacks on hit\&. 
+.PP
+Implements \fBPhysics::World\fP\&.
+.SS "void Physics::Backend::WorldBackend::RegisterCollisionCallback (\fBPhysics::CollisionCallback\fP * cb)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Registers a global collision callback for contact events\&. 
+.PP
+Implements \fBPhysics::World\fP\&.
+.SS "rp3d::BodyType Physics::Backend::WorldBackend::ToRP3DBodyType (\fBBodyType\fP type)\fR [inline]\fP"
+
+.SS "void Physics::Backend::WorldBackend::Update (float dt)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Advances the physics simulation by delta time\&. 
+.PP
+Implements \fBPhysics::World\fP\&.
+.SS "void Physics::Backend::WorldBackend::World::UnregisterCollisionCallback (\fBPhysics::CollisionCallback\fP * cb)\fR [inline]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBPhysics::CollisionCallback\fP*> Physics::Backend::WorldBackend::m_collisionCallbacks\fR [private]\fP"
+
+.SS "rp3d::PhysicsCommon Physics::Backend::WorldBackend::m_common\fR [private]\fP"
+
+.SS "\fBContactListenerAdapter\fP Physics::Backend::WorldBackend::m_contactListener\fR [private]\fP"
+
+.SS "std::unordered_map<uintptr_t, rp3d::HeightField*> Physics::Backend::WorldBackend::m_heightFieldCache\fR [private]\fP"
+
+.SS "std::vector<rp3d::TriangleVertexArray*> Physics::Backend::WorldBackend::m_ownedVertexArrays\fR [private]\fP"
+
+.SS "std::vector<\fBRigidBody\fP*> Physics::Backend::WorldBackend::m_rigidBodies\fR [private]\fP"
+
+.SS "std::unordered_map<uintptr_t, rp3d::TriangleMesh*> Physics::Backend::WorldBackend::m_terrainMeshCache\fR [private]\fP"
+
+.SS "rp3d::PhysicsWorld* Physics::Backend::WorldBackend::m_world = nullptr\fR [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

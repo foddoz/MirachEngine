@@ -1,0 +1,9 @@
+<map id="MeshTerrain::FIRFilterSinglePoint" name="MeshTerrain::FIRFilterSinglePoint">
+<area shape="rect" id="Node000001" title="Applies FIR filtering on a single height value." alt="" coords="5,23,193,65"/>
+<area shape="rect" id="Node000002" href="$class_mesh_terrain.html#a82c9aa1166f4c0cf04b6ca44314714b9" title="Gets the height at the given integer terrain grid coordinates." alt="" coords="241,5,400,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,31,225,27,226,32,193,36"/>
+<area shape="rect" id="Node000004" href="$class_mesh_terrain.html#a8c27c53059bd5313ee5300d266abbb72" title=" " alt="" coords="241,56,400,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="193,52,226,56,225,61,193,57"/>
+<area shape="rect" id="Node000003" href="$math_8hpp.html#a61311699c1533817e1272e777558b611" title="Clamps a float between minVal and maxVal." alt="" coords="448,5,507,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="400,16,432,16,432,21,400,21"/>
+</map>

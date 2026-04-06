@@ -1,0 +1,209 @@
+.TH "Mesh3D" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Mesh3D \- Abstract base class for rendering and managing 3D mesh data\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <mesh3d\&.hpp>\fP
+.PP
+Inherited by \fBMeshFile\fP, \fBMeshMD2\fP, \fBMeshSkyDome\fP, and \fBMeshTerrain\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMesh3D\fP ()"
+.br
+.RI "Default constructor initializes OpenGL buffer handles and transforms\&. "
+.ti -1c
+.RI "\fBMesh3D\fP (const \fBMesh3D\fP &other)"
+.br
+.RI "Copy constructor for \fBMesh3D\fP\&. "
+.ti -1c
+.RI "virtual void \fBUploadToGPU\fP ()=0"
+.br
+.RI "Uploads the mesh data to the GPU\&. "
+.ti -1c
+.RI "virtual \fBMeshRenderer\fP \fBToRenderer\fP ()=0"
+.br
+.RI "Converts the mesh into a \fR\fBMeshRenderer\fP\fP component used by the ECS\&. "
+.ti -1c
+.RI "void \fBSetPipeline\fP (unsigned int pipeline)"
+.br
+.RI "Assigns a graphics pipeline (shader program) to this mesh\&. "
+.ti -1c
+.RI "virtual void \fBDelete\fP ()"
+.br
+.RI "Releases GPU buffers and associated textures\&. "
+.ti -1c
+.RI "unsigned int \fBgetPipeline\fP () const"
+.br
+.RI "Retrieves the currently assigned graphics pipeline\&. "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBPopulateBuffers\fP ()=0"
+.br
+.RI "Populates OpenGL buffers for vertex/index/texture data\&. "
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "unsigned int \fBm_VAO\fP"
+.br
+.RI "OpenGL Vertex Array Object handle\&. "
+.ti -1c
+.RI "unsigned int \fBm_IndexCount\fP"
+.br
+.RI "Number of indices used for drawing (glDrawElements or glDrawArrays)\&. "
+.ti -1c
+.RI "unsigned int \fBm_VBO\fP"
+.br
+.RI "Vertex Buffer Object handle\&. "
+.ti -1c
+.RI "unsigned int \fBm_IBO\fP"
+.br
+.RI "Index Buffer Object handle\&. "
+.ti -1c
+.RI "std::vector< \fBTexture\fP * > \fBm_Textures\fP"
+.br
+.RI "Collection of textures associated with this mesh\&. "
+.ti -1c
+.RI "unsigned int \fBm_Pipeline\fP"
+.br
+.RI "OpenGL shader program ID assigned to this mesh\&. "
+.ti -1c
+.RI "\fBAABB\fP \fBm_AABB\fP"
+.br
+.RI "Axis-aligned bounding box in local (object) space\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Abstract base class for rendering and managing 3D mesh data\&. 
+
+\fR\fBMesh3D\fP\fP defines a common interface for all 3D meshes in the engine\&. It encapsulates OpenGL vertex/index buffers, bounding volume, shader pipeline, and associated texture data\&. Derived classes must implement data upload and rendering conversion\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Mesh3D::Mesh3D ()"
+
+.PP
+Default constructor initializes OpenGL buffer handles and transforms\&. 
+.SS "Mesh3D::Mesh3D (const \fBMesh3D\fP & other)"
+
+.PP
+Copy constructor for \fBMesh3D\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIother\fP The mesh to copy from\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void Mesh3D::Delete ()\fR [virtual]\fP"
+
+.PP
+Releases GPU buffers and associated textures\&. Deletes OpenGL buffer resources and releases associated textures\&.
+
+.PP
+Can be overridden to add additional resource cleanup logic\&.
+
+.PP
+Deletes VBO, IBO, VAO, and any \fBTexture\fP objects created on the heap\&. 
+.PP
+Reimplemented in \fBMeshFile\fP, \fBMeshSkyDome\fP, and \fBMeshTerrain\fP\&.
+.SS "unsigned int Mesh3D::getPipeline () const"
+
+.PP
+Retrieves the currently assigned graphics pipeline\&. Retrieves the assigned shader pipeline (OpenGL program ID)\&.
+
+.PP
+\fBReturns\fP
+.RS 4
+OpenGL shader program ID\&.
+
+.PP
+The current pipeline ID\&. 
+.RE
+.PP
+
+.SS "virtual void Mesh3D::PopulateBuffers ()\fR [protected]\fP, \fR [pure virtual]\fP"
+
+.PP
+Populates OpenGL buffers for vertex/index/texture data\&. This must be implemented by subclasses based on the structure of the mesh data\&. 
+.PP
+Implemented in \fBMeshFile\fP, \fBMeshMD2\fP, \fBMeshSkyDome\fP, and \fBMeshTerrain\fP\&.
+.SS "void Mesh3D::SetPipeline (unsigned int pipeline)"
+
+.PP
+Assigns a graphics pipeline (shader program) to this mesh\&. Sets the graphics pipeline (OpenGL shader program)\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIpipeline\fP OpenGL shader program ID to bind when rendering\&.
+.br
+\fIpipeline\fP OpenGL program ID to assign\&. 
+.RE
+.PP
+
+.SS "virtual \fBMeshRenderer\fP Mesh3D::ToRenderer ()\fR [pure virtual]\fP"
+
+.PP
+Converts the mesh into a \fR\fBMeshRenderer\fP\fP component used by the ECS\&. 
+.PP
+\fBReturns\fP
+.RS 4
+A fully initialized \fR\fBMeshRenderer\fP\fP instance containing rendering info\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBMeshFile\fP, \fBMeshMD2\fP, \fBMeshSkyDome\fP, and \fBMeshTerrain\fP\&.
+.SS "virtual void Mesh3D::UploadToGPU ()\fR [pure virtual]\fP"
+
+.PP
+Uploads the mesh data to the GPU\&. This function must be overridden by subclasses to populate OpenGL buffers with vertex/index/UV data\&. 
+.PP
+Implemented in \fBMeshFile\fP, \fBMeshMD2\fP, \fBMeshSkyDome\fP, \fBMeshTerrain\fP, and \fBTerrainChunk\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBAABB\fP Mesh3D::m_AABB\fR [protected]\fP"
+
+.PP
+Axis-aligned bounding box in local (object) space\&. 
+.SS "unsigned int Mesh3D::m_IBO\fR [protected]\fP"
+
+.PP
+Index Buffer Object handle\&. 
+.SS "unsigned int Mesh3D::m_IndexCount\fR [protected]\fP"
+
+.PP
+Number of indices used for drawing (glDrawElements or glDrawArrays)\&. 
+.SS "unsigned int Mesh3D::m_Pipeline\fR [protected]\fP"
+
+.PP
+OpenGL shader program ID assigned to this mesh\&. 
+.SS "std::vector<\fBTexture\fP*> Mesh3D::m_Textures\fR [protected]\fP"
+
+.PP
+Collection of textures associated with this mesh\&. 
+.SS "unsigned int Mesh3D::m_VAO\fR [protected]\fP"
+
+.PP
+OpenGL Vertex Array Object handle\&. 
+.SS "unsigned int Mesh3D::m_VBO\fR [protected]\fP"
+
+.PP
+Vertex Buffer Object handle\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

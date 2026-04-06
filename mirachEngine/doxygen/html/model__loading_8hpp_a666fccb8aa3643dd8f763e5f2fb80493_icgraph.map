@@ -1,0 +1,7 @@
+<map id="GetMaterialTexturePath" name="GetMaterialTexturePath">
+<area shape="rect" id="Node000001" title=" " alt="" coords="447,5,605,32"/>
+<area shape="rect" id="Node000002" href="$class_mesh_file.html#aff6a54a14d61b5ac912b8c47f6847506" title="Loads diffuse textures from materials." alt="" coords="246,5,399,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="431,21,399,21,399,16,431,16"/>
+<area shape="rect" id="Node000003" href="$class_mesh_file.html#a0d87d190f8cc0f0a4d6ec9743a575a45" title="Loads mesh geometry and material data from a model file into CPU memory." alt="" coords="5,5,198,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="230,21,198,21,198,16,230,16"/>
+</map>

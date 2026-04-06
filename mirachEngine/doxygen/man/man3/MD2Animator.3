@@ -1,0 +1,90 @@
+.TH "MD2Animator" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MD2Animator \- ECS component for animating an entity with an MD2 mesh\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <animation_system\&.hpp>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBMeshMD2\fP * \fBmesh\fP = nullptr"
+.br
+.RI "Pointer to shared, immutable MD2 mesh\&. "
+.ti -1c
+.RI "std::string \fBcurrentAnim\fP = 'idle'"
+.br
+.RI "Name of the animation currently playing\&. "
+.ti -1c
+.RI "std::string \fBlastAppliedAnim\fP = ''"
+.br
+.RI "Last animation applied, used to detect animation changes\&. "
+.ti -1c
+.RI "float \fBanimTime\fP = 0\&.0f"
+.br
+.RI "Accumulated time for frame interpolation\&. "
+.ti -1c
+.RI "int \fBcurrentFrame\fP = 0"
+.br
+.RI "Current frame index in the animation\&. "
+.ti -1c
+.RI "int \fBnextFrame\fP = 1"
+.br
+.RI "Next frame index in the animation\&. "
+.ti -1c
+.RI "unsigned int \fBanimatedVBO\fP = 0"
+.br
+.RI "GPU buffer storing interpolated vertices for this entity\&. "
+.ti -1c
+.RI "std::vector< \fBVector3f\fP > \fBinterpolatedVerts\fP"
+.br
+.RI "CPU-side buffer storing interpolated vertex data\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+ECS component for animating an entity with an MD2 mesh\&. 
+
+Stores the current animation state for an entity and performs per-entity frame interpolation\&. Each entity shares a reference to a read-only MD2 mesh and owns its own animated vertex buffer\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "unsigned int MD2Animator::animatedVBO = 0"
+
+.PP
+GPU buffer storing interpolated vertices for this entity\&. 
+.SS "float MD2Animator::animTime = 0\&.0f"
+
+.PP
+Accumulated time for frame interpolation\&. 
+.SS "std::string MD2Animator::currentAnim = 'idle'"
+
+.PP
+Name of the animation currently playing\&. 
+.SS "int MD2Animator::currentFrame = 0"
+
+.PP
+Current frame index in the animation\&. 
+.SS "std::vector<\fBVector3f\fP> MD2Animator::interpolatedVerts"
+
+.PP
+CPU-side buffer storing interpolated vertex data\&. 
+.SS "std::string MD2Animator::lastAppliedAnim = ''"
+
+.PP
+Last animation applied, used to detect animation changes\&. 
+.SS "\fBMeshMD2\fP* MD2Animator::mesh = nullptr"
+
+.PP
+Pointer to shared, immutable MD2 mesh\&. 
+.SS "int MD2Animator::nextFrame = 1"
+
+.PP
+Next frame index in the animation\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

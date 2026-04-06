@@ -1,0 +1,7 @@
+<map id="MeshFile::CountVerticesAndIndices" name="MeshFile::CountVerticesAndIndices">
+<area shape="rect" id="Node000001" title="Calculates total vertices and indices needed from an Assimp scene." alt="" coords="5,23,193,65"/>
+<area shape="rect" id="Node000002" href="$model__loading_8hpp.html#af56e441818cfe8218ef50bf8e0d0b2c5" title=" " alt="" coords="246,5,352,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,30,231,25,231,30,193,35"/>
+<area shape="rect" id="Node000003" href="$model__loading_8hpp.html#a2dc443d287bf0b4109d88852e4cdf341" title=" " alt="" coords="241,56,358,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="193,53,226,57,225,63,192,58"/>
+</map>

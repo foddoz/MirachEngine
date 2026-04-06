@@ -1,0 +1,9 @@
+<map id="InputManager::Update" name="InputManager::Update">
+<area shape="rect" id="Node000001" title="Polls and updates internal input state for the current frame." alt="" coords="5,72,156,99"/>
+<area shape="rect" id="Node000002" href="$namespace_input_backend.html#a81af72d8c295d72d026a04bfaf1d8f15" title="Returns the current state of all keyboard keys." alt="" coords="218,5,404,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,69,209,50,210,55,136,74"/>
+<area shape="rect" id="Node000003" href="$namespace_input_backend.html#a41b48803a8095adecb22dd7c852ef45c" title="Returns the current state of all mouse buttons." alt="" coords="204,72,418,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="156,83,188,83,188,88,156,88"/>
+<area shape="rect" id="Node000004" href="$namespace_input_backend.html#a0b2497db762ea8dfeb096986cac3037e" title="Polls a single input event and fills the output event structure." alt="" coords="228,123,394,149"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="145,97,233,116,231,121,144,102"/>
+</map>

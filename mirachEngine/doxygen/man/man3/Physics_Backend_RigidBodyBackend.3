@@ -1,0 +1,210 @@
+.TH "Physics::Backend::RigidBodyBackend" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Physics::Backend::RigidBodyBackend
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <physics_backend\&.hpp>\fP
+.PP
+Inherits \fBPhysics::RigidBody\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRigidBodyBackend\fP (rp3d::RigidBody *body)"
+.br
+.ti -1c
+.RI "\fB~RigidBodyBackend\fP () override"
+.br
+.ti -1c
+.RI "void \fBSetPosition\fP (const \fBVector3f\fP &pos) override"
+.br
+.ti -1c
+.RI "\fBVector3f\fP \fBGetPosition\fP () const override"
+.br
+.ti -1c
+.RI "\fBQuaternion\fP \fBGetOrientation\fP () const override"
+.br
+.ti -1c
+.RI "rp3d::RigidBody * \fBGetInternal\fP () const"
+.br
+.ti -1c
+.RI "void \fBApplyForceAtCenter\fP (const \fBVector3f\fP &force) override"
+.br
+.ti -1c
+.RI "void \fBApplyImpulseAtCenter\fP (const \fBVector3f\fP &impulse) override"
+.br
+.ti -1c
+.RI "void \fBSetLinearVelocity\fP (const \fBVector3f\fP &vel) override"
+.br
+.ti -1c
+.RI "\fBVector3f\fP \fBGetLinearVelocity\fP () const override"
+.br
+.ti -1c
+.RI "void \fBSetAngularVelocity\fP (const \fBVector3f\fP &vel) override"
+.br
+.ti -1c
+.RI "\fBVector3f\fP \fBGetAngularVelocity\fP () const override"
+.br
+.ti -1c
+.RI "bool \fBIsDynamic\fP () const override"
+.br
+.ti -1c
+.RI "void \fBSetMass\fP (float mass) const override"
+.br
+.ti -1c
+.RI "float \fBGetMass\fP () const override"
+.br
+.ti -1c
+.RI "\fBBodyType\fP \fBGetType\fP () const override"
+.br
+.ti -1c
+.RI "void \fBSetAngularLockAxis\fP (const \fBVector3f\fP &lock) override"
+.br
+.ti -1c
+.RI "void \fBSetAngularDamping\fP (float damping) override"
+.br
+.ti -1c
+.RI "void \fBInvalidate\fP () override"
+.br
+.ti -1c
+.RI "void \fBEnableGravity\fP (bool enabled) override"
+.br
+.ti -1c
+.RI "bool \fBIsGravityEnabled\fP () const override"
+.br
+.ti -1c
+.RI "bool \fBIsValid\fP () const override"
+.br
+.ti -1c
+.RI "void \fBRegisterCollider\fP (rp3d::Collider *c)"
+.br
+.ti -1c
+.RI "bool \fBOwnsCollider\fP (rp3d::Collider *c) const"
+.br
+.in -1c
+
+Public Member Functions inherited from \fBPhysics::RigidBody\fP
+.in +1c
+.ti -1c
+.RI "virtual \fB~RigidBody\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "rp3d::RigidBody * \fBm_body\fP"
+.br
+.ti -1c
+.RI "bool \fBm_valid\fP = true"
+.br
+.ti -1c
+.RI "std::vector< rp3d::Collider * > \fBm_liveColliders\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Physics::Backend::RigidBodyBackend::RigidBodyBackend (rp3d::RigidBody * body)\fR [inline]\fP, \fR [explicit]\fP"
+
+.SS "Physics::Backend::RigidBodyBackend::~RigidBodyBackend ()\fR [inline]\fP, \fR [override]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void Physics::Backend::RigidBodyBackend::ApplyForceAtCenter (const \fBVector3f\fP & force)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::RigidBody\fP\&.
+.SS "void Physics::Backend::RigidBodyBackend::ApplyImpulseAtCenter (const \fBVector3f\fP & impulse)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::RigidBody\fP\&.
+.SS "void Physics::Backend::RigidBodyBackend::EnableGravity (bool enabled)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::RigidBody\fP\&.
+.SS "\fBVector3f\fP Physics::Backend::RigidBodyBackend::GetAngularVelocity () const\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::RigidBody\fP\&.
+.SS "rp3d::RigidBody * Physics::Backend::RigidBodyBackend::GetInternal () const\fR [inline]\fP"
+
+.SS "\fBVector3f\fP Physics::Backend::RigidBodyBackend::GetLinearVelocity () const\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::RigidBody\fP\&.
+.SS "float Physics::Backend::RigidBodyBackend::GetMass () const\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::RigidBody\fP\&.
+.SS "\fBQuaternion\fP Physics::Backend::RigidBodyBackend::GetOrientation () const\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::RigidBody\fP\&.
+.SS "\fBVector3f\fP Physics::Backend::RigidBodyBackend::GetPosition () const\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::RigidBody\fP\&.
+.SS "\fBBodyType\fP Physics::Backend::RigidBodyBackend::GetType () const\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::RigidBody\fP\&.
+.SS "void Physics::Backend::RigidBodyBackend::Invalidate ()\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::RigidBody\fP\&.
+.SS "bool Physics::Backend::RigidBodyBackend::IsDynamic () const\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::RigidBody\fP\&.
+.SS "bool Physics::Backend::RigidBodyBackend::IsGravityEnabled () const\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::RigidBody\fP\&.
+.SS "bool Physics::Backend::RigidBodyBackend::IsValid () const\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::RigidBody\fP\&.
+.SS "bool Physics::Backend::RigidBodyBackend::OwnsCollider (rp3d::Collider * c) const\fR [inline]\fP"
+
+.SS "void Physics::Backend::RigidBodyBackend::RegisterCollider (rp3d::Collider * c)\fR [inline]\fP"
+
+.SS "void Physics::Backend::RigidBodyBackend::SetAngularDamping (float damping)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::RigidBody\fP\&.
+.SS "void Physics::Backend::RigidBodyBackend::SetAngularLockAxis (const \fBVector3f\fP & lock)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::RigidBody\fP\&.
+.SS "void Physics::Backend::RigidBodyBackend::SetAngularVelocity (const \fBVector3f\fP & vel)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::RigidBody\fP\&.
+.SS "void Physics::Backend::RigidBodyBackend::SetLinearVelocity (const \fBVector3f\fP & vel)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::RigidBody\fP\&.
+.SS "void Physics::Backend::RigidBodyBackend::SetMass (float mass) const\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::RigidBody\fP\&.
+.SS "void Physics::Backend::RigidBodyBackend::SetPosition (const \fBVector3f\fP & pos)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Implements \fBPhysics::RigidBody\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "rp3d::RigidBody* Physics::Backend::RigidBodyBackend::m_body\fR [private]\fP"
+
+.SS "std::vector<rp3d::Collider*> Physics::Backend::RigidBodyBackend::m_liveColliders\fR [private]\fP"
+
+.SS "bool Physics::Backend::RigidBodyBackend::m_valid = true\fR [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

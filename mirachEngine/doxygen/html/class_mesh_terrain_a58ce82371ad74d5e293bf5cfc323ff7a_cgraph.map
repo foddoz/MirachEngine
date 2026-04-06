@@ -1,0 +1,9 @@
+<map id="MeshTerrain::GetWorldHeight" name="MeshTerrain::GetWorldHeight">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,198,32"/>
+<area shape="rect" id="Node000002" href="$class_mesh_terrain.html#a96e1532cccbcd9e7b98c503a4285dd67" title="Gets bilinearly interpolated height from floating point coordinates." alt="" coords="246,5,473,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,16,230,16,230,21,198,21"/>
+<area shape="rect" id="Node000003" href="$class_mesh_terrain.html#a82c9aa1166f4c0cf04b6ca44314714b9" title="Gets the height at the given integer terrain grid coordinates." alt="" coords="521,5,680,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="473,16,505,16,505,21,473,21"/>
+<area shape="rect" id="Node000004" href="$math_8hpp.html#a61311699c1533817e1272e777558b611" title="Clamps a float between minVal and maxVal." alt="" coords="728,5,788,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="681,16,713,16,713,21,681,21"/>
+</map>

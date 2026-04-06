@@ -1,0 +1,21 @@
+# ninja log v6
+2	74	7664698171949037	glm-populate-prefix/src/glm-populate-stamp/glm-populate-mkdir	70580226cb6d94a1
+2	74	7664698171949037	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-mkdir	70580226cb6d94a1
+74	12962	7664698300819386	glm-populate-prefix/src/glm-populate-stamp/glm-populate-download	96b42b1e1c270d8c
+74	12962	7664698300819386	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-download	96b42b1e1c270d8c
+12962	13121	7664698300879463	glm-populate-prefix/src/glm-populate-stamp/glm-populate-update	8a73d1ce0fd51ea5
+12962	13121	7664698300879463	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-update	8a73d1ce0fd51ea5
+13122	13189	7664698303104203	glm-populate-prefix/src/glm-populate-stamp/glm-populate-patch	f80911108144b59c
+13122	13189	7664698303104203	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-patch	f80911108144b59c
+13190	13257	7664698303772406	glm-populate-prefix/src/glm-populate-stamp/glm-populate-configure	fe3bd02fa2fc7542
+13190	13257	7664698303772406	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-configure	fe3bd02fa2fc7542
+13257	13324	7664698304450601	glm-populate-prefix/src/glm-populate-stamp/glm-populate-build	bcd401269d8d0576
+13257	13324	7664698304450601	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-build	bcd401269d8d0576
+13324	13391	7664698305118592	glm-populate-prefix/src/glm-populate-stamp/glm-populate-install	7ae76b615de7c1e4
+13324	13391	7664698305118592	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-install	7ae76b615de7c1e4
+13392	13455	7664698305767078	glm-populate-prefix/src/glm-populate-stamp/glm-populate-test	bad5c58cef2e7d9f
+13392	13455	7664698305767078	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-test	bad5c58cef2e7d9f
+13456	13539	7664698306604808	CMakeFiles/glm-populate-complete	ec4c4084306bd842
+13456	13539	7664698306604808	glm-populate-prefix/src/glm-populate-stamp/glm-populate-done	ec4c4084306bd842
+13456	13539	7664698306604808	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/glm-subbuild/CMakeFiles/glm-populate-complete	ec4c4084306bd842
+13456	13539	7664698306604808	C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/cmake-build-debug/_deps/glm-subbuild/glm-populate-prefix/src/glm-populate-stamp/glm-populate-done	ec4c4084306bd842

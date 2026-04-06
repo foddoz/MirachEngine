@@ -1,0 +1,103 @@
+.TH "Physics::Collider" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Physics::Collider \- Abstract interface for physics colliders\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <physics\&.hpp>\fP
+.PP
+Inherited by \fBPhysics::Backend::ColliderBackend\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~Collider\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBSetCollisionMask\fP (uint16_t maskBits)=0"
+.br
+.RI "Sets the bitmask controlling what this collider can collide with\&. "
+.ti -1c
+.RI "virtual void \fBSetFriction\fP (float coefficient)=0"
+.br
+.RI "Sets the friction coefficient of this collider\&. "
+.ti -1c
+.RI "virtual void \fBSetBounciness\fP (float bounciness)=0"
+.br
+.RI "Sets the bounciness/restitution of this collider\&. "
+.ti -1c
+.RI "virtual void \fBSetCategoryBits\fP (uint16_t categoryBits)=0"
+.br
+.RI "Sets the category bitmask of this collider\&. "
+.ti -1c
+.RI "virtual uint16_t \fBGetCategoryBits\fP () const =0"
+.br
+.RI "Gets the category bitmask of this collider\&. "
+.ti -1c
+.RI "virtual bool \fBIsValid\fP () const =0"
+.br
+.RI "Checks if the collider is still valid\&. "
+.ti -1c
+.RI "virtual void \fBInvalidate\fP ()=0"
+.br
+.RI "Marks this collider as invalid\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Abstract interface for physics colliders\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual Physics::Collider::~Collider ()\fR [inline]\fP, \fR [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual uint16_t Physics::Collider::GetCategoryBits () const\fR [pure virtual]\fP"
+
+.PP
+Gets the category bitmask of this collider\&. 
+.PP
+Implemented in \fBPhysics::Backend::ColliderBackend\fP\&.
+.SS "virtual void Physics::Collider::Invalidate ()\fR [pure virtual]\fP"
+
+.PP
+Marks this collider as invalid\&. 
+.PP
+Implemented in \fBPhysics::Backend::ColliderBackend\fP\&.
+.SS "virtual bool Physics::Collider::IsValid () const\fR [pure virtual]\fP"
+
+.PP
+Checks if the collider is still valid\&. 
+.PP
+Implemented in \fBPhysics::Backend::ColliderBackend\fP\&.
+.SS "virtual void Physics::Collider::SetBounciness (float bounciness)\fR [pure virtual]\fP"
+
+.PP
+Sets the bounciness/restitution of this collider\&. 
+.PP
+Implemented in \fBPhysics::Backend::ColliderBackend\fP\&.
+.SS "virtual void Physics::Collider::SetCategoryBits (uint16_t categoryBits)\fR [pure virtual]\fP"
+
+.PP
+Sets the category bitmask of this collider\&. 
+.PP
+Implemented in \fBPhysics::Backend::ColliderBackend\fP\&.
+.SS "virtual void Physics::Collider::SetCollisionMask (uint16_t maskBits)\fR [pure virtual]\fP"
+
+.PP
+Sets the bitmask controlling what this collider can collide with\&. 
+.PP
+Implemented in \fBPhysics::Backend::ColliderBackend\fP\&.
+.SS "virtual void Physics::Collider::SetFriction (float coefficient)\fR [pure virtual]\fP"
+
+.PP
+Sets the friction coefficient of this collider\&. 
+.PP
+Implemented in \fBPhysics::Backend::ColliderBackend\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

@@ -1,0 +1,41 @@
+\doxysection{texture.\+hpp}
+\hypertarget{texture_8hpp_source}{}\label{texture_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/Texturing/texture.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/Texturing/texture.hpp}}
+\mbox{\hyperlink{texture_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TEXTURE\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TEXTURE\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{graphics_8hpp}{../graphics.hpp}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_texture_a45370453b0618636c8944ef09b0ef69d}{Texture}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_texture_a45370453b0618636c8944ef09b0ef69d}{Texture}}(\mbox{\hyperlink{graphics_8hpp_aaec52e992383ff804b871ff27e476126}{TextureTarget}}\ target);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_texture_a45370453b0618636c8944ef09b0ef69d}{Texture}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_texture_a45370453b0618636c8944ef09b0ef69d}{Texture}}\&\ other);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_texture_a9b5013aca3b13b0f6bc6419a9f124010}{LoadFromFile}}(\textcolor{keyword}{const}\ std::string\&\ fileName);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_texture_ac26bd39efa1bf8cbc700d93a487695c8}{UploadToGPU}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_texture_aa9a3935938a1a89365225c11ae79c74f}{Bind}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ textureUnit);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_texture_a653216bcd1509432e28502d9fc7826ce}{Delete}}();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_texture_a407a62eb84bc65d2a7b2ff8ca71f050f}{GetID}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00058\ \ \ \ \ std::string\ \mbox{\hyperlink{class_texture_a134afcb583dcb10662ad6227f7ab8ac1}{m\_fileName}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{graphics_8hpp_aaec52e992383ff804b871ff27e476126}{TextureTarget}}\ \mbox{\hyperlink{class_texture_a56b33ec17d5043228b2a43efacdfc9cb}{m\_textureTarget}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_texture_a4231c742bb1f090214b61e9ad00821b8}{m\_textureObj}}\ =\ 0;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_texture_a7927533b08c19c23152d6041011be9bf}{m\_imageWidth}}\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_texture_ab2ef7c7a22213d8acce9f476b7941f0b}{m\_imageHeight}}\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_texture_af8db99487d2db4cc87b245e9a2a4d6a7}{m\_imageBPP}}\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ std::vector<unsigned\ char>\ \mbox{\hyperlink{class_texture_adfea4eb255746d42d01d7be3a98d23c6}{m\_imageData}};}
+\DoxyCodeLine{00066\ \};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TEXTURE\_HPP}}
+
+\end{DoxyCode}

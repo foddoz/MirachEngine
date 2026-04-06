@@ -1,0 +1,7 @@
+<map id="MeshSkyDome" name="MeshSkyDome">
+<area shape="rect" id="Node000001" title="A hemispherical skydome mesh used to render sky backgrounds." alt="" coords="5,607,148,889"/>
+<area shape="rect" id="Node000002" href="$class_mesh3_d.html" title="Abstract base class for rendering and managing 3D mesh data." alt="" coords="15,232,139,557"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,572,80,607,74,607,74,572"/>
+<area shape="rect" id="Node000003" href="$struct_a_a_b_b.html" title="Represents an axis&#45;aligned bounding box." alt="" coords="31,5,122,160"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="80,160,80,215,74,215,74,160"/>
+</map>

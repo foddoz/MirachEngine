@@ -1,0 +1,25 @@
+<map id="Transform::SetRotation" name="Transform::SetRotation">
+<area shape="rect" id="Node000001" title="Sets the object&#39;s rotation in Euler degrees." alt="" coords="739,132,896,159"/>
+<area shape="rect" id="Node000002" href="$class_terrain_scene.html#ae061572dd4fc80786d66d8e57f666067" title="Spawns crates, potentially breakable or interactable." alt="" coords="501,5,685,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="791,123,746,84,689,46,661,35,663,30,692,42,749,79,795,119"/>
+<area shape="rect" id="Node000006" href="$class_terrain_scene.html#a92cf2eb19b5a090ec4666367d5a4c898" title="Spawns firefly models, likely with animation or light effects." alt="" coords="495,56,691,83"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="770,128,690,97,651,86,653,81,692,92,772,123"/>
+<area shape="rect" id="Node000007" href="$class_terrain_scene.html#a2605641f2858b4c1ad9033e27a39f0c5" title="Spawns robotic enemy NPCs with AI behavior." alt="" coords="499,107,687,133"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="723,137,687,133,687,128,724,132"/>
+<area shape="rect" id="Node000008" href="$class_terrain_scene.html#a279bc61858303d2909e922df19c82e24" title="Spawns cloth sacks as dynamic physics objects." alt="" coords="502,157,684,184"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="724,159,685,163,684,158,723,153"/>
+<area shape="rect" id="Node000009" href="$class_terrain_scene.html#ad4ab0bdbe406894b80805499c856c89b" title="Spawns static or decorative tree models in the scene." alt="" coords="504,208,682,235"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="772,168,692,199,653,210,651,205,690,193,770,163"/>
+<area shape="rect" id="Node000010" href="$class_physics_system.html#acf29655efb04806ef9c18f9eda7f48d9" title="Updates the physics world and synchronizes entity transforms with their rigid bodies." alt="" coords="511,259,675,285"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="795,171,749,211,692,249,663,261,661,256,689,244,746,207,791,167"/>
+<area shape="rect" id="Node000003" href="$class_terrain_scene.html#a64ff8229749692f3000ab0387dae7165" title="Creates and registers entities and components in the ECS." alt="" coords="280,107,447,133"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="515,39,496,46,435,77,386,108,383,104,433,73,494,42,513,34"/>
+<area shape="rect" id="Node000004" href="$class_terrain_scene.html#ae8ec4e098386a74714255aed184761eb" title="Runs the full scene lifecycle in the correct execution order." alt="" coords="103,107,232,133"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="264,123,232,123,232,117,264,117"/>
+<area shape="rect" id="Node000005" href="$mirach_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point of the engine. Initializes subsystems, loads models, sets up ECS,..." alt="" coords="5,107,55,133"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="87,123,55,123,55,117,87,117"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="515,89,428,109,427,103,514,84"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="484,123,448,123,448,117,484,117"/>
+<area shape="poly" id="edge10_Node000008_Node000003" title=" " alt="" coords="514,156,427,137,428,131,515,151"/>
+<area shape="poly" id="edge12_Node000009_Node000003" title=" " alt="" coords="513,206,494,198,433,167,383,136,386,132,435,163,496,194,515,201"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="EntityManager::CreateEntity" name="EntityManager::CreateEntity">
+<area shape="rect" id="Node000001" title="Creates a new unique entity." alt="" coords="221,13,407,40"/>
+<area shape="rect" id="Node000002" href="$class_terrain_manager.html#a019ebedd94cb1fbe0a7b412478b1d41c" title="Registers all chunks as ECS entities with rendering and physics components." alt="" coords="5,5,173,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,29,173,29,173,24,205,24"/>
+</map>

@@ -1,0 +1,306 @@
+\doxysection{Mesh\+Sky\+Dome Class Reference}
+\hypertarget{class_mesh_sky_dome}{}\label{class_mesh_sky_dome}\index{MeshSkyDome@{MeshSkyDome}}
+
+
+A hemispherical skydome mesh used to render sky backgrounds.  
+
+
+
+
+{\ttfamily \#include $<$mesh\+Sky\+Dome.\+hpp$>$}
+
+
+
+Inheritance diagram for Mesh\+Sky\+Dome\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_mesh_sky_dome__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Mesh\+Sky\+Dome\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_mesh_sky_dome__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_mesh_sky_dome_1_1_vertex}{Vertex}}
+\begin{DoxyCompactList}\small\item\em Represents a single skydome vertex with 3D position and 2D texture coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mesh_sky_dome_ad29c67ed77e8b5192f7d7692b396aba7}{Mesh\+Sky\+Dome}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_mesh_sky_dome}{Mesh\+Sky\+Dome} with default initialization. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_sky_dome_aa05607d946e8c2a159671453eef7a75f}{Generate\+CPUData}} (int num\+Rings, int num\+Sectors, float radius, const std\+::string \&texture\+File)
+\begin{DoxyCompactList}\small\item\em Generates the dome\textquotesingle{}s vertex and index data based on spherical subdivision. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_sky_dome_a9189a41803ef3ba5e0058ba2263dea44}{Upload\+To\+GPU}} () override
+\begin{DoxyCompactList}\small\item\em Uploads geometry and texture data from CPU to GPU. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_mesh_renderer}{Mesh\+Renderer}} \mbox{\hyperlink{class_mesh_sky_dome_a515776765d9a26d5f57d3a915817f604}{To\+Renderer}} () override
+\begin{DoxyCompactList}\small\item\em Converts internal mesh representation to a renderable ECS component. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_sky_dome_a994bf8d23f591e159a7aee8b1c3fb69b}{Delete}} () override
+\begin{DoxyCompactList}\small\item\em Deletes GPU resources including VAO, VBO, and bound textures. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_mesh3_d}{Mesh3D}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mesh3_d_a8cdefca0bf7171afd91f2a1a88e05a7e}{Mesh3D}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor initializes Open\+GL buffer handles and transforms. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mesh3_d_a18dc545efcaa749ea7649b9bcaa91ce1}{Mesh3D}} (const \mbox{\hyperlink{class_mesh3_d}{Mesh3D}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor for \doxylink{class_mesh3_d}{Mesh3D}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh3_d_a478bda9c8ff4adb50c56c26ef50af8d2}{Set\+Pipeline}} (unsigned int pipeline)
+\begin{DoxyCompactList}\small\item\em Assigns a graphics pipeline (shader program) to this mesh. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_ad2952df09ac54e7d5fafbcf87ae7c487}{get\+Pipeline}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the currently assigned graphics pipeline. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_mesh_sky_dome_ab4c16fb980037e0ede6a41f8a08ba816}{Populate\+Buffers}} () override
+\begin{DoxyCompactList}\small\item\em Generates VAO, VBO, and IBO and uploads vertex/index data to the GPU. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_mesh_sky_dome_a0b4ce58466de8ee6b02ad1674c6c8970}{m\+\_\+num\+Rings}}
+\begin{DoxyCompactList}\small\item\em Number of vertical ring slices (latitude). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mesh_sky_dome_a4dba9ac6dc3df10ecaa27052b6979b1b}{m\+\_\+num\+Sectors}}
+\begin{DoxyCompactList}\small\item\em Number of horizontal sector slices (longitude). \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_mesh_sky_dome_ab6f686e05996560119426b0465a9eb41}{m\+\_\+radius}}
+\begin{DoxyCompactList}\small\item\em Radius of the skydome. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_mesh_sky_dome_1_1_vertex}{Vertex}} $>$ \mbox{\hyperlink{class_mesh_sky_dome_a60340f84b44b30ea65541306d817a6d2}{m\+\_\+\+CPU\+\_\+\+Vertex\+Data}}
+\begin{DoxyCompactList}\small\item\em \doxylink{struct_mesh_sky_dome_1_1_vertex}{Vertex} buffer stored on CPU. \end{DoxyCompactList}\item 
+std\+::vector$<$ unsigned int $>$ \mbox{\hyperlink{class_mesh_sky_dome_a03e0c9740884c5bbe43cabd6a9c617bc}{m\+\_\+\+CPU\+\_\+\+Index\+Data}}
+\begin{DoxyCompactList}\small\item\em Index buffer stored on CPU. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_mesh_sky_dome_a23be894381b6ae458d015f2a30f140a6}{m\+\_\+\+Texture\+File\+Name}}
+\begin{DoxyCompactList}\small\item\em Path to the texture image used for the skydome. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_mesh3_d}{Mesh3D}}}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a9bb74668772fa08c0099f3aa0d242215}{m\+\_\+\+VAO}}
+\begin{DoxyCompactList}\small\item\em Open\+GL Vertex Array Object handle. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a064dc03404641d9b41dcc58f3244b5ea}{m\+\_\+\+Index\+Count}}
+\begin{DoxyCompactList}\small\item\em Number of indices used for drawing (gl\+Draw\+Elements or gl\+Draw\+Arrays). \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a0a78f966ef1aaf868c32523200ffd7b5}{m\+\_\+\+VBO}}
+\begin{DoxyCompactList}\small\item\em Vertex Buffer Object handle. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a79760be3f47e0cd2738e5932e2ce6a70}{m\+\_\+\+IBO}}
+\begin{DoxyCompactList}\small\item\em Index Buffer Object handle. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_texture}{Texture}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_mesh3_d_a878c07f3eab3dcc47195e3bc0b74fa30}{m\+\_\+\+Textures}}
+\begin{DoxyCompactList}\small\item\em Collection of textures associated with this mesh. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a6232eb241c460e30d607b59862d0e8f1}{m\+\_\+\+Pipeline}}
+\begin{DoxyCompactList}\small\item\em Open\+GL shader program ID assigned to this mesh. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_a_a_b_b}{AABB}} \mbox{\hyperlink{class_mesh3_d_aeaaf348709784591a9608a9e779e3cd3}{m\+\_\+\+AABB}}
+\begin{DoxyCompactList}\small\item\em Axis-\/aligned bounding box in local (object) space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A hemispherical skydome mesh used to render sky backgrounds. 
+
+This class generates a dome-\/shaped mesh with configurable resolution and radius, uploads it to GPU, and prepares it for ECS rendering. It supports texture mapping for sky visuals (e.\+g., clouds or gradients). 
+
+\label{doc-constructors}
+\Hypertarget{class_mesh_sky_dome_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_mesh_sky_dome_ad29c67ed77e8b5192f7d7692b396aba7}\index{MeshSkyDome@{MeshSkyDome}!MeshSkyDome@{MeshSkyDome}}
+\index{MeshSkyDome@{MeshSkyDome}!MeshSkyDome@{MeshSkyDome}}
+\doxysubsubsection{\texorpdfstring{MeshSkyDome()}{MeshSkyDome()}}
+{\footnotesize\ttfamily \label{class_mesh_sky_dome_ad29c67ed77e8b5192f7d7692b396aba7} 
+Mesh\+Sky\+Dome\+::\+Mesh\+Sky\+Dome (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_mesh_sky_dome}{Mesh\+Sky\+Dome} with default initialization. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_mesh_sky_dome_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mesh_sky_dome_a994bf8d23f591e159a7aee8b1c3fb69b}\index{MeshSkyDome@{MeshSkyDome}!Delete@{Delete}}
+\index{Delete@{Delete}!MeshSkyDome@{MeshSkyDome}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily \label{class_mesh_sky_dome_a994bf8d23f591e159a7aee8b1c3fb69b} 
+void Mesh\+Sky\+Dome\+::\+Delete (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Deletes GPU resources including VAO, VBO, and bound textures. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_mesh3_d_a08ad190035c6d8e8362f009a09e6bc17}{Mesh3D}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_sky_dome_a994bf8d23f591e159a7aee8b1c3fb69b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_sky_dome_aa05607d946e8c2a159671453eef7a75f}\index{MeshSkyDome@{MeshSkyDome}!GenerateCPUData@{GenerateCPUData}}
+\index{GenerateCPUData@{GenerateCPUData}!MeshSkyDome@{MeshSkyDome}}
+\doxysubsubsection{\texorpdfstring{GenerateCPUData()}{GenerateCPUData()}}
+{\footnotesize\ttfamily \label{class_mesh_sky_dome_aa05607d946e8c2a159671453eef7a75f} 
+void Mesh\+Sky\+Dome\+::\+Generate\+CPUData (\begin{DoxyParamCaption}\item[{int}]{num\+Rings}{, }\item[{int}]{num\+Sectors}{, }\item[{float}]{radius}{, }\item[{const std\+::string \&}]{texture\+File}{}\end{DoxyParamCaption})}
+
+
+
+Generates the dome\textquotesingle{}s vertex and index data based on spherical subdivision. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Rings} & Number of latitude subdivisions (rings). \\
+\hline
+{\em num\+Sectors} & Number of longitude subdivisions (sectors). \\
+\hline
+{\em radius} & Radius of the hemisphere. \\
+\hline
+{\em texture\+File} & File path to the dome\textquotesingle{}s sky texture. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mesh_sky_dome_ab4c16fb980037e0ede6a41f8a08ba816}\index{MeshSkyDome@{MeshSkyDome}!PopulateBuffers@{PopulateBuffers}}
+\index{PopulateBuffers@{PopulateBuffers}!MeshSkyDome@{MeshSkyDome}}
+\doxysubsubsection{\texorpdfstring{PopulateBuffers()}{PopulateBuffers()}}
+{\footnotesize\ttfamily \label{class_mesh_sky_dome_ab4c16fb980037e0ede6a41f8a08ba816} 
+void Mesh\+Sky\+Dome\+::\+Populate\+Buffers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Generates VAO, VBO, and IBO and uploads vertex/index data to the GPU. 
+
+
+
+Implements \mbox{\hyperlink{class_mesh3_d_a91aa0f790bb9f1acc3d270033d11e6ef}{Mesh3D}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_sky_dome_ab4c16fb980037e0ede6a41f8a08ba816_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_sky_dome_ab4c16fb980037e0ede6a41f8a08ba816_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_sky_dome_a515776765d9a26d5f57d3a915817f604}\index{MeshSkyDome@{MeshSkyDome}!ToRenderer@{ToRenderer}}
+\index{ToRenderer@{ToRenderer}!MeshSkyDome@{MeshSkyDome}}
+\doxysubsubsection{\texorpdfstring{ToRenderer()}{ToRenderer()}}
+{\footnotesize\ttfamily \label{class_mesh_sky_dome_a515776765d9a26d5f57d3a915817f604} 
+\mbox{\hyperlink{struct_mesh_renderer}{Mesh\+Renderer}} Mesh\+Sky\+Dome\+::\+To\+Renderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Converts internal mesh representation to a renderable ECS component. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_mesh_renderer}{Mesh\+Renderer} struct containing GPU handles and metadata. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_mesh3_d_a0bfe53bc0b4d0e2a9804ffa119f7aec9}{Mesh3D}}.
+
+\Hypertarget{class_mesh_sky_dome_a9189a41803ef3ba5e0058ba2263dea44}\index{MeshSkyDome@{MeshSkyDome}!UploadToGPU@{UploadToGPU}}
+\index{UploadToGPU@{UploadToGPU}!MeshSkyDome@{MeshSkyDome}}
+\doxysubsubsection{\texorpdfstring{UploadToGPU()}{UploadToGPU()}}
+{\footnotesize\ttfamily \label{class_mesh_sky_dome_a9189a41803ef3ba5e0058ba2263dea44} 
+void Mesh\+Sky\+Dome\+::\+Upload\+To\+GPU (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Uploads geometry and texture data from CPU to GPU. 
+
+
+
+Implements \mbox{\hyperlink{class_mesh3_d_aef879f5ea3d9dce661e23ed2cb5f2c9e}{Mesh3D}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_sky_dome_a9189a41803ef3ba5e0058ba2263dea44_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_mesh_sky_dome_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_mesh_sky_dome_a03e0c9740884c5bbe43cabd6a9c617bc}\index{MeshSkyDome@{MeshSkyDome}!m\_CPU\_IndexData@{m\_CPU\_IndexData}}
+\index{m\_CPU\_IndexData@{m\_CPU\_IndexData}!MeshSkyDome@{MeshSkyDome}}
+\doxysubsubsection{\texorpdfstring{m\_CPU\_IndexData}{m\_CPU\_IndexData}}
+{\footnotesize\ttfamily \label{class_mesh_sky_dome_a03e0c9740884c5bbe43cabd6a9c617bc} 
+std\+::vector$<$unsigned int$>$ Mesh\+Sky\+Dome\+::m\+\_\+\+CPU\+\_\+\+Index\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Index buffer stored on CPU. 
+
+\Hypertarget{class_mesh_sky_dome_a60340f84b44b30ea65541306d817a6d2}\index{MeshSkyDome@{MeshSkyDome}!m\_CPU\_VertexData@{m\_CPU\_VertexData}}
+\index{m\_CPU\_VertexData@{m\_CPU\_VertexData}!MeshSkyDome@{MeshSkyDome}}
+\doxysubsubsection{\texorpdfstring{m\_CPU\_VertexData}{m\_CPU\_VertexData}}
+{\footnotesize\ttfamily \label{class_mesh_sky_dome_a60340f84b44b30ea65541306d817a6d2} 
+std\+::vector$<$\mbox{\hyperlink{struct_mesh_sky_dome_1_1_vertex}{Vertex}}$>$ Mesh\+Sky\+Dome\+::m\+\_\+\+CPU\+\_\+\+Vertex\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{struct_mesh_sky_dome_1_1_vertex}{Vertex} buffer stored on CPU. 
+
+\Hypertarget{class_mesh_sky_dome_a0b4ce58466de8ee6b02ad1674c6c8970}\index{MeshSkyDome@{MeshSkyDome}!m\_numRings@{m\_numRings}}
+\index{m\_numRings@{m\_numRings}!MeshSkyDome@{MeshSkyDome}}
+\doxysubsubsection{\texorpdfstring{m\_numRings}{m\_numRings}}
+{\footnotesize\ttfamily \label{class_mesh_sky_dome_a0b4ce58466de8ee6b02ad1674c6c8970} 
+int Mesh\+Sky\+Dome\+::m\+\_\+num\+Rings\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of vertical ring slices (latitude). 
+
+\Hypertarget{class_mesh_sky_dome_a4dba9ac6dc3df10ecaa27052b6979b1b}\index{MeshSkyDome@{MeshSkyDome}!m\_numSectors@{m\_numSectors}}
+\index{m\_numSectors@{m\_numSectors}!MeshSkyDome@{MeshSkyDome}}
+\doxysubsubsection{\texorpdfstring{m\_numSectors}{m\_numSectors}}
+{\footnotesize\ttfamily \label{class_mesh_sky_dome_a4dba9ac6dc3df10ecaa27052b6979b1b} 
+int Mesh\+Sky\+Dome\+::m\+\_\+num\+Sectors\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of horizontal sector slices (longitude). 
+
+\Hypertarget{class_mesh_sky_dome_ab6f686e05996560119426b0465a9eb41}\index{MeshSkyDome@{MeshSkyDome}!m\_radius@{m\_radius}}
+\index{m\_radius@{m\_radius}!MeshSkyDome@{MeshSkyDome}}
+\doxysubsubsection{\texorpdfstring{m\_radius}{m\_radius}}
+{\footnotesize\ttfamily \label{class_mesh_sky_dome_ab6f686e05996560119426b0465a9eb41} 
+float Mesh\+Sky\+Dome\+::m\+\_\+radius\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Radius of the skydome. 
+
+\Hypertarget{class_mesh_sky_dome_a23be894381b6ae458d015f2a30f140a6}\index{MeshSkyDome@{MeshSkyDome}!m\_TextureFileName@{m\_TextureFileName}}
+\index{m\_TextureFileName@{m\_TextureFileName}!MeshSkyDome@{MeshSkyDome}}
+\doxysubsubsection{\texorpdfstring{m\_TextureFileName}{m\_TextureFileName}}
+{\footnotesize\ttfamily \label{class_mesh_sky_dome_a23be894381b6ae458d015f2a30f140a6} 
+std\+::string Mesh\+Sky\+Dome\+::m\+\_\+\+Texture\+File\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Path to the texture image used for the skydome. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Meshes/\mbox{\hyperlink{mesh_sky_dome_8hpp}{mesh\+Sky\+Dome.\+hpp}}\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Meshes/\mbox{\hyperlink{mesh_sky_dome_8cpp}{mesh\+Sky\+Dome.\+cpp}}\end{DoxyCompactItemize}

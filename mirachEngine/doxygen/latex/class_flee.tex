@@ -1,0 +1,120 @@
+\doxysection{Flee\texorpdfstring{$<$}{<} Entity \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_flee}{}\label{class_flee}\index{Flee$<$ Entity $>$@{Flee$<$ Entity $>$}}
+
+
+Represents the \doxylink{class_flee}{Flee} state. Calls on\+Flee\+Enter, on\+Flee\+Execute, and on\+Flee\+Exit on the entity.  
+
+
+
+
+{\ttfamily \#include $<$Common\+States.\+h$>$}
+
+
+
+Inheritance diagram for Flee\texorpdfstring{$<$}{<} Entity \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{class_flee__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Flee\texorpdfstring{$<$}{<} Entity \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{class_flee__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_flee_ae0702736b24d13f2475fe11ff361eb04}{Enter}} (\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}e) override
+\begin{DoxyCompactList}\small\item\em Called when the state is entered. This method is used to perform any initialization or setup for the state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_flee_ab6bd1100d5f5dd14d255639f99034089}{Execute}} (\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}e) override
+\begin{DoxyCompactList}\small\item\em Called every frame to update the state. This method should implement the main behavior of the state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_flee_ae6d75eac90cf876b12ac082a008bde06}{Exit}} (\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}e) override
+\begin{DoxyCompactList}\small\item\em Called when the state is exited. This method should handle cleanup or transition logic before leaving the state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_state}{State$<$ Entity $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_state_aed40c4606cc22c76bf5ecc771dea4bf8}{\texorpdfstring{$\sim$}{\string~}\+State}} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor to ensure proper cleanup of derived states. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$\newline
+class Flee$<$ Entity $>$}
+Represents the \doxylink{class_flee}{Flee} state. Calls on\+Flee\+Enter, on\+Flee\+Execute, and on\+Flee\+Exit on the entity. 
+
+\label{doc-func-members}
+\Hypertarget{class_flee_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_flee_ae0702736b24d13f2475fe11ff361eb04}\index{Flee$<$ Entity $>$@{Flee$<$ Entity $>$}!Enter@{Enter}}
+\index{Enter@{Enter}!Flee$<$ Entity $>$@{Flee$<$ Entity $>$}}
+\doxysubsubsection{\texorpdfstring{Enter()}{Enter()}}
+{\footnotesize\ttfamily \label{class_flee_ae0702736b24d13f2475fe11ff361eb04} 
+template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ \\
+void \mbox{\hyperlink{class_flee}{Flee}}$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} $>$\+::\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}}]{owner}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called when the state is entered. This method is used to perform any initialization or setup for the state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner} & Pointer to the owner entity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_a38506784066afae0f710965cb50d9df9}{State$<$ Entity $>$}}.
+
+\Hypertarget{class_flee_ab6bd1100d5f5dd14d255639f99034089}\index{Flee$<$ Entity $>$@{Flee$<$ Entity $>$}!Execute@{Execute}}
+\index{Execute@{Execute}!Flee$<$ Entity $>$@{Flee$<$ Entity $>$}}
+\doxysubsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily \label{class_flee_ab6bd1100d5f5dd14d255639f99034089} 
+template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ \\
+void \mbox{\hyperlink{class_flee}{Flee}}$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} $>$\+::\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}}]{owner}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called every frame to update the state. This method should implement the main behavior of the state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner} & Pointer to the owner entity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_a4298e08f3fc32436c7cf56705d0fa977}{State$<$ Entity $>$}}.
+
+\Hypertarget{class_flee_ae6d75eac90cf876b12ac082a008bde06}\index{Flee$<$ Entity $>$@{Flee$<$ Entity $>$}!Exit@{Exit}}
+\index{Exit@{Exit}!Flee$<$ Entity $>$@{Flee$<$ Entity $>$}}
+\doxysubsubsection{\texorpdfstring{Exit()}{Exit()}}
+{\footnotesize\ttfamily \label{class_flee_ae6d75eac90cf876b12ac082a008bde06} 
+template$<$typename \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ \\
+void \mbox{\hyperlink{class_flee}{Flee}}$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} $>$\+::\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \texorpdfstring{$\ast$}{*}}]{owner}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called when the state is exited. This method should handle cleanup or transition logic before leaving the state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner} & Pointer to the owner entity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_state_a72bd0ca2e59147791bfe67618a1d9fc5}{State$<$ Entity $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+FSM/\mbox{\hyperlink{_common_states_8h}{Common\+States.\+h}}\end{DoxyCompactItemize}

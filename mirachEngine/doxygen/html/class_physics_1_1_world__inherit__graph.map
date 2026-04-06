@@ -1,0 +1,5 @@
+<map id="Physics::World" name="Physics::World">
+<area shape="rect" id="Node000001" title="Abstract interface for a physics simulation world." alt="" coords="13,5,206,373"/>
+<area shape="rect" id="Node000002" href="$class_physics_1_1_backend_1_1_world_backend.html" title=" " alt="" coords="5,421,214,853"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,388,112,422,107,422,107,388"/>
+</map>

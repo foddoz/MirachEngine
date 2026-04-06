@@ -1,0 +1,5 @@
+<map id="hoverEnemyState::onChaseEnter" name="hoverEnemyState::onChaseEnter">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,191,48"/>
+<area shape="rect" id="Node000002" href="$class_enemy.html#a15a7cf1b50848f5fe57062e376f83e61" title="Sets the current animation by name." alt="" coords="239,13,387,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,24,223,24,223,29,191,29"/>
+</map>

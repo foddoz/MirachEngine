@@ -1,0 +1,585 @@
+\doxysection{Program Class Reference}
+\hypertarget{class_program}{}\label{class_program}\index{Program@{Program}}
+
+
+Manages core SDL and Open\+GL initialization, shader program creation, window rendering, and timing.  
+
+
+
+
+{\ttfamily \#include $<$program.\+hpp$>$}
+
+
+
+Collaboration diagram for Program\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_program__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_program_aac770fe6e3b5ef7a9980aee960fab27d}{Program}} (float screen\+Width, float screen\+Height)
+\begin{DoxyCompactList}\small\item\em Constructs the \doxylink{class_program}{Program} object with initial screen dimensions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_program_a5bb6c47f09263cba36270d82dda63085}{Initialise}} ()
+\begin{DoxyCompactList}\small\item\em Initializes SDL, creates the Open\+GL context, and loads GLAD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_program_a27a7101b483573c2a5a10b93bc6c2e72}{Initialise\+Graphics}} ()
+\item 
+void \mbox{\hyperlink{class_program_abd1a8ae880a973399bbcb27f4b92d710}{Initialise\+Window}} ()
+\item 
+void \mbox{\hyperlink{class_program_afcb5d6229612eff24edc810365ada275}{Create\+Graphics\+Pipeline}} (const std\+::string \&name, const std\+::string \&vs\+Path, const std\+::string \&fs\+Path)
+\begin{DoxyCompactList}\small\item\em Creates and compiles a named graphics pipeline (shader program). \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_program_a3da228bdf5dc13e475d2a182f30ebf9f}{Get\+Shader\+Program}} (const std\+::string \&name) const
+\begin{DoxyCompactList}\small\item\em Retrieves a shader program ID previously created with Create\+Graphics\+Pipeline. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_program_aec028b584ab9fa1859cea93ce94a58d6}{Delete}} ()
+\begin{DoxyCompactList}\small\item\em Releases Open\+GL and SDL resources. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_program_a6e8e19b06ed7b9472c0e63ee7e44dd42}{Delete\+Window}} ()
+\item 
+void \mbox{\hyperlink{class_program_a5316d10dacea062401d90777972fa15e}{Delete\+Graphics}} ()
+\item 
+void \mbox{\hyperlink{class_program_ac3d2e61a3e1b46f0f1acb4d1793f5ede}{Lock\+Mouse}} (bool lock) const
+\begin{DoxyCompactList}\small\item\em Locks or unlocks the mouse cursor within the window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_program_a0a17960127aeaeba9fd0e070b1692253}{Update\+Delta\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Updates internal frame timing variables to compute delta time. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_program_a07e2c1cb61ee9fe783950b4ce2a65c6b}{Get\+Delta\+Time}} () const
+\begin{DoxyCompactList}\small\item\em Returns the time elapsed since the last frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_program_a24a65b3d84f203f9846e0a2dffc34f96}{Swap\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Swaps the Open\+GL window buffer to display the current frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_program_a48219bbdc314921a45d7454dd212c646}{m\+Screen\+Width}}
+\begin{DoxyCompactList}\small\item\em Width of the window in pixels. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_program_a91addb3e2d8cd34bfe61e366f155759c}{m\+Screen\+Height}}
+\begin{DoxyCompactList}\small\item\em Height of the window in pixels. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_window_handle}{Window\+Handle}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_program_a37f22c547a2ddbf064f03bae4790fef5}{m\+Window}}
+\begin{DoxyCompactList}\small\item\em Pointer to the window handle abstraction. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{window_8hpp_a0946984514c2d132fda9ae97e8ba739f}{Graphics\+Context\+Handle}} \mbox{\hyperlink{class_program_a4086de7d90a2f45979fe7359a357dd0c}{m\+Graphics\+Context}}
+\begin{DoxyCompactList}\small\item\em \doxylink{namespace_graphics}{Graphics} context handle (Open\+GL). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_program_acfd39dfaba7e52d624d6b00d8c43833c}{m\+Quit}}
+\begin{DoxyCompactList}\small\item\em Flag indicating if the application is scheduled to quit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_program_a6442897ef8c165999fba0c6473cd80fa}{Load\+Shader}} (const std\+::string \&file\+Name)
+\begin{DoxyCompactList}\small\item\em Loads a text file (typically a shader) into a string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_program_a1399ab4a486a393733fb62383867dd1c}{Check\+Shader\+Compile}} (unsigned int shader)
+\begin{DoxyCompactList}\small\item\em Checks and prints the compile status of a shader. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_program_aad9814af796f7c9d2a8de476cacb71dd}{Check\+Program\+Link}} (unsigned program)
+\begin{DoxyCompactList}\small\item\em Checks and prints the link status of a shader program. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_program_af642110055d21820331fce664e63a94c}{Compile\+Shader}} (unsigned int type, const std\+::string \&source)
+\begin{DoxyCompactList}\small\item\em Compiles a shader of a given type from source code. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_program_a8fe5b74b64633c27779f303e4f0ad8e8}{Create\+Shader\+Program}} (const std\+::string \&vertex\+Shader\+Source, const std\+::string \&fragment\+Shader\+Source)
+\begin{DoxyCompactList}\small\item\em Links a complete Open\+GL shader program from vertex and fragment shader source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, unsigned int $>$ \mbox{\hyperlink{class_program_a24d152cf41389dcee6aef9c8c079a45e}{m\+Shader\+Programs}}
+\begin{DoxyCompactList}\small\item\em Stores all created shader programs, indexed by name. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_program_a9c9ea8f5c5168332b1fdb174243992ab}{m\+Last\+Frame\+Time}}
+\begin{DoxyCompactList}\small\item\em Timestamp of the last frame. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_program_a5db09c239bdf316c6ef81a189992fb4b}{m\+Delta\+Time}}
+\begin{DoxyCompactList}\small\item\em \doxylink{namespace_time}{Time} between the current and previous frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages core SDL and Open\+GL initialization, shader program creation, window rendering, and timing. 
+
+This class handles window and context setup, shader compilation, delta time calculation, and input locking. 
+
+\label{doc-constructors}
+\Hypertarget{class_program_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_program_aac770fe6e3b5ef7a9980aee960fab27d}\index{Program@{Program}!Program@{Program}}
+\index{Program@{Program}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{Program()}{Program()}}
+{\footnotesize\ttfamily \label{class_program_aac770fe6e3b5ef7a9980aee960fab27d} 
+Program\+::\+Program (\begin{DoxyParamCaption}\item[{float}]{screen\+Width}{, }\item[{float}]{screen\+Height}{}\end{DoxyParamCaption})}
+
+
+
+Constructs the \doxylink{class_program}{Program} object with initial screen dimensions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em screen\+Width} & Width of the application window in pixels. \\
+\hline
+{\em screen\+Height} & Height of the application window in pixels. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_program_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_program_aad9814af796f7c9d2a8de476cacb71dd}\index{Program@{Program}!CheckProgramLink@{CheckProgramLink}}
+\index{CheckProgramLink@{CheckProgramLink}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{CheckProgramLink()}{CheckProgramLink()}}
+{\footnotesize\ttfamily \label{class_program_aad9814af796f7c9d2a8de476cacb71dd} 
+void Program\+::\+Check\+Program\+Link (\begin{DoxyParamCaption}\item[{unsigned}]{program}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks and prints the link status of a shader program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em program} & Open\+GL program ID. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_program_aad9814af796f7c9d2a8de476cacb71dd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_program_aad9814af796f7c9d2a8de476cacb71dd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_program_a1399ab4a486a393733fb62383867dd1c}\index{Program@{Program}!CheckShaderCompile@{CheckShaderCompile}}
+\index{CheckShaderCompile@{CheckShaderCompile}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{CheckShaderCompile()}{CheckShaderCompile()}}
+{\footnotesize\ttfamily \label{class_program_a1399ab4a486a393733fb62383867dd1c} 
+void Program\+::\+Check\+Shader\+Compile (\begin{DoxyParamCaption}\item[{unsigned int}]{shader}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks and prints the compile status of a shader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & Open\+GL shader ID. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_program_a1399ab4a486a393733fb62383867dd1c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_program_a1399ab4a486a393733fb62383867dd1c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_program_af642110055d21820331fce664e63a94c}\index{Program@{Program}!CompileShader@{CompileShader}}
+\index{CompileShader@{CompileShader}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{CompileShader()}{CompileShader()}}
+{\footnotesize\ttfamily \label{class_program_af642110055d21820331fce664e63a94c} 
+unsigned int Program\+::\+Compile\+Shader (\begin{DoxyParamCaption}\item[{unsigned int}]{type}{, }\item[{const std\+::string \&}]{source}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Compiles a shader of a given type from source code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & GL\+\_\+\+VERTEX\+\_\+\+SHADER or GL\+\_\+\+FRAGMENT\+\_\+\+SHADER. \\
+\hline
+{\em source} & The GLSL source code for the shader. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Compiled shader ID. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_program_af642110055d21820331fce664e63a94c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_program_af642110055d21820331fce664e63a94c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_program_afcb5d6229612eff24edc810365ada275}\index{Program@{Program}!CreateGraphicsPipeline@{CreateGraphicsPipeline}}
+\index{CreateGraphicsPipeline@{CreateGraphicsPipeline}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{CreateGraphicsPipeline()}{CreateGraphicsPipeline()}}
+{\footnotesize\ttfamily \label{class_program_afcb5d6229612eff24edc810365ada275} 
+void Program\+::\+Create\+Graphics\+Pipeline (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const std\+::string \&}]{vs\+Path}{, }\item[{const std\+::string \&}]{fs\+Path}{}\end{DoxyParamCaption})}
+
+
+
+Creates and compiles a named graphics pipeline (shader program). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Identifier to store the shader program under. \\
+\hline
+{\em vs\+Path} & File path to the vertex shader. \\
+\hline
+{\em fs\+Path} & File path to the fragment shader. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_program_afcb5d6229612eff24edc810365ada275_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_program_a8fe5b74b64633c27779f303e4f0ad8e8}\index{Program@{Program}!CreateShaderProgram@{CreateShaderProgram}}
+\index{CreateShaderProgram@{CreateShaderProgram}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{CreateShaderProgram()}{CreateShaderProgram()}}
+{\footnotesize\ttfamily \label{class_program_a8fe5b74b64633c27779f303e4f0ad8e8} 
+unsigned int Program\+::\+Create\+Shader\+Program (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vertex\+Shader\+Source}{, }\item[{const std\+::string \&}]{fragment\+Shader\+Source}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Links a complete Open\+GL shader program from vertex and fragment shader source. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Shader\+Source} & GLSL source for the vertex shader. \\
+\hline
+{\em fragment\+Shader\+Source} & GLSL source for the fragment shader. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Linked program ID. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_program_a8fe5b74b64633c27779f303e4f0ad8e8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_program_a8fe5b74b64633c27779f303e4f0ad8e8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_program_aec028b584ab9fa1859cea93ce94a58d6}\index{Program@{Program}!Delete@{Delete}}
+\index{Delete@{Delete}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily \label{class_program_aec028b584ab9fa1859cea93ce94a58d6} 
+void Program\+::\+Delete (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Releases Open\+GL and SDL resources. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_program_aec028b584ab9fa1859cea93ce94a58d6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_program_a5316d10dacea062401d90777972fa15e}\index{Program@{Program}!DeleteGraphics@{DeleteGraphics}}
+\index{DeleteGraphics@{DeleteGraphics}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{DeleteGraphics()}{DeleteGraphics()}}
+{\footnotesize\ttfamily \label{class_program_a5316d10dacea062401d90777972fa15e} 
+void Program\+::\+Delete\+Graphics (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_program_a5316d10dacea062401d90777972fa15e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_program_a6e8e19b06ed7b9472c0e63ee7e44dd42}\index{Program@{Program}!DeleteWindow@{DeleteWindow}}
+\index{DeleteWindow@{DeleteWindow}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{DeleteWindow()}{DeleteWindow()}}
+{\footnotesize\ttfamily \label{class_program_a6e8e19b06ed7b9472c0e63ee7e44dd42} 
+void Program\+::\+Delete\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_program_a6e8e19b06ed7b9472c0e63ee7e44dd42_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_program_a6e8e19b06ed7b9472c0e63ee7e44dd42_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_program_a07e2c1cb61ee9fe783950b4ce2a65c6b}\index{Program@{Program}!GetDeltaTime@{GetDeltaTime}}
+\index{GetDeltaTime@{GetDeltaTime}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{GetDeltaTime()}{GetDeltaTime()}}
+{\footnotesize\ttfamily \label{class_program_a07e2c1cb61ee9fe783950b4ce2a65c6b} 
+float Program\+::\+Get\+Delta\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the time elapsed since the last frame. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{namespace_time}{Time} in seconds between the last two frames. 
+\end{DoxyReturn}
+\Hypertarget{class_program_a3da228bdf5dc13e475d2a182f30ebf9f}\index{Program@{Program}!GetShaderProgram@{GetShaderProgram}}
+\index{GetShaderProgram@{GetShaderProgram}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{GetShaderProgram()}{GetShaderProgram()}}
+{\footnotesize\ttfamily \label{class_program_a3da228bdf5dc13e475d2a182f30ebf9f} 
+unsigned int Program\+::\+Get\+Shader\+Program (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves a shader program ID previously created with Create\+Graphics\+Pipeline. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name identifier of the shader program. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Open\+GL shader program ID. 
+\end{DoxyReturn}
+\Hypertarget{class_program_a5bb6c47f09263cba36270d82dda63085}\index{Program@{Program}!Initialise@{Initialise}}
+\index{Initialise@{Initialise}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{Initialise()}{Initialise()}}
+{\footnotesize\ttfamily \label{class_program_a5bb6c47f09263cba36270d82dda63085} 
+void Program\+::\+Initialise (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes SDL, creates the Open\+GL context, and loads GLAD. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_program_a5bb6c47f09263cba36270d82dda63085_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_program_a27a7101b483573c2a5a10b93bc6c2e72}\index{Program@{Program}!InitialiseGraphics@{InitialiseGraphics}}
+\index{InitialiseGraphics@{InitialiseGraphics}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{InitialiseGraphics()}{InitialiseGraphics()}}
+{\footnotesize\ttfamily \label{class_program_a27a7101b483573c2a5a10b93bc6c2e72} 
+void Program\+::\+Initialise\+Graphics (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_program_a27a7101b483573c2a5a10b93bc6c2e72_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_program_abd1a8ae880a973399bbcb27f4b92d710}\index{Program@{Program}!InitialiseWindow@{InitialiseWindow}}
+\index{InitialiseWindow@{InitialiseWindow}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{InitialiseWindow()}{InitialiseWindow()}}
+{\footnotesize\ttfamily \label{class_program_abd1a8ae880a973399bbcb27f4b92d710} 
+void Program\+::\+Initialise\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_program_abd1a8ae880a973399bbcb27f4b92d710_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_program_a6442897ef8c165999fba0c6473cd80fa}\index{Program@{Program}!LoadShader@{LoadShader}}
+\index{LoadShader@{LoadShader}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{LoadShader()}{LoadShader()}}
+{\footnotesize\ttfamily \label{class_program_a6442897ef8c165999fba0c6473cd80fa} 
+std\+::string Program\+::\+Load\+Shader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loads a text file (typically a shader) into a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Path to the file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Contents of the file as a single string. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_program_a6442897ef8c165999fba0c6473cd80fa_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_program_ac3d2e61a3e1b46f0f1acb4d1793f5ede}\index{Program@{Program}!LockMouse@{LockMouse}}
+\index{LockMouse@{LockMouse}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{LockMouse()}{LockMouse()}}
+{\footnotesize\ttfamily \label{class_program_ac3d2e61a3e1b46f0f1acb4d1793f5ede} 
+void Program\+::\+Lock\+Mouse (\begin{DoxyParamCaption}\item[{bool}]{lock}{}\end{DoxyParamCaption}) const}
+
+
+
+Locks or unlocks the mouse cursor within the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lock} & True to lock the mouse; false to unlock. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{class_program_ac3d2e61a3e1b46f0f1acb4d1793f5ede_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_program_a24a65b3d84f203f9846e0a2dffc34f96}\index{Program@{Program}!SwapWindow@{SwapWindow}}
+\index{SwapWindow@{SwapWindow}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{SwapWindow()}{SwapWindow()}}
+{\footnotesize\ttfamily \label{class_program_a24a65b3d84f203f9846e0a2dffc34f96} 
+void Program\+::\+Swap\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Swaps the Open\+GL window buffer to display the current frame. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_program_a24a65b3d84f203f9846e0a2dffc34f96_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_program_a0a17960127aeaeba9fd0e070b1692253}\index{Program@{Program}!UpdateDeltaTime@{UpdateDeltaTime}}
+\index{UpdateDeltaTime@{UpdateDeltaTime}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{UpdateDeltaTime()}{UpdateDeltaTime()}}
+{\footnotesize\ttfamily \label{class_program_a0a17960127aeaeba9fd0e070b1692253} 
+void Program\+::\+Update\+Delta\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Updates internal frame timing variables to compute delta time. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_program_a0a17960127aeaeba9fd0e070b1692253_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_program_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_program_a5db09c239bdf316c6ef81a189992fb4b}\index{Program@{Program}!mDeltaTime@{mDeltaTime}}
+\index{mDeltaTime@{mDeltaTime}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{mDeltaTime}{mDeltaTime}}
+{\footnotesize\ttfamily \label{class_program_a5db09c239bdf316c6ef81a189992fb4b} 
+float Program\+::m\+Delta\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{namespace_time}{Time} between the current and previous frame. 
+
+\Hypertarget{class_program_a4086de7d90a2f45979fe7359a357dd0c}\index{Program@{Program}!mGraphicsContext@{mGraphicsContext}}
+\index{mGraphicsContext@{mGraphicsContext}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{mGraphicsContext}{mGraphicsContext}}
+{\footnotesize\ttfamily \label{class_program_a4086de7d90a2f45979fe7359a357dd0c} 
+\mbox{\hyperlink{window_8hpp_a0946984514c2d132fda9ae97e8ba739f}{Graphics\+Context\+Handle}} Program\+::m\+Graphics\+Context}
+
+
+
+\doxylink{namespace_graphics}{Graphics} context handle (Open\+GL). 
+
+\Hypertarget{class_program_a9c9ea8f5c5168332b1fdb174243992ab}\index{Program@{Program}!mLastFrameTime@{mLastFrameTime}}
+\index{mLastFrameTime@{mLastFrameTime}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{mLastFrameTime}{mLastFrameTime}}
+{\footnotesize\ttfamily \label{class_program_a9c9ea8f5c5168332b1fdb174243992ab} 
+float Program\+::m\+Last\+Frame\+Time\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Timestamp of the last frame. 
+
+\Hypertarget{class_program_acfd39dfaba7e52d624d6b00d8c43833c}\index{Program@{Program}!mQuit@{mQuit}}
+\index{mQuit@{mQuit}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{mQuit}{mQuit}}
+{\footnotesize\ttfamily \label{class_program_acfd39dfaba7e52d624d6b00d8c43833c} 
+bool Program\+::m\+Quit}
+
+
+
+Flag indicating if the application is scheduled to quit. 
+
+\Hypertarget{class_program_a91addb3e2d8cd34bfe61e366f155759c}\index{Program@{Program}!mScreenHeight@{mScreenHeight}}
+\index{mScreenHeight@{mScreenHeight}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{mScreenHeight}{mScreenHeight}}
+{\footnotesize\ttfamily \label{class_program_a91addb3e2d8cd34bfe61e366f155759c} 
+float Program\+::m\+Screen\+Height}
+
+
+
+Height of the window in pixels. 
+
+\Hypertarget{class_program_a48219bbdc314921a45d7454dd212c646}\index{Program@{Program}!mScreenWidth@{mScreenWidth}}
+\index{mScreenWidth@{mScreenWidth}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{mScreenWidth}{mScreenWidth}}
+{\footnotesize\ttfamily \label{class_program_a48219bbdc314921a45d7454dd212c646} 
+float Program\+::m\+Screen\+Width}
+
+
+
+Width of the window in pixels. 
+
+\Hypertarget{class_program_a24d152cf41389dcee6aef9c8c079a45e}\index{Program@{Program}!mShaderPrograms@{mShaderPrograms}}
+\index{mShaderPrograms@{mShaderPrograms}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{mShaderPrograms}{mShaderPrograms}}
+{\footnotesize\ttfamily \label{class_program_a24d152cf41389dcee6aef9c8c079a45e} 
+std\+::unordered\+\_\+map$<$std\+::string, unsigned int$>$ Program\+::m\+Shader\+Programs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stores all created shader programs, indexed by name. 
+
+\Hypertarget{class_program_a37f22c547a2ddbf064f03bae4790fef5}\index{Program@{Program}!mWindow@{mWindow}}
+\index{mWindow@{mWindow}!Program@{Program}}
+\doxysubsubsection{\texorpdfstring{mWindow}{mWindow}}
+{\footnotesize\ttfamily \label{class_program_a37f22c547a2ddbf064f03bae4790fef5} 
+\mbox{\hyperlink{struct_window_handle}{Window\+Handle}}\texorpdfstring{$\ast$}{*} Program\+::m\+Window}
+
+
+
+Pointer to the window handle abstraction. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Program/\mbox{\hyperlink{program_8hpp}{program.\+hpp}}\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Program/\mbox{\hyperlink{program_8cpp}{program.\+cpp}}\end{DoxyCompactItemize}

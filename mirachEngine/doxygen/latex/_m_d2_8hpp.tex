@@ -1,0 +1,42 @@
+\doxysection{C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Animation/\+MD2.hpp File Reference}
+\hypertarget{_m_d2_8hpp}{}\label{_m_d2_8hpp}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/Animation/MD2.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/Animation/MD2.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include "{}../../\+Math/math.\+hpp"{}}\newline
+{\ttfamily \#include "{}../graphics.\+hpp"{}}\newline
+{\ttfamily \#include "{}../\+Meshes/mesh3d.\+hpp"{}}\newline
+{\ttfamily \#include "{}../\+Texturing/texture.\+hpp"{}}\newline
+Include dependency graph for MD2.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_m_d2_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_m_d2_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_m_d2_vertex}{MD2\+Vertex}}
+\begin{DoxyCompactList}\small\item\em Represents a compressed vertex in MD2 format with quantized position and normal index. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_m_d2_frame}{MD2\+Frame}}
+\begin{DoxyCompactList}\small\item\em Stores a single animation frame\textquotesingle{}s vertex positions in MD2. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_m_d2_tex_coord}{MD2\+Tex\+Coord}}
+\begin{DoxyCompactList}\small\item\em Represents a texture coordinate in MD2 format. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_m_d2_triangle}{MD2\+Triangle}}
+\begin{DoxyCompactList}\small\item\em Represents a single triangle using vertex and texture coordinate indices. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_animation_range}{Animation\+Range}}
+\begin{DoxyCompactList}\small\item\em Describes the start and end frame indices for a named animation sequence. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_mesh_m_d2}{Mesh\+MD2}}
+\begin{DoxyCompactList}\small\item\em A 3D animated mesh class for rendering MD2 models with frame interpolation. \end{DoxyCompactList}\end{DoxyCompactItemize}

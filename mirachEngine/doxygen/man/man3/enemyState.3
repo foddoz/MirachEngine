@@ -1,0 +1,265 @@
+.TH "enemyState" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+enemyState
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <enemyState\&.hpp>\fP
+.PP
+Inherits \fBIEnemyStateLogic\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBonAttackEnter\fP (\fBEnemy\fP *e) override"
+.br
+.RI "Animation index reference\&. "
+.ti -1c
+.RI "void \fBonAttackExecute\fP (\fBEnemy\fP *e) override"
+.br
+.RI "Called every frame while attacking\&. Plays attack animation, checks player distance for flee/chase switch, and applies knockback to the player if in range after some time\&. "
+.ti -1c
+.RI "void \fBonAttackExit\fP (\fBEnemy\fP *e) override"
+.br
+.RI "Called when exiting the \fBAttack\fP state\&. Clears attack flag and unregisters collision callback\&. "
+.ti -1c
+.RI "void \fBonFleeEnter\fP (\fBEnemy\fP *e) override"
+.br
+.RI "Called when entering the \fBFlee\fP state\&. Plays hurt animation and resets timer\&. "
+.ti -1c
+.RI "void \fBonFleeExecute\fP (\fBEnemy\fP *e) override"
+.br
+.RI "Called every frame during \fBFlee\fP state\&. Applies force to move away from the player and rotates to face opposite direction\&. "
+.ti -1c
+.RI "void \fBonFleeExit\fP (\fBEnemy\fP *e) override"
+.br
+.RI "Called when exiting the \fBFlee\fP state\&. Resets internal flee timer\&. "
+.ti -1c
+.RI "void \fBonPatrolEnter\fP (\fBEnemy\fP *e) override"
+.br
+.RI "Called when entering the \fBPatrol\fP state\&. Starts walking animation and resets timer\&. "
+.ti -1c
+.RI "void \fBonPatrolExecute\fP (\fBEnemy\fP *e) override"
+.br
+.RI "Called every frame during \fBPatrol\fP\&. \fBEnemy\fP wanders around, checks for player, and may switch to \fBChase\fP or \fBFlee\fP\&. "
+.ti -1c
+.RI "void \fBonPatrolExit\fP (\fBEnemy\fP *e) override"
+.br
+.RI "Called when exiting the \fBPatrol\fP state\&. "
+.ti -1c
+.RI "void \fBonChaseEnter\fP (\fBEnemy\fP *e) override"
+.br
+.RI "Called when entering the \fBChase\fP state\&. Sets run animation\&. "
+.ti -1c
+.RI "void \fBonChaseExecute\fP (\fBEnemy\fP *e) override"
+.br
+.RI "Called every frame while chasing the player\&. Switches to Attack/Flee/Patrol based on range and health\&. "
+.ti -1c
+.RI "void \fBonChaseExit\fP (\fBEnemy\fP *e) override"
+.br
+.RI "Called when exiting the \fBChase\fP state\&. "
+.ti -1c
+.RI "void \fBonDeathEnter\fP (\fBEnemy\fP *e) override"
+.br
+.RI "Called when entering the \fBDeath\fP state\&. Triggers death animation\&. "
+.ti -1c
+.RI "void \fBonDeathExecute\fP (\fBEnemy\fP *e) override"
+.br
+.RI "Called every frame while in \fBDeath\fP state\&. Applies gravity and switches to \fBPatrol\fP if animation ends\&. "
+.ti -1c
+.RI "void \fBonDeathExit\fP (\fBEnemy\fP *e) override"
+.br
+.RI "Called when exiting the \fBDeath\fP state\&. Adds \fBDead\fP component and resets timer\&. "
+.ti -1c
+.RI "void \fBonPainEnter\fP (\fBEnemy\fP *e) override"
+.br
+.RI "Called when entering the \fBPain\fP state\&. Plays pain animation\&. "
+.ti -1c
+.RI "void \fBonPainExecute\fP (\fBEnemy\fP *e) override"
+.br
+.RI "Called every frame in the \fBPain\fP state\&. After 6 seconds, switches back to \fBPatrol\fP\&. "
+.ti -1c
+.RI "void \fBonPainExit\fP (\fBEnemy\fP *e) override"
+.br
+.RI "Called when exiting the \fBPain\fP state\&. Resets timer\&. "
+.in -1c
+
+Public Member Functions inherited from \fBIEnemyStateLogic\fP
+.in +1c
+.ti -1c
+.RI "virtual \fB~IEnemyStateLogic\fP ()=default"
+.br
+.RI "Virtual destructor to allow proper cleanup of derived classes\&. "
+.in -1c
+.SS "Additional Inherited Members"
+
+
+Protected Member Functions inherited from \fBIEnemyStateLogic\fP
+.in +1c
+.ti -1c
+.RI "void \fBRegisterAttackCallback\fP (\fBEnemy\fP *e)"
+.br
+.RI "Registers a collision callback to apply damage to the player\&. "
+.ti -1c
+.RI "void \fBCleanupAttackCallback\fP (\fBEnemy\fP *e)"
+.br
+.RI "Clears the previously registered attack callback\&. "
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "void enemyState::onAttackEnter (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Animation index reference\&. 
+.IP "\(bu" 2
+standb: 5 to 24
+.IP "\(bu" 2
+stand: 0 to 4
+.IP "\(bu" 2
+walkc: 25 to 35
+.IP "\(bu" 2
+att_b: 55 to 75
+.IP "\(bu" 2
+att_c: 76 to 109
+.IP "\(bu" 2
+deathc: 236 to 243
+.IP "\(bu" 2
+run: 36 to 41
+.IP "\(bu" 2
+painb: 203 to 222
+.PP
+
+.PP
+Called when entering the \fBAttack\fP state\&. Sets attacking flag, resets timer, and registers attack collision callback\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP Pointer to the enemy entity\&. 
+.RE
+.PP
+
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void enemyState::onAttackExecute (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called every frame while attacking\&. Plays attack animation, checks player distance for flee/chase switch, and applies knockback to the player if in range after some time\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP Pointer to the enemy\&. 
+.RE
+.PP
+
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void enemyState::onAttackExit (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called when exiting the \fBAttack\fP state\&. Clears attack flag and unregisters collision callback\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP Pointer to the enemy\&. 
+.RE
+.PP
+
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void enemyState::onChaseEnter (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called when entering the \fBChase\fP state\&. Sets run animation\&. 
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void enemyState::onChaseExecute (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called every frame while chasing the player\&. Switches to Attack/Flee/Patrol based on range and health\&. 
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void enemyState::onChaseExit (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called when exiting the \fBChase\fP state\&. 
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void enemyState::onDeathEnter (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called when entering the \fBDeath\fP state\&. Triggers death animation\&. 
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void enemyState::onDeathExecute (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called every frame while in \fBDeath\fP state\&. Applies gravity and switches to \fBPatrol\fP if animation ends\&. 
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void enemyState::onDeathExit (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called when exiting the \fBDeath\fP state\&. Adds \fBDead\fP component and resets timer\&. 
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void enemyState::onFleeEnter (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called when entering the \fBFlee\fP state\&. Plays hurt animation and resets timer\&. 
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void enemyState::onFleeExecute (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called every frame during \fBFlee\fP state\&. Applies force to move away from the player and rotates to face opposite direction\&. 
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void enemyState::onFleeExit (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called when exiting the \fBFlee\fP state\&. Resets internal flee timer\&. 
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void enemyState::onPainEnter (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called when entering the \fBPain\fP state\&. Plays pain animation\&. 
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void enemyState::onPainExecute (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called every frame in the \fBPain\fP state\&. After 6 seconds, switches back to \fBPatrol\fP\&. 
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void enemyState::onPainExit (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called when exiting the \fBPain\fP state\&. Resets timer\&. 
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void enemyState::onPatrolEnter (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called when entering the \fBPatrol\fP state\&. Starts walking animation and resets timer\&. 
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void enemyState::onPatrolExecute (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called every frame during \fBPatrol\fP\&. \fBEnemy\fP wanders around, checks for player, and may switch to \fBChase\fP or \fBFlee\fP\&. 
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+.SS "void enemyState::onPatrolExit (\fBEnemy\fP * e)\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called when exiting the \fBPatrol\fP state\&. 
+.PP
+Implements \fBIEnemyStateLogic\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

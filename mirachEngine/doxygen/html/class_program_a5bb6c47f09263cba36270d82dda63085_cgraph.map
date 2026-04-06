@@ -1,0 +1,11 @@
+<map id="Program::Initialise" name="Program::Initialise">
+<area shape="rect" id="Node000001" title="Initializes SDL, creates the OpenGL context, and loads GLAD." alt="" coords="5,81,132,108"/>
+<area shape="rect" id="Node000002" href="$namespace_window.html#ac9bcff5409b21a92d947a03697816be8" title="Creates a new window with the specified title and dimensions." alt="" coords="229,5,344,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,78,179,41,213,31,214,36,181,47,97,83"/>
+<area shape="rect" id="Node000003" href="$namespace_window.html#a5187ba066cf3c391bc03ed296e48d8be" title="Creates a graphics context (e.g., OpenGL) for the given window." alt="" coords="180,56,393,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="132,85,164,81,164,86,132,90"/>
+<area shape="rect" id="Node000004" href="$namespace_window.html#a2cae9e06fe965916ea997400acc84aeb" title="Initializes platform&#45;specific graphics loaders (e.g., GLAD)." alt="" coords="213,107,360,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="132,99,198,107,197,112,132,105"/>
+<area shape="rect" id="Node000005" href="$namespace_window.html#a38d3d02bafef36fc6d57d029d7ab7d96" title="Makes the specified graphics context current for the given window." alt="" coords="188,157,385,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="97,106,181,143,204,150,203,155,179,148,95,111"/>
+</map>

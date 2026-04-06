@@ -1,0 +1,11 @@
+<map id="Enemy::Update" name="Enemy::Update">
+<area shape="rect" id="Node000001" title="Per&#45;frame update for the enemy. Delegates to the FSM." alt="" coords="695,5,807,32"/>
+<area shape="rect" id="Node000002" href="$class_enemy_system.html#af199ce30b80387110b68299836f760cf" title="Updates all registered Enemy entities. Calls the Update() method of each Enemy, passing the delta tim..." alt="" coords="489,5,647,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="679,21,647,21,647,16,679,16"/>
+<area shape="rect" id="Node000003" href="$class_terrain_scene.html#a55eb34067d9346aa7d9c3295a9e2dfb0" title="Executes the main loop: input, update, physics, animation, and rendering." alt="" coords="280,5,441,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="473,21,442,21,442,16,473,16"/>
+<area shape="rect" id="Node000004" href="$class_terrain_scene.html#ae8ec4e098386a74714255aed184761eb" title="Runs the full scene lifecycle in the correct execution order." alt="" coords="103,5,232,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="264,21,232,21,232,16,264,16"/>
+<area shape="rect" id="Node000005" href="$mirach_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point of the engine. Initializes subsystems, loads models, sets up ECS,..." alt="" coords="5,5,55,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>

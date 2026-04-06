@@ -1,0 +1,7 @@
+<map id="Window::MakeContextCurrent" name="Window::MakeContextCurrent">
+<area shape="rect" id="Node000001" title="Makes the specified graphics context current for the given window." alt="" coords="227,31,424,57"/>
+<area shape="rect" id="Node000002" href="$class_program.html#a5bb6c47f09263cba36270d82dda63085" title="Initializes SDL, creates the OpenGL context, and loads GLAD." alt="" coords="29,5,155,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,34,155,28,156,23,211,29"/>
+<area shape="rect" id="Node000003" href="$class_program.html#abd1a8ae880a973399bbcb27f4b92d710" title=" " alt="" coords="5,56,179,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="211,59,180,63,179,57,211,54"/>
+</map>

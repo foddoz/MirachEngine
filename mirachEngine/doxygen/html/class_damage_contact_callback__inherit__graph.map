@@ -1,0 +1,5 @@
+<map id="DamageContactCallback" name="DamageContactCallback">
+<area shape="rect" id="Node000001" title="A physics collision callback that applies damage to entities hit by a thrown object." alt="" coords="5,165,183,341"/>
+<area shape="rect" id="Node000002" href="$class_physics_1_1_collision_callback.html" title="Callback interface for collision detection events." alt="" coords="11,5,178,117"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,132,97,166,92,166,92,132"/>
+</map>

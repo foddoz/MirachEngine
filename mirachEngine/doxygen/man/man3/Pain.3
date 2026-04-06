@@ -1,0 +1,88 @@
+.TH "Pain< Entity >" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Pain< Entity > \- Represents the \fBPain\fP (e\&.g\&., hit reaction) state\&. Calls onPainEnter, onPainExecute, and onPainExit on the entity\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <CommonStates\&.h>\fP
+.PP
+Inherits \fBState< Entity >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBEnter\fP (\fBEntity\fP *e) override"
+.br
+.RI "Called when the state is entered\&. This method is used to perform any initialization or setup for the state\&. "
+.ti -1c
+.RI "void \fBExecute\fP (\fBEntity\fP *e) override"
+.br
+.RI "Called every frame to update the state\&. This method should implement the main behavior of the state\&. "
+.ti -1c
+.RI "void \fBExit\fP (\fBEntity\fP *e) override"
+.br
+.RI "Called when the state is exited\&. This method should handle cleanup or transition logic before leaving the state\&. "
+.in -1c
+
+Public Member Functions inherited from \fBState< Entity >\fP
+.in +1c
+.ti -1c
+.RI "virtual \fB~State\fP ()"
+.br
+.RI "Virtual destructor to ensure proper cleanup of derived states\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename \fBEntity\fP>
+.br
+class Pain< Entity >"Represents the \fBPain\fP (e\&.g\&., hit reaction) state\&. Calls onPainEnter, onPainExecute, and onPainExit on the entity\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "template<typename \fBEntity\fP> void \fBPain\fP< \fBEntity\fP >::Enter (\fBEntity\fP * owner)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called when the state is entered\&. This method is used to perform any initialization or setup for the state\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIowner\fP Pointer to the owner entity\&. 
+.RE
+.PP
+
+.PP
+Implements \fBState< Entity >\fP\&.
+.SS "template<typename \fBEntity\fP> void \fBPain\fP< \fBEntity\fP >::Execute (\fBEntity\fP * owner)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called every frame to update the state\&. This method should implement the main behavior of the state\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIowner\fP Pointer to the owner entity\&. 
+.RE
+.PP
+
+.PP
+Implements \fBState< Entity >\fP\&.
+.SS "template<typename \fBEntity\fP> void \fBPain\fP< \fBEntity\fP >::Exit (\fBEntity\fP * owner)\fR [inline]\fP, \fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called when the state is exited\&. This method should handle cleanup or transition logic before leaving the state\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIowner\fP Pointer to the owner entity\&. 
+.RE
+.PP
+
+.PP
+Implements \fBState< Entity >\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

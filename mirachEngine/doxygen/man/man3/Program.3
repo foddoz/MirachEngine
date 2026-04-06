@@ -1,0 +1,338 @@
+.TH "Program" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Program \- Manages core SDL and OpenGL initialization, shader program creation, window rendering, and timing\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <program\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBProgram\fP (float screenWidth, float screenHeight)"
+.br
+.RI "Constructs the \fBProgram\fP object with initial screen dimensions\&. "
+.ti -1c
+.RI "void \fBInitialise\fP ()"
+.br
+.RI "Initializes SDL, creates the OpenGL context, and loads GLAD\&. "
+.ti -1c
+.RI "void \fBInitialiseGraphics\fP ()"
+.br
+.ti -1c
+.RI "void \fBInitialiseWindow\fP ()"
+.br
+.ti -1c
+.RI "void \fBCreateGraphicsPipeline\fP (const std::string &name, const std::string &vsPath, const std::string &fsPath)"
+.br
+.RI "Creates and compiles a named graphics pipeline (shader program)\&. "
+.ti -1c
+.RI "unsigned int \fBGetShaderProgram\fP (const std::string &name) const"
+.br
+.RI "Retrieves a shader program ID previously created with CreateGraphicsPipeline\&. "
+.ti -1c
+.RI "void \fBDelete\fP ()"
+.br
+.RI "Releases OpenGL and SDL resources\&. "
+.ti -1c
+.RI "void \fBDeleteWindow\fP ()"
+.br
+.ti -1c
+.RI "void \fBDeleteGraphics\fP ()"
+.br
+.ti -1c
+.RI "void \fBLockMouse\fP (bool lock) const"
+.br
+.RI "Locks or unlocks the mouse cursor within the window\&. "
+.ti -1c
+.RI "void \fBUpdateDeltaTime\fP ()"
+.br
+.RI "Updates internal frame timing variables to compute delta time\&. "
+.ti -1c
+.RI "float \fBGetDeltaTime\fP () const"
+.br
+.RI "Returns the time elapsed since the last frame\&. "
+.ti -1c
+.RI "void \fBSwapWindow\fP ()"
+.br
+.RI "Swaps the OpenGL window buffer to display the current frame\&. "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "float \fBmScreenWidth\fP"
+.br
+.RI "Width of the window in pixels\&. "
+.ti -1c
+.RI "float \fBmScreenHeight\fP"
+.br
+.RI "Height of the window in pixels\&. "
+.ti -1c
+.RI "\fBWindowHandle\fP * \fBmWindow\fP"
+.br
+.RI "Pointer to the window handle abstraction\&. "
+.ti -1c
+.RI "\fBGraphicsContextHandle\fP \fBmGraphicsContext\fP"
+.br
+.RI "\fBGraphics\fP context handle (OpenGL)\&. "
+.ti -1c
+.RI "bool \fBmQuit\fP"
+.br
+.RI "Flag indicating if the application is scheduled to quit\&. "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBLoadShader\fP (const std::string &fileName)"
+.br
+.RI "Loads a text file (typically a shader) into a string\&. "
+.ti -1c
+.RI "void \fBCheckShaderCompile\fP (unsigned int shader)"
+.br
+.RI "Checks and prints the compile status of a shader\&. "
+.ti -1c
+.RI "void \fBCheckProgramLink\fP (unsigned program)"
+.br
+.RI "Checks and prints the link status of a shader program\&. "
+.ti -1c
+.RI "unsigned int \fBCompileShader\fP (unsigned int type, const std::string &source)"
+.br
+.RI "Compiles a shader of a given type from source code\&. "
+.ti -1c
+.RI "unsigned int \fBCreateShaderProgram\fP (const std::string &vertexShaderSource, const std::string &fragmentShaderSource)"
+.br
+.RI "Links a complete OpenGL shader program from vertex and fragment shader source\&. "
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::unordered_map< std::string, unsigned int > \fBmShaderPrograms\fP"
+.br
+.RI "Stores all created shader programs, indexed by name\&. "
+.ti -1c
+.RI "float \fBmLastFrameTime\fP"
+.br
+.RI "Timestamp of the last frame\&. "
+.ti -1c
+.RI "float \fBmDeltaTime\fP"
+.br
+.RI "\fBTime\fP between the current and previous frame\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Manages core SDL and OpenGL initialization, shader program creation, window rendering, and timing\&. 
+
+This class handles window and context setup, shader compilation, delta time calculation, and input locking\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Program::Program (float screenWidth, float screenHeight)"
+
+.PP
+Constructs the \fBProgram\fP object with initial screen dimensions\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIscreenWidth\fP Width of the application window in pixels\&. 
+.br
+\fIscreenHeight\fP Height of the application window in pixels\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void Program::CheckProgramLink (unsigned program)\fR [private]\fP"
+
+.PP
+Checks and prints the link status of a shader program\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIprogram\fP OpenGL program ID\&. 
+.RE
+.PP
+
+.SS "void Program::CheckShaderCompile (unsigned int shader)\fR [private]\fP"
+
+.PP
+Checks and prints the compile status of a shader\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIshader\fP OpenGL shader ID\&. 
+.RE
+.PP
+
+.SS "unsigned int Program::CompileShader (unsigned int type, const std::string & source)\fR [private]\fP"
+
+.PP
+Compiles a shader of a given type from source code\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItype\fP GL_VERTEX_SHADER or GL_FRAGMENT_SHADER\&. 
+.br
+\fIsource\fP The GLSL source code for the shader\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Compiled shader ID\&. 
+.RE
+.PP
+
+.SS "void Program::CreateGraphicsPipeline (const std::string & name, const std::string & vsPath, const std::string & fsPath)"
+
+.PP
+Creates and compiles a named graphics pipeline (shader program)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP Identifier to store the shader program under\&. 
+.br
+\fIvsPath\fP File path to the vertex shader\&. 
+.br
+\fIfsPath\fP File path to the fragment shader\&. 
+.RE
+.PP
+
+.SS "unsigned int Program::CreateShaderProgram (const std::string & vertexShaderSource, const std::string & fragmentShaderSource)\fR [private]\fP"
+
+.PP
+Links a complete OpenGL shader program from vertex and fragment shader source\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIvertexShaderSource\fP GLSL source for the vertex shader\&. 
+.br
+\fIfragmentShaderSource\fP GLSL source for the fragment shader\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Linked program ID\&. 
+.RE
+.PP
+
+.SS "void Program::Delete ()"
+
+.PP
+Releases OpenGL and SDL resources\&. 
+.SS "void Program::DeleteGraphics ()"
+
+.SS "void Program::DeleteWindow ()"
+
+.SS "float Program::GetDeltaTime () const"
+
+.PP
+Returns the time elapsed since the last frame\&. 
+.PP
+\fBReturns\fP
+.RS 4
+\fBTime\fP in seconds between the last two frames\&. 
+.RE
+.PP
+
+.SS "unsigned int Program::GetShaderProgram (const std::string & name) const"
+
+.PP
+Retrieves a shader program ID previously created with CreateGraphicsPipeline\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP The name identifier of the shader program\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+OpenGL shader program ID\&. 
+.RE
+.PP
+
+.SS "void Program::Initialise ()"
+
+.PP
+Initializes SDL, creates the OpenGL context, and loads GLAD\&. 
+.SS "void Program::InitialiseGraphics ()"
+
+.SS "void Program::InitialiseWindow ()"
+
+.SS "std::string Program::LoadShader (const std::string & fileName)\fR [private]\fP"
+
+.PP
+Loads a text file (typically a shader) into a string\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfileName\fP Path to the file\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Contents of the file as a single string\&. 
+.RE
+.PP
+
+.SS "void Program::LockMouse (bool lock) const"
+
+.PP
+Locks or unlocks the mouse cursor within the window\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIlock\fP True to lock the mouse; false to unlock\&. 
+.RE
+.PP
+
+.SS "void Program::SwapWindow ()"
+
+.PP
+Swaps the OpenGL window buffer to display the current frame\&. 
+.SS "void Program::UpdateDeltaTime ()"
+
+.PP
+Updates internal frame timing variables to compute delta time\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "float Program::mDeltaTime\fR [private]\fP"
+
+.PP
+\fBTime\fP between the current and previous frame\&. 
+.SS "\fBGraphicsContextHandle\fP Program::mGraphicsContext"
+
+.PP
+\fBGraphics\fP context handle (OpenGL)\&. 
+.SS "float Program::mLastFrameTime\fR [private]\fP"
+
+.PP
+Timestamp of the last frame\&. 
+.SS "bool Program::mQuit"
+
+.PP
+Flag indicating if the application is scheduled to quit\&. 
+.SS "float Program::mScreenHeight"
+
+.PP
+Height of the window in pixels\&. 
+.SS "float Program::mScreenWidth"
+
+.PP
+Width of the window in pixels\&. 
+.SS "std::unordered_map<std::string, unsigned int> Program::mShaderPrograms\fR [private]\fP"
+
+.PP
+Stores all created shader programs, indexed by name\&. 
+.SS "\fBWindowHandle\fP* Program::mWindow"
+
+.PP
+Pointer to the window handle abstraction\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

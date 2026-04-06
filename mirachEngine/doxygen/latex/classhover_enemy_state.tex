@@ -1,0 +1,408 @@
+\doxysection{hover\+Enemy\+State Class Reference}
+\hypertarget{classhover_enemy_state}{}\label{classhover_enemy_state}\index{hoverEnemyState@{hoverEnemyState}}
+
+
+{\ttfamily \#include $<$hover\+Enemy\+State.\+hpp$>$}
+
+
+
+Inheritance diagram for hover\+Enemy\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classhover_enemy_state__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for hover\+Enemy\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classhover_enemy_state__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classhover_enemy_state_a7c5d71325dc0ee5ab4e1273a56cf76e2}{on\+Attack\+Enter}} (\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}e) override
+\begin{DoxyCompactList}\small\item\em Called when entering the attack state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classhover_enemy_state_aa24ca2aca45524238e5bb96f974f2e89}{on\+Attack\+Execute}} (\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}e) override
+\begin{DoxyCompactList}\small\item\em Called every frame while in the attack state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classhover_enemy_state_a23a03d6c522b36f4379c3156c9c5dd97}{on\+Attack\+Exit}} (\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}e) override
+\begin{DoxyCompactList}\small\item\em Called when exiting the attack state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classhover_enemy_state_a238ab1abb38aef4d2948c550e636bf86}{on\+Flee\+Enter}} (\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}e) override
+\item 
+void \mbox{\hyperlink{classhover_enemy_state_ad7cd98306d5b0bf2de9ca00fe378e967}{on\+Flee\+Execute}} (\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}e) override
+\item 
+void \mbox{\hyperlink{classhover_enemy_state_aaec78737af8ed7b43bd78b9e183dffa9}{on\+Flee\+Exit}} (\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}e) override
+\item 
+void \mbox{\hyperlink{classhover_enemy_state_a128109051d2396114bdb93f58f2d6929}{on\+Patrol\+Enter}} (\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}e) override
+\item 
+void \mbox{\hyperlink{classhover_enemy_state_a0ddf4df81e33b8da8da33d9f103f76ea}{on\+Patrol\+Execute}} (\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}e) override
+\item 
+void \mbox{\hyperlink{classhover_enemy_state_ac490fa54b7c8202f23372c189a4a21c4}{on\+Patrol\+Exit}} (\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}e) override
+\item 
+void \mbox{\hyperlink{classhover_enemy_state_a87d3f23c1455298032a61365f2a15e32}{on\+Chase\+Enter}} (\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}e) override
+\item 
+void \mbox{\hyperlink{classhover_enemy_state_a3feb46f45992d1ffe44ce6fadff11ce9}{on\+Chase\+Execute}} (\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}e) override
+\item 
+void \mbox{\hyperlink{classhover_enemy_state_a2fad2df844a1afe6c60224c224da0995}{on\+Chase\+Exit}} (\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}e) override
+\item 
+void \mbox{\hyperlink{classhover_enemy_state_a7580588244f47158f2b96d6dfef5d47a}{on\+Death\+Enter}} (\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}e) override
+\item 
+void \mbox{\hyperlink{classhover_enemy_state_a68279b72847ec8b0ac75ab063e4b6ac7}{on\+Death\+Execute}} (\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}e) override
+\item 
+void \mbox{\hyperlink{classhover_enemy_state_a20a004e051d5ea3c527c5ca96acfbc6c}{on\+Death\+Exit}} (\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}e) override
+\item 
+void \mbox{\hyperlink{classhover_enemy_state_a4008fc559b6b7b399bf8e89f7774d065}{on\+Pain\+Enter}} (\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}e) override
+\item 
+void \mbox{\hyperlink{classhover_enemy_state_ae60bee692d8aeb4d696d7d9467b9f4ac}{on\+Pain\+Execute}} (\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}e) override
+\item 
+void \mbox{\hyperlink{classhover_enemy_state_a0f0206709142b83402a6ae2bf3a55fef}{on\+Pain\+Exit}} (\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}e) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_enemy_state_logic}{IEnemy\+State\+Logic}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_enemy_state_logic_a4f29e0f22c156ddd46e5c3916b59d5ee}{\texorpdfstring{$\sim$}{\string~}\+IEnemy\+State\+Logic}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor to allow proper cleanup of derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_i_enemy_state_logic}{IEnemy\+State\+Logic}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_i_enemy_state_logic_aa2c870d75eaf6bf1bb9dec538b0f57fb}{Register\+Attack\+Callback}} (\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}e)
+\begin{DoxyCompactList}\small\item\em Registers a collision callback to apply damage to the player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_i_enemy_state_logic_abca3d24d39a49468767050d87369c7a4}{Cleanup\+Attack\+Callback}} (\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}e)
+\begin{DoxyCompactList}\small\item\em Clears the previously registered attack callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{classhover_enemy_state_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classhover_enemy_state_a7c5d71325dc0ee5ab4e1273a56cf76e2}\index{hoverEnemyState@{hoverEnemyState}!onAttackEnter@{onAttackEnter}}
+\index{onAttackEnter@{onAttackEnter}!hoverEnemyState@{hoverEnemyState}}
+\doxysubsubsection{\texorpdfstring{onAttackEnter()}{onAttackEnter()}}
+{\footnotesize\ttfamily \label{classhover_enemy_state_a7c5d71325dc0ee5ab4e1273a56cf76e2} 
+void hover\+Enemy\+State\+::on\+Attack\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called when entering the attack state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Pointer to the \doxylink{class_enemy}{Enemy} entity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_enemy_state_logic_a09f51d16a9919f79b2a3952407356355}{IEnemy\+State\+Logic}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classhover_enemy_state_a7c5d71325dc0ee5ab4e1273a56cf76e2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classhover_enemy_state_aa24ca2aca45524238e5bb96f974f2e89}\index{hoverEnemyState@{hoverEnemyState}!onAttackExecute@{onAttackExecute}}
+\index{onAttackExecute@{onAttackExecute}!hoverEnemyState@{hoverEnemyState}}
+\doxysubsubsection{\texorpdfstring{onAttackExecute()}{onAttackExecute()}}
+{\footnotesize\ttfamily \label{classhover_enemy_state_aa24ca2aca45524238e5bb96f974f2e89} 
+void hover\+Enemy\+State\+::on\+Attack\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called every frame while in the attack state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Pointer to the \doxylink{class_enemy}{Enemy} entity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_enemy_state_logic_a93213020b53b9ba7d29f312256aa1394}{IEnemy\+State\+Logic}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classhover_enemy_state_aa24ca2aca45524238e5bb96f974f2e89_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classhover_enemy_state_a23a03d6c522b36f4379c3156c9c5dd97}\index{hoverEnemyState@{hoverEnemyState}!onAttackExit@{onAttackExit}}
+\index{onAttackExit@{onAttackExit}!hoverEnemyState@{hoverEnemyState}}
+\doxysubsubsection{\texorpdfstring{onAttackExit()}{onAttackExit()}}
+{\footnotesize\ttfamily \label{classhover_enemy_state_a23a03d6c522b36f4379c3156c9c5dd97} 
+void hover\+Enemy\+State\+::on\+Attack\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called when exiting the attack state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Pointer to the \doxylink{class_enemy}{Enemy} entity. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_enemy_state_logic_a455af041db685a58df5bfb5c359897bc}{IEnemy\+State\+Logic}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classhover_enemy_state_a23a03d6c522b36f4379c3156c9c5dd97_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classhover_enemy_state_a87d3f23c1455298032a61365f2a15e32}\index{hoverEnemyState@{hoverEnemyState}!onChaseEnter@{onChaseEnter}}
+\index{onChaseEnter@{onChaseEnter}!hoverEnemyState@{hoverEnemyState}}
+\doxysubsubsection{\texorpdfstring{onChaseEnter()}{onChaseEnter()}}
+{\footnotesize\ttfamily \label{classhover_enemy_state_a87d3f23c1455298032a61365f2a15e32} 
+void hover\+Enemy\+State\+::on\+Chase\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_enemy_state_logic_a89b2ede010b9312ba6f111b3ddeff3a7}{IEnemy\+State\+Logic}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classhover_enemy_state_a87d3f23c1455298032a61365f2a15e32_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classhover_enemy_state_a3feb46f45992d1ffe44ce6fadff11ce9}\index{hoverEnemyState@{hoverEnemyState}!onChaseExecute@{onChaseExecute}}
+\index{onChaseExecute@{onChaseExecute}!hoverEnemyState@{hoverEnemyState}}
+\doxysubsubsection{\texorpdfstring{onChaseExecute()}{onChaseExecute()}}
+{\footnotesize\ttfamily \label{classhover_enemy_state_a3feb46f45992d1ffe44ce6fadff11ce9} 
+void hover\+Enemy\+State\+::on\+Chase\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_enemy_state_logic_a0f45aa470408fabaa38ecfd74866fa49}{IEnemy\+State\+Logic}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classhover_enemy_state_a3feb46f45992d1ffe44ce6fadff11ce9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classhover_enemy_state_a2fad2df844a1afe6c60224c224da0995}\index{hoverEnemyState@{hoverEnemyState}!onChaseExit@{onChaseExit}}
+\index{onChaseExit@{onChaseExit}!hoverEnemyState@{hoverEnemyState}}
+\doxysubsubsection{\texorpdfstring{onChaseExit()}{onChaseExit()}}
+{\footnotesize\ttfamily \label{classhover_enemy_state_a2fad2df844a1afe6c60224c224da0995} 
+void hover\+Enemy\+State\+::on\+Chase\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_enemy_state_logic_af08953628cd9f64d4e9ede88c8e054b7}{IEnemy\+State\+Logic}}.
+
+\Hypertarget{classhover_enemy_state_a7580588244f47158f2b96d6dfef5d47a}\index{hoverEnemyState@{hoverEnemyState}!onDeathEnter@{onDeathEnter}}
+\index{onDeathEnter@{onDeathEnter}!hoverEnemyState@{hoverEnemyState}}
+\doxysubsubsection{\texorpdfstring{onDeathEnter()}{onDeathEnter()}}
+{\footnotesize\ttfamily \label{classhover_enemy_state_a7580588244f47158f2b96d6dfef5d47a} 
+void hover\+Enemy\+State\+::on\+Death\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_enemy_state_logic_a85eb9f2d935da26431ce73633f1eefdc}{IEnemy\+State\+Logic}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classhover_enemy_state_a7580588244f47158f2b96d6dfef5d47a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classhover_enemy_state_a68279b72847ec8b0ac75ab063e4b6ac7}\index{hoverEnemyState@{hoverEnemyState}!onDeathExecute@{onDeathExecute}}
+\index{onDeathExecute@{onDeathExecute}!hoverEnemyState@{hoverEnemyState}}
+\doxysubsubsection{\texorpdfstring{onDeathExecute()}{onDeathExecute()}}
+{\footnotesize\ttfamily \label{classhover_enemy_state_a68279b72847ec8b0ac75ab063e4b6ac7} 
+void hover\+Enemy\+State\+::on\+Death\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_enemy_state_logic_afef46d2bbdfe59da45bef7b534c8dfc9}{IEnemy\+State\+Logic}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classhover_enemy_state_a68279b72847ec8b0ac75ab063e4b6ac7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classhover_enemy_state_a20a004e051d5ea3c527c5ca96acfbc6c}\index{hoverEnemyState@{hoverEnemyState}!onDeathExit@{onDeathExit}}
+\index{onDeathExit@{onDeathExit}!hoverEnemyState@{hoverEnemyState}}
+\doxysubsubsection{\texorpdfstring{onDeathExit()}{onDeathExit()}}
+{\footnotesize\ttfamily \label{classhover_enemy_state_a20a004e051d5ea3c527c5ca96acfbc6c} 
+void hover\+Enemy\+State\+::on\+Death\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_enemy_state_logic_a28373959d19afbced998e4588985de95}{IEnemy\+State\+Logic}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classhover_enemy_state_a20a004e051d5ea3c527c5ca96acfbc6c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classhover_enemy_state_a238ab1abb38aef4d2948c550e636bf86}\index{hoverEnemyState@{hoverEnemyState}!onFleeEnter@{onFleeEnter}}
+\index{onFleeEnter@{onFleeEnter}!hoverEnemyState@{hoverEnemyState}}
+\doxysubsubsection{\texorpdfstring{onFleeEnter()}{onFleeEnter()}}
+{\footnotesize\ttfamily \label{classhover_enemy_state_a238ab1abb38aef4d2948c550e636bf86} 
+void hover\+Enemy\+State\+::on\+Flee\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_enemy_state_logic_ad82680672a534fb5d563bdeb630f85aa}{IEnemy\+State\+Logic}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classhover_enemy_state_a238ab1abb38aef4d2948c550e636bf86_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classhover_enemy_state_ad7cd98306d5b0bf2de9ca00fe378e967}\index{hoverEnemyState@{hoverEnemyState}!onFleeExecute@{onFleeExecute}}
+\index{onFleeExecute@{onFleeExecute}!hoverEnemyState@{hoverEnemyState}}
+\doxysubsubsection{\texorpdfstring{onFleeExecute()}{onFleeExecute()}}
+{\footnotesize\ttfamily \label{classhover_enemy_state_ad7cd98306d5b0bf2de9ca00fe378e967} 
+void hover\+Enemy\+State\+::on\+Flee\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_enemy_state_logic_a144e17578bc07f53fd791bf7c6d946bd}{IEnemy\+State\+Logic}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classhover_enemy_state_ad7cd98306d5b0bf2de9ca00fe378e967_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classhover_enemy_state_aaec78737af8ed7b43bd78b9e183dffa9}\index{hoverEnemyState@{hoverEnemyState}!onFleeExit@{onFleeExit}}
+\index{onFleeExit@{onFleeExit}!hoverEnemyState@{hoverEnemyState}}
+\doxysubsubsection{\texorpdfstring{onFleeExit()}{onFleeExit()}}
+{\footnotesize\ttfamily \label{classhover_enemy_state_aaec78737af8ed7b43bd78b9e183dffa9} 
+void hover\+Enemy\+State\+::on\+Flee\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_enemy_state_logic_a4fdc7649e703c1177df1c3f34507a825}{IEnemy\+State\+Logic}}.
+
+\Hypertarget{classhover_enemy_state_a4008fc559b6b7b399bf8e89f7774d065}\index{hoverEnemyState@{hoverEnemyState}!onPainEnter@{onPainEnter}}
+\index{onPainEnter@{onPainEnter}!hoverEnemyState@{hoverEnemyState}}
+\doxysubsubsection{\texorpdfstring{onPainEnter()}{onPainEnter()}}
+{\footnotesize\ttfamily \label{classhover_enemy_state_a4008fc559b6b7b399bf8e89f7774d065} 
+void hover\+Enemy\+State\+::on\+Pain\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_enemy_state_logic_ac5792c44c6e5fedb57507a7e68132ef4}{IEnemy\+State\+Logic}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classhover_enemy_state_a4008fc559b6b7b399bf8e89f7774d065_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classhover_enemy_state_ae60bee692d8aeb4d696d7d9467b9f4ac}\index{hoverEnemyState@{hoverEnemyState}!onPainExecute@{onPainExecute}}
+\index{onPainExecute@{onPainExecute}!hoverEnemyState@{hoverEnemyState}}
+\doxysubsubsection{\texorpdfstring{onPainExecute()}{onPainExecute()}}
+{\footnotesize\ttfamily \label{classhover_enemy_state_ae60bee692d8aeb4d696d7d9467b9f4ac} 
+void hover\+Enemy\+State\+::on\+Pain\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_enemy_state_logic_a2fc69cf66a39588bc9b6cd5c0eaab0fc}{IEnemy\+State\+Logic}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classhover_enemy_state_ae60bee692d8aeb4d696d7d9467b9f4ac_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classhover_enemy_state_a0f0206709142b83402a6ae2bf3a55fef}\index{hoverEnemyState@{hoverEnemyState}!onPainExit@{onPainExit}}
+\index{onPainExit@{onPainExit}!hoverEnemyState@{hoverEnemyState}}
+\doxysubsubsection{\texorpdfstring{onPainExit()}{onPainExit()}}
+{\footnotesize\ttfamily \label{classhover_enemy_state_a0f0206709142b83402a6ae2bf3a55fef} 
+void hover\+Enemy\+State\+::on\+Pain\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_enemy_state_logic_a798972bc562e3420e6fcad6f82596b9f}{IEnemy\+State\+Logic}}.
+
+\Hypertarget{classhover_enemy_state_a128109051d2396114bdb93f58f2d6929}\index{hoverEnemyState@{hoverEnemyState}!onPatrolEnter@{onPatrolEnter}}
+\index{onPatrolEnter@{onPatrolEnter}!hoverEnemyState@{hoverEnemyState}}
+\doxysubsubsection{\texorpdfstring{onPatrolEnter()}{onPatrolEnter()}}
+{\footnotesize\ttfamily \label{classhover_enemy_state_a128109051d2396114bdb93f58f2d6929} 
+void hover\+Enemy\+State\+::on\+Patrol\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_enemy_state_logic_a2ed63599ef4fcb6b5ebc268242e2f911}{IEnemy\+State\+Logic}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classhover_enemy_state_a128109051d2396114bdb93f58f2d6929_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classhover_enemy_state_a0ddf4df81e33b8da8da33d9f103f76ea}\index{hoverEnemyState@{hoverEnemyState}!onPatrolExecute@{onPatrolExecute}}
+\index{onPatrolExecute@{onPatrolExecute}!hoverEnemyState@{hoverEnemyState}}
+\doxysubsubsection{\texorpdfstring{onPatrolExecute()}{onPatrolExecute()}}
+{\footnotesize\ttfamily \label{classhover_enemy_state_a0ddf4df81e33b8da8da33d9f103f76ea} 
+void hover\+Enemy\+State\+::on\+Patrol\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_enemy_state_logic_a003b5fca8913c0d857e1df33c16217e7}{IEnemy\+State\+Logic}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classhover_enemy_state_a0ddf4df81e33b8da8da33d9f103f76ea_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classhover_enemy_state_ac490fa54b7c8202f23372c189a4a21c4}\index{hoverEnemyState@{hoverEnemyState}!onPatrolExit@{onPatrolExit}}
+\index{onPatrolExit@{onPatrolExit}!hoverEnemyState@{hoverEnemyState}}
+\doxysubsubsection{\texorpdfstring{onPatrolExit()}{onPatrolExit()}}
+{\footnotesize\ttfamily \label{classhover_enemy_state_ac490fa54b7c8202f23372c189a4a21c4} 
+void hover\+Enemy\+State\+::on\+Patrol\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_enemy}{Enemy}} \texorpdfstring{$\ast$}{*}}]{e}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_enemy_state_logic_aca4910184411c3621bb8d922bf669239}{IEnemy\+State\+Logic}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+FSM/\mbox{\hyperlink{hover_enemy_state_8hpp}{hover\+Enemy\+State.\+hpp}}\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+FSM/\mbox{\hyperlink{hover_enemy_state_8cpp}{hover\+Enemy\+State.\+cpp}}\end{DoxyCompactItemize}

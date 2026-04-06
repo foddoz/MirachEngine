@@ -1,0 +1,58 @@
+.TH "MeshTerrain::Vertex" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MeshTerrain::Vertex
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <meshTerrain\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBInitVertex\fP (int x, int z, const \fBMeshTerrain\fP *terrain)"
+.br
+.RI "Initializes vertex based on heightmap and terrain data\&. "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBVector3f\fP \fBPos\fP"
+.br
+.RI "\fBVertex\fP position in world space\&. "
+.ti -1c
+.RI "\fBVector2f\fP \fBTex\fP"
+.br
+.RI "\fBTexture\fP coordinate\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBNormal\fP"
+.br
+.RI "Normal for lighting\&. "
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "void MeshTerrain::Vertex::InitVertex (int x, int z, const \fBMeshTerrain\fP * terrain)"
+
+.PP
+Initializes vertex based on heightmap and terrain data\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBVector3f\fP MeshTerrain::Vertex::Normal"
+
+.PP
+Normal for lighting\&. 
+.SS "\fBVector3f\fP MeshTerrain::Vertex::Pos"
+
+.PP
+\fBVertex\fP position in world space\&. 
+.SS "\fBVector2f\fP MeshTerrain::Vertex::Tex"
+
+.PP
+\fBTexture\fP coordinate\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

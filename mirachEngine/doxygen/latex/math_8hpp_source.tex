@@ -1,0 +1,192 @@
+\doxysection{math.\+hpp}
+\hypertarget{math_8hpp_source}{}\label{math_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Math/math.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Math/math.hpp}}
+\mbox{\hyperlink{math_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MATH\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MATH\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cmath>}\ \textcolor{comment}{//\ For\ sqrt\ and\ math\ constants}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \textcolor{comment}{//\ ===\ Math\ Constants\ ===}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{math_8hpp_ac01434fcf858bd4b50b62784079ad3c0}{PI}}\ =\ 3.14159265358979323846f;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{math_8hpp_a5eb5e4f8bb50fa7ded6dfa963a2159df}{TWO\_PI}}\ =\ \mbox{\hyperlink{math_8hpp_ac01434fcf858bd4b50b62784079ad3c0}{PI}}\ *\ 2.0f;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ ===\ GLM\ Includes\ ===}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <glm/glm.hpp>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <glm/gtc/matrix\_transform.hpp>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <glm/gtc/quaternion.hpp>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <glm/gtx/quaternion.hpp>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <glm/gtc/type\_ptr.hpp>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <glm/gtx/norm.hpp>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <glm/common.hpp>}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <limits>}\ \textcolor{comment}{//\ For\ numeric\ limits\ used\ in\ AABB}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{//\ ===\ Common\ Type\ Aliases\ ===}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{using\ }\mbox{\hyperlink{math_8hpp_acfd9107b583da9f618732213cb319ced}{Vector2f}}\ =\ glm::vec2;\ \textcolor{comment}{//\ 2D\ float\ vector}}
+\DoxyCodeLine{00033\ \textcolor{keyword}{using\ }\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ =\ glm::vec3;\ \textcolor{comment}{//\ 3D\ float\ vector}}
+\DoxyCodeLine{00034\ \textcolor{keyword}{using\ }\mbox{\hyperlink{math_8hpp_adba234791e87b8e2d638fbf2b55a0db1}{Vector4f}}\ =\ glm::vec4;\ \textcolor{comment}{//\ 4D\ float\ vector}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{using\ }\mbox{\hyperlink{math_8hpp_ac3d92e68c50f23b9faababb6d39789ca}{Matrix3f}}\ =\ glm::mat3;\ \textcolor{comment}{//\ 3x3\ float\ matrix}}
+\DoxyCodeLine{00037\ \textcolor{keyword}{using\ }\mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}}\ =\ glm::mat4;\ \textcolor{comment}{//\ 4x4\ float\ matrix}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{using\ }\mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}}\ =\ glm::quat;\ \textcolor{comment}{//\ Quaternion\ type}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{//\ ===\ Projection\ and\ View\ ===}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}}\ \mbox{\hyperlink{math_8hpp_ab547e31f984090bdf628c013a91555d6}{Perspective}}(\textcolor{keywordtype}{float}\ fovRadians,\ \textcolor{keywordtype}{float}\ aspectRatio,\ \textcolor{keywordtype}{float}\ nearPlane,\ \textcolor{keywordtype}{float}\ farPlane)}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{return}\ glm::perspective(fovRadians,\ aspectRatio,\ nearPlane,\ farPlane);}
+\DoxyCodeLine{00047\ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}}\ \mbox{\hyperlink{math_8hpp_a4c4521724debb415e676587b9b4e8bff}{LookAt}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ eye,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ center,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ up)}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{return}\ glm::lookAt(eye,\ center,\ up);}
+\DoxyCodeLine{00053\ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{comment}{//\ ===\ Scalar\ and\ Vector\ Utilities\ ===}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{math_8hpp_a61311699c1533817e1272e777558b611}{Clamp}}(\textcolor{keywordtype}{float}\ value,\ \textcolor{keywordtype}{float}\ minVal,\ \textcolor{keywordtype}{float}\ maxVal)}
+\DoxyCodeLine{00059\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{return}\ glm::clamp(value,\ minVal,\ maxVal);}
+\DoxyCodeLine{00061\ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{math_8hpp_a11c0426b3a7e98489b250e45d0240c5f}{Normalize}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ v)\ \{\ \textcolor{keywordflow}{return}\ glm::normalize(v);\ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{math_8hpp_a670c0a5216c9f579310c5202fba83257}{Cross}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ b)\ \{\ \textcolor{keywordflow}{return}\ glm::cross(a,\ b);\ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{math_8hpp_a8fa473d59250f3fc775ebfc0d2ea46bc}{Dot}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ b)\ \{\ \textcolor{keywordflow}{return}\ glm::dot(a,\ b);\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{math_8hpp_a387a686169e8f84d5abcedaefd2c8d5d}{ToRadians}}(\textcolor{keywordtype}{float}\ degrees)\ \{\ \textcolor{keywordflow}{return}\ glm::radians(degrees);\ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{math_8hpp_ab87aca5834250c82c9b27580c73a9a4f}{ToDegrees}}(\textcolor{keywordtype}{float}\ radians)\ \{\ \textcolor{keywordflow}{return}\ glm::degrees(radians);\ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{math_8hpp_a449ecbbd825f26c183caeac2bda40c41}{Length}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_acfd9107b583da9f618732213cb319ced}{Vector2f}}\&\ v)\ \{\ \textcolor{keywordflow}{return}\ glm::length(v);\ \}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{math_8hpp_a449ecbbd825f26c183caeac2bda40c41}{Length}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ v)\ \{\ \textcolor{keywordflow}{return}\ glm::length(v);\ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{math_8hpp_a449ecbbd825f26c183caeac2bda40c41}{Length}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_adba234791e87b8e2d638fbf2b55a0db1}{Vector4f}}\&\ v)\ \{\ \textcolor{keywordflow}{return}\ glm::length(v);\ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{math_8hpp_a8bb7bcef2140eebba024f7af0a70f8e8}{Distance}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ b)\ \{\ \textcolor{keywordflow}{return}\ glm::distance(a,\ b);\ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00091\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}}\ \mbox{\hyperlink{math_8hpp_a39dc5b7e681383b3d34f06efa84483f0}{Identity}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}}(1.0f);\ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{comment}{//\ ===\ Transformations\ ===}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}}\ \mbox{\hyperlink{math_8hpp_a978278a474c16b86c65813cec08b513a}{Translate}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}}\&\ matrix,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ v)}
+\DoxyCodeLine{00097\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordflow}{return}\ glm::translate(matrix,\ v);}
+\DoxyCodeLine{00099\ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00102\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}}\ \mbox{\hyperlink{math_8hpp_a57197be1224ca571c566c73c33081081}{Scale}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}}\&\ matrix,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ v)}
+\DoxyCodeLine{00103\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordflow}{return}\ glm::scale(matrix,\ v);}
+\DoxyCodeLine{00105\ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}}\ \mbox{\hyperlink{math_8hpp_a09a0220210ed9b62eb95681f100c2ac6}{Rotate}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}}\&\ matrix,\ \textcolor{keywordtype}{float}\ angleRad,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ axis)}
+\DoxyCodeLine{00109\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordflow}{return}\ glm::rotate(matrix,\ angleRad,\ axis);}
+\DoxyCodeLine{00111\ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00114\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{math_8hpp_a84fbaaf06d1d751da00c0c3fc66688f8}{TransformVector}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}}\&\ m,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ v)}
+\DoxyCodeLine{00115\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}(m\ *\ \mbox{\hyperlink{math_8hpp_adba234791e87b8e2d638fbf2b55a0db1}{Vector4f}}(v,\ 1.0f));}
+\DoxyCodeLine{00117\ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{comment}{//\ ===\ Quaternion\ Utilities\ ===}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00122\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{math_8hpp_a337db27912549e1897fa038fe0f43f13}{QuaternionToEulerDegrees}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}}\&\ q)}
+\DoxyCodeLine{00123\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordflow}{return}\ glm::degrees(glm::eulerAngles(glm::normalize(q)));}
+\DoxyCodeLine{00125\ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00128\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}}\ \mbox{\hyperlink{math_8hpp_a01d6afce125900f6e5b446d5094ea823}{EulerDegreesToQuaternion}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ degrees)}
+\DoxyCodeLine{00129\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordflow}{return}\ glm::quat(glm::radians(degrees));}
+\DoxyCodeLine{00131\ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00134\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}}\ \mbox{\hyperlink{math_8hpp_a033bf3b7b6022db8c7998332966de092}{MakeQuaternion}}(\textcolor{keywordtype}{float}\ w,\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z)}
+\DoxyCodeLine{00135\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordflow}{return}\ glm::normalize(\mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}}(w,\ x,\ y,\ z));}
+\DoxyCodeLine{00137\ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00140\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}}\ \mbox{\hyperlink{math_8hpp_a1213c92d8be7146176f8be90d8903ece}{ToMat4}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}}\&\ q)}
+\DoxyCodeLine{00141\ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordflow}{return}\ glm::toMat4(q);}
+\DoxyCodeLine{00143\ \}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00146\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}}\ \mbox{\hyperlink{math_8hpp_aadbed4f9118de876df4f042144e13570}{Inverse}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}}\&\ q)\ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordflow}{return}\ glm::inverse(q);}
+\DoxyCodeLine{00148\ \}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00151\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}}\ \mbox{\hyperlink{math_8hpp_a11c0426b3a7e98489b250e45d0240c5f}{Normalize}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}}\&\ q)\ \{\ \textcolor{keywordflow}{return}\ glm::normalize(q);\ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \textcolor{comment}{//\ ===\ Interpolation\ ===}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00156\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{math_8hpp_a2682da5e8a67f74aed0fc41b0b79866d}{Lerp}}(\textcolor{keywordtype}{float}\ a,\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keywordtype}{float}\ t)}
+\DoxyCodeLine{00157\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordflow}{return}\ glm::mix(a,\ b,\ t);}
+\DoxyCodeLine{00159\ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00162\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{math_8hpp_a2682da5e8a67f74aed0fc41b0b79866d}{Lerp}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ b,\ \textcolor{keywordtype}{float}\ t)}
+\DoxyCodeLine{00163\ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordflow}{return}\ glm::mix(a,\ b,\ t);}
+\DoxyCodeLine{00165\ \}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00168\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{math_8hpp_adc2b6b56ffbcf04308b93ff801e26efd}{LerpAngle}}(\textcolor{keywordtype}{float}\ a,\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keywordtype}{float}\ t)}
+\DoxyCodeLine{00169\ \{}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{float}\ diff\ =\ fmodf(b\ -\/\ a\ +\ 540.f,\ 360.f)\ -\/\ 180.f;}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordflow}{return}\ a\ +\ diff\ *\ t;}
+\DoxyCodeLine{00172\ \}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \textcolor{comment}{//\ ===\ AABB\ ===}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00180\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_a_a_b_b_a5f5baf6c533905aa1456b3a3eb57bab2}{AABB}}}
+\DoxyCodeLine{00181\ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}};\ \textcolor{comment}{//\ Minimum\ corner\ of\ the\ bounding\ box}}
+\DoxyCodeLine{00183\ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}};\ \textcolor{comment}{//\ Maximum\ corner\ of\ the\ bounding\ box}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00186\ \ \ \ \ \mbox{\hyperlink{struct_a_a_b_b_a5f5baf6c533905aa1456b3a3eb57bab2}{AABB}}()\ \{\ \mbox{\hyperlink{struct_a_a_b_b_afbd7dcd97080cd1c046bace01dcc6999}{Reset}}();\ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_a_a_b_b_afbd7dcd97080cd1c046bace01dcc6999}{Reset}}()}
+\DoxyCodeLine{00190\ \ \ \ \ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}}\ =\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}(std::numeric\_limits<float>::max());}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}}\ =\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}(std::numeric\_limits<float>::lowest());}
+\DoxyCodeLine{00193\ \ \ \ \ \}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_a_a_b_b_a812706f15e5916a48fdeaefe9e7bc388}{Expand}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ point)}
+\DoxyCodeLine{00197\ \ \ \ \ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}}\ =\ glm::min(\mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}},\ point);}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}}\ =\ glm::max(\mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}},\ point);}
+\DoxyCodeLine{00200\ \ \ \ \ \}}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00203\ \ \ \ \ \mbox{\hyperlink{struct_a_a_b_b_a5f5baf6c533905aa1456b3a3eb57bab2}{AABB}}\ \mbox{\hyperlink{struct_a_a_b_b_a8943a9826c0982a4dd39e2c111de8ac9}{Transform}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}}\&\ modelMatrix)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00204\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_a_a_b_b_a5f5baf6c533905aa1456b3a3eb57bab2}{AABB}}\ result;}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Define\ 8\ corners\ of\ the\ original\ box}}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ corners[8]\ =\ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}}.x,\ \mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}}.y,\ \mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}}.z\},\ \{\mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}}.x,\ \mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}}.y,\ \mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}}.z\},}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}}.x,\ \mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}}.y,\ \mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}}.z\},\ \{\mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}}.x,\ \mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}}.y,\ \mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}}.z\},}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}}.x,\ \mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}}.y,\ \mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}}.z\},\ \{\mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}}.x,\ \mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}}.y,\ \mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}}.z\},}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{struct_a_a_b_b_a5e0788c092b0ef1ef08ac3a46e8f9bb5}{min}}.x,\ \mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}}.y,\ \mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}}.z\},\ \{\mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}}.x,\ \mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}}.y,\ \mbox{\hyperlink{struct_a_a_b_b_a4ce4c513f4880923f012242c7d91d023}{max}}.z\}}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Transform\ each\ corner\ and\ expand\ the\ result\ AABB}}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 8;\ ++i)}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ transformed\ =\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}(modelMatrix\ *\ \mbox{\hyperlink{math_8hpp_adba234791e87b8e2d638fbf2b55a0db1}{Vector4f}}(corners[i],\ 1.0f));}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ result.\mbox{\hyperlink{struct_a_a_b_b_a812706f15e5916a48fdeaefe9e7bc388}{Expand}}(transformed);}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00223\ \ \ \ \ \}}
+\DoxyCodeLine{00224\ \};}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MATH\_HPP}}
+
+\end{DoxyCode}

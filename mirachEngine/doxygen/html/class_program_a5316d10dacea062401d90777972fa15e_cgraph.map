@@ -1,0 +1,9 @@
+<map id="Program::DeleteGraphics" name="Program::DeleteGraphics">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,174,57"/>
+<area shape="rect" id="Node000002" href="$namespace_graphics.html#afdbcfb53bbe1ebcc083b61c257d500e9" title=" " alt="" coords="222,5,390,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,31,206,28,206,33,174,37"/>
+<area shape="rect" id="Node000003" href="$class_program.html#a6e8e19b06ed7b9472c0e63ee7e44dd42" title=" " alt="" coords="224,56,388,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="174,51,209,55,208,61,174,57"/>
+<area shape="rect" id="Node000004" href="$namespace_window.html#ad9697b4c1ab7bfd9b385f461f275303b" title="Destroys a previously created window." alt="" coords="438,56,560,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="388,67,423,67,423,72,388,72"/>
+</map>

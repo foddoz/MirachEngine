@@ -1,0 +1,30 @@
+\doxysection{animation\+\_\+system.\+hpp}
+\hypertarget{animation__system_8hpp_source}{}\label{animation__system_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/Animation/animation\_system.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/Animation/animation\_system.hpp}}
+\mbox{\hyperlink{animation__system_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{entity__manager_8hpp}{../../ECS/entity\_manager.hpp}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_m_d2_8hpp}{MD2.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mesh__renderer_8hpp}{../Rendering/mesh\_renderer.hpp}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_m_d2_animator}{MD2Animator}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_mesh_m_d2}{MeshMD2}}*\ \mbox{\hyperlink{struct_m_d2_animator_a1d6c816428edd95e3ee9f0003597175d}{mesh}}\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_m_d2_animator_ab7709129912d075ed4e5bcc12f360dd6}{currentAnim}}\ =\ \textcolor{stringliteral}{"{}idle"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_m_d2_animator_adbf080885ed1cd27fd0dcdec9e4a9972}{lastAppliedAnim}}\ =\ \textcolor{stringliteral}{"{}"{}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_m_d2_animator_add81f539eaf80a7ecf56f5f2a70fef7c}{animTime}}\ =\ 0.0f;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_m_d2_animator_a748dff0778dc17651ece39412f095ecb}{currentFrame}}\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_m_d2_animator_ae2453e1bd4582d37e60c4c8deef8efed}{nextFrame}}\ =\ 1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_m_d2_animator_a8500ec94e91b9978b5795231ee0650e4}{animatedVBO}}\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ std::vector<Vector3f>\ \mbox{\hyperlink{struct_m_d2_animator_a79633bb4d4d8f5fa7e98d105d554a309}{interpolatedVerts}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_animation_system}{AnimationSystem}}\ \{}
+\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_animation_system_ad7b370061581bbc898f0c6a35250c2a3}{Update}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ em,\ \textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00043\ \};}
+
+\end{DoxyCode}

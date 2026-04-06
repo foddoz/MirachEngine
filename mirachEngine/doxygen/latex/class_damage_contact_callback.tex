@@ -1,0 +1,201 @@
+\doxysection{Damage\+Contact\+Callback Class Reference}
+\hypertarget{class_damage_contact_callback}{}\label{class_damage_contact_callback}\index{DamageContactCallback@{DamageContactCallback}}
+
+
+A physics collision callback that applies damage to entities hit by a thrown object.  
+
+
+
+
+{\ttfamily \#include $<$collision\+\_\+callback.\+hpp$>$}
+
+
+
+Inheritance diagram for Damage\+Contact\+Callback\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{class_damage_contact_callback__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Damage\+Contact\+Callback\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_damage_contact_callback__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_damage_contact_callback_ac4e45fb4831ff15d022bacb7de6a0274}{Damage\+Contact\+Callback}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*}em, \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} thrown\+Entity)
+\begin{DoxyCompactList}\small\item\em Constructs the callback with the entity manager and thrown entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_damage_contact_callback_a429e4591d8ea4e3ad26d6e626352cc50}{On\+Contact}} (\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*}a, \mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*}b) override
+\begin{DoxyCompactList}\small\item\em Called by the physics system when a contact begins. Applies damage if the thrown object hits a valid robot entity with sufficient velocity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_damage_contact_callback_a31163b0020da8e1b004057ae0123596f}{On\+Contact\+Exit}} (\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*}a, \mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*}b) override
+\begin{DoxyCompactList}\small\item\em Called by the physics system when a contact ends. Removes the robot-\/thrown contact pair from the active damage set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_physics_1_1_collision_callback}{Physics\+::\+Collision\+Callback}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_physics_1_1_collision_callback_ac262af0d466968ba35abceb46791f197}{\texorpdfstring{$\sim$}{\string~}\+Collision\+Callback}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \mbox{\hyperlink{class_damage_contact_callback_aa009e34d1f5fb441563ec969e417a242}{Find\+Entity}} (\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*}rb)
+\begin{DoxyCompactList}\small\item\em Finds the ECS entity corresponding to a given rigid body pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_damage_contact_callback_a750f57e0d7dff31cf140924b4dc930bf}{m\+\_\+em}}
+\begin{DoxyCompactList}\small\item\em Reference to the ECS entity manager. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \mbox{\hyperlink{class_damage_contact_callback_a98b35c6d4818d257bb485924b059661d}{m\+\_\+thrown}}
+\begin{DoxyCompactList}\small\item\em The entity that was thrown. \end{DoxyCompactList}\item 
+std\+::set$<$ std\+::pair$<$ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}, \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} $>$ $>$ \mbox{\hyperlink{class_damage_contact_callback_a3ac4c76536c8dae18ebbadc7322d21d8}{active\+Contacts}}
+\begin{DoxyCompactList}\small\item\em Tracks currently colliding entity pairs to avoid repeated damage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A physics collision callback that applies damage to entities hit by a thrown object. 
+
+This callback is registered when an object is thrown. It checks for collisions, and if the thrown object hits a robot with sufficient speed, it reduces the robot\textquotesingle{}s health. 
+
+\label{doc-constructors}
+\Hypertarget{class_damage_contact_callback_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_damage_contact_callback_ac4e45fb4831ff15d022bacb7de6a0274}\index{DamageContactCallback@{DamageContactCallback}!DamageContactCallback@{DamageContactCallback}}
+\index{DamageContactCallback@{DamageContactCallback}!DamageContactCallback@{DamageContactCallback}}
+\doxysubsubsection{\texorpdfstring{DamageContactCallback()}{DamageContactCallback()}}
+{\footnotesize\ttfamily \label{class_damage_contact_callback_ac4e45fb4831ff15d022bacb7de6a0274} 
+Damage\+Contact\+Callback\+::\+Damage\+Contact\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*}}]{em}{, }\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}}]{thrown\+Entity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs the callback with the entity manager and thrown entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em em} & Pointer to the \doxylink{class_entity_manager}{Entity\+Manager} used to access components. \\
+\hline
+{\em thrown\+Entity} & The entity that was thrown and can deal damage. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_damage_contact_callback_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_damage_contact_callback_aa009e34d1f5fb441563ec969e417a242}\index{DamageContactCallback@{DamageContactCallback}!FindEntity@{FindEntity}}
+\index{FindEntity@{FindEntity}!DamageContactCallback@{DamageContactCallback}}
+\doxysubsubsection{\texorpdfstring{FindEntity()}{FindEntity()}}
+{\footnotesize\ttfamily \label{class_damage_contact_callback_aa009e34d1f5fb441563ec969e417a242} 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} Damage\+Contact\+Callback\+::\+Find\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{rb}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Finds the ECS entity corresponding to a given rigid body pointer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rb} & Pointer to the rigid body. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The matching entity or INVALID\+\_\+\+ENTITY if not found. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_damage_contact_callback_aa009e34d1f5fb441563ec969e417a242_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_damage_contact_callback_a429e4591d8ea4e3ad26d6e626352cc50}\index{DamageContactCallback@{DamageContactCallback}!OnContact@{OnContact}}
+\index{OnContact@{OnContact}!DamageContactCallback@{DamageContactCallback}}
+\doxysubsubsection{\texorpdfstring{OnContact()}{OnContact()}}
+{\footnotesize\ttfamily \label{class_damage_contact_callback_a429e4591d8ea4e3ad26d6e626352cc50} 
+void Damage\+Contact\+Callback\+::\+On\+Contact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called by the physics system when a contact begins. Applies damage if the thrown object hits a valid robot entity with sufficient velocity. 
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_collision_callback_a897cacd80e87ca3a179e6da4a4be889f}{Physics\+::\+Collision\+Callback}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_damage_contact_callback_a429e4591d8ea4e3ad26d6e626352cc50_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_damage_contact_callback_a31163b0020da8e1b004057ae0123596f}\index{DamageContactCallback@{DamageContactCallback}!OnContactExit@{OnContactExit}}
+\index{OnContactExit@{OnContactExit}!DamageContactCallback@{DamageContactCallback}}
+\doxysubsubsection{\texorpdfstring{OnContactExit()}{OnContactExit()}}
+{\footnotesize\ttfamily \label{class_damage_contact_callback_a31163b0020da8e1b004057ae0123596f} 
+void Damage\+Contact\+Callback\+::\+On\+Contact\+Exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called by the physics system when a contact ends. Removes the robot-\/thrown contact pair from the active damage set. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_physics_1_1_collision_callback_a433f15f1438f1d49f1a33ca32467fb73}{Physics\+::\+Collision\+Callback}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_damage_contact_callback_a31163b0020da8e1b004057ae0123596f_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_damage_contact_callback_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_damage_contact_callback_a3ac4c76536c8dae18ebbadc7322d21d8}\index{DamageContactCallback@{DamageContactCallback}!activeContacts@{activeContacts}}
+\index{activeContacts@{activeContacts}!DamageContactCallback@{DamageContactCallback}}
+\doxysubsubsection{\texorpdfstring{activeContacts}{activeContacts}}
+{\footnotesize\ttfamily \label{class_damage_contact_callback_a3ac4c76536c8dae18ebbadc7322d21d8} 
+std\+::set$<$std\+::pair$<$\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}, \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}$>$ $>$ Damage\+Contact\+Callback\+::active\+Contacts\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Tracks currently colliding entity pairs to avoid repeated damage. 
+
+\Hypertarget{class_damage_contact_callback_a750f57e0d7dff31cf140924b4dc930bf}\index{DamageContactCallback@{DamageContactCallback}!m\_em@{m\_em}}
+\index{m\_em@{m\_em}!DamageContactCallback@{DamageContactCallback}}
+\doxysubsubsection{\texorpdfstring{m\_em}{m\_em}}
+{\footnotesize\ttfamily \label{class_damage_contact_callback_a750f57e0d7dff31cf140924b4dc930bf} 
+\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}}\texorpdfstring{$\ast$}{*} Damage\+Contact\+Callback\+::m\+\_\+em\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference to the ECS entity manager. 
+
+\Hypertarget{class_damage_contact_callback_a98b35c6d4818d257bb485924b059661d}\index{DamageContactCallback@{DamageContactCallback}!m\_thrown@{m\_thrown}}
+\index{m\_thrown@{m\_thrown}!DamageContactCallback@{DamageContactCallback}}
+\doxysubsubsection{\texorpdfstring{m\_thrown}{m\_thrown}}
+{\footnotesize\ttfamily \label{class_damage_contact_callback_a98b35c6d4818d257bb485924b059661d} 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} Damage\+Contact\+Callback\+::m\+\_\+thrown\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The entity that was thrown. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Physics/\mbox{\hyperlink{collision__callback_8hpp}{collision\+\_\+callback.\+hpp}}\end{DoxyCompactItemize}

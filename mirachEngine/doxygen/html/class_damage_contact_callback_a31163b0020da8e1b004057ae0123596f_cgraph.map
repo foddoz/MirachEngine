@@ -1,0 +1,5 @@
+<map id="DamageContactCallback::OnContactExit" name="DamageContactCallback::OnContactExit">
+<area shape="rect" id="Node000001" title="Called by the physics system when a contact ends. Removes the robot&#45;thrown contact pair from the acti..." alt="" coords="5,5,173,48"/>
+<area shape="rect" id="Node000002" href="$class_damage_contact_callback.html#aa009e34d1f5fb441563ec969e417a242" title="Finds the ECS entity corresponding to a given rigid body pointer." alt="" coords="221,5,388,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,24,205,24,205,29,173,29"/>
+</map>

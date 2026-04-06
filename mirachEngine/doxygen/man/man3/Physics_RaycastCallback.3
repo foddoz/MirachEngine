@@ -1,0 +1,57 @@
+.TH "Physics::RaycastCallback" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Physics::RaycastCallback \- Callback interface for raycasting results\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <physics\&.hpp>\fP
+.PP
+Inherited by \fBForceRaycast\fP, and \fBGroundRaycast\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~RaycastCallback\fP ()=default"
+.br
+.ti -1c
+.RI "virtual bool \fBReportHit\fP (\fBRigidBody\fP *body, float hitFraction)=0"
+.br
+.RI "Called when the ray hits a rigid body\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Callback interface for raycasting results\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual Physics::RaycastCallback::~RaycastCallback ()\fR [virtual]\fP, \fR [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual bool Physics::RaycastCallback::ReportHit (\fBRigidBody\fP * body, float hitFraction)\fR [pure virtual]\fP"
+
+.PP
+Called when the ray hits a rigid body\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIbody\fP The body hit\&. 
+.br
+\fIhitFraction\fP Fraction along the ray (0\&.0 - 1\&.0)\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True to continue raycast, false to stop\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBForceRaycast\fP, and \fBGroundRaycast\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

@@ -1,0 +1,21 @@
+<map id="MeshTerrain::GetHeight" name="MeshTerrain::GetHeight">
+<area shape="rect" id="Node000001" title="Gets the height at the given integer terrain grid coordinates." alt="" coords="996,72,1155,99"/>
+<area shape="rect" id="Node000002" href="$class_mesh_terrain.html#ad1253af0199061cbd5f288e34b4deec5" title="Applies FIR filtering on a single height value." alt="" coords="740,5,928,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1002,70,924,51,925,46,1003,65"/>
+<area shape="rect" id="Node000006" href="$class_mesh_terrain.html#a96e1532cccbcd9e7b98c503a4285dd67" title="Gets bilinearly interpolated height from floating point coordinates." alt="" coords="720,72,948,99"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="980,88,948,88,948,83,980,83"/>
+<area shape="rect" id="Node000008" href="$struct_mesh_terrain_1_1_vertex.html#a58f3fdca3d472b4165dacf04ec17b5dd" title="Initializes vertex based on heightmap and terrain data." alt="" coords="765,123,903,165"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1003,105,904,130,902,125,1002,100"/>
+<area shape="rect" id="Node000003" href="$class_mesh_terrain.html#a766c22ce021c46dcd0fa93726717e13c" title="Applies FIR filter in 4 directions for terrain smoothing." alt="" coords="484,13,668,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="724,29,669,29,669,24,724,24"/>
+<area shape="rect" id="Node000004" href="$class_mesh_terrain.html#a8f4dd324238753e462a2e9c9ca260c40" title="Internal fault formation algorithm with smoothing filter." alt="" coords="264,5,432,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="469,29,433,29,433,24,469,24"/>
+<area shape="rect" id="Node000005" href="$class_mesh_terrain.html#a8b774b6e68bb4e4e72e0690daeb5bf7f" title="Generates the heightmap and vertex data for terrain mesh." alt="" coords="5,13,216,40"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="248,29,216,29,216,24,248,24"/>
+<area shape="rect" id="Node000007" href="$class_mesh_terrain.html#a58ce82371ad74d5e293bf5cfc323ff7a" title=" " alt="" coords="480,72,672,99"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="705,88,673,88,673,83,705,83"/>
+<area shape="rect" id="Node000009" href="$class_mesh_terrain.html#a7cd9ecf88516b6716cb76b804e8bd61b" title=" " alt="" coords="493,131,659,157"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="750,147,660,147,660,141,750,141"/>
+<area shape="rect" id="Node000010" href="$class_mesh_terrain.html#a02d8c1492362365710a818b9a4674774" title="Converts the terrain to a renderable mesh component." alt="" coords="264,131,432,157"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="478,147,432,147,432,141,478,141"/>
+</map>

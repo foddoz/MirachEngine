@@ -1,0 +1,43 @@
+\doxysection{component\+\_\+manager.\+hpp}
+\hypertarget{component__manager_8hpp_source}{}\label{component__manager_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/ECS/component\_manager.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/ECS/component\_manager.hpp}}
+\mbox{\hyperlink{component__manager_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ COMPONENT\_MANAGER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ COMPONENT\_MANAGER\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ecs__types_8hpp}{ecs\_types.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ ComponentType>}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_component_manager}{ComponentManager}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_component_manager_af278794db44296d707492fef01b15e96}{AddComponent}}(\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ e,\ \textcolor{keyword}{const}\ ComponentType\&\ component)\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_component_manager_aededd31118eefc2d258f1ac77691e253}{m\_Components}}[e]\ =\ component;}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_component_manager_a2501a3794e300d71b6279e76d311846c}{RemoveComponent}}(\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ e)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_component_manager_aededd31118eefc2d258f1ac77691e253}{m\_Components}}.erase(e);}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_component_manager_a8a8d1ef9e132029f47f452d64f0c3f7a}{HasComponent}}(\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ e)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_component_manager_aededd31118eefc2d258f1ac77691e253}{m\_Components}}.find(e)\ !=\ \mbox{\hyperlink{class_component_manager_aededd31118eefc2d258f1ac77691e253}{m\_Components}}.end();}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00051\ \ \ \ \ ComponentType\&\ \mbox{\hyperlink{class_component_manager_a81536e74843307f9b9e27993cca3e72b}{GetComponent}}(\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ e)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_component_manager_aededd31118eefc2d258f1ac77691e253}{m\_Components}}.at(e);}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ std::unordered\_map<Entity,\ ComponentType>\&\ \mbox{\hyperlink{class_component_manager_a41507f22f5d9cf4158ead40fdc4b25d0}{GetAll}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_component_manager_aededd31118eefc2d258f1ac77691e253}{m\_Components}};\ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{const}\ std::unordered\_map<Entity,\ ComponentType>\&\ \mbox{\hyperlink{class_component_manager_a89193058f54d2746f028d2a12c035070}{GetAll}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_component_manager_aededd31118eefc2d258f1ac77691e253}{m\_Components}};}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00067\ \ \ \ \ std::unordered\_map<Entity,\ ComponentType>\ \mbox{\hyperlink{class_component_manager_aededd31118eefc2d258f1ac77691e253}{m\_Components}};\ }
+\DoxyCodeLine{00068\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

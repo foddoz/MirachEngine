@@ -1,0 +1,7 @@
+<map id="EnemyAttackCallback" name="EnemyAttackCallback">
+<area shape="rect" id="Node000001" title=" " alt="" coords="110,488,272,643"/>
+<area shape="rect" id="Node000002" href="$class_physics_1_1_collision_callback.html" title="Callback interface for collision detection events." alt="" coords="5,155,172,267"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,280,172,488,167,489,106,282"/>
+<area shape="rect" id="Node000003" href="$class_entity_manager.html" title="Manages entity creation, destruction, and component access in the ECS system." alt="" coords="196,5,392,416"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="237,416,221,473,216,471,232,415"/>
+</map>

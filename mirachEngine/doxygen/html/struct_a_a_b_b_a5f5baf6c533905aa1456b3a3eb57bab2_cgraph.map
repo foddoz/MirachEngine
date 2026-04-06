@@ -1,0 +1,5 @@
+<map id="AABB::AABB" name="AABB::AABB">
+<area shape="rect" id="Node000001" title="Constructs an invalid AABB by resetting its values." alt="" coords="5,5,107,32"/>
+<area shape="rect" id="Node000002" href="$struct_a_a_b_b.html#afbd7dcd97080cd1c046bace01dcc6999" title="Resets the AABB to an empty state." alt="" coords="155,5,255,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,16,139,16,139,21,107,21"/>
+</map>

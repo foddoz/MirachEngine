@@ -1,0 +1,11 @@
+<map id="Camera::Camera" name="Camera::Camera">
+<area shape="rect" id="Node000001" title="Constructs a camera with default orientation and projection parameters." alt="" coords="5,56,127,83"/>
+<area shape="rect" id="Node000002" href="$class_camera.html#ae94de322124a68e32113235eeec78008" title="Updates the camera&#39;s direction vectors (front, right, up) based on its current yaw and pitch." alt="" coords="175,56,336,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,67,159,67,159,72,127,72"/>
+<area shape="rect" id="Node000003" href="$math_8hpp.html#a670c0a5216c9f579310c5202fba83257" title="Cross product of two 3D vectors." alt="" coords="398,5,454,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="302,53,382,29,383,34,304,58"/>
+<area shape="rect" id="Node000004" href="$math_8hpp.html#a11c0426b3a7e98489b250e45d0240c5f" title="Normalizes a 3D vector." alt="" coords="386,56,466,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="337,67,370,67,370,72,337,72"/>
+<area shape="rect" id="Node000005" href="$math_8hpp.html#a387a686169e8f84d5abcedaefd2c8d5d" title="Converts degrees to radians." alt="" coords="384,107,467,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="304,81,370,101,368,106,302,86"/>
+</map>

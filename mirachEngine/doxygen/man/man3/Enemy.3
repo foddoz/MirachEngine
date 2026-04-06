@@ -1,0 +1,454 @@
+.TH "Enemy" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Enemy \- Represents an enemy character controlled by a finite state machine (FSM)\&. This class defines properties, behavior, and state transitions for an enemy AI agent\&. It is integrated with ECS (Entity-Component System), physics, animation, and health systems\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <enemy\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEnemy\fP ()"
+.br
+.RI "Default constructor\&. "
+.ti -1c
+.RI "\fBEnemy\fP (const std::string &\fBname\fP, \fBEntity\fP self, \fBEntity\fP *player, \fBEntityManager\fP *mgr, \fBIEnemyStateLogic\fP *AILogic, \fBPhysicsSystem\fP *physics)"
+.br
+.RI "Full constructor for initializing enemy state and dependencies\&. "
+.ti -1c
+.RI "\fB~Enemy\fP ()"
+.br
+.RI "Destructor\&. "
+.ti -1c
+.RI "void \fBUpdate\fP (float dt)"
+.br
+.RI "Per-frame update for the enemy\&. Delegates to the FSM\&. "
+.ti -1c
+.RI "float \fBgetSpeed\fP () const"
+.br
+.RI "Getters and Setters\&. "
+.ti -1c
+.RI "void \fBsetSpeed\fP (float s)"
+.br
+.ti -1c
+.RI "\fBEntityManager\fP * \fBGetEntityManager\fP () const"
+.br
+.ti -1c
+.RI "\fBEntity\fP \fBGetSelfEntity\fP () const"
+.br
+.ti -1c
+.RI "\fBEntity\fP * \fBGetPlayerEntity\fP () const"
+.br
+.ti -1c
+.RI "std::string \fBgetName\fP () const"
+.br
+.ti -1c
+.RI "\fBStateMachine\fP< \fBEnemy\fP > * \fBgetFSM\fP () const"
+.br
+.ti -1c
+.RI "float \fBgetDamage\fP () const"
+.br
+.ti -1c
+.RI "void \fBFaceTarget\fP (const \fBVector3f\fP &targetPos)"
+.br
+.RI "Rotates the enemy to face a specific target position\&. "
+.ti -1c
+.RI "void \fBSetAnimation\fP (const std::string &animName)"
+.br
+.RI "Sets the current animation by name\&. "
+.ti -1c
+.RI "bool \fBIsPlayerInRange\fP (\fBEnemy\fP *e, float range)"
+.br
+.RI "Checks whether the player is within a given range\&. "
+.ti -1c
+.RI "bool \fBIsAnimationEnded\fP () const"
+.br
+.RI "Returns whether the current animation has ended\&. "
+.ti -1c
+.RI "bool \fBIsHealthLow\fP (float threshold) const"
+.br
+.RI "Checks if the enemy's health is below a threshold\&. "
+.ti -1c
+.RI "void \fBAlertNearbyEnemies\fP ()"
+.br
+.RI "Notifies nearby enemies (if implemented) that the player is detected\&. "
+.ti -1c
+.RI "\fBPhysicsSystem\fP * \fBGetPhysicsSystem\fP () const"
+.br
+.RI "\fBPhysics\fP Accessors\&. "
+.ti -1c
+.RI "void \fBSetAttackCallback\fP (\fBPhysics::CollisionCallback\fP *cb)"
+.br
+.ti -1c
+.RI "void \fBClearAttackCallback\fP ()"
+.br
+.ti -1c
+.RI "void \fBonAttackEnter\fP ()"
+.br
+.RI "=== FSM \fBState\fP Hooks === "
+.ti -1c
+.RI "void \fBonAttackExecute\fP ()"
+.br
+.ti -1c
+.RI "void \fBonAttackExit\fP ()"
+.br
+.ti -1c
+.RI "void \fBonFleeEnter\fP ()"
+.br
+.ti -1c
+.RI "void \fBonFleeExecute\fP ()"
+.br
+.ti -1c
+.RI "void \fBonFleeExit\fP ()"
+.br
+.ti -1c
+.RI "void \fBonPatrolEnter\fP ()"
+.br
+.ti -1c
+.RI "void \fBonPatrolExecute\fP ()"
+.br
+.ti -1c
+.RI "void \fBonPatrolExit\fP ()"
+.br
+.ti -1c
+.RI "void \fBonChaseEnter\fP ()"
+.br
+.ti -1c
+.RI "void \fBonChaseExecute\fP ()"
+.br
+.ti -1c
+.RI "void \fBonChaseExit\fP ()"
+.br
+.ti -1c
+.RI "void \fBonDeathEnter\fP ()"
+.br
+.ti -1c
+.RI "void \fBonDeathExecute\fP ()"
+.br
+.ti -1c
+.RI "void \fBonDeathExit\fP ()"
+.br
+.ti -1c
+.RI "void \fBonPainEnter\fP ()"
+.br
+.ti -1c
+.RI "void \fBonPainExecute\fP ()"
+.br
+.ti -1c
+.RI "void \fBonPainExit\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBname\fP"
+.br
+.RI "The name/label of the enemy (used for identification or debugging)\&. "
+.ti -1c
+.RI "\fBIEnemyStateLogic\fP * \fBlogic\fP"
+.br
+.RI "Logic interface that implements the behaviors for all states (\fBAttack\fP, \fBChase\fP, etc\&.)\&. "
+.ti -1c
+.RI "\fBStateMachine\fP< \fBEnemy\fP > * \fBfsm\fP"
+.br
+.RI "Finite \fBState\fP Machine controlling the current behavior state of the enemy\&. "
+.ti -1c
+.RI "\fBEntity\fP \fBselfEntity\fP"
+.br
+.RI "ECS entities used for this enemy and the player (used in AI targeting)\&. "
+.ti -1c
+.RI "\fBEntity\fP * \fBplayerEntity\fP"
+.br
+.ti -1c
+.RI "\fBEntityManager\fP * \fBentityManager\fP"
+.br
+.ti -1c
+.RI "float \fBspeed\fP = 5\&.0f"
+.br
+.RI "Movement speed of the enemy\&. "
+.ti -1c
+.RI "\fBVector3f\fP \fBDirection\fP = \fBVector3f\fP(1\&.f, 0\&.f, 0\&.f)"
+.br
+.RI "\fBPatrol\fP behavior: direction and timing\&. "
+.ti -1c
+.RI "float \fBTimer\fP = 0\&.f"
+.br
+.ti -1c
+.RI "float \fBSwitchInterval\fP = 3\&.f"
+.br
+.ti -1c
+.RI "const float \fBmaxChaseDistance\fP = 50\&.0f"
+.br
+.RI "AI parameters\&. "
+.ti -1c
+.RI "const float \fBattackRange\fP = 5\&.0f"
+.br
+.RI "Distance required to start attacking\&. "
+.ti -1c
+.RI "bool \fBisAttacking\fP = false"
+.br
+.RI "Whether currently in attack state\&. "
+.ti -1c
+.RI "float \fBdamage\fP = 10"
+.br
+.RI "Damage dealt per attack\&. "
+.ti -1c
+.RI "\fBPhysicsSystem\fP * \fBphysicsSystem\fP = nullptr"
+.br
+.RI "\fBPhysics\fP system reference and temporary attack callback used during combat\&. "
+.ti -1c
+.RI "\fBPhysics::CollisionCallback\fP * \fBtempAttackCallback\fP = nullptr"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBenemyState\fP"
+.br
+.ti -1c
+.RI "class \fBhoverEnemyState\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents an enemy character controlled by a finite state machine (FSM)\&. This class defines properties, behavior, and state transitions for an enemy AI agent\&. It is integrated with ECS (Entity-Component System), physics, animation, and health systems\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Enemy::Enemy ()"
+
+.PP
+Default constructor\&. 
+.SS "Enemy::Enemy (const std::string & name, \fBEntity\fP self, \fBEntity\fP * player, \fBEntityManager\fP * mgr, \fBIEnemyStateLogic\fP * AILogic, \fBPhysicsSystem\fP * physics)"
+
+.PP
+Full constructor for initializing enemy state and dependencies\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIname\fP Name of the enemy\&. 
+.br
+\fIself\fP This entity's ID\&. 
+.br
+\fIplayer\fP Pointer to player entity ID\&. 
+.br
+\fImgr\fP Pointer to the \fBEntityManager\fP\&. 
+.br
+\fIAILogic\fP Pointer to the AI logic implementation\&. 
+.br
+\fIphysics\fP Pointer to the physics system\&. 
+.RE
+.PP
+
+.SS "Enemy::~Enemy ()"
+
+.PP
+Destructor\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void Enemy::AlertNearbyEnemies ()"
+
+.PP
+Notifies nearby enemies (if implemented) that the player is detected\&. 
+.SS "void Enemy::ClearAttackCallback ()"
+
+.SS "void Enemy::FaceTarget (const \fBVector3f\fP & targetPos)"
+
+.PP
+Rotates the enemy to face a specific target position\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fItargetPos\fP Target world-space position to look at\&. 
+.RE
+.PP
+
+.SS "float Enemy::getDamage () const"
+
+.SS "\fBEntityManager\fP * Enemy::GetEntityManager () const"
+
+.SS "\fBStateMachine\fP< \fBEnemy\fP > * Enemy::getFSM () const"
+
+.SS "std::string Enemy::getName () const"
+
+.SS "\fBPhysicsSystem\fP * Enemy::GetPhysicsSystem () const"
+
+.PP
+\fBPhysics\fP Accessors\&. 
+.SS "\fBEntity\fP * Enemy::GetPlayerEntity () const"
+
+.SS "\fBEntity\fP Enemy::GetSelfEntity () const"
+
+.SS "float Enemy::getSpeed () const"
+
+.PP
+Getters and Setters\&. 
+.SS "bool Enemy::IsAnimationEnded () const"
+
+.PP
+Returns whether the current animation has ended\&. 
+.SS "bool Enemy::IsHealthLow (float threshold) const"
+
+.PP
+Checks if the enemy's health is below a threshold\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIthreshold\fP A normalized value\&. 
+.RE
+.PP
+
+.SS "bool Enemy::IsPlayerInRange (\fBEnemy\fP * e, float range)"
+
+.PP
+Checks whether the player is within a given range\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP Pointer to the enemy (used to query position)\&. 
+.br
+\fIrange\fP Max detection range\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+true if player is within range\&. 
+.RE
+.PP
+
+.SS "void Enemy::onAttackEnter ()"
+
+.PP
+=== FSM \fBState\fP Hooks === 
+.SS "void Enemy::onAttackExecute ()"
+
+.SS "void Enemy::onAttackExit ()"
+
+.SS "void Enemy::onChaseEnter ()"
+
+.SS "void Enemy::onChaseExecute ()"
+
+.SS "void Enemy::onChaseExit ()"
+
+.SS "void Enemy::onDeathEnter ()"
+
+.SS "void Enemy::onDeathExecute ()"
+
+.SS "void Enemy::onDeathExit ()"
+
+.SS "void Enemy::onFleeEnter ()"
+
+.SS "void Enemy::onFleeExecute ()"
+
+.SS "void Enemy::onFleeExit ()"
+
+.SS "void Enemy::onPainEnter ()"
+
+.SS "void Enemy::onPainExecute ()"
+
+.SS "void Enemy::onPainExit ()"
+
+.SS "void Enemy::onPatrolEnter ()"
+
+.SS "void Enemy::onPatrolExecute ()"
+
+.SS "void Enemy::onPatrolExit ()"
+
+.SS "void Enemy::SetAnimation (const std::string & animName)"
+
+.PP
+Sets the current animation by name\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIanimName\fP Name of the animation (e\&.g\&., "walk", "att_c")\&. 
+.RE
+.PP
+
+.SS "void Enemy::SetAttackCallback (\fBPhysics::CollisionCallback\fP * cb)"
+
+.SS "void Enemy::setSpeed (float s)"
+
+.SS "void Enemy::Update (float dt)"
+
+.PP
+Per-frame update for the enemy\&. Delegates to the FSM\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdt\fP Delta time since last frame\&. 
+.RE
+.PP
+
+.SH "Friends And Related Symbol Documentation"
+.PP 
+.SS "friend class \fBenemyState\fP\fR [friend]\fP"
+
+.SS "friend class \fBhoverEnemyState\fP\fR [friend]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "const float Enemy::attackRange = 5\&.0f\fR [private]\fP"
+
+.PP
+Distance required to start attacking\&. 
+.SS "float Enemy::damage = 10\fR [private]\fP"
+
+.PP
+Damage dealt per attack\&. 
+.SS "\fBVector3f\fP Enemy::Direction = \fBVector3f\fP(1\&.f, 0\&.f, 0\&.f)\fR [private]\fP"
+
+.PP
+\fBPatrol\fP behavior: direction and timing\&. 
+.SS "\fBEntityManager\fP* Enemy::entityManager\fR [private]\fP"
+
+.SS "\fBStateMachine\fP<\fBEnemy\fP>* Enemy::fsm\fR [private]\fP"
+
+.PP
+Finite \fBState\fP Machine controlling the current behavior state of the enemy\&. 
+.SS "bool Enemy::isAttacking = false\fR [private]\fP"
+
+.PP
+Whether currently in attack state\&. 
+.SS "\fBIEnemyStateLogic\fP* Enemy::logic\fR [private]\fP"
+
+.PP
+Logic interface that implements the behaviors for all states (\fBAttack\fP, \fBChase\fP, etc\&.)\&. 
+.SS "const float Enemy::maxChaseDistance = 50\&.0f\fR [private]\fP"
+
+.PP
+AI parameters\&. Max distance to chase the player\&. 
+.SS "std::string Enemy::name\fR [private]\fP"
+
+.PP
+The name/label of the enemy (used for identification or debugging)\&. 
+.SS "\fBPhysicsSystem\fP* Enemy::physicsSystem = nullptr\fR [private]\fP"
+
+.PP
+\fBPhysics\fP system reference and temporary attack callback used during combat\&. 
+.SS "\fBEntity\fP* Enemy::playerEntity\fR [private]\fP"
+
+.SS "\fBEntity\fP Enemy::selfEntity\fR [private]\fP"
+
+.PP
+ECS entities used for this enemy and the player (used in AI targeting)\&. 
+.SS "float Enemy::speed = 5\&.0f\fR [private]\fP"
+
+.PP
+Movement speed of the enemy\&. 
+.SS "float Enemy::SwitchInterval = 3\&.f\fR [private]\fP"
+
+.SS "\fBPhysics::CollisionCallback\fP* Enemy::tempAttackCallback = nullptr\fR [private]\fP"
+
+.SS "float Enemy::Timer = 0\&.f\fR [private]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

@@ -1,0 +1,72 @@
+.TH "MeshEntry" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MeshEntry \- Represents metadata about a submesh section of a 3D model\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <mesh_entry\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMeshEntry\fP ()"
+.br
+.RI "Constructs a default \fBMeshEntry\fP with zeroed values\&. "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "unsigned int \fBnumIndices\fP"
+.br
+.RI "Number of indices for this submesh\&. "
+.ti -1c
+.RI "unsigned int \fBbaseVertex\fP"
+.br
+.RI "Offset into the vertex buffer\&. "
+.ti -1c
+.RI "unsigned int \fBbaseIndex\fP"
+.br
+.RI "Offset into the index buffer\&. "
+.ti -1c
+.RI "unsigned int \fBmaterialIndex\fP"
+.br
+.RI "Material index this submesh uses\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents metadata about a submesh section of a 3D model\&. 
+
+Used to support models with multiple materials or mesh groups, typically when importing from file formats like OBJ or FBX\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MeshEntry::MeshEntry ()\fR [inline]\fP"
+
+.PP
+Constructs a default \fBMeshEntry\fP with zeroed values\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "unsigned int MeshEntry::baseIndex"
+
+.PP
+Offset into the index buffer\&. 
+.SS "unsigned int MeshEntry::baseVertex"
+
+.PP
+Offset into the vertex buffer\&. 
+.SS "unsigned int MeshEntry::materialIndex"
+
+.PP
+Material index this submesh uses\&. 
+.SS "unsigned int MeshEntry::numIndices"
+
+.PP
+Number of indices for this submesh\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

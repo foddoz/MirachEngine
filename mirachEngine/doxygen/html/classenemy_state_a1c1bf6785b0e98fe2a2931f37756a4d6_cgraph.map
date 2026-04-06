@@ -1,0 +1,19 @@
+<map id="enemyState::onAttackEnter" name="enemyState::onAttackEnter">
+<area shape="rect" id="Node000001" title="Animation index reference." alt="" coords="5,157,188,184"/>
+<area shape="rect" id="Node000002" href="$class_i_enemy_state_logic.html#aa2c870d75eaf6bf1bb9dec538b0f57fb" title="Registers a collision callback to apply damage to the player." alt="" coords="236,149,421,192"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,168,220,168,220,173,188,173"/>
+<area shape="rect" id="Node000003" href="$class_enemy.html#a6c4671cb8be935f9a9be8926925f00f4" title=" " alt="" coords="473,5,648,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="346,147,397,94,431,66,468,42,480,36,482,41,470,46,434,70,401,98,350,151"/>
+<area shape="rect" id="Node000004" href="$class_enemy.html#aea7262d326b48478bd5e3e6cd2a35331" title="Physics Accessors." alt="" coords="469,56,652,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="363,146,412,119,468,92,487,85,489,90,470,97,415,123,366,151"/>
+<area shape="rect" id="Node000005" href="$class_enemy.html#a6823df17129aabfc6a5fe8cf58aac9bd" title=" " alt="" coords="480,107,642,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="421,148,481,135,482,140,422,153"/>
+<area shape="rect" id="Node000006" href="$class_enemy.html#aaeac8ad6fedccb72cc4b5c99ded26c87" title=" " alt="" coords="486,157,635,184"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="421,168,471,168,471,173,421,173"/>
+<area shape="rect" id="Node000007" href="$class_physics_system.html#adc1b56a65144927424e6353ced3c7003" title="Gets the underlying physics world." alt="" coords="473,208,648,235"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="422,188,482,202,481,207,421,193"/>
+<area shape="rect" id="Node000008" href="$class_physics_1_1_world.html#adabe37ea49694f6e307d40b90c5e7211" title="Registers a global collision callback for contact events." alt="" coords="478,259,644,301"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="367,190,470,244,483,250,481,255,468,249,365,195"/>
+<area shape="rect" id="Node000009" href="$class_enemy.html#a4d9d075e8c408036a4c21675ed00333e" title=" " alt="" coords="471,325,650,352"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="347,191,398,251,432,283,470,311,481,317,479,321,468,316,429,288,394,255,343,194"/>
+</map>

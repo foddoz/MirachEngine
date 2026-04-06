@@ -1,0 +1,73 @@
+\doxysection{player\+\_\+script.\+hpp}
+\hypertarget{player__script_8hpp_source}{}\label{player__script_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Scripts/player\_script.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Scripts/player\_script.hpp}}
+\mbox{\hyperlink{player__script_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PLAYER\_SCRIPT\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PLAYER\_SCRIPT\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{entity__manager_8hpp}{../ECS/entity\_manager.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{physics__system_8hpp}{../Physics/physics\_system.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{input__manager_8hpp}{../Events/input\_manager.hpp}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{physics_8hpp}{../Physics/physics.hpp}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player_script_aa95bc084c1144953d65200ba821fd893}{PlayerScript}}}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_player_script_aa95bc084c1144953d65200ba821fd893}{PlayerScript}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\&\ player);}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_player_script_a477310df8b50b588b853e7d174e12f13}{CaptureInput}}(\mbox{\hyperlink{class_input_manager}{InputManager}}\&\ inputManager,\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ entityManager);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_script_acf49a0688d3e9aac48601f9aebcf9207}{PostPhysicsUpdate}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ entityManager,\ \mbox{\hyperlink{class_physics_system}{PhysicsSystem}}\&\ physicsSystem,\ \textcolor{keywordtype}{float}\ deltaTime);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_script_ad5255b13ec6d2547e0b90ef4598933ac}{ApplyPlayerMovement}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ em,\ \textcolor{keywordtype}{float}\ oscillateSpeed,\ \textcolor{keywordtype}{float}\ horizontalSpeed);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671a101f693f72287a2819a364f64ca1c0ed}{Jump}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ em);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_script_a6ca2961c6dc85d943a5e9450c011570e}{DoubleJump}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ em,\ \textcolor{keywordtype}{float}\ oscillateSpeed,\ \textcolor{keywordtype}{float}\ horizontalSpeed);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_player_script_a461158f5d6147b8338f872cf0802b68e}{IsGrounded}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ em,\ \mbox{\hyperlink{class_physics_system}{PhysicsSystem}}\&\ ps);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_script_a1f56c64cd8cee085e6d64910b6a9acf7}{LaunchObject}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ em,\ \mbox{\hyperlink{class_physics_system}{PhysicsSystem}}\&\ ps);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_script_a6340ea8b57a324cdf80747afbadffbef}{LaunchObjectInternal}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ em,\ \mbox{\hyperlink{class_physics_system}{PhysicsSystem}}\&\ ps,\ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ \textcolor{keywordtype}{object},\ \mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\ rb,\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ force);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_script_ae7fe7c941bd066b9b28bd3cff60d0117}{PickupObject}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ em,\ \mbox{\hyperlink{class_physics_system}{PhysicsSystem}}\&\ ps);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_script_aa3c58c5fbc952f37880acfa13a8b98a7}{UpdateHeldObject}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ em);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_player_script_abd58c2f0927e732e256307c2f868a17c}{DropObject}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ em);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\ \mbox{\hyperlink{class_player_script_ab267a7b5da4a38194b01e3f41d775afd}{GetValidRigidBody}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ em,\ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ \textcolor{keywordtype}{object});}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_collider}{Physics::Collider}}*\ \mbox{\hyperlink{class_player_script_a8918632f4f400ee83584a34ba35f4bfa}{GetValidCollider}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}\&\ em,\ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ \textcolor{keywordtype}{object});}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ \mbox{\hyperlink{class_player_script_a0f4a311d8d5deffca3cfb1fce7f82550}{playerID}};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_player_script_a4d8a188b696f82980c4a14f60d7796bd}{canDoubleJump}};}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ \mbox{\hyperlink{class_player_script_af43b761ae8297b6c6b34299d60a5b136}{heldEntity}}\ =\ \mbox{\hyperlink{ecs__types_8hpp_a273573770bdd417288da575784ee0aa3}{INVALID\_ENTITY}};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_player_script_a619219ea0c29263d6ca53f77cbbb65eb}{holdDistance}}\ =\ 3.0f;}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00139\ \ \ \ \ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ \mbox{\hyperlink{class_player_script_ae2f87da198e864dea7da943974f39c3c}{lastThrownEntity}}\ =\ \mbox{\hyperlink{ecs__types_8hpp_a273573770bdd417288da575784ee0aa3}{INVALID\_ENTITY}};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_player_script_a9d47751f22f4f5774a0086a6561d5c46}{throwCooldownTimer}}\ =\ 0.0f;}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_player_script_a6f43abbbdc342c9464d134816d3af08f}{throwCooldownDuration}}\ =\ 3.5f;}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Input\ State\ Flags\ -\/-\/-\/}}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_player_script_a1ff81db8c41db57a60a2548b7ad11f41}{moveForward}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_player_script_a2ae56bf5ccebff3617e42917045e155a}{moveBackward}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_player_script_ac86c4ae904f6bad9267c2429be01931e}{moveLeft}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_player_script_a77ddbe080984bde61866b298f9752d3b}{moveRight}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_player_script_a9d0d32006262d027da9fe760adac7599}{jumpPressed}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_player_script_a5d07690f11e5690c9e46c5a9a9b89716}{rightMouseDown}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_player_script_a8d30c32459e320a183f7b93ab3a51dbb}{leftMousePressed}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00155\ \};}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !PLAYER\_SCRIPT\_HPP}}
+
+\end{DoxyCode}

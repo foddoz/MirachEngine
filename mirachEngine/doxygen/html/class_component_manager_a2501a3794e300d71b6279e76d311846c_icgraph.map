@@ -1,0 +1,5 @@
+<map id="ComponentManager::RemoveComponent" name="ComponentManager::RemoveComponent">
+<area shape="rect" id="Node000001" title="Removes the component associated with an entity." alt="" coords="283,5,478,48"/>
+<area shape="rect" id="Node000002" href="$class_entity_manager.html#a5c8b70a4b72748d8f72b697bd28f98fa" title="Removes a component of type T from the given entity." alt="" coords="5,13,235,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="267,29,235,29,235,24,267,24"/>
+</map>

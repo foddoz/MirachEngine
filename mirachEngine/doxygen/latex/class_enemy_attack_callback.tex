@@ -1,0 +1,142 @@
+\doxysection{Enemy\+Attack\+Callback Class Reference}
+\hypertarget{class_enemy_attack_callback}{}\label{class_enemy_attack_callback}\index{EnemyAttackCallback@{EnemyAttackCallback}}
+
+
+{\ttfamily \#include $<$collision\+\_\+callback.\+hpp$>$}
+
+
+
+Inheritance diagram for Enemy\+Attack\+Callback\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{class_enemy_attack_callback__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Enemy\+Attack\+Callback\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_enemy_attack_callback__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_enemy_attack_callback_a97f2ab74114f930cb82805b6d629f1c5}{Enemy\+Attack\+Callback}} (\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*}em, \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} attacker, \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} target)
+\item 
+void \mbox{\hyperlink{class_enemy_attack_callback_a55d6139be817c7851aa8bfc80bdb7f23}{On\+Contact}} (\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*}a, \mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*}b) override
+\begin{DoxyCompactList}\small\item\em Called when two bodies start contact. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_physics_1_1_collision_callback}{Physics\+::\+Collision\+Callback}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_physics_1_1_collision_callback_ac262af0d466968ba35abceb46791f197}{\texorpdfstring{$\sim$}{\string~}\+Collision\+Callback}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_physics_1_1_collision_callback_a433f15f1438f1d49f1a33ca32467fb73}{On\+Contact\+Exit}} (\mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}bodyA, \mbox{\hyperlink{class_physics_1_1_rigid_body}{Rigid\+Body}} \texorpdfstring{$\ast$}{*}bodyB)
+\begin{DoxyCompactList}\small\item\em Called when two bodies stop contact. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \mbox{\hyperlink{class_enemy_attack_callback_acd8311964f9a66f637469ec771c77926}{Find\+Entity}} (\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*}rb)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_enemy_attack_callback_a416d4af53804b993fad36e69f8894c63}{m\+\_\+em}}
+\item 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \mbox{\hyperlink{class_enemy_attack_callback_a130a07befb1ce8d8a1f64797f04d863b}{m\+\_\+attacker}}
+\item 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \mbox{\hyperlink{class_enemy_attack_callback_ace16fa00e962aa78d24658449b87667c}{m\+\_\+target}}
+\item 
+bool \mbox{\hyperlink{class_enemy_attack_callback_a17bcc9dca6b93ad30b3d6f22caabf80a}{triggered}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_enemy_attack_callback_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_enemy_attack_callback_a97f2ab74114f930cb82805b6d629f1c5}\index{EnemyAttackCallback@{EnemyAttackCallback}!EnemyAttackCallback@{EnemyAttackCallback}}
+\index{EnemyAttackCallback@{EnemyAttackCallback}!EnemyAttackCallback@{EnemyAttackCallback}}
+\doxysubsubsection{\texorpdfstring{EnemyAttackCallback()}{EnemyAttackCallback()}}
+{\footnotesize\ttfamily \label{class_enemy_attack_callback_a97f2ab74114f930cb82805b6d629f1c5} 
+Enemy\+Attack\+Callback\+::\+Enemy\+Attack\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \texorpdfstring{$\ast$}{*}}]{em}{, }\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}}]{attacker}{, }\item[{\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_enemy_attack_callback_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_enemy_attack_callback_acd8311964f9a66f637469ec771c77926}\index{EnemyAttackCallback@{EnemyAttackCallback}!FindEntity@{FindEntity}}
+\index{FindEntity@{FindEntity}!EnemyAttackCallback@{EnemyAttackCallback}}
+\doxysubsubsection{\texorpdfstring{FindEntity()}{FindEntity()}}
+{\footnotesize\ttfamily \label{class_enemy_attack_callback_acd8311964f9a66f637469ec771c77926} 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} Enemy\+Attack\+Callback\+::\+Find\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{rb}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_enemy_attack_callback_acd8311964f9a66f637469ec771c77926_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_enemy_attack_callback_a55d6139be817c7851aa8bfc80bdb7f23}\index{EnemyAttackCallback@{EnemyAttackCallback}!OnContact@{OnContact}}
+\index{OnContact@{OnContact}!EnemyAttackCallback@{EnemyAttackCallback}}
+\doxysubsubsection{\texorpdfstring{OnContact()}{OnContact()}}
+{\footnotesize\ttfamily \label{class_enemy_attack_callback_a55d6139be817c7851aa8bfc80bdb7f23} 
+void Enemy\+Attack\+Callback\+::\+On\+Contact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{bodyA}{, }\item[{\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}} \texorpdfstring{$\ast$}{*}}]{bodyB}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Called when two bodies start contact. 
+
+
+
+Implements \mbox{\hyperlink{class_physics_1_1_collision_callback_a897cacd80e87ca3a179e6da4a4be889f}{Physics\+::\+Collision\+Callback}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_enemy_attack_callback_a55d6139be817c7851aa8bfc80bdb7f23_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_enemy_attack_callback_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_enemy_attack_callback_a130a07befb1ce8d8a1f64797f04d863b}\index{EnemyAttackCallback@{EnemyAttackCallback}!m\_attacker@{m\_attacker}}
+\index{m\_attacker@{m\_attacker}!EnemyAttackCallback@{EnemyAttackCallback}}
+\doxysubsubsection{\texorpdfstring{m\_attacker}{m\_attacker}}
+{\footnotesize\ttfamily \label{class_enemy_attack_callback_a130a07befb1ce8d8a1f64797f04d863b} 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} Enemy\+Attack\+Callback\+::m\+\_\+attacker\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_enemy_attack_callback_a416d4af53804b993fad36e69f8894c63}\index{EnemyAttackCallback@{EnemyAttackCallback}!m\_em@{m\_em}}
+\index{m\_em@{m\_em}!EnemyAttackCallback@{EnemyAttackCallback}}
+\doxysubsubsection{\texorpdfstring{m\_em}{m\_em}}
+{\footnotesize\ttfamily \label{class_enemy_attack_callback_a416d4af53804b993fad36e69f8894c63} 
+\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}}\texorpdfstring{$\ast$}{*} Enemy\+Attack\+Callback\+::m\+\_\+em\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_enemy_attack_callback_ace16fa00e962aa78d24658449b87667c}\index{EnemyAttackCallback@{EnemyAttackCallback}!m\_target@{m\_target}}
+\index{m\_target@{m\_target}!EnemyAttackCallback@{EnemyAttackCallback}}
+\doxysubsubsection{\texorpdfstring{m\_target}{m\_target}}
+{\footnotesize\ttfamily \label{class_enemy_attack_callback_ace16fa00e962aa78d24658449b87667c} 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} Enemy\+Attack\+Callback\+::m\+\_\+target\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_enemy_attack_callback_a17bcc9dca6b93ad30b3d6f22caabf80a}\index{EnemyAttackCallback@{EnemyAttackCallback}!triggered@{triggered}}
+\index{triggered@{triggered}!EnemyAttackCallback@{EnemyAttackCallback}}
+\doxysubsubsection{\texorpdfstring{triggered}{triggered}}
+{\footnotesize\ttfamily \label{class_enemy_attack_callback_a17bcc9dca6b93ad30b3d6f22caabf80a} 
+bool Enemy\+Attack\+Callback\+::triggered\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Physics/\mbox{\hyperlink{collision__callback_8hpp}{collision\+\_\+callback.\+hpp}}\end{DoxyCompactItemize}

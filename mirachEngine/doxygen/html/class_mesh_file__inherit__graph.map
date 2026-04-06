@@ -1,0 +1,5 @@
+<map id="MeshFile" name="MeshFile">
+<area shape="rect" id="Node000001" title="Represents a static 3D mesh loaded from file (e.g. OBJ, FBX, etc.) using Assimp." alt="" coords="5,400,184,789"/>
+<area shape="rect" id="Node000002" href="$class_mesh3_d.html" title="Abstract base class for rendering and managing 3D mesh data." alt="" coords="33,5,157,352"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,367,98,400,92,400,92,367"/>
+</map>

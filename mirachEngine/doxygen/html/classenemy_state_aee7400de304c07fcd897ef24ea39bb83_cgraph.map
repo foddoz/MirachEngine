@@ -1,0 +1,5 @@
+<map id="enemyState::onChaseEnter" name="enemyState::onChaseEnter">
+<area shape="rect" id="Node000001" title="Called when entering the Chase state. Sets run animation." alt="" coords="5,5,188,32"/>
+<area shape="rect" id="Node000002" href="$class_enemy.html#a15a7cf1b50848f5fe57062e376f83e61" title="Sets the current animation by name." alt="" coords="236,5,384,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,16,220,16,220,21,188,21"/>
+</map>

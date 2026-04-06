@@ -1,0 +1,9 @@
+<map id="MeshTerrain::GetSize" name="MeshTerrain::GetSize">
+<area shape="rect" id="Node000001" title="Gets terrain grid size." alt="" coords="620,13,768,40"/>
+<area shape="rect" id="Node000002" href="$struct_mesh_terrain_1_1_vertex.html#a58f3fdca3d472b4165dacf04ec17b5dd" title="Initializes vertex based on heightmap and terrain data." alt="" coords="435,5,572,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="605,29,572,29,572,24,605,24"/>
+<area shape="rect" id="Node000003" href="$class_mesh_terrain.html#a7cd9ecf88516b6716cb76b804e8bd61b" title=" " alt="" coords="221,13,387,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="419,29,387,29,387,24,419,24"/>
+<area shape="rect" id="Node000004" href="$class_mesh_terrain.html#a02d8c1492362365710a818b9a4674774" title="Converts the terrain to a renderable mesh component." alt="" coords="5,13,173,40"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="205,29,173,29,173,24,205,24"/>
+</map>

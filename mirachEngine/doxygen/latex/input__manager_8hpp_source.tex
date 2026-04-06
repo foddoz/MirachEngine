@@ -1,0 +1,58 @@
+\doxysection{input\+\_\+manager.\+hpp}
+\hypertarget{input__manager_8hpp_source}{}\label{input__manager_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Events/input\_manager.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Events/input\_manager.hpp}}
+\mbox{\hyperlink{input__manager_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ INPUT\_MANAGER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ INPUT\_MANAGER\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{input_8hpp}{input.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671}{InputAction}}\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671a122077e11a3cc3a56a2d82f1d15dbd32}{MoveForward}},\ \ \ }
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671af812385dfcc1a683a69dd1c370f7bd71}{MoveBackward}},\ \ }
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671ae8a98c6fabdea857c20c91e9bfd318ca}{MoveLeft}},\ \ \ \ \ \ }
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671a78af9b7fcdf1574f729de1454e15257b}{MoveRight}},\ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671a101f693f72287a2819a364f64ca1c0ed}{Jump}},\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{input_8hpp_a2b2905130ee6827c925a34fe221b95faa0d82790b0612935992bd564a17ce37d6}{Quit}},\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671adea0db9b4e22219c63d9dc528c59f0dd}{ObjectLaunch}},\ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671a4447a59d7e1c245db1aa9cbc6d07083e}{ObjectGrab}}\ \ \ \ \ }
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_input_manager}{InputManager}}\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_input_manager_ab060dcf965ba79d0ee0a6e9e0b1c84f7}{Update}}();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_input_manager_a40218040038639d8481b13b3efaba4cf}{IsKeyDown}}(\mbox{\hyperlink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3ef}{KeyCode}}\ key)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_input_manager_abcb55a393ff49334eba202f1b55870f3}{IsActionPressed}}(\mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671}{InputAction}}\ action)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_input_manager_ac7dc2924bac1c09a309c094277bae59f}{WasActionJustPressed}}(\mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671}{InputAction}}\ action)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_input_manager_ad8b3cd8d67afa47ce1a65da26c967b5e}{IsMouseButtonDown}}(\mbox{\hyperlink{input_8hpp_ac1ec3647c005eacad401b06e7e18f711}{MouseButton}}\ button)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_input_manager_a7a54ee88ffb89a1956a7d6a080c964f5}{WasMouseButtonJustPressed}}(\mbox{\hyperlink{input_8hpp_ac1ec3647c005eacad401b06e7e18f711}{MouseButton}}\ button)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_input_manager_a71835e73c1d4a634d14be25d75db9bc0}{GetMouseDeltaX}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_input_manager_a94e19f34c94d8d82a2fd915d31a959f8}{mMouseDeltaX}};\ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_input_manager_adf18e1c5e2ef57e794ff7d5fb28071b5}{GetMouseDeltaY}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_input_manager_a0c7d3b951e81b94b85bc01ae66c15bef}{mMouseDeltaY}};\ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_input_manager_a723052f5702aaa5e048c7677d365d9d5}{MapAction}}(\mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671}{InputAction}}\ action,\ \mbox{\hyperlink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3ef}{KeyCode}}\ key);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t*\ \mbox{\hyperlink{class_input_manager_ae8bd7e7b8d9e57e2b599c04a939f111d}{mKeyStates}}\ =\ \textcolor{keyword}{nullptr};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{class_input_manager_a09dff32dc1a4eb04573f78ba7227a30a}{mPrevKeyStates}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_input_manager_a30360681eb7bb30b4c254b634efab2ea}{mMouseButtonState}}\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00097\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_input_manager_a30a637adfe3bd77cba66737451597d3d}{mPrevMouseButtonState}}\ =\ 0;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_input_manager_a94e19f34c94d8d82a2fd915d31a959f8}{mMouseDeltaX}}\ =\ 0.0f;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_input_manager_a0c7d3b951e81b94b85bc01ae66c15bef}{mMouseDeltaY}}\ =\ 0.0f;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ std::unordered\_map<InputAction,\ KeyCode>\ \mbox{\hyperlink{class_input_manager_ad96d26c78fec30d9bf0f71e97fc5152a}{mActionBindings}};\ }
+\DoxyCodeLine{00103\ \};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !INPUT\_MANAGER\_HPP}}
+
+\end{DoxyCode}

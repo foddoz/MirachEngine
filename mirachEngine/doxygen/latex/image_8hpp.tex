@@ -1,0 +1,73 @@
+\doxysection{C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Texturing/image.hpp File Reference}
+\hypertarget{image_8hpp}{}\label{image_8hpp}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/Texturing/image.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/Texturing/image.hpp}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for image.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{image_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{image_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_image_data}{Image\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{image_8hpp_a1d6bfb89d8b124b070bab503c43bd581}{Load\+Image}} (const std\+::string \&filename, \mbox{\hyperlink{struct_image_data}{Image\+Data}} \&out\+Image)
+\begin{DoxyCompactList}\small\item\em Loads an image file using stb\+\_\+image and populates the given \doxylink{struct_image_data}{Image\+Data} structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{image_8hpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{image_8hpp_a1d6bfb89d8b124b070bab503c43bd581}\index{image.hpp@{image.hpp}!LoadImage@{LoadImage}}
+\index{LoadImage@{LoadImage}!image.hpp@{image.hpp}}
+\doxysubsubsection{\texorpdfstring{LoadImage()}{LoadImage()}}
+{\footnotesize\ttfamily \label{image_8hpp_a1d6bfb89d8b124b070bab503c43bd581} 
+bool Load\+Image (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{, }\item[{\mbox{\hyperlink{struct_image_data}{Image\+Data}} \&}]{out\+Image}{}\end{DoxyParamCaption})}
+
+
+
+Loads an image file using stb\+\_\+image and populates the given \doxylink{struct_image_data}{Image\+Data} structure. 
+
+This function reads an image from disk using stb\+\_\+image, flips it vertically for Open\+GL compatibility, and fills the output \doxylink{struct_image_data}{Image\+Data} struct with pixel data, width, height, and bytes-\/per-\/pixel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The file path to the image to be loaded. \\
+\hline
+{\em out\+Image} & Reference to an \doxylink{struct_image_data}{Image\+Data} struct where loaded image info will be stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the image loads successfully; false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{image_8hpp_a1d6bfb89d8b124b070bab503c43bd581_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{image_8hpp_a1d6bfb89d8b124b070bab503c43bd581_icgraph}
+\end{center}
+\end{figure}

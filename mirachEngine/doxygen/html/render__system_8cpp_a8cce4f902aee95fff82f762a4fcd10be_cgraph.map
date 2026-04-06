@@ -1,0 +1,112 @@
+<map id="RenderSystem" name="RenderSystem">
+<area shape="rect" id="Node000001" title="Core ECS&#45;based rendering system." alt="" coords="5,968,114,995"/>
+<area shape="rect" id="Node000002" href="$class_texture.html#aa9a3935938a1a89365225c11ae79c74f" title="Binds the texture to a specified texture unit for rendering." alt="" coords="224,56,322,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,967,69,797,89,522,103,379,120,253,138,156,149,123,160,102,182,84,208,74,210,79,184,89,164,106,154,125,144,157,125,254,109,380,95,522,74,797,64,968"/>
+<area shape="rect" id="Node000005" href="$namespace_graphics.html#a6f4d24e455fdef40dfe6b467f9b3d6d4" title=" " alt="" coords="464,107,639,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="59,968,69,811,90,560,104,430,120,316,139,229,149,199,160,181,190,155,224,136,260,121,299,111,376,102,449,103,449,108,377,107,300,116,262,126,226,140,193,160,164,184,154,201,144,230,125,317,109,431,95,560,74,812,64,968"/>
+<area shape="rect" id="Node000006" href="$namespace_graphics.html#a9824ab679a791100d350127b6453e77d" title=" " alt="" coords="217,867,330,893"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="73,966,110,934,161,903,201,889,203,894,163,908,114,938,76,970"/>
+<area shape="rect" id="Node000007" href="$namespace_graphics.html#a721c1c46b99ec4b0c263476217c844b2" title=" " alt="" coords="202,917,345,944"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="114,965,161,953,195,945,196,951,162,959,115,970"/>
+<area shape="rect" id="Node000008" href="$namespace_graphics.html#abcfa613cdd2ca02fc8cd2004c5a9fbae" title=" " alt="" coords="198,968,348,995"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="114,979,182,979,182,984,114,984"/>
+<area shape="rect" id="Node000009" href="$namespace_graphics.html#a089e01615af5ecb79cd1c1cecb62fb67" title=" " alt="" coords="468,157,635,184"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="58,968,59,831,69,612,81,496,99,389,125,301,141,266,160,241,190,215,225,194,262,179,301,168,380,157,453,157,453,162,380,163,302,173,264,184,227,199,193,219,164,244,146,269,130,302,104,390,86,496,74,612,64,831,63,968"/>
+<area shape="rect" id="Node000010" href="$namespace_graphics.html#a833d3fce31a5b5813e613ced1ff9d747" title=" " alt="" coords="175,1019,372,1061"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="112,993,179,1011,178,1017,110,998"/>
+<area shape="rect" id="Node000011" href="$namespace_graphics.html#a8e819d608213a011059060a2b0170e18" title=" " alt="" coords="491,208,612,235"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="58,968,61,842,74,642,86,537,104,440,128,359,143,328,160,305,193,276,231,253,272,236,315,225,400,213,475,212,475,217,400,218,316,230,274,242,233,258,196,280,164,308,147,331,133,361,109,441,91,538,79,643,66,842,64,968"/>
+<area shape="rect" id="Node000012" href="$class_entity_manager.html#a1b3d1289d7f8bba2539e828e807a183c" title="Returns a reference to the map of all components of type T." alt="" coords="162,1085,385,1112"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="74,993,111,1033,136,1053,163,1071,176,1077,174,1082,160,1076,132,1058,107,1036,70,997"/>
+<area shape="rect" id="Node000015" href="$class_entity_manager.html#a00080c3855e9aab3796bb94f6b48ac9b" title="Retrieves a reference to the component of type T for an entity." alt="" coords="173,1136,374,1163"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="69,994,102,1057,130,1092,163,1122,172,1127,169,1131,160,1126,126,1096,98,1059,64,997"/>
+<area shape="rect" id="Node000018" href="$namespace_graphics.html#a6168c5c7c5a145aecd7681162f456977" title=" " alt="" coords="182,1237,364,1280"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="65,995,73,1039,90,1101,119,1167,139,1197,163,1223,170,1229,167,1233,160,1227,135,1200,114,1169,85,1102,68,1040,60,996"/>
+<area shape="rect" id="Node000019" href="$class_transform.html#a273b1e2cae794e45d5f038e736416c9b" title="Computes and returns the model (world) transformation matrix." alt="" coords="463,259,640,285"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="59,968,64,854,79,675,92,581,109,494,131,422,145,394,160,373,189,345,223,323,259,305,297,291,375,274,447,267,448,272,376,279,299,296,261,310,225,327,192,349,164,376,149,397,136,424,114,495,97,582,84,676,69,854,64,968"/>
+<area shape="rect" id="Node000020" href="$class_camera.html#acfb250cdca698879b5de804524960005" title="Retrieves the current projection matrix." alt="" coords="456,309,647,336"/>
+<area shape="poly" id="edge19_Node000001_Node000020" title=" " alt="" coords="59,967,67,866,85,711,98,629,115,554,135,491,160,448,188,419,220,395,256,376,293,360,369,337,441,325,441,331,370,342,295,365,258,380,223,400,191,423,164,451,140,493,120,555,103,630,90,711,72,867,64,968"/>
+<area shape="rect" id="Node000021" href="$namespace_graphics.html#a4975cdbaad38122f9120b8ea8b95cb18" title=" " alt="" coords="453,512,650,539"/>
+<area shape="poly" id="edge20_Node000001_Node000021" title=" " alt="" coords="59,967,69,885,88,764,102,702,118,645,137,598,160,567,193,543,230,525,270,513,311,505,392,501,464,507,464,512,392,507,312,511,271,518,232,530,196,548,164,571,142,601,123,646,107,703,94,765,74,886,65,968"/>
+<area shape="rect" id="Node000022" href="$class_camera.html#a6e3587a907ed288508c97493e7d51fc1" title="Calculates and retrieves the current view matrix based on a given position." alt="" coords="471,563,632,589"/>
+<area shape="poly" id="edge21_Node000001_Node000022" title=" " alt="" coords="60,967,71,894,92,789,122,686,140,646,160,619,193,596,229,579,268,566,308,558,387,553,459,558,459,563,387,559,309,564,269,571,231,584,196,601,164,623,144,649,127,688,97,790,76,895,65,968"/>
+<area shape="rect" id="Node000024" href="$class_entity_manager.html#af086011ae902ac5704362571a8217975" title="Checks if an entity has a component of type T." alt="" coords="171,1187,376,1213"/>
+<area shape="poly" id="edge23_Node000001_Node000024" title=" " alt="" coords="66,994,77,1031,95,1079,124,1130,142,1153,163,1173,170,1177,166,1181,160,1177,138,1157,119,1133,90,1082,71,1032,61,996"/>
+<area shape="rect" id="Node000026" href="$class_camera.html#a3683dabb5bf414d8af9036316655f52a" title="Tests whether a given axis&#45;aligned bounding box (AABB) is inside the camera&#39;s view frustum." alt="" coords="189,1304,358,1331"/>
+<area shape="poly" id="edge26_Node000001_Node000026" title=" " alt="" coords="63,995,67,1050,80,1130,93,1173,110,1216,133,1256,163,1290,177,1300,174,1304,160,1294,129,1259,105,1219,88,1175,75,1131,61,1050,58,995"/>
+<area shape="rect" id="Node000028" href="$math_8hpp.html#a449ecbbd825f26c183caeac2bda40c41" title="Returns the length of a 2D vector." alt="" coords="243,1355,304,1381"/>
+<area shape="poly" id="edge28_Node000001_Node000028" title=" " alt="" coords="63,995,63,1058,74,1152,86,1203,104,1253,130,1300,163,1341,178,1351,194,1358,229,1366,227,1371,192,1363,175,1356,160,1345,125,1303,99,1255,81,1204,69,1153,58,1058,57,995"/>
+<area shape="rect" id="Node000029" href="$math_8hpp.html#a11c0426b3a7e98489b250e45d0240c5f" title="Normalizes a 3D vector." alt="" coords="233,1405,314,1432"/>
+<area shape="poly" id="edge29_Node000001_Node000029" title=" " alt="" coords="65,995,75,1076,95,1196,109,1258,125,1315,143,1361,164,1391,189,1407,219,1415,217,1420,187,1412,160,1395,138,1363,120,1316,104,1259,90,1197,70,1077,60,995"/>
+<area shape="rect" id="Node000030" href="$namespace_graphics.html#ae0fe98919e3082c31e62dfcc7e76f31e" title=" " alt="" coords="171,1456,376,1483"/>
+<area shape="poly" id="edge30_Node000001_Node000030" title=" " alt="" coords="65,995,73,1085,92,1221,105,1291,122,1355,141,1407,164,1442,166,1445,162,1448,160,1446,136,1410,117,1357,100,1292,87,1221,68,1086,59,996"/>
+<area shape="rect" id="Node000031" href="$render__system_8cpp.html#a079030225b1b31b63cc28799a7923ff0" title="Renders a skybox or skydome mesh as a background element." alt="" coords="220,461,327,488"/>
+<area shape="poly" id="edge31_Node000001_Node000031" title=" " alt="" coords="59,967,68,875,87,737,100,664,117,598,136,543,160,505,180,489,204,480,206,485,183,494,164,508,141,545,122,599,106,665,92,737,73,876,65,968"/>
+<area shape="rect" id="Node000035" href="$namespace_graphics.html#aa497253f01c048b2d15b339dc0f9f049" title=" " alt="" coords="473,613,630,640"/>
+<area shape="poly" id="edge51_Node000001_Node000035" title=" " alt="" coords="58,967,60,911,73,830,85,786,103,743,128,703,160,670,193,647,229,630,268,618,308,611,386,605,457,609,457,614,386,610,308,616,269,624,231,635,196,652,163,674,132,707,108,745,90,787,78,831,66,912,63,968"/>
+<area shape="rect" id="Node000036" href="$namespace_graphics.html#a53ebeba7d0f7b777d50393490a557660" title=" " alt="" coords="464,664,640,691"/>
+<area shape="poly" id="edge53_Node000001_Node000036" title=" " alt="" coords="59,967,64,919,79,851,92,814,109,779,132,747,160,719,193,698,228,682,265,670,304,663,380,657,450,659,449,665,380,662,304,668,267,676,230,687,195,703,163,723,136,750,114,782,97,817,84,853,69,920,64,968"/>
+<area shape="rect" id="Node000037" href="$namespace_graphics.html#a4fe2c80449bf103828d5ca29a02e8414" title=" " alt="" coords="466,715,637,741"/>
+<area shape="poly" id="edge58_Node000001_Node000037" title=" " alt="" coords="60,967,68,926,86,871,116,814,136,789,160,767,193,747,229,732,305,714,382,708,451,711,451,716,382,713,306,719,231,737,196,752,163,771,140,792,120,817,91,873,74,928,65,968"/>
+<area shape="rect" id="Node000038" href="$namespace_graphics.html#a55aadce60c9d25fb369920ad3e4b431b" title=" " alt="" coords="456,765,647,792"/>
+<area shape="poly" id="edge59_Node000001_Node000038" title=" " alt="" coords="62,967,73,934,93,891,121,848,139,828,160,812,193,795,228,781,301,765,374,759,441,761,441,766,374,765,302,770,230,786,195,800,163,817,143,832,125,851,97,894,78,936,67,968"/>
+<area shape="rect" id="Node000039" href="$namespace_graphics.html#a4158ffcbcd5183969266c9b9f412d19d" title=" " alt="" coords="474,816,629,843"/>
+<area shape="poly" id="edge60_Node000001_Node000039" title=" " alt="" coords="65,966,99,909,126,877,160,852,197,836,235,824,314,811,391,808,459,813,459,818,391,814,314,816,236,830,199,841,163,857,130,881,103,912,69,969"/>
+<area shape="rect" id="Node000040" href="$math_8hpp.html#a09a0220210ed9b62eb95681f100c2ac6" title="Applies rotation to a matrix." alt="" coords="243,1507,304,1533"/>
+<area shape="poly" id="edge47_Node000001_Node000040" title=" " alt="" coords="64,995,72,1094,89,1245,102,1323,119,1395,139,1454,151,1476,164,1493,177,1504,193,1511,228,1518,227,1523,192,1516,175,1508,160,1497,146,1479,134,1456,114,1396,97,1324,83,1245,66,1094,59,995"/>
+<area shape="rect" id="Node000041" href="$namespace_graphics.html#a1179041af4fce74143f19dd3f49f08af" title=" " alt="" coords="197,1557,350,1584"/>
+<area shape="poly" id="edge48_Node000001_Node000041" title=" " alt="" coords="64,995,70,1102,86,1268,99,1355,116,1435,137,1500,150,1525,164,1543,184,1558,181,1562,160,1547,145,1528,132,1502,111,1436,93,1356,80,1269,64,1103,59,995"/>
+<area shape="rect" id="Node000042" href="$namespace_graphics.html#aa6894ba5520c821114697787cf244724" title=" " alt="" coords="193,1608,354,1635"/>
+<area shape="poly" id="edge49_Node000001_Node000042" title=" " alt="" coords="64,995,68,1111,83,1292,95,1387,113,1475,135,1546,149,1574,164,1594,181,1607,177,1611,160,1598,144,1577,130,1548,108,1476,90,1388,77,1293,63,1111,58,995"/>
+<area shape="rect" id="Node000043" href="$namespace_graphics.html#a9abc126621caa7f5dd8b4ba0ba9fd101" title=" " alt="" coords="194,1659,352,1685"/>
+<area shape="poly" id="edge50_Node000001_Node000043" title=" " alt="" coords="64,995,67,1119,80,1316,92,1419,110,1514,133,1593,148,1623,164,1645,182,1658,179,1663,160,1649,143,1625,128,1595,105,1516,87,1420,74,1316,61,1120,58,995"/>
+<area shape="rect" id="Node000044" href="$namespace_graphics.html#a49bea1070bca7375a5e6132179214a3a" title=" " alt="" coords="194,1709,352,1736"/>
+<area shape="poly" id="edge52_Node000001_Node000044" title=" " alt="" coords="63,995,65,1127,77,1339,89,1451,107,1554,131,1639,147,1671,164,1695,182,1709,178,1713,160,1699,142,1674,126,1641,102,1555,84,1452,71,1340,60,1128,58,995"/>
+<area shape="rect" id="Node000045" href="$struct_a_a_b_b.html#a8943a9826c0982a4dd39e2c111de8ac9" title="Transforms this AABB by a transformation matrix and returns the result." alt="" coords="211,1760,336,1787"/>
+<area shape="poly" id="edge54_Node000001_Node000045" title=" " alt="" coords="63,995,64,1135,74,1362,86,1483,104,1594,129,1685,145,1720,164,1746,179,1758,197,1766,195,1771,176,1763,160,1750,141,1723,124,1687,99,1595,80,1483,68,1363,58,1135,58,995"/>
+<area shape="rect" id="Node000049" href="$namespace_graphics.html#a9bf304ec4ddf472a34dbd10d358805f5" title=" " alt="" coords="207,1811,340,1837"/>
+<area shape="poly" id="edge61_Node000001_Node000049" title=" " alt="" coords="64,995,74,1155,95,1411,109,1543,126,1661,144,1750,154,1779,164,1797,177,1808,193,1816,191,1821,174,1813,160,1800,149,1782,139,1751,120,1662,104,1544,90,1412,69,1155,59,995"/>
+<area shape="rect" id="Node000003" href="$namespace_graphics.html#a62113f1c6225e86fd238faf3aa6463a0" title=" " alt="" coords="459,56,644,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="323,67,444,67,444,72,323,72"/>
+<area shape="rect" id="Node000004" href="$namespace_graphics.html#ab069888f717a4adcb9f69b5f34b53503" title=" " alt="" coords="476,5,627,32"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="322,58,461,32,462,38,323,63"/>
+<area shape="rect" id="Node000013" href="$class_component_manager.html#a41507f22f5d9cf4158ead40fdc4b25d0" title=" " alt="" coords="460,1085,643,1112"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="386,1096,445,1096,445,1101,386,1101"/>
+<area shape="rect" id="Node000014" href="$class_entity_manager.html#a9792efcb1c6904999ab34b3a65a7c69d" title="Returns the manager for the given component type, creating it if needed." alt="" coords="458,1019,645,1061"/>
+<area shape="poly" id="edge13_Node000012_Node000014" title=" " alt="" coords="340,1082,442,1060,443,1065,341,1087"/>
+<area shape="rect" id="Node000016" href="$class_component_manager.html#a81536e74843307f9b9e27993cca3e72b" title="Retrieves a reference to the component of an entity." alt="" coords="434,1136,669,1163"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="375,1147,419,1147,419,1152,375,1152"/>
+<area shape="rect" id="Node000017" href="$class_entity_manager.html#aa02cffa1d2435ea5d0eadee749c2a965" title="Gets the component manager for a type (const)." alt="" coords="460,1187,644,1213"/>
+<area shape="poly" id="edge16_Node000015_Node000017" title=" " alt="" coords="351,1161,460,1181,459,1186,350,1166"/>
+<area shape="rect" id="Node000023" href="$math_8hpp.html#a4c4521724debb415e676587b9b4e8bff" title="Creates a view matrix looking from &#39;eye&#39; to &#39;center&#39; with &#39;up&#39; direction." alt="" coords="737,563,800,589"/>
+<area shape="poly" id="edge22_Node000022_Node000023" title=" " alt="" coords="633,573,722,573,722,579,633,579"/>
+<area shape="poly" id="edge24_Node000024_Node000017" title=" " alt="" coords="376,1197,444,1197,444,1203,376,1203"/>
+<area shape="rect" id="Node000025" href="$class_component_manager.html#a8a8d1ef9e132029f47f452d64f0c3f7a" title="Checks if an entity has a component of this type." alt="" coords="433,1237,670,1264"/>
+<area shape="poly" id="edge25_Node000024_Node000025" title=" " alt="" coords="351,1211,460,1231,459,1237,350,1217"/>
+<area shape="rect" id="Node000027" href="$math_8hpp.html#a8fa473d59250f3fc775ebfc0d2ea46bc" title="Dot product of two 3D vectors." alt="" coords="530,1304,573,1331"/>
+<area shape="poly" id="edge27_Node000026_Node000027" title=" " alt="" coords="358,1315,515,1315,515,1320,358,1320"/>
+<area shape="poly" id="edge32_Node000031_Node000005" title=" " alt="" coords="274,460,287,401,315,315,336,268,362,222,393,180,431,143,448,133,451,137,435,147,397,183,366,225,341,270,320,317,292,403,280,461"/>
+<area shape="poly" id="edge34_Node000031_Node000009" title=" " alt="" coords="276,460,291,409,322,337,343,298,368,259,397,224,431,194,452,182,455,187,435,198,401,228,372,262,347,300,326,339,296,411,281,462"/>
+<area shape="poly" id="edge35_Node000031_Node000011" title=" " alt="" coords="278,460,297,417,329,358,374,296,401,268,432,244,453,233,475,226,477,231,455,238,434,249,405,272,378,300,333,361,301,419,282,462"/>
+<area shape="poly" id="edge36_Node000031_Node000019" title=" " alt="" coords="280,459,302,426,336,381,380,334,432,295,448,287,450,292,434,300,383,338,340,384,307,429,285,462"/>
+<area shape="poly" id="edge38_Node000031_Node000020" title=" " alt="" coords="326,458,356,445,383,427,399,407,406,387,413,366,431,346,441,340,444,344,435,350,418,369,411,388,403,410,387,431,359,450,328,463"/>
+<area shape="poly" id="edge39_Node000031_Node000021" title=" " alt="" coords="328,482,460,506,459,511,327,487"/>
+<area shape="poly" id="edge40_Node000031_Node000022" title=" " alt="" coords="300,486,360,517,434,548,459,556,458,561,432,553,358,522,298,491"/>
+<area shape="rect" id="Node000032" href="$namespace_graphics.html#a18deab5d59141f8edb32da67363b941f" title=" " alt="" coords="489,360,614,387"/>
+<area shape="poly" id="edge33_Node000031_Node000032" title=" " alt="" coords="312,458,384,427,407,411,432,396,473,383,475,388,434,401,410,415,386,432,314,463"/>
+<area shape="rect" id="Node000033" href="$class_transform.html#a2bd3205164a8f8f64f1c738ab6cb365f" title="Retrieves the current position." alt="" coords="474,411,630,437"/>
+<area shape="poly" id="edge37_Node000031_Node000033" title=" " alt="" coords="327,462,459,438,460,443,328,468"/>
+<area shape="rect" id="Node000034" href="$namespace_graphics.html#afaa64189fcf768986b859f4da49a49f0" title=" " alt="" coords="468,461,635,488"/>
+<area shape="poly" id="edge41_Node000031_Node000034" title=" " alt="" coords="327,472,453,472,453,477,327,477"/>
+<area shape="poly" id="edge42_Node000031_Node000035" title=" " alt="" coords="289,487,348,542,389,573,434,599,459,609,457,614,432,604,386,577,345,546,286,491"/>
+<area shape="poly" id="edge43_Node000031_Node000036" title=" " alt="" coords="285,487,307,521,340,565,383,611,434,650,450,658,448,662,432,654,380,615,336,569,302,524,280,490"/>
+<area shape="poly" id="edge44_Node000031_Node000037" title=" " alt="" coords="282,488,301,530,333,588,378,649,405,677,434,700,453,710,451,715,432,705,401,681,374,653,329,591,297,532,278,490"/>
+<area shape="poly" id="edge45_Node000031_Node000038" title=" " alt="" coords="281,488,296,538,326,610,347,649,372,687,401,722,435,751,444,757,441,762,431,755,397,725,368,690,343,652,322,613,291,540,276,489"/>
+<area shape="poly" id="edge46_Node000031_Node000039" title=" " alt="" coords="280,488,292,547,320,632,341,679,366,724,397,766,435,802,461,816,458,821,431,806,393,770,362,727,336,681,315,634,287,548,274,489"/>
+<area shape="rect" id="Node000046" href="$struct_a_a_b_b.html#a5f5baf6c533905aa1456b3a3eb57bab2" title="Constructs an invalid AABB by resetting its values." alt="" coords="501,1785,602,1812"/>
+<area shape="poly" id="edge55_Node000045_Node000046" title=" " alt="" coords="336,1776,486,1790,485,1795,336,1782"/>
+<area shape="rect" id="Node000048" href="$struct_a_a_b_b.html#a812706f15e5916a48fdeaefe9e7bc388" title="Expands the AABB to include the specified point." alt="" coords="497,1735,606,1761"/>
+<area shape="poly" id="edge57_Node000045_Node000048" title=" " alt="" coords="336,1765,481,1752,482,1757,336,1770"/>
+<area shape="rect" id="Node000047" href="$struct_a_a_b_b.html#afbd7dcd97080cd1c046bace01dcc6999" title="Resets the AABB to an empty state." alt="" coords="718,1785,819,1812"/>
+<area shape="poly" id="edge56_Node000046_Node000047" title=" " alt="" coords="603,1796,703,1796,703,1801,603,1801"/>
+</map>

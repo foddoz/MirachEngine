@@ -1,0 +1,11 @@
+<map id="Camera::IsBoxInFrustum" name="Camera::IsBoxInFrustum">
+<area shape="rect" id="Node000001" title="Tests whether a given axis&#45;aligned bounding box (AABB) is inside the camera&#39;s view frustum." alt="" coords="646,5,814,32"/>
+<area shape="rect" id="Node000002" href="$render__system_8cpp.html#a8cce4f902aee95fff82f762a4fcd10be" title="Core ECS&#45;based rendering system." alt="" coords="489,5,598,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="630,21,598,21,598,16,630,16"/>
+<area shape="rect" id="Node000003" href="$class_terrain_scene.html#a55eb34067d9346aa7d9c3295a9e2dfb0" title="Executes the main loop: input, update, physics, animation, and rendering." alt="" coords="280,5,441,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="474,21,442,21,442,16,474,16"/>
+<area shape="rect" id="Node000004" href="$class_terrain_scene.html#ae8ec4e098386a74714255aed184761eb" title="Runs the full scene lifecycle in the correct execution order." alt="" coords="103,5,232,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="264,21,232,21,232,16,264,16"/>
+<area shape="rect" id="Node000005" href="$mirach_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point of the engine. Initializes subsystems, loads models, sets up ECS,..." alt="" coords="5,5,55,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>

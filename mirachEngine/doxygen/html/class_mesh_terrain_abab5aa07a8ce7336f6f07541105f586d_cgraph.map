@@ -1,0 +1,9 @@
+<map id="MeshTerrain::Delete" name="MeshTerrain::Delete">
+<area shape="rect" id="Node000001" title="Deletes GPU resources associated with the terrain." alt="" coords="5,31,144,57"/>
+<area shape="rect" id="Node000002" href="$class_mesh3_d.html#a08ad190035c6d8e8362f009a09e6bc17" title="Releases GPU buffers and associated textures." alt="" coords="192,31,308,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,41,176,41,176,47,144,47"/>
+<area shape="rect" id="Node000003" href="$namespace_graphics.html#acf86e8b7f165acf4efdebe4a894bd1e2" title=" " alt="" coords="373,5,526,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="308,34,357,28,358,33,309,39"/>
+<area shape="rect" id="Node000004" href="$namespace_graphics.html#a18d8e124bb0c6f61e760fb756031f7d3" title=" " alt="" coords="356,56,543,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="309,49,341,53,340,58,308,54"/>
+</map>

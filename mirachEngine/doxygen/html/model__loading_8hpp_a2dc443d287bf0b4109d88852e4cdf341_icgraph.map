@@ -1,0 +1,12 @@
+<map id="GetNumVertices" name="GetNumVertices">
+<area shape="rect" id="Node000001" title=" " alt="" coords="697,43,815,69"/>
+<area shape="rect" id="Node000002" href="$class_mesh_file.html#a34a9c9b5caefc8b8154c33bedce57e24" title="Calculates total vertices and indices needed from an Assimp scene." alt="" coords="246,5,433,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="682,54,433,36,434,31,682,48"/>
+<area shape="rect" id="Node000004" href="$class_mesh_file.html#a96e77a5e4b9f016f4f2cb6600d720a59" title="Processes a single mesh and extracts geometry data." alt="" coords="481,68,649,95"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="682,68,650,73,650,67,681,63"/>
+<area shape="rect" id="Node000003" href="$class_mesh_file.html#a0d87d190f8cc0f0a4d6ec9743a575a45" title="Loads mesh geometry and material data from a model file into CPU memory." alt="" coords="5,43,198,69"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="230,43,199,47,198,41,230,37"/>
+<area shape="rect" id="Node000005" href="$class_mesh_file.html#a894016a67e27f49c2fba14bc38bf5b05" title="Initializes all submeshes in the scene." alt="" coords="259,72,420,99"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="466,86,421,87,420,81,466,80"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="243,76,198,71,199,65,244,71"/>
+</map>

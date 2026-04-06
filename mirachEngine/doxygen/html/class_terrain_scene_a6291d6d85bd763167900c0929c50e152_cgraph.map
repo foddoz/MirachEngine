@@ -1,0 +1,21 @@
+<map id="TerrainScene::SetupPlayer" name="TerrainScene::SetupPlayer">
+<area shape="rect" id="Node000001" title="Creates and registers the player character entity." alt="" coords="5,56,182,83"/>
+<area shape="rect" id="Node000002" href="$class_transform.html#a2bd3205164a8f8f64f1c738ab6cb365f" title="Retrieves the current position." alt="" coords="246,5,402,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,53,245,33,246,38,158,58"/>
+<area shape="rect" id="Node000003" href="$class_transform.html#a7c287f2ec371a1214df9fa7ad6a9718b" title="Sets the world&#45;space position of the object." alt="" coords="247,56,402,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="182,67,231,67,231,72,182,72"/>
+<area shape="rect" id="Node000008" href="$class_camera.html#a8953636ad3b9bfec7cb1d3cf2917d445" title="Sets the perspective projection matrix using a field of view, aspect ratio, and near/far planes." alt="" coords="230,107,419,133"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="158,81,246,100,245,105,157,86"/>
+<area shape="rect" id="Node000004" href="$class_transform.html#a766790cd6c7043b6d28fe75d36a7bcc6" title="Recalculates the cached model matrix based on current position, rotation, and scale." alt="" coords="467,56,668,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="402,67,451,67,451,72,402,72"/>
+<area shape="rect" id="Node000005" href="$math_8hpp.html#a57197be1224ca571c566c73c33081081" title="Applies scale to a matrix." alt="" coords="727,5,781,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="619,53,711,27,713,32,620,58"/>
+<area shape="rect" id="Node000006" href="$math_8hpp.html#a1213c92d8be7146176f8be90d8903ece" title="Converts a quaternion to a 4x4 matrix." alt="" coords="722,56,786,83"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="669,67,706,67,706,72,669,72"/>
+<area shape="rect" id="Node000007" href="$math_8hpp.html#a978278a474c16b86c65813cec08b513a" title="Applies translation to a matrix." alt="" coords="716,107,792,133"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="626,81,669,92,702,102,701,107,668,97,625,86"/>
+<area shape="rect" id="Node000009" href="$math_8hpp.html#ab547e31f984090bdf628c013a91555d6" title="Creates a perspective projection matrix." alt="" coords="522,107,613,133"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="419,117,507,117,507,123,419,123"/>
+<area shape="rect" id="Node000010" href="$math_8hpp.html#a387a686169e8f84d5abcedaefd2c8d5d" title="Converts degrees to radians." alt="" coords="526,157,609,184"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="393,131,511,156,510,162,392,137"/>
+</map>

@@ -1,0 +1,59 @@
+\doxysection{input.\+hpp}
+\hypertarget{input_8hpp_source}{}\label{input_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Events/input.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Events/input.hpp}}
+\mbox{\hyperlink{input_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ INPUT\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ INPUT\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3ef}{KeyCode}}\ :\ uint16\_t\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3efa88183b946cc5f0e8c96b2e66e1c74a7e}{Unknown}}\ =\ 0,\ \ \ }
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3efa61e9c06ea9a85a5088a499df6458d276}{W}}\ =\ 26,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3efa7fc56270e7a70fa81a5935b72eacbe29}{A}}\ =\ 4,\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3efa5dbc98dcc983a70728bd082d1a47546e}{S}}\ =\ 22,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3efaf623e75af30e62bbd73d6df5b50bb7b5}{D}}\ =\ 7,\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3efad511f8439ecde36647437fbba67a4394}{Space}}\ =\ 44\ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ Add\ more\ as\ needed}}
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{input_8hpp_ac1ec3647c005eacad401b06e7e18f711}{MouseButton}}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{input_8hpp_ac1ec3647c005eacad401b06e7e18f711a945d5e233cf7d6240f6b783b36a374ff}{Left}}\ =\ 1,\ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{input_8hpp_ac1ec3647c005eacad401b06e7e18f711a92b09c7c48c520c3c55e497875da437c}{Right}}\ =\ 3,\ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{input_8hpp_ac1ec3647c005eacad401b06e7e18f711ab1ca34f82e83c52b010f86955f264e05}{Middle}}\ =\ 2\ \ \ \ }
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{input_8hpp_a2b2905130ee6827c925a34fe221b95fa}{InputEventType}}\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{input_8hpp_a2b2905130ee6827c925a34fe221b95faa0d82790b0612935992bd564a17ce37d6}{Quit}},\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{input_8hpp_a2b2905130ee6827c925a34fe221b95faae22334c0cac2399971712cf9ae02fa4f}{MouseMotion}},\ \ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{input_8hpp_a2b2905130ee6827c925a34fe221b95faa8cdc59370ca82c9591c1f0f212a2971c}{MouseButtonDown}},\ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{input_8hpp_a2b2905130ee6827c925a34fe221b95faa2a3ccd10f3eb3ee5e6009dde78de0d1f}{MouseButtonUp}},\ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3efa88183b946cc5f0e8c96b2e66e1c74a7e}{Unknown}}\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_input_event}{InputEvent}}\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{input_8hpp_a2b2905130ee6827c925a34fe221b95fa}{InputEventType}}\ \mbox{\hyperlink{struct_input_event_a3a252efa580d9727fc0ca5025559eaec}{type}};\ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_input_event_a31ee71effd8207246379a8d4327b90ce}{mouseDeltaX}}\ =\ 0.0f;\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct_input_event_a1ed65fe82af25bcba928f343481a2365}{mouseDeltaY}}\ =\ 0.0f;\ }
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{using\ }\mbox{\hyperlink{input_8hpp_a238b2f0546e69e7547255ec984309fcc}{KeyStateArray}}\ =\ \textcolor{keyword}{const}\ uint8\_t*;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{inline}\ \textcolor{keyword}{constexpr}\ uint32\_t\ \mbox{\hyperlink{input_8hpp_ab1730206d833ef6f9ffd30a129b65caa}{MouseButtonMask}}(\mbox{\hyperlink{input_8hpp_ac1ec3647c005eacad401b06e7e18f711}{MouseButton}}\ button)\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{return}\ 1u\ <<\ (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(button)\ -\/\ 1);}
+\DoxyCodeLine{00065\ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_input_backend}{InputBackend}}\ \{}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespace_input_backend_a621be98711ee4ca6433d2bdbceb3cf38}{Init}}();}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespace_input_backend_a0b2497db762ea8dfeb096986cac3037e}{PollEvent}}(InputEvent\&\ outEvent);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{input_8hpp_a238b2f0546e69e7547255ec984309fcc}{KeyStateArray}}\ \mbox{\hyperlink{namespace_input_backend_a81af72d8c295d72d026a04bfaf1d8f15}{GetKeyboardState}}(\textcolor{keywordtype}{int}*\ numKeys);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00097\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{namespace_input_backend_a41b48803a8095adecb22dd7c852ef45c}{GetMouseButtons}}();}
+\DoxyCodeLine{00098\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ INPUT\_HPP}}
+
+\end{DoxyCode}

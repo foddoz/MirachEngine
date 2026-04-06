@@ -1,0 +1,5 @@
+<map id="MeshFile::ReserveSpace" name="MeshFile::ReserveSpace">
+<area shape="rect" id="Node000001" title="Allocates space in vectors based on counted vertices and indices." alt="" coords="246,5,414,32"/>
+<area shape="rect" id="Node000002" href="$class_mesh_file.html#a0d87d190f8cc0f0a4d6ec9743a575a45" title="Loads mesh geometry and material data from a model file into CPU memory." alt="" coords="5,5,198,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="230,21,198,21,198,16,230,16"/>
+</map>

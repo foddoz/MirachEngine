@@ -1,0 +1,18 @@
+\doxysection{time.\+hpp}
+\hypertarget{time_8hpp_source}{}\label{time_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Program/time.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Program/time.hpp}}
+\mbox{\hyperlink{time_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TIME\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TIME\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SDL3/SDL\_timer.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_time}{Time}}\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespace_time_a89204d3bdd9a68fbc684ebade4aa32bc}{GetTimeSeconds}}()\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ SDL\_GetTicks()\ /\ 1000.0f;}
+\DoxyCodeLine{00009\ \ \ \ \ \}}
+\DoxyCodeLine{00010\ \}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TIME\_HPP}}
+
+\end{DoxyCode}

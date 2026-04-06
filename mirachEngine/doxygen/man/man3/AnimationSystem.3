@@ -1,0 +1,43 @@
+.TH "AnimationSystem" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AnimationSystem \- System responsible for updating MD2 animations for all entities with \fBMD2Animator\fP components\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <animation_system\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBUpdate\fP (\fBEntityManager\fP &em, float deltaTime)"
+.br
+.RI "Updates all \fBMD2Animator\fP components in the ECS based on elapsed time\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+System responsible for updating MD2 animations for all entities with \fBMD2Animator\fP components\&. 
+
+Performs time-based animation updates, interpolates vertex positions, and uploads results to entity-specific vertex buffers for rendering\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void AnimationSystem::Update (\fBEntityManager\fP & em, float deltaTime)"
+
+.PP
+Updates all \fBMD2Animator\fP components in the ECS based on elapsed time\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIem\fP Reference to the \fBEntityManager\fP\&. 
+.br
+\fIdeltaTime\fP \fBTime\fP elapsed since the last frame (in seconds)\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

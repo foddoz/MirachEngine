@@ -1,0 +1,7 @@
+<map id="Graphics::DeleteProgram" name="Graphics::DeleteProgram">
+<area shape="rect" id="Node000001" title=" " alt="" coords="222,31,390,57"/>
+<area shape="rect" id="Node000002" href="$class_program.html#aec028b584ab9fa1859cea93ce94a58d6" title="Releases OpenGL and SDL resources." alt="" coords="31,5,148,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,35,147,28,148,23,206,30"/>
+<area shape="rect" id="Node000003" href="$class_program.html#a5316d10dacea062401d90777972fa15e" title=" " alt="" coords="5,56,174,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="207,58,174,62,174,57,206,53"/>
+</map>

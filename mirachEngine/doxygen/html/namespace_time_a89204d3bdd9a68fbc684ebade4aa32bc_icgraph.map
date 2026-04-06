@@ -1,0 +1,5 @@
+<map id="Time::GetTimeSeconds" name="Time::GetTimeSeconds">
+<area shape="rect" id="Node000001" title=" " alt="" coords="234,5,393,32"/>
+<area shape="rect" id="Node000002" href="$class_program.html#a0a17960127aeaeba9fd0e070b1692253" title="Updates internal frame timing variables to compute delta time." alt="" coords="5,5,186,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,21,186,21,186,16,218,16"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Physics::RigidBody::IsValid" name="Physics::RigidBody::IsValid">
+<area shape="rect" id="Node000001" title=" " alt="" coords="221,5,357,48"/>
+<area shape="rect" id="Node000002" href="$class_damage_contact_callback.html#a429e4591d8ea4e3ad26d6e626352cc50" title="Called by the physics system when a contact begins. Applies damage if the thrown object hits a valid ..." alt="" coords="5,5,173,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,29,173,29,173,24,205,24"/>
+</map>

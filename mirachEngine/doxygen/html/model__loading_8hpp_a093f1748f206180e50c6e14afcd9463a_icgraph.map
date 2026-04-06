@@ -1,0 +1,9 @@
+<map id="GetVertexNormal" name="GetVertexNormal">
+<area shape="rect" id="Node000001" title=" " alt="" coords="671,5,793,32"/>
+<area shape="rect" id="Node000002" href="$class_mesh_file.html#a96e77a5e4b9f016f4f2cb6600d720a59" title="Processes a single mesh and extracts geometry data." alt="" coords="455,5,623,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="656,21,624,21,624,16,656,16"/>
+<area shape="rect" id="Node000003" href="$class_mesh_file.html#a894016a67e27f49c2fba14bc38bf5b05" title="Initializes all submeshes in the scene." alt="" coords="246,5,407,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="440,21,407,21,407,16,440,16"/>
+<area shape="rect" id="Node000004" href="$class_mesh_file.html#a0d87d190f8cc0f0a4d6ec9743a575a45" title="Loads mesh geometry and material data from a model file into CPU memory." alt="" coords="5,5,198,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="230,21,198,21,198,16,230,16"/>
+</map>

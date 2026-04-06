@@ -1,0 +1,33 @@
+<map id="Enemy::getFSM" name="Enemy::getFSM">
+<area shape="rect" id="Node000001" title=" " alt="" coords="518,376,634,403"/>
+<area shape="rect" id="Node000002" href="$class_enemy.html#ae62e38383deee4d466f7374d0cdc764c" title="Notifies nearby enemies (if implemented) that the player is detected." alt="" coords="264,66,454,92"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="570,361,561,308,544,241,514,172,493,141,468,113,439,95,442,91,472,109,497,137,518,170,549,239,567,307,575,360"/>
+<area shape="rect" id="Node000003" href="$classenemy_state.html#a04a81b2a8709d0c6efc1fd004d6ba417" title="Called every frame during Patrol. Enemy wanders around, checks for player, and may switch to Chase or..." alt="" coords="5,26,201,52"/>
+<area shape="poly" id="edge15_Node000001_Node000003" title=" " alt="" coords="573,361,571,295,557,211,544,167,526,125,501,87,468,56,432,34,391,19,348,11,305,8,221,14,153,28,152,23,220,9,305,3,349,6,392,14,434,29,472,52,505,84,530,123,549,165,562,210,576,295,579,361"/>
+<area shape="rect" id="Node000004" href="$classhover_enemy_state.html#a0ddf4df81e33b8da8da33d9f103f76ea" title=" " alt="" coords="12,87,194,130"/>
+<area shape="poly" id="edge16_Node000001_Node000004" title=" " alt="" coords="569,362,559,316,541,259,511,203,492,178,468,157,449,147,422,138,351,125,271,117,194,113,194,107,271,111,352,119,423,133,451,142,472,153,496,175,516,200,546,257,564,314,574,361"/>
+<area shape="rect" id="Node000005" href="$classenemy_state.html#af377bab658f5ec2cfa6754ebaf4042e4" title="Called every frame while attacking. Plays attack animation, checks player distance for flee/chase swi..." alt="" coords="260,167,459,194"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="564,363,551,327,531,285,504,243,468,208,449,197,451,192,472,204,508,239,536,282,556,325,569,361"/>
+<area shape="rect" id="Node000006" href="$classhover_enemy_state.html#aa24ca2aca45524238e5bb96f974f2e89" title="Called every frame while in the attack state." alt="" coords="267,218,452,260"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="556,365,519,319,495,295,469,275,447,263,449,258,471,270,499,291,523,315,560,362"/>
+<area shape="rect" id="Node000007" href="$classenemy_state.html#a3d1c59242849477a2544c1b978545d9c" title="Called every frame while chasing the player. Switches to Attack/Flee/Patrol based on range and health..." alt="" coords="260,284,459,311"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="544,369,509,346,469,326,435,314,437,309,471,321,512,342,547,365"/>
+<area shape="rect" id="Node000008" href="$classhover_enemy_state.html#a3feb46f45992d1ffe44ce6fadff11ce9" title=" " alt="" coords="267,335,452,378"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="502,381,452,373,453,368,503,376"/>
+<area shape="rect" id="Node000009" href="$class_damage_contact_callback.html#a429e4591d8ea4e3ad26d6e626352cc50" title="Called by the physics system when a contact begins. Applies damage if the thrown object hits a valid ..." alt="" coords="276,402,443,444"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="503,404,444,413,443,408,502,398"/>
+<area shape="rect" id="Node000010" href="$classenemy_state.html#a03c68c5af13d42bedfe6b77085411eba" title="Called every frame while in Death state. Applies gravity and switches to Patrol if animation ends." alt="" coords="261,468,458,495"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="547,415,512,438,471,459,437,470,435,465,469,454,509,433,544,410"/>
+<area shape="rect" id="Node000011" href="$classhover_enemy_state.html#a68279b72847ec8b0ac75ab063e4b6ac7" title=" " alt="" coords="268,519,450,562"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="560,418,523,464,499,489,471,509,449,521,447,516,469,505,495,485,519,461,556,414"/>
+<area shape="rect" id="Node000012" href="$classenemy_state.html#a137fa214bedc45dac0884d61f9d8d9f8" title="Called every frame during Flee state. Applies force to move away from the player and rotates to face ..." alt="" coords="266,586,452,612"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="569,419,556,455,536,497,508,540,472,576,451,587,449,583,468,572,504,537,531,495,551,453,564,417"/>
+<area shape="rect" id="Node000013" href="$classhover_enemy_state.html#ad7cd98306d5b0bf2de9ca00fe378e967" title=" " alt="" coords="249,636,470,663"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="573,419,563,464,544,521,514,578,495,604,472,627,453,638,450,634,468,622,491,600,510,575,539,519,558,463,568,417"/>
+<area shape="rect" id="Node000014" href="$classenemy_state.html#a38e018ec2ad3eae61b599f2efd9c5c28" title="Called every frame in the Pain state. After 6 seconds, switches back to Patrol." alt="" coords="266,687,453,714"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="576,419,568,474,551,544,538,580,520,616,498,649,472,677,454,689,452,684,468,673,494,645,516,613,533,578,546,542,563,473,570,418"/>
+<area shape="rect" id="Node000015" href="$classhover_enemy_state.html#ae60bee692d8aeb4d696d7d9467b9f4ac" title=" " alt="" coords="249,738,470,764"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="578,419,573,482,558,566,545,610,526,653,502,693,472,728,455,739,452,735,468,724,498,690,522,650,540,608,553,565,568,482,572,418"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="254,65,193,56,193,50,255,60"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="249,94,195,101,194,95,248,89"/>
+</map>

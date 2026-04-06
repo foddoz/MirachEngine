@@ -1,0 +1,314 @@
+\doxysection{Terrain\+Chunk Class Reference}
+\hypertarget{class_terrain_chunk}{}\label{class_terrain_chunk}\index{TerrainChunk@{TerrainChunk}}
+
+
+Represents a sub-\/section of a larger terrain for LOD or streaming.  
+
+
+
+
+{\ttfamily \#include $<$terrain\+\_\+chunk.\+hpp$>$}
+
+
+
+Inheritance diagram for Terrain\+Chunk\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_terrain_chunk__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Terrain\+Chunk\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_terrain_chunk__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_terrain_chunk_a87708540b0fc236af648d35a209de730}{Terrain\+Chunk}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Initializes internal state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_chunk_ab8fb5256f460139f59aa6dae3de6dabc}{Generate\+CPUData}} (const std\+::vector$<$ float $>$ \&global\+Heightmap, int startX, int startZ, int chunk\+Size, int global\+Width, float min\+Height, float max\+Height, float texture\+Scale, const std\+::vector$<$ std\+::string $>$ \&texture\+File\+Names)
+\begin{DoxyCompactList}\small\item\em Generates mesh data for this chunk from a global heightmap source. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_chunk_aa82cd547ca7e8dc428c80cd6a71257a3}{Upload\+To\+GPU}} () override
+\begin{DoxyCompactList}\small\item\em Uploads this chunk’s vertex/index/texture data to the GPU. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{class_terrain_chunk_a2bf92b420424d9d395377a98fac8d898}{Get\+Origin}} () const
+\begin{DoxyCompactList}\small\item\em Returns the world-\/space origin of this chunk in terrain units. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_chunk_a8dce173976c3ddbd93ed7add594527df}{Set\+Shared\+Textures}} (const std\+::vector$<$ \mbox{\hyperlink{class_texture}{Texture}} \texorpdfstring{$\ast$}{*} $>$ \&textures)
+\begin{DoxyCompactList}\small\item\em Shares preloaded textures across multiple chunks to reduce memory usage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_mesh_terrain}{Mesh\+Terrain}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mesh_terrain_a75adb1babf83a1f6812d789d55f2b3ad}{Mesh\+Terrain}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an empty \doxylink{class_mesh_terrain}{Mesh\+Terrain} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_terrain_a8b774b6e68bb4e4e72e0690daeb5bf7f}{Generate\+CPUData}} (int terrain\+Size, int iterations, float min\+Height, float max\+Height, float filter, float texture\+Scale, const std\+::vector$<$ std\+::string $>$ \&texture\+File\+Names, bool randomise=true)
+\begin{DoxyCompactList}\small\item\em Generates the heightmap and vertex data for terrain mesh. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_terrain_a8f4dd324238753e462a2e9c9ca260c40}{Create\+Fault\+Formation}} (int iterations, float min\+Height, float max\+Height, float filter, int terrain\+Size, bool randomise)
+\begin{DoxyCompactList}\small\item\em Internal fault formation algorithm with smoothing filter. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_mesh_renderer}{Mesh\+Renderer}} \mbox{\hyperlink{class_mesh_terrain_a02d8c1492362365710a818b9a4674774}{To\+Renderer}} () override
+\begin{DoxyCompactList}\small\item\em Converts the terrain to a renderable mesh component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_mesh_l_o_d}{Mesh\+LOD}} \mbox{\hyperlink{class_mesh_terrain_a7cd9ecf88516b6716cb76b804e8bd61b}{Create\+LOD}} (int step\+Size)
+\item 
+float \mbox{\hyperlink{class_mesh_terrain_a82c9aa1166f4c0cf04b6ca44314714b9}{Get\+Height}} (int x, int z) const
+\begin{DoxyCompactList}\small\item\em Gets the height at the given integer terrain grid coordinates. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_mesh_terrain_a58ce82371ad74d5e293bf5cfc323ff7a}{Get\+World\+Height}} (float x, float z) const
+\item 
+float \mbox{\hyperlink{class_mesh_terrain_a96e1532cccbcd9e7b98c503a4285dd67}{Get\+Height\+Interpolated}} (float x, float z) const
+\begin{DoxyCompactList}\small\item\em Gets bilinearly interpolated height from floating point coordinates. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mesh_terrain_acfd2d102cd46b6f4fb58a554ea052307}{Get\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Gets terrain grid size. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mesh_terrain_a8a0737444822c558d57ab87b93e8a105}{Get\+Width}} () const
+\begin{DoxyCompactList}\small\item\em Gets the width (x-\/size) of the terrain. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mesh_terrain_af48b8544ff00195bfcfd44ba79ebf61b}{Get\+Depth}} () const
+\begin{DoxyCompactList}\small\item\em Gets the depth (z-\/size) of the terrain. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_mesh_terrain_ab9a45762007d0ec096308beadce636cc}{Get\+World\+Width}} () const
+\item 
+float \mbox{\hyperlink{class_mesh_terrain_a5c517ebeb1e89af3418d0ea07aea60b9}{Get\+World\+Depth}} () const
+\item 
+int \mbox{\hyperlink{class_mesh_terrain_abd5e104a91a9189660cf6c0bae91bc3e}{Get\+Min\+Height}} () const
+\item 
+int \mbox{\hyperlink{class_mesh_terrain_aa66b8e81f2f557bc3ea3018fcdc98224}{Get\+Max\+Height}} () const
+\item 
+const std\+::vector$<$ float $>$ \& \mbox{\hyperlink{class_mesh_terrain_a015f8408a92a2b612e5e80ab411ade4f}{Get\+Height\+Map}} () const
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{struct_mesh_terrain_1_1_vertex}{Mesh\+Terrain\+::\+Vertex}} $>$ \& \mbox{\hyperlink{class_mesh_terrain_ac4929e35dca3bc094e2a74e173a13fd9}{Get\+Vertex\+Data}} () const
+\item 
+const std\+::vector$<$ unsigned int $>$ \& \mbox{\hyperlink{class_mesh_terrain_ae521c4a9fd6c4e4284e4e6659ba63c22}{Get\+Index\+Data}} () const
+\item 
+void \mbox{\hyperlink{class_mesh_terrain_ae286a5db306f207d66c035e713737bda}{Clear\+CPUData}} ()
+\item 
+float \mbox{\hyperlink{class_mesh_terrain_aa844c7e003d27f8cf3c8f6c2a8ca0850}{Get\+Texture\+Scale}} () const
+\begin{DoxyCompactList}\small\item\em Gets the texture UV scale factor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_terrain_abab5aa07a8ce7336f6f07541105f586d}{Delete}} () override
+\begin{DoxyCompactList}\small\item\em Deletes GPU resources associated with the terrain. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_mesh3_d}{Mesh3D}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mesh3_d_a8cdefca0bf7171afd91f2a1a88e05a7e}{Mesh3D}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor initializes Open\+GL buffer handles and transforms. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mesh3_d_a18dc545efcaa749ea7649b9bcaa91ce1}{Mesh3D}} (const \mbox{\hyperlink{class_mesh3_d}{Mesh3D}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor for \doxylink{class_mesh3_d}{Mesh3D}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh3_d_a478bda9c8ff4adb50c56c26ef50af8d2}{Set\+Pipeline}} (unsigned int pipeline)
+\begin{DoxyCompactList}\small\item\em Assigns a graphics pipeline (shader program) to this mesh. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_ad2952df09ac54e7d5fafbcf87ae7c487}{get\+Pipeline}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the currently assigned graphics pipeline. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_terrain_chunk_a595eb50aad9ceee6d855c63e50642e35}{m\+\_\+startX}}
+\begin{DoxyCompactList}\small\item\em Start X index in global heightmap. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_terrain_chunk_a64f2d42e9861377effcf31f42260a1a9}{m\+\_\+startZ}}
+\begin{DoxyCompactList}\small\item\em Start Z index in global heightmap. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_mesh_terrain}{Mesh\+Terrain}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_mesh_terrain_a6bce579145dde6b4cde1c5bd622aa797}{Create\+Triangle\+List}} (int width, int depth)
+\begin{DoxyCompactList}\small\item\em Generates vertices, normals, and triangle indices from heightmap. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_terrain_a8c27c53059bd5313ee5300d266abbb72}{Set\+Height}} (int x, int z, float value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_mesh_terrain}{Mesh\+Terrain}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_mesh_terrain_a27aedd685afae6ef28aabfa19582b382}{m\+\_\+\+Texture\+File\+Names}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_texture}{Texture} file names for terrain layers. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mesh_terrain_a23ef9e1fc7bfc32d4c37dd4f51c72a1f}{m\+\_\+width}}
+\begin{DoxyCompactList}\small\item\em Final mesh width after generation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mesh_terrain_acf8bfd80c73a75bef8be73324aa461f5}{m\+\_\+depth}}
+\begin{DoxyCompactList}\small\item\em Final mesh depth after generation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mesh_terrain_a4836835bd940ddd7dd85da4aa0356289}{m\+\_\+min\+Height}}
+\begin{DoxyCompactList}\small\item\em Cached minimum height value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mesh_terrain_ab0f63f943d2d49adcab77a4ea1bce825}{m\+\_\+max\+Height}}
+\begin{DoxyCompactList}\small\item\em Cached maximum height value. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_mesh_terrain_a55587cf1d02370ea42b53795e54cd3be}{m\+\_\+world\+SizeX}}
+\item 
+float \mbox{\hyperlink{class_mesh_terrain_abc36ce97d42d6b763b9f3b422e2ef3a3}{m\+\_\+world\+SizeZ}}
+\item 
+int \mbox{\hyperlink{class_mesh_terrain_adac93d5eca26bfa2eba3f97231774c2b}{m\+\_\+terrain\+Size}}
+\begin{DoxyCompactList}\small\item\em Size of the terrain (width = depth). \end{DoxyCompactList}\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{class_mesh_terrain_a96d370d349a7bc6754437d16e4bc6df7}{m\+\_\+height\+Map}}
+\begin{DoxyCompactList}\small\item\em 2D heightmap values. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_mesh_terrain_adf5e6fd6f092364a4bb64f1fff35fa03}{m\+\_\+texture\+Scale}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_texture}{Texture} scale used for UV mapping. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_mesh3_d}{Mesh3D}}}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a9bb74668772fa08c0099f3aa0d242215}{m\+\_\+\+VAO}}
+\begin{DoxyCompactList}\small\item\em Open\+GL Vertex Array Object handle. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a064dc03404641d9b41dcc58f3244b5ea}{m\+\_\+\+Index\+Count}}
+\begin{DoxyCompactList}\small\item\em Number of indices used for drawing (gl\+Draw\+Elements or gl\+Draw\+Arrays). \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a0a78f966ef1aaf868c32523200ffd7b5}{m\+\_\+\+VBO}}
+\begin{DoxyCompactList}\small\item\em Vertex Buffer Object handle. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a79760be3f47e0cd2738e5932e2ce6a70}{m\+\_\+\+IBO}}
+\begin{DoxyCompactList}\small\item\em Index Buffer Object handle. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_texture}{Texture}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_mesh3_d_a878c07f3eab3dcc47195e3bc0b74fa30}{m\+\_\+\+Textures}}
+\begin{DoxyCompactList}\small\item\em Collection of textures associated with this mesh. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a6232eb241c460e30d607b59862d0e8f1}{m\+\_\+\+Pipeline}}
+\begin{DoxyCompactList}\small\item\em Open\+GL shader program ID assigned to this mesh. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_a_a_b_b}{AABB}} \mbox{\hyperlink{class_mesh3_d_aeaaf348709784591a9608a9e779e3cd3}{m\+\_\+\+AABB}}
+\begin{DoxyCompactList}\small\item\em Axis-\/aligned bounding box in local (object) space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a sub-\/section of a larger terrain for LOD or streaming. 
+
+Inherits from \doxylink{class_mesh_terrain}{Mesh\+Terrain} and extracts its data from a global heightmap. This allows terrain to be split into smaller pieces for performance and culling. 
+
+\label{doc-constructors}
+\Hypertarget{class_terrain_chunk_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_terrain_chunk_a87708540b0fc236af648d35a209de730}\index{TerrainChunk@{TerrainChunk}!TerrainChunk@{TerrainChunk}}
+\index{TerrainChunk@{TerrainChunk}!TerrainChunk@{TerrainChunk}}
+\doxysubsubsection{\texorpdfstring{TerrainChunk()}{TerrainChunk()}}
+{\footnotesize\ttfamily \label{class_terrain_chunk_a87708540b0fc236af648d35a209de730} 
+Terrain\+Chunk\+::\+Terrain\+Chunk (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor. Initializes internal state. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_chunk_a87708540b0fc236af648d35a209de730_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{class_terrain_chunk_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_terrain_chunk_ab8fb5256f460139f59aa6dae3de6dabc}\index{TerrainChunk@{TerrainChunk}!GenerateCPUData@{GenerateCPUData}}
+\index{GenerateCPUData@{GenerateCPUData}!TerrainChunk@{TerrainChunk}}
+\doxysubsubsection{\texorpdfstring{GenerateCPUData()}{GenerateCPUData()}}
+{\footnotesize\ttfamily \label{class_terrain_chunk_ab8fb5256f460139f59aa6dae3de6dabc} 
+void Terrain\+Chunk\+::\+Generate\+CPUData (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{global\+Heightmap}{, }\item[{int}]{startX}{, }\item[{int}]{startZ}{, }\item[{int}]{chunk\+Size}{, }\item[{int}]{global\+Width}{, }\item[{float}]{min\+Height}{, }\item[{float}]{max\+Height}{, }\item[{float}]{texture\+Scale}{, }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{texture\+File\+Names}{}\end{DoxyParamCaption})}
+
+
+
+Generates mesh data for this chunk from a global heightmap source. 
+
+Generate terrain chunk mesh from a portion of a global heightmap.
+
+This function extracts a rectangular region of height values from a larger terrain and constructs vertex/index buffers only for that portion.
+
+
+\begin{DoxyParams}{Parameters}
+{\em global\+Heightmap} & The full terrain heightmap shared across all chunks. \\
+\hline
+{\em startX} & The X-\/coordinate (column) in the global heightmap to start this chunk. \\
+\hline
+{\em startZ} & The Z-\/coordinate (row) in the global heightmap to start this chunk. \\
+\hline
+{\em chunk\+Size} & The number of vertices in width and depth this chunk should span. \\
+\hline
+{\em global\+Width} & The full width of the global heightmap (used for indexing). \\
+\hline
+{\em min\+Height} & Minimum expected height value (used for \doxylink{struct_a_a_b_b}{AABB} normalization). \\
+\hline
+{\em max\+Height} & Maximum expected height value. \\
+\hline
+{\em texture\+Scale} & UV scaling factor for this chunk\textquotesingle{}s texture coordinates. \\
+\hline
+{\em texture\+File\+Names} & A list of texture file paths to use on this chunk. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_chunk_ab8fb5256f460139f59aa6dae3de6dabc_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_terrain_chunk_a2bf92b420424d9d395377a98fac8d898}\index{TerrainChunk@{TerrainChunk}!GetOrigin@{GetOrigin}}
+\index{GetOrigin@{GetOrigin}!TerrainChunk@{TerrainChunk}}
+\doxysubsubsection{\texorpdfstring{GetOrigin()}{GetOrigin()}}
+{\footnotesize\ttfamily \label{class_terrain_chunk_a2bf92b420424d9d395377a98fac8d898} 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Terrain\+Chunk\+::\+Get\+Origin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the world-\/space origin of this chunk in terrain units. 
+
+Get the world origin of this chunk based on grid location.
+
+Typically used for placing the chunk correctly in the world or computing transforms. \begin{DoxyReturn}{Returns}
+\doxylink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f} representing bottom-\/left corner of the chunk.
+
+\doxylink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f} representing the chunk\textquotesingle{}s base position in world space. 
+\end{DoxyReturn}
+\Hypertarget{class_terrain_chunk_a8dce173976c3ddbd93ed7add594527df}\index{TerrainChunk@{TerrainChunk}!SetSharedTextures@{SetSharedTextures}}
+\index{SetSharedTextures@{SetSharedTextures}!TerrainChunk@{TerrainChunk}}
+\doxysubsubsection{\texorpdfstring{SetSharedTextures()}{SetSharedTextures()}}
+{\footnotesize\ttfamily \label{class_terrain_chunk_a8dce173976c3ddbd93ed7add594527df} 
+void Terrain\+Chunk\+::\+Set\+Shared\+Textures (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_texture}{Texture}} \texorpdfstring{$\ast$}{*} $>$ \&}]{textures}{}\end{DoxyParamCaption})}
+
+
+
+Shares preloaded textures across multiple chunks to reduce memory usage. 
+
+Replace current textures with shared texture pointers.
+
+Replaces this chunk\textquotesingle{}s texture list with a reference to shared ones. Textures are not copied or loaded again.
+
+
+\begin{DoxyParams}{Parameters}
+{\em textures} & List of preloaded texture pointers.\\
+\hline
+{\em textures} & Shared terrain texture list (already loaded and uploaded). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_terrain_chunk_aa82cd547ca7e8dc428c80cd6a71257a3}\index{TerrainChunk@{TerrainChunk}!UploadToGPU@{UploadToGPU}}
+\index{UploadToGPU@{UploadToGPU}!TerrainChunk@{TerrainChunk}}
+\doxysubsubsection{\texorpdfstring{UploadToGPU()}{UploadToGPU()}}
+{\footnotesize\ttfamily \label{class_terrain_chunk_aa82cd547ca7e8dc428c80cd6a71257a3} 
+void Terrain\+Chunk\+::\+Upload\+To\+GPU (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Uploads this chunk’s vertex/index/texture data to the GPU. 
+
+Upload terrain chunk texture data to GPU. 
+
+Reimplemented from \mbox{\hyperlink{class_mesh_terrain_a7f27655ea001536d577eefcaff6421e6}{Mesh\+Terrain}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_terrain_chunk_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_terrain_chunk_a595eb50aad9ceee6d855c63e50642e35}\index{TerrainChunk@{TerrainChunk}!m\_startX@{m\_startX}}
+\index{m\_startX@{m\_startX}!TerrainChunk@{TerrainChunk}}
+\doxysubsubsection{\texorpdfstring{m\_startX}{m\_startX}}
+{\footnotesize\ttfamily \label{class_terrain_chunk_a595eb50aad9ceee6d855c63e50642e35} 
+int Terrain\+Chunk\+::m\+\_\+startX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Start X index in global heightmap. 
+
+\Hypertarget{class_terrain_chunk_a64f2d42e9861377effcf31f42260a1a9}\index{TerrainChunk@{TerrainChunk}!m\_startZ@{m\_startZ}}
+\index{m\_startZ@{m\_startZ}!TerrainChunk@{TerrainChunk}}
+\doxysubsubsection{\texorpdfstring{m\_startZ}{m\_startZ}}
+{\footnotesize\ttfamily \label{class_terrain_chunk_a64f2d42e9861377effcf31f42260a1a9} 
+int Terrain\+Chunk\+::m\+\_\+startZ\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Start Z index in global heightmap. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Meshes/\mbox{\hyperlink{terrain__chunk_8hpp}{terrain\+\_\+chunk.\+hpp}}\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Meshes/\mbox{\hyperlink{terrain__chunk_8cpp}{terrain\+\_\+chunk.\+cpp}}\end{DoxyCompactItemize}

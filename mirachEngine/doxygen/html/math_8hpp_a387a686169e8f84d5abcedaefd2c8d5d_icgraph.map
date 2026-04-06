@@ -1,0 +1,24 @@
+<map id="ToRadians" name="ToRadians">
+<area shape="rect" id="Node000001" title="Converts degrees to radians." alt="" coords="1180,31,1264,57"/>
+<area shape="rect" id="Node000002" href="$class_camera.html#a8953636ad3b9bfec7cb1d3cf2917d445" title="Sets the perspective projection matrix using a field of view, aspect ratio, and near/far planes." alt="" coords="943,5,1132,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1165,39,1132,34,1133,29,1165,34"/>
+<area shape="rect" id="Node000007" href="$class_camera.html#ae94de322124a68e32113235eeec78008" title="Updates the camera&#39;s direction vectors (front, right, up) based on its current yaw and pitch." alt="" coords="957,56,1118,83"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1165,54,1119,61,1118,56,1164,49"/>
+<area shape="rect" id="Node000003" href="$class_terrain_scene.html#a6291d6d85bd763167900c0929c50e152" title="Creates and registers the player character entity." alt="" coords="719,5,895,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="928,21,896,21,896,16,928,16"/>
+<area shape="rect" id="Node000004" href="$class_terrain_scene.html#a64ff8229749692f3000ab0387dae7165" title="Creates and registers entities and components in the ECS." alt="" coords="280,12,447,39"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="703,23,448,27,448,21,703,18"/>
+<area shape="rect" id="Node000005" href="$class_terrain_scene.html#ae8ec4e098386a74714255aed184761eb" title="Runs the full scene lifecycle in the correct execution order." alt="" coords="103,44,232,71"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="265,44,233,49,232,44,264,39"/>
+<area shape="rect" id="Node000006" href="$mirach_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point of the engine. Initializes subsystems, loads models, sets up ECS,..." alt="" coords="5,44,55,71"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="87,60,55,60,55,55,87,55"/>
+<area shape="rect" id="Node000008" href="$class_camera.html#a01f94c3543f56ede7af49dc778f19331" title="Constructs a camera with default orientation and projection parameters." alt="" coords="746,56,868,83"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="941,72,868,72,868,67,941,67"/>
+<area shape="rect" id="Node000009" href="$class_camera.html#a08e827a4ea64e448beabaa52881c58ab" title="Applies mouse input to rotate the camera using yaw and pitch." alt="" coords="755,107,858,133"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="959,89,860,111,858,106,958,84"/>
+<area shape="rect" id="Node000010" href="$class_player_script.html#a477310df8b50b588b853e7d174e12f13" title="Captures input states and updates internal flags." alt="" coords="495,81,671,108"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="739,115,671,107,672,102,740,110"/>
+<area shape="rect" id="Node000011" href="$class_terrain_scene.html#a55eb34067d9346aa7d9c3295a9e2dfb0" title="Executes the main loop: input, update, physics, animation, and rendering." alt="" coords="283,69,444,96"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="479,92,445,90,445,84,480,86"/>
+<area shape="poly" id="edge11_Node000011_Node000005" title=" " alt="" coords="267,73,232,68,233,63,268,68"/>
+</map>

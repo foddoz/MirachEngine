@@ -1,0 +1,9 @@
+<map id="Camera::UpdateVectors" name="Camera::UpdateVectors">
+<area shape="rect" id="Node000001" title="Updates the camera&#39;s direction vectors (front, right, up) based on its current yaw and pitch." alt="" coords="5,56,167,83"/>
+<area shape="rect" id="Node000002" href="$math_8hpp.html#a670c0a5216c9f579310c5202fba83257" title="Cross product of two 3D vectors." alt="" coords="228,5,284,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,53,212,29,214,34,134,58"/>
+<area shape="rect" id="Node000003" href="$math_8hpp.html#a11c0426b3a7e98489b250e45d0240c5f" title="Normalizes a 3D vector." alt="" coords="216,56,296,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="167,67,201,67,201,72,167,72"/>
+<area shape="rect" id="Node000004" href="$math_8hpp.html#a387a686169e8f84d5abcedaefd2c8d5d" title="Converts degrees to radians." alt="" coords="215,107,298,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="134,81,201,101,199,106,133,86"/>
+</map>

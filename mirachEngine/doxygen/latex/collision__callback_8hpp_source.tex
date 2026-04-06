@@ -1,0 +1,145 @@
+\doxysection{collision\+\_\+callback.\+hpp}
+\hypertarget{collision__callback_8hpp_source}{}\label{collision__callback_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Physics/collision\_callback.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Physics/collision\_callback.hpp}}
+\mbox{\hyperlink{collision__callback_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{physics_8hpp}{physics.hpp}}"{}}\ \textcolor{comment}{//\ Ensure\ this\ includes\ the\ CollisionCallback\ interface}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{health_8hpp}{../Scripts/health.hpp}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{animation__system_8hpp}{../Graphics/Animation/animation\_system.hpp}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{enemy_8h}{../FSM/enemy.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_common_states_8h}{../FSM/CommonStates.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_damage_contact_callback_ac4e45fb4831ff15d022bacb7de6a0274}{DamageContactCallback}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_physics_1_1_collision_callback}{Physics::CollisionCallback}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_damage_contact_callback_ac4e45fb4831ff15d022bacb7de6a0274}{DamageContactCallback}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}*\ em,\ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ thrownEntity)}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_damage_contact_callback_a750f57e0d7dff31cf140924b4dc930bf}{m\_em}}(em),\ \mbox{\hyperlink{class_damage_contact_callback_a98b35c6d4818d257bb485924b059661d}{m\_thrown}}(thrownEntity)\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_damage_contact_callback_a429e4591d8ea4e3ad26d6e626352cc50}{OnContact}}(\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\ a,\ \mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\ b)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ ea\ =\ \mbox{\hyperlink{class_damage_contact_callback_aa009e34d1f5fb441563ec969e417a242}{FindEntity}}(a);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ eb\ =\ \mbox{\hyperlink{class_damage_contact_callback_aa009e34d1f5fb441563ec969e417a242}{FindEntity}}(b);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Determine\ which\ entity\ is\ the\ robot\ being\ hit}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ robot\ =\ (ea\ ==\ \mbox{\hyperlink{class_damage_contact_callback_a98b35c6d4818d257bb485924b059661d}{m\_thrown}})\ ?\ eb\ :\ (eb\ ==\ \mbox{\hyperlink{class_damage_contact_callback_a98b35c6d4818d257bb485924b059661d}{m\_thrown}})\ ?\ ea\ :\ \mbox{\hyperlink{ecs__types_8hpp_a273573770bdd417288da575784ee0aa3}{INVALID\_ENTITY}};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (robot\ ==\ \mbox{\hyperlink{ecs__types_8hpp_a273573770bdd417288da575784ee0aa3}{INVALID\_ENTITY}}\ ||\ \mbox{\hyperlink{class_damage_contact_callback_a750f57e0d7dff31cf140924b4dc930bf}{m\_em}}-\/>HasComponent<\mbox{\hyperlink{struct_dead}{Dead}}>(robot))\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ if\ the\ thrown\ object\ has\ sufficient\ velocity}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\ thrownBody\ =\ (ea\ ==\ \mbox{\hyperlink{class_damage_contact_callback_a98b35c6d4818d257bb485924b059661d}{m\_thrown}})\ ?\ a\ :\ b;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!thrownBody\ ||\ !thrownBody-\/>\mbox{\hyperlink{class_physics_1_1_rigid_body_a2f0412b7a0f009b8e6182b0e913e1606}{IsValid}}())\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ velocity\ =\ thrownBody-\/>\mbox{\hyperlink{class_physics_1_1_rigid_body_a179331f1de86a187c23ef7761a652dce}{GetLinearVelocity}}();}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ speed\ =\ \mbox{\hyperlink{math_8hpp_a449ecbbd825f26c183caeac2bda40c41}{Length}}(velocity);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ velocityThreshold\ =\ 30.0f;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (speed\ <\ velocityThreshold)\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Prevent\ repeated\ damage\ from\ the\ same\ contact}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ key\ =\ std::make\_pair(std::min(\mbox{\hyperlink{class_damage_contact_callback_a98b35c6d4818d257bb485924b059661d}{m\_thrown}},\ robot),\ std::max(\mbox{\hyperlink{class_damage_contact_callback_a98b35c6d4818d257bb485924b059661d}{m\_thrown}},\ robot));}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_damage_contact_callback_a3ac4c76536c8dae18ebbadc7322d21d8}{activeContacts}}.count(key))\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Apply\ damage\ to\ the\ robot's\ Health\ component}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_damage_contact_callback_a750f57e0d7dff31cf140924b4dc930bf}{m\_em}}-\/>HasComponent<\mbox{\hyperlink{struct_health}{Health}}>(robot))\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ hp\ =\ \mbox{\hyperlink{class_damage_contact_callback_a750f57e0d7dff31cf140924b4dc930bf}{m\_em}}-\/>GetComponent<\mbox{\hyperlink{struct_health}{Health}}>(robot);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ hp.\mbox{\hyperlink{struct_health_ad727e73c92cffc30d8520ee20bfdf6ea}{current}}\ -\/=\ thrownBody-\/>\mbox{\hyperlink{class_physics_1_1_rigid_body_a634629a8385fcf7e03071dfad2b8317b}{GetMass}}()\ *\ 35.f;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[Damage]\ Enemy\ took\ damage.\ HP:\ "{}}\ <<\ hp.current\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Trigger\ death\ sequence\ if\ HP\ falls\ below\ 0}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hp.current\ <=\ 0.0f)\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[Death]\ Enemy\ is\ dying.\(\backslash\)n"{}};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_damage_contact_callback_a750f57e0d7dff31cf140924b4dc930bf}{m\_em}}-\/>HasComponent<\mbox{\hyperlink{class_enemy}{Enemy}}*>(robot))\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_enemy}{Enemy}}*\ enemy\ =\ \mbox{\hyperlink{class_damage_contact_callback_a750f57e0d7dff31cf140924b4dc930bf}{m\_em}}-\/>GetComponent<\mbox{\hyperlink{class_enemy}{Enemy}}*>(robot);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enemy-\/>\mbox{\hyperlink{class_enemy_a6a53cb0274226ee5528ab2d0290960f4}{getFSM}}()-\/>\mbox{\hyperlink{class_state_machine_a3f71e3da813131021e5a6299a731e138}{ChangeState}}(\mbox{\hyperlink{class_singleton_a4c569e7ab86e5654a3f094ee50e75d7c}{DeathState<Enemy>::Instance}}());}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_damage_contact_callback_a750f57e0d7dff31cf140924b4dc930bf}{m\_em}}-\/>HasComponent<\mbox{\hyperlink{class_enemy}{Enemy}}*>(robot))\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_enemy}{Enemy}}*\ enemy\ =\ \mbox{\hyperlink{class_damage_contact_callback_a750f57e0d7dff31cf140924b4dc930bf}{m\_em}}-\/>GetComponent<\mbox{\hyperlink{class_enemy}{Enemy}}*>(robot);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enemy-\/>\mbox{\hyperlink{class_enemy_a6a53cb0274226ee5528ab2d0290960f4}{getFSM}}()-\/>\mbox{\hyperlink{class_state_machine_a3f71e3da813131021e5a6299a731e138}{ChangeState}}(\mbox{\hyperlink{class_singleton_a4c569e7ab86e5654a3f094ee50e75d7c}{PainState<Enemy>::Instance}}());}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_damage_contact_callback_a3ac4c76536c8dae18ebbadc7322d21d8}{activeContacts}}.insert(key);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_damage_contact_callback_a31163b0020da8e1b004057ae0123596f}{OnContactExit}}(\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\ a,\ \mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\ b)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ ea\ =\ \mbox{\hyperlink{class_damage_contact_callback_aa009e34d1f5fb441563ec969e417a242}{FindEntity}}(a);}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ eb\ =\ \mbox{\hyperlink{class_damage_contact_callback_aa009e34d1f5fb441563ec969e417a242}{FindEntity}}(b);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ robot\ =\ (ea\ ==\ \mbox{\hyperlink{class_damage_contact_callback_a98b35c6d4818d257bb485924b059661d}{m\_thrown}})\ ?\ eb\ :\ (eb\ ==\ \mbox{\hyperlink{class_damage_contact_callback_a98b35c6d4818d257bb485924b059661d}{m\_thrown}})\ ?\ ea\ :\ \mbox{\hyperlink{ecs__types_8hpp_a273573770bdd417288da575784ee0aa3}{INVALID\_ENTITY}};}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (robot\ ==\ \mbox{\hyperlink{ecs__types_8hpp_a273573770bdd417288da575784ee0aa3}{INVALID\_ENTITY}})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ key\ =\ std::make\_pair(std::min(\mbox{\hyperlink{class_damage_contact_callback_a98b35c6d4818d257bb485924b059661d}{m\_thrown}},\ robot),\ std::max(\mbox{\hyperlink{class_damage_contact_callback_a98b35c6d4818d257bb485924b059661d}{m\_thrown}},\ robot));}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_damage_contact_callback_a3ac4c76536c8dae18ebbadc7322d21d8}{activeContacts}}.erase(key);}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ \mbox{\hyperlink{class_damage_contact_callback_aa009e34d1f5fb441563ec969e417a242}{FindEntity}}(\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\ rb)\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [e,\ body]\ :\ \mbox{\hyperlink{class_damage_contact_callback_a750f57e0d7dff31cf140924b4dc930bf}{m\_em}}-\/>GetAllComponents<\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*>())}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (body\ ==\ rb)\ \textcolor{keywordflow}{return}\ e;}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{ecs__types_8hpp_a273573770bdd417288da575784ee0aa3}{INVALID\_ENTITY}};}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{class_entity_manager}{EntityManager}}*\ \mbox{\hyperlink{class_damage_contact_callback_a750f57e0d7dff31cf140924b4dc930bf}{m\_em}};\ }
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ \mbox{\hyperlink{class_damage_contact_callback_a98b35c6d4818d257bb485924b059661d}{m\_thrown}};\ }
+\DoxyCodeLine{00117\ \ \ \ \ std::set<std::pair<Entity,\ Entity>>\ \mbox{\hyperlink{class_damage_contact_callback_a3ac4c76536c8dae18ebbadc7322d21d8}{activeContacts}};\ }
+\DoxyCodeLine{00118\ \};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_enemy_attack_callback_a97f2ab74114f930cb82805b6d629f1c5}{EnemyAttackCallback}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_physics_1_1_collision_callback}{Physics::CollisionCallback}}\ \{}
+\DoxyCodeLine{00121\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{class_enemy_attack_callback_a97f2ab74114f930cb82805b6d629f1c5}{EnemyAttackCallback}}(\mbox{\hyperlink{class_entity_manager}{EntityManager}}*\ em,\ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ attacker,\ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ target)}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_enemy_attack_callback_a416d4af53804b993fad36e69f8894c63}{m\_em}}(em),\ \mbox{\hyperlink{class_enemy_attack_callback_a130a07befb1ce8d8a1f64797f04d863b}{m\_attacker}}(attacker),\ \mbox{\hyperlink{class_enemy_attack_callback_ace16fa00e962aa78d24658449b87667c}{m\_target}}(target),\ \mbox{\hyperlink{class_enemy_attack_callback_a17bcc9dca6b93ad30b3d6f22caabf80a}{triggered}}(false)\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_attack_callback_a55d6139be817c7851aa8bfc80bdb7f23}{OnContact}}(\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\ a,\ \mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\ b)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_enemy_attack_callback_a17bcc9dca6b93ad30b3d6f22caabf80a}{triggered}})\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ ea\ =\ \mbox{\hyperlink{class_enemy_attack_callback_acd8311964f9a66f637469ec771c77926}{FindEntity}}(a);}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ eb\ =\ \mbox{\hyperlink{class_enemy_attack_callback_acd8311964f9a66f637469ec771c77926}{FindEntity}}(b);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ hitPlayer\ =\ (ea\ ==\ \mbox{\hyperlink{class_enemy_attack_callback_a130a07befb1ce8d8a1f64797f04d863b}{m\_attacker}}\ \&\&\ eb\ ==\ \mbox{\hyperlink{class_enemy_attack_callback_ace16fa00e962aa78d24658449b87667c}{m\_target}})\ ?\ eb}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ :\ (eb\ ==\ \mbox{\hyperlink{class_enemy_attack_callback_a130a07befb1ce8d8a1f64797f04d863b}{m\_attacker}}\ \&\&\ ea\ ==\ \mbox{\hyperlink{class_enemy_attack_callback_ace16fa00e962aa78d24658449b87667c}{m\_target}})\ ?\ ea}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{ecs__types_8hpp_a273573770bdd417288da575784ee0aa3}{INVALID\_ENTITY}};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hitPlayer\ !=\ \mbox{\hyperlink{ecs__types_8hpp_a273573770bdd417288da575784ee0aa3}{INVALID\_ENTITY}}\ \&\&\ \mbox{\hyperlink{class_enemy_attack_callback_a416d4af53804b993fad36e69f8894c63}{m\_em}}-\/>HasComponent<\mbox{\hyperlink{struct_health}{Health}}>(hitPlayer))\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\&\ hp\ =\ \mbox{\hyperlink{class_enemy_attack_callback_a416d4af53804b993fad36e69f8894c63}{m\_em}}-\/>GetComponent<\mbox{\hyperlink{struct_health}{Health}}>(hitPlayer);}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ hp.\mbox{\hyperlink{struct_health_ad727e73c92cffc30d8520ee20bfdf6ea}{current}}\ -\/=\ 25.0f;\ \textcolor{comment}{//\ Arbitrary\ damage\ value}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[EnemyAttack]\ Player\ hit!\ New\ HP:\ "{}}\ <<\ hp.current\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_enemy_attack_callback_a17bcc9dca6b93ad30b3d6f22caabf80a}{triggered}}\ =\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ One-\/shot}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (hp.current\ <=\ 0.f\ \&\&\ !\mbox{\hyperlink{class_enemy_attack_callback_a416d4af53804b993fad36e69f8894c63}{m\_em}}-\/>HasComponent<\mbox{\hyperlink{struct_dead}{Dead}}>(hitPlayer))}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_enemy_attack_callback_a416d4af53804b993fad36e69f8894c63}{m\_em}}-\/>AddComponent<\mbox{\hyperlink{struct_dead}{Dead}}>(hitPlayer,\ \mbox{\hyperlink{struct_dead}{Dead}}());}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00149\ \ \ \ \ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00152\ \ \ \ \ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ \mbox{\hyperlink{class_enemy_attack_callback_acd8311964f9a66f637469ec771c77926}{FindEntity}}(\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*\ rb)\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [e,\ body]\ :\ \mbox{\hyperlink{class_enemy_attack_callback_a416d4af53804b993fad36e69f8894c63}{m\_em}}-\/>GetAllComponents<\mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics::RigidBody}}*>())\ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (body\ ==\ rb)\ \textcolor{keywordflow}{return}\ e;}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{ecs__types_8hpp_a273573770bdd417288da575784ee0aa3}{INVALID\_ENTITY}};}
+\DoxyCodeLine{00157\ \ \ \ \ \}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \mbox{\hyperlink{class_entity_manager}{EntityManager}}*\ \mbox{\hyperlink{class_enemy_attack_callback_a416d4af53804b993fad36e69f8894c63}{m\_em}};}
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ \mbox{\hyperlink{class_enemy_attack_callback_a130a07befb1ce8d8a1f64797f04d863b}{m\_attacker}};}
+\DoxyCodeLine{00161\ \ \ \ \ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ \mbox{\hyperlink{class_enemy_attack_callback_ace16fa00e962aa78d24658449b87667c}{m\_target}};}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_enemy_attack_callback_a17bcc9dca6b93ad30b3d6f22caabf80a}{triggered}};}
+\DoxyCodeLine{00163\ \};}
+\DoxyCodeLine{00164\ }
+
+\end{DoxyCode}

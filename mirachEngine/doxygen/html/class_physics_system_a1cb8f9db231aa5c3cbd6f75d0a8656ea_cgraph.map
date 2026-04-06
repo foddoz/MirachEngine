@@ -1,0 +1,7 @@
+<map id="PhysicsSystem::DestroyEntity" name="PhysicsSystem::DestroyEntity">
+<area shape="rect" id="Node000001" title="Destroys and cleans up physics&#45;related components (rigid bodies and colliders) of a given entity." alt="" coords="5,47,207,73"/>
+<area shape="rect" id="Node000002" href="$class_physics_1_1_collider.html#a033fc633ec7538c738aee85c62e2d446" title="Marks this collider as invalid." alt="" coords="259,5,387,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,43,243,36,244,41,197,49"/>
+<area shape="rect" id="Node000003" href="$class_physics_1_1_rigid_body.html#a9a4746734cec2fbd44f466a66a7a1dd5" title=" " alt="" coords="255,72,391,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="197,71,240,78,239,83,197,77"/>
+</map>

@@ -1,0 +1,109 @@
+\doxysection{enemy.\+h}
+\hypertarget{enemy_8h_source}{}\label{enemy_8h_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/FSM/enemy.h@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/FSM/enemy.h}}
+\mbox{\hyperlink{enemy_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_state_machine_8h}{StateMachine.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{math_8hpp}{../Math/math.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{physics__system_8hpp}{../Physics/physics\_system.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{entity__manager_8hpp}{../ECS/entity\_manager.hpp}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_common_states_8h}{CommonStates.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{animation__system_8hpp}{../Graphics/Animation/animation\_system.hpp}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{health_8hpp}{../Scripts/health.hpp}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_enemy_state_logic}{IEnemyStateLogic}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_enemy_a94f30d348b6d2840fd71675472ba38dd}{Enemy}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ \ \ std::string\ \mbox{\hyperlink{class_enemy_a62b43d24fa5a537d45bdba46a4e2559b}{name}};\ \ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_i_enemy_state_logic}{IEnemyStateLogic}}*\ \mbox{\hyperlink{class_enemy_ae8645f8147ecfcf079c60c890bee3b65}{logic}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_state_machine}{StateMachine<Enemy>}}*\ \mbox{\hyperlink{class_enemy_a252c92dee41a63dabd302753e8af3c6a}{fsm}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ \mbox{\hyperlink{class_enemy_ae56bc7f70cf1ee86eacc20bd55e25dd8}{selfEntity}};}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}*\ \mbox{\hyperlink{class_enemy_a11c4e0c978a45c4772e34428310c50d5}{playerEntity}};}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_entity_manager}{EntityManager}}*\ \mbox{\hyperlink{class_enemy_a607316fd31ad537633a131902999e31b}{entityManager}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_enemy_a98766d083fc49e746a37d0dc69be09e0}{speed}}\ =\ 5.0f;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{class_enemy_a0362a025bc753a68b8fdbd2aeb59157a}{Direction}}\ =\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}(1.f,\ 0.f,\ 0.f);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_enemy_a609f88dfcbc93d9f49b7747ad4da34ab}{Timer}}\ =\ 0.f;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_enemy_a7d45612126533b2d50dff190bab8c922}{SwitchInterval}}\ =\ 3.f;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_enemy_a52614c95bedc5fd925dd2beeeed85f50}{maxChaseDistance}}\ =\ 50.0f;\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_enemy_aa81f145150709646c0cdcabde5af73ec}{attackRange}}\ =\ 5.0f;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_enemy_a096e668a35b984815bf3f64f0a347b86}{isAttacking}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_enemy_a5d5917c222119c1d8eb3183c27c7adb7}{damage}}\ =\ 10;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_physics_system}{PhysicsSystem}}*\ \mbox{\hyperlink{class_enemy_a4253bd4e40c2b64268b3a703fbff576d}{physicsSystem}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_physics_1_1_collision_callback}{Physics::CollisionCallback}}*\ \mbox{\hyperlink{class_enemy_a294239239dad0b0a33d7ad4b478175b9}{tempAttackCallback}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_enemy_a0a526338dad5336c7a2af21763d9996a}{enemyState}};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_enemy_a86bcc83e29ee9828aa7d70dc7d8f8a1f}{hoverEnemyState}};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{class_enemy_a94f30d348b6d2840fd71675472ba38dd}{Enemy}}();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_enemy_a94f30d348b6d2840fd71675472ba38dd}{Enemy}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_enemy_a62b43d24fa5a537d45bdba46a4e2559b}{name}},\ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ self,\ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}*\ player,\ \mbox{\hyperlink{class_entity_manager}{EntityManager}}*\ mgr,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_i_enemy_state_logic}{IEnemyStateLogic}}*\ AILogic,\ \mbox{\hyperlink{class_physics_system}{PhysicsSystem}}*\ physics);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{class_enemy_ac0eec4755e28c02688065f9657150ac3}{\string~Enemy}}();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_a9a1ef91d86d0a6994ee63b81f266fc22}{Update}}(\textcolor{keywordtype}{float}\ dt);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_enemy_a342051a8cf9fe6e329774e37af486fca}{getSpeed}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_ad56be7de3130fefb3a4a56d418ef69cb}{setSpeed}}(\textcolor{keywordtype}{float}\ s);}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{class_entity_manager}{EntityManager}}*\ \mbox{\hyperlink{class_enemy_a6c4671cb8be935f9a9be8926925f00f4}{GetEntityManager}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}\ \mbox{\hyperlink{class_enemy_aaeac8ad6fedccb72cc4b5c99ded26c87}{GetSelfEntity}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}}*\ \mbox{\hyperlink{class_enemy_a6823df17129aabfc6a5fe8cf58aac9bd}{GetPlayerEntity}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00091\ \ \ \ \ std::string\ \mbox{\hyperlink{class_enemy_acc2a72d8a2af5edba5fca650abebd652}{getName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{class_state_machine}{StateMachine<Enemy>}}*\ \mbox{\hyperlink{class_enemy_a6a53cb0274226ee5528ab2d0290960f4}{getFSM}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_enemy_a1aab2890fa809595ba526f3126245531}{getDamage}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_abecf6dd78cde581d8d80314d544ddf72}{FaceTarget}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\&\ targetPos);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_a15a7cf1b50848f5fe57062e376f83e61}{SetAnimation}}(\textcolor{keyword}{const}\ std::string\&\ animName);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_enemy_a23955b57eed292653412616a12fb38a8}{IsPlayerInRange}}(\mbox{\hyperlink{class_enemy_a94f30d348b6d2840fd71675472ba38dd}{Enemy}}*\ e,\ \textcolor{keywordtype}{float}\ range);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_enemy_a47cf9a1e2dc95bc2c76763686b470e3a}{IsAnimationEnded}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_enemy_afed1f34385bbc4d7dc77c4861c56ca8c}{IsHealthLow}}(\textcolor{keywordtype}{float}\ threshold)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_ae62e38383deee4d466f7374d0cdc764c}{AlertNearbyEnemies}}();}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{class_physics_system}{PhysicsSystem}}*\ \mbox{\hyperlink{class_enemy_aea7262d326b48478bd5e3e6cd2a35331}{GetPhysicsSystem}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_a4d9d075e8c408036a4c21675ed00333e}{SetAttackCallback}}(\mbox{\hyperlink{class_physics_1_1_collision_callback}{Physics::CollisionCallback}}*\ cb);}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_a9d091969b26bf7254de76f6c2f3d7715}{ClearAttackCallback}}();}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_accc7a71574730e56c46e91a72e8f6d8c}{onAttackEnter}}();}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_a0e6928b565ff07ab933a07566d3e1542}{onAttackExecute}}();}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_ae0e050f4ee8d28cf28490d8078fd756a}{onAttackExit}}();}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_a2f5395090ffcfad21ea4c2357bc589ec}{onFleeEnter}}();}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_a65bb1d5557c61f766bd2b4a194cc4f91}{onFleeExecute}}();}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_a8347612e49fb9ddc1f678226eef3e456}{onFleeExit}}();}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_a33315056c603f39f5164635b2094086d}{onPatrolEnter}}();}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_a15dd4a1a7398faf16ff3b7fb3ec65830}{onPatrolExecute}}();}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_aa7780a0602c862b313d023c704a26291}{onPatrolExit}}();}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_a13b87cb6c21ef2d7e471fe5519019d9e}{onChaseEnter}}();}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_a23c60f844782e9ece581dffccbe3820d}{onChaseExecute}}();}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_a0667f5715476fbdcc7aca0fd1ed62692}{onChaseExit}}();}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_a0862eb2c5a157a8aae3c2449d4d5225c}{onDeathEnter}}();}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_a086bf93c777bc97981d2057c825b1409}{onDeathExecute}}();}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_a37d9be6c5fd7a31a3c3c6384c3889648}{onDeathExit}}();}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_ad10dbe33f79025c5b4c21659ae1b0ba0}{onPainEnter}}();}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_a4f501008e40a0f192e2ceefd9570c614}{onPainExecute}}();}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_enemy_a48c1aa85d7c458d79f1a81a3ff89d3ac}{onPainExit}}();}
+\DoxyCodeLine{00162\ \};}
+
+\end{DoxyCode}

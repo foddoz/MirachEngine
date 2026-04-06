@@ -1,0 +1,708 @@
+\doxysection{Terrain\+Scene Class Reference}
+\hypertarget{class_terrain_scene}{}\label{class_terrain_scene}\index{TerrainScene@{TerrainScene}}
+
+
+A complete game scene that initializes, runs, and manages an interactive terrain environment with ECS, physics, and rendering.  
+
+
+
+
+{\ttfamily \#include $<$terrain\+\_\+scene.\+hpp$>$}
+
+
+
+Inheritance diagram for Terrain\+Scene\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_terrain_scene__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Terrain\+Scene\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_terrain_scene_aa5be809403a9112c3f5ba306be19f9e1}{Terrain\+Scene}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_terrain_scene}{Terrain\+Scene} instance, initializing core subsystems. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_scene_ae8ec4e098386a74714255aed184761eb}{Run}} () override
+\begin{DoxyCompactList}\small\item\em Runs the full scene lifecycle in the correct execution order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_scene}{Scene}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_scene_a93ccc41b0a2f6c24e467d5d9de76ec0d}{Scene}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_scene_af6e09d91ebd10ae9cc7c12c39d06386c}{\texorpdfstring{$\sim$}{\string~}\+Scene}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for proper cleanup in derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_terrain_scene_ab94e589934cc94139e61468dcb50c1ff}{Generate\+CPUData}} () override
+\begin{DoxyCompactList}\small\item\em Generates all CPU-\/side data such as terrain heightmaps and mesh geometry. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_scene_a4173a77b3430eca8a78e28b5d305c20e}{Initialise\+Engine}} () override
+\begin{DoxyCompactList}\small\item\em Initializes engine components like rendering, input, physics, and Lua bindings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_scene_ab4176b80c645288ef38f3478464a973c}{Upload\+Assets\+To\+GPU}} () override
+\begin{DoxyCompactList}\small\item\em Uploads mesh and texture data to the GPU. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_scene_a45224be4da2febede6089ac28959370f}{Assign\+Pipelines}} () override
+\begin{DoxyCompactList}\small\item\em Assigns graphics pipelines (shaders) to meshes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_scene_a64ff8229749692f3000ab0387dae7165}{Setup\+ECS}} () override
+\begin{DoxyCompactList}\small\item\em Creates and registers entities and components in the ECS. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_scene_a55eb34067d9346aa7d9c3295a9e2dfb0}{Main\+Loop}} () override
+\begin{DoxyCompactList}\small\item\em Executes the main loop\+: input, update, physics, animation, and rendering. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_scene_adc928cc4364060ba8eba00bddb0b060d}{Clean\+Up}} () override
+\begin{DoxyCompactList}\small\item\em Cleans up scene resources and systems before shutdown. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_scene_ae52ebdbe85fceff22dca73e4ec68886d}{Shutdown}} () override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_terrain_scene_a4a674dfbfc3c28c50feb383c70630f6c}{Render\+HBUI}} ()
+\begin{DoxyCompactList}\small\item\em Player\textquotesingle{}s \doxylink{struct_health}{Health} Bar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_scene_aa6538750bf2e1c3dd02481c541b5e0f9}{Setup\+Sky\+Dome\+Entity}} ()
+\begin{DoxyCompactList}\small\item\em Creates and registers the skydome entity in ECS. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_scene_a6291d6d85bd763167900c0929c50e152}{Setup\+Player}} ()
+\begin{DoxyCompactList}\small\item\em Creates and registers the player character entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_scene_a861ee882caf0f23c2a3f15dab4f4ea2a}{Register\+Terrain\+To\+ECS}} ()
+\begin{DoxyCompactList}\small\item\em Registers terrain chunks and their colliders with the ECS and physics system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_scene_a2605641f2858b4c1ad9033e27a39f0c5}{Spawn\+Robots}} ()
+\begin{DoxyCompactList}\small\item\em Spawns robotic enemy NPCs with AI behavior. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_scene_a279bc61858303d2909e922df19c82e24}{Spawn\+Sacks}} ()
+\begin{DoxyCompactList}\small\item\em Spawns cloth sacks as dynamic physics objects. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_scene_ad4ab0bdbe406894b80805499c856c89b}{Spawn\+Trees}} ()
+\begin{DoxyCompactList}\small\item\em Spawns static or decorative tree models in the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_scene_ae061572dd4fc80786d66d8e57f666067}{Spawn\+Crates}} ()
+\begin{DoxyCompactList}\small\item\em Spawns crates, potentially breakable or interactable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_terrain_scene_a92cf2eb19b5a090ec4666367d5a4c898}{Spawn\+Fire\+Flies}} ()
+\begin{DoxyCompactList}\small\item\em Spawns firefly models, likely with animation or light effects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_program}{Program}} \mbox{\hyperlink{class_terrain_scene_a63c358698dec499b2ab8654f1d28e67e}{m\+App}}
+\begin{DoxyCompactList}\small\item\em Manages the window, input, and rendering pipeline. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \mbox{\hyperlink{class_terrain_scene_a4ba7eed53b4a4baaf24017449adf6167}{m\+Entity\+Manager}}
+\begin{DoxyCompactList}\small\item\em ECS entity/component manager. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_physics_system}{Physics\+System}} \mbox{\hyperlink{class_terrain_scene_aea212f73b9913f56e38b770475bb6b96}{m\+Physics\+System}}
+\begin{DoxyCompactList}\small\item\em \doxylink{namespace_physics}{Physics} world and collider system. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_mesh_file}{Mesh\+File}} $>$ \mbox{\hyperlink{class_terrain_scene_a87ebc3c817fc7e4f964998d26f1c8823}{m\+Mesh\+Files}}
+\begin{DoxyCompactList}\small\item\em Loaded 3D mesh files (e.\+g., props, models) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mesh_m_d2}{Mesh\+MD2}} \mbox{\hyperlink{class_terrain_scene_a8bd2239f220451013f4784ad358da867}{npc}}
+\begin{DoxyCompactList}\small\item\em Animated MD2 robot mesh. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mesh_m_d2}{Mesh\+MD2}} \mbox{\hyperlink{class_terrain_scene_ac6f3de4453ff4bc968ce94487c81f9ba}{firefly}}
+\begin{DoxyCompactList}\small\item\em Animated MD2 firefly mesh. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mesh_terrain}{Mesh\+Terrain}} \mbox{\hyperlink{class_terrain_scene_a33b8c947cfc5eb1367f0ad513b4bf1ca}{m\+Terrain}}
+\begin{DoxyCompactList}\small\item\em Procedural terrain mesh. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mesh_sky_dome}{Mesh\+Sky\+Dome}} \mbox{\hyperlink{class_terrain_scene_ab28ee3622073533aa6bb99d13aa1759d}{m\+Sky}}
+\begin{DoxyCompactList}\small\item\em Skydome for atmospheric background. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_terrain_manager}{Terrain\+Manager}} \mbox{\hyperlink{class_terrain_scene_a89ae362a7f03e85ef10a50ef6de2af26}{m\+Terrain\+Manager}}
+\begin{DoxyCompactList}\small\item\em Manages terrain chunks and ECS registration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} \mbox{\hyperlink{class_terrain_scene_a13ecbd6c4776d25950f8e459c5ea2be4}{m\+Player}}
+\begin{DoxyCompactList}\small\item\em \doxylink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity} ID of the player character. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classenemy_state}{enemy\+State}} \mbox{\hyperlink{class_terrain_scene_a1be8155e42aa7dde8d8b41834951dd59}{enemy\+AI}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_enemy}{Enemy} AI state machine instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhover_enemy_state}{hover\+Enemy\+State}} \mbox{\hyperlink{class_terrain_scene_a755a8e82f53c160327cd5dc1faceb2d6}{hover\+Enemy\+AI}}
+\item 
+\mbox{\hyperlink{class_health_bar_renderer}{Health\+Bar\+Renderer}} \mbox{\hyperlink{class_terrain_scene_a5f44cec9045b702c05d908496e969760}{m\+Health\+Bar}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A complete game scene that initializes, runs, and manages an interactive terrain environment with ECS, physics, and rendering. 
+
+This scene handles procedural terrain generation, model loading, entity creation, and a full game loop. It integrates physics (React\+Physics3D), MD2 animation playback, and FSM-\/based AI for enemies. 
+
+\label{doc-constructors}
+\Hypertarget{class_terrain_scene_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_terrain_scene_aa5be809403a9112c3f5ba306be19f9e1}\index{TerrainScene@{TerrainScene}!TerrainScene@{TerrainScene}}
+\index{TerrainScene@{TerrainScene}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{TerrainScene()}{TerrainScene()}}
+{\footnotesize\ttfamily \label{class_terrain_scene_aa5be809403a9112c3f5ba306be19f9e1} 
+Terrain\+Scene\+::\+Terrain\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_terrain_scene}{Terrain\+Scene} instance, initializing core subsystems. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_terrain_scene_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_terrain_scene_a45224be4da2febede6089ac28959370f}\index{TerrainScene@{TerrainScene}!AssignPipelines@{AssignPipelines}}
+\index{AssignPipelines@{AssignPipelines}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{AssignPipelines()}{AssignPipelines()}}
+{\footnotesize\ttfamily \label{class_terrain_scene_a45224be4da2febede6089ac28959370f} 
+void Terrain\+Scene\+::\+Assign\+Pipelines (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Assigns graphics pipelines (shaders) to meshes. 
+
+
+
+Implements \mbox{\hyperlink{class_scene_a98d4943be4c20f86f7054348ac1a99c5}{Scene}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_a45224be4da2febede6089ac28959370f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_terrain_scene_adc928cc4364060ba8eba00bddb0b060d}\index{TerrainScene@{TerrainScene}!CleanUp@{CleanUp}}
+\index{CleanUp@{CleanUp}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{CleanUp()}{CleanUp()}}
+{\footnotesize\ttfamily \label{class_terrain_scene_adc928cc4364060ba8eba00bddb0b060d} 
+void Terrain\+Scene\+::\+Clean\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Cleans up scene resources and systems before shutdown. 
+
+
+
+Implements \mbox{\hyperlink{class_scene_adec6b11b05cab3d9402ce086d197bf7e}{Scene}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_adc928cc4364060ba8eba00bddb0b060d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_terrain_scene_ab94e589934cc94139e61468dcb50c1ff}\index{TerrainScene@{TerrainScene}!GenerateCPUData@{GenerateCPUData}}
+\index{GenerateCPUData@{GenerateCPUData}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{GenerateCPUData()}{GenerateCPUData()}}
+{\footnotesize\ttfamily \label{class_terrain_scene_ab94e589934cc94139e61468dcb50c1ff} 
+void Terrain\+Scene\+::\+Generate\+CPUData (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Generates all CPU-\/side data such as terrain heightmaps and mesh geometry. 
+
+
+
+Implements \mbox{\hyperlink{class_scene_a2212e9dad7d2c2a19e080b4fb8fee38a}{Scene}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_ab94e589934cc94139e61468dcb50c1ff_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_terrain_scene_a4173a77b3430eca8a78e28b5d305c20e}\index{TerrainScene@{TerrainScene}!InitialiseEngine@{InitialiseEngine}}
+\index{InitialiseEngine@{InitialiseEngine}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{InitialiseEngine()}{InitialiseEngine()}}
+{\footnotesize\ttfamily \label{class_terrain_scene_a4173a77b3430eca8a78e28b5d305c20e} 
+void Terrain\+Scene\+::\+Initialise\+Engine (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Initializes engine components like rendering, input, physics, and Lua bindings. 
+
+
+
+Implements \mbox{\hyperlink{class_scene_a270552b151bf55dc03bc72148ae7cb83}{Scene}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_a4173a77b3430eca8a78e28b5d305c20e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_terrain_scene_a55eb34067d9346aa7d9c3295a9e2dfb0}\index{TerrainScene@{TerrainScene}!MainLoop@{MainLoop}}
+\index{MainLoop@{MainLoop}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{MainLoop()}{MainLoop()}}
+{\footnotesize\ttfamily \label{class_terrain_scene_a55eb34067d9346aa7d9c3295a9e2dfb0} 
+void Terrain\+Scene\+::\+Main\+Loop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Executes the main loop\+: input, update, physics, animation, and rendering. 
+
+
+
+Implements \mbox{\hyperlink{class_scene_a20c2873f319cd242a4ea8dc9c06d71d0}{Scene}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_terrain_scene_a55eb34067d9346aa7d9c3295a9e2dfb0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_a55eb34067d9346aa7d9c3295a9e2dfb0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_terrain_scene_a861ee882caf0f23c2a3f15dab4f4ea2a}\index{TerrainScene@{TerrainScene}!RegisterTerrainToECS@{RegisterTerrainToECS}}
+\index{RegisterTerrainToECS@{RegisterTerrainToECS}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{RegisterTerrainToECS()}{RegisterTerrainToECS()}}
+{\footnotesize\ttfamily \label{class_terrain_scene_a861ee882caf0f23c2a3f15dab4f4ea2a} 
+void Terrain\+Scene\+::\+Register\+Terrain\+To\+ECS (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Registers terrain chunks and their colliders with the ECS and physics system. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_a861ee882caf0f23c2a3f15dab4f4ea2a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_terrain_scene_a4a674dfbfc3c28c50feb383c70630f6c}\index{TerrainScene@{TerrainScene}!RenderHBUI@{RenderHBUI}}
+\index{RenderHBUI@{RenderHBUI}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{RenderHBUI()}{RenderHBUI()}}
+{\footnotesize\ttfamily \label{class_terrain_scene_a4a674dfbfc3c28c50feb383c70630f6c} 
+void Terrain\+Scene\+::\+Render\+HBUI (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Player\textquotesingle{}s \doxylink{struct_health}{Health} Bar. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_a4a674dfbfc3c28c50feb383c70630f6c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_terrain_scene_ae8ec4e098386a74714255aed184761eb}\index{TerrainScene@{TerrainScene}!Run@{Run}}
+\index{Run@{Run}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{class_terrain_scene_ae8ec4e098386a74714255aed184761eb} 
+void Terrain\+Scene\+::\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Runs the full scene lifecycle in the correct execution order. 
+
+
+
+Implements \mbox{\hyperlink{class_scene_a2fc617174b43911fd10b6bccd034cc2e}{Scene}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_ae8ec4e098386a74714255aed184761eb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{class_terrain_scene_ae8ec4e098386a74714255aed184761eb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_terrain_scene_a64ff8229749692f3000ab0387dae7165}\index{TerrainScene@{TerrainScene}!SetupECS@{SetupECS}}
+\index{SetupECS@{SetupECS}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{SetupECS()}{SetupECS()}}
+{\footnotesize\ttfamily \label{class_terrain_scene_a64ff8229749692f3000ab0387dae7165} 
+void Terrain\+Scene\+::\+Setup\+ECS (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Creates and registers entities and components in the ECS. 
+
+
+
+Implements \mbox{\hyperlink{class_scene_a00811db8407b7686b1d29354c28dfe2b}{Scene}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_a64ff8229749692f3000ab0387dae7165_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_a64ff8229749692f3000ab0387dae7165_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_terrain_scene_a6291d6d85bd763167900c0929c50e152}\index{TerrainScene@{TerrainScene}!SetupPlayer@{SetupPlayer}}
+\index{SetupPlayer@{SetupPlayer}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{SetupPlayer()}{SetupPlayer()}}
+{\footnotesize\ttfamily \label{class_terrain_scene_a6291d6d85bd763167900c0929c50e152} 
+void Terrain\+Scene\+::\+Setup\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates and registers the player character entity. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_a6291d6d85bd763167900c0929c50e152_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_a6291d6d85bd763167900c0929c50e152_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_terrain_scene_aa6538750bf2e1c3dd02481c541b5e0f9}\index{TerrainScene@{TerrainScene}!SetupSkyDomeEntity@{SetupSkyDomeEntity}}
+\index{SetupSkyDomeEntity@{SetupSkyDomeEntity}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{SetupSkyDomeEntity()}{SetupSkyDomeEntity()}}
+{\footnotesize\ttfamily \label{class_terrain_scene_aa6538750bf2e1c3dd02481c541b5e0f9} 
+void Terrain\+Scene\+::\+Setup\+Sky\+Dome\+Entity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Creates and registers the skydome entity in ECS. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_aa6538750bf2e1c3dd02481c541b5e0f9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_aa6538750bf2e1c3dd02481c541b5e0f9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_terrain_scene_ae52ebdbe85fceff22dca73e4ec68886d}\index{TerrainScene@{TerrainScene}!Shutdown@{Shutdown}}
+\index{Shutdown@{Shutdown}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{Shutdown()}{Shutdown()}}
+{\footnotesize\ttfamily \label{class_terrain_scene_ae52ebdbe85fceff22dca73e4ec68886d} 
+void Terrain\+Scene\+::\+Shutdown (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_scene_ad0f996411fb7deaf4bf04ac92ef1cb70}{Scene}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_ae52ebdbe85fceff22dca73e4ec68886d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_terrain_scene_ae061572dd4fc80786d66d8e57f666067}\index{TerrainScene@{TerrainScene}!SpawnCrates@{SpawnCrates}}
+\index{SpawnCrates@{SpawnCrates}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{SpawnCrates()}{SpawnCrates()}}
+{\footnotesize\ttfamily \label{class_terrain_scene_ae061572dd4fc80786d66d8e57f666067} 
+void Terrain\+Scene\+::\+Spawn\+Crates (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Spawns crates, potentially breakable or interactable. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_ae061572dd4fc80786d66d8e57f666067_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_ae061572dd4fc80786d66d8e57f666067_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_terrain_scene_a92cf2eb19b5a090ec4666367d5a4c898}\index{TerrainScene@{TerrainScene}!SpawnFireFlies@{SpawnFireFlies}}
+\index{SpawnFireFlies@{SpawnFireFlies}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{SpawnFireFlies()}{SpawnFireFlies()}}
+{\footnotesize\ttfamily \label{class_terrain_scene_a92cf2eb19b5a090ec4666367d5a4c898} 
+void Terrain\+Scene\+::\+Spawn\+Fire\+Flies (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Spawns firefly models, likely with animation or light effects. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_a92cf2eb19b5a090ec4666367d5a4c898_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_a92cf2eb19b5a090ec4666367d5a4c898_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_terrain_scene_a2605641f2858b4c1ad9033e27a39f0c5}\index{TerrainScene@{TerrainScene}!SpawnRobots@{SpawnRobots}}
+\index{SpawnRobots@{SpawnRobots}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{SpawnRobots()}{SpawnRobots()}}
+{\footnotesize\ttfamily \label{class_terrain_scene_a2605641f2858b4c1ad9033e27a39f0c5} 
+void Terrain\+Scene\+::\+Spawn\+Robots (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Spawns robotic enemy NPCs with AI behavior. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_a2605641f2858b4c1ad9033e27a39f0c5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_a2605641f2858b4c1ad9033e27a39f0c5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_terrain_scene_a279bc61858303d2909e922df19c82e24}\index{TerrainScene@{TerrainScene}!SpawnSacks@{SpawnSacks}}
+\index{SpawnSacks@{SpawnSacks}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{SpawnSacks()}{SpawnSacks()}}
+{\footnotesize\ttfamily \label{class_terrain_scene_a279bc61858303d2909e922df19c82e24} 
+void Terrain\+Scene\+::\+Spawn\+Sacks (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Spawns cloth sacks as dynamic physics objects. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_a279bc61858303d2909e922df19c82e24_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_a279bc61858303d2909e922df19c82e24_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_terrain_scene_ad4ab0bdbe406894b80805499c856c89b}\index{TerrainScene@{TerrainScene}!SpawnTrees@{SpawnTrees}}
+\index{SpawnTrees@{SpawnTrees}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{SpawnTrees()}{SpawnTrees()}}
+{\footnotesize\ttfamily \label{class_terrain_scene_ad4ab0bdbe406894b80805499c856c89b} 
+void Terrain\+Scene\+::\+Spawn\+Trees (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Spawns static or decorative tree models in the scene. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_ad4ab0bdbe406894b80805499c856c89b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_ad4ab0bdbe406894b80805499c856c89b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_terrain_scene_ab4176b80c645288ef38f3478464a973c}\index{TerrainScene@{TerrainScene}!UploadAssetsToGPU@{UploadAssetsToGPU}}
+\index{UploadAssetsToGPU@{UploadAssetsToGPU}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{UploadAssetsToGPU()}{UploadAssetsToGPU()}}
+{\footnotesize\ttfamily \label{class_terrain_scene_ab4176b80c645288ef38f3478464a973c} 
+void Terrain\+Scene\+::\+Upload\+Assets\+To\+GPU (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Uploads mesh and texture data to the GPU. 
+
+
+
+Implements \mbox{\hyperlink{class_scene_a9c083e0e83f96ecc48f606cbb7c74775}{Scene}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_terrain_scene_ab4176b80c645288ef38f3478464a973c_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_terrain_scene_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_terrain_scene_a1be8155e42aa7dde8d8b41834951dd59}\index{TerrainScene@{TerrainScene}!enemyAI@{enemyAI}}
+\index{enemyAI@{enemyAI}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{enemyAI}{enemyAI}}
+{\footnotesize\ttfamily \label{class_terrain_scene_a1be8155e42aa7dde8d8b41834951dd59} 
+\mbox{\hyperlink{classenemy_state}{enemy\+State}} Terrain\+Scene\+::enemy\+AI\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{class_enemy}{Enemy} AI state machine instance. 
+
+\Hypertarget{class_terrain_scene_ac6f3de4453ff4bc968ce94487c81f9ba}\index{TerrainScene@{TerrainScene}!firefly@{firefly}}
+\index{firefly@{firefly}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{firefly}{firefly}}
+{\footnotesize\ttfamily \label{class_terrain_scene_ac6f3de4453ff4bc968ce94487c81f9ba} 
+\mbox{\hyperlink{class_mesh_m_d2}{Mesh\+MD2}} Terrain\+Scene\+::firefly\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Animated MD2 firefly mesh. 
+
+\Hypertarget{class_terrain_scene_a755a8e82f53c160327cd5dc1faceb2d6}\index{TerrainScene@{TerrainScene}!hoverEnemyAI@{hoverEnemyAI}}
+\index{hoverEnemyAI@{hoverEnemyAI}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{hoverEnemyAI}{hoverEnemyAI}}
+{\footnotesize\ttfamily \label{class_terrain_scene_a755a8e82f53c160327cd5dc1faceb2d6} 
+\mbox{\hyperlink{classhover_enemy_state}{hover\+Enemy\+State}} Terrain\+Scene\+::hover\+Enemy\+AI\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_terrain_scene_a63c358698dec499b2ab8654f1d28e67e}\index{TerrainScene@{TerrainScene}!mApp@{mApp}}
+\index{mApp@{mApp}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{mApp}{mApp}}
+{\footnotesize\ttfamily \label{class_terrain_scene_a63c358698dec499b2ab8654f1d28e67e} 
+\mbox{\hyperlink{class_program}{Program}} Terrain\+Scene\+::m\+App\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Manages the window, input, and rendering pipeline. 
+
+\Hypertarget{class_terrain_scene_a4ba7eed53b4a4baaf24017449adf6167}\index{TerrainScene@{TerrainScene}!mEntityManager@{mEntityManager}}
+\index{mEntityManager@{mEntityManager}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{mEntityManager}{mEntityManager}}
+{\footnotesize\ttfamily \label{class_terrain_scene_a4ba7eed53b4a4baaf24017449adf6167} 
+\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} Terrain\+Scene\+::m\+Entity\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ECS entity/component manager. 
+
+\Hypertarget{class_terrain_scene_a5f44cec9045b702c05d908496e969760}\index{TerrainScene@{TerrainScene}!mHealthBar@{mHealthBar}}
+\index{mHealthBar@{mHealthBar}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{mHealthBar}{mHealthBar}}
+{\footnotesize\ttfamily \label{class_terrain_scene_a5f44cec9045b702c05d908496e969760} 
+\mbox{\hyperlink{class_health_bar_renderer}{Health\+Bar\+Renderer}} Terrain\+Scene\+::m\+Health\+Bar\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_terrain_scene_a87ebc3c817fc7e4f964998d26f1c8823}\index{TerrainScene@{TerrainScene}!mMeshFiles@{mMeshFiles}}
+\index{mMeshFiles@{mMeshFiles}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{mMeshFiles}{mMeshFiles}}
+{\footnotesize\ttfamily \label{class_terrain_scene_a87ebc3c817fc7e4f964998d26f1c8823} 
+std\+::vector$<$\mbox{\hyperlink{class_mesh_file}{Mesh\+File}}$>$ Terrain\+Scene\+::m\+Mesh\+Files\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Loaded 3D mesh files (e.\+g., props, models) 
+
+\Hypertarget{class_terrain_scene_aea212f73b9913f56e38b770475bb6b96}\index{TerrainScene@{TerrainScene}!mPhysicsSystem@{mPhysicsSystem}}
+\index{mPhysicsSystem@{mPhysicsSystem}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{mPhysicsSystem}{mPhysicsSystem}}
+{\footnotesize\ttfamily \label{class_terrain_scene_aea212f73b9913f56e38b770475bb6b96} 
+\mbox{\hyperlink{class_physics_system}{Physics\+System}} Terrain\+Scene\+::m\+Physics\+System\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{namespace_physics}{Physics} world and collider system. 
+
+\Hypertarget{class_terrain_scene_a13ecbd6c4776d25950f8e459c5ea2be4}\index{TerrainScene@{TerrainScene}!mPlayer@{mPlayer}}
+\index{mPlayer@{mPlayer}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{mPlayer}{mPlayer}}
+{\footnotesize\ttfamily \label{class_terrain_scene_a13ecbd6c4776d25950f8e459c5ea2be4} 
+\mbox{\hyperlink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity}} Terrain\+Scene\+::m\+Player\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxylink{ecs__types_8hpp_aff1ac8fd0b927c16980eeb4053d1d5ca}{Entity} ID of the player character. 
+
+\Hypertarget{class_terrain_scene_ab28ee3622073533aa6bb99d13aa1759d}\index{TerrainScene@{TerrainScene}!mSky@{mSky}}
+\index{mSky@{mSky}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{mSky}{mSky}}
+{\footnotesize\ttfamily \label{class_terrain_scene_ab28ee3622073533aa6bb99d13aa1759d} 
+\mbox{\hyperlink{class_mesh_sky_dome}{Mesh\+Sky\+Dome}} Terrain\+Scene\+::m\+Sky\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Skydome for atmospheric background. 
+
+\Hypertarget{class_terrain_scene_a33b8c947cfc5eb1367f0ad513b4bf1ca}\index{TerrainScene@{TerrainScene}!mTerrain@{mTerrain}}
+\index{mTerrain@{mTerrain}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{mTerrain}{mTerrain}}
+{\footnotesize\ttfamily \label{class_terrain_scene_a33b8c947cfc5eb1367f0ad513b4bf1ca} 
+\mbox{\hyperlink{class_mesh_terrain}{Mesh\+Terrain}} Terrain\+Scene\+::m\+Terrain\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Procedural terrain mesh. 
+
+\Hypertarget{class_terrain_scene_a89ae362a7f03e85ef10a50ef6de2af26}\index{TerrainScene@{TerrainScene}!mTerrainManager@{mTerrainManager}}
+\index{mTerrainManager@{mTerrainManager}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{mTerrainManager}{mTerrainManager}}
+{\footnotesize\ttfamily \label{class_terrain_scene_a89ae362a7f03e85ef10a50ef6de2af26} 
+\mbox{\hyperlink{class_terrain_manager}{Terrain\+Manager}} Terrain\+Scene\+::m\+Terrain\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Manages terrain chunks and ECS registration. 
+
+\Hypertarget{class_terrain_scene_a8bd2239f220451013f4784ad358da867}\index{TerrainScene@{TerrainScene}!npc@{npc}}
+\index{npc@{npc}!TerrainScene@{TerrainScene}}
+\doxysubsubsection{\texorpdfstring{npc}{npc}}
+{\footnotesize\ttfamily \label{class_terrain_scene_a8bd2239f220451013f4784ad358da867} 
+\mbox{\hyperlink{class_mesh_m_d2}{Mesh\+MD2}} Terrain\+Scene\+::npc\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Animated MD2 robot mesh. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Program/\mbox{\hyperlink{terrain__scene_8hpp}{terrain\+\_\+scene.\+hpp}}\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Program/\mbox{\hyperlink{terrain__scene_8cpp}{terrain\+\_\+scene.\+cpp}}\end{DoxyCompactItemize}

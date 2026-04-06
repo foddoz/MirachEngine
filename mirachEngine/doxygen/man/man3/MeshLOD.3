@@ -1,0 +1,66 @@
+.TH "MeshLOD" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MeshLOD \- Represents a single Level of Detail (LOD) variant of a mesh\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <mesh_renderer\&.hpp>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "unsigned int \fBVAO\fP"
+.br
+.RI "Vertex Array Object ID\&. "
+.ti -1c
+.RI "unsigned int \fBVBO\fP"
+.br
+.RI "Vertex Buffer Object ID\&. "
+.ti -1c
+.RI "unsigned int \fBIBO\fP"
+.br
+.RI "Index Buffer Object ID\&. "
+.ti -1c
+.RI "unsigned int \fBIndexCount\fP"
+.br
+.RI "Number of indices to render\&. "
+.ti -1c
+.RI "\fBAABB\fP \fBLocalAABB\fP"
+.br
+.RI "Local-space axis-aligned bounding box\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a single Level of Detail (LOD) variant of a mesh\&. 
+
+Each LOD stores its own VAO, VBO, and IBO, along with index count and a local \fBAABB\fP\&. Used for LOD switching in rendering systems to improve performance based on distance\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "unsigned int MeshLOD::IBO"
+
+.PP
+Index Buffer Object ID\&. 
+.SS "unsigned int MeshLOD::IndexCount"
+
+.PP
+Number of indices to render\&. 
+.SS "\fBAABB\fP MeshLOD::LocalAABB"
+
+.PP
+Local-space axis-aligned bounding box\&. 
+.SS "unsigned int MeshLOD::VAO"
+
+.PP
+Vertex Array Object ID\&. 
+.SS "unsigned int MeshLOD::VBO"
+
+.PP
+Vertex Buffer Object ID\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

@@ -1,0 +1,230 @@
+.TH "IEnemyStateLogic" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+IEnemyStateLogic \- Interface class defining all enemy state transition logic\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <IEnemyStateLogic\&.h>\fP
+.PP
+Inherited by \fBenemyState\fP, and \fBhoverEnemyState\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~IEnemyStateLogic\fP ()=default"
+.br
+.RI "Virtual destructor to allow proper cleanup of derived classes\&. "
+.ti -1c
+.RI "virtual void \fBonAttackEnter\fP (\fBEnemy\fP *e)=0"
+.br
+.RI "Called when entering the attack state\&. "
+.ti -1c
+.RI "virtual void \fBonAttackExecute\fP (\fBEnemy\fP *e)=0"
+.br
+.RI "Called every frame while in the attack state\&. "
+.ti -1c
+.RI "virtual void \fBonAttackExit\fP (\fBEnemy\fP *e)=0"
+.br
+.RI "Called when exiting the attack state\&. "
+.ti -1c
+.RI "virtual void \fBonFleeEnter\fP (\fBEnemy\fP *e)=0"
+.br
+.ti -1c
+.RI "virtual void \fBonFleeExecute\fP (\fBEnemy\fP *e)=0"
+.br
+.ti -1c
+.RI "virtual void \fBonFleeExit\fP (\fBEnemy\fP *e)=0"
+.br
+.ti -1c
+.RI "virtual void \fBonPatrolEnter\fP (\fBEnemy\fP *e)=0"
+.br
+.ti -1c
+.RI "virtual void \fBonPatrolExecute\fP (\fBEnemy\fP *e)=0"
+.br
+.ti -1c
+.RI "virtual void \fBonPatrolExit\fP (\fBEnemy\fP *e)=0"
+.br
+.ti -1c
+.RI "virtual void \fBonChaseEnter\fP (\fBEnemy\fP *e)=0"
+.br
+.ti -1c
+.RI "virtual void \fBonChaseExecute\fP (\fBEnemy\fP *e)=0"
+.br
+.ti -1c
+.RI "virtual void \fBonChaseExit\fP (\fBEnemy\fP *e)=0"
+.br
+.ti -1c
+.RI "virtual void \fBonDeathEnter\fP (\fBEnemy\fP *e)=0"
+.br
+.ti -1c
+.RI "virtual void \fBonDeathExecute\fP (\fBEnemy\fP *e)=0"
+.br
+.ti -1c
+.RI "virtual void \fBonDeathExit\fP (\fBEnemy\fP *e)=0"
+.br
+.ti -1c
+.RI "virtual void \fBonPainEnter\fP (\fBEnemy\fP *e)=0"
+.br
+.ti -1c
+.RI "virtual void \fBonPainExecute\fP (\fBEnemy\fP *e)=0"
+.br
+.ti -1c
+.RI "virtual void \fBonPainExit\fP (\fBEnemy\fP *e)=0"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBRegisterAttackCallback\fP (\fBEnemy\fP *e)"
+.br
+.RI "Registers a collision callback to apply damage to the player\&. "
+.ti -1c
+.RI "void \fBCleanupAttackCallback\fP (\fBEnemy\fP *e)"
+.br
+.RI "Clears the previously registered attack callback\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Interface class defining all enemy state transition logic\&. 
+
+This interface is designed to separate the behavior of different enemy states (\fBAttack\fP, \fBFlee\fP, \fBPatrol\fP, \fBChase\fP, \fBDeath\fP, \fBPain\fP) into clearly defined \fREnter\fP, \fRExecute\fP, and \fRExit\fP methods\&. Implementing classes should define these methods for each state\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "virtual IEnemyStateLogic::~IEnemyStateLogic ()\fR [virtual]\fP, \fR [default]\fP"
+
+.PP
+Virtual destructor to allow proper cleanup of derived classes\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void IEnemyStateLogic::CleanupAttackCallback (\fBEnemy\fP * e)\fR [inline]\fP, \fR [protected]\fP"
+
+.PP
+Clears the previously registered attack callback\&. This should be called when the attack ends or the enemy exits the attack state\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP Pointer to the \fBEnemy\fP\&. 
+.RE
+.PP
+
+.SS "virtual void IEnemyStateLogic::onAttackEnter (\fBEnemy\fP * e)\fR [pure virtual]\fP"
+
+.PP
+Called when entering the attack state\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP Pointer to the \fBEnemy\fP entity\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBenemyState\fP, and \fBhoverEnemyState\fP\&.
+.SS "virtual void IEnemyStateLogic::onAttackExecute (\fBEnemy\fP * e)\fR [pure virtual]\fP"
+
+.PP
+Called every frame while in the attack state\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP Pointer to the \fBEnemy\fP entity\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBenemyState\fP, and \fBhoverEnemyState\fP\&.
+.SS "virtual void IEnemyStateLogic::onAttackExit (\fBEnemy\fP * e)\fR [pure virtual]\fP"
+
+.PP
+Called when exiting the attack state\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP Pointer to the \fBEnemy\fP entity\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBenemyState\fP, and \fBhoverEnemyState\fP\&.
+.SS "virtual void IEnemyStateLogic::onChaseEnter (\fBEnemy\fP * e)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBenemyState\fP, and \fBhoverEnemyState\fP\&.
+.SS "virtual void IEnemyStateLogic::onChaseExecute (\fBEnemy\fP * e)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBenemyState\fP, and \fBhoverEnemyState\fP\&.
+.SS "virtual void IEnemyStateLogic::onChaseExit (\fBEnemy\fP * e)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBenemyState\fP, and \fBhoverEnemyState\fP\&.
+.SS "virtual void IEnemyStateLogic::onDeathEnter (\fBEnemy\fP * e)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBenemyState\fP, and \fBhoverEnemyState\fP\&.
+.SS "virtual void IEnemyStateLogic::onDeathExecute (\fBEnemy\fP * e)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBenemyState\fP, and \fBhoverEnemyState\fP\&.
+.SS "virtual void IEnemyStateLogic::onDeathExit (\fBEnemy\fP * e)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBenemyState\fP, and \fBhoverEnemyState\fP\&.
+.SS "virtual void IEnemyStateLogic::onFleeEnter (\fBEnemy\fP * e)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBenemyState\fP, and \fBhoverEnemyState\fP\&.
+.SS "virtual void IEnemyStateLogic::onFleeExecute (\fBEnemy\fP * e)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBenemyState\fP, and \fBhoverEnemyState\fP\&.
+.SS "virtual void IEnemyStateLogic::onFleeExit (\fBEnemy\fP * e)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBenemyState\fP, and \fBhoverEnemyState\fP\&.
+.SS "virtual void IEnemyStateLogic::onPainEnter (\fBEnemy\fP * e)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBenemyState\fP, and \fBhoverEnemyState\fP\&.
+.SS "virtual void IEnemyStateLogic::onPainExecute (\fBEnemy\fP * e)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBenemyState\fP, and \fBhoverEnemyState\fP\&.
+.SS "virtual void IEnemyStateLogic::onPainExit (\fBEnemy\fP * e)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBenemyState\fP, and \fBhoverEnemyState\fP\&.
+.SS "virtual void IEnemyStateLogic::onPatrolEnter (\fBEnemy\fP * e)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBenemyState\fP, and \fBhoverEnemyState\fP\&.
+.SS "virtual void IEnemyStateLogic::onPatrolExecute (\fBEnemy\fP * e)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBenemyState\fP, and \fBhoverEnemyState\fP\&.
+.SS "virtual void IEnemyStateLogic::onPatrolExit (\fBEnemy\fP * e)\fR [pure virtual]\fP"
+
+.PP
+Implemented in \fBenemyState\fP, and \fBhoverEnemyState\fP\&.
+.SS "void IEnemyStateLogic::RegisterAttackCallback (\fBEnemy\fP * e)\fR [inline]\fP, \fR [protected]\fP"
+
+.PP
+Registers a collision callback to apply damage to the player\&. This should be called when the enemy begins an attack\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIe\fP Pointer to the \fBEnemy\fP performing the attack\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

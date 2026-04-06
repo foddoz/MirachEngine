@@ -1,0 +1,31 @@
+<map id="TerrainManager::RegisterChunksToECS" name="TerrainManager::RegisterChunksToECS">
+<area shape="rect" id="Node000001" title="Registers all chunks as ECS entities with rendering and physics components." alt="" coords="5,220,173,263"/>
+<area shape="rect" id="Node000002" href="$class_entity_manager.html#a649c96273c078e788cecbdfaa0aee1ef" title="Adds a component of type T to the given entity." alt="" coords="227,35,430,61"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,218,117,185,144,145,178,105,219,71,229,66,231,70,222,76,182,109,148,148,122,188,103,221"/>
+<area shape="rect" id="Node000005" href="$class_physics_system.html#a3b8f5a2bf225a3e35fe9c684c3d5e1c3" title="Adds a concave terrain collider to a rigid body using indexed triangle mesh data." alt="" coords="231,85,427,128"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="111,217,159,177,219,138,231,132,234,137,222,142,162,181,115,222"/>
+<area shape="rect" id="Node000006" href="$class_entity_manager.html#ab991c19abfa8d1a3f5ca279f53ad2e38" title="Creates a new unique entity." alt="" coords="236,152,422,179"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="141,217,220,188,247,180,249,186,221,193,143,222"/>
+<area shape="rect" id="Node000007" href="$class_physics_1_1_world.html#aff45466a119e0d53150241cae9daaf53" title="Creates a new rigid body at a given position and type." alt="" coords="221,203,437,229"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="173,230,205,226,205,232,174,235"/>
+<area shape="rect" id="Node000008" href="$class_transform.html#a2bd3205164a8f8f64f1c738ab6cb365f" title="Retrieves the current position." alt="" coords="251,253,407,280"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="174,248,236,254,235,259,173,253"/>
+<area shape="rect" id="Node000009" href="$class_physics_system.html#adc1b56a65144927424e6353ced3c7003" title="Gets the underlying physics world." alt="" coords="241,304,416,331"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="143,261,221,289,249,297,247,302,220,295,141,266"/>
+<area shape="rect" id="Node000010" href="$class_physics_1_1_collider.html#aea554c208d28072d7d161913a04a6747" title="Sets the bounciness/restitution of this collider." alt="" coords="265,355,393,397"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="115,261,162,301,222,340,251,353,249,358,219,345,159,305,111,265"/>
+<area shape="rect" id="Node000011" href="$class_transform.html#a7c287f2ec371a1214df9fa7ad6a9718b" title="Sets the world&#45;space position of the object." alt="" coords="251,421,406,448"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="103,262,122,295,148,334,182,374,222,407,238,415,235,420,219,412,178,378,144,337,117,298,99,265"/>
+<area shape="rect" id="Node000003" href="$class_component_manager.html#af278794db44296d707492fef01b15e96" title="Adds a component to the specified entity." alt="" coords="485,5,721,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="431,34,469,30,470,36,431,40"/>
+<area shape="rect" id="Node000004" href="$class_entity_manager.html#a9792efcb1c6904999ab34b3a65a7c69d" title="Returns the manager for the given component type, creating it if needed." alt="" coords="510,56,697,99"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="431,56,494,63,494,68,431,62"/>
+<area shape="rect" id="Node000012" href="$class_transform.html#a766790cd6c7043b6d28fe75d36a7bcc6" title="Recalculates the cached model matrix based on current position, rotation, and scale." alt="" coords="502,421,704,448"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="407,432,487,432,487,437,407,437"/>
+<area shape="rect" id="Node000013" href="$math_8hpp.html#a57197be1224ca571c566c73c33081081" title="Applies scale to a matrix." alt="" coords="780,371,834,397"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="659,418,764,392,765,397,661,423"/>
+<area shape="rect" id="Node000014" href="$math_8hpp.html#a1213c92d8be7146176f8be90d8903ece" title="Converts a quaternion to a 4x4 matrix." alt="" coords="775,421,839,448"/>
+<area shape="poly" id="edge13_Node000012_Node000014" title=" " alt="" coords="704,432,760,432,760,437,704,437"/>
+<area shape="rect" id="Node000015" href="$math_8hpp.html#a978278a474c16b86c65813cec08b513a" title="Applies translation to a matrix." alt="" coords="769,472,845,499"/>
+<area shape="poly" id="edge14_Node000012_Node000015" title=" " alt="" coords="661,446,755,470,753,475,659,451"/>
+</map>

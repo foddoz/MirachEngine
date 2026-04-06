@@ -1,0 +1,33 @@
+<map id="hoverEnemyState::onPatrolExecute" name="hoverEnemyState::onPatrolExecute">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,212,187,255"/>
+<area shape="rect" id="Node000002" href="$class_enemy.html#ae62e38383deee4d466f7374d0cdc764c" title="Notifies nearby enemies (if implemented) that the player is detected." alt="" coords="235,195,425,221"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,221,219,217,219,223,187,226"/>
+<area shape="rect" id="Node000003" href="$class_state_machine.html#a3f71e3da813131021e5a6299a731e138" title="Changes the current state to a new one." alt="" coords="481,132,666,159"/>
+<area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="146,209,189,193,234,180,353,159,465,148,466,153,354,164,235,185,190,198,148,214"/>
+<area shape="rect" id="Node000006" href="$class_enemy.html#a6a53cb0274226ee5528ab2d0290960f4" title=" " alt="" coords="516,249,632,276"/>
+<area shape="poly" id="edge12_Node000001_Node000006" title=" " alt="" coords="187,236,500,256,500,261,187,242"/>
+<area shape="rect" id="Node000007" href="$class_singleton.html#a4c569e7ab86e5654a3f094ee50e75d7c" title=" " alt="" coords="488,300,659,343"/>
+<area shape="poly" id="edge13_Node000001_Node000007" title=" " alt="" coords="188,247,473,300,472,306,187,253"/>
+<area shape="rect" id="Node000008" href="$math_8hpp.html#a449ecbbd825f26c183caeac2bda40c41" title="Returns the length of a 2D vector." alt="" coords="544,367,604,393"/>
+<area shape="poly" id="edge17_Node000001_Node000008" title=" " alt="" coords="138,253,184,275,236,296,315,321,396,342,528,370,527,375,395,347,314,326,234,301,182,280,136,257"/>
+<area shape="rect" id="Node000009" href="$class_entity_manager.html#a00080c3855e9aab3796bb94f6b48ac9b" title="Retrieves a reference to the component of type T for an entity." alt="" coords="473,31,674,57"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="106,210,125,177,153,137,190,98,233,67,288,46,346,33,403,28,457,28,457,34,404,34,346,39,289,51,236,72,193,102,157,140,130,180,110,213"/>
+<area shape="rect" id="Node000012" href="$class_enemy.html#a23955b57eed292653412616a12fb38a8" title="Checks whether the player is within a given range." alt="" coords="246,81,414,108"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="122,209,172,171,233,131,273,112,276,117,236,136,175,175,125,214"/>
+<area shape="rect" id="Node000013" href="$math_8hpp.html#a337db27912549e1897fa038fe0f43f13" title="Converts a quaternion to Euler angles (in degrees)" alt="" coords="241,397,418,424"/>
+<area shape="poly" id="edge18_Node000001_Node000013" title=" " alt="" coords="115,254,164,314,198,348,236,376,261,389,258,394,233,381,195,352,161,318,110,257"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="383,191,472,168,502,161,503,166,474,173,384,197"/>
+<area shape="rect" id="Node000004" href="$class_enemy.html#a94f30d348b6d2840fd71675472ba38dd" title="Default constructor." alt="" coords="518,81,629,108"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="348,192,402,155,472,118,502,107,504,112,474,122,405,160,351,196"/>
+<area shape="rect" id="Node000005" href="$class_state_machine.html#a1d0625163ac9504b673eb56c34841f32" title="Gets the current state." alt="" coords="488,183,659,225"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="425,204,473,203,473,208,425,209"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="393,219,501,244,500,249,392,225"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="354,220,408,252,474,286,489,292,487,297,472,290,405,256,351,224"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="342,220,394,284,431,321,474,352,501,364,529,372,527,377,499,369,472,357,428,325,390,288,338,223"/>
+<area shape="rect" id="Node000010" href="$class_component_manager.html#a81536e74843307f9b9e27993cca3e72b" title="Retrieves a reference to the component of an entity." alt="" coords="722,5,957,32"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="675,32,707,29,707,34,675,37"/>
+<area shape="rect" id="Node000011" href="$class_entity_manager.html#aa02cffa1d2435ea5d0eadee749c2a965" title="Gets the component manager for a type (const)." alt="" coords="747,56,932,83"/>
+<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="675,51,732,56,732,62,675,56"/>
+<area shape="poly" id="edge15_Node000012_Node000004" title=" " alt="" coords="414,92,502,92,502,97,414,97"/>
+<area shape="poly" id="edge16_Node000012_Node000009" title=" " alt="" coords="397,78,490,58,492,64,398,83"/>
+</map>

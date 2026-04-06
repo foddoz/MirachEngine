@@ -1,0 +1,3 @@
+<map id="Camera" name="Camera">
+<area shape="rect" id="Node000001" title="A 3D camera that handles projection, view matrix generation, frustum culling, and orientation logic." alt="" coords="5,5,167,480"/>
+</map>

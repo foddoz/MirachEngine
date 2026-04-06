@@ -1,0 +1,133 @@
+<map id="TerrainScene::MainLoop" name="TerrainScene::MainLoop">
+<area shape="rect" id="Node000001" title="Executes the main loop: input, update, physics, animation, and rendering." alt="" coords="5,1793,167,1820"/>
+<area shape="rect" id="Node000002" href="$class_player_script.html#a477310df8b50b588b853e7d174e12f13" title="Captures input states and updates internal flags." alt="" coords="217,1881,392,1908"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,1818,256,1873,254,1878,121,1823"/>
+<area shape="rect" id="Node000008" href="$class_transform.html#a2bd3205164a8f8f64f1c738ab6cb365f" title="Retrieves the current position." alt="" coords="755,1739,911,1765"/>
+<area shape="poly" id="edge15_Node000001_Node000008" title=" " alt="" coords="167,1798,739,1756,739,1761,167,1803"/>
+<area shape="rect" id="Node000029" href="$class_physics_1_1_rigid_body.html#aacddecc8c08a26897d9240b8d50b056a" title=" " alt="" coords="765,275,901,317"/>
+<area shape="poly" id="edge16_Node000001_Node000029" title=" " alt="" coords="85,1793,90,1507,108,1013,124,754,146,523,160,426,175,346,193,287,213,250,264,202,315,172,367,156,421,152,478,158,538,171,674,207,706,217,738,232,792,264,789,268,735,236,704,222,673,212,537,176,477,163,421,157,368,161,317,176,267,207,217,254,198,289,180,348,165,427,152,524,129,755,113,1013,95,1508,90,1793"/>
+<area shape="rect" id="Node000030" href="$class_camera.html#aa209d0832d633c0dd840b3308e1c0ad8" title="Checks if the camera is currently enabled." alt="" coords="238,1932,372,1959"/>
+<area shape="poly" id="edge17_Node000001_Node000030" title=" " alt="" coords="101,1818,148,1867,180,1894,216,1918,228,1923,225,1928,213,1922,177,1899,144,1871,97,1822"/>
+<area shape="rect" id="Node000031" href="$class_input_manager.html#a723052f5702aaa5e048c7677d365d9d5" title="Maps a high&#45;level InputAction to a specific KeyCode." alt="" coords="220,1983,390,2009"/>
+<area shape="poly" id="edge18_Node000001_Node000031" title=" " alt="" coords="96,1819,114,1850,140,1891,175,1933,216,1969,224,1973,222,1978,213,1973,171,1936,136,1894,109,1853,92,1822"/>
+<area shape="rect" id="Node000032" href="$class_player_script.html#acf49a0688d3e9aac48601f9aebcf9207" title="Applies movement, jumping, and object interaction logic after the physics update." alt="" coords="218,264,392,307"/>
+<area shape="poly" id="edge19_Node000001_Node000032" title=" " alt="" coords="86,1793,97,1641,122,1366,160,1023,184,843,212,666,253,471,291,321,296,322,258,472,217,667,189,843,165,1023,127,1367,102,1642,91,1793"/>
+<area shape="rect" id="Node000060" href="$class_terrain_scene.html#a4a674dfbfc3c28c50feb383c70630f6c" title="Player&#39;s Health Bar." alt="" coords="215,2033,395,2060"/>
+<area shape="poly" id="edge46_Node000001_Node000060" title=" " alt="" coords="94,1819,108,1859,133,1913,169,1970,191,1997,216,2019,223,2024,220,2028,213,2023,187,2000,165,1973,128,1915,103,1861,89,1821"/>
+<area shape="rect" id="Node000061" href="$render__system_8cpp.html#a8cce4f902aee95fff82f762a4fcd10be" title="Core ECS&#45;based rendering system." alt="" coords="251,1077,359,1104"/>
+<area shape="poly" id="edge47_Node000001_Node000061" title=" " alt="" coords="89,1792,292,1118,297,1120,94,1794"/>
+<area shape="rect" id="Node000097" href="$class_animation_system.html#ad7b370061581bbc898f0c6a35250c2a3" title="Updates all MD2Animator components in the ECS based on elapsed time." alt="" coords="218,679,392,705"/>
+<area shape="poly" id="edge79_Node000001_Node000097" title=" " alt="" coords="87,1793,131,1511,169,1291,212,1065,257,867,294,720,299,721,262,868,217,1066,174,1292,136,1511,92,1793"/>
+<area shape="rect" id="Node000100" href="$class_enemy_system.html#af199ce30b80387110b68299836f760cf" title="Updates all registered Enemy entities. Calls the Update() method of each Enemy, passing the delta tim..." alt="" coords="226,2084,384,2111"/>
+<area shape="poly" id="edge81_Node000001_Node000100" title=" " alt="" coords="92,1819,104,1867,127,1935,143,1972,163,2008,188,2041,216,2070,222,2074,218,2078,213,2074,184,2044,159,2010,138,1974,122,1937,99,1869,87,1821"/>
+<area shape="rect" id="Node000003" href="$class_entity_manager.html#a00080c3855e9aab3796bb94f6b48ac9b" title="Retrieves a reference to the component of type T for an entity." alt="" coords="993,224,1194,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="378,1906,397,1918,408,1930,415,1942,420,1967,426,1991,433,2001,444,2010,475,2026,503,2037,529,2042,555,2043,608,2032,672,2010,767,1969,804,1948,836,1925,864,1897,890,1864,942,1776,967,1716,990,1640,1009,1550,1026,1450,1052,1226,1070,988,1081,754,1087,543,1089,266,1095,266,1092,543,1086,754,1075,988,1057,1227,1031,1451,1014,1551,995,1641,972,1718,947,1779,895,1867,868,1901,839,1929,807,1953,770,1974,674,2014,610,2037,555,2048,529,2047,502,2042,473,2031,442,2014,429,2004,421,1993,415,1969,410,1944,404,1933,393,1922,375,1911"/>
+<area shape="rect" id="Node000006" href="$class_input_manager.html#a71835e73c1d4a634d14be25d75db9bc0" title="Gets the horizontal mouse movement delta from this frame." alt="" coords="454,1973,662,2000"/>
+<area shape="poly" id="edge3_Node000002_Node000006" title=" " alt="" coords="369,1906,396,1918,411,1928,421,1939,430,1949,444,1959,459,1965,456,1970,442,1964,427,1953,417,1943,408,1932,394,1922,367,1911"/>
+<area shape="rect" id="Node000007" href="$class_input_manager.html#adf18e1c5e2ef57e794ff7d5fb28071b5" title="Gets the vertical mouse movement delta from this frame." alt="" coords="454,2075,662,2101"/>
+<area shape="poly" id="edge4_Node000002_Node000007" title=" " alt="" coords="380,1906,397,1918,411,1935,418,1953,422,1988,425,2022,432,2038,445,2054,460,2065,457,2069,441,2058,427,2041,420,2023,416,1988,413,1954,406,1938,393,1922,377,1911"/>
+<area shape="poly" id="edge5_Node000002_Node000008" title=" " alt="" coords="328,1879,380,1852,442,1825,519,1803,598,1785,739,1761,740,1766,599,1790,520,1808,444,1831,382,1856,331,1883"/>
+<area shape="rect" id="Node000009" href="$class_input_manager.html#abcb55a393ff49334eba202f1b55870f3" title="Checks if an action&#39;s mapped key is currently held down." alt="" coords="456,2125,660,2152"/>
+<area shape="poly" id="edge6_Node000002_Node000009" title=" " alt="" coords="381,1906,397,1918,415,1943,422,1968,423,1993,421,2018,419,2042,420,2066,428,2089,445,2112,448,2114,444,2118,441,2115,423,2091,415,2066,414,2042,416,2017,418,1993,417,1969,410,1945,393,1922,378,1911"/>
+<area shape="rect" id="Node000011" href="$class_input_manager.html#ad8b3cd8d67afa47ce1a65da26c967b5e" title="Checks if a mouse button is currently held down." alt="" coords="443,2176,673,2203"/>
+<area shape="poly" id="edge7_Node000002_Node000011" title=" " alt="" coords="382,1906,397,1918,418,1950,426,1981,425,2012,421,2043,416,2074,416,2104,424,2133,445,2162,447,2165,444,2168,441,2166,419,2135,411,2104,411,2073,415,2042,420,2012,421,1982,413,1952,393,1922,379,1911"/>
+<area shape="rect" id="Node000013" href="$class_camera.html#a08e827a4ea64e448beabaa52881c58ab" title="Applies mouse input to rotate the camera using yaw and pitch." alt="" coords="506,2227,610,2253"/>
+<area shape="poly" id="edge8_Node000002_Node000013" title=" " alt="" coords="383,1907,397,1918,421,1956,430,1994,428,2032,421,2069,414,2105,412,2142,421,2177,445,2213,466,2228,492,2236,491,2241,464,2233,441,2217,416,2179,407,2142,408,2105,415,2068,422,2031,424,1995,416,1958,393,1922,379,1911"/>
+<area shape="rect" id="Node000019" href="$class_input_manager.html#ab060dcf965ba79d0ee0a6e9e0b1c84f7" title="Polls and updates internal input state for the current frame." alt="" coords="483,2277,633,2304"/>
+<area shape="poly" id="edge9_Node000002_Node000019" title=" " alt="" coords="383,1906,397,1918,413,1941,424,1963,433,2007,430,2051,420,2094,411,2137,408,2180,411,2201,417,2222,429,2243,445,2263,470,2280,467,2285,441,2267,424,2245,412,2224,406,2202,403,2180,406,2136,415,2093,425,2050,428,2007,419,1965,409,1943,393,1922,379,1911"/>
+<area shape="rect" id="Node000023" href="$class_camera.html#a2e48639cd946e567fc0756361c855ac6" title="Updates the six frustum planes based on the camera&#39;s view&#45;projection matrix and position." alt="" coords="456,1485,661,1512"/>
+<area shape="poly" id="edge10_Node000002_Node000023" title=" " alt="" coords="304,1881,311,1816,331,1719,348,1665,372,1613,402,1564,441,1522,446,1518,449,1522,445,1526,407,1567,376,1615,353,1667,336,1720,316,1817,309,1881"/>
+<area shape="rect" id="Node000027" href="$class_input_manager.html#ac7dc2924bac1c09a309c094277bae59f" title="Checks if an action&#39;s mapped key was just pressed this frame." alt="" coords="460,1840,656,1883"/>
+<area shape="poly" id="edge13_Node000002_Node000027" title=" " alt="" coords="393,1880,444,1874,445,1879,393,1886"/>
+<area shape="rect" id="Node000028" href="$class_input_manager.html#a7a54ee88ffb89a1956a7d6a080c964f5" title="Checks if a mouse button was just pressed this frame." alt="" coords="452,1907,664,1949"/>
+<area shape="poly" id="edge14_Node000002_Node000028" title=" " alt="" coords="393,1904,437,1909,437,1915,393,1909"/>
+<area shape="rect" id="Node000024" href="$class_camera.html#a6e3587a907ed288508c97493e7d51fc1" title="Calculates and retrieves the current view matrix based on a given position." alt="" coords="752,1536,914,1563"/>
+<area shape="poly" id="edge11_Node000023_Node000024" title=" " alt="" coords="635,1510,742,1530,741,1535,634,1515"/>
+<area shape="rect" id="Node000026" href="$math_8hpp.html#a449ecbbd825f26c183caeac2bda40c41" title="Returns the length of a 2D vector." alt="" coords="803,795,863,821"/>
+<area shape="poly" id="edge12_Node000023_Node000026" title=" " alt="" coords="568,1483,617,1415,645,1369,671,1320,727,1182,771,1042,804,920,823,836,828,837,809,922,776,1043,732,1183,676,1322,650,1372,621,1418,573,1486"/>
+<area shape="rect" id="Node000033" href="$class_player_script.html#ad5255b13ec6d2547e0b90ef4598933ac" title="Applies directional player movement based on input." alt="" coords="473,475,643,517"/>
+<area shape="poly" id="edge20_Node000032_Node000033" title=" " alt="" coords="330,305,382,354,445,410,515,463,511,468,441,414,378,358,326,309"/>
+<area shape="rect" id="Node000035" href="$class_player_script.html#a6ca2961c6dc85d943a5e9450c011570e" title="Performs a double jump if eligible." alt="" coords="472,373,645,400"/>
+<area shape="poly" id="edge24_Node000032_Node000035" title=" " alt="" coords="362,305,509,364,507,369,360,310"/>
+<area shape="rect" id="Node000038" href="$class_player_script.html#abd58c2f0927e732e256307c2f868a17c" title="Drops the currently held object." alt="" coords="750,123,916,149"/>
+<area shape="poly" id="edge29_Node000032_Node000038" title=" " alt="" coords="337,261,385,233,442,207,517,184,594,166,734,143,735,148,595,171,518,189,444,212,388,237,340,266"/>
+<area shape="rect" id="Node000041" href="$class_entity_manager.html#af086011ae902ac5704362571a8217975" title="Checks if an entity has a component of type T." alt="" coords="456,541,660,568"/>
+<area shape="poly" id="edge31_Node000032_Node000041" title=" " alt="" coords="314,306,330,353,356,414,394,475,418,503,445,527,451,532,448,536,441,531,414,507,389,479,351,416,325,355,309,308"/>
+<area shape="rect" id="Node000043" href="$class_player_script.html#a461158f5d6147b8338f872cf0802b68e" title="Checks whether the player is currently grounded." alt="" coords="749,5,917,32"/>
+<area shape="poly" id="edge32_Node000032_Node000043" title=" " alt="" coords="314,262,334,228,362,186,398,143,442,107,513,71,590,46,665,30,733,21,734,26,666,35,591,51,515,76,444,112,402,147,366,189,338,231,319,265"/>
+<area shape="rect" id="Node000047" href="$class_player_script.html#a1f56c64cd8cee085e6d64910b6a9acf7" title="Attempts to launch a held object forward with force." alt="" coords="468,221,648,248"/>
+<area shape="poly" id="edge34_Node000032_Node000047" title=" " alt="" coords="392,265,472,249,473,254,393,271"/>
+<area shape="rect" id="Node000056" href="$class_player_script.html#ae7fe7c941bd066b9b28bd3cff60d0117" title="Performs object pickup logic using raycasting." alt="" coords="469,272,647,299"/>
+<area shape="poly" id="edge39_Node000032_Node000056" title=" " alt="" coords="392,283,453,283,453,288,392,288"/>
+<area shape="rect" id="Node000059" href="$class_player_script.html#aa3c58c5fbc952f37880acfa13a8b98a7" title="Continuously updates the held object&#39;s position and physics state." alt="" coords="748,56,918,99"/>
+<area shape="poly" id="edge44_Node000032_Node000059" title=" " alt="" coords="322,262,372,210,405,183,442,160,515,130,591,107,666,92,733,82,733,88,667,97,593,112,516,135,444,165,409,187,376,214,326,265"/>
+<area shape="poly" id="edge21_Node000033_Node000003" title=" " alt="" coords="644,506,713,509,790,506,870,490,908,477,943,459,970,440,994,417,1033,363,1062,309,1080,264,1085,266,1067,311,1038,366,998,420,973,444,946,464,910,482,871,496,791,511,713,515,644,511"/>
+<area shape="poly" id="edge22_Node000033_Node000026" title=" " alt="" coords="645,510,675,527,706,555,733,588,776,658,807,726,826,779,821,781,802,728,772,660,728,591,702,559,672,531,643,515"/>
+<area shape="rect" id="Node000017" href="$math_8hpp.html#a11c0426b3a7e98489b250e45d0240c5f" title="Normalizes a 3D vector." alt="" coords="793,392,873,419"/>
+<area shape="poly" id="edge23_Node000033_Node000017" title=" " alt="" coords="625,472,778,421,779,426,626,477"/>
+<area shape="poly" id="edge25_Node000035_Node000003" title=" " alt="" coords="590,398,657,424,748,446,797,452,848,453,897,445,944,428,968,413,991,394,1030,350,1059,303,1078,264,1083,266,1063,306,1034,353,995,398,971,418,946,433,898,450,848,458,797,458,747,452,656,429,588,403"/>
+<area shape="poly" id="edge27_Node000035_Node000026" title=" " alt="" coords="590,398,633,424,675,461,706,501,733,544,777,634,808,717,827,779,822,781,803,719,772,636,728,547,701,504,671,464,630,428,588,403"/>
+<area shape="poly" id="edge26_Node000035_Node000029" title=" " alt="" coords="596,370,720,327,749,318,751,323,722,332,598,375"/>
+<area shape="poly" id="edge28_Node000035_Node000017" title=" " alt="" coords="645,390,777,399,777,404,645,395"/>
+<area shape="poly" id="edge30_Node000038_Node000003" title=" " alt="" coords="890,147,946,166,1054,214,1051,219,944,170,888,152"/>
+<area shape="poly" id="edge33_Node000043_Node000003" title=" " alt="" coords="918,29,946,42,992,80,1030,125,1061,171,1082,209,1077,212,1056,174,1026,129,988,84,943,46,916,33"/>
+<area shape="poly" id="edge37_Node000047_Node000003" title=" " alt="" coords="649,222,721,216,833,212,945,216,981,219,980,224,945,221,833,217,721,221,649,227"/>
+<area shape="poly" id="edge38_Node000047_Node000017" title=" " alt="" coords="650,243,675,258,688,273,696,288,700,320,704,350,711,364,723,378,749,393,778,401,777,406,747,398,720,382,706,367,699,351,695,320,691,290,684,276,672,262,647,248"/>
+<area shape="poly" id="edge35_Node000047_Node000038" title=" " alt="" coords="589,218,720,165,764,152,765,157,722,171,591,223"/>
+<area shape="rect" id="Node000048" href="$class_entity_manager.html#a1b3d1289d7f8bba2539e828e807a183c" title="Returns a reference to the map of all components of type T." alt="" coords="721,341,945,368"/>
+<area shape="poly" id="edge36_Node000047_Node000048" title=" " alt="" coords="650,245,675,258,692,275,700,294,707,311,723,327,731,332,729,337,720,331,703,314,695,296,687,278,672,262,647,250"/>
+<area shape="poly" id="edge41_Node000056_Node000003" title=" " alt="" coords="648,269,721,260,977,240,977,246,722,265,648,274"/>
+<area shape="poly" id="edge42_Node000056_Node000029" title=" " alt="" coords="648,286,749,290,749,295,648,291"/>
+<area shape="poly" id="edge43_Node000056_Node000017" title=" " alt="" coords="580,297,642,337,681,359,722,378,778,394,777,399,720,382,679,363,639,341,577,301"/>
+<area shape="poly" id="edge40_Node000056_Node000048" title=" " alt="" coords="610,297,722,327,755,335,754,340,721,332,608,302"/>
+<area shape="poly" id="edge45_Node000059_Node000003" title=" " alt="" coords="919,96,946,108,983,132,1017,159,1071,210,1068,214,1014,163,980,136,943,113,917,101"/>
+<area shape="poly" id="edge57_Node000061_Node000003" title=" " alt="" coords="303,1077,308,1005,314,954,325,898,342,838,367,780,399,726,441,679,470,659,497,647,524,643,550,643,606,645,638,643,673,635,819,594,849,582,878,566,909,545,943,515,970,486,995,454,1035,384,1064,317,1082,265,1087,266,1069,319,1040,386,999,456,974,490,947,519,912,549,881,571,851,587,821,599,674,640,638,648,606,650,550,648,524,648,499,652,473,663,445,683,403,729,371,782,347,840,330,899,319,955,313,1006,309,1077"/>
+<area shape="poly" id="edge62_Node000061_Node000024" title=" " alt="" coords="311,1104,324,1200,352,1344,370,1418,392,1485,417,1539,431,1559,445,1572,467,1583,498,1588,578,1588,669,1578,752,1564,753,1569,670,1583,579,1594,497,1594,465,1588,441,1577,426,1562,412,1542,387,1487,365,1420,347,1345,319,1201,305,1105"/>
+<area shape="poly" id="edge65_Node000061_Node000026" title=" " alt="" coords="312,1075,331,1045,360,1006,397,966,442,932,474,916,503,906,555,899,608,896,638,891,672,881,737,855,793,827,795,832,739,860,674,887,639,896,609,901,555,905,504,912,476,921,444,937,401,970,364,1010,335,1048,316,1078"/>
+<area shape="poly" id="edge66_Node000061_Node000017" title=" " alt="" coords="307,1077,343,931,392,717,398,677,398,641,394,578,395,548,401,519,416,490,441,461,459,452,490,443,581,428,777,407,777,413,581,434,492,449,461,457,445,465,420,493,406,521,400,549,400,578,404,641,403,678,398,718,348,933,312,1078"/>
+<area shape="poly" id="edge63_Node000061_Node000041" title=" " alt="" coords="307,1076,374,808,415,659,430,609,441,585,455,573,459,578,445,588,435,611,420,661,379,810,312,1077"/>
+<area shape="poly" id="edge56_Node000061_Node000048" title=" " alt="" coords="306,1077,322,988,352,855,371,786,393,723,416,671,441,635,471,615,500,606,530,604,559,607,588,609,616,608,644,599,671,578,689,554,696,530,697,505,694,480,692,455,693,429,701,403,719,378,723,375,726,379,723,382,706,406,698,430,697,454,700,480,702,505,701,531,694,557,675,582,646,603,617,613,588,615,559,612,530,610,501,611,473,619,445,639,421,673,398,724,376,787,357,856,327,989,311,1077"/>
+<area shape="rect" id="Node000062" href="$class_texture.html#aa9a3935938a1a89365225c11ae79c74f" title="Binds the texture to a specified texture unit for rendering." alt="" coords="509,795,607,821"/>
+<area shape="poly" id="edge48_Node000061_Node000062" title=" " alt="" coords="307,1076,320,1029,345,962,363,926,385,891,411,859,441,831,466,817,493,810,495,815,468,822,445,835,415,863,390,894,368,929,350,964,325,1030,312,1078"/>
+<area shape="rect" id="Node000065" href="$namespace_graphics.html#a6f4d24e455fdef40dfe6b467f9b3d6d4" title=" " alt="" coords="745,1416,921,1443"/>
+<area shape="poly" id="edge49_Node000061_Node000065" title=" " alt="" coords="311,1104,322,1155,346,1228,364,1266,386,1304,413,1338,445,1367,465,1378,493,1388,566,1404,650,1415,730,1422,730,1427,649,1420,565,1409,492,1393,463,1383,441,1372,409,1342,382,1307,359,1269,341,1230,317,1156,306,1105"/>
+<area shape="rect" id="Node000066" href="$namespace_graphics.html#a9824ab679a791100d350127b6453e77d" title=" " alt="" coords="502,947,614,973"/>
+<area shape="poly" id="edge50_Node000061_Node000066" title=" " alt="" coords="318,1075,369,1029,404,1004,442,983,486,968,488,973,444,988,407,1009,373,1034,321,1079"/>
+<area shape="rect" id="Node000067" href="$namespace_graphics.html#a721c1c46b99ec4b0c263476217c844b2" title=" " alt="" coords="486,997,630,1024"/>
+<area shape="poly" id="edge51_Node000061_Node000067" title=" " alt="" coords="336,1074,442,1033,470,1026,472,1031,444,1039,338,1079"/>
+<area shape="rect" id="Node000068" href="$namespace_graphics.html#abcfa613cdd2ca02fc8cd2004c5a9fbae" title=" " alt="" coords="483,1048,633,1075"/>
+<area shape="poly" id="edge52_Node000061_Node000068" title=" " alt="" coords="359,1082,467,1069,467,1074,360,1087"/>
+<area shape="rect" id="Node000069" href="$namespace_graphics.html#a089e01615af5ecb79cd1c1cecb62fb67" title=" " alt="" coords="749,1479,917,1505"/>
+<area shape="poly" id="edge53_Node000061_Node000069" title=" " alt="" coords="310,1104,318,1164,340,1251,357,1298,380,1344,409,1386,444,1422,484,1436,557,1451,734,1477,734,1483,556,1456,482,1441,442,1426,405,1389,375,1347,352,1300,334,1252,313,1165,305,1105"/>
+<area shape="rect" id="Node000070" href="$namespace_graphics.html#a833d3fce31a5b5813e613ced1ff9d747" title=" " alt="" coords="460,1099,657,1141"/>
+<area shape="poly" id="edge54_Node000061_Node000070" title=" " alt="" coords="360,1094,445,1104,444,1109,359,1100"/>
+<area shape="rect" id="Node000071" href="$namespace_graphics.html#a8e819d608213a011059060a2b0170e18" title=" " alt="" coords="772,1600,894,1627"/>
+<area shape="poly" id="edge55_Node000061_Node000071" title=" " alt="" coords="310,1104,324,1203,350,1354,369,1432,391,1503,416,1560,430,1582,445,1597,482,1620,523,1636,567,1645,611,1648,698,1642,771,1628,772,1634,699,1648,611,1653,566,1650,521,1641,479,1625,441,1601,426,1585,412,1563,386,1505,364,1434,345,1355,318,1204,305,1105"/>
+<area shape="rect" id="Node000072" href="$namespace_graphics.html#a6168c5c7c5a145aecd7681162f456977" title=" " alt="" coords="467,1216,649,1259"/>
+<area shape="poly" id="edge58_Node000061_Node000072" title=" " alt="" coords="322,1103,374,1147,408,1172,444,1195,470,1207,468,1212,442,1200,405,1177,371,1151,319,1107"/>
+<area shape="rect" id="Node000073" href="$class_transform.html#a273b1e2cae794e45d5f038e736416c9b" title="Computes and returns the model (world) transformation matrix." alt="" coords="744,1676,922,1703"/>
+<area shape="poly" id="edge59_Node000061_Node000073" title=" " alt="" coords="310,1104,322,1213,348,1381,366,1469,388,1548,415,1613,429,1637,445,1654,479,1678,518,1695,559,1706,601,1712,685,1712,758,1703,759,1709,685,1718,601,1717,558,1711,516,1700,477,1683,441,1658,425,1640,410,1615,383,1550,361,1470,342,1382,317,1214,305,1105"/>
+<area shape="rect" id="Node000074" href="$class_camera.html#acfb250cdca698879b5de804524960005" title="Retrieves the current projection matrix." alt="" coords="738,1236,928,1263"/>
+<area shape="poly" id="edge60_Node000061_Node000074" title=" " alt="" coords="333,1102,384,1127,444,1151,507,1169,558,1179,609,1187,674,1201,772,1229,771,1234,673,1207,608,1193,557,1184,506,1174,442,1156,382,1132,331,1107"/>
+<area shape="rect" id="Node000075" href="$namespace_graphics.html#a4975cdbaad38122f9120b8ea8b95cb18" title=" " alt="" coords="734,1359,932,1385"/>
+<area shape="poly" id="edge61_Node000061_Node000075" title=" " alt="" coords="312,1104,326,1147,352,1207,391,1269,416,1296,444,1319,464,1329,492,1338,561,1351,641,1360,719,1365,719,1371,640,1365,560,1356,490,1343,462,1334,442,1324,412,1300,387,1272,348,1209,321,1149,307,1105"/>
+<area shape="rect" id="Node000076" href="$class_camera.html#a3683dabb5bf414d8af9036316655f52a" title="Tests whether a given axis&#45;aligned bounding box (AABB) is inside the camera&#39;s view frustum." alt="" coords="474,1283,642,1309"/>
+<area shape="poly" id="edge64_Node000061_Node000076" title=" " alt="" coords="315,1103,333,1138,361,1183,398,1229,444,1268,461,1277,459,1282,442,1273,395,1233,356,1186,328,1140,310,1106"/>
+<area shape="rect" id="Node000078" href="$namespace_graphics.html#ae0fe98919e3082c31e62dfcc7e76f31e" title=" " alt="" coords="456,693,661,720"/>
+<area shape="poly" id="edge67_Node000061_Node000078" title=" " alt="" coords="304,1076,312,1013,332,919,350,868,373,817,403,770,441,730,446,726,449,730,445,734,408,774,378,820,355,870,337,921,317,1014,310,1077"/>
+<area shape="rect" id="Node000079" href="$render__system_8cpp.html#a079030225b1b31b63cc28799a7923ff0" title="Renders a skybox or skydome mesh as a background element." alt="" coords="504,1536,612,1563"/>
+<area shape="poly" id="edge68_Node000061_Node000079" title=" " alt="" coords="309,1104,312,1178,318,1232,328,1292,345,1354,369,1416,402,1473,445,1522,466,1536,490,1544,489,1549,463,1540,441,1526,398,1476,364,1418,340,1356,323,1293,312,1233,306,1179,303,1105"/>
+<area shape="rect" id="Node000087" href="$math_8hpp.html#a09a0220210ed9b62eb95681f100c2ac6" title="Applies rotation to a matrix." alt="" coords="528,744,588,771"/>
+<area shape="poly" id="edge77_Node000061_Node000087" title=" " alt="" coords="305,1077,315,1021,339,941,356,897,379,854,407,815,441,781,475,763,512,755,513,761,477,768,445,785,411,818,384,857,361,899,344,943,321,1022,311,1077"/>
+<area shape="rect" id="Node000088" href="$namespace_graphics.html#a1179041af4fce74143f19dd3f49f08af" title=" " alt="" coords="482,845,635,872"/>
+<area shape="poly" id="edge78_Node000061_Node000088" title=" " alt="" coords="309,1076,326,1039,354,988,393,934,416,910,441,888,466,875,469,879,445,893,419,914,397,938,359,991,331,1041,314,1078"/>
+<area shape="poly" id="edge73_Node000079_Node000008" title=" " alt="" coords="571,1561,630,1633,674,1675,723,1712,761,1731,758,1735,720,1717,670,1679,626,1636,567,1565"/>
+<area shape="poly" id="edge76_Node000079_Node000024" title=" " alt="" coords="612,1547,737,1547,737,1552,612,1552"/>
+<area shape="poly" id="edge69_Node000079_Node000065" title=" " alt="" coords="611,1542,643,1535,672,1522,687,1509,695,1495,704,1479,720,1464,756,1446,758,1451,723,1469,708,1483,700,1497,691,1512,675,1526,644,1540,613,1548"/>
+<area shape="poly" id="edge70_Node000079_Node000069" title=" " alt="" coords="611,1536,750,1506,751,1512,613,1541"/>
+<area shape="poly" id="edge71_Node000079_Node000071" title=" " alt="" coords="613,1559,758,1593,757,1599,611,1564"/>
+<area shape="poly" id="edge72_Node000079_Node000073" title=" " alt="" coords="585,1561,723,1636,787,1667,785,1672,720,1641,582,1566"/>
+<area shape="poly" id="edge74_Node000079_Node000074" title=" " alt="" coords="611,1547,644,1539,672,1522,688,1502,697,1481,700,1461,701,1440,701,1395,707,1371,719,1345,755,1302,795,1270,798,1274,759,1306,724,1348,712,1373,707,1396,706,1440,706,1462,702,1483,693,1504,675,1526,646,1544,613,1552"/>
+<area shape="poly" id="edge75_Node000079_Node000075" title=" " alt="" coords="612,1545,643,1538,672,1522,684,1508,691,1494,695,1464,699,1433,707,1417,720,1402,736,1390,739,1394,723,1406,711,1420,705,1435,700,1465,696,1496,688,1511,675,1526,645,1543,613,1551"/>
+<area shape="poly" id="edge80_Node000097_Node000048" title=" " alt="" coords="304,678,311,617,332,528,349,480,373,434,403,393,442,359,461,350,488,343,554,336,630,336,706,340,706,345,630,341,554,341,488,348,463,355,444,364,407,397,377,437,354,482,337,529,316,618,310,678"/>
+</map>

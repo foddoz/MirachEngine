@@ -1,0 +1,131 @@
+\doxysection{mesh\+Terrain.\+hpp}
+\hypertarget{mesh_terrain_8hpp_source}{}\label{mesh_terrain_8hpp_source}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/Meshes/meshTerrain.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Graphics/Meshes/meshTerrain.hpp}}
+\mbox{\hyperlink{mesh_terrain_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MESHTERRAIN\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MESHTERRAIN\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mesh3d_8hpp}{mesh3d.hpp}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{math_8hpp}{../../Math/math.hpp}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_mesh_terrain_a75adb1babf83a1f6812d789d55f2b3ad}{MeshTerrain}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_mesh3_d_a8cdefca0bf7171afd91f2a1a88e05a7e}{Mesh3D}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_mesh_terrain_a75adb1babf83a1f6812d789d55f2b3ad}{MeshTerrain}}();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_terrain_a8b774b6e68bb4e4e72e0690daeb5bf7f}{GenerateCPUData}}(\textcolor{keywordtype}{int}\ terrainSize,\ \textcolor{keywordtype}{int}\ iterations,\ \textcolor{keywordtype}{float}\ minHeight,\ \textcolor{keywordtype}{float}\ maxHeight,\ \textcolor{keywordtype}{float}\ filter,\ \textcolor{keywordtype}{float}\ textureScale,\ \textcolor{keyword}{const}\ std::vector<std::string>\&\ textureFileNames,\ \textcolor{keywordtype}{bool}\ randomise\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_terrain_a8f4dd324238753e462a2e9c9ca260c40}{CreateFaultFormation}}(\textcolor{keywordtype}{int}\ iterations,\ \textcolor{keywordtype}{float}\ minHeight,\ \textcolor{keywordtype}{float}\ maxHeight,\ \textcolor{keywordtype}{float}\ filter,\ \textcolor{keywordtype}{int}\ terrainSize,\ \textcolor{keywordtype}{bool}\ randomise);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_terrain_a7f27655ea001536d577eefcaff6421e6}{UploadToGPU}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{struct_mesh_renderer}{MeshRenderer}}\ \mbox{\hyperlink{class_mesh_terrain_a02d8c1492362365710a818b9a4674774}{ToRenderer}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{struct_mesh_l_o_d}{MeshLOD}}\ \mbox{\hyperlink{class_mesh_terrain_a7cd9ecf88516b6716cb76b804e8bd61b}{CreateLOD}}(\textcolor{keywordtype}{int}\ stepSize);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_mesh_terrain_a82c9aa1166f4c0cf04b6ca44314714b9}{GetHeight}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ z)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_mesh_terrain_a58ce82371ad74d5e293bf5cfc323ff7a}{GetWorldHeight}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ z)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_mesh_terrain_a96e1532cccbcd9e7b98c503a4285dd67}{GetHeightInterpolated}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ z)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_mesh_terrain_acfd2d102cd46b6f4fb58a554ea052307}{GetSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_mesh_terrain_a8a0737444822c558d57ab87b93e8a105}{GetWidth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_mesh_terrain_af48b8544ff00195bfcfd44ba79ebf61b}{GetDepth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_mesh_terrain_ab9a45762007d0ec096308beadce636cc}{GetWorldWidth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_mesh_terrain_a5c517ebeb1e89af3418d0ea07aea60b9}{GetWorldDepth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_mesh_terrain_abd5e104a91a9189660cf6c0bae91bc3e}{GetMinHeight}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_mesh_terrain_aa66b8e81f2f557bc3ea3018fcdc98224}{GetMaxHeight}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{comment}{//const\ std::vector<float>\&\ GetHeightMap()\ const\ \{\ return\ m\_heightMap;\ \}}}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<float>\&\ \mbox{\hyperlink{class_mesh_terrain_a015f8408a92a2b612e5e80ab411ade4f}{GetHeightMap}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_mesh_terrain_1_1_vertex}{Vertex}}}
+\DoxyCodeLine{00095\ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{struct_mesh_terrain_1_1_vertex_a785fb4084b80a63349a249fe1f053de5}{Pos}};\ \ \ \ \ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_acfd9107b583da9f618732213cb319ced}{Vector2f}}\ \mbox{\hyperlink{struct_mesh_terrain_1_1_vertex_a0cbd5489532392351265858bc6235838}{Tex}};\ \ \ \ \ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}}\ \mbox{\hyperlink{struct_mesh_terrain_1_1_vertex_a07e780e208327d0f9c627f3d8cab9901}{Normal}};\ \ }
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_mesh_terrain_1_1_vertex_a58f3fdca3d472b4165dacf04ec17b5dd}{InitVertex}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ z,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_mesh_terrain_a75adb1babf83a1f6812d789d55f2b3ad}{MeshTerrain}}*\ terrain);}
+\DoxyCodeLine{00104\ \ \ \ \ \};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<MeshTerrain::Vertex>\&\ \mbox{\hyperlink{class_mesh_terrain_ac4929e35dca3bc094e2a74e173a13fd9}{GetVertexData}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_mesh_terrain_a31d43862cd5f53a6f5c20a2904cd6dc9}{m\_CPU\_VertexData}};\ \}}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<unsigned\ int>\&\ \mbox{\hyperlink{class_mesh_terrain_ae521c4a9fd6c4e4284e4e6659ba63c22}{GetIndexData}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_mesh_terrain_aecac0995214975b237ac268924a17e46}{m\_CPU\_IndexData}};\ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_terrain_ae286a5db306f207d66c035e713737bda}{ClearCPUData}}();}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_mesh_terrain_aa844c7e003d27f8cf3c8f6c2a8ca0850}{GetTextureScale}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_terrain_abab5aa07a8ce7336f6f07541105f586d}{Delete}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_terrain_a6bce579145dde6b4cde1c5bd622aa797}{CreateTriangleList}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ depth);}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_terrain_a8c27c53059bd5313ee5300d266abbb72}{SetHeight}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ z,\ \textcolor{keywordtype}{float}\ value);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{class_mesh_terrain_a27aedd685afae6ef28aabfa19582b382}{m\_TextureFileNames}};\ \ \ \ \ }
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_mesh_terrain_a23ef9e1fc7bfc32d4c37dd4f51c72a1f}{m\_width}};\ \ \ \ \ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_mesh_terrain_acf8bfd80c73a75bef8be73324aa461f5}{m\_depth}};\ \ \ \ \ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_mesh_terrain_a4836835bd940ddd7dd85da4aa0356289}{m\_minHeight}};\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_mesh_terrain_ab0f63f943d2d49adcab77a4ea1bce825}{m\_maxHeight}};\ }
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_mesh_terrain_a55587cf1d02370ea42b53795e54cd3be}{m\_worldSizeX}};}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_mesh_terrain_abc36ce97d42d6b763b9f3b422e2ef3a3}{m\_worldSizeZ}};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_mesh_terrain_adac93d5eca26bfa2eba3f97231774c2b}{m\_terrainSize}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00140\ \ \ \ \ std::vector<float>\ \mbox{\hyperlink{class_mesh_terrain_a96d370d349a7bc6754437d16e4bc6df7}{m\_heightMap}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_mesh_terrain_adf5e6fd6f092364a4bb64f1fff35fa03}{m\_textureScale}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_mesh_terrain_1_1_terrain_point}{TerrainPoint}}}
+\DoxyCodeLine{00152\ \ \ \ \ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_mesh_terrain_1_1_terrain_point_acab040da77961e53add0f1f7ec7f6fd5}{x}}\ =\ 0;}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_mesh_terrain_1_1_terrain_point_a646ce206f17f4e77bff0627fc0016a91}{z}}\ =\ 0;}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_mesh_terrain_1_1_terrain_point_ac40ac52e5371cadf459eb6a970da84f9}{Print}}()}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{struct_mesh_terrain_1_1_terrain_point_acab040da77961e53add0f1f7ec7f6fd5}{x}}\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ \mbox{\hyperlink{struct_mesh_terrain_1_1_terrain_point_a646ce206f17f4e77bff0627fc0016a91}{z}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_mesh_terrain_1_1_terrain_point_acf4de239a7354ad5d3989b77ecddae05}{isEqual}}(\mbox{\hyperlink{struct_mesh_terrain_1_1_terrain_point}{TerrainPoint}}\&\ p)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00162\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((\mbox{\hyperlink{struct_mesh_terrain_1_1_terrain_point_acab040da77961e53add0f1f7ec7f6fd5}{x}}\ ==\ p.\mbox{\hyperlink{struct_mesh_terrain_1_1_terrain_point_acab040da77961e53add0f1f7ec7f6fd5}{x}})\ \&\&\ (\mbox{\hyperlink{struct_mesh_terrain_1_1_terrain_point_a646ce206f17f4e77bff0627fc0016a91}{z}}\ ==\ p.\mbox{\hyperlink{struct_mesh_terrain_1_1_terrain_point_a646ce206f17f4e77bff0627fc0016a91}{z}}));}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00165\ \ \ \ \ \};}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_terrain_af107e4f6795dde2123aa006638d0b779}{InitIndices}}(std::vector<unsigned\ int>\&\ indices,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ depth);}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_terrain_a9991fb5a1a6635d5b5116c553caf1007}{PopulateBuffers}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_terrain_a6103508d3697247eba65cbda2b9d1782}{InitVertices}}(std::vector<Vertex>\&\ Vertices);}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{comment}{//void\ CalcNormals(std::vector<Vertex>\&\ Vertices);}}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_terrain_ac04c41367589da2a17ffa10ee6490ebf}{CalcNormals}}(std::vector<Vertex>\&\ Vertices,\ \textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ depth);}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_terrain_a3b250d6762ed4984c36561fb8b986088}{GenRandomTerrainPoints}}(TerrainPoint\&\ p1,\ TerrainPoint\&\ p2);}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_terrain_a766c22ce021c46dcd0fa93726717e13c}{ApplyFIRFilter}}(\textcolor{keywordtype}{float}\ filter);}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_mesh_terrain_ad1253af0199061cbd5f288e34b4deec5}{FIRFilterSinglePoint}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ z,\ \textcolor{keywordtype}{float}\ prevVal,\ \textcolor{keywordtype}{float}\ filter);}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_mesh_terrain_a0ccd49d3d667b512eed2f4a65ed67e64}{NormaliseHeightMap}}(\textcolor{keywordtype}{float}\ minHeight,\ \textcolor{keywordtype}{float}\ maxHeight);}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ std::vector<Vertex>\ \mbox{\hyperlink{class_mesh_terrain_a31d43862cd5f53a6f5c20a2904cd6dc9}{m\_CPU\_VertexData}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00206\ \ \ \ \ std::vector<unsigned\ int>\ \mbox{\hyperlink{class_mesh_terrain_aecac0995214975b237ac268924a17e46}{m\_CPU\_IndexData}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00207\ \};}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MESHTERRAIN\_HPP}}
+
+\end{DoxyCode}

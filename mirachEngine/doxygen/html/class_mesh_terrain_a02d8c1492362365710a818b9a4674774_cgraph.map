@@ -1,0 +1,43 @@
+<map id="MeshTerrain::ToRenderer" name="MeshTerrain::ToRenderer">
+<area shape="rect" id="Node000001" title="Converts the terrain to a renderable mesh component." alt="" coords="5,259,173,285"/>
+<area shape="rect" id="Node000002" href="$class_mesh_terrain.html#a7cd9ecf88516b6716cb76b804e8bd61b" title=" " alt="" coords="221,259,387,285"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,269,205,269,205,275,173,275"/>
+<area shape="rect" id="Node000003" href="$namespace_graphics.html#a4765b419f51cd4a0d45b84dd4f7d7f17" title=" " alt="" coords="460,5,601,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="306,257,320,215,346,157,383,95,406,67,433,42,444,35,447,39,437,46,410,70,387,98,350,159,325,217,311,259"/>
+<area shape="rect" id="Node000004" href="$namespace_graphics.html#a6f4d24e455fdef40dfe6b467f9b3d6d4" title=" " alt="" coords="442,56,618,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="309,257,326,224,353,179,389,132,433,93,442,87,445,92,437,97,393,136,357,182,330,226,313,260"/>
+<area shape="rect" id="Node000005" href="$namespace_graphics.html#a6a2b8b04edd45dc9bbf6b70af7c5b16d" title=" " alt="" coords="458,107,602,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="313,256,361,201,395,170,434,143,445,137,448,142,436,148,398,174,365,205,317,260"/>
+<area shape="rect" id="Node000006" href="$class_mesh_terrain.html#ac04c41367589da2a17ffa10ee6490ebf" title="Computes per&#45;vertex normals by averaging surrounding triangles." alt="" coords="442,157,618,184"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="324,256,372,225,434,194,453,186,455,191,436,198,375,230,326,260"/>
+<area shape="rect" id="Node000009" href="$namespace_graphics.html#aa184d03626711a8afe423b4a50442c12" title=" " alt="" coords="436,208,625,235"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="366,255,452,236,453,241,367,261"/>
+<area shape="rect" id="Node000010" href="$namespace_graphics.html#a8109b501f710603a722a06a5c02ac5b8" title=" " alt="" coords="460,259,600,285"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="387,269,445,269,445,275,387,275"/>
+<area shape="rect" id="Node000011" href="$namespace_graphics.html#ae7b4fc0d405f3edef698219b304c4e97" title=" " alt="" coords="444,309,617,336"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="367,283,453,303,452,308,366,289"/>
+<area shape="rect" id="Node000012" href="$class_mesh_terrain.html#af107e4f6795dde2123aa006638d0b779" title="Fills index buffer with triangle strip indices." alt="" coords="450,360,610,387"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="326,284,375,314,436,346,455,353,453,358,434,350,372,319,324,288"/>
+<area shape="rect" id="Node000013" href="$struct_mesh_terrain_1_1_vertex.html#a58f3fdca3d472b4165dacf04ec17b5dd" title="Initializes vertex based on heightmap and terrain data." alt="" coords="462,411,599,453"/>
+<area shape="poly" id="edge12_Node000002_Node000013" title=" " alt="" coords="318,284,366,338,399,369,436,396,449,403,446,408,434,401,396,373,362,342,314,288"/>
+<area shape="rect" id="Node000020" href="$namespace_graphics.html#a9334eb7750459b3f968a9bf13eb7f6b4" title=" " alt="" coords="446,477,615,520"/>
+<area shape="poly" id="edge19_Node000002_Node000020" title=" " alt="" coords="313,285,330,320,356,368,392,419,437,463,442,467,439,471,433,467,388,423,352,371,325,323,308,287"/>
+<area shape="rect" id="Node000021" href="$namespace_graphics.html#a55aadce60c9d25fb369920ad3e4b431b" title=" " alt="" coords="435,544,625,571"/>
+<area shape="poly" id="edge20_Node000002_Node000021" title=" " alt="" coords="310,285,323,332,346,399,384,469,408,502,437,530,442,534,439,538,433,534,404,505,379,472,341,401,317,334,305,286"/>
+<area shape="rect" id="Node000007" href="$math_8hpp.html#a670c0a5216c9f579310c5202fba83257" title="Cross product of two 3D vectors." alt="" coords="744,132,800,159"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="619,159,728,147,729,152,619,164"/>
+<area shape="rect" id="Node000008" href="$math_8hpp.html#a11c0426b3a7e98489b250e45d0240c5f" title="Normalizes a 3D vector." alt="" coords="732,183,812,209"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="619,177,717,188,716,193,619,183"/>
+<area shape="rect" id="Node000014" href="$class_mesh_terrain.html#a82c9aa1166f4c0cf04b6ca44314714b9" title="Gets the height at the given integer terrain grid coordinates." alt="" coords="692,343,852,369"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="592,408,624,396,673,379,698,371,700,376,674,384,626,401,594,413"/>
+<area shape="rect" id="Node000016" href="$class_mesh_terrain.html#acfd2d102cd46b6f4fb58a554ea052307" title="Gets terrain grid size." alt="" coords="698,393,846,420"/>
+<area shape="poly" id="edge15_Node000013_Node000016" title=" " alt="" coords="599,422,683,413,683,419,600,427"/>
+<area shape="rect" id="Node000017" href="$class_mesh_terrain.html#aa844c7e003d27f8cf3c8f6c2a8ca0850" title="Gets the texture UV scale factor." alt="" coords="673,444,871,471"/>
+<area shape="poly" id="edge16_Node000013_Node000017" title=" " alt="" coords="600,437,658,443,657,448,599,442"/>
+<area shape="rect" id="Node000018" href="$class_mesh_terrain.html#a75adb1babf83a1f6812d789d55f2b3ad" title="Constructs an empty MeshTerrain object." alt="" coords="686,495,858,521"/>
+<area shape="poly" id="edge17_Node000013_Node000018" title=" " alt="" coords="594,451,626,463,674,480,700,488,698,493,673,485,624,468,592,456"/>
+<area shape="rect" id="Node000015" href="$math_8hpp.html#a61311699c1533817e1272e777558b611" title="Clamps a float between minVal and maxVal." alt="" coords="953,343,1012,369"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="852,353,937,353,937,359,852,359"/>
+<area shape="rect" id="Node000019" href="$class_mesh3_d.html#a8cdefca0bf7171afd91f2a1a88e05a7e" title="Default constructor initializes OpenGL buffer handles and transforms." alt="" coords="919,495,1046,521"/>
+<area shape="poly" id="edge18_Node000018_Node000019" title=" " alt="" coords="858,505,903,505,903,511,858,511"/>
+</map>

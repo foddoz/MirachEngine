@@ -1,0 +1,45 @@
+.TH "Physics::Backend::ContactListenerAdapter" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Physics::Backend::ContactListenerAdapter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <physics_backend\&.hpp>\fP
+.PP
+Inherits rp3d::EventListener\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBContactListenerAdapter\fP (std::vector< \fBPhysics::CollisionCallback\fP * > &cbs)"
+.br
+.ti -1c
+.RI "void \fBonContact\fP (const rp3d::CollisionCallback::CallbackData &data) override"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBPhysics::CollisionCallback\fP * > & \fBcallbacks\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Physics::Backend::ContactListenerAdapter::ContactListenerAdapter (std::vector< \fBPhysics::CollisionCallback\fP * > & cbs)\fR [inline]\fP, \fR [explicit]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void Physics::Backend::ContactListenerAdapter::onContact (const rp3d::CollisionCallback::CallbackData & data)\fR [inline]\fP, \fR [override]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBPhysics::CollisionCallback\fP*>& Physics::Backend::ContactListenerAdapter::callbacks"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

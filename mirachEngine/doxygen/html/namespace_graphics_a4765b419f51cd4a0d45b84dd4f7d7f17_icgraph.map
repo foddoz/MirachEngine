@@ -1,0 +1,31 @@
+<map id="Graphics::BindBuffer" name="Graphics::BindBuffer">
+<area shape="rect" id="Node000001" title=" " alt="" coords="791,132,932,159"/>
+<area shape="rect" id="Node000002" href="$class_mesh_terrain.html#a7cd9ecf88516b6716cb76b804e8bd61b" title=" " alt="" coords="554,5,720,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="836,122,795,83,769,63,741,46,714,35,716,30,744,42,772,59,798,79,840,119"/>
+<area shape="rect" id="Node000004" href="$class_mesh_file.html#a6b05f6a342db7e1c2e324ce779988c29" title="Creates OpenGL buffers and uploads mesh data to the GPU." alt="" coords="550,56,724,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="817,128,742,97,703,86,704,81,744,92,819,123"/>
+<area shape="rect" id="Node000006" href="$class_mesh_m_d2.html#a296a12dbea02874b8a4ea7e450f63e3f" title="Fills OpenGL buffers with mesh data (called from UploadToGPU)." alt="" coords="546,107,728,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="775,138,728,133,728,128,776,133"/>
+<area shape="rect" id="Node000008" href="$class_mesh_sky_dome.html#ab4c16fb980037e0ede6a41f8a08ba816" title="Generates VAO, VBO, and IBO and uploads vertex/index data to the GPU." alt="" coords="531,157,743,184"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="776,158,743,161,743,156,775,152"/>
+<area shape="rect" id="Node000010" href="$class_mesh_terrain.html#a9991fb5a1a6635d5b5116c553caf1007" title="Allocates OpenGL VAO/VBO/IBO and sets vertex format." alt="" coords="541,208,733,235"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="819,168,744,199,704,210,703,205,742,193,817,163"/>
+<area shape="rect" id="Node000012" href="$class_animation_system.html#ad7b370061581bbc898f0c6a35250c2a3" title="Updates all MD2Animator components in the ECS based on elapsed time." alt="" coords="550,259,724,285"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="840,172,798,212,772,232,744,249,716,260,714,256,741,244,769,228,795,208,836,168"/>
+<area shape="rect" id="Node000003" href="$class_mesh_terrain.html#a02d8c1492362365710a818b9a4674774" title="Converts the terrain to a renderable mesh component." alt="" coords="298,5,465,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="538,21,466,21,466,16,538,16"/>
+<area shape="rect" id="Node000005" href="$class_mesh_file.html#a4941fd25cb0aa2b390a2ced9c80bfe00" title="Uploads vertex/index data and textures to GPU buffers." alt="" coords="298,56,465,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="535,72,465,72,465,67,535,67"/>
+<area shape="rect" id="Node000007" href="$class_mesh_m_d2.html#a1f00d6728c70d5f12aa2cfc49411abc2" title="Uploads the current mesh data to the GPU." alt="" coords="295,107,468,133"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="531,123,469,123,469,117,531,117"/>
+<area shape="rect" id="Node000009" href="$class_mesh_sky_dome.html#a9189a41803ef3ba5e0058ba2263dea44" title="Uploads geometry and texture data from CPU to GPU." alt="" coords="280,157,483,184"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="515,173,484,173,484,168,515,168"/>
+<area shape="rect" id="Node000011" href="$class_mesh_terrain.html#a7f27655ea001536d577eefcaff6421e6" title="Uploads generated mesh data and textures to the GPU." alt="" coords="290,208,474,235"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="526,224,474,224,474,219,526,219"/>
+<area shape="rect" id="Node000013" href="$class_terrain_scene.html#a55eb34067d9346aa7d9c3295a9e2dfb0" title="Executes the main loop: input, update, physics, animation, and rendering." alt="" coords="301,259,462,285"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="534,275,463,275,463,269,534,269"/>
+<area shape="rect" id="Node000014" href="$class_terrain_scene.html#ae8ec4e098386a74714255aed184761eb" title="Runs the full scene lifecycle in the correct execution order." alt="" coords="103,259,232,285"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="286,275,232,275,232,269,286,269"/>
+<area shape="rect" id="Node000015" href="$mirach_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point of the engine. Initializes subsystems, loads models, sets up ECS,..." alt="" coords="5,259,55,285"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="87,275,55,275,55,269,87,269"/>
+</map>

@@ -1,0 +1,105 @@
+\doxysection{Health\+Bar\+Renderer Class Reference}
+\hypertarget{class_health_bar_renderer}{}\label{class_health_bar_renderer}\index{HealthBarRenderer@{HealthBarRenderer}}
+
+
+{\ttfamily \#include $<$health\+Bar.\+h$>$}
+
+
+
+Collaboration diagram for Health\+Bar\+Renderer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{class_health_bar_renderer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_health_bar_renderer_afbe57b0e9bae4d3e1a2b728e786c45d8}{Init}} ()
+\item 
+void \mbox{\hyperlink{class_health_bar_renderer_a8df1000d008f085391711c80d50121aa}{Render}} (float current, float max)
+\item 
+void \mbox{\hyperlink{class_health_bar_renderer_a5f353ba6af272af8232cbedd7a35559f}{Shutdown}} ()
+\item 
+void \mbox{\hyperlink{class_health_bar_renderer_aff278e8970a1c61f1318d07a3987b391}{Render\+Background}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_health_bar_renderer_ac668398daaf0ea88a8edd4a8fe5f7939}{Create\+Shader}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+GLuint \mbox{\hyperlink{class_health_bar_renderer_ab72b4431f39270e2ed7ad8c842dc61e0}{VAO}}
+\item 
+GLuint \mbox{\hyperlink{class_health_bar_renderer_aaf478ff9b720cd7a5db14902d717a670}{VBO}}
+\item 
+GLuint \mbox{\hyperlink{class_health_bar_renderer_ab4fef6a4120eb965269cf02abf5c3cef}{shader\+Program}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{class_health_bar_renderer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_health_bar_renderer_ac668398daaf0ea88a8edd4a8fe5f7939}\index{HealthBarRenderer@{HealthBarRenderer}!CreateShader@{CreateShader}}
+\index{CreateShader@{CreateShader}!HealthBarRenderer@{HealthBarRenderer}}
+\doxysubsubsection{\texorpdfstring{CreateShader()}{CreateShader()}}
+{\footnotesize\ttfamily \label{class_health_bar_renderer_ac668398daaf0ea88a8edd4a8fe5f7939} 
+void Health\+Bar\+Renderer\+::\+Create\+Shader (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_health_bar_renderer_afbe57b0e9bae4d3e1a2b728e786c45d8}\index{HealthBarRenderer@{HealthBarRenderer}!Init@{Init}}
+\index{Init@{Init}!HealthBarRenderer@{HealthBarRenderer}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily \label{class_health_bar_renderer_afbe57b0e9bae4d3e1a2b728e786c45d8} 
+void Health\+Bar\+Renderer\+::\+Init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_health_bar_renderer_a8df1000d008f085391711c80d50121aa}\index{HealthBarRenderer@{HealthBarRenderer}!Render@{Render}}
+\index{Render@{Render}!HealthBarRenderer@{HealthBarRenderer}}
+\doxysubsubsection{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily \label{class_health_bar_renderer_a8df1000d008f085391711c80d50121aa} 
+void Health\+Bar\+Renderer\+::\+Render (\begin{DoxyParamCaption}\item[{float}]{current}{, }\item[{float}]{max}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_health_bar_renderer_aff278e8970a1c61f1318d07a3987b391}\index{HealthBarRenderer@{HealthBarRenderer}!RenderBackground@{RenderBackground}}
+\index{RenderBackground@{RenderBackground}!HealthBarRenderer@{HealthBarRenderer}}
+\doxysubsubsection{\texorpdfstring{RenderBackground()}{RenderBackground()}}
+{\footnotesize\ttfamily \label{class_health_bar_renderer_aff278e8970a1c61f1318d07a3987b391} 
+void Health\+Bar\+Renderer\+::\+Render\+Background (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_health_bar_renderer_a5f353ba6af272af8232cbedd7a35559f}\index{HealthBarRenderer@{HealthBarRenderer}!Shutdown@{Shutdown}}
+\index{Shutdown@{Shutdown}!HealthBarRenderer@{HealthBarRenderer}}
+\doxysubsubsection{\texorpdfstring{Shutdown()}{Shutdown()}}
+{\footnotesize\ttfamily \label{class_health_bar_renderer_a5f353ba6af272af8232cbedd7a35559f} 
+void Health\+Bar\+Renderer\+::\+Shutdown (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_health_bar_renderer_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_health_bar_renderer_ab4fef6a4120eb965269cf02abf5c3cef}\index{HealthBarRenderer@{HealthBarRenderer}!shaderProgram@{shaderProgram}}
+\index{shaderProgram@{shaderProgram}!HealthBarRenderer@{HealthBarRenderer}}
+\doxysubsubsection{\texorpdfstring{shaderProgram}{shaderProgram}}
+{\footnotesize\ttfamily \label{class_health_bar_renderer_ab4fef6a4120eb965269cf02abf5c3cef} 
+GLuint Health\+Bar\+Renderer\+::shader\+Program\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_health_bar_renderer_ab72b4431f39270e2ed7ad8c842dc61e0}\index{HealthBarRenderer@{HealthBarRenderer}!VAO@{VAO}}
+\index{VAO@{VAO}!HealthBarRenderer@{HealthBarRenderer}}
+\doxysubsubsection{\texorpdfstring{VAO}{VAO}}
+{\footnotesize\ttfamily \label{class_health_bar_renderer_ab72b4431f39270e2ed7ad8c842dc61e0} 
+GLuint Health\+Bar\+Renderer\+::\+VAO\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_health_bar_renderer_aaf478ff9b720cd7a5db14902d717a670}\index{HealthBarRenderer@{HealthBarRenderer}!VBO@{VBO}}
+\index{VBO@{VBO}!HealthBarRenderer@{HealthBarRenderer}}
+\doxysubsubsection{\texorpdfstring{VBO}{VBO}}
+{\footnotesize\ttfamily \label{class_health_bar_renderer_aaf478ff9b720cd7a5db14902d717a670} 
+GLuint Health\+Bar\+Renderer\+::\+VBO\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Rendering/\mbox{\hyperlink{health_bar_8h}{health\+Bar.\+h}}\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Rendering/\mbox{\hyperlink{health_bar_8cpp}{health\+Bar.\+cpp}}\end{DoxyCompactItemize}

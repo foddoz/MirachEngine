@@ -1,0 +1,26 @@
+<map id="TerrainScene::SpawnCrates" name="TerrainScene::SpawnCrates">
+<area shape="rect" id="Node000001" title="Spawns crates, potentially breakable or interactable." alt="" coords="5,131,190,157"/>
+<area shape="rect" id="Node000002" href="$class_transform.html#a2bd3205164a8f8f64f1c738ab6cb365f" title="Retrieves the current position." alt="" coords="238,5,394,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,128,166,86,236,42,250,35,252,40,239,46,169,91,116,132"/>
+<area shape="rect" id="Node000003" href="$class_physics_1_1_collider.html#af86781953bc85e24c413e0bd41351250" title="Sets the category bitmask of this collider." alt="" coords="252,56,380,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="143,127,236,99,238,104,145,133"/>
+<area shape="rect" id="Node000004" href="$class_physics_1_1_collider.html#abf9488feabedf4d5d7cee829f9b5967a" title="Sets the bitmask controlling what this collider can collide with." alt="" coords="252,123,380,165"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="190,141,236,141,236,147,190,147"/>
+<area shape="rect" id="Node000005" href="$class_transform.html#a7c287f2ec371a1214df9fa7ad6a9718b" title="Sets the world&#45;space position of the object." alt="" coords="239,189,394,216"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="151,155,250,182,248,187,149,160"/>
+<area shape="rect" id="Node000010" href="$class_transform.html#a80e28cb7ca8818e944c6177ed6ca7bfe" title="Sets the object&#39;s rotation in Euler degrees." alt="" coords="238,240,395,267"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="120,155,172,190,239,226,254,232,251,237,237,230,170,194,117,160"/>
+<area shape="rect" id="Node000006" href="$class_transform.html#a766790cd6c7043b6d28fe75d36a7bcc6" title="Recalculates the cached model matrix based on current position, rotation, and scale." alt="" coords="443,189,644,216"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="394,200,427,200,427,205,394,205"/>
+<area shape="rect" id="Node000007" href="$math_8hpp.html#a57197be1224ca571c566c73c33081081" title="Applies scale to a matrix." alt="" coords="703,139,757,165"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="595,186,687,161,689,166,596,191"/>
+<area shape="rect" id="Node000008" href="$math_8hpp.html#a1213c92d8be7146176f8be90d8903ece" title="Converts a quaternion to a 4x4 matrix." alt="" coords="698,189,762,216"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="645,200,682,200,682,205,645,205"/>
+<area shape="rect" id="Node000009" href="$math_8hpp.html#a978278a474c16b86c65813cec08b513a" title="Applies translation to a matrix." alt="" coords="692,240,768,267"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="602,214,645,225,678,235,677,240,644,231,601,219"/>
+<area shape="poly" id="edge12_Node000010_Node000006" title=" " alt="" coords="379,237,465,217,466,223,380,242"/>
+<area shape="rect" id="Node000011" href="$math_8hpp.html#a01d6afce125900f6e5b446d5094ea823" title="Converts Euler angles (in degrees) to a quaternion." alt="" coords="455,240,632,267"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="396,251,439,251,439,256,396,256"/>
+<area shape="rect" id="Node000012" href="$class_transform.html#a0bd1bcdbc6da88be8ad16e6a90aa2c55" title="Wraps a rotation angle to the range [0, 360)." alt="" coords="458,291,630,317"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="380,265,466,284,465,289,379,270"/>
+</map>

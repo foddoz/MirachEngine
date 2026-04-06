@@ -1,0 +1,91 @@
+.TH "Singleton< T >" 3 "Version 1.0" "MirachEngine" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Singleton< T > \- A generic \fBSingleton\fP template class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <singleton\&.h>\fP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static T * \fBInstance\fP ()"
+.br
+.RI "Returns a pointer to the singleton instance\&. "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSingleton\fP ()"
+.br
+.RI "Default constructor (private to prevent external instantiation)\&. "
+.ti -1c
+.RI "\fB~Singleton\fP ()"
+.br
+.RI "Destructor (private to prevent external deletion)\&. "
+.ti -1c
+.RI "\fBSingleton\fP (const \fBSingleton\fP &)=delete"
+.br
+.RI "Copy constructor is deleted to prevent copying\&. "
+.ti -1c
+.RI "\fBSingleton\fP & \fBoperator=\fP (const \fBSingleton\fP &)=delete"
+.br
+.RI "Copy assignment operator is deleted to prevent assignment\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class T>
+.br
+class Singleton< T >"A generic \fBSingleton\fP template class\&. 
+
+This template provides a thread-safe and lazy-initialized singleton instance\&. The constructor and assignment operators are deleted to enforce a single instance\&.
+
+.PP
+\fBTemplate Parameters\fP
+.RS 4
+\fIT\fP The type of the singleton class\&. 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class T> \fBSingleton\fP< T >\fB::Singleton\fP ()\fR [inline]\fP, \fR [private]\fP"
+
+.PP
+Default constructor (private to prevent external instantiation)\&. 
+.SS "template<class T> \fBSingleton\fP< T >::~\fBSingleton\fP ()\fR [inline]\fP, \fR [private]\fP"
+
+.PP
+Destructor (private to prevent external deletion)\&. 
+.SS "template<class T> \fBSingleton\fP< T >\fB::Singleton\fP (const \fBSingleton\fP< T > & )\fR [private]\fP, \fR [delete]\fP"
+
+.PP
+Copy constructor is deleted to prevent copying\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class T> T * \fBSingleton\fP< T >::Instance ()\fR [inline]\fP, \fR [static]\fP"
+
+.PP
+Returns a pointer to the singleton instance\&. The instance is created the first time this method is called and destroyed automatically when the program terminates\&.
+
+.PP
+\fBReturns\fP
+.RS 4
+A pointer to the single instance of type T\&. 
+.RE
+.PP
+
+.SS "template<class T> \fBSingleton\fP & \fBSingleton\fP< T >::operator= (const \fBSingleton\fP< T > & )\fR [private]\fP, \fR [delete]\fP"
+
+.PP
+Copy assignment operator is deleted to prevent assignment\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MirachEngine from the source code\&.

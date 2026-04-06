@@ -1,0 +1,7 @@
+<map id="MeshTerrain" name="MeshTerrain">
+<area shape="rect" id="Node000001" title="Terrain mesh class using heightmap generation." alt="" coords="5,400,186,1131"/>
+<area shape="rect" id="Node000003" href="$class_terrain_chunk.html" title="Represents a sub&#45;section of a larger terrain for LOD or streaming." alt="" coords="24,1179,167,1355"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="98,1145,98,1179,93,1179,93,1145"/>
+<area shape="rect" id="Node000002" href="$class_mesh3_d.html" title="Abstract base class for rendering and managing 3D mesh data." alt="" coords="34,5,158,352"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,367,98,400,93,400,93,367"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Transform::GetRotation" name="Transform::GetRotation">
+<area shape="rect" id="Node000001" title="Retrieves the current rotation in Euler angles (degrees)." alt="" coords="5,5,164,32"/>
+<area shape="rect" id="Node000002" href="$math_8hpp.html#a337db27912549e1897fa038fe0f43f13" title="Converts a quaternion to Euler angles (in degrees)" alt="" coords="212,5,389,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,16,196,16,196,21,164,21"/>
+</map>

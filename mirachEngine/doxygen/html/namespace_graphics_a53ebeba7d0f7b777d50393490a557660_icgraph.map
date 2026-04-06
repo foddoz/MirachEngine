@@ -1,0 +1,14 @@
+<map id="Graphics::SetUniformMat4" name="Graphics::SetUniformMat4">
+<area shape="rect" id="Node000001" title=" " alt="" coords="801,31,977,57"/>
+<area shape="rect" id="Node000002" href="$render__system_8cpp.html#a079030225b1b31b63cc28799a7923ff0" title="Renders a skybox or skydome mesh as a background element." alt="" coords="646,5,753,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="786,33,753,28,754,23,786,28"/>
+<area shape="rect" id="Node000003" href="$render__system_8cpp.html#a8cce4f902aee95fff82f762a4fcd10be" title="Core ECS&#45;based rendering system." alt="" coords="489,31,598,57"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="785,47,598,47,598,41,785,41"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="631,32,599,38,598,33,630,27"/>
+<area shape="rect" id="Node000004" href="$class_terrain_scene.html#a55eb34067d9346aa7d9c3295a9e2dfb0" title="Executes the main loop: input, update, physics, animation, and rendering." alt="" coords="280,31,441,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="474,47,442,47,442,41,474,41"/>
+<area shape="rect" id="Node000005" href="$class_terrain_scene.html#ae8ec4e098386a74714255aed184761eb" title="Runs the full scene lifecycle in the correct execution order." alt="" coords="103,31,232,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="264,47,232,47,232,41,264,41"/>
+<area shape="rect" id="Node000006" href="$mirach_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="Main entry point of the engine. Initializes subsystems, loads models, sets up ECS,..." alt="" coords="5,31,55,57"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="87,47,55,47,55,41,87,41"/>
+</map>

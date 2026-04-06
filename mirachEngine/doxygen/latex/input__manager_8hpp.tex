@@ -1,0 +1,90 @@
+\doxysection{C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Events/input\+\_\+manager.hpp File Reference}
+\hypertarget{input__manager_8hpp}{}\label{input__manager_8hpp}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Events/input\_manager.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Events/input\_manager.hpp}}
+{\ttfamily \#include "{}input.\+hpp"{}}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for input\+\_\+manager.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{input__manager_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{input__manager_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_input_manager}{Input\+Manager}}
+\begin{DoxyCompactList}\small\item\em Manages input actions, key states, and mouse interactions at a high level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671}{Input\+Action}} \{ \newline
+\mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671a122077e11a3cc3a56a2d82f1d15dbd32}{Move\+Forward}}
+, \mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671af812385dfcc1a683a69dd1c370f7bd71}{Move\+Backward}}
+, \mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671ae8a98c6fabdea857c20c91e9bfd318ca}{Move\+Left}}
+, \mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671a78af9b7fcdf1574f729de1454e15257b}{Move\+Right}}
+, \newline
+\mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671a101f693f72287a2819a364f64ca1c0ed}{Jump}}
+, \mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671a0d82790b0612935992bd564a17ce37d6}{Quit}}
+, \mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671adea0db9b4e22219c63d9dc528c59f0dd}{Object\+Launch}}
+, \mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671a4447a59d7e1c245db1aa9cbc6d07083e}{Object\+Grab}}
+ \}
+\begin{DoxyCompactList}\small\item\em High-\/level input actions mapped to specific key codes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-enum-members}
+\Hypertarget{input__manager_8hpp_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671}\index{input\_manager.hpp@{input\_manager.hpp}!InputAction@{InputAction}}
+\index{InputAction@{InputAction}!input\_manager.hpp@{input\_manager.hpp}}
+\doxysubsubsection{\texorpdfstring{InputAction}{InputAction}}
+{\footnotesize\ttfamily \label{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671} 
+enum class \mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671}{Input\+Action}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+High-\/level input actions mapped to specific key codes. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MoveForward@{MoveForward}!input\_manager.hpp@{input\_manager.hpp}}\index{input\_manager.hpp@{input\_manager.hpp}!MoveForward@{MoveForward}}}\Hypertarget{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671a122077e11a3cc3a56a2d82f1d15dbd32}\label{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671a122077e11a3cc3a56a2d82f1d15dbd32} 
+Move\+Forward&Move player forward. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MoveBackward@{MoveBackward}!input\_manager.hpp@{input\_manager.hpp}}\index{input\_manager.hpp@{input\_manager.hpp}!MoveBackward@{MoveBackward}}}\Hypertarget{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671af812385dfcc1a683a69dd1c370f7bd71}\label{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671af812385dfcc1a683a69dd1c370f7bd71} 
+Move\+Backward&Move player backward. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MoveLeft@{MoveLeft}!input\_manager.hpp@{input\_manager.hpp}}\index{input\_manager.hpp@{input\_manager.hpp}!MoveLeft@{MoveLeft}}}\Hypertarget{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671ae8a98c6fabdea857c20c91e9bfd318ca}\label{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671ae8a98c6fabdea857c20c91e9bfd318ca} 
+Move\+Left&Move player left. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MoveRight@{MoveRight}!input\_manager.hpp@{input\_manager.hpp}}\index{input\_manager.hpp@{input\_manager.hpp}!MoveRight@{MoveRight}}}\Hypertarget{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671a78af9b7fcdf1574f729de1454e15257b}\label{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671a78af9b7fcdf1574f729de1454e15257b} 
+Move\+Right&Move player right. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Jump@{Jump}!input\_manager.hpp@{input\_manager.hpp}}\index{input\_manager.hpp@{input\_manager.hpp}!Jump@{Jump}}}\Hypertarget{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671a101f693f72287a2819a364f64ca1c0ed}\label{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671a101f693f72287a2819a364f64ca1c0ed} 
+Jump&Make the player jump. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Quit@{Quit}!input\_manager.hpp@{input\_manager.hpp}}\index{input\_manager.hpp@{input\_manager.hpp}!Quit@{Quit}}}\Hypertarget{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671a0d82790b0612935992bd564a17ce37d6}\label{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671a0d82790b0612935992bd564a17ce37d6} 
+Quit&Trigger application quit. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ObjectLaunch@{ObjectLaunch}!input\_manager.hpp@{input\_manager.hpp}}\index{input\_manager.hpp@{input\_manager.hpp}!ObjectLaunch@{ObjectLaunch}}}\Hypertarget{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671adea0db9b4e22219c63d9dc528c59f0dd}\label{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671adea0db9b4e22219c63d9dc528c59f0dd} 
+Object\+Launch&Launch a held object. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ObjectGrab@{ObjectGrab}!input\_manager.hpp@{input\_manager.hpp}}\index{input\_manager.hpp@{input\_manager.hpp}!ObjectGrab@{ObjectGrab}}}\Hypertarget{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671a4447a59d7e1c245db1aa9cbc6d07083e}\label{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671a4447a59d7e1c245db1aa9cbc6d07083e} 
+Object\+Grab&Grab or pick up an object. \\
+\hline
+
+\end{DoxyEnumFields}

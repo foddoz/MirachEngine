@@ -1,0 +1,452 @@
+\doxysection{Transform Class Reference}
+\hypertarget{class_transform}{}\label{class_transform}\index{Transform@{Transform}}
+
+
+Represents position, rotation, and scale of an object in 3D space.  
+
+
+
+
+{\ttfamily \#include $<$transform.\+hpp$>$}
+
+
+
+Collaboration diagram for Transform\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{class_transform__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_transform_aa08ca4266efabc768973cdeea51945ab}{Transform}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor initializes position to (0,0,0), scale to (1,1,1), and rotation to identity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} \mbox{\hyperlink{class_transform_a273b1e2cae794e45d5f038e736416c9b}{get\+Model\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Computes and returns the model (world) transformation matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transform_a7c287f2ec371a1214df9fa7ad6a9718b}{Set\+Position}} (float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Sets the world-\/space position of the object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transform_a80e28cb7ca8818e944c6177ed6ca7bfe}{Set\+Rotation}} (float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Sets the object\textquotesingle{}s rotation in Euler degrees. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transform_a24f0ccf3c365705ec8146abcf0686c83}{Set\+Rotation}} (const \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} \&q)
+\begin{DoxyCompactList}\small\item\em Sets the object\textquotesingle{}s rotation using a quaternion. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transform_a3f4051624bff3c6d6c5be9fd9433fe2f}{Set\+Scale}} (float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Sets the object\textquotesingle{}s local scale. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transform_ac64c00fe6fe7aa6303aae6ad1e31ea7e}{Set\+YAxis\+Up}} (bool up)
+\begin{DoxyCompactList}\small\item\em Sets whether the object\textquotesingle{}s up axis should be Y (true) or Z (false). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{class_transform_a2bd3205164a8f8f64f1c738ab6cb365f}{Get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the current position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{class_transform_aacfcec9acc36a2dafe8b1eaf6e887963}{Get\+Rotation}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the current rotation in Euler angles (degrees). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{class_transform_add9a8eede0d4e807c66fc4dcd440c99b}{Get\+Scale}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the current scale vector. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_transform_abd58e4999a545d0041205d28ea83bd80}{Is\+YAxis\+Up}} () const
+\begin{DoxyCompactList}\small\item\em Returns whether the object\textquotesingle{}s up axis is Y. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_transform_a0bd1bcdbc6da88be8ad16e6a90aa2c55}{Reset\+Rotation}} (float axis)
+\begin{DoxyCompactList}\small\item\em Wraps a rotation angle to the range \mbox{[}0, 360). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_transform_a766790cd6c7043b6d28fe75d36a7bcc6}{Update\+Model\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Recalculates the cached model matrix based on current position, rotation, and scale. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} \mbox{\hyperlink{class_transform_a2314334c615e95ecceddb19e7d28d8e6}{m\+Model\+Matrix}}
+\begin{DoxyCompactList}\small\item\em Cached 4x4 model matrix used for rendering and physics. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{class_transform_ad1da5a5e2ebe8739901035f9859ab493}{m\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em World-\/space position of the object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} \mbox{\hyperlink{class_transform_a478b68aed5a7e0e06104cf544581ac67}{m\+\_\+rotation}}
+\begin{DoxyCompactList}\small\item\em Orientation represented as a unit quaternion. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} \mbox{\hyperlink{class_transform_a9787eec78997d62f498cf262de3daf7c}{m\+\_\+scale}}
+\begin{DoxyCompactList}\small\item\em Local scale vector. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_transform_afd2999b19640c1497ae4244f1e256cd8}{y\+Axis\+Up}}
+\begin{DoxyCompactList}\small\item\em Flag indicating whether Y (true) or Z (false) is the up axis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents position, rotation, and scale of an object in 3D space. 
+
+Encapsulates spatial transformations using position vectors, scale, and rotation (as a quaternion). Provides a method to compute the model matrix used for rendering and physics. 
+
+\label{doc-constructors}
+\Hypertarget{class_transform_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_transform_aa08ca4266efabc768973cdeea51945ab}\index{Transform@{Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{Transform()}{Transform()}}
+{\footnotesize\ttfamily \label{class_transform_aa08ca4266efabc768973cdeea51945ab} 
+Transform\+::\+Transform (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Default constructor initializes position to (0,0,0), scale to (1,1,1), and rotation to identity. 
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_transform_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_transform_a273b1e2cae794e45d5f038e736416c9b}\index{Transform@{Transform}!getModelMatrix@{getModelMatrix}}
+\index{getModelMatrix@{getModelMatrix}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{getModelMatrix()}{getModelMatrix()}}
+{\footnotesize\ttfamily \label{class_transform_a273b1e2cae794e45d5f038e736416c9b} 
+\mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} Transform\+::get\+Model\+Matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Computes and returns the model (world) transformation matrix. 
+
+\begin{DoxyReturn}{Returns}
+Model matrix as \doxylink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_transform_a273b1e2cae794e45d5f038e736416c9b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_transform_a2bd3205164a8f8f64f1c738ab6cb365f}\index{Transform@{Transform}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \label{class_transform_a2bd3205164a8f8f64f1c738ab6cb365f} 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Transform\+::\+Get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the current position. 
+
+\begin{DoxyReturn}{Returns}
+Position as a \doxylink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_transform_a2bd3205164a8f8f64f1c738ab6cb365f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_transform_aacfcec9acc36a2dafe8b1eaf6e887963}\index{Transform@{Transform}!GetRotation@{GetRotation}}
+\index{GetRotation@{GetRotation}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{GetRotation()}{GetRotation()}}
+{\footnotesize\ttfamily \label{class_transform_aacfcec9acc36a2dafe8b1eaf6e887963} 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Transform\+::\+Get\+Rotation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the current rotation in Euler angles (degrees). 
+
+\begin{DoxyReturn}{Returns}
+Rotation as \doxylink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f} (pitch, yaw, roll). 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_transform_aacfcec9acc36a2dafe8b1eaf6e887963_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_transform_add9a8eede0d4e807c66fc4dcd440c99b}\index{Transform@{Transform}!GetScale@{GetScale}}
+\index{GetScale@{GetScale}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{GetScale()}{GetScale()}}
+{\footnotesize\ttfamily \label{class_transform_add9a8eede0d4e807c66fc4dcd440c99b} 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Transform\+::\+Get\+Scale (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the current scale vector. 
+
+\begin{DoxyReturn}{Returns}
+Scale as a \doxylink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}. 
+\end{DoxyReturn}
+\Hypertarget{class_transform_abd58e4999a545d0041205d28ea83bd80}\index{Transform@{Transform}!IsYAxisUp@{IsYAxisUp}}
+\index{IsYAxisUp@{IsYAxisUp}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{IsYAxisUp()}{IsYAxisUp()}}
+{\footnotesize\ttfamily \label{class_transform_abd58e4999a545d0041205d28ea83bd80} 
+bool Transform\+::\+Is\+YAxis\+Up (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns whether the object\textquotesingle{}s up axis is Y. 
+
+\begin{DoxyReturn}{Returns}
+True if Y is up, false if Z is up. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_transform_abd58e4999a545d0041205d28ea83bd80_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_transform_a0bd1bcdbc6da88be8ad16e6a90aa2c55}\index{Transform@{Transform}!ResetRotation@{ResetRotation}}
+\index{ResetRotation@{ResetRotation}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{ResetRotation()}{ResetRotation()}}
+{\footnotesize\ttfamily \label{class_transform_a0bd1bcdbc6da88be8ad16e6a90aa2c55} 
+float Transform\+::\+Reset\+Rotation (\begin{DoxyParamCaption}\item[{float}]{axis}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wraps a rotation angle to the range \mbox{[}0, 360). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & Angle in degrees. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Normalized angle. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_transform_a0bd1bcdbc6da88be8ad16e6a90aa2c55_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_transform_a7c287f2ec371a1214df9fa7ad6a9718b}\index{Transform@{Transform}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily \label{class_transform_a7c287f2ec371a1214df9fa7ad6a9718b} 
+void Transform\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{float}]{z}{}\end{DoxyParamCaption})}
+
+
+
+Sets the world-\/space position of the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate. \\
+\hline
+{\em y} & Y coordinate. \\
+\hline
+{\em z} & Z coordinate. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_transform_a7c287f2ec371a1214df9fa7ad6a9718b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_transform_a7c287f2ec371a1214df9fa7ad6a9718b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_transform_a24f0ccf3c365705ec8146abcf0686c83}\index{Transform@{Transform}!SetRotation@{SetRotation}}
+\index{SetRotation@{SetRotation}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{SetRotation()}{SetRotation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_transform_a24f0ccf3c365705ec8146abcf0686c83} 
+void Transform\+::\+Set\+Rotation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} \&}]{q}{}\end{DoxyParamCaption})}
+
+
+
+Sets the object\textquotesingle{}s rotation using a quaternion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & \doxylink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion} representing orientation. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_transform_a24f0ccf3c365705ec8146abcf0686c83_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_transform_a80e28cb7ca8818e944c6177ed6ca7bfe}\index{Transform@{Transform}!SetRotation@{SetRotation}}
+\index{SetRotation@{SetRotation}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{SetRotation()}{SetRotation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_transform_a80e28cb7ca8818e944c6177ed6ca7bfe} 
+void Transform\+::\+Set\+Rotation (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{float}]{z}{}\end{DoxyParamCaption})}
+
+
+
+Sets the object\textquotesingle{}s rotation in Euler degrees. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Rotation around X (pitch). \\
+\hline
+{\em y} & Rotation around Y (yaw). \\
+\hline
+{\em z} & Rotation around Z (roll). \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_transform_a80e28cb7ca8818e944c6177ed6ca7bfe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_transform_a80e28cb7ca8818e944c6177ed6ca7bfe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_transform_a3f4051624bff3c6d6c5be9fd9433fe2f}\index{Transform@{Transform}!SetScale@{SetScale}}
+\index{SetScale@{SetScale}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{SetScale()}{SetScale()}}
+{\footnotesize\ttfamily \label{class_transform_a3f4051624bff3c6d6c5be9fd9433fe2f} 
+void Transform\+::\+Set\+Scale (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{float}]{z}{}\end{DoxyParamCaption})}
+
+
+
+Sets the object\textquotesingle{}s local scale. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Scale along X axis. \\
+\hline
+{\em y} & Scale along Y axis. \\
+\hline
+{\em z} & Scale along Z axis. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_transform_a3f4051624bff3c6d6c5be9fd9433fe2f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_transform_a3f4051624bff3c6d6c5be9fd9433fe2f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_transform_ac64c00fe6fe7aa6303aae6ad1e31ea7e}\index{Transform@{Transform}!SetYAxisUp@{SetYAxisUp}}
+\index{SetYAxisUp@{SetYAxisUp}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{SetYAxisUp()}{SetYAxisUp()}}
+{\footnotesize\ttfamily \label{class_transform_ac64c00fe6fe7aa6303aae6ad1e31ea7e} 
+void Transform\+::\+Set\+YAxis\+Up (\begin{DoxyParamCaption}\item[{bool}]{up}{}\end{DoxyParamCaption})}
+
+
+
+Sets whether the object\textquotesingle{}s up axis should be Y (true) or Z (false). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em up} & True for Y-\/up, false for Z-\/up. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_transform_ac64c00fe6fe7aa6303aae6ad1e31ea7e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_transform_a766790cd6c7043b6d28fe75d36a7bcc6}\index{Transform@{Transform}!UpdateModelMatrix@{UpdateModelMatrix}}
+\index{UpdateModelMatrix@{UpdateModelMatrix}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{UpdateModelMatrix()}{UpdateModelMatrix()}}
+{\footnotesize\ttfamily \label{class_transform_a766790cd6c7043b6d28fe75d36a7bcc6} 
+void Transform\+::\+Update\+Model\+Matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Recalculates the cached model matrix based on current position, rotation, and scale. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_transform_a766790cd6c7043b6d28fe75d36a7bcc6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_transform_a766790cd6c7043b6d28fe75d36a7bcc6_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_transform_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_transform_ad1da5a5e2ebe8739901035f9859ab493}\index{Transform@{Transform}!m\_position@{m\_position}}
+\index{m\_position@{m\_position}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{m\_position}{m\_position}}
+{\footnotesize\ttfamily \label{class_transform_ad1da5a5e2ebe8739901035f9859ab493} 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Transform\+::m\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+World-\/space position of the object. 
+
+\Hypertarget{class_transform_a478b68aed5a7e0e06104cf544581ac67}\index{Transform@{Transform}!m\_rotation@{m\_rotation}}
+\index{m\_rotation@{m\_rotation}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{m\_rotation}{m\_rotation}}
+{\footnotesize\ttfamily \label{class_transform_a478b68aed5a7e0e06104cf544581ac67} 
+\mbox{\hyperlink{math_8hpp_a31b5f0316283c827738f8221f34a506a}{Quaternion}} Transform\+::m\+\_\+rotation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Orientation represented as a unit quaternion. 
+
+\Hypertarget{class_transform_a9787eec78997d62f498cf262de3daf7c}\index{Transform@{Transform}!m\_scale@{m\_scale}}
+\index{m\_scale@{m\_scale}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{m\_scale}{m\_scale}}
+{\footnotesize\ttfamily \label{class_transform_a9787eec78997d62f498cf262de3daf7c} 
+\mbox{\hyperlink{math_8hpp_a886bc4f464967d76d2041a2b811d6d01}{Vector3f}} Transform\+::m\+\_\+scale\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Local scale vector. 
+
+\Hypertarget{class_transform_a2314334c615e95ecceddb19e7d28d8e6}\index{Transform@{Transform}!mModelMatrix@{mModelMatrix}}
+\index{mModelMatrix@{mModelMatrix}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{mModelMatrix}{mModelMatrix}}
+{\footnotesize\ttfamily \label{class_transform_a2314334c615e95ecceddb19e7d28d8e6} 
+\mbox{\hyperlink{math_8hpp_aaf75f1df8cd01073878d25135e985f06}{Matrix4f}} Transform\+::m\+Model\+Matrix\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Cached 4x4 model matrix used for rendering and physics. 
+
+\Hypertarget{class_transform_afd2999b19640c1497ae4244f1e256cd8}\index{Transform@{Transform}!yAxisUp@{yAxisUp}}
+\index{yAxisUp@{yAxisUp}!Transform@{Transform}}
+\doxysubsubsection{\texorpdfstring{yAxisUp}{yAxisUp}}
+{\footnotesize\ttfamily \label{class_transform_afd2999b19640c1497ae4244f1e256cd8} 
+bool Transform\+::y\+Axis\+Up\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag indicating whether Y (true) or Z (false) is the up axis. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Transform/\mbox{\hyperlink{transform_8hpp}{transform.\+hpp}}\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Transform/\mbox{\hyperlink{transform_8cpp}{transform.\+cpp}}\end{DoxyCompactItemize}

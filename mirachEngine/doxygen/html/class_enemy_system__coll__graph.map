@@ -1,0 +1,5 @@
+<map id="EnemySystem" name="EnemySystem">
+<area shape="rect" id="Node000001" title="System class responsible for updating all Enemy entities." alt="" coords="40,488,166,600"/>
+<area shape="rect" id="Node000002" href="$class_entity_manager.html" title="Manages entity creation, destruction, and component access in the ECS system." alt="" coords="5,5,201,416"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,416,106,471,101,471,101,416"/>
+</map>

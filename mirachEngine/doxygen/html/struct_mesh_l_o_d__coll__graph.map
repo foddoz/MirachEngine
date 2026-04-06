@@ -1,0 +1,5 @@
+<map id="MeshLOD" name="MeshLOD">
+<area shape="rect" id="Node000001" title="Represents a single Level of Detail (LOD) variant of a mesh." alt="" coords="5,232,96,365"/>
+<area shape="rect" id="Node000002" href="$struct_a_a_b_b.html" title="Represents an axis&#45;aligned bounding box." alt="" coords="5,5,96,160"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="54,160,54,215,48,215,48,160"/>
+</map>

@@ -1,0 +1,883 @@
+\doxysection{Mesh\+Terrain Class Reference}
+\hypertarget{class_mesh_terrain}{}\label{class_mesh_terrain}\index{MeshTerrain@{MeshTerrain}}
+
+
+Terrain mesh class using heightmap generation.  
+
+
+
+
+{\ttfamily \#include $<$mesh\+Terrain.\+hpp$>$}
+
+
+
+Inheritance diagram for Mesh\+Terrain\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_mesh_terrain__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Mesh\+Terrain\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_mesh_terrain__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_mesh_terrain_1_1_terrain_point}{Terrain\+Point}}
+\begin{DoxyCompactList}\small\item\em Structure representing a vertex on the terrain mesh. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_mesh_terrain_1_1_vertex}{Vertex}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mesh_terrain_a75adb1babf83a1f6812d789d55f2b3ad}{Mesh\+Terrain}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an empty \doxylink{class_mesh_terrain}{Mesh\+Terrain} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_terrain_a8b774b6e68bb4e4e72e0690daeb5bf7f}{Generate\+CPUData}} (int terrain\+Size, int iterations, float min\+Height, float max\+Height, float filter, float texture\+Scale, const std\+::vector$<$ std\+::string $>$ \&texture\+File\+Names, bool randomise=true)
+\begin{DoxyCompactList}\small\item\em Generates the heightmap and vertex data for terrain mesh. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_terrain_a8f4dd324238753e462a2e9c9ca260c40}{Create\+Fault\+Formation}} (int iterations, float min\+Height, float max\+Height, float filter, int terrain\+Size, bool randomise)
+\begin{DoxyCompactList}\small\item\em Internal fault formation algorithm with smoothing filter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_terrain_a7f27655ea001536d577eefcaff6421e6}{Upload\+To\+GPU}} () override
+\begin{DoxyCompactList}\small\item\em Uploads generated mesh data and textures to the GPU. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_mesh_renderer}{Mesh\+Renderer}} \mbox{\hyperlink{class_mesh_terrain_a02d8c1492362365710a818b9a4674774}{To\+Renderer}} () override
+\begin{DoxyCompactList}\small\item\em Converts the terrain to a renderable mesh component. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_mesh_l_o_d}{Mesh\+LOD}} \mbox{\hyperlink{class_mesh_terrain_a7cd9ecf88516b6716cb76b804e8bd61b}{Create\+LOD}} (int step\+Size)
+\item 
+float \mbox{\hyperlink{class_mesh_terrain_a82c9aa1166f4c0cf04b6ca44314714b9}{Get\+Height}} (int x, int z) const
+\begin{DoxyCompactList}\small\item\em Gets the height at the given integer terrain grid coordinates. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_mesh_terrain_a58ce82371ad74d5e293bf5cfc323ff7a}{Get\+World\+Height}} (float x, float z) const
+\item 
+float \mbox{\hyperlink{class_mesh_terrain_a96e1532cccbcd9e7b98c503a4285dd67}{Get\+Height\+Interpolated}} (float x, float z) const
+\begin{DoxyCompactList}\small\item\em Gets bilinearly interpolated height from floating point coordinates. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mesh_terrain_acfd2d102cd46b6f4fb58a554ea052307}{Get\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Gets terrain grid size. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mesh_terrain_a8a0737444822c558d57ab87b93e8a105}{Get\+Width}} () const
+\begin{DoxyCompactList}\small\item\em Gets the width (x-\/size) of the terrain. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mesh_terrain_af48b8544ff00195bfcfd44ba79ebf61b}{Get\+Depth}} () const
+\begin{DoxyCompactList}\small\item\em Gets the depth (z-\/size) of the terrain. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_mesh_terrain_ab9a45762007d0ec096308beadce636cc}{Get\+World\+Width}} () const
+\item 
+float \mbox{\hyperlink{class_mesh_terrain_a5c517ebeb1e89af3418d0ea07aea60b9}{Get\+World\+Depth}} () const
+\item 
+int \mbox{\hyperlink{class_mesh_terrain_abd5e104a91a9189660cf6c0bae91bc3e}{Get\+Min\+Height}} () const
+\item 
+int \mbox{\hyperlink{class_mesh_terrain_aa66b8e81f2f557bc3ea3018fcdc98224}{Get\+Max\+Height}} () const
+\item 
+const std\+::vector$<$ float $>$ \& \mbox{\hyperlink{class_mesh_terrain_a015f8408a92a2b612e5e80ab411ade4f}{Get\+Height\+Map}} () const
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{struct_mesh_terrain_1_1_vertex}{Mesh\+Terrain\+::\+Vertex}} $>$ \& \mbox{\hyperlink{class_mesh_terrain_ac4929e35dca3bc094e2a74e173a13fd9}{Get\+Vertex\+Data}} () const
+\item 
+const std\+::vector$<$ unsigned int $>$ \& \mbox{\hyperlink{class_mesh_terrain_ae521c4a9fd6c4e4284e4e6659ba63c22}{Get\+Index\+Data}} () const
+\item 
+void \mbox{\hyperlink{class_mesh_terrain_ae286a5db306f207d66c035e713737bda}{Clear\+CPUData}} ()
+\item 
+float \mbox{\hyperlink{class_mesh_terrain_aa844c7e003d27f8cf3c8f6c2a8ca0850}{Get\+Texture\+Scale}} () const
+\begin{DoxyCompactList}\small\item\em Gets the texture UV scale factor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_terrain_abab5aa07a8ce7336f6f07541105f586d}{Delete}} () override
+\begin{DoxyCompactList}\small\item\em Deletes GPU resources associated with the terrain. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_mesh3_d}{Mesh3D}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mesh3_d_a8cdefca0bf7171afd91f2a1a88e05a7e}{Mesh3D}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor initializes Open\+GL buffer handles and transforms. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mesh3_d_a18dc545efcaa749ea7649b9bcaa91ce1}{Mesh3D}} (const \mbox{\hyperlink{class_mesh3_d}{Mesh3D}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor for \doxylink{class_mesh3_d}{Mesh3D}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh3_d_a478bda9c8ff4adb50c56c26ef50af8d2}{Set\+Pipeline}} (unsigned int pipeline)
+\begin{DoxyCompactList}\small\item\em Assigns a graphics pipeline (shader program) to this mesh. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_ad2952df09ac54e7d5fafbcf87ae7c487}{get\+Pipeline}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the currently assigned graphics pipeline. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_mesh_terrain_a6bce579145dde6b4cde1c5bd622aa797}{Create\+Triangle\+List}} (int width, int depth)
+\begin{DoxyCompactList}\small\item\em Generates vertices, normals, and triangle indices from heightmap. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_terrain_a8c27c53059bd5313ee5300d266abbb72}{Set\+Height}} (int x, int z, float value)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_mesh_terrain_a27aedd685afae6ef28aabfa19582b382}{m\+\_\+\+Texture\+File\+Names}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_texture}{Texture} file names for terrain layers. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mesh_terrain_a23ef9e1fc7bfc32d4c37dd4f51c72a1f}{m\+\_\+width}}
+\begin{DoxyCompactList}\small\item\em Final mesh width after generation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mesh_terrain_acf8bfd80c73a75bef8be73324aa461f5}{m\+\_\+depth}}
+\begin{DoxyCompactList}\small\item\em Final mesh depth after generation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mesh_terrain_a4836835bd940ddd7dd85da4aa0356289}{m\+\_\+min\+Height}}
+\begin{DoxyCompactList}\small\item\em Cached minimum height value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mesh_terrain_ab0f63f943d2d49adcab77a4ea1bce825}{m\+\_\+max\+Height}}
+\begin{DoxyCompactList}\small\item\em Cached maximum height value. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_mesh_terrain_a55587cf1d02370ea42b53795e54cd3be}{m\+\_\+world\+SizeX}}
+\item 
+float \mbox{\hyperlink{class_mesh_terrain_abc36ce97d42d6b763b9f3b422e2ef3a3}{m\+\_\+world\+SizeZ}}
+\item 
+int \mbox{\hyperlink{class_mesh_terrain_adac93d5eca26bfa2eba3f97231774c2b}{m\+\_\+terrain\+Size}}
+\begin{DoxyCompactList}\small\item\em Size of the terrain (width = depth). \end{DoxyCompactList}\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{class_mesh_terrain_a96d370d349a7bc6754437d16e4bc6df7}{m\+\_\+height\+Map}}
+\begin{DoxyCompactList}\small\item\em 2D heightmap values. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_mesh_terrain_adf5e6fd6f092364a4bb64f1fff35fa03}{m\+\_\+texture\+Scale}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_texture}{Texture} scale used for UV mapping. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_mesh3_d}{Mesh3D}}}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a9bb74668772fa08c0099f3aa0d242215}{m\+\_\+\+VAO}}
+\begin{DoxyCompactList}\small\item\em Open\+GL Vertex Array Object handle. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a064dc03404641d9b41dcc58f3244b5ea}{m\+\_\+\+Index\+Count}}
+\begin{DoxyCompactList}\small\item\em Number of indices used for drawing (gl\+Draw\+Elements or gl\+Draw\+Arrays). \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a0a78f966ef1aaf868c32523200ffd7b5}{m\+\_\+\+VBO}}
+\begin{DoxyCompactList}\small\item\em Vertex Buffer Object handle. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a79760be3f47e0cd2738e5932e2ce6a70}{m\+\_\+\+IBO}}
+\begin{DoxyCompactList}\small\item\em Index Buffer Object handle. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_texture}{Texture}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_mesh3_d_a878c07f3eab3dcc47195e3bc0b74fa30}{m\+\_\+\+Textures}}
+\begin{DoxyCompactList}\small\item\em Collection of textures associated with this mesh. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_mesh3_d_a6232eb241c460e30d607b59862d0e8f1}{m\+\_\+\+Pipeline}}
+\begin{DoxyCompactList}\small\item\em Open\+GL shader program ID assigned to this mesh. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_a_a_b_b}{AABB}} \mbox{\hyperlink{class_mesh3_d_aeaaf348709784591a9608a9e779e3cd3}{m\+\_\+\+AABB}}
+\begin{DoxyCompactList}\small\item\em Axis-\/aligned bounding box in local (object) space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_mesh_terrain_af107e4f6795dde2123aa006638d0b779}{Init\+Indices}} (std\+::vector$<$ unsigned int $>$ \&indices, int width, int depth)
+\begin{DoxyCompactList}\small\item\em Fills index buffer with triangle strip indices. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_terrain_a9991fb5a1a6635d5b5116c553caf1007}{Populate\+Buffers}} () override
+\begin{DoxyCompactList}\small\item\em Allocates Open\+GL VAO/\+VBO/\+IBO and sets vertex format. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_terrain_a6103508d3697247eba65cbda2b9d1782}{Init\+Vertices}} (std\+::vector$<$ \mbox{\hyperlink{struct_mesh_terrain_1_1_vertex}{Vertex}} $>$ \&Vertices)
+\begin{DoxyCompactList}\small\item\em Initializes vertex positions and texture coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_terrain_ac04c41367589da2a17ffa10ee6490ebf}{Calc\+Normals}} (std\+::vector$<$ \mbox{\hyperlink{struct_mesh_terrain_1_1_vertex}{Vertex}} $>$ \&Vertices, int width, int depth)
+\begin{DoxyCompactList}\small\item\em Computes per-\/vertex normals by averaging surrounding triangles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_terrain_a3b250d6762ed4984c36561fb8b986088}{Gen\+Random\+Terrain\+Points}} (\mbox{\hyperlink{struct_mesh_terrain_1_1_terrain_point}{Terrain\+Point}} \&p1, \mbox{\hyperlink{struct_mesh_terrain_1_1_terrain_point}{Terrain\+Point}} \&p2)
+\begin{DoxyCompactList}\small\item\em Generates two random points for a fault line. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_terrain_a766c22ce021c46dcd0fa93726717e13c}{Apply\+FIRFilter}} (float filter)
+\begin{DoxyCompactList}\small\item\em Applies FIR filter in 4 directions for terrain smoothing. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_mesh_terrain_ad1253af0199061cbd5f288e34b4deec5}{FIRFilter\+Single\+Point}} (int x, int z, float prev\+Val, float filter)
+\begin{DoxyCompactList}\small\item\em Applies FIR filtering on a single height value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mesh_terrain_a0ccd49d3d667b512eed2f4a65ed67e64}{Normalise\+Height\+Map}} (float min\+Height, float max\+Height)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_mesh_terrain_1_1_vertex}{Vertex}} $>$ \mbox{\hyperlink{class_mesh_terrain_a31d43862cd5f53a6f5c20a2904cd6dc9}{m\+\_\+\+CPU\+\_\+\+Vertex\+Data}}
+\begin{DoxyCompactList}\small\item\em Vertices generated on CPU. \end{DoxyCompactList}\item 
+std\+::vector$<$ unsigned int $>$ \mbox{\hyperlink{class_mesh_terrain_aecac0995214975b237ac268924a17e46}{m\+\_\+\+CPU\+\_\+\+Index\+Data}}
+\begin{DoxyCompactList}\small\item\em Indices for terrain triangles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Terrain mesh class using heightmap generation. 
+
+Generates and manages terrain data using a fault formation algorithm and uploads the mesh to GPU. 
+
+\label{doc-constructors}
+\Hypertarget{class_mesh_terrain_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_mesh_terrain_a75adb1babf83a1f6812d789d55f2b3ad}\index{MeshTerrain@{MeshTerrain}!MeshTerrain@{MeshTerrain}}
+\index{MeshTerrain@{MeshTerrain}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{MeshTerrain()}{MeshTerrain()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_a75adb1babf83a1f6812d789d55f2b3ad} 
+Mesh\+Terrain\+::\+Mesh\+Terrain (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructs an empty \doxylink{class_mesh_terrain}{Mesh\+Terrain} object. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_mesh_terrain_a75adb1babf83a1f6812d789d55f2b3ad_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_a75adb1babf83a1f6812d789d55f2b3ad_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{class_mesh_terrain_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mesh_terrain_a766c22ce021c46dcd0fa93726717e13c}\index{MeshTerrain@{MeshTerrain}!ApplyFIRFilter@{ApplyFIRFilter}}
+\index{ApplyFIRFilter@{ApplyFIRFilter}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{ApplyFIRFilter()}{ApplyFIRFilter()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_a766c22ce021c46dcd0fa93726717e13c} 
+void Mesh\+Terrain\+::\+Apply\+FIRFilter (\begin{DoxyParamCaption}\item[{float}]{filter}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Applies FIR filter in 4 directions for terrain smoothing. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_a766c22ce021c46dcd0fa93726717e13c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_a766c22ce021c46dcd0fa93726717e13c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_terrain_ac04c41367589da2a17ffa10ee6490ebf}\index{MeshTerrain@{MeshTerrain}!CalcNormals@{CalcNormals}}
+\index{CalcNormals@{CalcNormals}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{CalcNormals()}{CalcNormals()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_ac04c41367589da2a17ffa10ee6490ebf} 
+void Mesh\+Terrain\+::\+Calc\+Normals (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{struct_mesh_terrain_1_1_vertex}{Vertex}} $>$ \&}]{Vertices}{, }\item[{int}]{width}{, }\item[{int}]{depth}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Computes per-\/vertex normals by averaging surrounding triangles. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{class_mesh_terrain_ac04c41367589da2a17ffa10ee6490ebf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_ac04c41367589da2a17ffa10ee6490ebf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_terrain_ae286a5db306f207d66c035e713737bda}\index{MeshTerrain@{MeshTerrain}!ClearCPUData@{ClearCPUData}}
+\index{ClearCPUData@{ClearCPUData}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{ClearCPUData()}{ClearCPUData()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_ae286a5db306f207d66c035e713737bda} 
+void Mesh\+Terrain\+::\+Clear\+CPUData (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_mesh_terrain_a8f4dd324238753e462a2e9c9ca260c40}\index{MeshTerrain@{MeshTerrain}!CreateFaultFormation@{CreateFaultFormation}}
+\index{CreateFaultFormation@{CreateFaultFormation}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{CreateFaultFormation()}{CreateFaultFormation()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_a8f4dd324238753e462a2e9c9ca260c40} 
+void Mesh\+Terrain\+::\+Create\+Fault\+Formation (\begin{DoxyParamCaption}\item[{int}]{iterations}{, }\item[{float}]{min\+Height}{, }\item[{float}]{max\+Height}{, }\item[{float}]{filter}{, }\item[{int}]{terrain\+Size}{, }\item[{bool}]{randomise}{}\end{DoxyParamCaption})}
+
+
+
+Internal fault formation algorithm with smoothing filter. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_a8f4dd324238753e462a2e9c9ca260c40_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_a8f4dd324238753e462a2e9c9ca260c40_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_terrain_a7cd9ecf88516b6716cb76b804e8bd61b}\index{MeshTerrain@{MeshTerrain}!CreateLOD@{CreateLOD}}
+\index{CreateLOD@{CreateLOD}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{CreateLOD()}{CreateLOD()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_a7cd9ecf88516b6716cb76b804e8bd61b} 
+\mbox{\hyperlink{struct_mesh_l_o_d}{Mesh\+LOD}} Mesh\+Terrain\+::\+Create\+LOD (\begin{DoxyParamCaption}\item[{int}]{step\+Size}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_a7cd9ecf88516b6716cb76b804e8bd61b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_a7cd9ecf88516b6716cb76b804e8bd61b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_terrain_a6bce579145dde6b4cde1c5bd622aa797}\index{MeshTerrain@{MeshTerrain}!CreateTriangleList@{CreateTriangleList}}
+\index{CreateTriangleList@{CreateTriangleList}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{CreateTriangleList()}{CreateTriangleList()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_a6bce579145dde6b4cde1c5bd622aa797} 
+void Mesh\+Terrain\+::\+Create\+Triangle\+List (\begin{DoxyParamCaption}\item[{int}]{width}{, }\item[{int}]{depth}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Generates vertices, normals, and triangle indices from heightmap. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_a6bce579145dde6b4cde1c5bd622aa797_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_a6bce579145dde6b4cde1c5bd622aa797_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_terrain_abab5aa07a8ce7336f6f07541105f586d}\index{MeshTerrain@{MeshTerrain}!Delete@{Delete}}
+\index{Delete@{Delete}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_abab5aa07a8ce7336f6f07541105f586d} 
+void Mesh\+Terrain\+::\+Delete (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Deletes GPU resources associated with the terrain. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_mesh3_d_a08ad190035c6d8e8362f009a09e6bc17}{Mesh3D}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_abab5aa07a8ce7336f6f07541105f586d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_terrain_ad1253af0199061cbd5f288e34b4deec5}\index{MeshTerrain@{MeshTerrain}!FIRFilterSinglePoint@{FIRFilterSinglePoint}}
+\index{FIRFilterSinglePoint@{FIRFilterSinglePoint}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{FIRFilterSinglePoint()}{FIRFilterSinglePoint()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_ad1253af0199061cbd5f288e34b4deec5} 
+float Mesh\+Terrain\+::\+FIRFilter\+Single\+Point (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{z}{, }\item[{float}]{prev\+Val}{, }\item[{float}]{filter}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Applies FIR filtering on a single height value. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_ad1253af0199061cbd5f288e34b4deec5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_ad1253af0199061cbd5f288e34b4deec5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_terrain_a8b774b6e68bb4e4e72e0690daeb5bf7f}\index{MeshTerrain@{MeshTerrain}!GenerateCPUData@{GenerateCPUData}}
+\index{GenerateCPUData@{GenerateCPUData}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{GenerateCPUData()}{GenerateCPUData()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_a8b774b6e68bb4e4e72e0690daeb5bf7f} 
+void Mesh\+Terrain\+::\+Generate\+CPUData (\begin{DoxyParamCaption}\item[{int}]{terrain\+Size}{, }\item[{int}]{iterations}{, }\item[{float}]{min\+Height}{, }\item[{float}]{max\+Height}{, }\item[{float}]{filter}{, }\item[{float}]{texture\+Scale}{, }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{texture\+File\+Names}{, }\item[{bool}]{randomise}{ = {\ttfamily true}}\end{DoxyParamCaption})}
+
+
+
+Generates the heightmap and vertex data for terrain mesh. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em terrain\+Size} & Width and depth of the terrain grid. \\
+\hline
+{\em iterations} & Number of fault iterations. \\
+\hline
+{\em min\+Height} & Minimum height value. \\
+\hline
+{\em max\+Height} & Maximum height value. \\
+\hline
+{\em filter} & FIR filter strength for smoothing. \\
+\hline
+{\em texture\+Scale} & Multiplier for texture UV mapping. \\
+\hline
+{\em texture\+File\+Names} & List of texture file paths for the terrain layers. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_a8b774b6e68bb4e4e72e0690daeb5bf7f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_terrain_a3b250d6762ed4984c36561fb8b986088}\index{MeshTerrain@{MeshTerrain}!GenRandomTerrainPoints@{GenRandomTerrainPoints}}
+\index{GenRandomTerrainPoints@{GenRandomTerrainPoints}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{GenRandomTerrainPoints()}{GenRandomTerrainPoints()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_a3b250d6762ed4984c36561fb8b986088} 
+void Mesh\+Terrain\+::\+Gen\+Random\+Terrain\+Points (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_mesh_terrain_1_1_terrain_point}{Terrain\+Point}} \&}]{p1}{, }\item[{\mbox{\hyperlink{struct_mesh_terrain_1_1_terrain_point}{Terrain\+Point}} \&}]{p2}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Generates two random points for a fault line. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_a3b250d6762ed4984c36561fb8b986088_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_a3b250d6762ed4984c36561fb8b986088_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_terrain_af48b8544ff00195bfcfd44ba79ebf61b}\index{MeshTerrain@{MeshTerrain}!GetDepth@{GetDepth}}
+\index{GetDepth@{GetDepth}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{GetDepth()}{GetDepth()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_af48b8544ff00195bfcfd44ba79ebf61b} 
+int Mesh\+Terrain\+::\+Get\+Depth (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the depth (z-\/size) of the terrain. 
+
+\Hypertarget{class_mesh_terrain_a82c9aa1166f4c0cf04b6ca44314714b9}\index{MeshTerrain@{MeshTerrain}!GetHeight@{GetHeight}}
+\index{GetHeight@{GetHeight}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{GetHeight()}{GetHeight()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_a82c9aa1166f4c0cf04b6ca44314714b9} 
+float Mesh\+Terrain\+::\+Get\+Height (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{z}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the height at the given integer terrain grid coordinates. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{class_mesh_terrain_a82c9aa1166f4c0cf04b6ca44314714b9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_a82c9aa1166f4c0cf04b6ca44314714b9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_terrain_a96e1532cccbcd9e7b98c503a4285dd67}\index{MeshTerrain@{MeshTerrain}!GetHeightInterpolated@{GetHeightInterpolated}}
+\index{GetHeightInterpolated@{GetHeightInterpolated}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{GetHeightInterpolated()}{GetHeightInterpolated()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_a96e1532cccbcd9e7b98c503a4285dd67} 
+float Mesh\+Terrain\+::\+Get\+Height\+Interpolated (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{z}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets bilinearly interpolated height from floating point coordinates. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_a96e1532cccbcd9e7b98c503a4285dd67_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_a96e1532cccbcd9e7b98c503a4285dd67_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_terrain_a015f8408a92a2b612e5e80ab411ade4f}\index{MeshTerrain@{MeshTerrain}!GetHeightMap@{GetHeightMap}}
+\index{GetHeightMap@{GetHeightMap}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{GetHeightMap()}{GetHeightMap()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_a015f8408a92a2b612e5e80ab411ade4f} 
+const std\+::vector$<$ float $>$ \& Mesh\+Terrain\+::\+Get\+Height\+Map (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_mesh_terrain_ae521c4a9fd6c4e4284e4e6659ba63c22}\index{MeshTerrain@{MeshTerrain}!GetIndexData@{GetIndexData}}
+\index{GetIndexData@{GetIndexData}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{GetIndexData()}{GetIndexData()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_ae521c4a9fd6c4e4284e4e6659ba63c22} 
+const std\+::vector$<$ unsigned int $>$ \& Mesh\+Terrain\+::\+Get\+Index\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_mesh_terrain_aa66b8e81f2f557bc3ea3018fcdc98224}\index{MeshTerrain@{MeshTerrain}!GetMaxHeight@{GetMaxHeight}}
+\index{GetMaxHeight@{GetMaxHeight}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{GetMaxHeight()}{GetMaxHeight()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_aa66b8e81f2f557bc3ea3018fcdc98224} 
+int Mesh\+Terrain\+::\+Get\+Max\+Height (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_mesh_terrain_abd5e104a91a9189660cf6c0bae91bc3e}\index{MeshTerrain@{MeshTerrain}!GetMinHeight@{GetMinHeight}}
+\index{GetMinHeight@{GetMinHeight}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{GetMinHeight()}{GetMinHeight()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_abd5e104a91a9189660cf6c0bae91bc3e} 
+int Mesh\+Terrain\+::\+Get\+Min\+Height (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_mesh_terrain_acfd2d102cd46b6f4fb58a554ea052307}\index{MeshTerrain@{MeshTerrain}!GetSize@{GetSize}}
+\index{GetSize@{GetSize}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{GetSize()}{GetSize()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_acfd2d102cd46b6f4fb58a554ea052307} 
+int Mesh\+Terrain\+::\+Get\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets terrain grid size. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_acfd2d102cd46b6f4fb58a554ea052307_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_terrain_aa844c7e003d27f8cf3c8f6c2a8ca0850}\index{MeshTerrain@{MeshTerrain}!GetTextureScale@{GetTextureScale}}
+\index{GetTextureScale@{GetTextureScale}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{GetTextureScale()}{GetTextureScale()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_aa844c7e003d27f8cf3c8f6c2a8ca0850} 
+float Mesh\+Terrain\+::\+Get\+Texture\+Scale (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the texture UV scale factor. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_aa844c7e003d27f8cf3c8f6c2a8ca0850_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_terrain_ac4929e35dca3bc094e2a74e173a13fd9}\index{MeshTerrain@{MeshTerrain}!GetVertexData@{GetVertexData}}
+\index{GetVertexData@{GetVertexData}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{GetVertexData()}{GetVertexData()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_ac4929e35dca3bc094e2a74e173a13fd9} 
+const std\+::vector$<$ \mbox{\hyperlink{struct_mesh_terrain_1_1_vertex}{Mesh\+Terrain\+::\+Vertex}} $>$ \& Mesh\+Terrain\+::\+Get\+Vertex\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_mesh_terrain_a8a0737444822c558d57ab87b93e8a105}\index{MeshTerrain@{MeshTerrain}!GetWidth@{GetWidth}}
+\index{GetWidth@{GetWidth}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{GetWidth()}{GetWidth()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_a8a0737444822c558d57ab87b93e8a105} 
+int Mesh\+Terrain\+::\+Get\+Width (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the width (x-\/size) of the terrain. 
+
+\Hypertarget{class_mesh_terrain_a5c517ebeb1e89af3418d0ea07aea60b9}\index{MeshTerrain@{MeshTerrain}!GetWorldDepth@{GetWorldDepth}}
+\index{GetWorldDepth@{GetWorldDepth}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{GetWorldDepth()}{GetWorldDepth()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_a5c517ebeb1e89af3418d0ea07aea60b9} 
+float Mesh\+Terrain\+::\+Get\+World\+Depth (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_mesh_terrain_a58ce82371ad74d5e293bf5cfc323ff7a}\index{MeshTerrain@{MeshTerrain}!GetWorldHeight@{GetWorldHeight}}
+\index{GetWorldHeight@{GetWorldHeight}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{GetWorldHeight()}{GetWorldHeight()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_a58ce82371ad74d5e293bf5cfc323ff7a} 
+float Mesh\+Terrain\+::\+Get\+World\+Height (\begin{DoxyParamCaption}\item[{float}]{x}{, }\item[{float}]{z}{}\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_a58ce82371ad74d5e293bf5cfc323ff7a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_terrain_ab9a45762007d0ec096308beadce636cc}\index{MeshTerrain@{MeshTerrain}!GetWorldWidth@{GetWorldWidth}}
+\index{GetWorldWidth@{GetWorldWidth}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{GetWorldWidth()}{GetWorldWidth()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_ab9a45762007d0ec096308beadce636cc} 
+float Mesh\+Terrain\+::\+Get\+World\+Width (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_mesh_terrain_af107e4f6795dde2123aa006638d0b779}\index{MeshTerrain@{MeshTerrain}!InitIndices@{InitIndices}}
+\index{InitIndices@{InitIndices}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{InitIndices()}{InitIndices()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_af107e4f6795dde2123aa006638d0b779} 
+void Mesh\+Terrain\+::\+Init\+Indices (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned int $>$ \&}]{indices}{, }\item[{int}]{width}{, }\item[{int}]{depth}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fills index buffer with triangle strip indices. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_af107e4f6795dde2123aa006638d0b779_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_terrain_a6103508d3697247eba65cbda2b9d1782}\index{MeshTerrain@{MeshTerrain}!InitVertices@{InitVertices}}
+\index{InitVertices@{InitVertices}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{InitVertices()}{InitVertices()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_a6103508d3697247eba65cbda2b9d1782} 
+void Mesh\+Terrain\+::\+Init\+Vertices (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{struct_mesh_terrain_1_1_vertex}{Vertex}} $>$ \&}]{Vertices}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes vertex positions and texture coordinates. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_a6103508d3697247eba65cbda2b9d1782_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_terrain_a0ccd49d3d667b512eed2f4a65ed67e64}\index{MeshTerrain@{MeshTerrain}!NormaliseHeightMap@{NormaliseHeightMap}}
+\index{NormaliseHeightMap@{NormaliseHeightMap}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{NormaliseHeightMap()}{NormaliseHeightMap()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_a0ccd49d3d667b512eed2f4a65ed67e64} 
+void Mesh\+Terrain\+::\+Normalise\+Height\+Map (\begin{DoxyParamCaption}\item[{float}]{min\+Height}{, }\item[{float}]{max\+Height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_a0ccd49d3d667b512eed2f4a65ed67e64_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_terrain_a9991fb5a1a6635d5b5116c553caf1007}\index{MeshTerrain@{MeshTerrain}!PopulateBuffers@{PopulateBuffers}}
+\index{PopulateBuffers@{PopulateBuffers}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{PopulateBuffers()}{PopulateBuffers()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_a9991fb5a1a6635d5b5116c553caf1007} 
+void Mesh\+Terrain\+::\+Populate\+Buffers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Allocates Open\+GL VAO/\+VBO/\+IBO and sets vertex format. 
+
+
+
+Implements \mbox{\hyperlink{class_mesh3_d_a91aa0f790bb9f1acc3d270033d11e6ef}{Mesh3D}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_a9991fb5a1a6635d5b5116c553caf1007_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_a9991fb5a1a6635d5b5116c553caf1007_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_terrain_a8c27c53059bd5313ee5300d266abbb72}\index{MeshTerrain@{MeshTerrain}!SetHeight@{SetHeight}}
+\index{SetHeight@{SetHeight}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{SetHeight()}{SetHeight()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_a8c27c53059bd5313ee5300d266abbb72} 
+void Mesh\+Terrain\+::\+Set\+Height (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{z}{, }\item[{float}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_a8c27c53059bd5313ee5300d266abbb72_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_terrain_a02d8c1492362365710a818b9a4674774}\index{MeshTerrain@{MeshTerrain}!ToRenderer@{ToRenderer}}
+\index{ToRenderer@{ToRenderer}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{ToRenderer()}{ToRenderer()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_a02d8c1492362365710a818b9a4674774} 
+\mbox{\hyperlink{struct_mesh_renderer}{Mesh\+Renderer}} Mesh\+Terrain\+::\+To\+Renderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Converts the terrain to a renderable mesh component. 
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{struct_mesh_renderer}{Mesh\+Renderer} component for use in ECS rendering. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_mesh3_d_a0bfe53bc0b4d0e2a9804ffa119f7aec9}{Mesh3D}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_a02d8c1492362365710a818b9a4674774_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_mesh_terrain_a7f27655ea001536d577eefcaff6421e6}\index{MeshTerrain@{MeshTerrain}!UploadToGPU@{UploadToGPU}}
+\index{UploadToGPU@{UploadToGPU}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{UploadToGPU()}{UploadToGPU()}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_a7f27655ea001536d577eefcaff6421e6} 
+void Mesh\+Terrain\+::\+Upload\+To\+GPU (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Uploads generated mesh data and textures to the GPU. 
+
+
+
+Implements \mbox{\hyperlink{class_mesh3_d_aef879f5ea3d9dce661e23ed2cb5f2c9e}{Mesh3D}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_terrain_chunk_aa82cd547ca7e8dc428c80cd6a71257a3}{Terrain\+Chunk}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_mesh_terrain_a7f27655ea001536d577eefcaff6421e6_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_mesh_terrain_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_mesh_terrain_aecac0995214975b237ac268924a17e46}\index{MeshTerrain@{MeshTerrain}!m\_CPU\_IndexData@{m\_CPU\_IndexData}}
+\index{m\_CPU\_IndexData@{m\_CPU\_IndexData}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{m\_CPU\_IndexData}{m\_CPU\_IndexData}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_aecac0995214975b237ac268924a17e46} 
+std\+::vector$<$unsigned int$>$ Mesh\+Terrain\+::m\+\_\+\+CPU\+\_\+\+Index\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Indices for terrain triangles. 
+
+\Hypertarget{class_mesh_terrain_a31d43862cd5f53a6f5c20a2904cd6dc9}\index{MeshTerrain@{MeshTerrain}!m\_CPU\_VertexData@{m\_CPU\_VertexData}}
+\index{m\_CPU\_VertexData@{m\_CPU\_VertexData}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{m\_CPU\_VertexData}{m\_CPU\_VertexData}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_a31d43862cd5f53a6f5c20a2904cd6dc9} 
+std\+::vector$<$\mbox{\hyperlink{struct_mesh_terrain_1_1_vertex}{Vertex}}$>$ Mesh\+Terrain\+::m\+\_\+\+CPU\+\_\+\+Vertex\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vertices generated on CPU. 
+
+\Hypertarget{class_mesh_terrain_acf8bfd80c73a75bef8be73324aa461f5}\index{MeshTerrain@{MeshTerrain}!m\_depth@{m\_depth}}
+\index{m\_depth@{m\_depth}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{m\_depth}{m\_depth}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_acf8bfd80c73a75bef8be73324aa461f5} 
+int Mesh\+Terrain\+::m\+\_\+depth\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Final mesh depth after generation. 
+
+\Hypertarget{class_mesh_terrain_a96d370d349a7bc6754437d16e4bc6df7}\index{MeshTerrain@{MeshTerrain}!m\_heightMap@{m\_heightMap}}
+\index{m\_heightMap@{m\_heightMap}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{m\_heightMap}{m\_heightMap}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_a96d370d349a7bc6754437d16e4bc6df7} 
+std\+::vector$<$float$>$ Mesh\+Terrain\+::m\+\_\+height\+Map\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+2D heightmap values. 
+
+\Hypertarget{class_mesh_terrain_ab0f63f943d2d49adcab77a4ea1bce825}\index{MeshTerrain@{MeshTerrain}!m\_maxHeight@{m\_maxHeight}}
+\index{m\_maxHeight@{m\_maxHeight}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{m\_maxHeight}{m\_maxHeight}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_ab0f63f943d2d49adcab77a4ea1bce825} 
+int Mesh\+Terrain\+::m\+\_\+max\+Height\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Cached maximum height value. 
+
+\Hypertarget{class_mesh_terrain_a4836835bd940ddd7dd85da4aa0356289}\index{MeshTerrain@{MeshTerrain}!m\_minHeight@{m\_minHeight}}
+\index{m\_minHeight@{m\_minHeight}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{m\_minHeight}{m\_minHeight}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_a4836835bd940ddd7dd85da4aa0356289} 
+int Mesh\+Terrain\+::m\+\_\+min\+Height\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Cached minimum height value. 
+
+\Hypertarget{class_mesh_terrain_adac93d5eca26bfa2eba3f97231774c2b}\index{MeshTerrain@{MeshTerrain}!m\_terrainSize@{m\_terrainSize}}
+\index{m\_terrainSize@{m\_terrainSize}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{m\_terrainSize}{m\_terrainSize}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_adac93d5eca26bfa2eba3f97231774c2b} 
+int Mesh\+Terrain\+::m\+\_\+terrain\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Size of the terrain (width = depth). 
+
+\Hypertarget{class_mesh_terrain_a27aedd685afae6ef28aabfa19582b382}\index{MeshTerrain@{MeshTerrain}!m\_TextureFileNames@{m\_TextureFileNames}}
+\index{m\_TextureFileNames@{m\_TextureFileNames}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{m\_TextureFileNames}{m\_TextureFileNames}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_a27aedd685afae6ef28aabfa19582b382} 
+std\+::vector$<$std\+::string$>$ Mesh\+Terrain\+::m\+\_\+\+Texture\+File\+Names\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxylink{class_texture}{Texture} file names for terrain layers. 
+
+\Hypertarget{class_mesh_terrain_adf5e6fd6f092364a4bb64f1fff35fa03}\index{MeshTerrain@{MeshTerrain}!m\_textureScale@{m\_textureScale}}
+\index{m\_textureScale@{m\_textureScale}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{m\_textureScale}{m\_textureScale}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_adf5e6fd6f092364a4bb64f1fff35fa03} 
+float Mesh\+Terrain\+::m\+\_\+texture\+Scale\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxylink{class_texture}{Texture} scale used for UV mapping. 
+
+\Hypertarget{class_mesh_terrain_a23ef9e1fc7bfc32d4c37dd4f51c72a1f}\index{MeshTerrain@{MeshTerrain}!m\_width@{m\_width}}
+\index{m\_width@{m\_width}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{m\_width}{m\_width}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_a23ef9e1fc7bfc32d4c37dd4f51c72a1f} 
+int Mesh\+Terrain\+::m\+\_\+width\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Final mesh width after generation. 
+
+\Hypertarget{class_mesh_terrain_a55587cf1d02370ea42b53795e54cd3be}\index{MeshTerrain@{MeshTerrain}!m\_worldSizeX@{m\_worldSizeX}}
+\index{m\_worldSizeX@{m\_worldSizeX}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{m\_worldSizeX}{m\_worldSizeX}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_a55587cf1d02370ea42b53795e54cd3be} 
+float Mesh\+Terrain\+::m\+\_\+world\+SizeX\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_mesh_terrain_abc36ce97d42d6b763b9f3b422e2ef3a3}\index{MeshTerrain@{MeshTerrain}!m\_worldSizeZ@{m\_worldSizeZ}}
+\index{m\_worldSizeZ@{m\_worldSizeZ}!MeshTerrain@{MeshTerrain}}
+\doxysubsubsection{\texorpdfstring{m\_worldSizeZ}{m\_worldSizeZ}}
+{\footnotesize\ttfamily \label{class_mesh_terrain_abc36ce97d42d6b763b9f3b422e2ef3a3} 
+float Mesh\+Terrain\+::m\+\_\+world\+SizeZ\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Meshes/\mbox{\hyperlink{mesh_terrain_8hpp}{mesh\+Terrain.\+hpp}}\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Graphics/\+Meshes/\mbox{\hyperlink{mesh_terrain_8cpp}{mesh\+Terrain.\+cpp}}\end{DoxyCompactItemize}

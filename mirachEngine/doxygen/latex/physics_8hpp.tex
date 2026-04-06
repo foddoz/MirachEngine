@@ -1,0 +1,82 @@
+\doxysection{C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Physics/physics.hpp File Reference}
+\hypertarget{physics_8hpp}{}\label{physics_8hpp}\index{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Physics/physics.hpp@{C:/Users/user/Documents/GitHub/ICT397-\/Project/mirachEngine/src/Physics/physics.hpp}}
+{\ttfamily \#include "{}../\+Math/math.\+hpp"{}}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+Include dependency graph for physics.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{physics_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{physics_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_physics_1_1_collider}{Physics\+::\+Collider}}
+\begin{DoxyCompactList}\small\item\em Abstract interface for physics colliders. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_physics_1_1_rigid_body}{Physics\+::\+Rigid\+Body}}
+\begin{DoxyCompactList}\small\item\em Abstract interface for a physics rigid body. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_physics_1_1_ray}{Physics\+::\+Ray}}
+\begin{DoxyCompactList}\small\item\em Represents a ray used for raycasting. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_physics_1_1_raycast_callback}{Physics\+::\+Raycast\+Callback}}
+\begin{DoxyCompactList}\small\item\em Callback interface for raycasting results. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_physics_1_1_collision_callback}{Physics\+::\+Collision\+Callback}}
+\begin{DoxyCompactList}\small\item\em Callback interface for collision detection events. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_physics_1_1_world}{Physics\+::\+World}}
+\begin{DoxyCompactList}\small\item\em Abstract interface for a physics simulation world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_physics}{Physics}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2}{Body\+Type}} \{ \mbox{\hyperlink{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2afe6f99ef1ec99efbdc19a9786cf1facc}{STATIC}}
+, \mbox{\hyperlink{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2a0fcc90da4811c877ba9f9c12f7d60bc9}{DYNAMIC}}
+, \mbox{\hyperlink{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2a019b36cb8fbb31ba1f7c7b7595eb964d}{KINEMATIC}}
+ \}
+\begin{DoxyCompactList}\small\item\em Represents the type of physics body. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_physics_1_1_world}{World}} $>$ \mbox{\hyperlink{namespace_physics_ac971b78de8acf7f103a4a763775f55ac}{Physics\+::\+Create\+Physics\+World}} ()
+\begin{DoxyCompactList}\small\item\em Creates and returns a new physics world instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\label{doc-enum-members}
+\Hypertarget{physics_8hpp_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2}\index{physics.hpp@{physics.hpp}!BodyType@{BodyType}}
+\index{BodyType@{BodyType}!physics.hpp@{physics.hpp}}
+\doxysubsubsection{\texorpdfstring{BodyType}{BodyType}}
+{\footnotesize\ttfamily \label{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2} 
+enum class \mbox{\hyperlink{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2}{Body\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Represents the type of physics body. 
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATIC@{STATIC}!physics.hpp@{physics.hpp}}\index{physics.hpp@{physics.hpp}!STATIC@{STATIC}}}\Hypertarget{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2afe6f99ef1ec99efbdc19a9786cf1facc}\label{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2afe6f99ef1ec99efbdc19a9786cf1facc} 
+STATIC&Non-\/moving, used for environment or obstacles. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DYNAMIC@{DYNAMIC}!physics.hpp@{physics.hpp}}\index{physics.hpp@{physics.hpp}!DYNAMIC@{DYNAMIC}}}\Hypertarget{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2a0fcc90da4811c877ba9f9c12f7d60bc9}\label{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2a0fcc90da4811c877ba9f9c12f7d60bc9} 
+DYNAMIC&Affected by forces and gravity. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KINEMATIC@{KINEMATIC}!physics.hpp@{physics.hpp}}\index{physics.hpp@{physics.hpp}!KINEMATIC@{KINEMATIC}}}\Hypertarget{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2a019b36cb8fbb31ba1f7c7b7595eb964d}\label{physics_8hpp_acf0ce63e34327e5bc336f9fe3d2d47a2a019b36cb8fbb31ba1f7c7b7595eb964d} 
+KINEMATIC&Controlled by the user, not affected by forces. \\
+\hline
+
+\end{DoxyEnumFields}

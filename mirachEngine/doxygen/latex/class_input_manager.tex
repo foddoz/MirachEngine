@@ -1,0 +1,400 @@
+\doxysection{Input\+Manager Class Reference}
+\hypertarget{class_input_manager}{}\label{class_input_manager}\index{InputManager@{InputManager}}
+
+
+Manages input actions, key states, and mouse interactions at a high level.  
+
+
+
+
+{\ttfamily \#include $<$input\+\_\+manager.\+hpp$>$}
+
+
+
+Collaboration diagram for Input\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{class_input_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_input_manager_ab060dcf965ba79d0ee0a6e9e0b1c84f7}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Polls and updates internal input state for the current frame. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_input_manager_a40218040038639d8481b13b3efaba4cf}{Is\+Key\+Down}} (\mbox{\hyperlink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3ef}{Key\+Code}} key) const
+\begin{DoxyCompactList}\small\item\em Checks if a specific key is currently held down. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_input_manager_abcb55a393ff49334eba202f1b55870f3}{Is\+Action\+Pressed}} (\mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671}{Input\+Action}} action) const
+\begin{DoxyCompactList}\small\item\em Checks if an action\textquotesingle{}s mapped key is currently held down. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_input_manager_ac7dc2924bac1c09a309c094277bae59f}{Was\+Action\+Just\+Pressed}} (\mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671}{Input\+Action}} action) const
+\begin{DoxyCompactList}\small\item\em Checks if an action\textquotesingle{}s mapped key was just pressed this frame. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_input_manager_ad8b3cd8d67afa47ce1a65da26c967b5e}{Is\+Mouse\+Button\+Down}} (\mbox{\hyperlink{input_8hpp_ac1ec3647c005eacad401b06e7e18f711}{Mouse\+Button}} button) const
+\begin{DoxyCompactList}\small\item\em Checks if a mouse button is currently held down. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_input_manager_a7a54ee88ffb89a1956a7d6a080c964f5}{Was\+Mouse\+Button\+Just\+Pressed}} (\mbox{\hyperlink{input_8hpp_ac1ec3647c005eacad401b06e7e18f711}{Mouse\+Button}} button) const
+\begin{DoxyCompactList}\small\item\em Checks if a mouse button was just pressed this frame. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_input_manager_a71835e73c1d4a634d14be25d75db9bc0}{Get\+Mouse\+DeltaX}} () const
+\begin{DoxyCompactList}\small\item\em Gets the horizontal mouse movement delta from this frame. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_input_manager_adf18e1c5e2ef57e794ff7d5fb28071b5}{Get\+Mouse\+DeltaY}} () const
+\begin{DoxyCompactList}\small\item\em Gets the vertical mouse movement delta from this frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_input_manager_a723052f5702aaa5e048c7677d365d9d5}{Map\+Action}} (\mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671}{Input\+Action}} action, \mbox{\hyperlink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3ef}{Key\+Code}} key)
+\begin{DoxyCompactList}\small\item\em Maps a high-\/level \doxylink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671}{Input\+Action} to a specific \doxylink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3ef}{Key\+Code}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_input_manager_ae8bd7e7b8d9e57e2b599c04a939f111d}{m\+Key\+States}} = nullptr
+\begin{DoxyCompactList}\small\item\em Pointer to current frame\textquotesingle{}s key state array. \end{DoxyCompactList}\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{class_input_manager_a09dff32dc1a4eb04573f78ba7227a30a}{m\+Prev\+Key\+States}}
+\begin{DoxyCompactList}\small\item\em Copy of previous frame\textquotesingle{}s key states. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{class_input_manager_a30360681eb7bb30b4c254b634efab2ea}{m\+Mouse\+Button\+State}} = 0
+\begin{DoxyCompactList}\small\item\em Mouse buttons currently held. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{class_input_manager_a30a637adfe3bd77cba66737451597d3d}{m\+Prev\+Mouse\+Button\+State}} = 0
+\begin{DoxyCompactList}\small\item\em Mouse buttons from previous frame. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_input_manager_a94e19f34c94d8d82a2fd915d31a959f8}{m\+Mouse\+DeltaX}} = 0.\+0f
+\begin{DoxyCompactList}\small\item\em X-\/axis mouse delta this frame. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_input_manager_a0c7d3b951e81b94b85bc01ae66c15bef}{m\+Mouse\+DeltaY}} = 0.\+0f
+\begin{DoxyCompactList}\small\item\em Y-\/axis mouse delta this frame. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671}{Input\+Action}}, \mbox{\hyperlink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3ef}{Key\+Code}} $>$ \mbox{\hyperlink{class_input_manager_ad96d26c78fec30d9bf0f71e97fc5152a}{m\+Action\+Bindings}}
+\begin{DoxyCompactList}\small\item\em Maps actions to key codes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages input actions, key states, and mouse interactions at a high level. 
+
+The \doxylink{class_input_manager}{Input\+Manager} maps abstract Input\+Actions to physical key codes and tracks key/mouse states across frames to support features like "{}just pressed"{} detection. 
+
+\label{doc-func-members}
+\Hypertarget{class_input_manager_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_input_manager_a71835e73c1d4a634d14be25d75db9bc0}\index{InputManager@{InputManager}!GetMouseDeltaX@{GetMouseDeltaX}}
+\index{GetMouseDeltaX@{GetMouseDeltaX}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{GetMouseDeltaX()}{GetMouseDeltaX()}}
+{\footnotesize\ttfamily \label{class_input_manager_a71835e73c1d4a634d14be25d75db9bc0} 
+float Input\+Manager\+::\+Get\+Mouse\+DeltaX (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the horizontal mouse movement delta from this frame. 
+
+\begin{DoxyReturn}{Returns}
+The X delta. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_input_manager_a71835e73c1d4a634d14be25d75db9bc0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_input_manager_adf18e1c5e2ef57e794ff7d5fb28071b5}\index{InputManager@{InputManager}!GetMouseDeltaY@{GetMouseDeltaY}}
+\index{GetMouseDeltaY@{GetMouseDeltaY}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{GetMouseDeltaY()}{GetMouseDeltaY()}}
+{\footnotesize\ttfamily \label{class_input_manager_adf18e1c5e2ef57e794ff7d5fb28071b5} 
+float Input\+Manager\+::\+Get\+Mouse\+DeltaY (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the vertical mouse movement delta from this frame. 
+
+\begin{DoxyReturn}{Returns}
+The Y delta. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_input_manager_adf18e1c5e2ef57e794ff7d5fb28071b5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_input_manager_abcb55a393ff49334eba202f1b55870f3}\index{InputManager@{InputManager}!IsActionPressed@{IsActionPressed}}
+\index{IsActionPressed@{IsActionPressed}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{IsActionPressed()}{IsActionPressed()}}
+{\footnotesize\ttfamily \label{class_input_manager_abcb55a393ff49334eba202f1b55870f3} 
+bool Input\+Manager\+::\+Is\+Action\+Pressed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671}{Input\+Action}}}]{action}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if an action\textquotesingle{}s mapped key is currently held down. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & The abstract input action. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the action\textquotesingle{}s key is pressed. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_input_manager_abcb55a393ff49334eba202f1b55870f3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_input_manager_abcb55a393ff49334eba202f1b55870f3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_input_manager_a40218040038639d8481b13b3efaba4cf}\index{InputManager@{InputManager}!IsKeyDown@{IsKeyDown}}
+\index{IsKeyDown@{IsKeyDown}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{IsKeyDown()}{IsKeyDown()}}
+{\footnotesize\ttfamily \label{class_input_manager_a40218040038639d8481b13b3efaba4cf} 
+bool Input\+Manager\+::\+Is\+Key\+Down (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3ef}{Key\+Code}}}]{key}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if a specific key is currently held down. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key code to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the key is down. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_input_manager_a40218040038639d8481b13b3efaba4cf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_input_manager_ad8b3cd8d67afa47ce1a65da26c967b5e}\index{InputManager@{InputManager}!IsMouseButtonDown@{IsMouseButtonDown}}
+\index{IsMouseButtonDown@{IsMouseButtonDown}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{IsMouseButtonDown()}{IsMouseButtonDown()}}
+{\footnotesize\ttfamily \label{class_input_manager_ad8b3cd8d67afa47ce1a65da26c967b5e} 
+bool Input\+Manager\+::\+Is\+Mouse\+Button\+Down (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{input_8hpp_ac1ec3647c005eacad401b06e7e18f711}{Mouse\+Button}}}]{button}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if a mouse button is currently held down. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & The mouse button to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the button is down. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_input_manager_ad8b3cd8d67afa47ce1a65da26c967b5e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_input_manager_ad8b3cd8d67afa47ce1a65da26c967b5e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_input_manager_a723052f5702aaa5e048c7677d365d9d5}\index{InputManager@{InputManager}!MapAction@{MapAction}}
+\index{MapAction@{MapAction}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{MapAction()}{MapAction()}}
+{\footnotesize\ttfamily \label{class_input_manager_a723052f5702aaa5e048c7677d365d9d5} 
+void Input\+Manager\+::\+Map\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671}{Input\+Action}}}]{action}{, }\item[{\mbox{\hyperlink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3ef}{Key\+Code}}}]{key}{}\end{DoxyParamCaption})}
+
+
+
+Maps a high-\/level \doxylink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671}{Input\+Action} to a specific \doxylink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3ef}{Key\+Code}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & The logical action. \\
+\hline
+{\em key} & The key that triggers it. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_input_manager_a723052f5702aaa5e048c7677d365d9d5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_input_manager_ab060dcf965ba79d0ee0a6e9e0b1c84f7}\index{InputManager@{InputManager}!Update@{Update}}
+\index{Update@{Update}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{class_input_manager_ab060dcf965ba79d0ee0a6e9e0b1c84f7} 
+bool Input\+Manager\+::\+Update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Polls and updates internal input state for the current frame. 
+
+\begin{DoxyReturn}{Returns}
+True if a quit event was detected, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_input_manager_ab060dcf965ba79d0ee0a6e9e0b1c84f7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_input_manager_ab060dcf965ba79d0ee0a6e9e0b1c84f7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_input_manager_ac7dc2924bac1c09a309c094277bae59f}\index{InputManager@{InputManager}!WasActionJustPressed@{WasActionJustPressed}}
+\index{WasActionJustPressed@{WasActionJustPressed}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{WasActionJustPressed()}{WasActionJustPressed()}}
+{\footnotesize\ttfamily \label{class_input_manager_ac7dc2924bac1c09a309c094277bae59f} 
+bool Input\+Manager\+::\+Was\+Action\+Just\+Pressed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671}{Input\+Action}}}]{action}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if an action\textquotesingle{}s mapped key was just pressed this frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & The abstract input action. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the action was just triggered. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_input_manager_ac7dc2924bac1c09a309c094277bae59f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_input_manager_a7a54ee88ffb89a1956a7d6a080c964f5}\index{InputManager@{InputManager}!WasMouseButtonJustPressed@{WasMouseButtonJustPressed}}
+\index{WasMouseButtonJustPressed@{WasMouseButtonJustPressed}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{WasMouseButtonJustPressed()}{WasMouseButtonJustPressed()}}
+{\footnotesize\ttfamily \label{class_input_manager_a7a54ee88ffb89a1956a7d6a080c964f5} 
+bool Input\+Manager\+::\+Was\+Mouse\+Button\+Just\+Pressed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{input_8hpp_ac1ec3647c005eacad401b06e7e18f711}{Mouse\+Button}}}]{button}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if a mouse button was just pressed this frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & The mouse button to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the button was just pressed. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_input_manager_a7a54ee88ffb89a1956a7d6a080c964f5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_input_manager_a7a54ee88ffb89a1956a7d6a080c964f5_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_input_manager_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_input_manager_ad96d26c78fec30d9bf0f71e97fc5152a}\index{InputManager@{InputManager}!mActionBindings@{mActionBindings}}
+\index{mActionBindings@{mActionBindings}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{mActionBindings}{mActionBindings}}
+{\footnotesize\ttfamily \label{class_input_manager_ad96d26c78fec30d9bf0f71e97fc5152a} 
+std\+::unordered\+\_\+map$<$\mbox{\hyperlink{input__manager_8hpp_a9c56096a2c51a4a98f907f8f87fd1671}{Input\+Action}}, \mbox{\hyperlink{input_8hpp_a7945bb457f02c164182b3c18bb8ad3ef}{Key\+Code}}$>$ Input\+Manager\+::m\+Action\+Bindings\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Maps actions to key codes. 
+
+\Hypertarget{class_input_manager_ae8bd7e7b8d9e57e2b599c04a939f111d}\index{InputManager@{InputManager}!mKeyStates@{mKeyStates}}
+\index{mKeyStates@{mKeyStates}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{mKeyStates}{mKeyStates}}
+{\footnotesize\ttfamily \label{class_input_manager_ae8bd7e7b8d9e57e2b599c04a939f111d} 
+const uint8\+\_\+t\texorpdfstring{$\ast$}{*} Input\+Manager\+::m\+Key\+States = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to current frame\textquotesingle{}s key state array. 
+
+\Hypertarget{class_input_manager_a30360681eb7bb30b4c254b634efab2ea}\index{InputManager@{InputManager}!mMouseButtonState@{mMouseButtonState}}
+\index{mMouseButtonState@{mMouseButtonState}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{mMouseButtonState}{mMouseButtonState}}
+{\footnotesize\ttfamily \label{class_input_manager_a30360681eb7bb30b4c254b634efab2ea} 
+uint32\+\_\+t Input\+Manager\+::m\+Mouse\+Button\+State = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mouse buttons currently held. 
+
+\Hypertarget{class_input_manager_a94e19f34c94d8d82a2fd915d31a959f8}\index{InputManager@{InputManager}!mMouseDeltaX@{mMouseDeltaX}}
+\index{mMouseDeltaX@{mMouseDeltaX}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{mMouseDeltaX}{mMouseDeltaX}}
+{\footnotesize\ttfamily \label{class_input_manager_a94e19f34c94d8d82a2fd915d31a959f8} 
+float Input\+Manager\+::m\+Mouse\+DeltaX = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+X-\/axis mouse delta this frame. 
+
+\Hypertarget{class_input_manager_a0c7d3b951e81b94b85bc01ae66c15bef}\index{InputManager@{InputManager}!mMouseDeltaY@{mMouseDeltaY}}
+\index{mMouseDeltaY@{mMouseDeltaY}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{mMouseDeltaY}{mMouseDeltaY}}
+{\footnotesize\ttfamily \label{class_input_manager_a0c7d3b951e81b94b85bc01ae66c15bef} 
+float Input\+Manager\+::m\+Mouse\+DeltaY = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Y-\/axis mouse delta this frame. 
+
+\Hypertarget{class_input_manager_a09dff32dc1a4eb04573f78ba7227a30a}\index{InputManager@{InputManager}!mPrevKeyStates@{mPrevKeyStates}}
+\index{mPrevKeyStates@{mPrevKeyStates}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{mPrevKeyStates}{mPrevKeyStates}}
+{\footnotesize\ttfamily \label{class_input_manager_a09dff32dc1a4eb04573f78ba7227a30a} 
+std\+::vector$<$uint8\+\_\+t$>$ Input\+Manager\+::m\+Prev\+Key\+States\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Copy of previous frame\textquotesingle{}s key states. 
+
+\Hypertarget{class_input_manager_a30a637adfe3bd77cba66737451597d3d}\index{InputManager@{InputManager}!mPrevMouseButtonState@{mPrevMouseButtonState}}
+\index{mPrevMouseButtonState@{mPrevMouseButtonState}!InputManager@{InputManager}}
+\doxysubsubsection{\texorpdfstring{mPrevMouseButtonState}{mPrevMouseButtonState}}
+{\footnotesize\ttfamily \label{class_input_manager_a30a637adfe3bd77cba66737451597d3d} 
+uint32\+\_\+t Input\+Manager\+::m\+Prev\+Mouse\+Button\+State = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mouse buttons from previous frame. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Events/\mbox{\hyperlink{input__manager_8hpp}{input\+\_\+manager.\+hpp}}\item 
+C\+:/\+Users/user/\+Documents/\+Git\+Hub/\+ICT397-\/\+Project/mirach\+Engine/src/\+Events/\mbox{\hyperlink{input__manager_8cpp}{input\+\_\+manager.\+cpp}}\end{DoxyCompactItemize}
