@@ -1,9 +1,0 @@
-libdir=C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/out/install/x64-Release/lib
-includedir=C:/Users/Liam/Documents/ICT397/Project/ICT397-Project/out/install/x64-Release/include
-
-Name: ICT397_Project
-Description: Import various well-known 3D model formats in an uniform manner.
-Version: 6.0.2
-Libs: -L${libdir} -lassimp
-Libs.private:  
-Cflags: -I${includedir}

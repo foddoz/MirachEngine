@@ -16,6 +16,10 @@
 # Mono auto generated files
 mono_crash.*
 
+dependencies/download/
+
+mirachEngine/dependencies/download/
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -27,6 +31,7 @@ x86/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
 bld/
+[Oo]ut/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
