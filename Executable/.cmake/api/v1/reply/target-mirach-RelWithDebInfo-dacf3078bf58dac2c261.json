@@ -1,0 +1,488 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "mirachEngine/mirach.dll"
+		},
+		{
+			"path" : "mirachEngine/mirach.lib"
+		},
+		{
+			"path" : "mirachEngine/mirach.pdb"
+		}
+	],
+	"backtrace" : 3,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"include",
+			"target_link_libraries",
+			"sdl_generic_link_dependency",
+			"sdl_link_dependency",
+			"TARGET_LINK_LIBRARIES",
+			"target_include_directories",
+			"target_sources"
+		],
+		"files" : 
+		[
+			"mirachEngine/cmake/mirach-config.cmake",
+			"mirachEngine/CMakeLists.txt",
+			"mirachEngine/dependencies/download/sdl/3777ee09ad2a7e06e722eaf2a74e2df755d81cad/sdl/cmake/sdltargets.cmake",
+			"mirachEngine/dependencies/download/sdl/3777ee09ad2a7e06e722eaf2a74e2df755d81cad/sdl/CMakeLists.txt",
+			"out/build/x64-Release/_deps/assimp-src/code/CMakeLists.txt",
+			"mirachEngine/dependencies/imgui/imgui-config.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 19,
+				"parent" : 0
+			},
+			{
+				"file" : 0,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 10,
+				"parent" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 33,
+				"parent" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 46,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 49,
+				"parent" : 0
+			},
+			{
+				"file" : 3
+			},
+			{
+				"command" : 4,
+				"file" : 3,
+				"line" : 2071,
+				"parent" : 7
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 75,
+				"parent" : 8
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 56,
+				"parent" : 9
+			},
+			{
+				"command" : 4,
+				"file" : 3,
+				"line" : 2125,
+				"parent" : 7
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 75,
+				"parent" : 11
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 56,
+				"parent" : 12
+			},
+			{
+				"file" : 4
+			},
+			{
+				"command" : 5,
+				"file" : 4,
+				"line" : 1500,
+				"parent" : 14
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 15,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 30,
+				"parent" : 2
+			},
+			{
+				"file" : 5,
+				"parent" : 17
+			},
+			{
+				"command" : 6,
+				"file" : 5,
+				"line" : 14,
+				"parent" : 18
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 38,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 5,
+				"line" : 12,
+				"parent" : 18
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /Zi /O2 /Ob1 /DNDEBUG -std:c++20"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 6,
+					"define" : "IS_RP3D_PROFILING_ENABLED"
+				},
+				{
+					"define" : "mirach_EXPORTS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 16,
+					"path" : "C:/Users/Liam/Documents/Emploid/Projects/Mirach/mirachEngine/include"
+				},
+				{
+					"backtrace" : 16,
+					"path" : "C:/Users/Liam/Documents/Emploid/Projects/Mirach/out/build/x64-Release/mirachEngine/generated"
+				},
+				{
+					"backtrace" : 16,
+					"path" : "C:/Users/Liam/Documents/Emploid/Projects/Mirach/mirachEngine/src"
+				},
+				{
+					"backtrace" : 19,
+					"path" : "C:/Users/Liam/Documents/Emploid/Projects/Mirach/mirachEngine/dependencies/imgui"
+				},
+				{
+					"backtrace" : 19,
+					"path" : "C:/Users/Liam/Documents/Emploid/Projects/Mirach/mirachEngine/dependencies/imgui/backends"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Liam/Documents/Emploid/Projects/Mirach/mirachEngine/dependencies/download/lua/65bf91d511e1cf1b55640f2d5cf0d95808bf4cba/lua"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Liam/Documents/Emploid/Projects/Mirach/mirachEngine/dependencies/glad/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Liam/Documents/Emploid/Projects/Mirach/out/build/x64-Release/_deps/sdl-build/include-revision"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Liam/Documents/Emploid/Projects/Mirach/mirachEngine/dependencies/download/sdl/3777ee09ad2a7e06e722eaf2a74e2df755d81cad/sdl/include"
+				},
+				{
+					"backtrace" : 20,
+					"path" : "C:/Users/Liam/Documents/Emploid/Projects/Mirach/out/build/x64-Release/_deps/glm-src/glm/.."
+				},
+				{
+					"backtrace" : 5,
+					"path" : "C:/Users/Liam/Documents/Emploid/Projects/Mirach/out/build/x64-Release/_deps/assimp-src/code/../include"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "C:/Users/Liam/Documents/Emploid/Projects/Mirach/out/build/x64-Release/_deps/assimp-build/code/../include"
+				},
+				{
+					"backtrace" : 4,
+					"isSystem" : true,
+					"path" : "C:/Users/Liam/Documents/Emploid/Projects/Mirach/mirachEngine/dependencies/download/sol2/49b21aeceec28f5c916c86bcfa93a03585ab78b2/sol2/include"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "C:/Users/Liam/Documents/Emploid/Projects/Mirach/mirachEngine/dependencies/ReactPhysics3D/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					6
+				],
+				"standard" : "20"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 4,
+			"id" : "glad::@05bd52cf8d1c99c2443e"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "lua::@05bd52cf8d1c99c2443e"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "SDL3-static::@fc7b397d5a055aba6d5e"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "assimp::@b1ea6f5c2178ebc90389"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "zlibstatic::@7fd99959cf8fe87d223a"
+		}
+	],
+	"id" : "mirach::@05bd52cf8d1c99c2443e",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/machine:x64 /debug /INCREMENTAL",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "mirachEngine\\lua.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "mirachEngine\\glad.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "_deps\\sdl-build\\SDL3-static.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "_deps\\assimp-build\\lib\\assimp-vc143-mt.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "C:\\Users\\Liam\\Documents\\Emploid\\Projects\\Mirach\\mirachEngine\\dependencies\\ReactPhysics3D\\lib\\reactphysics3d.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 10,
+				"fragment" : "kernel32.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 10,
+				"fragment" : "user32.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 10,
+				"fragment" : "gdi32.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 10,
+				"fragment" : "winmm.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 10,
+				"fragment" : "imm32.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 10,
+				"fragment" : "ole32.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 10,
+				"fragment" : "oleaut32.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 10,
+				"fragment" : "version.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 10,
+				"fragment" : "uuid.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 10,
+				"fragment" : "advapi32.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 10,
+				"fragment" : "setupapi.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 10,
+				"fragment" : "shell32.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 13,
+				"fragment" : "dinput8.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 15,
+				"fragment" : "_deps\\assimp-build\\contrib\\zlib\\zlibstatic.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "mirach",
+	"nameOnDisk" : "mirach.dll",
+	"paths" : 
+	{
+		"build" : "mirachEngine",
+		"source" : "mirachEngine"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/src/assets.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/src/configuration.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 21,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/imgui/imgui.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 21,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/imgui/imgui_demo.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 21,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/imgui/imgui_draw.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 21,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/imgui/imgui_tables.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 21,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/imgui/imgui_widgets.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 21,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/imgui/imgui_stdlib.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 21,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/imgui/backends/imgui_impl_sdl3.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 21,
+			"compileGroupIndex" : 0,
+			"path" : "mirachEngine/dependencies/imgui/backends/imgui_impl_opengl3.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "SHARED_LIBRARY"
+}

@@ -1,0 +1,3 @@
+C:/Users/Liam/Documents/Emploid/Projects/Mirach/out/build/x64-Release/_deps/assimp-subbuild/CMakeFiles/assimp-populate.dir
+C:/Users/Liam/Documents/Emploid/Projects/Mirach/out/build/x64-Release/_deps/assimp-subbuild/CMakeFiles/edit_cache.dir
+C:/Users/Liam/Documents/Emploid/Projects/Mirach/out/build/x64-Release/_deps/assimp-subbuild/CMakeFiles/rebuild_cache.dir
